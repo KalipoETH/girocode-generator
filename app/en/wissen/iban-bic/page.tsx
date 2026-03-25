@@ -5,6 +5,16 @@ export const metadata: Metadata = {
   title: 'IBAN & BIC for GiroCode – Complete Guide',
   description:
     'IBAN and BIC for GiroCode: format, when BIC is required, and how IBAN validation works. Everything explained simply.',
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/en/wissen/iban-bic',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen/iban-bic',
+      'de': 'https://www.girocodegenerator.com/wissen/iban-bic',
+      'en': 'https://www.girocodegenerator.com/en/wissen/iban-bic',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen/iban-bic',
+      'es': 'https://www.girocodegenerator.com/es/wissen/iban-bic',
+    },
+  },
 };
 
 export default function WissenIbanBicPageEn() {

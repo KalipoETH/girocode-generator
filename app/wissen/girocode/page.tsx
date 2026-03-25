@@ -7,6 +7,16 @@ export const metadata: Metadata = {
   description:
     'GiroCode vollständig erklärt: Definition, Funktionsweise, Vorteile, Vergleich mit PayPal & Co., FAQ und Empfehlungen für Selbstständige und Unternehmen.',
   keywords: 'GiroCode, SEPA QR Code, EPC QR Code, Bezahlcode, GiroCode erstellen, GiroCode Rechnung',
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/wissen/girocode',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen/girocode',
+      'de': 'https://www.girocodegenerator.com/wissen/girocode',
+      'en': 'https://www.girocodegenerator.com/en/wissen/girocode',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen/girocode',
+      'es': 'https://www.girocodegenerator.com/es/wissen/girocode',
+    },
+  },
 };
 
 export default function WissenGirocodePage() {

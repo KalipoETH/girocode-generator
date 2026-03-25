@@ -5,6 +5,16 @@ export const metadata: Metadata = {
   title: 'Amount & Payment Reference in GiroCode – Complete Guide',
   description:
     'How to correctly enter amount and payment reference in a GiroCode: format, limits, best practices and examples.',
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/en/wissen/betrag-und-zweck',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen/betrag-und-zweck',
+      'de': 'https://www.girocodegenerator.com/wissen/betrag-und-zweck',
+      'en': 'https://www.girocodegenerator.com/en/wissen/betrag-und-zweck',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen/betrag-und-zweck',
+      'es': 'https://www.girocodegenerator.com/es/wissen/betrag-und-zweck',
+    },
+  },
 };
 
 export default function WissenBetragUndZweckPageEn() {

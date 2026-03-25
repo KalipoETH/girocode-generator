@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import './globals.css';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
@@ -29,6 +30,13 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.girocodegenerator.com'),
   alternates: {
     canonical: 'https://www.girocodegenerator.com',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com',
+      'de': 'https://www.girocodegenerator.com',
+      'en': 'https://www.girocodegenerator.com/en',
+      'fr': 'https://www.girocodegenerator.com/fr',
+      'es': 'https://www.girocodegenerator.com/es',
+    },
   },
   openGraph: {
     type: 'website',
@@ -56,13 +64,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const headersList = await headers();
+  const locale = headersList.get('x-locale') ?? 'de';
+
   return (
-    <html lang="de" className="h-full">
+    <html lang={locale} className="h-full">
       <body className="min-h-full bg-[#0b0c10] font-sans text-slate-100">
         <div className="flex min-h-screen flex-col">
           <FloatingDots />

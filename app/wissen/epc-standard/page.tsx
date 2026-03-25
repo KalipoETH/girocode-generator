@@ -7,6 +7,16 @@ export const metadata: Metadata = {
   description:
     'EPC-Standard vollständig erklärt: Aufbau, Versionen, Fehlerkorrektur, internationale Unterschiede und technische Implementierung des SEPA-QR-Codes.',
   keywords: 'EPC Standard, SEPA QR Code Aufbau, GiroCode Payload, EPC069, BCD Service Tag, SEPA Credit Transfer',
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/wissen/epc-standard',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen/epc-standard',
+      'de': 'https://www.girocodegenerator.com/wissen/epc-standard',
+      'en': 'https://www.girocodegenerator.com/en/wissen/epc-standard',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen/epc-standard',
+      'es': 'https://www.girocodegenerator.com/es/wissen/epc-standard',
+    },
+  },
 };
 
 export default function WissenEpcStandardPage() {

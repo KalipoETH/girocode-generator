@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   title: "Qu'est-ce qu'un GiroCode ? – Tout ce que vous devez savoir",
   description:
     "GiroCode expliqué : qu'est-ce qu'un code QR SEPA, comment fonctionne-t-il et comment en créer un gratuitement ? Guide complet avec exemples.",
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/fr/wissen/girocode',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen/girocode',
+      'de': 'https://www.girocodegenerator.com/wissen/girocode',
+      'en': 'https://www.girocodegenerator.com/en/wissen/girocode',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen/girocode',
+      'es': 'https://www.girocodegenerator.com/es/wissen/girocode',
+    },
+  },
 };
 
 export default function WissenGirocodePageFr() {

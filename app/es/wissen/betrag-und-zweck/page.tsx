@@ -5,6 +5,16 @@ export const metadata: Metadata = {
   title: 'Importe y concepto de pago en GiroCode – Guía completa',
   description:
     'Cómo introducir correctamente el importe y el concepto de pago en un GiroCode: formato, límites, buenas prácticas y ejemplos.',
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/es/wissen/betrag-und-zweck',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen/betrag-und-zweck',
+      'de': 'https://www.girocodegenerator.com/wissen/betrag-und-zweck',
+      'en': 'https://www.girocodegenerator.com/en/wissen/betrag-und-zweck',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen/betrag-und-zweck',
+      'es': 'https://www.girocodegenerator.com/es/wissen/betrag-und-zweck',
+    },
+  },
 };
 
 export default function WissenBetragUndZweckPageEs() {

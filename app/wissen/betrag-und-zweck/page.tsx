@@ -7,6 +7,16 @@ export const metadata: Metadata = {
   description:
     'Betrag und Verwendungszweck im GiroCode richtig nutzen: Formate, Best Practices, Branchenbeispiele, steuerliche Bedeutung und häufige Fehler vermeiden.',
   keywords: 'GiroCode Betrag Format, Verwendungszweck GiroCode, Rechnungsnummer QR Code, SEPA Verwendungszweck 140 Zeichen',
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/wissen/betrag-und-zweck',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen/betrag-und-zweck',
+      'de': 'https://www.girocodegenerator.com/wissen/betrag-und-zweck',
+      'en': 'https://www.girocodegenerator.com/en/wissen/betrag-und-zweck',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen/betrag-und-zweck',
+      'es': 'https://www.girocodegenerator.com/es/wissen/betrag-und-zweck',
+    },
+  },
 };
 
 export default function WissenBetragUndZweckPage() {

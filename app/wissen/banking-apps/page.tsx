@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   description:
     'Alle deutschen Banking-Apps mit GiroCode-Support im Vergleich: Sparkasse, ING, DKB, Volksbank, N26 und mehr – plus Anleitungen und Sicherheitstipps.',
   keywords: 'GiroCode Banking App, Sparkasse GiroCode scannen, ING GiroCode, DKB QR Code, SEPA QR App',
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/wissen/banking-apps',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen/banking-apps',
+      'de': 'https://www.girocodegenerator.com/wissen/banking-apps',
+      'en': 'https://www.girocodegenerator.com/en/wissen/banking-apps',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen/banking-apps',
+      'es': 'https://www.girocodegenerator.com/es/wissen/banking-apps',
+    },
+  },
 };
 
 export default function WissenBankingAppsPage() {

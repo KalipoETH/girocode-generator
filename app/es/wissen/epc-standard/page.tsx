@@ -5,6 +5,16 @@ export const metadata: Metadata = {
   title: 'Norma EPC & SEPA-QR – Estructura técnica explicada',
   description:
     'La norma EPC para GiroCodes explicada: estructura, campos, versiones y reglas del código QR SEPA en términos sencillos.',
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/es/wissen/epc-standard',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen/epc-standard',
+      'de': 'https://www.girocodegenerator.com/wissen/epc-standard',
+      'en': 'https://www.girocodegenerator.com/en/wissen/epc-standard',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen/epc-standard',
+      'es': 'https://www.girocodegenerator.com/es/wissen/epc-standard',
+    },
+  },
 };
 
 export default function WissenEpcStandardPageEs() {

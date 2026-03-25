@@ -5,6 +5,16 @@ export const metadata: Metadata = {
   title: 'Montant & Référence de paiement dans GiroCode – Guide complet',
   description:
     'Comment saisir correctement le montant et la référence de paiement dans un GiroCode : format, limites, bonnes pratiques et exemples.',
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/fr/wissen/betrag-und-zweck',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen/betrag-und-zweck',
+      'de': 'https://www.girocodegenerator.com/wissen/betrag-und-zweck',
+      'en': 'https://www.girocodegenerator.com/en/wissen/betrag-und-zweck',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen/betrag-und-zweck',
+      'es': 'https://www.girocodegenerator.com/es/wissen/betrag-und-zweck',
+    },
+  },
 };
 
 export default function WissenBetragUndZweckPageFr() {

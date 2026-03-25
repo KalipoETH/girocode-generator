@@ -7,6 +7,16 @@ export const metadata: Metadata = {
   description:
     'IBAN und BIC vollständig erklärt: Aufbau, Mod-97-Prüfung, internationale Formate, Sicherheit und wann der BIC beim GiroCode noch benötigt wird.',
   keywords: 'IBAN Aufbau, BIC Erklärung, IBAN Prüfziffer, Mod-97, IBAN GiroCode, SEPA IBAN',
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/wissen/iban-bic',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen/iban-bic',
+      'de': 'https://www.girocodegenerator.com/wissen/iban-bic',
+      'en': 'https://www.girocodegenerator.com/en/wissen/iban-bic',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen/iban-bic',
+      'es': 'https://www.girocodegenerator.com/es/wissen/iban-bic',
+    },
+  },
 };
 
 export default function WissenIbanBicPage() {

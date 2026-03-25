@@ -7,6 +7,16 @@ export const metadata: Metadata = {
   description:
     'GiroCode auf Rechnungen: Pflichtangaben nach §14 UStG, Kleinunternehmer, Platzierung, Software-Vergleich und Schritt-für-Schritt Anleitung.',
   keywords: 'GiroCode Rechnung, §14 UStG Pflichtangaben, Kleinunternehmerregelung, QR Code Rechnung, GiroCode PDF Rechnung',
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/wissen/rechnung',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen/rechnung',
+      'de': 'https://www.girocodegenerator.com/wissen/rechnung',
+      'en': 'https://www.girocodegenerator.com/en/wissen/rechnung',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen/rechnung',
+      'es': 'https://www.girocodegenerator.com/es/wissen/rechnung',
+    },
+  },
 };
 
 export default function WissenRechnungPage() {

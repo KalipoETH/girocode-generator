@@ -5,6 +5,16 @@ export const metadata: Metadata = {
   title: 'Informations sur le GiroCode & SEPA-QR',
   description:
     'Notions de base sur les GiroCodes, le standard EPC et IBAN/BIC – la zone de connaissances de girocodegenerator.com.',
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/fr/wissen',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen',
+      'de': 'https://www.girocodegenerator.com/wissen',
+      'en': 'https://www.girocodegenerator.com/en/wissen',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen',
+      'es': 'https://www.girocodegenerator.com/es/wissen',
+    },
+  },
 };
 
 const knowledgePages = [

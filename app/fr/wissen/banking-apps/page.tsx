@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   title: "Applications bancaires compatibles GiroCode – Vue d'ensemble 2025",
   description:
     "Quelles applications bancaires supportent les GiroCodes ? Sparkasse, ING, DKB, Volksbank et plus – vue d'ensemble complète.",
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/fr/wissen/banking-apps',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen/banking-apps',
+      'de': 'https://www.girocodegenerator.com/wissen/banking-apps',
+      'en': 'https://www.girocodegenerator.com/en/wissen/banking-apps',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen/banking-apps',
+      'es': 'https://www.girocodegenerator.com/es/wissen/banking-apps',
+    },
+  },
 };
 
 export default function WissenBankingAppsPageFr() {

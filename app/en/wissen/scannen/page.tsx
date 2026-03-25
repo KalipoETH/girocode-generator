@@ -5,6 +5,16 @@ export const metadata: Metadata = {
   title: 'How to Scan a GiroCode – Complete Guide for iPhone & Android',
   description:
     'Scan a GiroCode with your banking app: step-by-step guide for iPhone and Android, troubleshooting and security tips.',
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/en/wissen/scannen',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen/scannen',
+      'de': 'https://www.girocodegenerator.com/wissen/scannen',
+      'en': 'https://www.girocodegenerator.com/en/wissen/scannen',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen/scannen',
+      'es': 'https://www.girocodegenerator.com/es/wissen/scannen',
+    },
+  },
 };
 
 export default function WissenScannenPageEn() {

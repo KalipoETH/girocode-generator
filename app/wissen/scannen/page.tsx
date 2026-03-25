@@ -7,6 +7,16 @@ export const metadata: Metadata = {
   description:
     'GiroCode scannen: Schritt-für-Schritt Anleitungen für iPhone und Android, Lösungen bei Scan-Problemen, Qualitätsanforderungen und Sicherheitstipps.',
   keywords: 'GiroCode scannen iPhone, GiroCode scannen Android, SEPA QR Code scannen, QR Code Überweisung scannen',
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/wissen/scannen',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen/scannen',
+      'de': 'https://www.girocodegenerator.com/wissen/scannen',
+      'en': 'https://www.girocodegenerator.com/en/wissen/scannen',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen/scannen',
+      'es': 'https://www.girocodegenerator.com/es/wissen/scannen',
+    },
+  },
 };
 
 export default function WissenScannenPage() {

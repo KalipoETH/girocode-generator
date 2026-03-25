@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   title: 'GiroCode on Invoices – The Complete Guide',
   description:
     'How to add a GiroCode to your invoices: placement, legal requirements, and how to create invoice PDFs with embedded QR code.',
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/en/wissen/rechnung',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen/rechnung',
+      'de': 'https://www.girocodegenerator.com/wissen/rechnung',
+      'en': 'https://www.girocodegenerator.com/en/wissen/rechnung',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen/rechnung',
+      'es': 'https://www.girocodegenerator.com/es/wissen/rechnung',
+    },
+  },
 };
 
 export default function WissenRechnungPageEn() {

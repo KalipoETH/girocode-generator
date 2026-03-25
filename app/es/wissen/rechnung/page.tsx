@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   title: 'GiroCode en facturas – La guía completa',
   description:
     'Cómo añadir un GiroCode a tus facturas: ubicación, requisitos legales y creación de PDF con código QR integrado.',
+  alternates: {
+    canonical: 'https://www.girocodegenerator.com/es/wissen/rechnung',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/wissen/rechnung',
+      'de': 'https://www.girocodegenerator.com/wissen/rechnung',
+      'en': 'https://www.girocodegenerator.com/en/wissen/rechnung',
+      'fr': 'https://www.girocodegenerator.com/fr/wissen/rechnung',
+      'es': 'https://www.girocodegenerator.com/es/wissen/rechnung',
+    },
+  },
 };
 
 export default function WissenRechnungPageEs() {

@@ -11,10 +11,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.girocodegenerator.com/fr',
     languages: {
-      de: 'https://www.girocodegenerator.com',
-      en: 'https://www.girocodegenerator.com/en',
-      fr: 'https://www.girocodegenerator.com/fr',
-      es: 'https://www.girocodegenerator.com/es',
+      'x-default': 'https://www.girocodegenerator.com',
+      'de': 'https://www.girocodegenerator.com',
+      'en': 'https://www.girocodegenerator.com/en',
+      'fr': 'https://www.girocodegenerator.com/fr',
+      'es': 'https://www.girocodegenerator.com/es',
     },
   },
 };
