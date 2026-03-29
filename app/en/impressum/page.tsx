@@ -1,3 +1,9 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.girocodegenerator.com/en/impressum' },
+};
+
 export default function ImpressumPageEn() {
   return (
     <main className="min-h-screen bg-[#0b0c10] text-slate-100">

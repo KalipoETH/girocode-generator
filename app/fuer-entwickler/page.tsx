@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'GiroCode für Entwickler & Agenturen – Integration & API',
   description:
     'GiroCode-Generierung in eigene Projekte integrieren: Code-Beispiele, EPC-Payload Aufbau und Tipps für Entwickler.',
+  alternates: { canonical: 'https://www.girocodegenerator.com/fuer-entwickler' },
 };
 
 export default function FuerEntwicklerPage() {

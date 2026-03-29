@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: 'About us – GiroCode Generator',
   description:
     'Who is behind the GiroCode Generator? The project by Kaleb Jahnke from Osterholz-Scharmbeck – free, local, privacy-friendly.',
+  alternates: { canonical: 'https://www.girocodegenerator.com/en/ueber-uns' },
 };
 
 export default function AboutPageEn() {

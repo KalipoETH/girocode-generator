@@ -1,3 +1,9 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.girocodegenerator.com/es/datenschutz' },
+};
+
 export default function PrivacyPageEs() {
   return (
     <main className="min-h-screen bg-[#0b0c10] text-slate-100">

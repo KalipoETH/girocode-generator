@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Contact – GiroCode Generator',
   description:
     'Contact us with questions, feedback or suggestions about the GiroCode Generator.',
+  alternates: { canonical: 'https://www.girocodegenerator.com/en/kontakt' },
 };
 
 export default function ContactPage() {

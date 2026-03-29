@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: 'À propos – GiroCode Generator',
   description:
     'Qui se cache derrière le GiroCode Generator ? Le projet de Kaleb Jahnke à Osterholz-Scharmbeck – gratuit, local et respectueux de la vie privée.',
+  alternates: { canonical: 'https://www.girocodegenerator.com/fr/ueber-uns' },
 };
 
 export default function AProposPageFr() {
