@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: 'How to Scan a GiroCode – Complete Guide for iPhone & Android',
+  title: 'How to Scan a GiroCode – Step-by-Step Guide 2026',
   description:
-    'Scan a GiroCode with your banking app: step-by-step guide for iPhone and Android, troubleshooting and security tips.',
+    'Scan a GiroCode with your banking app: Sparkasse, ING, DKB, Volksbank & more. Easy guide for iPhone and Android. ✅ Pay in 30 seconds.',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/en/wissen/scannen',
     languages: {

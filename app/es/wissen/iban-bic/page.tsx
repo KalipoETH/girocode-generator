@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: 'IBAN & BIC para GiroCode – Guía completa',
+  title: 'IBAN & BIC en GiroCode – Formato, Obligatorio & Validación',
   description:
-    'IBAN y BIC para GiroCode: formato, cuándo se requiere el BIC y cómo funciona la validación del IBAN. Todo explicado de forma sencilla.',
+    'IBAN y BIC para GiroCode: ¿Es obligatorio el BIC? ¿Cómo funciona la validación IBAN (Mod-97)? Todos los formatos explicados.',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/es/wissen/iban-bic',
     languages: {

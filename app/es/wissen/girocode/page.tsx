@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: '¿Qué es un GiroCode? – Todo lo que necesitas saber',
+  title: '¿Qué es un GiroCode? – Explicado + crear gratis',
   description:
-    'GiroCode explicado: qué es un código QR SEPA, cómo funciona y cómo crear uno gratis. Guía completa con ejemplos.',
+    'GiroCode = código QR SEPA para transferencias. Qué es, cómo funciona y cómo crearlo gratis en segundos. Incluye factura PDF. Sin registro.',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/es/wissen/girocode',
     languages: {

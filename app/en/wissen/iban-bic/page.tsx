@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: 'IBAN & BIC for GiroCode – Complete Guide',
+  title: 'IBAN & BIC in GiroCode – Format, Required & Validation',
   description:
-    'IBAN and BIC for GiroCode: format, when BIC is required, and how IBAN validation works. Everything explained simply.',
+    'IBAN and BIC for GiroCode: Is BIC required? How does IBAN validation (Mod-97) work? All formats explained with country table.',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/en/wissen/iban-bic',
     languages: {

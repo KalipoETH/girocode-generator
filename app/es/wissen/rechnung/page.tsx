@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: 'GiroCode en facturas – La guía completa',
+  title: 'GiroCode en facturas – Guía completa & generador PDF',
   description:
-    'Cómo añadir un GiroCode a tus facturas: ubicación, requisitos legales y creación de PDF con código QR integrado.',
+    'Añade GiroCodes a tus facturas: requisitos legales, ubicación óptima y generador PDF gratuito. ✅ Facturas profesionales en 2 minutos.',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/es/wissen/rechnung',
     languages: {

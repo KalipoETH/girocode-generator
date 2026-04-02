@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { KnowledgeLayout } from '../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: 'IBAN & BIC – Alles für den GiroCode erklärt',
+  title: 'IBAN & BIC im GiroCode – Format, Pflicht & Validierung',
   description:
-    'IBAN und BIC vollständig erklärt: Aufbau, Mod-97-Prüfung, internationale Formate, Sicherheit und wann der BIC beim GiroCode noch benötigt wird.',
+    'IBAN und BIC für den GiroCode: Ist der BIC Pflicht? Wie funktioniert die IBAN-Validierung (Mod-97)? Alle Formate erklärt mit Länder-Tabelle.',
   keywords: 'IBAN Aufbau, BIC Erklärung, IBAN Prüfziffer, Mod-97, IBAN GiroCode, SEPA IBAN',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/wissen/iban-bic',

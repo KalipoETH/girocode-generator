@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: 'GiroCode on Invoices – The Complete Guide',
+  title: 'GiroCode on Invoices – Complete Guide & PDF Generator',
   description:
-    'How to add a GiroCode to your invoices: placement, legal requirements, and how to create invoice PDFs with embedded QR code.',
+    'Add GiroCodes to invoices: legal requirements, optimal placement and free PDF generator. ✅ Professional invoices in 2 minutes. No registration needed.',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/en/wissen/rechnung',
     languages: {

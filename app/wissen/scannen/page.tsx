@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { KnowledgeLayout } from '../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: 'GiroCode scannen – Die komplette Anleitung für iPhone & Android',
+  title: 'GiroCode scannen – Schritt-für-Schritt Anleitung 2026',
   description:
-    'GiroCode scannen: Schritt-für-Schritt Anleitungen für iPhone und Android, Lösungen bei Scan-Problemen, Qualitätsanforderungen und Sicherheitstipps.',
+    'So scannst du einen GiroCode mit deiner Banking-App: Sparkasse, ING, DKB, Volksbank & mehr. Einfache Anleitung für iPhone und Android. ✅ In 30 Sekunden bezahlt.',
   keywords: 'GiroCode scannen iPhone, GiroCode scannen Android, SEPA QR Code scannen, QR Code Überweisung scannen',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/wissen/scannen',

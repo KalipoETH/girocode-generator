@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: 'Amount & Payment Reference in GiroCode – Complete Guide',
+  title: 'Amount & Payment Reference in GiroCode – How to Do It Right',
   description:
-    'How to correctly enter amount and payment reference in a GiroCode: format, limits, best practices and examples.',
+    'Amount optional or required? Payment reference max. 140 characters: what to include and what not. Best practices for freelancers and businesses.',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/en/wissen/betrag-und-zweck',
     languages: {

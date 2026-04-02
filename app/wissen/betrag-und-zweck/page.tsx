@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { KnowledgeLayout } from '../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: 'Betrag & Verwendungszweck im GiroCode richtig eingeben',
+  title: 'Betrag & Verwendungszweck im GiroCode – So geht\'s richtig',
   description:
-    'Betrag und Verwendungszweck im GiroCode richtig nutzen: Formate, Best Practices, Branchenbeispiele, steuerliche Bedeutung und häufige Fehler vermeiden.',
+    'Betrag optional oder Pflicht? Verwendungszweck max. 140 Zeichen: Was rein soll und was nicht. Best Practices für Freelancer, Vereine und Unternehmen.',
   keywords: 'GiroCode Betrag Format, Verwendungszweck GiroCode, Rechnungsnummer QR Code, SEPA Verwendungszweck 140 Zeichen',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/wissen/betrag-und-zweck',

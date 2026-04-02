@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: "Applications bancaires compatibles GiroCode – Vue d'ensemble 2025",
+  title: 'Apps bancaires compatibles GiroCode 2026 – Liste complète',
   description:
-    "Quelles applications bancaires supportent les GiroCodes ? Sparkasse, ING, DKB, Volksbank et plus – vue d'ensemble complète.",
+    'Quelles apps bancaires scannent les GiroCodes? Sparkasse ✅ ING ✅ DKB ✅ Volksbank ✅ N26 ✅ et 8 autres. Guide étape par étape pour chaque app.',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/fr/wissen/banking-apps',
     languages: {

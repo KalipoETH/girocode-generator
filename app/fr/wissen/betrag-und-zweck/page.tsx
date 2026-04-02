@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: 'Montant & Référence de paiement dans GiroCode – Guide complet',
+  title: 'Montant & Référence dans GiroCode – Comment bien faire',
   description:
-    'Comment saisir correctement le montant et la référence de paiement dans un GiroCode : format, limites, bonnes pratiques et exemples.',
+    'Montant optionnel ou obligatoire? Référence max. 140 caractères: quoi inclure et quoi éviter. Meilleures pratiques pour freelances et entreprises.',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/fr/wissen/betrag-und-zweck',
     languages: {

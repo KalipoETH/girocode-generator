@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: 'Importe y concepto de pago en GiroCode – Guía completa',
+  title: 'Importe & Concepto en GiroCode – Cómo hacerlo bien',
   description:
-    'Cómo introducir correctamente el importe y el concepto de pago en un GiroCode: formato, límites, buenas prácticas y ejemplos.',
+    '¿Importe opcional u obligatorio? Concepto máx. 140 caracteres: qué incluir y qué evitar. Mejores prácticas para autónomos y empresas.',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/es/wissen/betrag-und-zweck',
     languages: {

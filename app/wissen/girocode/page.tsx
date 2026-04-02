@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { KnowledgeLayout } from '../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: 'Was ist ein GiroCode? – Alles was du wissen musst',
+  title: 'Was ist ein GiroCode? – Einfach erklärt + kostenlos erstellen',
   description:
-    'GiroCode vollständig erklärt: Definition, Funktionsweise, Vorteile, Vergleich mit PayPal & Co., FAQ und Empfehlungen für Selbstständige und Unternehmen.',
+    'GiroCode = SEPA-QR-Code für Überweisungen. Was er ist, wie er funktioniert und wie du ihn kostenlos in Sekunden erstellst. Mit Rechnungs-PDF. Kein Account nötig.',
   keywords: 'GiroCode, SEPA QR Code, EPC QR Code, Bezahlcode, GiroCode erstellen, GiroCode Rechnung',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/wissen/girocode',

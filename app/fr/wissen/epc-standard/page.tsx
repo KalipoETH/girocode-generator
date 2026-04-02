@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: 'Norme EPC & SEPA-QR – Structure technique expliquée',
+  title: 'Norme EPC expliquée – Structure du code QR SEPA 2026',
   description:
-    'La norme EPC pour les GiroCodes expliquée : structure, champs, versions et règles du code QR SEPA en termes simples.',
+    'La norme EPC pour GiroCodes: structure du payload ligne par ligne, versions 001/002, correction d\'erreurs et exemple JavaScript.',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/fr/wissen/epc-standard',
     languages: {

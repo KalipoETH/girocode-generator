@@ -8,11 +8,11 @@ import { FloatingDots } from '../components/FloatingDots';
 export const metadata: Metadata = {
   title: {
     default:
-      'GiroCode Generator – SEPA-QR kostenlos erstellen | girocodegenerator.com',
+      'GiroCode Generator – Kostenlos & Sofort | girocodegenerator.com',
     template: '%s | GiroCode Generator',
   },
   description:
-    'GiroCode (SEPA-QR / EPC) kostenlos online erstellen – 100% lokal im Browser, keine Datenweitergabe. Inkl. Rechnungs-PDF mit eingebettetem QR-Code.',
+    '✅ GiroCode (SEPA-QR) in 10 Sekunden erstellen – 100% kostenlos, ohne Registrierung, direkt im Browser. IBAN eingeben → QR-Code generieren → fertig. Inkl. Rechnungs-PDF.',
   keywords: [
     'GiroCode Generator',
     'GiroCode erstellen',

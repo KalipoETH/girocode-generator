@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { KnowledgeLayout } from '../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: 'Banking-Apps mit GiroCode-Support – Vollständige Übersicht 2025',
+  title: 'Banking-Apps mit GiroCode-Support 2026 – Vollständige Liste',
   description:
-    'Alle deutschen Banking-Apps mit GiroCode-Support im Vergleich: Sparkasse, ING, DKB, Volksbank, N26 und mehr – plus Anleitungen und Sicherheitstipps.',
+    'Welche Banking-Apps können GiroCodes scannen? Sparkasse ✅ ING ✅ DKB ✅ Volksbank ✅ N26 ✅ und 8 weitere. Schritt-für-Schritt Anleitung für jede App.',
   keywords: 'GiroCode Banking App, Sparkasse GiroCode scannen, ING GiroCode, DKB QR Code, SEPA QR App',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/wissen/banking-apps',

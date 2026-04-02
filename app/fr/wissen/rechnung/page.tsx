@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: 'GiroCode sur les factures – Le guide complet',
+  title: 'GiroCode sur factures – Guide complet & générateur PDF',
   description:
-    'Comment ajouter un GiroCode à vos factures : placement, mentions légales et création de PDF avec QR code intégré.',
+    'Intégrez un GiroCode sur vos factures: mentions légales, placement optimal et générateur PDF gratuit. ✅ Factures professionnelles en 2 minutes.',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/fr/wissen/rechnung',
     languages: {

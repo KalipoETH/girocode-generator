@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { KnowledgeLayout } from '../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: 'GiroCode auf Rechnungen – Der komplette Leitfaden',
+  title: 'GiroCode auf Rechnungen – Leitfaden & PDF-Generator',
   description:
-    'GiroCode auf Rechnungen: Pflichtangaben nach §14 UStG, Kleinunternehmer, Platzierung, Software-Vergleich und Schritt-für-Schritt Anleitung.',
+    'GiroCode auf Rechnungen einbinden: Pflichtangaben nach §14 UStG, optimale Platzierung und kostenloser PDF-Generator. ✅ Professionelle Rechnungen in 2 Minuten.',
   keywords: 'GiroCode Rechnung, §14 UStG Pflichtangaben, Kleinunternehmerregelung, QR Code Rechnung, GiroCode PDF Rechnung',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/wissen/rechnung',

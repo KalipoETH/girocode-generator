@@ -3,11 +3,11 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: {
     default:
-      'GiroCode Generator – Free SEPA-QR Creator | girocodegenerator.com',
+      'GiroCode Generator – Free SEPA-QR Creator | Instant & Local',
     template: '%s | GiroCode Generator',
   },
   description:
-    'Free GiroCode (SEPA-QR / EPC) generator – 100% local in your browser, no data transmission. Includes invoice PDF with embedded QR code.',
+    '✅ Create GiroCodes (SEPA-QR / EPC) in 10 seconds – 100% free, no registration, runs in your browser. Enter IBAN → Generate QR → Done. Includes invoice PDF.',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/en',
     languages: {
