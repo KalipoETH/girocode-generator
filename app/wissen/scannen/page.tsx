@@ -36,6 +36,23 @@ export default function WissenScannenPage() {
       ]}
       locale="de"
     >
+      {/* ─── CTA: Scanner-Tool ─── */}
+      <section className="not-prose mb-8">
+        <Link
+          href="/scanner"
+          className="flex items-center justify-between gap-4 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-5 py-4 text-emerald-300 transition hover:bg-emerald-500/15 hover:border-emerald-500/50"
+        >
+          <div className="flex items-center gap-3">
+            <span className="text-2xl" aria-hidden>📷</span>
+            <div>
+              <p className="font-semibold text-emerald-300">GiroCode jetzt direkt im Browser scannen</p>
+              <p className="text-sm text-emerald-400/80">IBAN, Betrag & Verwendungszweck sofort auslesen – 100% lokal</p>
+            </div>
+          </div>
+          <span className="flex-shrink-0 text-emerald-400">→</span>
+        </Link>
+      </section>
+
       {/* ─── SECTION 1: Übersicht ─── */}
       <section aria-labelledby="ueberblick">
         <h2 id="ueberblick">GiroCode scannen – So einfach geht's</h2>

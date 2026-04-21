@@ -126,6 +126,27 @@ export const GiroCodeForm: React.FC<GiroCodeFormProps> = ({
     purpose: '',
   });
 
+  // URL-Parameter automatisch einlesen (vom Scanner)
+  React.useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name');
+    const iban = params.get('iban');
+    const bic = params.get('bic');
+    const betrag = params.get('betrag');
+    const zweck = params.get('zweck');
+    if (name || iban || bic || betrag || zweck) {
+      setForm((prev) => ({
+        ...prev,
+        ...(name ? { name } : {}),
+        ...(iban ? { iban } : {}),
+        ...(bic ? { bic } : {}),
+        ...(betrag ? { amount: betrag } : {}),
+        ...(zweck ? { purpose: zweck.slice(0, 140) } : {}),
+      }));
+    }
+  }, []);
+
   const [epcPayload, setEpcPayload] = useState<string | null>(null);
   const [statusType, setStatusType] = useState<QRStatusType>(null);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);

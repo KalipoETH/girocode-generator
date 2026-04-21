@@ -27,6 +27,9 @@ export function Footer() {
             © 2025 GiroCode Generator · lokal · keine Gewähr
           </p>
           <div className="flex flex-wrap gap-3">
+            <Link href={`${prefix}/scanner`} className="hover:text-slate-200 hover:underline">
+              GiroCode Scanner
+            </Link>
             <Link href={`${prefix}/impressum`} className="hover:text-slate-200 hover:underline">
               Impressum
             </Link>
