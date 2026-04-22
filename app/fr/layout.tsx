@@ -2,12 +2,11 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    default:
-      'Générateur GiroCode – Gratuit & Instantané | SEPA-QR',
+    default: 'Générateur GiroCode 2026 – Gratuit & Sans Inscription',
     template: '%s | GiroCode Generator',
   },
   description:
-    '✅ Créez un GiroCode (SEPA-QR) en 10 secondes – 100% gratuit, sans inscription, directement dans le navigateur. IBAN → QR → Facture PDF. Aucune donnée transmise.',
+    '✅ GiroCode en 10 secondes – gratuit, sans inscription, 100% confidentialité. Vos données bancaires ne quittent jamais votre navigateur →',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/fr',
     languages: {

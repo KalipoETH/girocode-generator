@@ -45,7 +45,7 @@ export default function HomePageEn() {
       />
       {/* Hero */}
       <header
-        className="animate-card-in relative overflow-hidden px-4 pb-20 pt-20 text-center"
+        className="animate-card-in relative overflow-hidden px-4 pb-20 pt-10 text-center sm:pt-20"
         style={{ animationDelay: '0s' }}
       >
         <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -64,7 +64,7 @@ export default function HomePageEn() {
           <div className="space-y-2">
             <h1
               className="font-bold tracking-tight text-slate-50"
-              style={{ fontSize: 'clamp(36px, 5vw, 56px)', lineHeight: 1.1 }}
+              style={{ fontSize: 'clamp(32px, 5vw, 56px)', lineHeight: 1.1 }}
             >
               GiroCode Generator
             </h1>
@@ -73,11 +73,13 @@ export default function HomePageEn() {
             </p>
           </div>
 
-          <p className="max-w-xl text-base leading-relaxed text-slate-400 md:text-lg">
+          {/* Description – hidden on mobile */}
+          <p className="hidden max-w-xl text-base leading-relaxed text-slate-400 sm:block md:text-lg">
             {en.hero.subtitle}
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          {/* Trust badges – hidden on mobile */}
+          <div className="hidden flex-wrap items-center justify-center gap-3 sm:flex">
             {[
               { icon: '✅', label: 'EPC-compliant' },
               { icon: '🔒', label: 'GDPR-friendly' },
@@ -93,9 +95,10 @@ export default function HomePageEn() {
             ))}
           </div>
 
+          {/* CTA – hidden on mobile */}
           <a
             href="#generator"
-            className="mt-2 inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-bold text-slate-950 shadow-lg transition duration-200 hover:-translate-y-0.5 hover:shadow-xl motion-reduce:hover:translate-y-0"
+            className="mt-2 hidden items-center gap-2 rounded-full px-8 py-3.5 text-sm font-bold text-slate-950 shadow-lg transition duration-200 hover:-translate-y-0.5 hover:shadow-xl motion-reduce:hover:translate-y-0 sm:inline-flex"
             style={{
               background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
               boxShadow: '0 0 24px rgba(34,197,94,0.35)',
@@ -105,6 +108,29 @@ export default function HomePageEn() {
           </a>
         </div>
       </header>
+
+      {/* Trust-Bar */}
+      <div className="border-b border-t border-[#1f2431] bg-[#0f1117] py-4">
+        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-x-4 gap-y-3 px-4 sm:grid-cols-4">
+          {[
+            { icon: '🔒', title: '100% Privacy', sub: 'No banking data stored' },
+            { icon: '✅', title: 'EPC-compliant', sub: 'Compatible with all banking apps' },
+            { icon: '⚡', title: 'Free', sub: 'No registration required' },
+            { icon: '🏦', title: 'SEPA Standard', sub: 'Recognized by all European banks' },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="flex items-center gap-3 rounded-lg px-2 py-1 transition-colors hover:bg-[#141820]"
+            >
+              <span className="text-2xl">{item.icon}</span>
+              <div>
+                <p className="text-[14px] font-bold text-[#e8eaf0]">{item.title}</p>
+                <p className="text-[12px] text-[#8b90a0]">{item.sub}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       <div className="mx-auto flex max-w-5xl flex-col gap-10 px-4 pb-12">
 

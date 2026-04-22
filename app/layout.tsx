@@ -7,12 +7,11 @@ import { FloatingDots } from '../components/FloatingDots';
 
 export const metadata: Metadata = {
   title: {
-    default:
-      'GiroCode Generator – Kostenlos & Sofort | girocodegenerator.com',
+    default: 'GiroCode Generator 2026 – Kostenlos & Ohne Anmeldung',
     template: '%s | GiroCode Generator',
   },
   description:
-    '✅ GiroCode (SEPA-QR) in 10 Sekunden erstellen – 100% kostenlos, ohne Registrierung, direkt im Browser. IBAN eingeben → QR-Code generieren → fertig. Inkl. Rechnungs-PDF.',
+    '✅ GiroCode in 10 Sekunden erstellen – kostenlos, ohne Anmeldung, 100% Datenschutz. Deine Bankdaten verlassen nie deinen Browser. Jetzt SEPA-QR erstellen →',
   keywords: [
     'GiroCode Generator',
     'GiroCode erstellen',
