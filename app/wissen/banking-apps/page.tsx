@@ -358,6 +358,39 @@ export default function WissenBankingAppsPage() {
         </p>
       </section>
 
+      {/* ─── SECTION 8b: Detaillierte Anleitungen ─── */}
+      <section aria-labelledby="anleitungen" className="mt-8">
+        <h2 id="anleitungen">Detaillierte Anleitungen – nach Banking-App</h2>
+        <p>
+          Du möchtest die genauen Schritte für deine Banking-App nachlesen? Wir haben für alle
+          großen deutschen Banken eine eigene Schritt-für-Schritt-Anleitung erstellt:
+        </p>
+
+        <div className="not-prose my-6 grid gap-3 sm:grid-cols-2">
+          {[
+            { href: '/sparkasse', label: 'GiroCode mit Sparkasse scannen', app: 'Sparkassen-App / S-pushTAN' },
+            { href: '/volksbank', label: 'GiroCode mit Volksbank scannen', app: 'VR-Banking App' },
+            { href: '/deutsche-bank', label: 'GiroCode mit Deutsche Bank scannen', app: 'Deutsche Bank Mobile' },
+            { href: '/commerzbank', label: 'GiroCode mit Commerzbank scannen', app: 'Commerzbank App' },
+            { href: '/ing', label: 'GiroCode mit ING scannen', app: 'ING Banking to go' },
+            { href: '/dkb', label: 'GiroCode mit DKB scannen', app: 'DKB Banking App' },
+            { href: '/postbank', label: 'GiroCode mit Postbank scannen', app: 'Postbank Finanzassistent' },
+            { href: '/targobank', label: 'GiroCode mit Targobank scannen', app: 'TARGOBANK Mobile Banking' },
+            { href: '/n26', label: 'GiroCode mit N26 scannen', app: 'N26 App' },
+            { href: '/comdirect', label: 'GiroCode mit Comdirect scannen', app: 'comdirect App' },
+          ].map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="group flex flex-col rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-3 text-sm transition-all duration-200 hover:bg-[#1a1d25] hover:border-emerald-500/25 hover:-translate-y-0.5"
+            >
+              <span className="font-medium text-[#e8eaf0] group-hover:text-white">{item.label}</span>
+              <span className="mt-0.5 text-xs text-slate-500">{item.app}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
       {/* ─── SECTION 9: Sicherheit ─── */}
       <section aria-labelledby="sicherheit" className="mt-8">
         <h2 id="sicherheit">Sicherheit beim GiroCode-Scannen</h2>

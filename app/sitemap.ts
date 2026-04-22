@@ -322,6 +322,67 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    // Bank-spezifische Landingpages
+    {
+      url: 'https://www.girocodegenerator.com/sparkasse',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.girocodegenerator.com/volksbank',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.girocodegenerator.com/deutsche-bank',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.girocodegenerator.com/commerzbank',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.girocodegenerator.com/ing',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.girocodegenerator.com/dkb',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.girocodegenerator.com/postbank',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.girocodegenerator.com/targobank',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.girocodegenerator.com/n26',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.girocodegenerator.com/comdirect',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
   ];
 }
 
