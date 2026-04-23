@@ -87,6 +87,14 @@ QRCode.toCanvas(canvas, payload, {
               Der gesamte Quellcode ist öffentlich auf GitHub einsehbar.
             </p>
             <p className="mt-3">
+              Du möchtest den Generator per URL-Parameter in deine eigene App oder Website integrieren?
+              Schau dir unsere{' '}
+              <Link href="/api-docs" className="text-sky-400 underline decoration-sky-500/70 underline-offset-2 hover:text-sky-300">
+                URL-Parameter API-Dokumentation
+              </Link>{' '}
+              an – kein API-Key, keine Registrierung.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
               <Link
                 href="/"
                 className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-emerald-500"
@@ -94,7 +102,14 @@ QRCode.toCanvas(canvas, payload, {
                 Zum GiroCode Generator
                 <span aria-hidden>→</span>
               </Link>
-            </p>
+              <Link
+                href="/api-docs"
+                className="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800 px-4 py-2.5 text-sm font-medium text-slate-200 transition hover:bg-slate-700"
+              >
+                API-Dokumentation
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
           </section>
 
           <section>

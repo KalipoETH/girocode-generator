@@ -91,6 +91,30 @@ export const en = {
         q: 'Can I embed the GiroCode in an invoice?',
         a: 'Yes! Use our invoice PDF feature to create a professional invoice with embedded GiroCode.',
       },
+      {
+        q: 'Is creating a GiroCode secure?',
+        a: 'Yes. All data is processed exclusively locally in your browser. Your IBAN, the amount and the payment reference never leave your computer. No data is transmitted to our servers.',
+      },
+      {
+        q: 'What data is stored in a GiroCode?',
+        a: "A GiroCode contains: recipient's name, IBAN, optional BIC, optional amount (e.g. EUR49.90) and an optional payment reference (max. 140 characters). No personal data of the payer is stored.",
+      },
+      {
+        q: "Why doesn't my banking app recognise the GiroCode?",
+        a: 'Common causes: the code is printed too small (minimum size 2x2 cm), poor lighting, reflections on the screen, or the banking app does not support the EPC standard. Tip: increase brightness and maintain a distance of 15–30 cm.',
+      },
+      {
+        q: 'Is a GiroCode the same as an EPC QR code?',
+        a: 'Yes. GiroCode is the German brand name for the EPC QR code (European Payments Council). In Austria it is called Stuzza-QR, in Switzerland QR-Bill. All are based on the same standard.',
+      },
+      {
+        q: 'How long is a GiroCode valid?',
+        a: 'A GiroCode has no expiry date. It remains valid as long as the account details it contains (IBAN, recipient name) are still current.',
+      },
+      {
+        q: 'Can someone use my GiroCode to debit money from my account?',
+        a: 'No. A GiroCode is a payment request, not a direct debit mandate. Only the payer can actively initiate a transfer and must confirm it with a TAN or biometrics. Knowing your IBAN does not allow anyone to debit money.',
+      },
     ],
   },
   // Footer

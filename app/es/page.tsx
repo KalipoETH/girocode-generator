@@ -16,6 +16,20 @@ export default function HomePageEs() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: es.seo.faq.map((item) => ({
+              '@type': 'Question',
+              name: item.q,
+              acceptedAnswer: { '@type': 'Answer', text: item.a },
+            })),
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'GiroCode Generator',
             url: 'https://www.girocodegenerator.com/es',

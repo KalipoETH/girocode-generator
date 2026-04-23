@@ -42,6 +42,113 @@ export default function HomePage() {
           }),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Ist der GiroCode Generator wirklich kostenlos?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Ja. Du kannst den Generator dauerhaft kostenlos nutzen – es fallen nur die üblichen Gebühren deiner Bank für SEPA-Überweisungen an, sofern diese nicht ohnehin kostenfrei sind.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Werden meine Daten gespeichert?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Nein. Alle Eingaben werden ausschließlich in deinem Browser verarbeitet. Es findet keine serverseitige Speicherung oder Auswertung statt.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Welche Banking-Apps können den GiroCode scannen?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Viele Apps im deutschsprachigen Raum unterstützen SEPA-QR / GiroCode, darunter Sparkasse, Volks- und Raiffeisenbanken, ING, DKB, Comdirect, Deutsche Bank, N26 und weitere.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Muss ich einen Betrag angeben?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Nein. Du kannst den Betrag frei lassen – dann trägt der Zahler den gewünschten Betrag selbst ein. Für klassische Rechnungen empfiehlt sich jedoch ein fest hinterlegter Betrag.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Kann ich den GiroCode direkt in eine Rechnung einbinden?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Ja. Mit der integrierten Rechnungsfunktion erzeugst du eine PDF-Rechnung mit eingebettetem GiroCode, die sich ideal für den Versand per E-Mail oder zum Ausdrucken eignet.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Ist das Erstellen eines GiroCodes sicher?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Ja. Alle Daten werden ausschließlich lokal in deinem Browser verarbeitet. Deine IBAN, der Betrag und der Verwendungszweck verlassen nie deinen Computer. Es findet keine Übertragung an unsere Server statt.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Welche Daten sind in einem GiroCode gespeichert?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Ein GiroCode enthält: Name des Empfängers, IBAN, optional BIC, optional Betrag (z.B. EUR49.90) und optional einen Verwendungszweck (max. 140 Zeichen). Keine persönlichen Daten des Zahlers werden gespeichert.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Warum erkennt meine Banking-App den GiroCode nicht?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Häufige Ursachen: Der Code ist zu klein gedruckt (Mindestgröße 2x2 cm), schlechte Beleuchtung, Reflexionen auf dem Bildschirm oder die Banking-App unterstützt den EPC-Standard nicht. Tipp: Helligkeit erhöhen und Abstand von 15-30 cm einhalten.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Kann ich einen GiroCode ohne Betrag erstellen?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Ja, der Betrag ist optional. Lässt du ihn weg, kann der Zahler selbst einen Betrag eingeben. Das ist besonders praktisch für Spendenaufrufe oder variable Preise.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Ist ein GiroCode dasselbe wie ein EPC-QR-Code?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Ja. GiroCode ist der deutsche Markenname für den EPC-QR-Code (European Payments Council). In Österreich heißt er Stuzza-QR, in der Schweiz QR-Bill. Alle basieren auf demselben Standard.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Wie lange ist ein GiroCode gültig?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Ein GiroCode hat kein Ablaufdatum. Er ist dauerhaft gültig, solange die enthaltenen Kontodaten (IBAN, Empfängername) noch aktuell sind.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Kann jemand mit meinem GiroCode Geld von mir abbuchen?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Nein. Ein GiroCode ist eine Zahlungsaufforderung, kein Lastschriftmandat. Nur der Zahler kann aktiv eine Überweisung auslösen und muss diese mit TAN oder Biometrie bestätigen. Deine IBAN zu kennen ermöglicht es niemandem, Geld abzubuchen.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
       {/* Hero */}
       <header
         className="animate-card-in relative overflow-hidden px-4 pb-20 pt-10 text-center sm:pt-20"
@@ -275,6 +382,54 @@ export default function HomePage() {
                     PDF-Rechnung mit eingebettetem GiroCode
                   </strong>
                   , die sich ideal für den Versand per E-Mail oder zum Ausdrucken eignet.
+                </dd>
+              </div>
+              <div className="rounded-[12px] border-l-[3px] border-l-[#22c55e] bg-[#1a1d25] p-5 transition-colors duration-200 hover:bg-[#1e2130]">
+                <dt className="font-semibold text-slate-100" style={{ fontSize: '15px' }}>
+                  Ist das Erstellen eines GiroCodes sicher?
+                </dt>
+                <dd className="mt-1 text-xs leading-[1.7] text-[#9aa1b6]">
+                  Ja. Alle Daten werden ausschließlich lokal in deinem Browser verarbeitet. Deine IBAN, der Betrag und der Verwendungszweck verlassen nie deinen Computer. Es findet keine Übertragung an unsere Server statt.
+                </dd>
+              </div>
+              <div className="rounded-[12px] border-l-[3px] border-l-[#22c55e] bg-[#1a1d25] p-5 transition-colors duration-200 hover:bg-[#1e2130]">
+                <dt className="font-semibold text-slate-100" style={{ fontSize: '15px' }}>
+                  Welche Daten sind in einem GiroCode gespeichert?
+                </dt>
+                <dd className="mt-1 text-xs leading-[1.7] text-[#9aa1b6]">
+                  Ein GiroCode enthält: Name des Empfängers, IBAN, optional BIC, optional Betrag (z.B. EUR49.90) und optional einen Verwendungszweck (max. 140 Zeichen). Keine persönlichen Daten des Zahlers werden gespeichert.
+                </dd>
+              </div>
+              <div className="rounded-[12px] border-l-[3px] border-l-[#22c55e] bg-[#1a1d25] p-5 transition-colors duration-200 hover:bg-[#1e2130]">
+                <dt className="font-semibold text-slate-100" style={{ fontSize: '15px' }}>
+                  Warum erkennt meine Banking-App den GiroCode nicht?
+                </dt>
+                <dd className="mt-1 text-xs leading-[1.7] text-[#9aa1b6]">
+                  Häufige Ursachen: Der Code ist zu klein gedruckt (Mindestgröße 2x2 cm), schlechte Beleuchtung, Reflexionen auf dem Bildschirm oder die Banking-App unterstützt den EPC-Standard nicht. Tipp: Helligkeit erhöhen und Abstand von 15–30 cm einhalten.
+                </dd>
+              </div>
+              <div className="rounded-[12px] border-l-[3px] border-l-[#22c55e] bg-[#1a1d25] p-5 transition-colors duration-200 hover:bg-[#1e2130]">
+                <dt className="font-semibold text-slate-100" style={{ fontSize: '15px' }}>
+                  Ist ein GiroCode dasselbe wie ein EPC-QR-Code?
+                </dt>
+                <dd className="mt-1 text-xs leading-[1.7] text-[#9aa1b6]">
+                  Ja. GiroCode ist der deutsche Markenname für den EPC-QR-Code (European Payments Council). In Österreich heißt er Stuzza-QR, in der Schweiz QR-Bill. Alle basieren auf demselben Standard.
+                </dd>
+              </div>
+              <div className="rounded-[12px] border-l-[3px] border-l-[#22c55e] bg-[#1a1d25] p-5 transition-colors duration-200 hover:bg-[#1e2130]">
+                <dt className="font-semibold text-slate-100" style={{ fontSize: '15px' }}>
+                  Wie lange ist ein GiroCode gültig?
+                </dt>
+                <dd className="mt-1 text-xs leading-[1.7] text-[#9aa1b6]">
+                  Ein GiroCode hat kein Ablaufdatum. Er ist dauerhaft gültig, solange die enthaltenen Kontodaten (IBAN, Empfängername) noch aktuell sind.
+                </dd>
+              </div>
+              <div className="rounded-[12px] border-l-[3px] border-l-[#22c55e] bg-[#1a1d25] p-5 transition-colors duration-200 hover:bg-[#1e2130]">
+                <dt className="font-semibold text-slate-100" style={{ fontSize: '15px' }}>
+                  Kann jemand mit meinem GiroCode Geld von mir abbuchen?
+                </dt>
+                <dd className="mt-1 text-xs leading-[1.7] text-[#9aa1b6]">
+                  Nein. Ein GiroCode ist eine Zahlungsaufforderung, kein Lastschriftmandat. Nur der Zahler kann aktiv eine Überweisung auslösen und muss diese mit TAN oder Biometrie bestätigen. Deine IBAN zu kennen ermöglicht es niemandem, Geld abzubuchen.
                 </dd>
               </div>
             </dl>

@@ -85,6 +85,30 @@ export const es = {
         q: '¿Puedo incluir el GiroCode en una factura?',
         a: 'Sí. Usa nuestra función de factura PDF para crear una factura profesional con GiroCode integrado.',
       },
+      {
+        q: '¿Es seguro crear un GiroCode?',
+        a: 'Sí. Todos los datos se procesan exclusivamente de forma local en tu navegador. Tu IBAN, el importe y el concepto nunca abandonan tu ordenador. No se realiza ninguna transmisión a nuestros servidores.',
+      },
+      {
+        q: '¿Qué datos se almacenan en un GiroCode?',
+        a: 'Un GiroCode contiene: nombre del beneficiario, IBAN, BIC (opcional), importe (opcional, p. ej. EUR49.90) y un concepto de pago (opcional, máx. 140 caracteres). No se almacenan datos personales del pagador.',
+      },
+      {
+        q: '¿Por qué mi aplicación bancaria no reconoce el GiroCode?',
+        a: 'Causas habituales: el código está impreso demasiado pequeño (tamaño mínimo 2x2 cm), mala iluminación, reflejos en la pantalla o la aplicación no admite la norma EPC. Consejo: aumenta el brillo y mantén una distancia de 15 a 30 cm.',
+      },
+      {
+        q: '¿Un GiroCode es lo mismo que un código QR EPC?',
+        a: 'Sí. GiroCode es el nombre comercial alemán del código QR EPC (European Payments Council). En Austria se llama Stuzza-QR, en Suiza QR-Bill. Todos se basan en el mismo estándar.',
+      },
+      {
+        q: '¿Cuánto tiempo es válido un GiroCode?',
+        a: 'Un GiroCode no tiene fecha de caducidad. Es válido de forma permanente mientras los datos de la cuenta que contiene (IBAN, nombre del beneficiario) sigan siendo actuales.',
+      },
+      {
+        q: '¿Puede alguien domiciliar cargos en mi cuenta con mi GiroCode?',
+        a: 'No. Un GiroCode es una solicitud de pago, no un mandato de domiciliación. Solo el pagador puede iniciar activamente una transferencia y debe confirmarla con TAN o biometría. Conocer tu IBAN no permite a nadie cargar dinero en tu cuenta.',
+      },
     ],
   },
   footer: {

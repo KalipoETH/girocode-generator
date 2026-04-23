@@ -30,6 +30,9 @@ export function Footer() {
             <Link href={`${prefix}/scanner`} className="hover:text-slate-200 hover:underline">
               GiroCode Scanner
             </Link>
+            <Link href={`${prefix}/blog`} className="hover:text-slate-200 hover:underline">
+              Blog
+            </Link>
             <Link href={`${prefix}/impressum`} className="hover:text-slate-200 hover:underline">
               Impressum
             </Link>
@@ -44,6 +47,9 @@ export function Footer() {
             </Link>
             <Link href={`${prefix}/fuer-entwickler`} className="hover:text-slate-200 hover:underline">
               Für Entwickler
+            </Link>
+            <Link href="/api-docs" className="hover:text-slate-200 hover:underline">
+              API-Docs
             </Link>
           </div>
         </div>

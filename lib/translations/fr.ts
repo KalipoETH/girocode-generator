@@ -85,6 +85,30 @@ export const fr = {
         q: 'Puis-je intégrer le GiroCode dans une facture ?',
         a: 'Oui ! Utilisez notre fonction de facture PDF pour créer une facture professionnelle avec GiroCode intégré.',
       },
+      {
+        q: 'La création d\'un GiroCode est-elle sécurisée ?',
+        a: 'Oui. Toutes les données sont traitées exclusivement en local dans votre navigateur. Votre IBAN, le montant et la référence de paiement ne quittent jamais votre ordinateur. Aucune transmission à nos serveurs n\'a lieu.',
+      },
+      {
+        q: 'Quelles données sont stockées dans un GiroCode ?',
+        a: 'Un GiroCode contient : le nom du bénéficiaire, l\'IBAN, le BIC (optionnel), le montant (optionnel, ex. EUR49.90) et une référence de paiement (optionnelle, max. 140 caractères). Aucune donnée personnelle du payeur n\'est stockée.',
+      },
+      {
+        q: 'Pourquoi mon application bancaire ne reconnaît-elle pas le GiroCode ?',
+        a: 'Causes fréquentes : le code est imprimé trop petit (taille minimale 2x2 cm), mauvais éclairage, reflets sur l\'écran ou l\'application ne supporte pas la norme EPC. Conseil : augmentez la luminosité et maintenez une distance de 15 à 30 cm.',
+      },
+      {
+        q: 'Un GiroCode est-il identique à un code QR EPC ?',
+        a: 'Oui. GiroCode est le nom de marque allemand du code QR EPC (European Payments Council). En Autriche, il s\'appelle Stuzza-QR, en Suisse QR-Bill. Tous sont basés sur le même standard.',
+      },
+      {
+        q: 'Quelle est la durée de validité d\'un GiroCode ?',
+        a: 'Un GiroCode n\'a pas de date d\'expiration. Il reste valide aussi longtemps que les coordonnées bancaires qu\'il contient (IBAN, nom du bénéficiaire) sont à jour.',
+      },
+      {
+        q: 'Quelqu\'un peut-il prélever de l\'argent sur mon compte grâce à mon GiroCode ?',
+        a: 'Non. Un GiroCode est une demande de paiement, pas un mandat de prélèvement. Seul le payeur peut initier activement un virement et doit le confirmer par TAN ou biométrie. Connaître votre IBAN ne permet à personne de prélever de l\'argent.',
+      },
     ],
   },
   footer: {

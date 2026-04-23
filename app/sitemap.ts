@@ -322,6 +322,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    // API-Docs
+    {
+      url: 'https://www.girocodegenerator.com/api-docs',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    // Blog
+    {
+      url: 'https://www.girocodegenerator.com/blog',
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.girocodegenerator.com/blog/freelancer-rechnungen-qr-code',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.girocodegenerator.com/blog/geschichte-des-girocodes',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.girocodegenerator.com/blog/iban-sicherheit',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
     // Bank-spezifische Landingpages
     {
       url: 'https://www.girocodegenerator.com/sparkasse',
