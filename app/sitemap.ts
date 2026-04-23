@@ -322,6 +322,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    // Bulk Generator
+    {
+      url: 'https://www.girocodegenerator.com/bulk',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.girocodegenerator.com/en/bulk',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.girocodegenerator.com/fr/bulk',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.girocodegenerator.com/es/bulk',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
     // API-Docs
     {
       url: 'https://www.girocodegenerator.com/api-docs',

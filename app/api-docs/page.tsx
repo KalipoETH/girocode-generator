@@ -197,6 +197,121 @@ echo '<a href="' . htmlspecialchars($url) . '">GiroCode erstellen</a>';
             </ul>
           </section>
 
+          {/* REST API Endpunkt */}
+          <section>
+            <div className="mb-4 flex items-center gap-3">
+              <h2 className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+                REST API Endpunkt
+              </h2>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-medium text-emerald-300 ring-1 ring-emerald-500/30">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                Neu
+              </span>
+            </div>
+            <p className="mb-4 text-sm text-slate-400">
+              Generiere GiroCodes als Base64-PNG direkt per HTTP-Request – ideal für serverseitige
+              Integrationen, Automatisierungen und CI/CD-Pipelines.
+            </p>
+
+            {/* Endpoint URL */}
+            <div className="mb-6">
+              <p className="mb-2 text-sm font-medium text-slate-300">Endpoint</p>
+              <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-sm text-emerald-300">
+                <code>GET https://www.girocodegenerator.com/api/generate</code>
+              </pre>
+            </div>
+
+            {/* Parameter-Tabelle */}
+            <div className="mb-6">
+              <p className="mb-2 text-sm font-medium text-slate-300">Parameter</p>
+              <div className="overflow-x-auto rounded-xl border border-slate-800">
+                <table className="w-full text-sm text-slate-300">
+                  <thead>
+                    <tr className="border-b border-slate-800 bg-slate-900/80">
+                      <th className="px-4 py-3 text-left font-semibold text-slate-100">Parameter</th>
+                      <th className="px-4 py-3 text-left font-semibold text-slate-100">Beschreibung</th>
+                      <th className="px-4 py-3 text-left font-semibold text-slate-100">Pflicht</th>
+                      <th className="px-4 py-3 text-left font-semibold text-slate-100">Beispiel</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-800">
+                    {[
+                      { param: 'name', desc: 'Empfängername (max. 70 Zeichen)', required: 'Ja', example: 'Max+Mustermann' },
+                      { param: 'iban', desc: 'IBAN (Mod-97 validiert)', required: 'Ja', example: 'DE89370400440532013000' },
+                      { param: 'bic', desc: 'BIC des Empfängers', required: 'Nein', example: 'COBADEFFXXX' },
+                      { param: 'betrag', desc: 'Betrag in EUR (Dezimal)', required: 'Nein', example: '49.90' },
+                      { param: 'zweck', desc: 'Verwendungszweck (max. 140 Zeichen)', required: 'Nein', example: 'Rechnung+001' },
+                    ].map((row) => (
+                      <tr key={row.param} className="hover:bg-slate-900/40">
+                        <td className="px-4 py-3">
+                          <code className="rounded bg-slate-800 px-1.5 py-0.5 text-sky-300">{row.param}</code>
+                        </td>
+                        <td className="px-4 py-3">{row.desc}</td>
+                        <td className="px-4 py-3">
+                          <span className={row.required === 'Ja'
+                            ? 'rounded-full bg-emerald-500/15 px-2 py-0.5 text-xs font-medium text-emerald-300'
+                            : 'rounded-full bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-400'
+                          }>
+                            {row.required}
+                          </span>
+                        </td>
+                        <td className="px-4 py-3">
+                          <code className="text-xs text-slate-400">{row.example}</code>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Beispiel-Request – curl */}
+            <div className="mb-4">
+              <p className="mb-2 text-sm font-medium text-slate-300">Beispiel-Request – curl</p>
+              <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
+                <code>{`curl "https://www.girocodegenerator.com/api/generate?name=Max+Mustermann&iban=DE89370400440532013000&betrag=49.90&zweck=Rechnung+001"`}</code>
+              </pre>
+            </div>
+
+            {/* Beispiel-Request – JS fetch */}
+            <div className="mb-4">
+              <p className="mb-2 text-sm font-medium text-slate-300">Beispiel-Request – JavaScript fetch</p>
+              <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
+                <code>{`const params = new URLSearchParams({
+  name: 'Max Mustermann',
+  iban: 'DE89370400440532013000',
+  betrag: '49.90',
+  zweck: 'Rechnung 001',
+});
+
+const res = await fetch(\`https://www.girocodegenerator.com/api/generate?\${params}\`);
+const data = await res.json();
+
+// Base64 QR-Code als <img> anzeigen
+document.getElementById('qr').src = data.qr_base64;`}</code>
+              </pre>
+            </div>
+
+            {/* Beispiel-Response */}
+            <div>
+              <p className="mb-2 text-sm font-medium text-slate-300">Beispiel-Response</p>
+              <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
+                <code>{`{
+  "success": true,
+  "qr_base64": "data:image/png;base64,iVBORw0KGgo...",
+  "epc_payload": "BCD\\n001\\n1\\nSCT\\n\\nMax Mustermann\\nDE89370400440532013000\\nEUR49.90\\n\\n\\nRechnung 001",
+  "data": {
+    "name": "Max Mustermann",
+    "iban": "DE89370400440532013000",
+    "bic": null,
+    "betrag": "49.90",
+    "zweck": "Rechnung 001"
+  }
+}`}</code>
+              </pre>
+            </div>
+          </section>
+
           {/* CTA */}
           <section className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
             <h2 className="mb-2 text-base font-semibold text-slate-50">

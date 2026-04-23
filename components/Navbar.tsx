@@ -19,6 +19,7 @@ const localeMeta: Record<
 const navConfig = [
   { key: 'home', path: '' },
   { key: 'scanner', path: '/scanner' },
+  { key: 'bulk', path: '/bulk' },
   { key: 'knowledge', path: '/wissen' },
   { key: 'blog', path: '/blog' },
   { key: 'about', path: '/ueber-uns' },
@@ -30,6 +31,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
   de: {
     home: 'Generator',
     scanner: '🔍 Scanner',
+    bulk: 'Bulk',
     knowledge: 'Wissen',
     blog: 'Blog',
     about: 'Über uns',
@@ -39,6 +41,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
   en: {
     home: 'Generator',
     scanner: '🔍 Scanner',
+    bulk: 'Bulk',
     knowledge: 'Knowledge',
     blog: 'Blog',
     about: 'About us',
@@ -48,6 +51,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
   fr: {
     home: 'Générateur',
     scanner: '🔍 Scanner',
+    bulk: 'Lot',
     knowledge: 'Informations',
     blog: 'Blog',
     about: 'À propos',
@@ -57,6 +61,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
   es: {
     home: 'Generador',
     scanner: '🔍 Escáner',
+    bulk: 'Masivo',
     knowledge: 'Información',
     blog: 'Blog',
     about: 'Sobre nosotros',

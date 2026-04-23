@@ -19,20 +19,34 @@ export interface QRPreviewProps {
   onQrRendered?: (dataUrl: string | null) => void;
 }
 
-function getTexts(locale: Locale) {
+interface QRTexts {
+  heading: string;
+  helper: string;
+  fallbackLabel: string;
+  fallbackWarning: string;
+  emptyText: string;
+  reset: string;
+  externalAlt: string;
+  download: string;
+  downloadHint: string;
+  sealTitle: string;
+  sealSubtitle: string;
+}
+
+function getTexts(locale: Locale): QRTexts {
   if (locale === 'en') {
     return {
       heading: en.qr.title,
       helper: en.qr.tip,
       fallbackLabel: en.qr.fallback,
-      fallbackWarning:
-        'Warning: payment data is transmitted to the external service.',
-      emptyText:
-        'No GiroCode generated yet. Please fill in the payment data and click “Generate GiroCode”.',
+      fallbackWarning: 'Warning: payment data is transmitted to the external service.',
+      emptyText: 'No GiroCode generated yet. Please fill in the payment data and click "Generate GiroCode".',
       reset: 'Reset',
       externalAlt: 'GiroCode via external QR service',
-      download: 'Download QR Code ↓',
-      downloadHint: 'PNG format · optimized for print & digital',
+      download: 'Download QR Code \u2193',
+      downloadHint: 'PNG format \u00b7 optimized for print & digital',
+      sealTitle: 'Safe-Pay verified',
+      sealSubtitle: 'IBAN checked \u00b7 EPC-compliant \u00b7 Locally generated',
     };
   }
 
@@ -41,14 +55,14 @@ function getTexts(locale: Locale) {
       heading: fr.qr.title,
       helper: fr.qr.tip,
       fallbackLabel: fr.qr.fallback,
-      fallbackWarning:
-        'Attention : les données de paiement sont transmises au service externe.',
-      emptyText:
-        'Aucun GiroCode généré pour le moment. Veuillez saisir les données de paiement et cliquer sur « Générer GiroCode ».',
-      reset: 'Réinitialiser',
+      fallbackWarning: 'Attention\u00a0: les donn\u00e9es de paiement sont transmises au service externe.',
+      emptyText: 'Aucun GiroCode g\u00e9n\u00e9r\u00e9 pour le moment. Veuillez saisir les donn\u00e9es de paiement et cliquer sur \u00ab\u00a0G\u00e9n\u00e9rer GiroCode\u00a0\u00bb.',
+      reset: 'R\u00e9initialiser',
       externalAlt: 'GiroCode via service QR externe',
-      download: 'Télécharger le QR Code ↓',
-      downloadHint: 'Format PNG · optimisé pour impression & numérique',
+      download: 'T\u00e9l\u00e9charger le QR Code \u2193',
+      downloadHint: 'Format PNG \u00b7 optimis\u00e9 pour impression & num\u00e9rique',
+      sealTitle: 'Safe-Pay v\u00e9rifi\u00e9',
+      sealSubtitle: 'IBAN v\u00e9rifi\u00e9 \u00b7 Conforme EPC \u00b7 G\u00e9n\u00e9r\u00e9 localement',
     };
   }
 
@@ -57,30 +71,29 @@ function getTexts(locale: Locale) {
       heading: es.qr.title,
       helper: es.qr.tip,
       fallbackLabel: es.qr.fallback,
-      fallbackWarning:
-        'Atención: los datos de pago se envían al servicio externo.',
-      emptyText:
-        'Todavía no se ha generado ningún GiroCode. Rellena los datos de pago y haz clic en «Generar GiroCode».',
+      fallbackWarning: 'Atenci\u00f3n: los datos de pago se env\u00edan al servicio externo.',
+      emptyText: 'Todav\u00eda no se ha generado ning\u00fan GiroCode. Rellena los datos de pago y haz clic en \u00abGenerar GiroCode\u00bb.',
       reset: 'Restablecer',
       externalAlt: 'GiroCode mediante servicio QR externo',
-      download: 'Descargar QR Code ↓',
-      downloadHint: 'Formato PNG · optimizado para impresión & digital',
+      download: 'Descargar QR Code \u2193',
+      downloadHint: 'Formato PNG \u00b7 optimizado para impresi\u00f3n & digital',
+      sealTitle: 'Safe-Pay verificado',
+      sealSubtitle: 'IBAN verificado \u00b7 Conforme EPC \u00b7 Generado localmente',
     };
   }
 
   return {
     heading: 'GiroCode-Vorschau',
-    helper:
-      'QR wird ausschließlich im Browser erzeugt. Optionaler Fallback sendet Daten an einen externen Dienst.',
-    fallbackLabel:
-      'Externer QR-Fallback (api.qrserver.com) – Achtung: Zahlungsdaten werden an einen externen Dienst übertragen.',
+    helper: 'QR wird ausschlie\u00dflich im Browser erzeugt. Optionaler Fallback sendet Daten an einen externen Dienst.',
+    fallbackLabel: 'Externer QR-Fallback (api.qrserver.com) \u2013 Achtung: Zahlungsdaten werden an einen externen Dienst \u00fcbertragen.',
     fallbackWarning: '',
-    emptyText:
-      'Noch kein GiroCode erzeugt. Bitte Zahlungsdaten ausfüllen und auf „GiroCode generieren“ klicken.',
-    reset: 'Zurücksetzen',
-    externalAlt: 'GiroCode über externen QR-Dienst',
-    download: 'QR-Code herunterladen ↓',
-    downloadHint: 'PNG-Format · optimiert für Druck & Digital',
+    emptyText: 'Noch kein GiroCode erzeugt. Bitte Zahlungsdaten ausf\u00fcllen und auf \u201eGiroCode generieren\u201c klicken.',
+    reset: 'Zur\u00fccksetzen',
+    externalAlt: 'GiroCode \u00fcber externen QR-Dienst',
+    download: 'QR-Code herunterladen \u2193',
+    downloadHint: 'PNG-Format \u00b7 optimiert f\u00fcr Druck & Digital',
+    sealTitle: 'Safe-Pay verifiziert',
+    sealSubtitle: 'IBAN gepr\u00fcft \u00b7 EPC-konform \u00b7 Lokal generiert',
   };
 }
 
@@ -95,6 +108,7 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
   const t = getTexts(locale);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [useExternal, setUseExternal] = useState(false);
+  const [qrRenderedSuccess, setQrRenderedSuccess] = useState(false);
 
   useEffect(() => {
     if (!canvasRef.current) {
@@ -112,6 +126,7 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     if (!epcPayload || useExternal) {
+      setQrRenderedSuccess(false);
       if (onQrRendered) {
         onQrRendered(null);
       }
@@ -127,6 +142,7 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
       },
     })
       .then(() => {
+        setQrRenderedSuccess(true);
         if (onQrRendered && canvasRef.current) {
           try {
             const dataUrl = canvasRef.current.toDataURL('image/png');
@@ -137,7 +153,7 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
         }
       })
       .catch(() => {
-        // Bei Renderfehlern das Canvas einfach leer lassen
+        setQrRenderedSuccess(false);
         if (onQrRendered) {
           onQrRendered(null);
         }
@@ -155,6 +171,7 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
 
   const handleReset = () => {
     setUseExternal(false);
+    setQrRenderedSuccess(false);
     onReset();
     if (onQrRendered) {
       onQrRendered(null);
@@ -171,6 +188,9 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
     epcPayload && `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(epcPayload)}`;
 
   const hasStatus = statusType && statusMessage;
+
+  // Safe-Pay Siegel anzeigen wenn: IBAN valide (success status), EPC-Payload vorhanden, QR gezeichnet
+  const showSeal = statusType === 'success' && !!epcPayload && qrRenderedSuccess && !useExternal;
 
   return (
     <div className="flex flex-col gap-4 rounded-2xl border border-white/5 bg-[#121318]/80 p-4 shadow-lg shadow-black/40 backdrop-blur">
@@ -253,6 +273,36 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
         )}
       </div>
 
+      {/* Safe-Pay Siegel */}
+      {showSeal && (
+        <div
+          className="safe-pay-seal flex items-center gap-3 rounded-lg px-3 py-2"
+          style={{
+            background: '#133018',
+            border: '1px solid #22c55e40',
+            borderRadius: '8px',
+          }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            className="h-5 w-5 flex-shrink-0 text-emerald-400"
+            aria-hidden
+          >
+            <path
+              fillRule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+              clipRule="evenodd"
+            />
+          </svg>
+          <div>
+            <p className="text-xs font-semibold text-emerald-300">{t.sealTitle}</p>
+            <p className="text-[11px] text-emerald-500/80">{t.sealSubtitle}</p>
+          </div>
+        </div>
+      )}
+
       <div className="flex justify-end">
         <button
           type="button"
@@ -281,4 +331,3 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
     </div>
   );
 };
-
