@@ -124,7 +124,7 @@ export default function HomePageEn() {
       </header>
 
       {/* Trust-Bar */}
-      <div className="border-b border-t border-[#1f2431] bg-[#0f1117] py-4">
+      <div>
         <div className="mx-auto grid max-w-5xl grid-cols-2 gap-x-4 gap-y-3 px-4 sm:grid-cols-4">
           {[
             { icon: '🔒', title: '100% Privacy', sub: 'No banking data stored' },
