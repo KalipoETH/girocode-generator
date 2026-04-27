@@ -56,7 +56,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     blog: 'Blog',
     about: 'À propos',
     contact: 'Contact',
-    developers: 'Pour les développeurs',
+    developers: 'Développeurs',
   },
   es: {
     home: 'Generador',
@@ -64,9 +64,9 @@ const navLabels: Record<Locale, Record<string, string>> = {
     bulk: 'Masivo',
     knowledge: 'Información',
     blog: 'Blog',
-    about: 'Sobre nosotros',
+    about: 'Nosotros',
     contact: 'Contacto',
-    developers: 'Para desarrolladores',
+    developers: 'Desarrolladores',
   },
 };
 
@@ -118,8 +118,8 @@ export function Navbar() {
           </div>
         </Link>
 
-        <div className="hidden items-center gap-4 md:flex">
-          <nav className="flex items-center gap-3 text-xs text-slate-300">
+        <div className="hidden items-center gap-3 md:flex">
+          <nav className="flex flex-wrap items-center gap-1 text-[11px] text-slate-300 lg:gap-1.5 lg:text-xs">
             {navConfig.map((item) => {
               const basePath = localeMeta[currentLocale].prefix || '';
               const href = `${basePath}${item.path || '' || '/'}` || '/';
@@ -133,7 +133,7 @@ export function Navbar() {
                   key={item.key}
                   href={href || '/'}
                   className={[
-                    'rounded-full px-3 py-1 transition',
+                    'whitespace-nowrap rounded-full px-2 py-1 transition',
                     active
                       ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/40'
                       : 'text-slate-300 hover:bg-slate-800/70 hover:text-slate-50',

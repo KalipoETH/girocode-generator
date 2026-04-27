@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export interface ScannerTexts {
   badge: string;
@@ -151,11 +152,27 @@ function formatIBAN(iban: string): string {
   return clean.replace(/(.{4})/g, '$1 ').trim();
 }
 
+const localeTextsMap: Record<string, ScannerTexts> = {
+  de: deTexts,
+  en: enTexts,
+  fr: frTexts,
+  es: esTexts,
+};
+
+function detectLocale(pathname: string): string {
+  if (pathname.startsWith('/en')) return 'en';
+  if (pathname.startsWith('/fr')) return 'fr';
+  if (pathname.startsWith('/es')) return 'es';
+  return 'de';
+}
+
 interface Props {
   texts: ScannerTexts;
 }
 
-export function ScannerClient({ texts }: Props) {
+export function ScannerClient({ texts: textsProp }: Props) {
+  const pathname = usePathname();
+  const texts = localeTextsMap[detectLocale(pathname)] ?? textsProp;
   const [scanning, setScanning] = useState(false);
   const [result, setResult] = useState<ScanResult | null>(null);
   const [error, setError] = useState<string | null>(null);
