@@ -1,445 +1,153 @@
 import type { MetadataRoute } from 'next';
 
+const BASE = 'https://www.girocodegenerator.com';
+const LOCALES = ['en', 'fr', 'es'] as const;
+const BANKS = [
+  'sparkasse',
+  'volksbank',
+  'deutsche-bank',
+  'commerzbank',
+  'ing',
+  'dkb',
+  'postbank',
+  'targobank',
+  'n26',
+  'comdirect',
+] as const;
+
+type Entry = MetadataRoute.Sitemap[number];
+
+function entry(
+  path: string,
+  priority: number,
+  changeFrequency: Entry['changeFrequency'] = 'monthly',
+  lastModified: Date = new Date(),
+): Entry {
+  return { url: `${BASE}${path}`, lastModified, changeFrequency, priority };
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   return [
-    {
-      url: 'https://www.girocodegenerator.com',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/en',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/fr',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/es',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/scanner',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/en/scanner',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/fr/scanner',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/es/scanner',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/wissen/girocode',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/en/wissen/girocode',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/fr/wissen/girocode',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/es/wissen/girocode',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/wissen/epc-standard',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/en/wissen/epc-standard',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/fr/wissen/epc-standard',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/es/wissen/epc-standard',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/wissen/iban-bic',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/en/wissen/iban-bic',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/fr/wissen/iban-bic',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/es/wissen/iban-bic',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/wissen/betrag-und-zweck',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/en/wissen/betrag-und-zweck',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/fr/wissen/betrag-und-zweck',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/es/wissen/betrag-und-zweck',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/wissen/rechnung',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/en/wissen/rechnung',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/fr/wissen/rechnung',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/es/wissen/rechnung',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/wissen/banking-apps',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/en/wissen/banking-apps',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/fr/wissen/banking-apps',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/es/wissen/banking-apps',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/wissen/scannen',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/en/wissen/scannen',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/fr/wissen/scannen',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/es/wissen/scannen',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/ueber-uns',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/en/ueber-uns',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/fr/ueber-uns',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/es/ueber-uns',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/fuer-entwickler',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/en/fuer-entwickler',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/fr/fuer-entwickler',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/es/fuer-entwickler',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/kontakt',
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/impressum',
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/en/impressum',
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/fr/impressum',
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/es/impressum',
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/datenschutz',
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/en/datenschutz',
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/fr/datenschutz',
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/es/datenschutz',
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    // Bulk Generator
-    {
-      url: 'https://www.girocodegenerator.com/bulk',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/en/bulk',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/fr/bulk',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/es/bulk',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    // API-Docs
-    {
-      url: 'https://www.girocodegenerator.com/api-docs',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    // Blog
-    {
-      url: 'https://www.girocodegenerator.com/blog',
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/blog/freelancer-rechnungen-qr-code',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/blog/geschichte-des-girocodes',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/blog/iban-sicherheit',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    // Bank-spezifische Landingpages
-    {
-      url: 'https://www.girocodegenerator.com/sparkasse',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/volksbank',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/deutsche-bank',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/commerzbank',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/ing',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/dkb',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/postbank',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/targobank',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/n26',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.girocodegenerator.com/comdirect',
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
+    // ── Hauptseiten ────────────────────────────────────────────────────────
+    entry('', 1, 'monthly', now),
+    entry('/en', 0.9, 'monthly', now),
+    entry('/fr', 0.9, 'monthly', now),
+    entry('/es', 0.9, 'monthly', now),
+
+    // ── Scanner ────────────────────────────────────────────────────────────
+    entry('/scanner', 0.8, 'monthly', now),
+    entry('/en/scanner', 0.8, 'monthly', now),
+    entry('/fr/scanner', 0.8, 'monthly', now),
+    entry('/es/scanner', 0.8, 'monthly', now),
+
+    // ── Bulk ───────────────────────────────────────────────────────────────
+    entry('/bulk', 0.7, 'monthly', now),
+    entry('/en/bulk', 0.7, 'monthly', now),
+    entry('/fr/bulk', 0.7, 'monthly', now),
+    entry('/es/bulk', 0.7, 'monthly', now),
+
+    // ── API-Docs ───────────────────────────────────────────────────────────
+    entry('/api-docs', 0.6, 'monthly', now),
+    entry('/en/api-docs', 0.6, 'monthly', now),
+    entry('/fr/api-docs', 0.6, 'monthly', now),
+    entry('/es/api-docs', 0.6, 'monthly', now),
+
+    // ── Wissen Übersicht ───────────────────────────────────────────────────
+    entry('/wissen', 0.8, 'monthly', now),
+    entry('/en/wissen', 0.7, 'monthly', now),
+    entry('/fr/wissen', 0.7, 'monthly', now),
+    entry('/es/wissen', 0.7, 'monthly', now),
+
+    // ── Wissen – girocode ──────────────────────────────────────────────────
+    entry('/wissen/girocode', 0.8, 'monthly', now),
+    entry('/en/wissen/girocode', 0.8, 'monthly', now),
+    entry('/fr/wissen/girocode', 0.7, 'monthly', now),
+    entry('/es/wissen/girocode', 0.7, 'monthly', now),
+
+    // ── Wissen – epc-standard ──────────────────────────────────────────────
+    entry('/wissen/epc-standard', 0.8, 'monthly', now),
+    entry('/en/wissen/epc-standard', 0.8, 'monthly', now),
+    entry('/fr/wissen/epc-standard', 0.7, 'monthly', now),
+    entry('/es/wissen/epc-standard', 0.7, 'monthly', now),
+
+    // ── Wissen – iban-bic ──────────────────────────────────────────────────
+    entry('/wissen/iban-bic', 0.8, 'monthly', now),
+    entry('/en/wissen/iban-bic', 0.8, 'monthly', now),
+    entry('/fr/wissen/iban-bic', 0.7, 'monthly', now),
+    entry('/es/wissen/iban-bic', 0.7, 'monthly', now),
+
+    // ── Wissen – betrag-und-zweck ──────────────────────────────────────────
+    entry('/wissen/betrag-und-zweck', 0.7, 'monthly', now),
+    entry('/en/wissen/betrag-und-zweck', 0.7, 'monthly', now),
+    entry('/fr/wissen/betrag-und-zweck', 0.7, 'monthly', now),
+    entry('/es/wissen/betrag-und-zweck', 0.7, 'monthly', now),
+
+    // ── Wissen – rechnung ──────────────────────────────────────────────────
+    entry('/wissen/rechnung', 0.7, 'monthly', now),
+    entry('/en/wissen/rechnung', 0.7, 'monthly', now),
+    entry('/fr/wissen/rechnung', 0.7, 'monthly', now),
+    entry('/es/wissen/rechnung', 0.7, 'monthly', now),
+
+    // ── Wissen – banking-apps ──────────────────────────────────────────────
+    entry('/wissen/banking-apps', 0.7, 'monthly', now),
+    entry('/en/wissen/banking-apps', 0.7, 'monthly', now),
+    entry('/fr/wissen/banking-apps', 0.7, 'monthly', now),
+    entry('/es/wissen/banking-apps', 0.7, 'monthly', now),
+
+    // ── Wissen – scannen ───────────────────────────────────────────────────
+    entry('/wissen/scannen', 0.6, 'monthly', now),
+    entry('/en/wissen/scannen', 0.6, 'monthly', now),
+    entry('/fr/wissen/scannen', 0.6, 'monthly', now),
+    entry('/es/wissen/scannen', 0.6, 'monthly', now),
+
+    // ── Blog ───────────────────────────────────────────────────────────────
+    entry('/blog', 0.7, 'weekly', now),
+    entry('/en/blog', 0.7, 'weekly', now),
+    entry('/fr/blog', 0.7, 'weekly', now),
+    entry('/es/blog', 0.7, 'weekly', now),
+
+    entry('/blog/freelancer-rechnungen-qr-code', 0.7, 'monthly', now),
+    entry('/blog/geschichte-des-girocodes', 0.7, 'monthly', now),
+    entry('/blog/iban-sicherheit', 0.7, 'monthly', now),
+
+    // ── Über uns ───────────────────────────────────────────────────────────
+    entry('/ueber-uns', 0.6, 'monthly', now),
+    entry('/en/ueber-uns', 0.5, 'monthly', now),
+    entry('/fr/ueber-uns', 0.5, 'monthly', now),
+    entry('/es/ueber-uns', 0.5, 'monthly', now),
+
+    // ── Kontakt ────────────────────────────────────────────────────────────
+    entry('/kontakt', 0.5, 'yearly', now),
+    entry('/en/kontakt', 0.5, 'yearly', now),
+    entry('/fr/kontakt', 0.5, 'yearly', now),
+    entry('/es/kontakt', 0.5, 'yearly', now),
+
+    // ── Für Entwickler ─────────────────────────────────────────────────────
+    entry('/fuer-entwickler', 0.7, 'monthly', now),
+    entry('/en/fuer-entwickler', 0.6, 'monthly', now),
+    entry('/fr/fuer-entwickler', 0.6, 'monthly', now),
+    entry('/es/fuer-entwickler', 0.6, 'monthly', now),
+
+    // ── Impressum ──────────────────────────────────────────────────────────
+    entry('/impressum', 0.3, 'yearly', now),
+    entry('/en/impressum', 0.3, 'yearly', now),
+    entry('/fr/impressum', 0.3, 'yearly', now),
+    entry('/es/impressum', 0.3, 'yearly', now),
+
+    // ── Datenschutz ────────────────────────────────────────────────────────
+    entry('/datenschutz', 0.3, 'yearly', now),
+    entry('/en/datenschutz', 0.3, 'yearly', now),
+    entry('/fr/datenschutz', 0.3, 'yearly', now),
+    entry('/es/datenschutz', 0.3, 'yearly', now),
+
+    // ── Bank-Landingpages (DE) ─────────────────────────────────────────────
+    ...BANKS.map((bank) => entry(`/${bank}`, 0.7, 'monthly', now)),
+
+    // ── Bank-Landingpages (EN/FR/ES) → Redirects auf DE, trotzdem in Sitemap
+    ...BANKS.flatMap((bank) =>
+      LOCALES.map((locale) => entry(`/${locale}/${bank}`, 0.6, 'monthly', now))
+    ),
   ];
 }
-
