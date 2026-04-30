@@ -24,7 +24,7 @@ export function Footer() {
         </div>
         <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
           <p>
-            © 2025 GiroCode Generator · lokal · keine Gewähr
+            © 2026 GiroCode Generator · lokal · keine Gewähr
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href={`${prefix}/scanner`} className="hover:text-slate-200 hover:underline">

@@ -164,28 +164,6 @@ export default function HomePageFr() {
           </div>
         </section>
 
-        {/* FIX 4: Trust section */}
-        <section
-          aria-label="Confiance et sécurité"
-          className="animate-card-in grid gap-4 sm:grid-cols-3"
-          style={{ animationDelay: '0.25s' }}
-        >
-          {[
-            { icon: '🔒', title: 'Aucun partage de données', sub: 'Votre IBAN ne quitte jamais votre navigateur' },
-            { icon: '⚡', title: 'Prêt à l\'emploi', sub: 'Aucun compte, aucune installation' },
-            { icon: '🌍', title: '4 langues', sub: 'DE, EN, FR, ES' },
-          ].map((card) => (
-            <div
-              key={card.title}
-              className="flex flex-col gap-2 rounded-2xl border border-slate-800/80 border-t-2 border-t-emerald-500/20 bg-slate-900/50 p-7 transition-all duration-200 hover:bg-[#1a1d25] hover:border-t-emerald-500"
-            >
-              <span className="text-3xl">{card.icon}</span>
-              <p className="font-bold text-slate-100" style={{ fontSize: '18px' }}>{card.title}</p>
-              <p className="text-[14px] text-[#8b90a0]">{card.sub}</p>
-            </div>
-          ))}
-        </section>
-
         <section
           aria-labelledby="seo-how-it-works-fr"
           className="animate-card-in mt-4 space-y-4 rounded-2xl border border-slate-800/80 bg-slate-900/60 p-5 text-sm text-slate-300 shadow-inner shadow-black/40"
@@ -223,6 +201,149 @@ export default function HomePageFr() {
               </Link>
               .
             </p>
+          </div>
+        </section>
+
+        {/* Wissens-Cards */}
+        <section aria-labelledby="apprendre-fr" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '0.4s' }}>
+          <h2 id="apprendre-fr" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+            En savoir plus sur les GiroCodes
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <Link href="/fr/wissen/girocode" className="animate-card-in group flex items-start gap-3 rounded-xl border border-[#1f2431] bg-[#121318] p-5 transition-all duration-200 ease-out hover:bg-[#1a1d25] hover:border-emerald-500/25 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(34,197,94,0.08)] motion-reduce:transform-none" style={{ animationDelay: '0.5s' }}>
+              <span className="inline-flex flex-shrink-0 items-center justify-center rounded-lg bg-[#133018] p-2 text-xl" aria-hidden>📄</span>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-[15px] font-bold text-[#e8eaf0] group-hover:text-emerald-300">Qu&apos;est-ce qu&apos;un GiroCode ?</h3>
+                <p className="mt-1 text-[13px] text-[#8b90a0]">Bases et fonctionnement du code SEPA-QR.</p>
+                <span className="mt-2 inline-flex items-center text-sm font-medium text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </div>
+            </Link>
+            <Link href="/fr/wissen/epc-standard" className="animate-card-in group flex items-start gap-3 rounded-xl border border-[#1f2431] bg-[#121318] p-5 transition-all duration-200 ease-out hover:bg-[#1a1d25] hover:border-emerald-500/25 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(34,197,94,0.08)] motion-reduce:transform-none" style={{ animationDelay: '0.6s' }}>
+              <span className="inline-flex flex-shrink-0 items-center justify-center rounded-lg bg-[#133018] p-2 text-xl" aria-hidden>⚙️</span>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-[15px] font-bold text-[#e8eaf0] group-hover:text-emerald-300">Norme EPC expliquée</h3>
+                <p className="mt-1 text-[13px] text-[#8b90a0]">Structure technique du payload EPC en détail.</p>
+                <span className="mt-2 inline-flex items-center text-sm font-medium text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </div>
+            </Link>
+            <Link href="/fr/wissen/iban-bic" className="animate-card-in group flex items-start gap-3 rounded-xl border border-[#1f2431] bg-[#121318] p-5 transition-all duration-200 ease-out hover:bg-[#1a1d25] hover:border-emerald-500/25 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(34,197,94,0.08)] motion-reduce:transform-none" style={{ animationDelay: '0.7s' }}>
+              <span className="inline-flex flex-shrink-0 items-center justify-center rounded-lg bg-[#133018] p-2 text-xl" aria-hidden>🏦</span>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-[15px] font-bold text-[#e8eaf0] group-hover:text-emerald-300">IBAN &amp; BIC dans GiroCode</h3>
+                <p className="mt-1 text-[13px] text-[#8b90a0]">Champs obligatoires, format et validation IBAN.</p>
+                <span className="mt-2 inline-flex items-center text-sm font-medium text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </div>
+            </Link>
+            <Link href="/fr/wissen/rechnung" className="animate-card-in group flex items-start gap-3 rounded-xl border border-[#1f2431] bg-[#121318] p-5 transition-all duration-200 ease-out hover:bg-[#1a1d25] hover:border-emerald-500/25 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(34,197,94,0.08)] motion-reduce:transform-none" style={{ animationDelay: '0.8s' }}>
+              <span className="inline-flex flex-shrink-0 items-center justify-center rounded-lg bg-[#133018] p-2 text-xl" aria-hidden>🧾</span>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-[15px] font-bold text-[#e8eaf0] group-hover:text-emerald-300">GiroCode sur les factures</h3>
+                <p className="mt-1 text-[13px] text-[#8b90a0]">Comment l&apos;intégrer correctement dans les factures.</p>
+                <span className="mt-2 inline-flex items-center text-sm font-medium text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </div>
+            </Link>
+            <Link href="/fr/wissen/banking-apps" className="animate-card-in group flex items-start gap-3 rounded-xl border border-[#1f2431] bg-[#121318] p-5 transition-all duration-200 ease-out hover:bg-[#1a1d25] hover:border-emerald-500/25 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(34,197,94,0.08)] motion-reduce:transform-none" style={{ animationDelay: '0.9s' }}>
+              <span className="inline-flex flex-shrink-0 items-center justify-center rounded-lg bg-[#133018] p-2 text-xl" aria-hidden>📱</span>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-[15px] font-bold text-[#e8eaf0] group-hover:text-emerald-300">Aperçu des apps bancaires</h3>
+                <p className="mt-1 text-[13px] text-[#8b90a0]">Quelles apps supportent les GiroCodes.</p>
+                <span className="mt-2 inline-flex items-center text-sm font-medium text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </div>
+            </Link>
+            <Link href="/fr/wissen/scannen" className="animate-card-in group flex items-start gap-3 rounded-xl border border-[#1f2431] bg-[#121318] p-5 transition-all duration-200 ease-out hover:bg-[#1a1d25] hover:border-emerald-500/25 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(34,197,94,0.08)] motion-reduce:transform-none" style={{ animationDelay: '1s' }}>
+              <span className="inline-flex flex-shrink-0 items-center justify-center rounded-lg bg-[#133018] p-2 text-xl" aria-hidden>📷</span>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-[15px] font-bold text-[#e8eaf0] group-hover:text-emerald-300">Scanner un GiroCode</h3>
+                <p className="mt-1 text-[13px] text-[#8b90a0]">Étape par étape avec votre app bancaire.</p>
+                <span className="mt-2 inline-flex items-center text-sm font-medium text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </div>
+            </Link>
+            <Link href="/fr/wissen/betrag-und-zweck" className="animate-card-in group flex items-start gap-3 rounded-xl border border-[#1f2431] bg-[#121318] p-5 transition-all duration-200 ease-out hover:bg-[#1a1d25] hover:border-emerald-500/25 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(34,197,94,0.08)] motion-reduce:transform-none" style={{ animationDelay: '1.1s' }}>
+              <span className="inline-flex flex-shrink-0 items-center justify-center rounded-lg bg-[#133018] p-2 text-xl" aria-hidden>💰</span>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-[15px] font-bold text-[#e8eaf0] group-hover:text-emerald-300">Montant &amp; Référence</h3>
+                <p className="mt-1 text-[13px] text-[#8b90a0]">Comment saisir correctement les montants et références.</p>
+                <span className="mt-2 inline-flex items-center text-sm font-medium text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </div>
+            </Link>
+          </div>
+        </section>
+
+        {/* Banques */}
+        <section aria-labelledby="bank-section-fr" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.2s' }}>
+          <div className="space-y-1">
+            <h2 id="bank-section-fr" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+              GiroCode avec votre banque
+            </h2>
+            <p className="text-sm text-[#8b90a0]">Guides étape par étape pour toutes les grandes banques allemandes</p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              { name: 'Sparkasse', slug: '/fr/sparkasse' },
+              { name: 'Volksbank', slug: '/fr/volksbank' },
+              { name: 'Deutsche Bank', slug: '/fr/deutsche-bank' },
+              { name: 'Commerzbank', slug: '/fr/commerzbank' },
+              { name: 'ING', slug: '/fr/ing' },
+              { name: 'DKB', slug: '/fr/dkb' },
+              { name: 'Postbank', slug: '/fr/postbank' },
+              { name: 'Targobank', slug: '/fr/targobank' },
+              { name: 'N26', slug: '/fr/n26' },
+              { name: 'Comdirect', slug: '/fr/comdirect' },
+            ].map((bank) => (
+              <Link
+                key={bank.slug}
+                href={bank.slug}
+                className="group flex items-center justify-between rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-3 transition-all duration-200 hover:border-emerald-500/40 hover:bg-[#1a1d25]"
+              >
+                <div>
+                  <p className="text-[14px] font-bold text-[#e8eaf0]">{bank.name}</p>
+                  <p className="text-[11px] text-[#8b90a0]">Guide pour l&apos;app {bank.name}</p>
+                </div>
+                <span className="text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Du Blog */}
+        <section aria-labelledby="blog-section-fr" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.3s' }}>
+          <h2 id="blog-section-fr" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+            Du Blog
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                date: '1 mars 2026',
+                title: 'Factures en tant que freelance : GiroCode pour des paiements plus rapides',
+                desc: 'Comment les freelances se font payer plus vite avec les GiroCodes.',
+                href: '/fr/blog/freelancer-rechnungen-qr-code',
+              },
+              {
+                date: '15 mars 2026',
+                title: "L'histoire du GiroCode",
+                desc: "De la norme EPC 2012 à son introduction en Allemagne.",
+                href: '/fr/blog/geschichte-des-girocodes',
+              },
+              {
+                date: '1 avril 2026',
+                title: "Sécurité de l'IBAN : ce que vous devez savoir",
+                desc: "Est-il sécurisé de partager son IBAN ? Tout sur la sécurité de l'IBAN.",
+                href: '/fr/blog/iban-sicherheit',
+              },
+            ].map((post) => (
+              <Link
+                key={post.href}
+                href={post.href}
+                className="group flex flex-col gap-3 rounded-xl border border-[#1f2431] bg-[#121318] p-5 transition-all duration-200 hover:-translate-y-[3px] hover:border-[#22c55e40] hover:shadow-[0_8px_24px_rgba(34,197,94,0.07)]"
+              >
+                <p className="text-xs font-medium" style={{ color: '#22c55e' }}>{post.date}</p>
+                <h3 className="text-[15px] font-bold leading-snug text-[#e8eaf0]">{post.title}</h3>
+                <p className="text-sm text-[#8b90a0]">{post.desc}</p>
+                <span className="mt-auto text-sm font-medium text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">
+                  Lire la suite →
+                </span>
+              </Link>
+            ))}
           </div>
         </section>
       </div>

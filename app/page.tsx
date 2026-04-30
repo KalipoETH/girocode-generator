@@ -263,40 +263,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* FIX 4: Trust-Sektion */}
-        <section
-          aria-label="Vertrauen & Sicherheit"
-          className="animate-card-in grid gap-4 sm:grid-cols-3"
-          style={{ animationDelay: '0.25s' }}
-        >
-          {[
-            {
-              icon: '🔒',
-              title: 'Keine Datenweitergabe',
-              sub: 'Deine IBAN verlässt nie deinen Browser',
-            },
-            {
-              icon: '⚡',
-              title: 'Sofort einsatzbereit',
-              sub: 'Kein Account, keine Installation',
-            },
-            {
-              icon: '🌍',
-              title: '4 Sprachen',
-              sub: 'DE, EN, FR, ES',
-            },
-          ].map((card) => (
-            <div
-              key={card.title}
-              className="flex flex-col gap-2 rounded-2xl border border-slate-800/80 border-t-2 border-t-emerald-500/20 bg-slate-900/50 p-7 transition-all duration-200 hover:bg-[#1a1d25] hover:border-t-emerald-500"
-            >
-              <span className="text-3xl">{card.icon}</span>
-              <p className="font-bold text-slate-100" style={{ fontSize: '18px' }}>{card.title}</p>
-              <p className="text-[14px] text-[#8b90a0]">{card.sub}</p>
-            </div>
-          ))}
-        </section>
-
         <section
           aria-labelledby="seo-how-it-works"
           className="animate-card-in mt-4 space-y-4 rounded-2xl border border-slate-800/80 bg-slate-900/60 p-5 text-sm text-slate-300 shadow-inner shadow-black/40"
@@ -521,6 +487,96 @@ export default function HomePage() {
                 <span className="mt-2 inline-flex items-center text-sm font-medium text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">→</span>
               </div>
             </Link>
+            <Link
+              href="/wissen/betrag-und-zweck"
+              className="animate-card-in group flex items-start gap-3 rounded-xl border border-[#1f2431] bg-[#121318] p-5 transition-all duration-200 ease-out hover:bg-[#1a1d25] hover:border-emerald-500/25 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(34,197,94,0.08)] motion-reduce:transform-none"
+              style={{ animationDelay: '1.1s' }}
+            >
+              <span className="inline-flex flex-shrink-0 items-center justify-center rounded-lg bg-[#133018] p-2 text-xl" aria-hidden>💰</span>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-[15px] font-bold text-[#e8eaf0] group-hover:text-emerald-300">Betrag &amp; Verwendungszweck</h3>
+                <p className="mt-1 text-[13px] text-[#8b90a0]">Beträge und Zwecke korrekt eingeben.</p>
+                <span className="mt-2 inline-flex items-center text-sm font-medium text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </div>
+            </Link>
+          </div>
+        </section>
+
+        {/* Bank-Landingpages */}
+        <section aria-labelledby="bank-section-de" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.2s' }}>
+          <div className="space-y-1">
+            <h2 id="bank-section-de" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+              GiroCode mit deiner Bank
+            </h2>
+            <p className="text-sm text-[#8b90a0]">Schritt-für-Schritt Anleitungen für alle großen deutschen Banken</p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              { name: 'Sparkasse', slug: '/sparkasse' },
+              { name: 'Volksbank', slug: '/volksbank' },
+              { name: 'Deutsche Bank', slug: '/deutsche-bank' },
+              { name: 'Commerzbank', slug: '/commerzbank' },
+              { name: 'ING', slug: '/ing' },
+              { name: 'DKB', slug: '/dkb' },
+              { name: 'Postbank', slug: '/postbank' },
+              { name: 'Targobank', slug: '/targobank' },
+              { name: 'N26', slug: '/n26' },
+              { name: 'Comdirect', slug: '/comdirect' },
+            ].map((bank) => (
+              <Link
+                key={bank.slug}
+                href={bank.slug}
+                className="group flex items-center justify-between rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-3 transition-all duration-200 hover:border-emerald-500/40 hover:bg-[#1a1d25]"
+              >
+                <div>
+                  <p className="text-[14px] font-bold text-[#e8eaf0]">{bank.name}</p>
+                  <p className="text-[11px] text-[#8b90a0]">Anleitung für {bank.name}-App</p>
+                </div>
+                <span className="text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Blog-Abschnitt */}
+        <section aria-labelledby="blog-section-de" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.3s' }}>
+          <h2 id="blog-section-de" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+            Aus dem Blog
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                date: '01. März 2026',
+                title: 'Rechnungen als Freelancer: GiroCode für schnellere Zahlungen',
+                desc: 'Wie Freelancer mit GiroCodes schneller bezahlt werden.',
+                href: '/blog/freelancer-rechnungen-qr-code',
+              },
+              {
+                date: '15. März 2026',
+                title: 'Die Geschichte des GiroCodes',
+                desc: 'Vom EPC-Standard 2012 bis zur Einführung in Deutschland.',
+                href: '/blog/geschichte-des-girocodes',
+              },
+              {
+                date: '01. April 2026',
+                title: 'IBAN-Sicherheit: Was du wissen musst',
+                desc: 'Ist es sicher, die IBAN weiterzugeben? Alles über IBAN-Sicherheit.',
+                href: '/blog/iban-sicherheit',
+              },
+            ].map((post) => (
+              <Link
+                key={post.href}
+                href={post.href}
+                className="group flex flex-col gap-3 rounded-xl border border-[#1f2431] bg-[#121318] p-5 transition-all duration-200 hover:-translate-y-[3px] hover:border-[#22c55e40] hover:shadow-[0_8px_24px_rgba(34,197,94,0.07)]"
+              >
+                <p className="text-xs font-medium" style={{ color: '#22c55e' }}>{post.date}</p>
+                <h3 className="text-[15px] font-bold leading-snug text-[#e8eaf0]">{post.title}</h3>
+                <p className="text-sm text-[#8b90a0]">{post.desc}</p>
+                <span className="mt-auto text-sm font-medium text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">
+                  Weiterlesen →
+                </span>
+              </Link>
+            ))}
           </div>
         </section>
       </div>
