@@ -112,6 +112,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry('/blog/geschichte-des-girocodes', 0.7, 'monthly', now),
     entry('/blog/iban-sicherheit', 0.7, 'monthly', now),
 
+    entry('/en/blog/freelancer-rechnungen-qr-code', 0.7, 'monthly', now),
+    entry('/en/blog/geschichte-des-girocodes', 0.7, 'monthly', now),
+    entry('/en/blog/iban-sicherheit', 0.7, 'monthly', now),
+
+    entry('/fr/blog/freelancer-rechnungen-qr-code', 0.7, 'monthly', now),
+    entry('/fr/blog/geschichte-des-girocodes', 0.7, 'monthly', now),
+    entry('/fr/blog/iban-sicherheit', 0.7, 'monthly', now),
+
+    entry('/es/blog/freelancer-rechnungen-qr-code', 0.7, 'monthly', now),
+    entry('/es/blog/geschichte-des-girocodes', 0.7, 'monthly', now),
+    entry('/es/blog/iban-sicherheit', 0.7, 'monthly', now),
+
     // ── Über uns ───────────────────────────────────────────────────────────
     entry('/ueber-uns', 0.6, 'monthly', now),
     entry('/en/ueber-uns', 0.5, 'monthly', now),
