@@ -227,7 +227,8 @@ function ToolsDropdown({ currentLocale, pathname }: ToolsDropdownProps) {
       </button>
 
       {open && (
-        <div className="absolute left-0 top-full z-[10000] mt-2 w-52 rounded-xl border border-[#1f2431] bg-[#121318] text-xs text-slate-100 shadow-lg shadow-black/60">
+        <div className="absolute left-0 top-full z-[10000] w-52 pt-2">
+        <div className="rounded-xl border border-[#1f2431] bg-[#121318] text-xs text-slate-100 shadow-lg shadow-black/60">
           {toolsItems.map((item) => {
             const href = `${basePath}${item.path}`;
             const isActive = pathname.startsWith(href) || pathname === item.path;
@@ -248,6 +249,7 @@ function ToolsDropdown({ currentLocale, pathname }: ToolsDropdownProps) {
               </Link>
             );
           })}
+        </div>
         </div>
       )}
     </div>
