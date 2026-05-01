@@ -14,6 +14,14 @@ const BANKS = [
   'n26',
   'comdirect',
 ] as const;
+const USE_CASES = [
+  'freelancer',
+  'verein',
+  'handwerker',
+  'spenden',
+  'kleinunternehmen',
+  'privatverkauf',
+] as const;
 
 type Entry = MetadataRoute.Sitemap[number];
 
@@ -160,6 +168,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Bank-Landingpages (EN/FR/ES) → Redirects auf DE, trotzdem in Sitemap
     ...BANKS.flatMap((bank) =>
       LOCALES.map((locale) => entry(`/${locale}/${bank}`, 0.6, 'monthly', now))
+    ),
+
+    // ── Use-Case Landingpages (DE) ─────────────────────────────────────────
+    ...USE_CASES.map((useCase) => entry(`/${useCase}`, 0.8, 'monthly', now)),
+
+    // ── Use-Case Landingpages (EN/FR/ES) ───────────────────────────────────
+    ...USE_CASES.flatMap((useCase) =>
+      LOCALES.map((locale) => entry(`/${locale}/${useCase}`, 0.8, 'monthly', now))
     ),
   ];
 }

@@ -305,6 +305,39 @@ export default function HomePageFr() {
           </div>
         </section>
 
+        {/* Use-Cases */}
+        <section aria-labelledby="usecases-section-fr" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.25s' }}>
+          <div className="space-y-1">
+            <h2 id="usecases-section-fr" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+              GiroCode pour chaque cas d&apos;usage
+            </h2>
+            <p className="text-sm text-[#8b90a0]">Guides &amp; conseils pratiques pour votre audience</p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { icon: '👨‍💻', title: 'Freelances', desc: 'Être payé plus vite – sans erreurs d\u2019IBAN.', href: '/fr/freelancer' },
+              { icon: '🏛️', title: 'Associations', desc: 'Collecter cotisations & dons facilement.', href: '/fr/verein' },
+              { icon: '🔧', title: 'Artisans', desc: 'Factures payées directement sur place.', href: '/fr/handwerker' },
+              { icon: '💝', title: 'Dons', desc: 'Plus de dons grâce à un scan simple.', href: '/fr/spenden' },
+              { icon: '🏢', title: 'Petites Entreprises', desc: 'Factures PDF conformes UE, sans abonnement.', href: '/fr/kleinunternehmen' },
+              { icon: '🛒', title: 'Ventes Privées', desc: 'Petites annonces – sans frais.', href: '/fr/privatverkauf' },
+            ].map((useCase) => (
+              <Link
+                key={useCase.href}
+                href={useCase.href}
+                className="animate-card-in group flex items-start gap-3 rounded-xl border border-[#1f2431] bg-[#121318] p-5 transition-all duration-200 ease-out hover:bg-[#1a1d25] hover:border-emerald-500/25 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(34,197,94,0.08)] motion-reduce:transform-none"
+              >
+                <span className="inline-flex flex-shrink-0 items-center justify-center rounded-lg bg-[#133018] p-2 text-xl" aria-hidden>{useCase.icon}</span>
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-[15px] font-bold text-[#e8eaf0] group-hover:text-emerald-300">{useCase.title}</h3>
+                  <p className="mt-1 text-[13px] text-[#8b90a0]">{useCase.desc}</p>
+                  <span className="mt-2 inline-flex items-center text-sm font-medium text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">→</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* Du Blog */}
         <section aria-labelledby="blog-section-fr" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.3s' }}>
           <h2 id="blog-section-fr" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
