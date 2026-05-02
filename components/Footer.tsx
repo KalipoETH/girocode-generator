@@ -8,16 +8,16 @@ import { ProductHuntBadge } from './ProductHuntBadge';
 type Locale = 'de' | 'en' | 'fr' | 'es';
 
 function getLocalePrefix(pathname: string): string {
-  if (pathname.startsWith('/en')) return '/en';
-  if (pathname.startsWith('/fr')) return '/fr';
-  if (pathname.startsWith('/es')) return '/es';
+  if (pathname === '/en' || pathname.startsWith('/en/')) return '/en';
+  if (pathname === '/fr' || pathname.startsWith('/fr/')) return '/fr';
+  if (pathname === '/es' || pathname.startsWith('/es/')) return '/es';
   return '';
 }
 
 function getLocale(pathname: string): Locale {
-  if (pathname.startsWith('/en')) return 'en';
-  if (pathname.startsWith('/fr')) return 'fr';
-  if (pathname.startsWith('/es')) return 'es';
+  if (pathname === '/en' || pathname.startsWith('/en/')) return 'en';
+  if (pathname === '/fr' || pathname.startsWith('/fr/')) return 'fr';
+  if (pathname === '/es' || pathname.startsWith('/es/')) return 'es';
   return 'de';
 }
 
