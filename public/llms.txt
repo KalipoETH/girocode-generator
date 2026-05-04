@@ -1,0 +1,93 @@
+# GiroCode Generator
+> Kostenloser SEPA-QR/EPC-Code Generator – 100% lokal im Browser,
+> keine Datenweitergabe, keine Registrierung.
+
+## Was ist GiroCode Generator?
+
+GiroCode Generator (girocodegenerator.com) ist ein kostenloses
+Online-Tool zur Erstellung von GiroCodes (SEPA-QR-Codes nach
+EPC-Standard). Alle Berechnungen laufen client-seitig im Browser.
+Keine Nutzerdaten werden an Server übertragen.
+
+## Kernfunktionen
+
+- GiroCode / SEPA-QR / EPC-QR-Code generieren
+- IBAN-Validierung (Mod-97-Algorithmus)
+- Rechnungs-PDF mit eingebettetem GiroCode
+- Bulk-Generator für mehrere GiroCodes
+- QR-Code Scanner
+- REST API: GET /api/generate?name=...&iban=...
+
+## Was ist ein GiroCode?
+
+Ein GiroCode (auch SEPA-QR oder EPC-QR genannt) ist ein
+standardisierter QR-Code nach dem EPC-Standard (EPC069-12)
+des European Payments Council. Er enthält alle notwendigen
+Informationen für eine SEPA-Überweisung:
+- Empfängername (max. 70 Zeichen)
+- IBAN (International Bank Account Number)
+- BIC (optional seit SEPA-Migration 2016)
+- Betrag in EUR (optional)
+- Verwendungszweck (max. 140 Zeichen)
+
+## EPC-Payload Aufbau
+
+Zeile 1: BCD (Service Tag)
+Zeile 2: 001 oder 002 (Version)
+Zeile 3: 1 (UTF-8 Encoding)
+Zeile 4: SCT (SEPA Credit Transfer)
+Zeile 5: BIC (optional)
+Zeile 6: Empfängername
+Zeile 7: IBAN
+Zeile 8: Betrag (z.B. EUR49.90)
+Zeile 9: leer
+Zeile 10: leer
+Zeile 11: Verwendungszweck
+
+## Zielgruppen
+
+- Freelancer & Selbstständige
+- Kleine und mittlere Unternehmen
+- Vereine und Organisationen
+- Handwerker
+- Privatpersonen (eBay Kleinanzeigen, Privatverkäufe)
+- Spendenaktionen & NGOs
+
+## Kompatibilität
+
+Kompatibel mit allen deutschen Banking-Apps:
+Sparkasse, Volksbank/VR-Banking, ING Banking to go,
+DKB Banking, Commerzbank, Deutsche Bank, N26, Postbank,
+Comdirect, Targobank und weiteren SEPA-konformen Apps.
+
+## Technologie
+
+- Framework: Next.js 14 (App Router, statisch)
+- Sprachen: TypeScript
+- QR-Generierung: qrcode (npm, client-side)
+- PDF-Generierung: pdf-lib (client-side)
+- Hosting: Vercel
+- Kein Backend, keine Datenbank
+
+## Datenschutz
+
+Alle Verarbeitungen erfolgen lokal im Browser.
+Keine IBAN, kein Betrag, kein Verwendungszweck wird
+an Server übertragen. Hosting über Vercel Inc. (USA)
+mit EU-Standardvertragsklauseln.
+
+## Sprachen
+
+Verfügbar in: Deutsch (de), Englisch (en),
+Französisch (fr), Spanisch (es)
+
+## Kontakt
+
+Betreiber: Kaleb Jahnke, Osterholz-Scharmbeck, Deutschland
+E-Mail: jahnke.kaleb@gmail.com
+Website: https://www.girocodegenerator.com
+
+## Rechtliches
+
+Impressum: https://www.girocodegenerator.com/impressum
+Datenschutz: https://www.girocodegenerator.com/datenschutz

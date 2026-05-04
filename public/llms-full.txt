@@ -1,0 +1,247 @@
+# GiroCode Generator
+> Kostenloser SEPA-QR/EPC-Code Generator – 100% lokal im Browser,
+> keine Datenweitergabe, keine Registrierung.
+
+## Was ist GiroCode Generator?
+
+GiroCode Generator (girocodegenerator.com) ist ein kostenloses
+Online-Tool zur Erstellung von GiroCodes (SEPA-QR-Codes nach
+EPC-Standard). Alle Berechnungen laufen client-seitig im Browser.
+Keine Nutzerdaten werden an Server übertragen.
+
+## Kernfunktionen
+
+- GiroCode / SEPA-QR / EPC-QR-Code generieren
+- IBAN-Validierung (Mod-97-Algorithmus)
+- Rechnungs-PDF mit eingebettetem GiroCode
+- Bulk-Generator für mehrere GiroCodes
+- QR-Code Scanner
+- REST API: GET /api/generate?name=...&iban=...
+
+## Was ist ein GiroCode?
+
+Ein GiroCode (auch SEPA-QR oder EPC-QR genannt) ist ein
+standardisierter QR-Code nach dem EPC-Standard (EPC069-12)
+des European Payments Council. Er enthält alle notwendigen
+Informationen für eine SEPA-Überweisung:
+- Empfängername (max. 70 Zeichen)
+- IBAN (International Bank Account Number)
+- BIC (optional seit SEPA-Migration 2016)
+- Betrag in EUR (optional)
+- Verwendungszweck (max. 140 Zeichen)
+
+## EPC-Payload Aufbau
+
+Zeile 1: BCD (Service Tag)
+Zeile 2: 001 oder 002 (Version)
+Zeile 3: 1 (UTF-8 Encoding)
+Zeile 4: SCT (SEPA Credit Transfer)
+Zeile 5: BIC (optional)
+Zeile 6: Empfängername
+Zeile 7: IBAN
+Zeile 8: Betrag (z.B. EUR49.90)
+Zeile 9: leer
+Zeile 10: leer
+Zeile 11: Verwendungszweck
+
+## Zielgruppen
+
+- Freelancer & Selbstständige
+- Kleine und mittlere Unternehmen
+- Vereine und Organisationen
+- Handwerker
+- Privatpersonen (eBay Kleinanzeigen, Privatverkäufe)
+- Spendenaktionen & NGOs
+
+## Kompatibilität
+
+Kompatibel mit allen deutschen Banking-Apps:
+Sparkasse, Volksbank/VR-Banking, ING Banking to go,
+DKB Banking, Commerzbank, Deutsche Bank, N26, Postbank,
+Comdirect, Targobank und weiteren SEPA-konformen Apps.
+
+## Technologie
+
+- Framework: Next.js 14 (App Router, statisch)
+- Sprachen: TypeScript
+- QR-Generierung: qrcode (npm, client-side)
+- PDF-Generierung: pdf-lib (client-side)
+- Hosting: Vercel
+- Kein Backend, keine Datenbank
+
+## Datenschutz
+
+Alle Verarbeitungen erfolgen lokal im Browser.
+Keine IBAN, kein Betrag, kein Verwendungszweck wird
+an Server übertragen. Hosting über Vercel Inc. (USA)
+mit EU-Standardvertragsklauseln.
+
+## Sprachen
+
+Verfügbar in: Deutsch (de), Englisch (en),
+Französisch (fr), Spanisch (es)
+
+## Kontakt
+
+Betreiber: Kaleb Jahnke, Osterholz-Scharmbeck, Deutschland
+E-Mail: jahnke.kaleb@gmail.com
+Website: https://www.girocodegenerator.com
+
+## Rechtliches
+
+Impressum: https://www.girocodegenerator.com/impressum
+Datenschutz: https://www.girocodegenerator.com/datenschutz
+
+---
+
+## Wissensbereich – Artikelzusammenfassungen
+
+### Was ist ein GiroCode? (/wissen/girocode)
+Ein GiroCode ist ein standardisierter QR-Code für SEPA-Überweisungen, basierend auf dem EPC-Standard
+(EPC069-12) des European Payments Council. Er enthält Empfängername, IBAN, optionalen BIC, optionalen
+Betrag und Verwendungszweck. Die deutschen Sparkassen und Volksbanken führten ihn 2016–2018 ein. Das
+Scanning mit Banking-Apps füllt die Überweisungsmaske automatisch aus und eliminiert Tippfehler.
+Synonyme: SEPA-QR-Code, EPC-QR-Code, BezahlCode. Der GiroCode ist ein Pull-System – nur der Zahler
+kann die Überweisung auslösen, Abbuchungen durch Dritte sind nicht möglich. Einsatz: Rechnungen,
+Vereinsbeiträge, Spenden, Privatverkäufe.
+
+### EPC-Standard erklärt (/wissen/epc-standard)
+Der EPC-Standard (EPC069-12) definiert den technischen Aufbau des GiroCode-Payloads. Der Payload
+besteht aus maximal 12 Zeilen im UTF-8-Format. Pflichtfelder: Service Tag „BCD", Version (001/002),
+Zeichensatz (1=UTF-8), Transferart (SCT), Empfängername, IBAN. Optional: BIC, Betrag (z.B. EUR49.90),
+Referenz und Verwendungszweck. Die maximale Payload-Größe beträgt 331 Bytes. QR-Code Fehlerkorrektur:
+Level M (15%). Der EPC ist kompatibel mit allen SEPA-Banking-Apps. Seit 2016 ist BIC optional.
+
+### IBAN & BIC im GiroCode (/wissen/iban-bic)
+Die IBAN (International Bank Account Number) ist das einzige Pflichtfeld neben dem Empfängernamen im
+GiroCode. Deutsche IBANs haben 22 Stellen (DE + 2 Prüfziffern + 18 Stellen). Die IBAN-Validierung
+erfolgt über den Mod-97-Algorithmus. BIC (Bank Identifier Code) ist seit der SEPA-Migration 2016
+optional – Banking-Apps leiten Überweisungen auch ohne BIC korrekt weiter. Der GiroCode Generator
+validiert die IBAN automatisch vor der Code-Generierung und gibt Fehlermeldungen bei ungültigen IBANs.
+
+### GiroCode auf Rechnungen (/wissen/rechnung)
+Ein GiroCode auf der Rechnung beschleunigt den Zahlungseingang erheblich. Gesetzlich vorgeschrieben
+sind IBAN, Empfängername und Rechnungsbetrag weiterhin im Klartext. Der GiroCode ergänzt diese Daten
+als scanbare Alternative. Empfohlene Mindestgröße: 2×2 cm für Druck, 100×100 Pixel für digitale PDFs.
+Der GiroCode Generator erstellt DIN-konforme Rechnungs-PDFs mit eingebettetem QR-Code, Firmenlogo,
+Absender-/Empfängeradresse, Leistungsdetails, gesetzlichen Pflichtangaben und Zahlungsinformationen.
+
+### Banking-Apps mit GiroCode-Support (/wissen/banking-apps)
+Nahezu alle deutschen Banken unterstützen GiroCodes in ihrer Banking-App: Sparkasse (QR-Überweisung),
+Volksbank/VR-Banking (Scan & Pay), ING Banking to go, DKB Banking App, Commerzbank Banking App,
+Deutsche Bank MobileBank, N26, Postbank, Comdirect und Targobank. Der Scan-Bereich ist meist im
+Überweisungs-Menü unter dem QR-Code-Symbol zu finden. Voraussetzung: Die App muss den EPC-Standard
+unterstützen. International: Österreich (Stuzza-QR), Schweiz (QR-Bill, leicht abweichender Standard).
+
+### GiroCode scannen (/wissen/scannen)
+Schritt-für-Schritt-Anleitung: (1) Banking-App öffnen. (2) Überweisung starten. (3) QR-Code-Symbol
+antippen. (4) Kamera auf den GiroCode richten (Abstand: 15–30 cm, gute Beleuchtung). (5) Daten prüfen
+(IBAN, Betrag, Verwendungszweck). (6) Überweisung mit TAN oder Biometrie bestätigen. Häufige Probleme:
+Code zu klein gedruckt (Mindest-2×2 cm), Reflexionen auf Bildschirm, zu dunkle Umgebung. Tipp: Bildschirmhelligkeit maximieren, Code nicht laminieren.
+
+### Betrag & Verwendungszweck (/wissen/betrag-und-zweck)
+Betrag: Optional im GiroCode, Format EUR[Betrag] (z.B. EUR49.90). Maximalwert: EUR999999999.99.
+Ohne Betrag kann der Zahler selbst einen Betrag eingeben – ideal für Spenden und variable Preise.
+Verwendungszweck: Max. 140 Zeichen, UTF-8. Empfehlung: Rechnungsnummer + Datum (z.B. „RE-2024-042
+vom 15.04.2024"). Sonderzeichen sind erlaubt, Umlaute (ä, ö, ü) ebenfalls. Der Verwendungszweck
+erscheint auf dem Kontoauszug des Empfängers und erleichtert die Buchungszuordnung erheblich.
+
+---
+
+## FAQ – Alle Fragen und Antworten
+
+**Ist der GiroCode Generator wirklich kostenlos?**
+Ja. Du kannst den Generator dauerhaft kostenlos nutzen – es fallen nur die üblichen Gebühren deiner
+Bank für SEPA-Überweisungen an, sofern diese nicht ohnehin kostenfrei sind.
+
+**Werden meine Daten gespeichert?**
+Nein. Alle Eingaben werden ausschließlich in deinem Browser verarbeitet. Es findet keine serverseitige
+Speicherung oder Auswertung statt.
+
+**Welche Banking-Apps können den GiroCode scannen?**
+Viele Apps im deutschsprachigen Raum unterstützen SEPA-QR / GiroCode, darunter Sparkasse,
+Volks- und Raiffeisenbanken, ING, DKB, Comdirect, Deutsche Bank, N26 und weitere.
+
+**Muss ich einen Betrag angeben?**
+Nein. Du kannst den Betrag frei lassen – dann trägt der Zahler den gewünschten Betrag selbst ein.
+Für klassische Rechnungen empfiehlt sich jedoch ein fest hinterlegter Betrag.
+
+**Kann ich den GiroCode direkt in eine Rechnung einbinden?**
+Ja. Mit der integrierten Rechnungsfunktion erzeugst du eine PDF-Rechnung mit eingebettetem GiroCode,
+die sich ideal für den Versand per E-Mail oder zum Ausdrucken eignet.
+
+**Ist das Erstellen eines GiroCodes sicher?**
+Ja. Alle Daten werden ausschließlich lokal in deinem Browser verarbeitet. Deine IBAN, der Betrag und
+der Verwendungszweck verlassen nie deinen Computer.
+
+**Welche Daten sind in einem GiroCode gespeichert?**
+Ein GiroCode enthält: Name des Empfängers, IBAN, optional BIC, optional Betrag (z.B. EUR49.90) und
+optional einen Verwendungszweck (max. 140 Zeichen). Keine persönlichen Daten des Zahlers werden
+gespeichert.
+
+**Warum erkennt meine Banking-App den GiroCode nicht?**
+Häufige Ursachen: Der Code ist zu klein gedruckt (Mindestgröße 2x2 cm), schlechte Beleuchtung,
+Reflexionen auf dem Bildschirm oder die Banking-App unterstützt den EPC-Standard nicht.
+Tipp: Helligkeit erhöhen und Abstand von 15–30 cm einhalten.
+
+**Kann ich einen GiroCode ohne Betrag erstellen?**
+Ja, der Betrag ist optional. Lässt du ihn weg, kann der Zahler selbst einen Betrag eingeben.
+Das ist besonders praktisch für Spendenaufrufe oder variable Preise.
+
+**Ist ein GiroCode dasselbe wie ein EPC-QR-Code?**
+Ja. GiroCode ist der deutsche Markenname für den EPC-QR-Code (European Payments Council).
+In Österreich heißt er Stuzza-QR, in der Schweiz QR-Bill. Alle basieren auf demselben Standard.
+
+**Wie lange ist ein GiroCode gültig?**
+Ein GiroCode hat kein Ablaufdatum. Er ist dauerhaft gültig, solange die enthaltenen Kontodaten
+(IBAN, Empfängername) noch aktuell sind.
+
+**Kann jemand mit meinem GiroCode Geld von mir abbuchen?**
+Nein. Ein GiroCode ist eine Zahlungsaufforderung, kein Lastschriftmandat. Nur der Zahler kann aktiv
+eine Überweisung auslösen und muss diese mit TAN oder Biometrie bestätigen. Deine IBAN zu kennen
+ermöglicht es niemandem, Geld abzubuchen.
+
+---
+
+## Use-Case Beschreibungen
+
+### Freelancer & Selbstständige
+Freelancer profitieren enorm von GiroCodes auf ihren Rechnungen: Kunden scannen den Code und überweisen
+in Sekunden, ohne die IBAN abtippen zu müssen. Zahlungsverzögerungen durch Tippfehler gehören der
+Vergangenheit an. Der GiroCode Generator erstellt DIN-konforme PDF-Rechnungen mit integriertem QR-Code
+– ohne Monatsabo, ohne Registrierung, ohne Kosten. Besonders bei vielen kleinen Aufträgen spart das
+wöchentlich mehrere Stunden Nachverfolgungsaufwand. Über den Verwendungszweck wird die Rechnungsnummer
+automatisch in die Überweisung eingetragen, was die Buchführung erheblich vereinfacht.
+
+### Kleine und mittlere Unternehmen (KMU)
+KMUs nutzen GiroCodes für schnellere Zahlungseingänge und weniger Rückfragen von Kunden. Eine auf
+jede Ausgangsrechnung gedruckte QR-Code-Zahlungsinformation senkt die durchschnittliche Zahlungsfrist
+nachweislich. Die PDF-Rechnungsfunktion des Generators erfüllt alle gesetzlichen Pflichtangaben nach
+§14 UStG. Keine teure Buchhaltungssoftware nötig – gelegentliche Nutzung ist dauerhaft kostenlos.
+Besonders für Handwerker, Dienstleister und Beratungsunternehmen mit wiederkehrenden Kunden geeignet.
+
+### Vereine und Organisationen
+Vereine verwenden GiroCodes für Mitgliedsbeiträge, Spendenaufrufe und Veranstaltungsgebühren.
+Ein QR-Code auf dem Mitgliederbrief oder der Vereinshomepage vereinfacht die Beitragsabwicklung
+erheblich. Der Kassenwart spart Zeit durch automatisch korrekte Verwendungszwecke (Mitgliedsnummer,
+Beitragsperiode). Für NGOs: Wer bei Veranstaltungen einen GiroCode-Aufsteller aufstellt, erzielt
+erfahrungsgemäß 30–50 % mehr Spendenbereitschaft gegenüber reiner IBAN-Angabe.
+
+### Handwerker
+Handwerker können Rechnungen direkt vor Ort präsentieren – der Kunde scannt den GiroCode und zahlt
+noch beim Abnahmegespräch. Keine Wartezeit auf Banküberweisung. Vorteil gegenüber EC-Karte: keine
+Terminalgebühren, keine Hardware nötig, keine Mindestbeträge. Der GiroCode Generator erstellt in
+unter einer Minute eine professionelle Rechnung als PDF mit eingebettetem QR-Code.
+
+### Privatpersonen (eBay Kleinanzeigen, Privatverkäufe)
+Bei Privatverkäufen auf Plattformen wie eBay Kleinanzeigen oder Vinted können Verkäufer einen
+GiroCode per E-Mail oder Messenger senden. Käufer zahlen per SEPA-Überweisung statt PayPal – ohne
+Gebühren für beide Seiten. Der GiroCode schützt zudem vor Betrug durch gefälschte PayPal-Zahlungs-
+bestätigungen. Einfach IBAN, Namen und Betrag eingeben, QR-Code generieren und als PNG versenden.
+
+### Spendenaktionen & NGOs
+Für Spendenaktionen ist der GiroCode das effektivste digitale Zahlungsmittel: Keine Registrierung
+für Spender erforderlich, keine Gebühren, DSGVO-konform. Ein GiroCode-Plakat, eine Website-Einbindung
+oder ein QR-Code im Newsletter senkt die Hemmschwelle für Spenden deutlich. Spendenempfänger können
+einen GiroCode ohne Betrag erstellen – der Spender entscheidet selbst über die Höhe. Für regelmäßige
+Spendenkampagnen empfiehlt sich der Bulk-Generator für mehrere Codes gleichzeitig.

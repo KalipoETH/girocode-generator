@@ -59,6 +59,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    'max-snippet': -1,
+    'max-image-preview': 'large',
+    'max-video-preview': -1,
     googleBot: { index: true, follow: true },
   },
 };
@@ -71,9 +74,44 @@ export default async function RootLayout({
   const headersList = await headers();
   const locale = headersList.get('x-locale') ?? 'de';
 
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'GiroCode Generator',
+    url: 'https://www.girocodegenerator.com',
+    logo: 'https://www.girocodegenerator.com/og-image.png',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: 'jahnke.kaleb@gmail.com',
+      contactType: 'customer support',
+      availableLanguage: ['German', 'English', 'French', 'Spanish'],
+    },
+    founder: {
+      '@type': 'Person',
+      name: 'Kaleb Jahnke',
+      jobTitle: 'Developer',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Osterholz-Scharmbeck',
+        addressCountry: 'DE',
+      },
+    },
+    sameAs: [
+      'https://github.com/KalipoETH/girocode-generator',
+      'https://www.producthunt.com/products/girocode-generator',
+    ],
+  };
+
   return (
     <html lang={locale} className="h-full">
+      <head>
+        <link rel="alternate" type="application/json+ld" href="/api/structured-data" />
+      </head>
       <body className="min-h-full bg-[#0b0c10] font-sans text-slate-100">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <div className="flex min-h-screen flex-col">
           <FloatingDots />
           <Navbar />

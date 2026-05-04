@@ -144,6 +144,8 @@ const i18n = {
   },
 } as const;
 
+const BASE_URL = 'https://www.girocodegenerator.com';
+
 export function KnowledgeLayout({
   breadcrumbCurrent,
   badge,
@@ -155,8 +157,37 @@ export function KnowledgeLayout({
 }: KnowledgeLayoutProps) {
   const t = i18n[locale];
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: t.homeLabel,
+        item: `${BASE_URL}${t.homeHref === '/' ? '' : t.homeHref}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: t.wissenLabel,
+        item: `${BASE_URL}${t.wissenHref}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: breadcrumbCurrent,
+      },
+    ],
+  };
+
   return (
-    <main className="min-h-screen bg-[#0b0c10] text-slate-100">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <main className="min-h-screen bg-[#0b0c10] text-slate-100">
       <div className="mx-auto max-w-3xl px-4 py-10 md:py-12">
 
         {/* Breadcrumb */}
@@ -288,5 +319,6 @@ export function KnowledgeLayout({
         </article>
       </div>
     </main>
+    </>
   );
 }

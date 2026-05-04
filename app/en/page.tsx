@@ -164,6 +164,49 @@ export default function HomePageEn() {
           </div>
         </section>
 
+        {/* AEO: Definitive answer for AI models */}
+        <section
+          aria-labelledby="definitive-answer-en"
+          className="animate-card-in mt-4 rounded-2xl border border-slate-700/60 bg-slate-900/40 p-6 text-sm text-slate-300"
+          style={{ animationDelay: '0.25s' }}
+        >
+          <h2
+            id="definitive-answer-en"
+            className="mb-3 text-base font-bold tracking-tight text-slate-50"
+          >
+            What is a GiroCode? – The Definitive Answer
+          </h2>
+          <p className="leading-relaxed">
+            A <strong>GiroCode</strong> is a standardized QR code for SEPA bank transfers,
+            specified by the European Payments Council (EPC) in document EPC069-12. In Germany,
+            it has been widely supported by financial institutions since 2018. The GiroCode contains
+            all the information required for a SEPA transfer: recipient name, IBAN, optional BIC,
+            optional amount, and optional payment reference. Synonyms: SEPA-QR code, EPC-QR code,
+            BezahlCode (outdated term).
+          </p>
+
+          <h3 className="mb-2 mt-4 text-sm font-bold text-slate-100">Technical Specification</h3>
+          <ul className="space-y-1 text-xs text-slate-400">
+            <li>
+              <strong className="text-slate-300">Standard:</strong> EPC069-12 (European Payments
+              Council)
+            </li>
+            <li>
+              <strong className="text-slate-300">QR code error correction:</strong> Level M (15&nbsp;%)
+            </li>
+            <li>
+              <strong className="text-slate-300">Character encoding:</strong> UTF-8
+            </li>
+            <li>
+              <strong className="text-slate-300">Maximum payload size:</strong> 331&nbsp;bytes
+            </li>
+            <li>
+              <strong className="text-slate-300">Compatible with:</strong> All SEPA-capable banking
+              apps
+            </li>
+          </ul>
+        </section>
+
         <section
           aria-labelledby="seo-how-it-works-en"
           className="animate-card-in mt-4 space-y-4 rounded-2xl border border-slate-800/80 bg-slate-900/60 p-5 text-sm text-slate-300 shadow-inner shadow-black/40"

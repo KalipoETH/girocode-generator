@@ -44,6 +44,8 @@ export interface UseCaseContent {
   closing?: ReactNode;
 }
 
+const BASE_URL = 'https://www.girocodegenerator.com';
+
 export function UseCaseLanding({ content }: { content: UseCaseContent }) {
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -55,11 +57,33 @@ export function UseCaseLanding({ content }: { content: UseCaseContent }) {
     })),
   };
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: content.homeLabel,
+        item: `${BASE_URL}${content.homeHref === '/' ? '' : content.homeHref}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: content.breadcrumbLabel,
+      },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <main className="min-h-screen bg-[#0b0c10] text-slate-100">
         <div className="mx-auto max-w-3xl px-4 py-10 md:py-12">

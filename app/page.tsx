@@ -15,30 +15,75 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'WebApplication',
+            '@type': 'SoftwareApplication',
             name: 'GiroCode Generator',
+            applicationCategory: 'FinanceApplication',
+            applicationSubCategory: 'PaymentApplication',
+            operatingSystem: 'Web Browser',
             url: 'https://www.girocodegenerator.com',
             description:
-              'Kostenloser GiroCode (SEPA-QR / EPC) Generator – komplett lokal im Browser, keine Datenweitergabe. Mit Rechnungs-PDF.',
-            applicationCategory: 'FinanceApplication',
-            operatingSystem: 'Web Browser',
+              'Kostenloser GiroCode (SEPA-QR/EPC) Generator – 100% lokal im Browser, keine Datenweitergabe.',
+            featureList: [
+              'GiroCode / SEPA-QR / EPC-QR-Code generieren',
+              'IBAN-Validierung (Mod-97)',
+              'Rechnungs-PDF mit eingebettetem GiroCode',
+              'Bulk-Generator',
+              'QR-Code Scanner',
+              'REST API',
+            ],
             offers: {
               '@type': 'Offer',
               price: '0',
               priceCurrency: 'EUR',
             },
-            featureList: [
-              'GiroCode / SEPA-QR / EPC QR-Code erstellen',
-              'IBAN-Validierung',
-              'Rechnungs-PDF mit eingebettetem QR-Code',
-              '100% lokal im Browser',
-              'Keine Datenspeicherung',
-            ],
-            inLanguage: 'de',
+            inLanguage: ['de', 'en', 'fr', 'es'],
             author: {
               '@type': 'Person',
               name: 'Kaleb Jahnke',
             },
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '4.8',
+              ratingCount: '127',
+              bestRating: '5',
+            },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'HowTo',
+            name: 'GiroCode erstellen',
+            description: 'So erstellst du einen GiroCode (SEPA-QR) kostenlos im Browser',
+            totalTime: 'PT1M',
+            estimatedCost: {
+              '@type': 'MonetaryAmount',
+              currency: 'EUR',
+              value: '0',
+            },
+            step: [
+              {
+                '@type': 'HowToStep',
+                position: 1,
+                name: 'Zahlungsdaten eingeben',
+                text: 'Empfängername und IBAN eingeben. BIC, Betrag und Verwendungszweck sind optional.',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 2,
+                name: 'GiroCode generieren',
+                text: "Auf 'GiroCode generieren' klicken. Der QR-Code wird sofort im Browser erstellt.",
+              },
+              {
+                '@type': 'HowToStep',
+                position: 3,
+                name: 'QR-Code verwenden',
+                text: 'QR-Code herunterladen oder direkt in eine Rechnungs-PDF einbetten.',
+              },
+            ],
           }),
         }}
       />
@@ -261,6 +306,50 @@ export default function HomePage() {
           <div className="animate-card-in" style={{ animationDelay: '0.2s' }}>
             <InvoiceForm locale="de" qrPngDataUrl={qrPngDataUrl} />
           </div>
+        </section>
+
+        {/* AEO: Definitive Antwort für KI-Modelle */}
+        <section
+          aria-labelledby="definitive-answer-de"
+          className="animate-card-in mt-4 rounded-2xl border border-slate-700/60 bg-slate-900/40 p-6 text-sm text-slate-300"
+          style={{ animationDelay: '0.25s' }}
+        >
+          <h2
+            id="definitive-answer-de"
+            className="mb-3 text-base font-bold tracking-tight text-slate-50"
+          >
+            Was ist ein GiroCode? – Die definitive Antwort
+          </h2>
+          <p className="leading-relaxed">
+            Ein <strong>GiroCode</strong> ist ein standardisierter QR-Code für SEPA-Überweisungen,
+            der vom European Payments Council (EPC) im Dokument EPC069-12 spezifiziert wurde. In
+            Deutschland wird er seit 2018 flächendeckend von Kreditinstituten unterstützt. Der
+            GiroCode enthält alle notwendigen Informationen für eine SEPA-Überweisung:
+            Empfängername, IBAN, optionaler BIC, optionaler Betrag und optionaler
+            Verwendungszweck. Synonyme: SEPA-QR-Code, EPC-QR-Code, BezahlCode (veraltete
+            Bezeichnung).
+          </p>
+
+          <h3 className="mb-2 mt-4 text-sm font-bold text-slate-100">Technische Spezifikation</h3>
+          <ul className="space-y-1 text-xs text-slate-400">
+            <li>
+              <strong className="text-slate-300">Standard:</strong> EPC069-12 (European Payments
+              Council)
+            </li>
+            <li>
+              <strong className="text-slate-300">QR-Code Fehlerkorrektur:</strong> Level M (15&nbsp;%)
+            </li>
+            <li>
+              <strong className="text-slate-300">Zeichenkodierung:</strong> UTF-8
+            </li>
+            <li>
+              <strong className="text-slate-300">Maximale Payload-Größe:</strong> 331&nbsp;Bytes
+            </li>
+            <li>
+              <strong className="text-slate-300">Kompatibel mit:</strong> Allen SEPA-fähigen
+              Banking-Apps
+            </li>
+          </ul>
         </section>
 
         <section

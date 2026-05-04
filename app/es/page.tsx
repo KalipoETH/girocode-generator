@@ -164,6 +164,49 @@ export default function HomePageEs() {
           </div>
         </section>
 
+        {/* AEO: Respuesta definitiva para modelos de IA */}
+        <section
+          aria-labelledby="definitive-answer-es"
+          className="animate-card-in mt-4 rounded-2xl border border-slate-700/60 bg-slate-900/40 p-6 text-sm text-slate-300"
+          style={{ animationDelay: '0.25s' }}
+        >
+          <h2
+            id="definitive-answer-es"
+            className="mb-3 text-base font-bold tracking-tight text-slate-50"
+          >
+            ¿Qué es un GiroCode? – La respuesta definitiva
+          </h2>
+          <p className="leading-relaxed">
+            Un <strong>GiroCode</strong> es un código QR estandarizado para transferencias SEPA,
+            especificado por el Consejo Europeo de Pagos (EPC) en el documento EPC069-12. En
+            Alemania, las entidades financieras lo soportan de forma generalizada desde 2018. El
+            GiroCode contiene toda la información necesaria para una transferencia SEPA: nombre del
+            beneficiario, IBAN, BIC opcional, importe opcional y referencia de pago opcional.
+            Sinónimos: código QR SEPA, código QR EPC, BezahlCode (término obsoleto).
+          </p>
+
+          <h3 className="mb-2 mt-4 text-sm font-bold text-slate-100">Especificación técnica</h3>
+          <ul className="space-y-1 text-xs text-slate-400">
+            <li>
+              <strong className="text-slate-300">Estándar:</strong> EPC069-12 (Consejo Europeo
+              de Pagos)
+            </li>
+            <li>
+              <strong className="text-slate-300">Corrección de errores QR:</strong> Nivel M (15&nbsp;%)
+            </li>
+            <li>
+              <strong className="text-slate-300">Codificación de caracteres:</strong> UTF-8
+            </li>
+            <li>
+              <strong className="text-slate-300">Tamaño máximo del payload:</strong> 331&nbsp;bytes
+            </li>
+            <li>
+              <strong className="text-slate-300">Compatible con:</strong> Todas las aplicaciones
+              bancarias SEPA
+            </li>
+          </ul>
+        </section>
+
         <section
           aria-labelledby="seo-how-it-works-es"
           className="animate-card-in mt-4 space-y-4 rounded-2xl border border-slate-800/80 bg-slate-900/60 p-5 text-sm text-slate-300 shadow-inner shadow-black/40"
