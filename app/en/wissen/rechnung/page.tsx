@@ -34,6 +34,7 @@ export default function WissenRechnungPageEn() {
         { href: '/en/wissen/epc-standard', label: 'EPC Standard & SEPA-QR Explained' },
       ]}
       locale="en"
+      shortAnswer="A GiroCode on invoices enables customers to pay via banking app scan. Required fields under EU law include: name, address, tax number, date, invoice number, service description, net/tax/gross amounts."
     >
       <section aria-labelledby="why-girocode-invoices">
         <h2 id="why-girocode-invoices">Why Use GiroCode on Invoices?</h2>

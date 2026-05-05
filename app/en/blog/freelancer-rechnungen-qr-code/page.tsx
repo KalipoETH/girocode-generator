@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { AuthorBox, AuthorBoxEnd } from '../../../../components/AuthorBox';
 
 export const metadata: Metadata = {
   title: 'Invoices as a Freelancer: GiroCode for Faster Payments',
@@ -38,6 +39,8 @@ export default function FreelancerInvoicesEnPage() {
             all too well. A GiroCode on your invoice can change all that.
           </p>
         </header>
+
+        <AuthorBox locale="en" publishedDate="1 March 2026" updatedDate="1 March 2026" />
 
         <article className="space-y-10 text-sm leading-relaxed text-slate-300 md:text-base">
 
@@ -180,6 +183,7 @@ export default function FreelancerInvoicesEnPage() {
             ← Back to Blog
           </Link>
         </div>
+        <AuthorBoxEnd locale="en" />
       </div>
     </main>
   );

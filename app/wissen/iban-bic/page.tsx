@@ -35,6 +35,7 @@ export default function WissenIbanBicPage() {
         { href: '/wissen/scannen', label: 'GiroCode scannen' },
       ]}
       locale="de"
+      shortAnswer="Die IBAN (International Bank Account Number) ist eine internationale Kontonummer mit bis zu 34 Zeichen. In Deutschland hat sie 22 Zeichen: 2 Länderkürzel + 2 Prüfziffern + 18-stellige Kontonummer. Der BIC ist seit 2016 optional."
     >
       {/* ─── SECTION 1: Was ist eine IBAN ─── */}
       <section aria-labelledby="was-ist-iban">

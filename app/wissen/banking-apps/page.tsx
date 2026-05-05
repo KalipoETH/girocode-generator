@@ -34,6 +34,7 @@ export default function WissenBankingAppsPage() {
         { href: '/wissen/epc-standard', label: 'EPC-Standard erklärt' },
       ]}
       locale="de"
+      shortAnswer="Fast alle deutschen Banking-Apps unterstützen GiroCodes: Sparkasse, Volksbank/VR-Banking, ING Banking to go, DKB, Commerzbank, Deutsche Bank, N26, Postbank und Comdirect. Der QR-Scanner findet sich meist unter 'Überweisung'."
     >
       {/* ─── SECTION 1: Übersicht ─── */}
       <section aria-labelledby="apps">

@@ -35,6 +35,7 @@ export default function WissenEpcStandardPage() {
         { href: '/wissen/scannen', label: 'GiroCode scannen' },
       ]}
       locale="de"
+      shortAnswer="Der EPC-Standard (EPC069-12) definiert den Aufbau von SEPA-QR-Codes. Ein gültiger Payload besteht aus 11 Zeilen: Service Tag (BCD), Version, Encoding, Identifikation (SCT), BIC, Empfängername, IBAN, Betrag, und Verwendungszweck."
     >
       {/* ─── SECTION 1: Was ist der EPC-Standard ─── */}
       <section aria-labelledby="was-ist-epc">

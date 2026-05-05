@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { AuthorBox, AuthorBoxEnd } from '../../../../components/AuthorBox';
 
 export const metadata: Metadata = {
   title: "L'histoire du GiroCode – Du document papier au scan QR",
@@ -39,6 +40,8 @@ export default function HistoireGiroCodeFrPage() {
             généralisée a duré plus d&apos;une décennie.
           </p>
         </header>
+
+        <AuthorBox locale="fr" publishedDate="15 mars 2026" updatedDate="15 mars 2026" />
 
         <article className="space-y-10 text-sm leading-relaxed text-slate-300 md:text-base">
 
@@ -143,6 +146,8 @@ export default function HistoireGiroCodeFrPage() {
             </div>
           </section>
         </article>
+
+        <AuthorBoxEnd locale="fr" />
 
         <div className="mt-12 border-t border-slate-800 pt-8">
           <Link href="/fr/blog" className="text-sm text-slate-400 hover:text-slate-200">

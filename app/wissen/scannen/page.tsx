@@ -35,6 +35,7 @@ export default function WissenScannenPage() {
         { href: '/wissen/epc-standard', label: 'EPC-Standard erklärt' },
       ]}
       locale="de"
+      shortAnswer="Um einen GiroCode zu scannen: Banking-App öffnen → Überweisung → QR-Scanner → Code scannen → Daten prüfen → TAN eingeben → bestätigen. Der gesamte Prozess dauert unter 30 Sekunden."
     >
       {/* ─── CTA: Scanner-Tool ─── */}
       <section className="not-prose mb-8">

@@ -32,6 +32,7 @@ export default function WissenBetragUndZweckPageFr() {
         { href: '/fr/wissen/scannen', label: 'Comment scanner un GiroCode' },
       ]}
       locale="fr"
+      shortAnswer="Le montant dans un GiroCode est optionnel au format EUR49.90. La référence de paiement est aussi optionnelle, 140 caractères maximum. Les deux champs sont automatiquement transférés dans le formulaire de virement lors du scan."
     >
 
       {/* ── Section 1 ── */}

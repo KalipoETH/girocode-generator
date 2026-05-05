@@ -33,6 +33,7 @@ export default function WissenScannenPageEn() {
         { href: '/en/wissen/betrag-und-zweck', label: 'Amount & Payment Reference in GiroCode' },
       ]}
       locale="en"
+      shortAnswer="To scan a GiroCode: Open banking app → Transfer → QR scanner → Scan code → Check data → Enter TAN → Confirm. The entire process takes under 30 seconds."
     >
       <section aria-labelledby="scanning-how-it-works">
         <h2 id="scanning-how-it-works">Scanning a GiroCode – How It Works</h2>

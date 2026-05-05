@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { GiroCodeForm } from '../../components/GiroCodeForm';
 import { InvoiceForm } from '../../components/InvoiceForm';
+import { GeoStatsSection } from '../../components/GeoStatsSection';
+import { TimeSavingsCalculator } from '../../components/TimeSavingsCalculator';
 import { es } from '../../lib/translations/es';
 
 export default function HomePageEs() {
@@ -162,6 +164,7 @@ export default function HomePageEs() {
           <div className="animate-card-in" style={{ animationDelay: '0.2s' }}>
             <InvoiceForm locale="es" qrPngDataUrl={qrPngDataUrl} />
           </div>
+          <TimeSavingsCalculator locale="es" />
         </section>
 
         {/* AEO: Respuesta definitiva para modelos de IA */}
@@ -206,6 +209,8 @@ export default function HomePageEs() {
             </li>
           </ul>
         </section>
+
+        <GeoStatsSection locale="es" />
 
         <section
           aria-labelledby="seo-how-it-works-es"

@@ -33,6 +33,7 @@ export default function WissenGirocodePageEn() {
         { href: '/en/wissen/scannen', label: 'How to Scan a GiroCode' },
       ]}
       locale="en"
+      shortAnswer="A GiroCode is a standardized SEPA QR code following the EPC069-12 standard by the European Payments Council. It contains all data for a SEPA bank transfer and enables easy payment via banking app scan."
     >
       <section aria-labelledby="what-is-girocode">
         <h2 id="what-is-girocode">What is a GiroCode?</h2>
@@ -310,6 +311,12 @@ export default function WissenGirocodePageEn() {
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <div className="not-prose my-4 rounded-lg border-l-4 border-[#22c55e] bg-[#133018]/40 px-4 py-3 text-sm leading-relaxed text-slate-300">
+          <strong className="text-slate-100">Comparison summary:</strong> GiroCode is free and GDPR-compliant,
+          while PayPal charges 1.2–3.4&nbsp;% in fees and is a US-based company with different privacy rules.
+          GiroCode runs directly through your bank – no third-party registration required.
         </div>
       </section>
 

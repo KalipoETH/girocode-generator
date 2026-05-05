@@ -32,6 +32,7 @@ export default function WissenEpcStandardPageEs() {
         { href: '/es/wissen/banking-apps', label: 'Apps bancarias compatibles con GiroCode' },
       ]}
       locale="es"
+      shortAnswer="La norma EPC (EPC069-12) define la estructura de los códigos QR SEPA. Un payload válido consta de 11 líneas: Service Tag (BCD), Versión, Codificación, Identificación (SCT), BIC, Nombre del beneficiario, IBAN, Importe y Referencia de pago."
     >
       <section aria-labelledby="que-es-epc">
         <h2 id="que-es-epc">¿Qué es la norma EPC?</h2>

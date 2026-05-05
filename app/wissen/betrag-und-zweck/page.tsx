@@ -35,6 +35,7 @@ export default function WissenBetragUndZweckPage() {
         { href: '/wissen/scannen', label: 'GiroCode scannen' },
       ]}
       locale="de"
+      shortAnswer="Der Betrag im GiroCode ist optional und wird im Format EUR49.90 angegeben. Der Verwendungszweck ist ebenfalls optional und darf maximal 140 Zeichen lang sein. Beide Felder werden beim Scannen automatisch in die Überweisungsmaske übertragen."
     >
       {/* ─── SECTION 1: Betrag ─── */}
       <section aria-labelledby="betrag-format">

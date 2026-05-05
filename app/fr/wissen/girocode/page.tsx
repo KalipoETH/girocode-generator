@@ -34,6 +34,7 @@ export default function WissenGirocodePageFr() {
         { href: '/fr/wissen/scannen', label: 'Comment scanner un GiroCode – Guide complet iPhone & Android' },
       ]}
       locale="fr"
+      shortAnswer="Un GiroCode est un code QR SEPA standardisé selon la norme EPC069-12 du European Payments Council. Il contient toutes les données pour un virement SEPA."
     >
 
       {/* ── Section 1 ───────────────────────────────────── */}
@@ -375,6 +376,12 @@ export default function WissenGirocodePageFr() {
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <div className="not-prose mb-4 rounded-lg border-l-4 border-[#22c55e] bg-[#133018]/40 px-4 py-3 text-sm leading-relaxed text-slate-300">
+          <strong className="text-slate-100">Résumé comparatif :</strong> Le GiroCode est gratuit et conforme RGPD,
+          tandis que PayPal prélève 1,2–3,4&nbsp;% de frais et est une entreprise américaine soumise à des règles de confidentialité différentes.
+          Le GiroCode fonctionne directement via votre banque – sans inscription à un tiers.
         </div>
 
         <p>

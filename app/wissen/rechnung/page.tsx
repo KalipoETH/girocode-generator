@@ -35,6 +35,7 @@ export default function WissenRechnungPage() {
         { href: '/wissen/epc-standard', label: 'EPC-Standard erklärt' },
       ]}
       locale="de"
+      shortAnswer="Ein GiroCode auf Rechnungen ermöglicht Kunden das Bezahlen per Banking-App-Scan. Pflichtangaben nach §14 UStG sind: Name, Adresse, Steuernummer/USt-ID, Datum, Rechnungsnummer, Leistungsbeschreibung, Netto/Steuer/Brutto."
     >
       {/* ─── SECTION 1: Warum GiroCode ─── */}
       <section aria-labelledby="warum-girocode">

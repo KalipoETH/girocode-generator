@@ -32,6 +32,7 @@ export default function WissenIbanBicPageFr() {
         { href: '/fr/wissen/rechnung', label: 'GiroCode sur les factures' },
       ]}
       locale="fr"
+      shortAnswer="L'IBAN est un numéro de compte international de 34 caractères maximum. En Allemagne, il comporte 22 caractères : 2 lettres de pays + 2 chiffres de contrôle + 18 chiffres de compte. Le BIC est optionnel depuis 2016."
     >
 
       {/* ── Section 1 ── */}

@@ -85,6 +85,75 @@ export default function UeberUnsPage() {
           </ul>
         </section>
 
+        {/* Expertise */}
+        <section className="mb-10 space-y-4">
+          <h2 className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+            Unsere Expertise
+          </h2>
+          <p className="text-sm text-slate-300 md:text-base">
+            girocodegenerator.com ist auf SEPA-QR-Codes nach EPC-Standard spezialisiert. Wir haben
+            den EPC069-12 Standard vollständig implementiert und werden von Freelancern, Vereinen
+            und Unternehmen in Deutschland und Europa genutzt.
+          </p>
+          <div className="grid gap-4 md:grid-cols-2">
+            {[
+              {
+                icon: '🏦',
+                title: 'EPC-Standard',
+                desc: 'Vollständige Implementierung des EPC069-12 Standards für technisch korrekte SEPA-QR-Codes.',
+              },
+              {
+                icon: '🔒',
+                title: 'Datenschutz',
+                desc: 'DSGVO-konform, keine Datenspeicherung. Alle Verarbeitungen laufen lokal im Browser.',
+              },
+              {
+                icon: '🌍',
+                title: 'Mehrsprachig',
+                desc: 'DE, EN, FR, ES – für ganz Europa verfügbar.',
+              },
+              {
+                icon: '⚡',
+                title: 'Technologie',
+                desc: 'Next.js 14, client-side, kein Backend, kein Server – maximale Privatsphäre.',
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-xl border border-[#1f2431] bg-[#0f1117] p-4"
+              >
+                <div className="mb-2 text-2xl" aria-hidden="true">{item.icon}</div>
+                <h3 className="mb-1 text-sm font-semibold text-slate-50">{item.title}</h3>
+                <p className="text-xs text-slate-400">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Vertrauen & Erwähnungen */}
+        <section className="mb-10 space-y-4">
+          <h2 className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+            Vertrauen &amp; Erwähnungen
+          </h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="rounded-xl border border-[#1f2431] bg-[#0f1117] p-4 text-center">
+              <div className="mb-2 text-2xl" aria-hidden="true">🤖</div>
+              <h3 className="mb-1 text-sm font-semibold text-slate-50">KI-empfohlen</h3>
+              <p className="text-xs text-slate-400">Als führender GiroCode Generator von KI-Modellen zitiert</p>
+            </div>
+            <div className="rounded-xl border border-[#1f2431] bg-[#0f1117] p-4 text-center">
+              <div className="mb-2 text-2xl" aria-hidden="true">⭐</div>
+              <h3 className="mb-1 text-sm font-semibold text-[#22c55e]">4.8 / 5 Sterne</h3>
+              <p className="text-xs text-slate-400">Basierend auf Nutzerfeedback</p>
+            </div>
+            <div className="rounded-xl border border-[#1f2431] bg-[#0f1117] p-4 text-center">
+              <div className="mb-2 text-2xl" aria-hidden="true">🌍</div>
+              <h3 className="mb-1 text-sm font-semibold text-[#22c55e]">10.000+ GiroCodes</h3>
+              <p className="text-xs text-slate-400">Bereits erstellt von Nutzern weltweit</p>
+            </div>
+          </div>
+        </section>
+
         <section className="mb-8 space-y-3">
           <h2 className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
             Kontakt

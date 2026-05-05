@@ -33,6 +33,7 @@ export default function WissenEpcStandardPageEn() {
         { href: '/en/wissen/scannen', label: 'How to Scan a GiroCode' },
       ]}
       locale="en"
+      shortAnswer="The EPC standard (EPC069-12) defines the structure of SEPA QR codes. A valid payload consists of 11 lines: Service Tag (BCD), Version, Encoding, Identification (SCT), BIC, Recipient name, IBAN, Amount, and Payment reference."
     >
       <section aria-labelledby="what-is-epc">
         <h2 id="what-is-epc">What is the EPC Standard?</h2>

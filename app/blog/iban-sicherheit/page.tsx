@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { AuthorBox, AuthorBoxEnd } from '../../../components/AuthorBox';
 
 export const metadata: Metadata = {
   title: 'IBAN-Sicherheit: Worauf man bei Überweisungen achten muss',
@@ -33,6 +34,8 @@ export default function IbanSicherheitPage() {
             tatsächlich möglich, wenn jemand deine IBAN kennt – und was nicht?
           </p>
         </header>
+
+        <AuthorBox locale="de" publishedDate="1. April 2026" updatedDate="1. April 2026" />
 
         <article className="space-y-10 text-sm leading-relaxed text-slate-300 md:text-base">
 
@@ -310,6 +313,7 @@ export default function IbanSicherheitPage() {
             ← Zurück zum Blog
           </Link>
         </div>
+        <AuthorBoxEnd locale="de" />
       </div>
     </main>
   );

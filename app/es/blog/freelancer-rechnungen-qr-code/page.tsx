@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { AuthorBox, AuthorBoxEnd } from '../../../../components/AuthorBox';
 
 export const metadata: Metadata = {
   title: 'Facturas como autónomo: GiroCode para pagos más rápidos',
@@ -38,6 +39,8 @@ export default function FreelancerFacturasEsPage() {
             los autónomos conocen bien el problema. Un GiroCode en la factura puede cambiarlo todo.
           </p>
         </header>
+
+        <AuthorBox locale="es" publishedDate="1 de marzo de 2026" updatedDate="1 de marzo de 2026" />
 
         <article className="space-y-10 text-sm leading-relaxed text-slate-300 md:text-base">
 
@@ -149,6 +152,8 @@ export default function FreelancerFacturasEsPage() {
             </div>
           </section>
         </article>
+
+        <AuthorBoxEnd locale="es" />
 
         <div className="mt-12 border-t border-slate-800 pt-8">
           <Link href="/es/blog" className="text-sm text-slate-400 hover:text-slate-200">

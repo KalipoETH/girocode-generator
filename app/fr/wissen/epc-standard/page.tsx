@@ -31,6 +31,7 @@ export default function WissenEpcStandardPageFr() {
         { href: '/fr/wissen/rechnung', label: 'GiroCode sur les factures' },
       ]}
       locale="fr"
+      shortAnswer="La norme EPC (EPC069-12) définit la structure des codes QR SEPA. Un payload valide comporte 11 lignes : Service Tag (BCD), Version, Encodage, Identification (SCT), BIC, Nom du bénéficiaire, IBAN, Montant et Référence de paiement."
     >
 
       {/* ── Section 1 ── */}

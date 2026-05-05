@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { AuthorBox, AuthorBoxEnd } from '../../../components/AuthorBox';
 
 export const metadata: Metadata = {
   title: 'Rechnungen als Freelancer: GiroCode für schnellere Zahlungen',
@@ -34,6 +35,8 @@ export default function FreelancerRechnungenPage() {
             kennen das Problem. Der GiroCode auf der Rechnung kann das ändern.
           </p>
         </header>
+
+        <AuthorBox locale="de" publishedDate="1. März 2026" updatedDate="1. März 2026" />
 
         <article className="prose-custom space-y-10 text-sm leading-relaxed text-slate-300 md:text-base">
 
@@ -254,6 +257,8 @@ export default function FreelancerRechnungenPage() {
             </div>
           </section>
         </article>
+
+        <AuthorBoxEnd locale="de" />
 
         {/* Back to Blog */}
         <div className="mt-12 border-t border-slate-800 pt-8">

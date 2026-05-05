@@ -16,6 +16,7 @@ interface KnowledgeLayoutProps {
   badge: string;
   title: string;
   lead: React.ReactNode;
+  shortAnswer?: string;
   children: React.ReactNode;
   relatedArticles: RelatedArticle[];
   locale?: 'de' | 'en' | 'fr' | 'es';
@@ -151,6 +152,7 @@ export function KnowledgeLayout({
   badge,
   title,
   lead,
+  shortAnswer,
   children,
   relatedArticles,
   locale = 'de',
@@ -224,6 +226,20 @@ export function KnowledgeLayout({
             </p>
           </div>
         </header>
+
+        {/* Short Answer Box (GEO) */}
+        {shortAnswer && (
+          <div
+            className="mb-8 rounded-lg border-l-4 border-[#22c55e] bg-[#133018]/50 px-4 py-3"
+            role="note"
+            aria-label={locale === 'de' ? 'Kurze Antwort' : locale === 'en' ? 'Quick Answer' : locale === 'fr' ? 'Réponse rapide' : 'Respuesta rápida'}
+          >
+            <p className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-[#22c55e]">
+              {locale === 'de' ? '💡 Kurze Antwort' : locale === 'en' ? '💡 Quick Answer' : locale === 'fr' ? '💡 Réponse rapide' : '💡 Respuesta rápida'}
+            </p>
+            <p className="text-sm leading-relaxed text-slate-300">{shortAnswer}</p>
+          </div>
+        )}
 
         {/* Article Content */}
         <article className="prose prose-invert prose-lg max-w-none">

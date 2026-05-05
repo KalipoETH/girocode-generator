@@ -33,6 +33,7 @@ export default function WissenScannenPageFr() {
         { href: '/fr/wissen/epc-standard', label: 'Norme EPC & SEPA-QR – Structure technique' },
       ]}
       locale="fr"
+      shortAnswer="Pour scanner un GiroCode : Ouvrir l'app bancaire → Virement → Scanner QR → Scanner le code → Vérifier les données → Saisir le TAN → Confirmer. Le processus entier prend moins de 30 secondes."
     >
 
       {/* ── Section 1 ── */}

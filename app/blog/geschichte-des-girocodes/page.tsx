@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { AuthorBox, AuthorBoxEnd } from '../../../components/AuthorBox';
 
 export const metadata: Metadata = {
   title: 'Die Geschichte des GiroCodes – Vom Beleg zum QR-Scan',
@@ -28,12 +29,15 @@ export default function GeschichteDesGirocodesPage() {
           <time dateTime="2026-03-15" className="text-xs text-slate-500">15. März 2026</time>
           <h1 className="text-2xl font-bold tracking-tight text-slate-50 md:text-3xl lg:text-4xl">
             Die Geschichte des GiroCodes – Vom Beleg zum QR-Scan
+
           </h1>
           <p className="text-base leading-relaxed text-slate-400 md:text-lg">
             Der GiroCode erscheint heute selbstverständlich auf Rechnungen und Zahlscheinen.
             Doch sein Weg von der Idee zur flächendeckenden Nutzung dauerte über ein Jahrzehnt.
           </p>
         </header>
+
+        <AuthorBox locale="de" publishedDate="15. März 2026" updatedDate="15. März 2026" />
 
         <article className="space-y-10 text-sm leading-relaxed text-slate-300 md:text-base">
 
@@ -233,6 +237,8 @@ export default function GeschichteDesGirocodesPage() {
             </div>
           </section>
         </article>
+
+        <AuthorBoxEnd locale="de" />
 
         <div className="mt-12 border-t border-slate-800 pt-8">
           <Link href="/blog" className="text-sm text-slate-400 hover:text-slate-200">

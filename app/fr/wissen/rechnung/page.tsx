@@ -33,6 +33,7 @@ export default function WissenRechnungPageFr() {
         { href: '/fr/wissen/scannen', label: 'Comment scanner un GiroCode' },
       ]}
       locale="fr"
+      shortAnswer="Un GiroCode sur les factures permet aux clients de payer via scan d'app bancaire. Les mentions obligatoires selon la législation UE incluent : nom, adresse, numéro fiscal, date, numéro de facture, description de la prestation, montants HT/TVA/TTC."
     >
 
       {/* ── Section 1 ── */}

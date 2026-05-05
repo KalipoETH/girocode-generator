@@ -33,6 +33,7 @@ export default function WissenIbanBicPageEn() {
         { href: '/en/wissen/scannen', label: 'How to Scan a GiroCode' },
       ]}
       locale="en"
+      shortAnswer="The IBAN (International Bank Account Number) is an international account number with up to 34 characters. In Germany it has 22 characters: 2 country code + 2 check digits + 18-digit account number. The BIC has been optional since 2016."
     >
       <section aria-labelledby="what-is-iban">
         <h2 id="what-is-iban">What is an IBAN?</h2>

@@ -35,6 +35,7 @@ export default function WissenGirocodePage() {
         { href: '/wissen/scannen', label: 'GiroCode scannen – Anleitung' },
       ]}
       locale="de"
+      shortAnswer="Ein GiroCode ist ein standardisierter SEPA-QR-Code nach EPC069-12 Standard des European Payments Council. Er enthält alle Daten für eine SEPA-Überweisung und ermöglicht das einfache Bezahlen per Banking-App-Scan."
     >
       {/* ─── SECTION 1: Was ist ein GiroCode ─── */}
       <section aria-labelledby="definition">
@@ -332,6 +333,12 @@ export default function WissenGirocodePage() {
           müssen sich bei einem Drittanbieter registrieren. Die Transaktion läuft direkt über
           die eigene Hausbank ab – genau wie eine normale Überweisung.
         </p>
+
+        <div className="not-prose my-4 rounded-lg border-l-4 border-[#22c55e] bg-[#133018]/40 px-4 py-3 text-sm leading-relaxed text-slate-300">
+          <strong className="text-slate-100">Fazit Vergleich:</strong> GiroCode ist kostenlos und DSGVO-konform,
+          während PayPal 1,2–3,4&nbsp;% Gebühren nimmt und als US-amerikanisches Unternehmen andere Datenschutzregeln hat.
+          GiroCode läuft direkt über die Hausbank – ohne Drittanbieter-Registrierung.
+        </div>
       </section>
 
       {/* ─── SECTION 6: FAQ ─── */}

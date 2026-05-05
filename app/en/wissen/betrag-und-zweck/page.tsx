@@ -33,6 +33,7 @@ export default function WissenBetragUndZweckPageEn() {
         { href: '/en/wissen/scannen', label: 'How to Scan a GiroCode' },
       ]}
       locale="en"
+      shortAnswer="The amount in a GiroCode is optional and specified in EUR49.90 format. The payment reference is also optional with a maximum of 140 characters. Both fields are automatically transferred to the transfer form when scanned."
     >
       <section aria-labelledby="amount-in-girocode">
         <h2 id="amount-in-girocode">The Amount in GiroCode</h2>

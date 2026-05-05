@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { GiroCodeForm } from '../components/GiroCodeForm';
 import { InvoiceForm } from '../components/InvoiceForm';
+import { GeoStatsSection } from '../components/GeoStatsSection';
+import { TimeSavingsCalculator } from '../components/TimeSavingsCalculator';
 
 export default function HomePage() {
   const [qrPngDataUrl, setQrPngDataUrl] = useState<string | null>(null);
@@ -306,6 +308,7 @@ export default function HomePage() {
           <div className="animate-card-in" style={{ animationDelay: '0.2s' }}>
             <InvoiceForm locale="de" qrPngDataUrl={qrPngDataUrl} />
           </div>
+          <TimeSavingsCalculator locale="de" />
         </section>
 
         {/* AEO: Definitive Antwort für KI-Modelle */}
@@ -351,6 +354,8 @@ export default function HomePage() {
             </li>
           </ul>
         </section>
+
+        <GeoStatsSection locale="de" />
 
         <section
           aria-labelledby="seo-how-it-works"

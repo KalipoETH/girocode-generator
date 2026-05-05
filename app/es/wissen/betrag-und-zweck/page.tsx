@@ -32,6 +32,7 @@ export default function WissenBetragUndZweckPageEs() {
         { href: '/es/wissen/banking-apps', label: 'Apps bancarias compatibles con GiroCode' },
       ]}
       locale="es"
+      shortAnswer="El importe en un GiroCode es opcional en formato EUR49.90. La referencia de pago también es opcional, máximo 140 caracteres. Ambos campos se transfieren automáticamente al formulario de transferencia al escanear."
     >
       <section aria-labelledby="importe-girocode">
         <h2 id="importe-girocode">El importe en GiroCode</h2>

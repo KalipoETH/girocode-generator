@@ -33,6 +33,7 @@ export default function WissenBankingAppsPageEn() {
         { href: '/en/wissen/betrag-und-zweck', label: 'Amount & Payment Reference in GiroCode' },
       ]}
       locale="en"
+      shortAnswer="Almost all German banking apps support GiroCodes: Sparkasse, Volksbank, ING, DKB, Commerzbank, Deutsche Bank, N26, Postbank and Comdirect. The QR scanner is usually found under 'Transfer'."
     >
       <section aria-labelledby="which-apps-support">
         <h2 id="which-apps-support">Which Banking Apps Support GiroCodes?</h2>

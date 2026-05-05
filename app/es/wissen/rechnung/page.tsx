@@ -33,6 +33,7 @@ export default function WissenRechnungPageEs() {
         { href: '/es/wissen/scannen', label: 'Cómo escanear un GiroCode' },
       ]}
       locale="es"
+      shortAnswer="Un GiroCode en facturas permite a los clientes pagar mediante escaneo de app bancaria. Los campos obligatorios según la legislación UE incluyen: nombre, dirección, número fiscal, fecha, número de factura, descripción del servicio, importes neto/IVA/bruto."
     >
       <section aria-labelledby="por-que-girocode-factura">
         <h2 id="por-que-girocode-factura">¿Por qué usar GiroCode en facturas?</h2>
