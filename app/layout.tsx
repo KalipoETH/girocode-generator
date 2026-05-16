@@ -4,6 +4,7 @@ import './globals.css';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { FloatingDots } from '../components/FloatingDots';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: {
@@ -118,6 +119,7 @@ export default async function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
+        <SpeedInsights />
       </body>
     </html>
   );
