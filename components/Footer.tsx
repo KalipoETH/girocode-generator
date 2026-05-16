@@ -94,8 +94,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex justify-center pt-1">
+        <div className="flex flex-wrap items-center justify-center gap-4 pt-1">
           <ProductHuntBadge />
+          <a
+            href="https://backlinklog.com/listing/girocodegenerator.com?utm_source=backlinklog&utm_medium=badge"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 rounded-lg border border-[#1f2431] bg-[#121318] px-3 py-2 text-xs text-slate-400 opacity-80 transition-all hover:border-[#22c55e40] hover:opacity-100"
+          >
+            🔗 Listed on BacklinkLog
+          </a>
         </div>
         <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
           <p>
@@ -129,23 +137,6 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex justify-center" style={{ marginTop: '16px' }}>
-          <a
-            href="https://backlinklog.com/listing/girocodegenerator.com?utm_source=backlinklog&utm_medium=badge"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ opacity: 0.8, transition: 'opacity 0.2s' }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.8')}
-          >
-            <img
-              src="https://backlinklog.com/badge/girocodegenerator.com.svg"
-              alt="Listed on BacklinkLog"
-              width={160}
-              height={40}
-            />
-          </a>
-        </div>
       </div>
     </footer>
   );
