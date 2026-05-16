@@ -128,6 +128,24 @@ export function Footer() {
             </Link>
           </div>
         </div>
+
+        <div className="flex justify-center" style={{ marginTop: '16px' }}>
+          <a
+            href="https://backlinklog.com/listing/girocodegenerator.com?utm_source=backlinklog&utm_medium=badge"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ opacity: 0.8, transition: 'opacity 0.2s' }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.8')}
+          >
+            <img
+              src="https://backlinklog.com/badge/girocodegenerator.com.svg"
+              alt="Listed on BacklinkLog"
+              width={160}
+              height={40}
+            />
+          </a>
+        </div>
       </div>
     </footer>
   );
