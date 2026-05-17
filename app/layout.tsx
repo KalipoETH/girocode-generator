@@ -7,6 +7,12 @@ import { FloatingDots } from '../components/FloatingDots';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
   title: {
     default: 'GiroCode Generator 2026 – Kostenlos & Ohne Anmeldung',
