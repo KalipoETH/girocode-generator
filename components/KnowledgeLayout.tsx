@@ -308,17 +308,20 @@ export function KnowledgeLayout({
 
             {/* Related Articles as Card Grid */}
             {relatedArticles.length > 0 && (
-              <div>
-                <h2 className="mb-4 text-base font-bold text-[#e8eaf0]">{t.relatedTitle}</h2>
+              <div className="rounded-2xl border border-[#1f2431] bg-[#0f1117] p-5">
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="text-xl" aria-hidden>📚</span>
+                  <h2 className="text-base font-bold text-[#e8eaf0]">{t.relatedTitle}</h2>
+                </div>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {relatedArticles.map((article) => (
                     <Link
                       key={article.href}
                       href={article.href}
-                      className="group flex items-center justify-between rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-3 text-sm font-medium text-[#9aa1b6] transition-all duration-200 hover:bg-[#1a1d25] hover:border-emerald-500/25 hover:text-[#e8eaf0] hover:-translate-y-0.5"
+                      className="group flex items-center justify-between rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-3.5 text-sm font-medium text-[#9aa1b6] transition-all duration-200 hover:bg-[#1a1d25] hover:border-emerald-500/30 hover:text-[#e8eaf0] hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(34,197,94,0.06)] motion-reduce:transform-none"
                     >
-                      <span>{article.label}</span>
-                      <span className="ml-2 text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">
+                      <span className="leading-snug">{article.label}</span>
+                      <span className="ml-3 shrink-0 text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">
                         →
                       </span>
                     </Link>

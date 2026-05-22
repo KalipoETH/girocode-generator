@@ -136,7 +136,27 @@ export default function IbanSeguridadEsPage() {
 
         <AuthorBoxEnd locale="es" />
 
+        {/* Pruébalo ahora */}
         <div className="mt-12 border-t border-slate-800 pt-8">
+          <h2 className="mb-4 text-lg font-bold text-[#e8eaf0]">Pruébalo ahora</h2>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {[
+              { icon: '⚡', title: 'Generador GiroCode', desc: 'Crea un GiroCode gratis – localmente en el navegador.', cta: 'Al generador →', href: '/es' },
+              { icon: '🔍', title: 'Escáner GiroCode', desc: 'Escanea un GiroCode y lee los datos de pago.', cta: 'Al escáner →', href: '/es/scanner' },
+              { icon: '📦', title: 'Generador masivo', desc: 'Crea varios GiroCodes a la vez mediante carga CSV.', cta: 'Al generador masivo →', href: '/es/bulk' },
+            ].map((item) => (
+              <Link key={item.href} href={item.href}
+                className="group flex flex-col gap-2 rounded-xl border border-[#1f2431] bg-[#121318] p-4 transition-all duration-200 hover:-translate-y-[3px] hover:border-[#22c55e40] hover:shadow-[0_8px_24px_rgba(34,197,94,0.08)] motion-reduce:transform-none">
+                <span className="text-2xl" aria-hidden>{item.icon}</span>
+                <h3 className="font-bold text-[#e8eaf0]">{item.title}</h3>
+                <p className="text-sm text-[#8b90a0]">{item.desc}</p>
+                <span className="mt-auto text-sm font-medium text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">{item.cta}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-8">
           <Link href="/es/blog" className="text-sm text-slate-400 hover:text-slate-200">
             ← Volver al blog
           </Link>

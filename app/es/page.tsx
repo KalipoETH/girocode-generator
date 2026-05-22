@@ -386,6 +386,60 @@ export default function HomePageEs() {
           </div>
         </section>
 
+        {/* También te puede interesar */}
+        <section aria-labelledby="also-interesting-es" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.28s' }}>
+          <h2 id="also-interesting-es" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+            También te puede interesar
+          </h2>
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+            {[
+              {
+                icon: '🔍',
+                title: 'Escáner GiroCode',
+                desc: 'Escanea un GiroCode existente y lee los datos de pago.',
+                cta: 'Al Escáner →',
+                href: '/es/scanner',
+              },
+              {
+                icon: '📦',
+                title: 'Generador masivo',
+                desc: 'Crea varios GiroCodes a la vez mediante carga CSV.',
+                cta: 'Al generador masivo →',
+                href: '/es/bulk',
+              },
+              {
+                icon: '🏦',
+                title: 'Guía de apps bancarias',
+                desc: '¿Qué aplicaciones bancarias admiten GiroCodes?',
+                cta: 'Ver apps →',
+                href: '/es/wissen/banking-apps',
+              },
+              {
+                icon: '👨‍💻',
+                title: 'Para freelancers',
+                desc: 'Cobra más rápido con un GiroCode en tus facturas.',
+                cta: 'Más información →',
+                href: '/es/freelancer',
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group flex flex-col gap-3 rounded-[12px] border border-[#1f2431] bg-[#121318] p-5 transition-all duration-200 hover:-translate-y-[3px] hover:border-[#22c55e40] hover:shadow-[0_8px_24px_rgba(34,197,94,0.08)] motion-reduce:transform-none"
+              >
+                <span className="text-3xl" aria-hidden>{item.icon}</span>
+                <div className="flex-1">
+                  <h3 className="font-bold text-[#e8eaf0] group-hover:text-emerald-300">{item.title}</h3>
+                  <p className="mt-1 text-sm text-[#8b90a0]">{item.desc}</p>
+                </div>
+                <span className="mt-auto text-sm font-medium text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">
+                  {item.cta}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* Del Blog */}
         <section aria-labelledby="blog-section-es" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.3s' }}>
           <h2 id="blog-section-es" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
