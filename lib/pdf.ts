@@ -207,15 +207,17 @@ export async function makePDF(data: InvoiceData, locale: PdfLocale = 'de'): Prom
   }
 
   // ─── BETRAGSBOX + QR-CODE ─────────────────────────────────────────────────
-  // currentY läuft von 680 nach unten, berücksichtigt Adressen + optionale Leistungsbeschreibung
-  let currentY = 680;
-  currentY -= 80; // Adressen
+  // sectionTopY direkt aus tatsächlichen Adress- und Beschreibungszeilen berechnet
+  const addrLines = Math.max(
+    (data.sender || '').split('\n').length,
+    (data.recipient || '').split('\n').length,
+  );
+  let currentY = 750 - (addrLines * 14) - 60;
 
   if (hasDescription) {
+    currentY -= 20;
     const descLineCount = (data.description || '').split('\n').length;
-    currentY -= 20;                    // Label
-    currentY -= (descLineCount * 14);  // Text
-    currentY -= 20;                    // Abstand
+    currentY -= (descLineCount * 14) + 20;
   }
 
   const sectionTopY = currentY;
