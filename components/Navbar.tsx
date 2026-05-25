@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 type Locale = 'de' | 'en' | 'fr' | 'es';
@@ -141,9 +142,13 @@ export function Navbar() {
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-500 text-sm font-bold text-slate-950 shadow-lg shadow-emerald-500/40">
-            QR
-          </div>
+          <Image
+            src="/logo-dark.jpg"
+            alt="GiroCode Generator"
+            width={32}
+            height={32}
+            className="rounded-lg"
+          />
           <div className="flex flex-col leading-tight">
             <span className="text-sm font-semibold text-slate-50">
               GiroCode Generator

@@ -304,6 +304,35 @@ export async function makePDF(data: InvoiceData, locale: PdfLocale = 'de'): Prom
     const qrBytes = Uint8Array.from(atob(qrBase64), (ch) => ch.charCodeAt(0));
     const qrImage = await doc.embedPng(qrBytes);
     page.drawImage(qrImage, { x: qrX, y: qrBottomY, width: qrSize, height: qrSize });
+
+    // Logo in der Mitte des QR-Codes einbetten
+    try {
+      const logoResp = await fetch('/logo-qr.jpg');
+      if (logoResp.ok) {
+        const logoBuffer = await logoResp.arrayBuffer();
+        const logoJpgBytes = new Uint8Array(logoBuffer);
+        const logoImage = await doc.embedJpg(logoJpgBytes);
+        const logoSize = qrSize * 0.22;
+        const logoPadding = 3;
+        const logoCenterX = qrX + (qrSize - logoSize) / 2;
+        const logoCenterY = qrBottomY + (qrSize - logoSize) / 2;
+        page.drawRectangle({
+          x: logoCenterX - logoPadding,
+          y: logoCenterY - logoPadding,
+          width: logoSize + logoPadding * 2,
+          height: logoSize + logoPadding * 2,
+          color: rgb(1, 1, 1),
+        });
+        page.drawImage(logoImage, {
+          x: logoCenterX,
+          y: logoCenterY,
+          width: logoSize,
+          height: logoSize,
+        });
+      }
+    } catch {
+      // Logo-Overlay-Fehler ignorieren
+    }
   } catch {
     // QR-Fehler ignorieren
   }

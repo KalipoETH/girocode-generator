@@ -45,6 +45,10 @@ export const metadata: Metadata = {
       'es': 'https://www.girocodegenerator.com/es',
     },
   },
+  icons: {
+    icon: '/logo-dark.jpg',
+    apple: '/logo-dark.jpg',
+  },
   openGraph: {
     type: 'website',
     locale: 'de_DE',
@@ -54,7 +58,7 @@ export const metadata: Metadata = {
     description:
       'GiroCode (SEPA-QR / EPC) kostenlos online erstellen – 100% lokal im Browser, keine Datenweitergabe. Inkl. Rechnungs-PDF.',
     images: [
-      { url: '/og-image.png', width: 1200, height: 630, alt: 'GiroCode Generator' },
+      { url: '/logo-dark.jpg', width: 1200, height: 630, alt: 'GiroCode Generator' },
     ],
   },
   twitter: {
@@ -62,7 +66,7 @@ export const metadata: Metadata = {
     title: 'GiroCode Generator – SEPA-QR kostenlos erstellen',
     description:
       'GiroCode (SEPA-QR / EPC) kostenlos online erstellen – 100% lokal, keine Datenweitergabe.',
-    images: ['/og-image.png'],
+    images: ['/logo-dark.jpg'],
   },
   robots: {
     index: true,

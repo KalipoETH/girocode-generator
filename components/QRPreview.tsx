@@ -136,6 +136,7 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
     QRCode.toCanvas(canvas, epcPayload, {
       width: 200,
       margin: 1,
+      errorCorrectionLevel: 'H',
       color: {
         dark: '#000000',
         light: '#ffffff',
@@ -143,14 +144,49 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
     })
       .then(() => {
         setQrRenderedSuccess(true);
-        if (onQrRendered && canvasRef.current) {
+
+        const ctx = canvas.getContext('2d');
+        if (!ctx || !onQrRendered) return;
+
+        const logoSize = Math.floor(canvas.width * 0.22);
+        const logoX = Math.floor((canvas.width - logoSize) / 2);
+        const logoY = Math.floor((canvas.height - logoSize) / 2);
+
+        const logoImg = new window.Image();
+        logoImg.src = '/logo-qr.jpg';
+
+        const exportCanvas = () => {
           try {
-            const dataUrl = canvasRef.current.toDataURL('image/png');
+            const dataUrl = canvas.toDataURL('image/png');
             onQrRendered(dataUrl);
           } catch {
             onQrRendered(null);
           }
-        }
+        };
+
+        logoImg.onload = () => {
+          const padding = 4;
+          ctx.fillStyle = '#ffffff';
+          ctx.beginPath();
+          if (typeof ctx.roundRect === 'function') {
+            ctx.roundRect(
+              logoX - padding,
+              logoY - padding,
+              logoSize + padding * 2,
+              logoSize + padding * 2,
+              8,
+            );
+          } else {
+            ctx.rect(logoX - padding, logoY - padding, logoSize + padding * 2, logoSize + padding * 2);
+          }
+          ctx.fill();
+          ctx.drawImage(logoImg, logoX, logoY, logoSize, logoSize);
+          exportCanvas();
+        };
+
+        logoImg.onerror = () => {
+          exportCanvas();
+        };
       })
       .catch(() => {
         setQrRenderedSuccess(false);
