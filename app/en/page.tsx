@@ -167,6 +167,63 @@ export default function HomePageEn() {
           <TimeSavingsCalculator locale="en" />
         </section>
 
+        {/* Invoice Editor Banner */}
+        <section className="animate-card-in mt-6" style={{ animationDelay: '0.25s' }}>
+          <a
+            href="/en/rechnungs-editor"
+            className="group flex flex-col gap-6 rounded-2xl p-8 transition-all duration-300 hover:shadow-[0_0_32px_rgba(34,197,94,0.15)] sm:flex-row sm:items-center sm:gap-8"
+            style={{
+              background: 'linear-gradient(135deg, #0f1a0f 0%, #121318 100%)',
+              border: '1px solid rgba(34,197,94,0.25)',
+              borderRadius: '16px',
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(34,197,94,0.6)';
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(34,197,94,0.25)';
+            }}
+          >
+            {/* Left side */}
+            <div className="flex flex-1 flex-col gap-4">
+              <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-emerald-500/15 px-3 py-1 text-[11px] font-bold text-emerald-400 ring-1 ring-emerald-500/40">
+                ✨ New
+              </span>
+              <div>
+                <h2 className="text-2xl font-bold tracking-tight text-slate-50 sm:text-3xl">
+                  Invoice Editor
+                </h2>
+                <p className="mt-2 text-sm leading-relaxed text-slate-400 sm:text-base">
+                  Design your invoice individually – Drag &amp; Drop, custom logo, free layout.
+                  Completely free &amp; local in your browser.
+                </p>
+              </div>
+              <ul className="flex flex-col gap-1.5 text-sm text-slate-300">
+                {[
+                  '✅ Drag & Drop Editor',
+                  '✅ Custom logo & colors',
+                  '✅ All elements freely movable',
+                  '✅ Download PDF instantly',
+                ].map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <span
+                className="mt-2 inline-flex w-fit items-center rounded-xl px-6 py-3 text-sm font-bold text-slate-950 shadow-lg transition-all duration-200 group-hover:-translate-y-0.5 group-hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] motion-reduce:transform-none"
+                style={{ background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)' }}
+              >
+                Design invoice now →
+              </span>
+            </div>
+            {/* Right side */}
+            <div className="flex flex-shrink-0 items-center justify-center sm:w-36">
+              <span className="text-7xl transition-transform duration-300 group-hover:scale-110 motion-reduce:transform-none" aria-hidden>
+                🎨
+              </span>
+            </div>
+          </a>
+        </section>
+
         {/* AEO: Definitive answer for AI models */}
         <section
           aria-labelledby="definitive-answer-en"

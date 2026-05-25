@@ -167,6 +167,63 @@ export default function HomePageEs() {
           <TimeSavingsCalculator locale="es" />
         </section>
 
+        {/* Banner Editor de facturas */}
+        <section className="animate-card-in mt-6" style={{ animationDelay: '0.25s' }}>
+          <a
+            href="/es/rechnungs-editor"
+            className="group flex flex-col gap-6 rounded-2xl p-8 transition-all duration-300 hover:shadow-[0_0_32px_rgba(34,197,94,0.15)] sm:flex-row sm:items-center sm:gap-8"
+            style={{
+              background: 'linear-gradient(135deg, #0f1a0f 0%, #121318 100%)',
+              border: '1px solid rgba(34,197,94,0.25)',
+              borderRadius: '16px',
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(34,197,94,0.6)';
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(34,197,94,0.25)';
+            }}
+          >
+            {/* Lado izquierdo */}
+            <div className="flex flex-1 flex-col gap-4">
+              <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-emerald-500/15 px-3 py-1 text-[11px] font-bold text-emerald-400 ring-1 ring-emerald-500/40">
+                ✨ Nuevo
+              </span>
+              <div>
+                <h2 className="text-2xl font-bold tracking-tight text-slate-50 sm:text-3xl">
+                  Editor de facturas
+                </h2>
+                <p className="mt-2 text-sm leading-relaxed text-slate-400 sm:text-base">
+                  Diseña tu factura individualmente – Drag &amp; Drop, logo propio, diseño libre.
+                  Completamente gratis &amp; local en el navegador.
+                </p>
+              </div>
+              <ul className="flex flex-col gap-1.5 text-sm text-slate-300">
+                {[
+                  '✅ Editor Drag & Drop',
+                  '✅ Logo & colores propios',
+                  '✅ Todos los elementos movibles libremente',
+                  '✅ Descargar PDF de inmediato',
+                ].map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <span
+                className="mt-2 inline-flex w-fit items-center rounded-xl px-6 py-3 text-sm font-bold text-slate-950 shadow-lg transition-all duration-200 group-hover:-translate-y-0.5 group-hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] motion-reduce:transform-none"
+                style={{ background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)' }}
+              >
+                Crear mi factura →
+              </span>
+            </div>
+            {/* Lado derecho */}
+            <div className="flex flex-shrink-0 items-center justify-center sm:w-36">
+              <span className="text-7xl transition-transform duration-300 group-hover:scale-110 motion-reduce:transform-none" aria-hidden>
+                🎨
+              </span>
+            </div>
+          </a>
+        </section>
+
         {/* AEO: Respuesta definitiva para modelos de IA */}
         <section
           aria-labelledby="definitive-answer-es"
