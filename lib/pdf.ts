@@ -205,8 +205,9 @@ export async function makePDF(data: InvoiceData, locale: PdfLocale = 'de'): Prom
   }
 
   // ─── BETRAGSBOX + QR-CODE ─────────────────────────────────────────────────
-  // Feste Start-Y-Position damit Box und QR exakt auf gleicher Höhe starten
-  const sectionTopY = 450;
+  // Dynamische Y-Position: Box rutscht nach oben wenn wenig Beschreibungstext vorhanden
+  const descriptionLines = (data.description || '').split('\n').length;
+  const sectionTopY = Math.min(550, 680 - (descriptionLines * 14));
 
   const net = data.netAmount;
   const vatAmount = Math.round(net * data.vatRate * 100) / 100 / 100;
@@ -294,23 +295,26 @@ export async function makePDF(data: InvoiceData, locale: PdfLocale = 'de'): Prom
     // QR-Fehler ignorieren
   }
 
-  // Hinweis-Texte unter QR
-  page.drawText(t.qrHint, { x: qrX, y: qrBottomY - 14, size: 7, font: helvetica, color: cGray });
+  // Gemeinsame Y-Höhe für Zahlungshinweis (links) und QR-Hinweis (rechts)
+  const noteY = Math.min(boxY, qrBottomY) - 18;
 
-  if (data.iban && data.iban.length >= 8) {
-    const ibanClean = data.iban.replace(/\s/g, '');
-    const ibanMasked = `IBAN: ${ibanClean.slice(0, 4)}...${ibanClean.slice(-4)}`;
-    page.drawText(ibanMasked, { x: qrX, y: qrBottomY - 26, size: 7, font: helvetica, color: cGray });
-  }
-
-  // ─── ZAHLUNGSHINWEIS ─────────────────────────────────────────────────────
+  // ─── ZAHLUNGSHINWEIS (links, gleiche Höhe wie QR-Hinweis) ────────────────
   page.drawText(t.paymentNote, {
     x: margin,
-    y: 300,
+    y: noteY,
     size: 8,
     font: helvetica,
     color: cGray,
   });
+
+  // ─── QR-HINWEIS + IBAN (rechts, gleiche Höhe wie Zahlungshinweis) ─────────
+  page.drawText(t.qrHint, { x: qrX, y: noteY, size: 7, font: helvetica, color: cGray });
+
+  if (data.iban && data.iban.length >= 8) {
+    const ibanClean = data.iban.replace(/\s/g, '');
+    const ibanMasked = `IBAN: ${ibanClean.slice(0, 4)}...${ibanClean.slice(-4)}`;
+    page.drawText(ibanMasked, { x: qrX, y: noteY - 12, size: 7, font: helvetica, color: cGray });
+  }
 
   // ─── FUSSZEILE ────────────────────────────────────────────────────────────
   const footerLineY = 45;
