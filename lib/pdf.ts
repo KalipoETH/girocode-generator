@@ -161,53 +161,64 @@ export async function makePDF(data: InvoiceData, locale: PdfLocale = 'de'): Prom
     recipientEndY -= addrLineH;
   }
 
-  let cursorY = Math.min(senderEndY, recipientEndY) - 28;
+  // ─── LEISTUNGSBESCHREIBUNG (nur wenn Text vorhanden) ─────────────────────
+  const hasDescription = !!(data.description && data.description.trim().length > 0);
 
-  // ─── LEISTUNGSBESCHREIBUNG ────────────────────────────────────────────────
-  page.drawText(t.serviceDescription, {
-    x: margin,
-    y: cursorY,
-    size: 10,
-    font: helveticaBold,
-    color: cGray,
-  });
-  cursorY -= 16;
+  if (hasDescription) {
+    let cursorY = Math.min(senderEndY, recipientEndY) - 28;
 
-  // Zeilenweise (zuerst \n aufteilen, dann Wortumbruch)
-  const descMaxWidth = A4_WIDTH - margin * 2;
-  const descRawLines = (data.description || '').split('\n');
-  const descLines: string[] = [];
+    page.drawText(t.serviceDescription, {
+      x: margin,
+      y: cursorY,
+      size: 10,
+      font: helveticaBold,
+      color: cGray,
+    });
+    cursorY -= 16;
 
-  for (const rawLine of descRawLines) {
-    if (descLines.length >= 8) break;
-    if (!rawLine.trim()) {
-      descLines.push('');
-      continue;
-    }
-    const words = rawLine.split(/\s+/).filter(Boolean);
-    let current = '';
-    for (const word of words) {
+    const descMaxWidth = A4_WIDTH - margin * 2;
+    const descRawLines = data.description.split('\n');
+    const descLines: string[] = [];
+
+    for (const rawLine of descRawLines) {
       if (descLines.length >= 8) break;
-      const test = current ? `${current} ${word}` : word;
-      if (helvetica.widthOfTextAtSize(test, 9) > descMaxWidth && current) {
-        descLines.push(current);
-        current = word;
-      } else {
-        current = test;
+      if (!rawLine.trim()) {
+        descLines.push('');
+        continue;
       }
+      const words = rawLine.split(/\s+/).filter(Boolean);
+      let current = '';
+      for (const word of words) {
+        if (descLines.length >= 8) break;
+        const test = current ? `${current} ${word}` : word;
+        if (helvetica.widthOfTextAtSize(test, 9) > descMaxWidth && current) {
+          descLines.push(current);
+          current = word;
+        } else {
+          current = test;
+        }
+      }
+      if (current && descLines.length < 8) descLines.push(current);
     }
-    if (current && descLines.length < 8) descLines.push(current);
-  }
 
-  for (const line of descLines.slice(0, 8)) {
-    page.drawText(line || ' ', { x: margin, y: cursorY, size: 9, font: helvetica, color: cBlack });
-    cursorY -= 13;
+    for (const line of descLines.slice(0, 8)) {
+      page.drawText(line || ' ', { x: margin, y: cursorY, size: 9, font: helvetica, color: cBlack });
+    }
   }
 
   // ─── BETRAGSBOX + QR-CODE ─────────────────────────────────────────────────
-  // Dynamische Y-Position: Box rutscht nach oben wenn wenig Beschreibungstext vorhanden
-  const descriptionLines = (data.description || '').split('\n').length;
-  const sectionTopY = Math.min(550, 680 - (descriptionLines * 14));
+  // currentY läuft von 680 nach unten, berücksichtigt Adressen + optionale Leistungsbeschreibung
+  let currentY = 680;
+  currentY -= 80; // Adressen
+
+  if (hasDescription) {
+    const descLineCount = (data.description || '').split('\n').length;
+    currentY -= 20;                    // Label
+    currentY -= (descLineCount * 14);  // Text
+    currentY -= 20;                    // Abstand
+  }
+
+  const sectionTopY = currentY;
 
   const net = data.netAmount;
   const vatAmount = Math.round(net * data.vatRate * 100) / 100 / 100;
