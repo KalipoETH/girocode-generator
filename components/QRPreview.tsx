@@ -148,14 +148,35 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
         const ctx = canvas.getContext('2d');
         if (!ctx || !onQrRendered) return;
 
-        const logoSize = Math.floor(canvas.width * 0.22);
-        const logoX = Math.floor((canvas.width - logoSize) / 2);
-        const logoY = Math.floor((canvas.height - logoSize) / 2);
+        // QR-Inhalt sichern, Canvas um 20px für Branding-Text erweitern
+        const qrWidth = canvas.width;
+        const qrHeight = canvas.height;
+        const brandingExtra = 20;
+        const qrImageData = ctx.getImageData(0, 0, qrWidth, qrHeight);
+
+        canvas.height = qrHeight + brandingExtra;
+
+        // Weißer Hintergrund für gesamten Canvas (QR + Branding-Bereich)
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // QR-Code zurückzeichnen
+        ctx.putImageData(qrImageData, 0, 0);
+
+        // Logo zentriert im QR-Bereich (nicht im Branding-Bereich)
+        const logoSize = Math.floor(qrWidth * 0.22);
+        const logoX = Math.floor((qrWidth - logoSize) / 2);
+        const logoY = Math.floor((qrHeight - logoSize) / 2);
 
         const logoImg = new window.Image();
         logoImg.src = '/logo-qr.jpg';
 
-        const exportCanvas = () => {
+        const drawBrandingAndExport = () => {
+          ctx.fillStyle = '#8b90a0';
+          ctx.font = '11px Arial';
+          ctx.textAlign = 'center';
+          ctx.fillText('girocodegenerator.com', canvas.width / 2, canvas.height - 6);
+
           try {
             const dataUrl = canvas.toDataURL('image/png');
             onQrRendered(dataUrl);
@@ -181,11 +202,11 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
           }
           ctx.fill();
           ctx.drawImage(logoImg, logoX, logoY, logoSize, logoSize);
-          exportCanvas();
+          drawBrandingAndExport();
         };
 
         logoImg.onerror = () => {
-          exportCanvas();
+          drawBrandingAndExport();
         };
       })
       .catch(() => {
