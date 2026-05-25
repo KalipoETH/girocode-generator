@@ -44,6 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry('/fr', 0.9, 'monthly', now),
     entry('/es', 0.9, 'monthly', now),
 
+    // ── Rechnungs-Editor ───────────────────────────────────────────────────
+    entry('/rechnungs-editor', 0.8, 'monthly', now),
+    entry('/en/rechnungs-editor', 0.8, 'monthly', now),
+    entry('/fr/rechnungs-editor', 0.8, 'monthly', now),
+    entry('/es/rechnungs-editor', 0.8, 'monthly', now),
+
     // ── Scanner ────────────────────────────────────────────────────────────
     entry('/scanner', 0.8, 'monthly', now),
     entry('/en/scanner', 0.8, 'monthly', now),

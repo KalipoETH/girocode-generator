@@ -695,11 +695,11 @@ export default function HomePage() {
                 href: '/wissen/banking-apps',
               },
               {
-                icon: '👨‍💻',
-                title: 'Für Freelancer',
-                desc: 'Schneller bezahlt werden mit GiroCode auf Rechnungen.',
-                cta: 'Mehr erfahren →',
-                href: '/freelancer',
+                icon: '✏️',
+                title: 'Rechnungs-Editor',
+                desc: 'Rechnung visuell gestalten – Drag & Drop, eigenes Logo.',
+                cta: 'Zum Editor →',
+                href: '/rechnungs-editor',
               },
             ].map((item) => (
               <Link

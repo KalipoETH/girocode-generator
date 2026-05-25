@@ -25,6 +25,7 @@ const mainNavConfig = [
 ];
 
 const toolsItems = [
+  { key: 'invoiceEditor', path: '/rechnungs-editor', icon: '✏️' },
   { key: 'scanner', path: '/scanner', icon: '🔍' },
   { key: 'bulk', path: '/bulk', icon: '📦' },
   { key: 'apiDocs', path: '/api-docs', icon: '🔌' },
@@ -39,6 +40,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     about: 'Über uns',
     contact: 'Kontakt',
     tools: 'Tools',
+    invoiceEditor: 'Rechnungs-Editor',
     scanner: 'Scanner',
     bulk: 'Bulk',
     apiDocs: 'API-Docs',
@@ -51,6 +53,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     about: 'About us',
     contact: 'Contact',
     tools: 'Tools',
+    invoiceEditor: 'Invoice Editor',
     scanner: 'Scanner',
     bulk: 'Bulk',
     apiDocs: 'API Docs',
@@ -63,6 +66,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     about: 'À propos',
     contact: 'Contact',
     tools: 'Outils',
+    invoiceEditor: 'Éditeur de facture',
     scanner: 'Scanner',
     bulk: 'Lot',
     apiDocs: 'API Docs',
@@ -75,6 +79,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     about: 'Nosotros',
     contact: 'Contacto',
     tools: 'Herramientas',
+    invoiceEditor: 'Editor de facturas',
     scanner: 'Escáner',
     bulk: 'Masivo',
     apiDocs: 'API Docs',
