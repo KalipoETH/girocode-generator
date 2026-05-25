@@ -3,43 +3,30 @@ import { en } from './translations/en';
 import { es } from './translations/es';
 import { fr } from './translations/fr';
 
-type RGB = {
-  red: number;
-  green: number;
-  blue: number;
-};
-
 export type PdfLocale = 'de' | 'en' | 'fr' | 'es';
 
-// A4 im Punktformat laut Vorgabe
+// DIN A4 in Punkten
 export const A4_WIDTH = 595.28;
 export const A4_HEIGHT = 841.89;
 
 export interface InvoiceData {
   invoiceNumber: string;
-  invoiceDate: string; // ISO-String oder lesbares Datum, wird 1:1 gesetzt
+  invoiceDate: string;
   sender: string;
   recipient: string;
   description: string;
   netAmount: number;
-  vatRate: number; // z. B. 19 für 19 %
-  qrPngDataUrl: string; // data:image/png;base64,...
-  logoBytes?: Uint8Array; // optionales Logo (PNG oder JPG)
+  vatRate: number;
+  qrPngDataUrl: string;
+  logoBytes?: Uint8Array;
   logoMimeType?: 'image/png' | 'image/jpeg';
+  iban?: string;
 }
 
 const PDF_TRANSLATIONS = { de: de.pdf, en: en.pdf, fr: fr.pdf, es: es.pdf } as const;
 
-// Standardfarben
-const COLOR_TEXT: RGB = { red: 0.91, green: 0.92, blue: 0.94 }; // #e8eaf0
-const COLOR_MUTED: RGB = { red: 0.55, green: 0.56, blue: 0.63 }; // #8b90a0
-const COLOR_ACCENT: RGB = { red: 0.13, green: 0.77, blue: 0.37 }; // #22c55e
-
 /**
- * Erzeugt eine Rechnungs-PDF (DIN A4) und gibt sie als Uint8Array zurück.
- *
- * @param data - Rechnungsdaten
- * @param locale - Sprache der PDF-Texte (de/en/fr/es)
+ * Erzeugt eine Rechnungs-PDF (DIN A4, weißer Hintergrund) und gibt sie als Uint8Array zurück.
  */
 export async function makePDF(data: InvoiceData, locale: PdfLocale = 'de'): Promise<Uint8Array> {
   const t = PDF_TRANSLATIONS[locale];
@@ -50,51 +37,57 @@ export async function makePDF(data: InvoiceData, locale: PdfLocale = 'de'): Prom
   const page = doc.addPage([A4_WIDTH, A4_HEIGHT]);
 
   const margin = 50;
-  const contentWidth = A4_WIDTH - margin * 2;
 
-  // Hintergrund leicht abdunkeln, um dem Dark-UI-Thema zu entsprechen
+  // Weißer Hintergrund
   page.drawRectangle({
     x: 0,
     y: 0,
     width: A4_WIDTH,
     height: A4_HEIGHT,
-    color: rgb(11 / 255, 12 / 255, 16 / 255),
+    color: rgb(1, 1, 1),
   });
 
   const helvetica = await doc.embedFont(StandardFonts.Helvetica);
   const helveticaBold = await doc.embedFont(StandardFonts.HelveticaBold);
 
-  let cursorY = A4_HEIGHT - margin;
+  // Farb-Shortcuts
+  const cBlack = rgb(0.1, 0.1, 0.1);
+  const cGray = rgb(0.45, 0.45, 0.45);
+  const cLightGray = rgb(0.8, 0.8, 0.8);
+  const cBoxBg = rgb(0.95, 0.95, 0.95);
+  const cAccent = rgb(0.0, 0.6, 0.3);
 
-  // HEADER: Titel + Rechnungsdaten links
-  const titleSize = 20;
+  const formatAmount = (v: number) => `${v.toFixed(2).replace('.', ',')} €`;
+
+  // ─── HEADER ──────────────────────────────────────────────────────────────
+  const headerTopY = A4_HEIGHT - 40;
+
+  // Titel links
   page.drawText(t.title, {
     x: margin,
-    y: cursorY,
-    size: titleSize,
+    y: headerTopY,
+    size: 24,
     font: helveticaBold,
-    color: rgb(1, 1, 1),
+    color: cBlack,
   });
 
-  const metaSize = 10;
-  const metaY = cursorY - titleSize - 6;
+  // Rechnungsnummer & Datum
   page.drawText(`${t.invoiceNo} ${data.invoiceNumber}`, {
     x: margin,
-    y: metaY,
-    size: metaSize,
+    y: headerTopY - 32,
+    size: 10,
     font: helvetica,
-    color: rgb(COLOR_TEXT.red, COLOR_TEXT.green, COLOR_TEXT.blue),
+    color: cGray,
   });
-
   page.drawText(`${t.date} ${data.invoiceDate}`, {
     x: margin,
-    y: metaY - metaSize - 2,
-    size: metaSize,
+    y: headerTopY - 46,
+    size: 10,
     font: helvetica,
-    color: rgb(COLOR_TEXT.red, COLOR_TEXT.green, COLOR_TEXT.blue),
+    color: cGray,
   });
 
-  // LOGO oben rechts (falls vorhanden)
+  // Logo rechts (max 100 × 60 px, Seitenverhältnis beibehalten)
   if (data.logoBytes && data.logoBytes.length > 0) {
     try {
       const logoImage =
@@ -102,240 +95,235 @@ export async function makePDF(data: InvoiceData, locale: PdfLocale = 'de'): Prom
           ? await doc.embedJpg(data.logoBytes)
           : await doc.embedPng(data.logoBytes);
 
-      const logoWidthPx = 120;
-      const scale = logoWidthPx / logoImage.width;
-      const logoHeight = logoImage.height * scale;
+      const maxW = 100;
+      const maxH = 60;
+      const scaleW = maxW / logoImage.width;
+      const scaleH = maxH / logoImage.height;
+      const scale = Math.min(scaleW, scaleH, 1);
+      const logoW = logoImage.width * scale;
+      const logoH = logoImage.height * scale;
 
       page.drawImage(logoImage, {
-        x: A4_WIDTH - margin - logoWidthPx,
-        y: cursorY - logoHeight + 5,
-        width: logoWidthPx,
-        height: logoHeight,
+        x: A4_WIDTH - margin - logoW,
+        y: headerTopY - logoH + 6,
+        width: logoW,
+        height: logoH,
       });
     } catch {
-      // Fehler beim Logo-Einbetten werden bewusst ignoriert, PDF wird trotzdem erzeugt.
+      // Logo-Fehler ignorieren, PDF wird trotzdem erzeugt
     }
   }
 
-  cursorY = metaY - metaSize - 16;
-
-  // Trennlinie
+  // ─── TRENNLINIE (nicht durch Logo-Bereich) ────────────────────────────────
+  const separatorY = headerTopY - 60;
   page.drawLine({
-    start: { x: margin, y: cursorY },
-    end: { x: A4_WIDTH - margin, y: cursorY },
-    thickness: 1,
-    color: rgb(0.2, 0.22, 0.28),
+    start: { x: margin, y: separatorY },
+    end: { x: 380, y: separatorY },
+    thickness: 0.5,
+    color: cLightGray,
   });
 
-  cursorY -= 24;
+  // ─── ADRESSEN (zwei Spalten) ──────────────────────────────────────────────
+  const addrLabelY = separatorY - 22;
+  const addrTextY = addrLabelY - 14;
+  const rightColX = 300;
+  const addrLineH = 14;
 
-  // ABSENDER & EMPFÄNGER (zwei Spalten)
-  const columnWidth = contentWidth / 2 - 10;
-  const senderX = margin;
-  const recipientX = margin + columnWidth + 20;
-
+  // Label "Absender" / "Empfänger"
   page.drawText(t.sender, {
-    x: senderX,
-    y: cursorY,
-    size: 10,
+    x: margin,
+    y: addrLabelY,
+    size: 8,
     font: helveticaBold,
-    color: rgb(COLOR_MUTED.red, COLOR_MUTED.green, COLOR_MUTED.blue),
+    color: cGray,
   });
   page.drawText(t.recipient, {
-    x: recipientX,
+    x: rightColX,
+    y: addrLabelY,
+    size: 8,
+    font: helveticaBold,
+    color: cGray,
+  });
+
+  // Absender zeilenweise
+  const senderLines = (data.sender || '').split('\n');
+  let senderEndY = addrTextY;
+  for (const line of senderLines) {
+    page.drawText(line || ' ', { x: margin, y: senderEndY, size: 9, font: helvetica, color: cBlack });
+    senderEndY -= addrLineH;
+  }
+
+  // Empfänger zeilenweise
+  const recipientLines = (data.recipient || '').split('\n');
+  let recipientEndY = addrTextY;
+  for (const line of recipientLines) {
+    page.drawText(line || ' ', { x: rightColX, y: recipientEndY, size: 9, font: helvetica, color: cBlack });
+    recipientEndY -= addrLineH;
+  }
+
+  let cursorY = Math.min(senderEndY, recipientEndY) - 28;
+
+  // ─── LEISTUNGSBESCHREIBUNG ────────────────────────────────────────────────
+  page.drawText(t.serviceDescription, {
+    x: margin,
     y: cursorY,
     size: 10,
     font: helveticaBold,
-    color: rgb(COLOR_MUTED.red, COLOR_MUTED.green, COLOR_MUTED.blue),
+    color: cGray,
   });
+  cursorY -= 16;
 
-  const textStartY = cursorY - 14;
+  // Zeilenweise (zuerst \n aufteilen, dann Wortumbruch)
+  const descMaxWidth = A4_WIDTH - margin * 2;
+  const descRawLines = (data.description || '').split('\n');
+  const descLines: string[] = [];
 
-  const wrapText = (text: string, maxWidth: number, size: number) => {
-    const words = text.split(/\s+/);
-    const lines: string[] = [];
+  for (const rawLine of descRawLines) {
+    if (descLines.length >= 8) break;
+    if (!rawLine.trim()) {
+      descLines.push('');
+      continue;
+    }
+    const words = rawLine.split(/\s+/).filter(Boolean);
     let current = '';
-
     for (const word of words) {
+      if (descLines.length >= 8) break;
       const test = current ? `${current} ${word}` : word;
-      const width = helvetica.widthOfTextAtSize(test, size);
-      if (width > maxWidth && current) {
-        lines.push(current);
+      if (helvetica.widthOfTextAtSize(test, 9) > descMaxWidth && current) {
+        descLines.push(current);
         current = word;
       } else {
         current = test;
       }
     }
-    if (current) lines.push(current);
-    return lines;
-  };
-
-  const senderLines = wrapText(data.sender || '', columnWidth, 10);
-  const recipientLines = wrapText(data.recipient || '', columnWidth, 10);
-
-  let senderY = textStartY;
-  for (const line of senderLines) {
-    page.drawText(line, {
-      x: senderX,
-      y: senderY,
-      size: 10,
-      font: helvetica,
-      color: rgb(COLOR_TEXT.red, COLOR_TEXT.green, COLOR_TEXT.blue),
-    });
-    senderY -= 12;
+    if (current && descLines.length < 8) descLines.push(current);
   }
 
-  let recipientY = textStartY;
-  for (const line of recipientLines) {
-    page.drawText(line, {
-      x: recipientX,
-      y: recipientY,
-      size: 10,
-      font: helvetica,
-      color: rgb(COLOR_TEXT.red, COLOR_TEXT.green, COLOR_TEXT.blue),
-    });
-    recipientY -= 12;
+  for (const line of descLines.slice(0, 8)) {
+    page.drawText(line || ' ', { x: margin, y: cursorY, size: 9, font: helvetica, color: cBlack });
+    cursorY -= 13;
   }
 
-  cursorY = Math.min(senderY, recipientY) - 28;
+  // ─── BETRAGSBOX + QR-CODE ─────────────────────────────────────────────────
+  // Sektion beginnt bei cursorY - 24, mindestens bei y=320 damit QR + Footer Platz haben
+  const sectionTopY = Math.max(cursorY - 24, 330);
 
-  // LEISTUNGSBESCHREIBUNG
-  page.drawText(t.serviceDescription, {
-    x: margin,
-    y: cursorY,
-    size: 11,
-    font: helveticaBold,
-    color: rgb(COLOR_MUTED.red, COLOR_MUTED.green, COLOR_MUTED.blue),
-  });
-
-  cursorY -= 16;
-
-  const descriptionLines = wrapText(data.description || '', contentWidth, 10);
-  for (const line of descriptionLines) {
-    page.drawText(line, {
-      x: margin,
-      y: cursorY,
-      size: 10,
-      font: helvetica,
-      color: rgb(COLOR_TEXT.red, COLOR_TEXT.green, COLOR_TEXT.blue),
-    });
-    cursorY -= 12;
-  }
-
-  cursorY -= 24;
-
-  // BETRAGSKASTEN
   const net = data.netAmount;
-  const vatAmount = Math.round((net * data.vatRate) * 100) / 100 / 100;
+  const vatAmount = Math.round(net * data.vatRate * 100) / 100 / 100;
   const gross = net + vatAmount;
 
-  const boxWidth = 220;
-  const boxHeight = 80;
+  // Box-Dimensionen
+  const boxWidth = 250;
   const boxX = margin;
-  const boxY = cursorY - boxHeight;
+  const boxRowH = 22;
+  const boxPadV = 14;
+  const boxHeight = boxPadV + boxRowH + boxRowH + 12 + 16 + boxPadV; // header + netto + ust + sep-gap + brutto + bottom
+  const boxY = sectionTopY - boxHeight;
 
   page.drawRectangle({
     x: boxX,
     y: boxY,
     width: boxWidth,
     height: boxHeight,
-    color: rgb(0.08, 0.09, 0.12),
-    borderColor: rgb(0.2, 0.22, 0.28),
-    borderWidth: 1,
+    color: cBoxBg,
+    borderColor: cLightGray,
+    borderWidth: 0.5,
   });
 
-  const rowYStart = boxY + boxHeight - 18;
-
-  const formatAmount = (value: number) =>
-    `${value.toFixed(2).replace('.', ',')} €`;
-
-  const labelSize = 9;
-  const valueSize = 11;
+  const boxRight = boxX + boxWidth - 12;
 
   // Netto
-  page.drawText(t.net, {
-    x: boxX + 10,
-    y: rowYStart,
-    size: labelSize,
+  const row1Y = boxY + boxHeight - boxPadV - 9;
+  page.drawText(t.net, { x: boxX + 12, y: row1Y, size: 9, font: helvetica, color: cGray });
+  const netStr = formatAmount(net);
+  page.drawText(netStr, {
+    x: boxRight - helvetica.widthOfTextAtSize(netStr, 10),
+    y: row1Y,
+    size: 10,
     font: helvetica,
-    color: rgb(COLOR_MUTED.red, COLOR_MUTED.green, COLOR_MUTED.blue),
-  });
-  page.drawText(formatAmount(net), {
-    x: boxX + boxWidth - 10 - helvetica.widthOfTextAtSize(formatAmount(net), valueSize),
-    y: rowYStart,
-    size: valueSize,
-    font: helvetica,
-    color: rgb(COLOR_TEXT.red, COLOR_TEXT.green, COLOR_TEXT.blue),
+    color: cBlack,
   });
 
   // USt
-  const vatLabel = `${t.vat} (${data.vatRate.toFixed(2).replace('.', ',')} %)`;
-  const vatY = rowYStart - 18;
-  page.drawText(vatLabel, {
-    x: boxX + 10,
-    y: vatY,
-    size: labelSize,
+  const vatPct =
+    data.vatRate % 1 === 0
+      ? `${data.vatRate.toFixed(0)} %`
+      : `${data.vatRate.toFixed(2).replace('.', ',')} %`;
+  const vatLabel = `${t.vat} (${vatPct})`;
+  const row2Y = row1Y - boxRowH;
+  page.drawText(vatLabel, { x: boxX + 12, y: row2Y, size: 9, font: helvetica, color: cGray });
+  const vatStr = formatAmount(vatAmount);
+  page.drawText(vatStr, {
+    x: boxRight - helvetica.widthOfTextAtSize(vatStr, 10),
+    y: row2Y,
+    size: 10,
     font: helvetica,
-    color: rgb(COLOR_MUTED.red, COLOR_MUTED.green, COLOR_MUTED.blue),
-  });
-  page.drawText(formatAmount(vatAmount), {
-    x: boxX + boxWidth - 10 - helvetica.widthOfTextAtSize(formatAmount(vatAmount), valueSize),
-    y: vatY,
-    size: valueSize,
-    font: helvetica,
-    color: rgb(COLOR_TEXT.red, COLOR_TEXT.green, COLOR_TEXT.blue),
+    color: cBlack,
   });
 
-  // Brutto (fett / hervorgehoben)
-  const grossY = vatY - 20;
-  const grossValue = formatAmount(gross);
+  // Trennlinie innerhalb Box
+  const innerSepY = row2Y - 12;
+  page.drawLine({
+    start: { x: boxX + 12, y: innerSepY },
+    end: { x: boxX + boxWidth - 12, y: innerSepY },
+    thickness: 0.5,
+    color: cLightGray,
+  });
 
-  page.drawText(t.gross, {
-    x: boxX + 10,
-    y: grossY,
-    size: labelSize + 1,
+  // Brutto gesamt
+  const row3Y = innerSepY - 14;
+  page.drawText(t.gross, { x: boxX + 12, y: row3Y, size: 10, font: helveticaBold, color: cAccent });
+  const grossStr = formatAmount(gross);
+  page.drawText(grossStr, {
+    x: boxRight - helveticaBold.widthOfTextAtSize(grossStr, 12),
+    y: row3Y,
+    size: 12,
     font: helveticaBold,
-    color: rgb(COLOR_ACCENT.red, COLOR_ACCENT.green, COLOR_ACCENT.blue),
-  });
-  page.drawText(grossValue, {
-    x: boxX + boxWidth - 10 - helveticaBold.widthOfTextAtSize(grossValue, valueSize + 1),
-    y: grossY,
-    size: valueSize + 1,
-    font: helveticaBold,
-    color: rgb(COLOR_ACCENT.red, COLOR_ACCENT.green, COLOR_ACCENT.blue),
+    color: cAccent,
   });
 
-  // QR-CODE unten rechts
+  // QR-Code rechts neben der Box
+  const qrSize = 150;
+  const qrX = 350;
+  const qrTopY = sectionTopY - 10;
+  const qrBottomY = qrTopY - qrSize;
+
   try {
-    const qrData = data.qrPngDataUrl;
-    const qrBase64 = qrData.split(',')[1];
-    const qrBytes = Uint8Array.from(atob(qrBase64), (c) => c.charCodeAt(0));
+    const qrBase64 = data.qrPngDataUrl.split(',')[1];
+    const qrBytes = Uint8Array.from(atob(qrBase64), (ch) => ch.charCodeAt(0));
     const qrImage = await doc.embedPng(qrBytes);
-
-    const qrSize = 160;
-    const qrX = A4_WIDTH - margin - qrSize;
-    const qrY = margin + 40;
-
-    page.drawImage(qrImage, {
-      x: qrX,
-      y: qrY,
-      width: qrSize,
-      height: qrSize,
-    });
+    page.drawImage(qrImage, { x: qrX, y: qrBottomY, width: qrSize, height: qrSize });
   } catch {
-    // Wenn der QR-Code nicht eingebettet werden kann, wird er einfach ausgelassen.
+    // QR-Fehler ignorieren
   }
 
-  // FUSSZEILE
-  page.drawText(t.footer, {
-    x: margin,
-    y: margin - 4,
-    size: 8,
-    font: helvetica,
-    color: rgb(COLOR_MUTED.red, COLOR_MUTED.green, COLOR_MUTED.blue),
+  // Hinweis-Texte unter QR
+  page.drawText(t.qrHint, { x: qrX, y: qrBottomY - 14, size: 7, font: helvetica, color: cGray });
+
+  if (data.iban && data.iban.length >= 8) {
+    const ibanClean = data.iban.replace(/\s/g, '');
+    const ibanMasked = `IBAN: ${ibanClean.slice(0, 4)}...${ibanClean.slice(-4)}`;
+    page.drawText(ibanMasked, { x: qrX, y: qrBottomY - 26, size: 7, font: helvetica, color: cGray });
+  }
+
+  // ─── FUSSZEILE ────────────────────────────────────────────────────────────
+  const footerLineY = 45;
+  page.drawLine({
+    start: { x: margin, y: footerLineY },
+    end: { x: A4_WIDTH - margin, y: footerLineY },
+    thickness: 0.5,
+    color: cLightGray,
   });
 
-  const pdfBytes = await doc.save();
-  return pdfBytes;
-}
+  const footerText = t.footer;
+  const footerTextW = helvetica.widthOfTextAtSize(footerText, 7);
+  page.drawText(footerText, {
+    x: (A4_WIDTH - footerTextW) / 2,
+    y: footerLineY - 12,
+    size: 7,
+    font: helvetica,
+    color: cGray,
+  });
 
+  return doc.save();
+}

@@ -48,6 +48,7 @@ export const en = {
     vat: 'VAT',
     gross: 'Gross total',
     footer: 'Generated locally in browser · no data transmission',
+    qrHint: 'GiroCode – scan with banking app',
   },
   // Rechnung
   invoice: {

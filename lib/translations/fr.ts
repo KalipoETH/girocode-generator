@@ -44,6 +44,7 @@ export const fr = {
     vat: 'TVA',
     gross: 'Total TTC',
     footer: 'Généré localement · aucune transmission de données',
+    qrHint: "GiroCode – scanner avec l'app bancaire",
   },
   invoice: {
     title: 'Facture (PDF)',

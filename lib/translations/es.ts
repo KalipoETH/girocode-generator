@@ -44,6 +44,7 @@ export const es = {
     vat: 'IVA',
     gross: 'Bruto total',
     footer: 'Generado localmente · sin transmisión de datos',
+    qrHint: 'GiroCode – escanear con app bancaria',
   },
   invoice: {
     title: 'Factura (PDF)',

@@ -10,5 +10,6 @@ export const de = {
     vat: 'USt',
     gross: 'Brutto gesamt',
     footer: 'Erstellt lokal im Browser · keine Datenübertragung',
+    qrHint: 'GiroCode – per Banking-App scannen',
   },
 } as const;
