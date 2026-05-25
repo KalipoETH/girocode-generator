@@ -49,6 +49,7 @@ export const en = {
     gross: 'Gross total',
     footer: 'Generated locally in browser · no data transmission',
     qrHint: 'GiroCode – scan with banking app',
+    paymentNote: 'Payable within 14 days without deduction',
   },
   // Rechnung
   invoice: {

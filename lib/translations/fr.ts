@@ -45,6 +45,7 @@ export const fr = {
     gross: 'Total TTC',
     footer: 'Généré localement · aucune transmission de données',
     qrHint: "GiroCode – scanner avec l'app bancaire",
+    paymentNote: 'Payable dans les 14 jours sans déduction',
   },
   invoice: {
     title: 'Facture (PDF)',

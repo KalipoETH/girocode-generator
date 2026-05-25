@@ -11,5 +11,6 @@ export const de = {
     gross: 'Brutto gesamt',
     footer: 'Erstellt lokal im Browser · keine Datenübertragung',
     qrHint: 'GiroCode – per Banking-App scannen',
+    paymentNote: 'Zahlbar innerhalb von 14 Tagen ohne Abzug',
   },
 } as const;

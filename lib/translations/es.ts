@@ -45,6 +45,7 @@ export const es = {
     gross: 'Bruto total',
     footer: 'Generado localmente · sin transmisión de datos',
     qrHint: 'GiroCode – escanear con app bancaria',
+    paymentNote: 'Pagadero en 14 días sin descuento',
   },
   invoice: {
     title: 'Factura (PDF)',

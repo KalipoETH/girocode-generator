@@ -205,8 +205,8 @@ export async function makePDF(data: InvoiceData, locale: PdfLocale = 'de'): Prom
   }
 
   // ─── BETRAGSBOX + QR-CODE ─────────────────────────────────────────────────
-  // Sektion beginnt bei cursorY - 24, mindestens bei y=320 damit QR + Footer Platz haben
-  const sectionTopY = Math.max(cursorY - 24, 330);
+  // Feste Start-Y-Position damit Box und QR exakt auf gleicher Höhe starten
+  const sectionTopY = 450;
 
   const net = data.netAmount;
   const vatAmount = Math.round(net * data.vatRate * 100) / 100 / 100;
@@ -245,10 +245,7 @@ export async function makePDF(data: InvoiceData, locale: PdfLocale = 'de'): Prom
   });
 
   // USt
-  const vatPct =
-    data.vatRate % 1 === 0
-      ? `${data.vatRate.toFixed(0)} %`
-      : `${data.vatRate.toFixed(2).replace('.', ',')} %`;
+  const vatPct = `${data.vatRate.toFixed(2).replace('.', ',')} %`;
   const vatLabel = `${t.vat} (${vatPct})`;
   const row2Y = row1Y - boxRowH;
   page.drawText(vatLabel, { x: boxX + 12, y: row2Y, size: 9, font: helvetica, color: cGray });
@@ -282,10 +279,10 @@ export async function makePDF(data: InvoiceData, locale: PdfLocale = 'de'): Prom
     color: cAccent,
   });
 
-  // QR-Code rechts neben der Box
+  // QR-Code rechts neben der Box (gleiche Start-Y wie Box-Oberkante)
   const qrSize = 150;
   const qrX = 350;
-  const qrTopY = sectionTopY - 10;
+  const qrTopY = sectionTopY;
   const qrBottomY = qrTopY - qrSize;
 
   try {
@@ -305,6 +302,15 @@ export async function makePDF(data: InvoiceData, locale: PdfLocale = 'de'): Prom
     const ibanMasked = `IBAN: ${ibanClean.slice(0, 4)}...${ibanClean.slice(-4)}`;
     page.drawText(ibanMasked, { x: qrX, y: qrBottomY - 26, size: 7, font: helvetica, color: cGray });
   }
+
+  // ─── ZAHLUNGSHINWEIS ─────────────────────────────────────────────────────
+  page.drawText(t.paymentNote, {
+    x: margin,
+    y: 300,
+    size: 8,
+    font: helvetica,
+    color: cGray,
+  });
 
   // ─── FUSSZEILE ────────────────────────────────────────────────────────────
   const footerLineY = 45;
