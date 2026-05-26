@@ -105,6 +105,16 @@ export default function DatenschutzPage() {
             </p>
           </div>
 
+
+          <div>
+            <h2 className="mb-1 text-base font-semibold text-slate-50">Newsletter</h2>
+            <p>
+              Wenn Sie sich für unseren Newsletter anmelden, verarbeiten wir Ihre E-Mail-Adresse
+              über den Dienst Brevo (Sendinblue SAS, Frankreich) zum Versand von E-Mails.
+              Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Sie können sich
+              jederzeit abmelden.
+            </p>
+          </div>
           <div>
             <h2 className="mb-1 text-base font-semibold text-slate-50">
               9. Cookies / Tracking

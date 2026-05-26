@@ -7,6 +7,7 @@ import { InvoiceForm } from '../../components/InvoiceForm';
 import { GeoStatsSection } from '../../components/GeoStatsSection';
 import { TimeSavingsCalculator } from '../../components/TimeSavingsCalculator';
 import { fr } from '../../lib/translations/fr';
+import NewsletterForm from '../../components/NewsletterForm';
 
 export default function HomePageFr() {
   const [qrPngDataUrl, setQrPngDataUrl] = useState<string | null>(null);
@@ -539,6 +540,7 @@ export default function HomePageFr() {
           </div>
         </section>
       </div>
+      <NewsletterForm locale="fr" />
     </main>
   );
 }

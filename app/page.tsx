@@ -7,6 +7,7 @@ import { InvoiceForm } from '../components/InvoiceForm';
 import { GeoStatsSection } from '../components/GeoStatsSection';
 import { TimeSavingsCalculator } from '../components/TimeSavingsCalculator';
 import { ExitIntent } from '../components/ExitIntent';
+import NewsletterForm from '../components/NewsletterForm';
 
 export default function HomePage() {
   const [qrPngDataUrl, setQrPngDataUrl] = useState<string | null>(null);
@@ -819,6 +820,7 @@ export default function HomePage() {
           </div>
         </section>
       </div>
+      <NewsletterForm locale="de" />
       <ExitIntent locale="de" />
     </main>
   );
