@@ -1,3 +1,10 @@
+export async function GET() {
+  return Response.json({
+    hasKey: !!process.env.BREVO_API_KEY,
+    keyStart: process.env.BREVO_API_KEY?.slice(0, 8),
+  });
+}
+
 import { NextResponse } from 'next/server';
 
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
