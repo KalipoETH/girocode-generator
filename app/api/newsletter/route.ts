@@ -1,11 +1,11 @@
+import { NextResponse } from 'next/server';
+
 export async function GET() {
   return Response.json({
     hasKey: !!process.env.BREVO_API_KEY,
     keyStart: process.env.BREVO_API_KEY?.slice(0, 8),
   });
 }
-
-import { NextResponse } from 'next/server';
 
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 
@@ -75,18 +75,38 @@ export async function POST(req: Request) {
       }),
     });
 
-    if (!response.ok && response.status !== 204) {
-      const error = await response.json();
-      if (error.code === 'duplicate_parameter') {
+    console.log('Status:', response.status);
+
+    const responseText = await response.text();
+    console.log('Response:', responseText);
+
+    if (response.status === 204 || response.status === 201) {
+      return NextResponse.json({ success: true });
+    }
+
+    if (!response.ok) {
+      let errorData: { code?: string; message?: string };
+      try {
+        errorData = JSON.parse(responseText);
+      } catch {
+        errorData = { message: responseText };
+      }
+
+      if (errorData.code === 'duplicate_parameter') {
         return NextResponse.json({ success: true, existing: true });
       }
-      throw new Error(error.message);
+
+      return NextResponse.json(
+        { error: errorData.message || responseText },
+        { status: response.status }
+      );
     }
 
     return NextResponse.json({ success: true });
-  } catch (error) {
+  } catch (err) {
+    console.error('Newsletter Error:', err);
     return NextResponse.json(
-      { error: 'Fehler beim Anmelden. Bitte versuche es erneut.' },
+      { error: String(err) },
       { status: 500 }
     );
   }
