@@ -53,6 +53,13 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   typescript: { ignoreBuildErrors: true },
+
+  // Remove X-Powered-By header to reduce response size & avoid fingerprinting
+  poweredByHeader: false,
+
+  // Brotli/gzip compression for all responses
+  compress: true,
+
   images: {
     remotePatterns: [
       {
@@ -61,15 +68,45 @@ const nextConfig: NextConfig = {
         pathname: '/widgets/**',
       },
     ],
+    // Serve AVIF first (smaller), fall back to WebP
+    formats: ['image/avif', 'image/webp'],
+    // Cache optimised images for 1 year on Vercel Edge
+    minimumCacheTTL: 31536000,
   },
+
+  // Tree-shake heavy packages so only used exports are bundled
+  experimental: {
+    optimizePackageImports: [
+      '@pdfme/ui',
+      '@pdfme/generator',
+      '@pdfme/schemas',
+      '@pdfme/common',
+      'pdf-lib',
+      'qrcode',
+      'jszip',
+    ],
+  },
+
   async headers() {
     return [
+      // Security headers for every route
       {
         source: '/(.*)',
         headers: securityHeaders,
       },
+      // Long-lived immutable cache for hashed static assets
+      {
+        source: '/:all*(svg|jpg|jpeg|png|gif|ico|css|js)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
     ];
   },
+
   async redirects() {
     return bankRedirects;
   },
