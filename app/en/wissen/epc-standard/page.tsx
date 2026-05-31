@@ -1,5 +1,10 @@
 import type { Metadata } from 'next';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
+import { LazyCodeBlock } from '../../../../components/LazyCodeBlock';
+import { EpcVersionsSection } from './_sections/EpcVersionsSection';
+import { EpcErrorCorrectionSection } from './_sections/EpcErrorCorrectionSection';
+import { EpcTechnicalImplementationSection } from './_sections/EpcTechnicalImplementationSection';
+import { EpcCommonMistakesSection } from './_sections/EpcCommonMistakesSection';
 
 export const metadata: Metadata = {
   title: 'EPC Standard Explained – SEPA QR Code Structure 2026',
@@ -16,6 +21,17 @@ export const metadata: Metadata = {
     },
   },
 };
+
+const EPC_PAYLOAD_EXAMPLE = `BCD
+002
+1
+SCT
+SSKMDEMMXXX
+Max Mustermann GmbH
+DE02120300000000202051
+EUR1250.00
+
+Invoice 2024-0042`;
 
 export default function WissenEpcStandardPageEn() {
   return (
@@ -35,6 +51,7 @@ export default function WissenEpcStandardPageEn() {
       locale="en"
       shortAnswer="The EPC standard (EPC069-12) defines the structure of SEPA QR codes. A valid payload consists of 11 lines: Service Tag (BCD), Version, Encoding, Identification (SCT), BIC, Recipient name, IBAN, Amount, and Payment reference."
     >
+      {/* ─── SECTION 1: Above the fold ─── */}
       <section aria-labelledby="what-is-epc">
         <h2 id="what-is-epc">What is the EPC Standard?</h2>
         <p>
@@ -77,6 +94,7 @@ export default function WissenEpcStandardPageEn() {
         </p>
       </section>
 
+      {/* ─── SECTION 2: Payload structure (above fold, LazyCodeBlock for pre) ─── */}
       <section aria-labelledby="epc-payload-structure" className="mt-10">
         <h2 id="epc-payload-structure">The Technical Structure of the EPC Payload</h2>
         <p>
@@ -84,18 +102,11 @@ export default function WissenEpcStandardPageEn() {
           Each line contains exactly one field. The order of the fields is fixed and mandatory.
           Here is a complete example:
         </p>
-        <pre className="whitespace-pre rounded-md bg-slate-900/70 p-4 text-xs text-slate-200">
-{`BCD
-002
-1
-SCT
-SSKMDEMMXXX
-Max Mustermann GmbH
-DE02120300000000202051
-EUR1250.00
-
-Invoice 2024-0042`}
-        </pre>
+        <LazyCodeBlock
+          code={EPC_PAYLOAD_EXAMPLE}
+          className="whitespace-pre rounded-md bg-slate-900/70 p-4 text-xs text-slate-200"
+          estimatedHeight="160px"
+        />
         <p>Now let&apos;s examine each line in detail:</p>
 
         <h3>Line 1: Service Tag (BCD)</h3>
@@ -179,163 +190,11 @@ Invoice 2024-0042`}
         </p>
       </section>
 
-      <section aria-labelledby="epc-versions" className="mt-10">
-        <h2 id="epc-versions">EPC Versions Compared</h2>
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse text-sm">
-            <thead>
-              <tr className="border-b border-slate-700">
-                <th className="py-2 pr-4 text-left text-slate-300">Aspect</th>
-                <th className="py-2 pr-4 text-left text-slate-300">Version 001</th>
-                <th className="py-2 text-left text-slate-300">Version 002</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-800 text-slate-400">
-              <tr>
-                <td className="py-2 pr-4 font-medium text-slate-300">Year introduced</td>
-                <td className="py-2 pr-4">2012</td>
-                <td className="py-2">2018</td>
-              </tr>
-              <tr>
-                <td className="py-2 pr-4 font-medium text-slate-300">BIC required</td>
-                <td className="py-2 pr-4">Yes (mandatory)</td>
-                <td className="py-2">No (optional)</td>
-              </tr>
-              <tr>
-                <td className="py-2 pr-4 font-medium text-slate-300">Max payload size</td>
-                <td className="py-2 pr-4">331 bytes</td>
-                <td className="py-2">331 bytes</td>
-              </tr>
-              <tr>
-                <td className="py-2 pr-4 font-medium text-slate-300">Recommended for</td>
-                <td className="py-2 pr-4">Legacy systems</td>
-                <td className="py-2">New implementations</td>
-              </tr>
-              <tr>
-                <td className="py-2 pr-4 font-medium text-slate-300">Character encoding</td>
-                <td className="py-2 pr-4">UTF-8 or ISO 8859</td>
-                <td className="py-2">UTF-8 recommended</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p>
-          For new implementations, version 002 with UTF-8 encoding is the recommended choice.
-          It is forward-compatible with version 001 readers and does not require a BIC.
-        </p>
-      </section>
-
-      <section aria-labelledby="error-correction" className="mt-10">
-        <h2 id="error-correction">Error Correction and QR Code Quality</h2>
-
-        <h3>Error correction level M (15%)</h3>
-        <p>
-          QR codes support four error correction levels: L (7%), M (15%), Q (25%) and H (30%).
-          The EPC standard specifies <strong>error correction level M</strong> for GiroCodes.
-          This means up to 15% of the QR code&apos;s data cells can be damaged or covered
-          while the code remains fully readable.
-        </p>
-
-        <h3>Impact on scannability</h3>
-        <ul>
-          <li><strong>Print quality:</strong> At least 300 DPI is recommended for printed codes</li>
-          <li><strong>Minimum size:</strong> At least 2 × 2 cm for printed invoices; 200 × 200 px for digital</li>
-          <li><strong>Quiet zone:</strong> White border of at least 4 modules on all sides</li>
-          <li><strong>Contrast:</strong> Black modules on white background; avoid grey or coloured backgrounds</li>
-          <li><strong>Undistorted:</strong> QR codes must not be stretched, rotated or skewed</li>
-          <li><strong>Payload length:</strong> Shorter payloads produce less dense QR codes that scan more reliably</li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="technical-implementation" className="mt-10">
-        <h2 id="technical-implementation">Technical Implementation</h2>
-        <p>
-          Here is a JavaScript example showing how to generate a valid EPC payload from
-          payment data:
-        </p>
-        <pre className="whitespace-pre-wrap rounded-md bg-slate-900/70 p-4 text-xs text-slate-200">
-{`function generateEpcPayload({
-  name,       // Recipient name (max 70 chars)
-  iban,       // Recipient IBAN
-  bic = '',   // BIC (optional)
-  amount = 0, // Amount in EUR (0 = no amount)
-  reference = '', // Payment reference (max 140 chars)
-  version = '002',
-}) {
-  const amountStr = amount > 0
-    ? 'EUR' + amount.toFixed(2)
-    : '';
-
-  const lines = [
-    'BCD',         // Service tag
-    version,       // Version
-    '1',           // UTF-8 encoding
-    'SCT',         // SEPA Credit Transfer
-    bic,           // BIC (optional)
-    name.slice(0, 70),   // Recipient name
-    iban,          // IBAN
-    amountStr,     // Amount (optional)
-    '',            // Purpose type (leave empty)
-    '',            // Creditor reference (leave empty)
-    reference.slice(0, 140), // Payment reference
-  ];
-
-  return lines.join('\\n');
-}`}
-        </pre>
-        <p>
-          To generate the actual QR code image from this payload in JavaScript, you can use
-          libraries like <code>qrcode</code> (npm) or <code>qr-code-styling</code>. Our
-          GiroCode Generator uses a similar approach, running entirely in the browser without
-          sending any data to a server.
-        </p>
-      </section>
-
-      <section aria-labelledby="common-mistakes" className="mt-10">
-        <h2 id="common-mistakes">Common Mistakes with the EPC Standard</h2>
-
-        <h3>Wrong character encoding</h3>
-        <p>
-          If the payload is encoded in a character set other than what is specified in line 3,
-          special characters will be garbled. Always ensure that the encoding declared in
-          line 3 matches the actual encoding used. For UTF-8 (value 1), ensure your string
-          handling library encodes the payload as UTF-8 bytes.
-        </p>
-
-        <h3>Payment reference too long</h3>
-        <p>
-          The payment reference (line 11) has a strict maximum of <strong>140 characters</strong>.
-          If you exceed this limit, the QR code may be rejected or the reference silently
-          truncated. Always validate the reference length before encoding.
-        </p>
-
-        <h3>Wrong amount format</h3>
-        <p>
-          The amount must use a period (.) as the decimal separator, not a comma. Wrong:{' '}
-          <code>EUR1.250,00</code>. Correct: <code>EUR1250.00</code> (period as decimal, no
-          thousands separator). The amount must have exactly two decimal places.
-        </p>
-
-        <h3>Invalid IBAN</h3>
-        <p>
-          Using an IBAN that fails the Mod-97 check digit validation will cause banking apps
-          to reject the payment. Always validate the IBAN before embedding it in a GiroCode.
-        </p>
-
-        <h3>Missing newlines between fields</h3>
-        <p>
-          The EPC payload uses Unix-style line breaks (<code>\n</code>, LF) to separate
-          fields. Using Windows-style line breaks (<code>\r\n</code>, CRLF) or mixing line
-          break styles will cause parsing errors in some banking apps.
-        </p>
-
-        <h3>Exceeding the maximum payload size</h3>
-        <p>
-          The total payload must not exceed <strong>331 bytes</strong> when encoded in UTF-8.
-          Exceeding this limit may produce a QR code that is too dense to scan reliably at
-          small sizes.
-        </p>
-      </section>
+      {/* ─── SECTIONS 3–6: Below the fold – lazy-loaded components ─── */}
+      <EpcVersionsSection />
+      <EpcErrorCorrectionSection />
+      <EpcTechnicalImplementationSection />
+      <EpcCommonMistakesSection />
     </KnowledgeLayout>
   );
 }
