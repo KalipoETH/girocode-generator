@@ -31,6 +31,13 @@ interface QRTexts {
   downloadHint: string;
   sealTitle: string;
   sealSubtitle: string;
+  nlSuccess: string;
+  nlTeaser: string;
+  nlPlaceholder: string;
+  nlButton: string;
+  nlDisclaimer: string;
+  nlDone: string;
+  nlError: string;
 }
 
 function getTexts(locale: Locale): QRTexts {
@@ -47,6 +54,13 @@ function getTexts(locale: Locale): QRTexts {
       downloadHint: 'PNG format \u00b7 optimized for print & digital',
       sealTitle: 'Safe-Pay verified',
       sealSubtitle: 'IBAN checked \u00b7 EPC-compliant \u00b7 Locally generated',
+      nlSuccess: '✅ PDF successfully created!',
+      nlTeaser: '💡 Want free invoice templates every month?',
+      nlPlaceholder: 'your@email.com',
+      nlButton: 'Get them now →',
+      nlDisclaimer: 'No spam · Unsubscribe anytime',
+      nlDone: '🎉 Great! Check your inbox.',
+      nlError: 'Error. Please try again.',
     };
   }
 
@@ -63,6 +77,13 @@ function getTexts(locale: Locale): QRTexts {
       downloadHint: 'Format PNG \u00b7 optimis\u00e9 pour impression & num\u00e9rique',
       sealTitle: 'Safe-Pay v\u00e9rifi\u00e9',
       sealSubtitle: 'IBAN v\u00e9rifi\u00e9 \u00b7 Conforme EPC \u00b7 G\u00e9n\u00e9r\u00e9 localement',
+      nlSuccess: '✅ PDF créé avec succès!',
+      nlTeaser: '💡 Voulez-vous des modèles de factures gratuits chaque mois?',
+      nlPlaceholder: 'votre@email.fr',
+      nlButton: 'Les obtenir →',
+      nlDisclaimer: 'Sans spam · Désinscription à tout moment',
+      nlDone: '🎉 Super! Vérifiez votre boîte mail.',
+      nlError: 'Erreur. Veuillez réessayer.',
     };
   }
 
@@ -79,6 +100,13 @@ function getTexts(locale: Locale): QRTexts {
       downloadHint: 'Formato PNG \u00b7 optimizado para impresi\u00f3n & digital',
       sealTitle: 'Safe-Pay verificado',
       sealSubtitle: 'IBAN verificado \u00b7 Conforme EPC \u00b7 Generado localmente',
+      nlSuccess: '✅ ¡PDF creado con éxito!',
+      nlTeaser: '💡 ¿Quieres plantillas de factura gratuitas cada mes?',
+      nlPlaceholder: 'tu@email.es',
+      nlButton: 'Obtenerlas →',
+      nlDisclaimer: 'Sin spam · Cancelar en cualquier momento',
+      nlDone: '🎉 ¡Genial! Revisa tu bandeja de entrada.',
+      nlError: 'Error. Por favor, inténtalo de nuevo.',
     };
   }
 
@@ -94,6 +122,13 @@ function getTexts(locale: Locale): QRTexts {
     downloadHint: 'PNG-Format \u00b7 optimiert f\u00fcr Druck & Digital',
     sealTitle: 'Safe-Pay verifiziert',
     sealSubtitle: 'IBAN gepr\u00fcft \u00b7 EPC-konform \u00b7 Lokal generiert',
+    nlSuccess: '✅ QR-Code erfolgreich erstellt!',
+    nlTeaser: '💡 Möchtest du monatlich kostenlose Rechnungsvorlagen?',
+    nlPlaceholder: 'deine@email.de',
+    nlButton: 'Jetzt erhalten →',
+    nlDisclaimer: 'Kein Spam · Jederzeit abmeldbar',
+    nlDone: '🎉 Super! Schau in dein Postfach.',
+    nlError: 'Fehler. Bitte versuche es erneut.',
   };
 }
 
@@ -109,6 +144,17 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [useExternal, setUseExternal] = useState(false);
   const [qrRenderedSuccess, setQrRenderedSuccess] = useState(false);
+
+  const [showNewsletter, setShowNewsletter] = useState(false);
+  const [nlEmail, setNlEmail] = useState('');
+  const [nlStatus, setNlStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const autoHideRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (autoHideRef.current) clearTimeout(autoHideRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     if (!canvasRef.current) {
@@ -224,6 +270,37 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
     link.download = 'girocode.png';
     link.href = canvas.toDataURL('image/png');
     link.click();
+
+    const alreadyShown = sessionStorage.getItem('newsletter_shown') === 'true';
+    if (!alreadyShown) {
+      setTimeout(() => setShowNewsletter(true), 1500);
+    }
+  };
+
+  const handleNlSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setNlStatus('loading');
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: nlEmail }),
+      });
+      if (!res.ok) {
+        setNlStatus('error');
+        return;
+      }
+      setNlStatus('success');
+      sessionStorage.setItem('newsletter_shown', 'true');
+      autoHideRef.current = setTimeout(() => setShowNewsletter(false), 3000);
+    } catch {
+      setNlStatus('error');
+    }
+  };
+
+  const handleNlClose = () => {
+    sessionStorage.setItem('newsletter_shown', 'true');
+    setShowNewsletter(false);
   };
 
   const handleReset = () => {
@@ -383,6 +460,73 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
           <p style={{ fontSize: '12px', color: '#8b90a0', textAlign: 'center' }}>
             {t.downloadHint}
           </p>
+
+          {showNewsletter && (
+            <div
+              style={{
+                background: '#0f1a0f',
+                border: '1px solid rgba(34,197,94,0.25)',
+                borderRadius: '12px',
+                padding: '16px',
+                marginTop: '8px',
+                animation: 'nlSlideIn 0.4s ease-out forwards',
+              }}
+            >
+              <style>{`
+                @keyframes nlSlideIn {
+                  from { opacity: 0; transform: translateY(20px); }
+                  to   { opacity: 1; transform: translateY(0); }
+                }
+              `}</style>
+
+              <div className="flex items-start justify-between gap-2">
+                <span className="text-sm font-semibold text-emerald-400">
+                  {t.nlSuccess}
+                </span>
+                <button
+                  type="button"
+                  onClick={handleNlClose}
+                  aria-label="Schließen"
+                  className="shrink-0 text-slate-500 hover:text-slate-300 transition-colors text-xs leading-none"
+                >
+                  ✕
+                </button>
+              </div>
+
+              {nlStatus === 'success' ? (
+                <p className="mt-3 text-sm text-emerald-300">{t.nlDone}</p>
+              ) : (
+                <>
+                  <hr className="my-2 border-white/10" />
+                  <p className="mb-3 text-xs text-slate-300">{t.nlTeaser}</p>
+
+                  <form onSubmit={handleNlSubmit} className="flex gap-2">
+                    <input
+                      type="email"
+                      required
+                      value={nlEmail}
+                      onChange={(e) => setNlEmail(e.target.value)}
+                      placeholder={t.nlPlaceholder}
+                      className="min-w-0 flex-1 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-xs text-slate-200 placeholder:text-slate-500 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500/30"
+                    />
+                    <button
+                      type="submit"
+                      disabled={nlStatus === 'loading'}
+                      className="shrink-0 rounded-lg bg-emerald-500 px-3 py-1.5 text-xs font-semibold text-slate-950 transition hover:bg-emerald-400 disabled:opacity-60"
+                    >
+                      {nlStatus === 'loading' ? '…' : t.nlButton}
+                    </button>
+                  </form>
+
+                  {nlStatus === 'error' && (
+                    <p className="mt-2 text-xs text-red-400">{t.nlError}</p>
+                  )}
+
+                  <p className="mt-2 text-[10px] text-slate-600">{t.nlDisclaimer}</p>
+                </>
+              )}
+            </div>
+          )}
         </div>
       )}
     </div>
