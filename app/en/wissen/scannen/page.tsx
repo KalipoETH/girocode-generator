@@ -23,7 +23,7 @@ export default function WissenScannenPageEn() {
       breadcrumbCurrent="How to Scan a GiroCode"
       badge="Guide · Scanning GiroCodes"
       title="How to Scan a GiroCode – Complete Guide for iPhone & Android"
-      lead="Scanning a GiroCode with your banking app takes less than 30 seconds and eliminates the most common cause of payment errors: manual data entry. This guide covers everything from the basic scanning process to iPhone- and Android-specific instructions, troubleshooting, quality requirements and security tips."
+      lead="To scan a GiroCode: Open banking app → tap 'Transfer' → tap QR scanner icon → scan code → verify data (IBAN, amount, reference) → enter TAN → confirm. The entire process takes under 30 seconds. Not working? Increase screen brightness, adjust distance to 15-30 cm, or print the code larger (minimum 2×2 cm)."
       relatedArticles={[
         { href: '/en/wissen/girocode', label: 'What is a GiroCode? – Everything You Need to Know' },
         { href: '/en/wissen/banking-apps', label: 'Banking Apps Supporting GiroCode – Complete Overview' },
@@ -33,7 +33,7 @@ export default function WissenScannenPageEn() {
         { href: '/en/wissen/betrag-und-zweck', label: 'Amount & Payment Reference in GiroCode' },
       ]}
       locale="en"
-      shortAnswer="To scan a GiroCode: Open banking app → Transfer → QR scanner → Scan code → Check data → Enter TAN → Confirm. The entire process takes under 30 seconds."
+      shortAnswer="To scan a GiroCode: Open banking app → tap 'Transfer' → tap QR scanner icon → scan code → verify data (IBAN, amount, reference) → enter TAN → confirm. The entire process takes under 30 seconds. Not working? Increase screen brightness, adjust distance to 15-30 cm, or print the code larger (minimum 2×2 cm)."
     >
       <section aria-labelledby="scanning-how-it-works">
         <h2 id="scanning-how-it-works">Scanning a GiroCode – How It Works</h2>

@@ -25,7 +25,7 @@ export default function WissenBetragUndZweckPage() {
       breadcrumbCurrent="Betrag & Verwendungszweck"
       badge="Praxis · Betrag & Verwendungszweck"
       title="Betrag & Verwendungszweck im GiroCode richtig eingeben"
-      lead="Der richtige Umgang mit Betrag und Verwendungszweck im GiroCode entscheidet darüber, wie gut Zahlungen später zugeordnet werden können – und ob die Buchhaltung reibungslos funktioniert. Hier erfährst du alles, was du dazu wissen musst."
+      lead="Im GiroCode ist der Betrag optional und wird im Format EUR49.90 angegeben (Punkt als Dezimaltrennzeichen, kein Komma). Wird kein Betrag angegeben, kann der Zahler beim Scannen selbst einen Betrag eingeben – ideal für Spenden oder variable Preise. Der Verwendungszweck ist ebenfalls optional, darf maximal 140 Zeichen lang sein und sollte immer die Rechnungsnummer enthalten damit Zahlungen korrekt zugeordnet werden können."
       relatedArticles={[
         { href: '/wissen/rechnung', label: 'GiroCode auf Rechnungen – Leitfaden' },
         { href: '/wissen/iban-bic', label: 'IBAN & BIC im GiroCode' },
@@ -35,7 +35,7 @@ export default function WissenBetragUndZweckPage() {
         { href: '/wissen/scannen', label: 'GiroCode scannen' },
       ]}
       locale="de"
-      shortAnswer="Der Betrag im GiroCode ist optional und wird im Format EUR49.90 angegeben. Der Verwendungszweck ist ebenfalls optional und darf maximal 140 Zeichen lang sein. Beide Felder werden beim Scannen automatisch in die Überweisungsmaske übertragen."
+      shortAnswer="Im GiroCode ist der Betrag optional und wird im Format EUR49.90 angegeben (Punkt als Dezimaltrennzeichen, kein Komma). Wird kein Betrag angegeben, kann der Zahler beim Scannen selbst einen Betrag eingeben – ideal für Spenden oder variable Preise. Der Verwendungszweck ist ebenfalls optional, darf maximal 140 Zeichen lang sein und sollte immer die Rechnungsnummer enthalten damit Zahlungen korrekt zugeordnet werden können."
     >
       {/* ─── SECTION 1: Betrag ─── */}
       <section aria-labelledby="betrag-format">

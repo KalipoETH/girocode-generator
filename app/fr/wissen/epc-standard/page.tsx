@@ -23,7 +23,7 @@ export default function WissenEpcStandardPageFr() {
       breadcrumbCurrent="Norme EPC & SEPA-QR"
       badge="Technique · Standard EPC"
       title="Norme EPC & SEPA-QR – Structure technique expliquée"
-      lead="La norme EPC définit précisément comment un virement SEPA est encodé dans un code QR. Ce guide explique ligne par ligne la structure du payload EPC, les différentes versions et les aspects techniques importants pour créer des GiroCodes valides."
+      lead="La norme EPC (document EPC069-12) définit la structure technique des codes QR SEPA. Un payload EPC valide comprend 11 lignes: Service Tag (BCD), Version, encodage UTF-8, Identification (SCT), BIC optionnel, nom du bénéficiaire (max. 70 caractères), IBAN, montant au format EUR49.90, et référence de paiement (max. 140 caractères)."
       relatedArticles={[
         { href: '/fr/wissen/girocode', label: "Qu'est-ce qu'un GiroCode ? – Guide complet" },
         { href: '/fr/wissen/iban-bic', label: 'IBAN & BIC pour GiroCode – Guide complet' },
@@ -31,7 +31,7 @@ export default function WissenEpcStandardPageFr() {
         { href: '/fr/wissen/rechnung', label: 'GiroCode sur les factures' },
       ]}
       locale="fr"
-      shortAnswer="La norme EPC (EPC069-12) définit la structure des codes QR SEPA. Un payload valide comporte 11 lignes : Service Tag (BCD), Version, Encodage, Identification (SCT), BIC, Nom du bénéficiaire, IBAN, Montant et Référence de paiement."
+      shortAnswer="La norme EPC (document EPC069-12) définit la structure technique des codes QR SEPA. Un payload EPC valide comprend 11 lignes: Service Tag (BCD), Version, encodage UTF-8, Identification (SCT), BIC optionnel, nom du bénéficiaire (max. 70 caractères), IBAN, montant au format EUR49.90, et référence de paiement (max. 140 caractères)."
     >
 
       {/* ── Section 1 ── */}

@@ -23,7 +23,7 @@ export default function WissenBetragUndZweckPageEs() {
       breadcrumbCurrent="Importe y concepto de pago"
       badge="Práctica · Importe y concepto"
       title="Importe y concepto de pago en GiroCode – Guía completa"
-      lead="El importe y el concepto de pago son los dos campos variables más importantes de un GiroCode. Cómo los configures determina si la conciliación de pagos será sencilla o un dolor de cabeza. En esta guía encontrarás el formato exacto, los límites técnicos, las mejores prácticas para cada sector y ejemplos concretos."
+      lead="En un GiroCode, el importe es opcional y se especifica en formato EUR49.90. Sin importe, el pagador puede introducir su propio importe al escanear – ideal para donaciones. La referencia de pago está limitada a 140 caracteres."
       relatedArticles={[
         { href: '/es/wissen/girocode', label: '¿Qué es un GiroCode? – Todo lo que necesitas saber' },
         { href: '/es/wissen/epc-standard', label: 'Norma EPC & SEPA-QR – Estructura técnica' },
@@ -32,7 +32,7 @@ export default function WissenBetragUndZweckPageEs() {
         { href: '/es/wissen/banking-apps', label: 'Apps bancarias compatibles con GiroCode' },
       ]}
       locale="es"
-      shortAnswer="El importe en un GiroCode es opcional en formato EUR49.90. La referencia de pago también es opcional, máximo 140 caracteres. Ambos campos se transfieren automáticamente al formulario de transferencia al escanear."
+      shortAnswer="En un GiroCode, el importe es opcional y se especifica en formato EUR49.90. Sin importe, el pagador puede introducir su propio importe al escanear – ideal para donaciones. La referencia de pago está limitada a 140 caracteres."
     >
       <section aria-labelledby="importe-girocode">
         <h2 id="importe-girocode">El importe en GiroCode</h2>

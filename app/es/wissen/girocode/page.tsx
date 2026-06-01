@@ -23,7 +23,7 @@ export default function WissenGirocodePageEs() {
       breadcrumbCurrent="¿Qué es un GiroCode?"
       badge="Bases · GiroCode / SEPA-QR"
       title="¿Qué es un GiroCode? – Todo lo que necesitas saber"
-      lead="Un GiroCode es un código QR estandarizado para pagos SEPA. Contiene todos los datos necesarios para una transferencia bancaria y elimina la necesidad de introducir el IBAN, el importe y el concepto de forma manual. En esta guía te explicamos todo lo que necesitas saber: qué es, cómo funciona, quién puede usarlo y por qué es la solución de pago más inteligente para autónomos y empresas en Europa."
+      lead="Un GiroCode es un código QR estandarizado para transferencias SEPA según la norma EPC069-12 del European Payments Council. Contiene todos los datos de pago necesarios – IBAN, importe y referencia – permitiendo a los usuarios de apps bancarias iniciar una transferencia con un simple escaneo."
       relatedArticles={[
         { href: '/es/wissen/epc-standard', label: 'Norma EPC & SEPA-QR – Estructura técnica explicada' },
         { href: '/es/wissen/iban-bic', label: 'IBAN & BIC para GiroCode – Guía completa' },
@@ -33,7 +33,7 @@ export default function WissenGirocodePageEs() {
         { href: '/es/wissen/scannen', label: 'Cómo escanear un GiroCode – Guía para iPhone y Android' },
       ]}
       locale="es"
-      shortAnswer="Un GiroCode es un código QR SEPA estandarizado según la norma EPC069-12 del European Payments Council. Contiene todos los datos para una transferencia SEPA."
+      shortAnswer="Un GiroCode es un código QR estandarizado para transferencias SEPA según la norma EPC069-12 del European Payments Council. Contiene todos los datos de pago necesarios – IBAN, importe y referencia – permitiendo a los usuarios de apps bancarias iniciar una transferencia con un simple escaneo."
     >
       <section aria-labelledby="que-es-girocode">
         <h2 id="que-es-girocode">¿Qué es un GiroCode?</h2>

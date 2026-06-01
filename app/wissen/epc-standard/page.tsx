@@ -25,7 +25,7 @@ export default function WissenEpcStandardPage() {
       breadcrumbCurrent="EPC-Standard"
       badge="Technik · EPC-Standard & SEPA-QR"
       title="EPC-Standard – Der technische Aufbau des GiroCodes"
-      lead="Hinter jedem GiroCode steckt ein klar definiertes Textformat, das vom European Payments Council (EPC) spezifiziert wird. Hier erfährst du, wie der EPC-Payload Zeile für Zeile aufgebaut ist, welche Versionen existieren und wie die Fehlerkorrektur funktioniert."
+      lead="Der EPC-Standard (Dokument EPC069-12) definiert den technischen Aufbau von SEPA-QR-Codes. Ein gültiger EPC-Payload besteht aus 11 Zeilen: Service Tag (BCD), Version (001/002), UTF-8 Encoding, Identifikation (SCT), optionaler BIC, Empfängername (max. 70 Zeichen), IBAN, Betrag im Format EUR49.90, und Verwendungszweck (max. 140 Zeichen). Der Standard wird vom European Payments Council verwaltet und ist in allen 36 SEPA-Ländern gültig."
       relatedArticles={[
         { href: '/wissen/girocode', label: 'Was ist ein GiroCode?' },
         { href: '/wissen/iban-bic', label: 'IBAN & BIC im GiroCode' },
@@ -35,7 +35,7 @@ export default function WissenEpcStandardPage() {
         { href: '/wissen/scannen', label: 'GiroCode scannen' },
       ]}
       locale="de"
-      shortAnswer="Der EPC-Standard (EPC069-12) definiert den Aufbau von SEPA-QR-Codes. Ein gültiger Payload besteht aus 11 Zeilen: Service Tag (BCD), Version, Encoding, Identifikation (SCT), BIC, Empfängername, IBAN, Betrag, und Verwendungszweck."
+      shortAnswer="Der EPC-Standard (Dokument EPC069-12) definiert den technischen Aufbau von SEPA-QR-Codes. Ein gültiger EPC-Payload besteht aus 11 Zeilen: Service Tag (BCD), Version (001/002), UTF-8 Encoding, Identifikation (SCT), optionaler BIC, Empfängername (max. 70 Zeichen), IBAN, Betrag im Format EUR49.90, und Verwendungszweck (max. 140 Zeichen). Der Standard wird vom European Payments Council verwaltet und ist in allen 36 SEPA-Ländern gültig."
     >
       {/* ─── SECTION 1: Was ist der EPC-Standard ─── */}
       <section aria-labelledby="was-ist-epc">

@@ -23,7 +23,7 @@ export default function WissenGirocodePageEn() {
       breadcrumbCurrent="What is a GiroCode?"
       badge="Basics · GiroCode / SEPA-QR"
       title="What is a GiroCode? – Everything You Need to Know"
-      lead="The GiroCode – also known as SEPA-QR or EPC QR code – is a standardised QR code for bank transfers in the SEPA area. It eliminates manual data entry, reduces errors and makes payments significantly faster for both payers and recipients. This complete guide explains everything you need to know."
+      lead="A GiroCode is a standardized QR code for SEPA bank transfers following the EPC069-12 standard by the European Payments Council. It contains all payment data – IBAN, amount, and payment reference – allowing banking app users to initiate a transfer by simply scanning the code. Freelancers, associations, and businesses use GiroCodes on invoices to get paid faster and eliminate manual entry errors."
       relatedArticles={[
         { href: '/en/wissen/epc-standard', label: 'EPC Standard & SEPA-QR – Technical Structure Explained' },
         { href: '/en/wissen/iban-bic', label: 'IBAN & BIC for GiroCode – Complete Guide' },
@@ -33,7 +33,7 @@ export default function WissenGirocodePageEn() {
         { href: '/en/wissen/scannen', label: 'How to Scan a GiroCode' },
       ]}
       locale="en"
-      shortAnswer="A GiroCode is a standardized SEPA QR code following the EPC069-12 standard by the European Payments Council. It contains all data for a SEPA bank transfer and enables easy payment via banking app scan."
+      shortAnswer="A GiroCode is a standardized QR code for SEPA bank transfers following the EPC069-12 standard by the European Payments Council. It contains all payment data – IBAN, amount, and payment reference – allowing banking app users to initiate a transfer by simply scanning the code. Freelancers, associations, and businesses use GiroCodes on invoices to get paid faster and eliminate manual entry errors."
     >
       <section aria-labelledby="what-is-girocode">
         <h2 id="what-is-girocode">What is a GiroCode?</h2>

@@ -24,7 +24,7 @@ export default function WissenBankingAppsPage() {
       breadcrumbCurrent="Banking-Apps mit GiroCode"
       badge="Praxis · Banking-Apps mit GiroCode"
       title="Banking-Apps mit GiroCode-Support – Vollständige Übersicht 2025"
-      lead="Viele moderne Banking-Apps können SEPA-QR-/GiroCodes direkt scannen. Hier findest du eine vollständige Übersicht aller wichtigen deutschen Banking-Apps, Schritt-für-Schritt-Anleitungen und Tipps für den Fall, dass deine App keinen Scanner hat."
+      lead="Fast alle deutschen Banking-Apps unterstützen GiroCodes (SEPA-QR): Sparkasse App, VR-Banking (Volksbank/Raiffeisenbank), ING Banking to go, DKB Banking, Commerzbank App, Deutsche Bank Mobile, N26, Postbank Finanzassistent, Comdirect und Targobank Mobile Banking. Der QR-Scanner findet sich in allen Apps unter dem Menüpunkt 'Überweisung' oder 'Überweisen'. Die gesamte Scan-bis-Bestätigung dauert unter 30 Sekunden."
       relatedArticles={[
         { href: '/wissen/scannen', label: 'GiroCode scannen – Anleitung für iPhone & Android' },
         { href: '/wissen/girocode', label: 'Was ist ein GiroCode?' },
@@ -34,7 +34,7 @@ export default function WissenBankingAppsPage() {
         { href: '/wissen/epc-standard', label: 'EPC-Standard erklärt' },
       ]}
       locale="de"
-      shortAnswer="Fast alle deutschen Banking-Apps unterstützen GiroCodes: Sparkasse, Volksbank/VR-Banking, ING Banking to go, DKB, Commerzbank, Deutsche Bank, N26, Postbank und Comdirect. Der QR-Scanner findet sich meist unter 'Überweisung'."
+      shortAnswer="Fast alle deutschen Banking-Apps unterstützen GiroCodes (SEPA-QR): Sparkasse App, VR-Banking (Volksbank/Raiffeisenbank), ING Banking to go, DKB Banking, Commerzbank App, Deutsche Bank Mobile, N26, Postbank Finanzassistent, Comdirect und Targobank Mobile Banking. Der QR-Scanner findet sich in allen Apps unter dem Menüpunkt 'Überweisung' oder 'Überweisen'. Die gesamte Scan-bis-Bestätigung dauert unter 30 Sekunden."
     >
       {/* ─── SECTION 1: Übersicht ─── */}
       <section aria-labelledby="apps">

@@ -25,7 +25,7 @@ export default function WissenScannenPage() {
       breadcrumbCurrent="GiroCode scannen"
       badge="Praxis · GiroCode scannen"
       title="GiroCode scannen – Die komplette Anleitung für iPhone & Android"
-      lead="Einen GiroCode zu scannen dauert weniger als 10 Sekunden – wenn man weiß, wo sich der QR-Scanner in der Banking-App befindet. Hier findest du alles: allgemeine Anleitung, plattformspezifische Tipps, Lösungen bei Problemen und Sicherheitshinweise."
+      lead="Um einen GiroCode zu scannen: Banking-App öffnen → 'Überweisung' antippen → QR-Scanner Symbol tippen → Code scannen → Daten prüfen (IBAN, Betrag, Zweck) → TAN eingeben → bestätigen. Der gesamte Prozess dauert unter 30 Sekunden. Funktioniert nicht? Helligkeit erhöhen, Abstand auf 15-30 cm anpassen oder den Code größer ausdrucken (mindestens 2×2 cm)."
       relatedArticles={[
         { href: '/wissen/banking-apps', label: 'Banking-Apps Übersicht 2025' },
         { href: '/wissen/girocode', label: 'Was ist ein GiroCode?' },
@@ -35,7 +35,7 @@ export default function WissenScannenPage() {
         { href: '/wissen/epc-standard', label: 'EPC-Standard erklärt' },
       ]}
       locale="de"
-      shortAnswer="Um einen GiroCode zu scannen: Banking-App öffnen → Überweisung → QR-Scanner → Code scannen → Daten prüfen → TAN eingeben → bestätigen. Der gesamte Prozess dauert unter 30 Sekunden."
+      shortAnswer="Um einen GiroCode zu scannen: Banking-App öffnen → 'Überweisung' antippen → QR-Scanner Symbol tippen → Code scannen → Daten prüfen (IBAN, Betrag, Zweck) → TAN eingeben → bestätigen. Der gesamte Prozess dauert unter 30 Sekunden. Funktioniert nicht? Helligkeit erhöhen, Abstand auf 15-30 cm anpassen oder den Code größer ausdrucken (mindestens 2×2 cm)."
     >
       {/* ─── CTA: Scanner-Tool ─── */}
       <section className="not-prose mb-8">

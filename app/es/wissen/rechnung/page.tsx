@@ -24,7 +24,7 @@ export default function WissenRechnungPageEs() {
       breadcrumbCurrent="GiroCode en facturas"
       badge="Práctica · GiroCode en facturas"
       title="GiroCode en facturas – La guía completa"
-      lead="Incluir un GiroCode en tus facturas es una de las mejoras más sencillas y efectivas que puedes hacer para acelerar el cobro y reducir errores. En esta guía completa te explicamos los requisitos legales de una factura en España y la UE, dónde y cómo colocar el GiroCode, qué herramientas usar y cómo responder a las preguntas más frecuentes de tus clientes."
+      lead="Un GiroCode en una factura permite al destinatario pagar escaneando con su app bancaria. Según las recomendaciones EPC, el GiroCode debe medir al menos 2×2 cm y colocarse en la esquina inferior derecha."
       relatedArticles={[
         { href: '/es/wissen/girocode', label: '¿Qué es un GiroCode? – Todo lo que necesitas saber' },
         { href: '/es/wissen/betrag-und-zweck', label: 'Importe y concepto de pago en GiroCode' },
@@ -33,7 +33,7 @@ export default function WissenRechnungPageEs() {
         { href: '/es/wissen/scannen', label: 'Cómo escanear un GiroCode' },
       ]}
       locale="es"
-      shortAnswer="Un GiroCode en facturas permite a los clientes pagar mediante escaneo de app bancaria. Los campos obligatorios según la legislación UE incluyen: nombre, dirección, número fiscal, fecha, número de factura, descripción del servicio, importes neto/IVA/bruto."
+      shortAnswer="Un GiroCode en una factura permite al destinatario pagar escaneando con su app bancaria. Según las recomendaciones EPC, el GiroCode debe medir al menos 2×2 cm y colocarse en la esquina inferior derecha."
     >
       <section aria-labelledby="por-que-girocode-factura">
         <h2 id="por-que-girocode-factura">¿Por qué usar GiroCode en facturas?</h2>

@@ -23,7 +23,7 @@ export default function WissenBankingAppsPageEs() {
       breadcrumbCurrent="Apps bancarias con GiroCode"
       badge="Práctica · Apps bancarias"
       title="Apps bancarias compatibles con GiroCode – Resumen completo 2025"
-      lead="Para pagar con un GiroCode, el cliente necesita una app bancaria que soporte el estándar SEPA-QR. En esta guía encontrarás qué apps lo soportan, cómo activar la función de escaneo en cada una de ellas, y qué hacer si tu app no tiene esta funcionalidad."
+      lead="Casi todas las apps bancarias alemanas soportan GiroCodes: Sparkasse, VR-Banking, ING, DKB, Commerzbank, Deutsche Bank, N26, Postbank, Comdirect y Targobank. El escáner QR está bajo 'Transferencia'. El proceso completo toma menos de 30 segundos."
       relatedArticles={[
         { href: '/es/wissen/scannen', label: 'Cómo escanear un GiroCode – Guía para iPhone y Android' },
         { href: '/es/wissen/girocode', label: '¿Qué es un GiroCode? – Todo lo que necesitas saber' },
@@ -32,7 +32,7 @@ export default function WissenBankingAppsPageEs() {
         { href: '/es/wissen/iban-bic', label: 'IBAN & BIC para GiroCode' },
       ]}
       locale="es"
-      shortAnswer="Casi todas las apps bancarias alemanas soportan los GiroCodes: Sparkasse, Volksbank, ING, DKB, Commerzbank, Deutsche Bank, N26, Postbank y Comdirect. El escáner QR suele encontrarse en 'Transferencia'."
+      shortAnswer="Casi todas las apps bancarias alemanas soportan GiroCodes: Sparkasse, VR-Banking, ING, DKB, Commerzbank, Deutsche Bank, N26, Postbank, Comdirect y Targobank. El escáner QR está bajo 'Transferencia'. El proceso completo toma menos de 30 segundos."
     >
       <section aria-labelledby="apps-compatibles">
         <h2 id="apps-compatibles">¿Qué apps bancarias soportan GiroCodes?</h2>

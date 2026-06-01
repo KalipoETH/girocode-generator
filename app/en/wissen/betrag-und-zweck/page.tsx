@@ -23,7 +23,7 @@ export default function WissenBetragUndZweckPageEn() {
       breadcrumbCurrent="Amount & Payment Reference"
       badge="Practice · Amount & Payment Reference"
       title="Amount & Payment Reference in GiroCode – Complete Guide"
-      lead="Two of the most important fields in a GiroCode are the transfer amount and the payment reference. Getting these right is essential for error-free payment processing and reliable invoice matching. This guide explains everything from formatting rules to industry-specific best practices."
+      lead="In a GiroCode, the amount is optional and specified in EUR49.90 format (period as decimal separator, not comma). If no amount is specified, the payer can enter their own amount when scanning – ideal for donations or variable prices. The payment reference is also optional, limited to 140 characters, and should always include the invoice number for correct payment allocation."
       relatedArticles={[
         { href: '/en/wissen/girocode', label: 'What is a GiroCode? – Everything You Need to Know' },
         { href: '/en/wissen/iban-bic', label: 'IBAN & BIC for GiroCode – Complete Guide' },
@@ -33,7 +33,7 @@ export default function WissenBetragUndZweckPageEn() {
         { href: '/en/wissen/scannen', label: 'How to Scan a GiroCode' },
       ]}
       locale="en"
-      shortAnswer="The amount in a GiroCode is optional and specified in EUR49.90 format. The payment reference is also optional with a maximum of 140 characters. Both fields are automatically transferred to the transfer form when scanned."
+      shortAnswer="In a GiroCode, the amount is optional and specified in EUR49.90 format (period as decimal separator, not comma). If no amount is specified, the payer can enter their own amount when scanning – ideal for donations or variable prices. The payment reference is also optional, limited to 140 characters, and should always include the invoice number for correct payment allocation."
     >
       <section aria-labelledby="amount-in-girocode">
         <h2 id="amount-in-girocode">The Amount in GiroCode</h2>

@@ -23,7 +23,7 @@ export default function WissenBetragUndZweckPageFr() {
       breadcrumbCurrent="Montant & Référence de paiement"
       badge="Pratique · Montant & Référence"
       title="Montant & Référence de paiement dans GiroCode – Guide complet"
-      lead="Dois-je inclure un montant dans mon GiroCode ? Que mettre dans la référence de paiement ? Ce guide répond à toutes les questions pratiques sur ces deux champs cruciaux pour des paiements sans erreur."
+      lead="Dans un GiroCode, le montant est optionnel et spécifié au format EUR49.90. Sans montant, le payeur peut saisir son propre montant lors du scan – idéal pour les dons. La référence de paiement est limitée à 140 caractères."
       relatedArticles={[
         { href: '/fr/wissen/girocode', label: "Qu'est-ce qu'un GiroCode ?" },
         { href: '/fr/wissen/epc-standard', label: 'Norme EPC – Structure technique du payload' },
@@ -32,7 +32,7 @@ export default function WissenBetragUndZweckPageFr() {
         { href: '/fr/wissen/scannen', label: 'Comment scanner un GiroCode' },
       ]}
       locale="fr"
-      shortAnswer="Le montant dans un GiroCode est optionnel au format EUR49.90. La référence de paiement est aussi optionnelle, 140 caractères maximum. Les deux champs sont automatiquement transférés dans le formulaire de virement lors du scan."
+      shortAnswer="Dans un GiroCode, le montant est optionnel et spécifié au format EUR49.90. Sans montant, le payeur peut saisir son propre montant lors du scan – idéal pour les dons. La référence de paiement est limitée à 140 caractères."
     >
 
       {/* ── Section 1 ── */}

@@ -23,7 +23,7 @@ export default function WissenScannenPageEs() {
       breadcrumbCurrent="Cómo escanear un GiroCode"
       badge="Práctica · Escanear GiroCode"
       title="Cómo escanear un GiroCode – Guía completa para iPhone y Android"
-      lead="Escanear un GiroCode para pagar una factura es rápido y sencillo, pero el proceso exacto varía según el sistema operativo y la app bancaria. En esta guía completa te explicamos cómo hacerlo en iPhone (iOS) y en Android, qué hacer si el escaneo falla, y cómo escanear GiroCodes en documentos digitales sin imprimirlos."
+      lead="Para escanear un GiroCode: Abrir app bancaria → 'Transferencia' → icono escáner QR → escanear → verificar datos → TAN → confirmar. Duración total: menos de 30 segundos."
       relatedArticles={[
         { href: '/es/wissen/banking-apps', label: 'Apps bancarias compatibles con GiroCode – Resumen completo 2025' },
         { href: '/es/wissen/girocode', label: '¿Qué es un GiroCode? – Todo lo que necesitas saber' },
@@ -33,7 +33,7 @@ export default function WissenScannenPageEs() {
         { href: '/es/wissen/betrag-und-zweck', label: 'Importe y concepto de pago en GiroCode' },
       ]}
       locale="es"
-      shortAnswer="Para escanear un GiroCode: Abrir app bancaria → Transferencia → Escáner QR → Escanear código → Verificar datos → Introducir TAN → Confirmar. Todo el proceso tarda menos de 30 segundos."
+      shortAnswer="Para escanear un GiroCode: Abrir app bancaria → 'Transferencia' → icono escáner QR → escanear → verificar datos → TAN → confirmar. Duración total: menos de 30 segundos."
     >
       <section aria-labelledby="como-funciona-escaneo">
         <h2 id="como-funciona-escaneo">Escanear un GiroCode – Cómo funciona</h2>

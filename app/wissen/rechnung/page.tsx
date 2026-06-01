@@ -25,7 +25,7 @@ export default function WissenRechnungPage() {
       breadcrumbCurrent="GiroCode auf Rechnungen"
       badge="Praxis · GiroCode auf Rechnungen"
       title="GiroCode auf Rechnungen – Der komplette Leitfaden"
-      lead="Ein GiroCode auf der Rechnung macht das Bezahlen für Kunden kinderleicht und reduziert deine offenen Posten. Dieser Leitfaden erklärt alles – von den rechtlichen Pflichtangaben über die optimale Platzierung bis zum Software-Vergleich."
+      lead="Ein GiroCode auf einer Rechnung ermöglicht dem Empfänger die Zahlung durch einfaches Scannen mit der Banking-App – IBAN, Betrag und Verwendungszweck werden automatisch übertragen. Der GiroCode sollte laut EPC-Empfehlung mindestens 2×2 cm groß und unten rechts auf der Rechnung platziert werden. Pflichtangaben auf deutschen Rechnungen nach §14 UStG sind: vollständiger Name und Anschrift, Steuernummer oder USt-ID, Ausstellungsdatum, Rechnungsnummer, Leistungsbeschreibung sowie Netto-, Steuer- und Bruttobetrag."
       relatedArticles={[
         { href: '/wissen/girocode', label: 'Was ist ein GiroCode?' },
         { href: '/wissen/betrag-und-zweck', label: 'Betrag & Verwendungszweck' },
@@ -35,7 +35,7 @@ export default function WissenRechnungPage() {
         { href: '/wissen/epc-standard', label: 'EPC-Standard erklärt' },
       ]}
       locale="de"
-      shortAnswer="Ein GiroCode auf Rechnungen ermöglicht Kunden das Bezahlen per Banking-App-Scan. Pflichtangaben nach §14 UStG sind: Name, Adresse, Steuernummer/USt-ID, Datum, Rechnungsnummer, Leistungsbeschreibung, Netto/Steuer/Brutto."
+      shortAnswer="Ein GiroCode auf einer Rechnung ermöglicht dem Empfänger die Zahlung durch einfaches Scannen mit der Banking-App – IBAN, Betrag und Verwendungszweck werden automatisch übertragen. Der GiroCode sollte laut EPC-Empfehlung mindestens 2×2 cm groß und unten rechts auf der Rechnung platziert werden. Pflichtangaben auf deutschen Rechnungen nach §14 UStG sind: vollständiger Name und Anschrift, Steuernummer oder USt-ID, Ausstellungsdatum, Rechnungsnummer, Leistungsbeschreibung sowie Netto-, Steuer- und Bruttobetrag."
     >
       {/* ─── SECTION 1: Warum GiroCode ─── */}
       <section aria-labelledby="warum-girocode">

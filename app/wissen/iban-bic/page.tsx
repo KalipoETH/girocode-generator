@@ -25,7 +25,7 @@ export default function WissenIbanBicPage() {
       breadcrumbCurrent="IBAN & BIC"
       badge="Grundlagen · IBAN & BIC"
       title="IBAN & BIC – Alles für den GiroCode erklärt"
-      lead="Für einen gültigen GiroCode sind vor allem IBAN und – in manchen Fällen – der BIC relevant. Hier erfährst du, wie IBAN und BIC aufgebaut sind, wie die Prüfziffer berechnet wird und was du beim GiroCode beachten musst."
+      lead="Die IBAN (International Bank Account Number) ist eine bis zu 34-stellige internationale Kontonummer nach ISO 13616 Standard. Deutsche IBANs haben genau 22 Zeichen: 2 Buchstaben Länderkürzel (DE), 2 Prüfziffern und 18 Stellen für Bankleitzahl und Kontonummer. Der BIC (Bank Identifier Code) ist für GiroCodes seit der SEPA-Migration 2016 optional und wird nur noch für Überweisungen außerhalb des SEPA-Raums benötigt."
       relatedArticles={[
         { href: '/wissen/girocode', label: 'Was ist ein GiroCode?' },
         { href: '/wissen/epc-standard', label: 'EPC-Standard erklärt' },
@@ -35,7 +35,7 @@ export default function WissenIbanBicPage() {
         { href: '/wissen/scannen', label: 'GiroCode scannen' },
       ]}
       locale="de"
-      shortAnswer="Die IBAN (International Bank Account Number) ist eine internationale Kontonummer mit bis zu 34 Zeichen. In Deutschland hat sie 22 Zeichen: 2 Länderkürzel + 2 Prüfziffern + 18-stellige Kontonummer. Der BIC ist seit 2016 optional."
+      shortAnswer="Die IBAN (International Bank Account Number) ist eine bis zu 34-stellige internationale Kontonummer nach ISO 13616 Standard. Deutsche IBANs haben genau 22 Zeichen: 2 Buchstaben Länderkürzel (DE), 2 Prüfziffern und 18 Stellen für Bankleitzahl und Kontonummer. Der BIC (Bank Identifier Code) ist für GiroCodes seit der SEPA-Migration 2016 optional und wird nur noch für Überweisungen außerhalb des SEPA-Raums benötigt."
     >
       {/* ─── SECTION 1: Was ist eine IBAN ─── */}
       <section aria-labelledby="was-ist-iban">

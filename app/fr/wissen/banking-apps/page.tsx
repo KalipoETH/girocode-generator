@@ -24,7 +24,7 @@ export default function WissenBankingAppsPageFr() {
       breadcrumbCurrent="Applications bancaires compatibles"
       badge="Vue d'ensemble · Apps bancaires"
       title="Applications bancaires compatibles GiroCode – Vue d'ensemble 2025"
-      lead="Quelle application bancaire peut scanner un GiroCode ? Ce guide dresse un tableau complet de la compatibilité des principales applications bancaires allemandes et européennes avec le format SEPA-QR (EPC), et vous montre comment l'utiliser efficacement."
+      lead="Presque toutes les apps bancaires allemandes supportent les GiroCodes: Sparkasse, VR-Banking, ING, DKB, Commerzbank, Deutsche Bank, N26, Postbank, Comdirect et Targobank. Le scanner QR se trouve sous 'Virement'. Le processus complet prend moins de 30 secondes."
       relatedArticles={[
         { href: '/fr/wissen/scannen', label: 'Comment scanner un GiroCode – Guide complet iPhone & Android' },
         { href: '/fr/wissen/girocode', label: "Qu'est-ce qu'un GiroCode ?" },
@@ -32,7 +32,7 @@ export default function WissenBankingAppsPageFr() {
         { href: '/fr/wissen/epc-standard', label: 'Norme EPC & SEPA-QR' },
       ]}
       locale="fr"
-      shortAnswer="Presque toutes les apps bancaires allemandes supportent les GiroCodes : Sparkasse, Volksbank, ING, DKB, Commerzbank, Deutsche Bank, N26, Postbank et Comdirect. Le scanner QR se trouve généralement sous 'Virement'."
+      shortAnswer="Presque toutes les apps bancaires allemandes supportent les GiroCodes: Sparkasse, VR-Banking, ING, DKB, Commerzbank, Deutsche Bank, N26, Postbank, Comdirect et Targobank. Le scanner QR se trouve sous 'Virement'. Le processus complet prend moins de 30 secondes."
     >
 
       {/* ── Section 1 ── */}

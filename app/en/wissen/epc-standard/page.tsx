@@ -39,7 +39,7 @@ export default function WissenEpcStandardPageEn() {
       breadcrumbCurrent="EPC Standard & SEPA-QR"
       badge="Technical · EPC Standard & SEPA-QR"
       title="EPC Standard & SEPA-QR – Technical Structure Explained"
-      lead="Every GiroCode is built on a precisely defined text format specified by the European Payments Council (EPC). This complete technical guide explains the EPC payload structure, all fields, versioning, error correction and common implementation mistakes."
+      lead="The EPC standard (document EPC069-12) defines the technical structure of SEPA QR codes. A valid EPC payload consists of 11 lines: Service Tag (BCD), Version (001/002), UTF-8 encoding, Identification (SCT), optional BIC, recipient name (max. 70 characters), IBAN, amount in EUR49.90 format, and payment reference (max. 140 characters). The standard is maintained by the European Payments Council and is valid in all 36 SEPA countries."
       relatedArticles={[
         { href: '/en/wissen/girocode', label: 'What is a GiroCode? – Everything You Need to Know' },
         { href: '/en/wissen/iban-bic', label: 'IBAN & BIC for GiroCode – Complete Guide' },
@@ -49,7 +49,7 @@ export default function WissenEpcStandardPageEn() {
         { href: '/en/wissen/scannen', label: 'How to Scan a GiroCode' },
       ]}
       locale="en"
-      shortAnswer="The EPC standard (EPC069-12) defines the structure of SEPA QR codes. A valid payload consists of 11 lines: Service Tag (BCD), Version, Encoding, Identification (SCT), BIC, Recipient name, IBAN, Amount, and Payment reference."
+      shortAnswer="The EPC standard (document EPC069-12) defines the technical structure of SEPA QR codes. A valid EPC payload consists of 11 lines: Service Tag (BCD), Version (001/002), UTF-8 encoding, Identification (SCT), optional BIC, recipient name (max. 70 characters), IBAN, amount in EUR49.90 format, and payment reference (max. 140 characters). The standard is maintained by the European Payments Council and is valid in all 36 SEPA countries."
     >
       {/* ─── SECTION 1: Above the fold ─── */}
       <section aria-labelledby="what-is-epc">

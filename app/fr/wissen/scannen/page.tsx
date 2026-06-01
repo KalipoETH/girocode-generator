@@ -24,7 +24,7 @@ export default function WissenScannenPageFr() {
       breadcrumbCurrent="Comment scanner un GiroCode"
       badge="Pratique · Scanner un GiroCode"
       title="Comment scanner un GiroCode – Guide complet iPhone & Android"
-      lead="Scanner un GiroCode pour effectuer un paiement ne prend que quelques secondes. Ce guide détaillé vous explique exactement comment procéder sur iPhone (iOS) et Android, avec des conseils de dépannage pour les situations difficiles."
+      lead="Pour scanner un GiroCode: Ouvrir l'app bancaire → 'Virement' → icône scanner QR → scanner le code → vérifier les données → TAN → confirmer. Durée totale: moins de 30 secondes."
       relatedArticles={[
         { href: '/fr/wissen/banking-apps', label: "Applications bancaires compatibles GiroCode – Vue d'ensemble 2025" },
         { href: '/fr/wissen/girocode', label: "Qu'est-ce qu'un GiroCode ?" },
@@ -33,7 +33,7 @@ export default function WissenScannenPageFr() {
         { href: '/fr/wissen/epc-standard', label: 'Norme EPC & SEPA-QR – Structure technique' },
       ]}
       locale="fr"
-      shortAnswer="Pour scanner un GiroCode : Ouvrir l'app bancaire → Virement → Scanner QR → Scanner le code → Vérifier les données → Saisir le TAN → Confirmer. Le processus entier prend moins de 30 secondes."
+      shortAnswer="Pour scanner un GiroCode: Ouvrir l'app bancaire → 'Virement' → icône scanner QR → scanner le code → vérifier les données → TAN → confirmer. Durée totale: moins de 30 secondes."
     >
 
       {/* ── Section 1 ── */}

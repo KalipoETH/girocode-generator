@@ -25,7 +25,7 @@ export default function WissenGirocodePage() {
       breadcrumbCurrent="Was ist ein GiroCode?"
       badge="Grundlagen · GiroCode / SEPA-QR"
       title="Was ist ein GiroCode? – Alles was du wissen musst"
-      lead="Der GiroCode – häufig auch SEPA-QR- oder EPC-QR-Code genannt – ist ein standardisierter QR-Code für Überweisungen im SEPA-Raum. Er spart Tipparbeit, reduziert Fehler und macht das Bezahlen für Zahler und Empfänger deutlich komfortabler."
+      lead="Ein GiroCode ist ein standardisierter QR-Code für SEPA-Überweisungen nach dem EPC069-12 Standard des European Payments Council. Er enthält alle notwendigen Zahlungsdaten – IBAN, Betrag und Verwendungszweck – und ermöglicht es Banking-App-Nutzern, eine Überweisung durch einfaches Scannen auszulösen. Freelancer, Vereine und Unternehmen nutzen GiroCodes auf Rechnungen um schneller bezahlt zu werden und Tippfehler zu vermeiden."
       relatedArticles={[
         { href: '/wissen/epc-standard', label: 'EPC-Standard – Technischer Aufbau des GiroCodes' },
         { href: '/wissen/iban-bic', label: 'IBAN & BIC im GiroCode' },
@@ -35,7 +35,7 @@ export default function WissenGirocodePage() {
         { href: '/wissen/scannen', label: 'GiroCode scannen – Anleitung' },
       ]}
       locale="de"
-      shortAnswer="Ein GiroCode ist ein standardisierter SEPA-QR-Code nach EPC069-12 Standard des European Payments Council. Er enthält alle Daten für eine SEPA-Überweisung und ermöglicht das einfache Bezahlen per Banking-App-Scan."
+      shortAnswer="Ein GiroCode ist ein standardisierter QR-Code für SEPA-Überweisungen nach dem EPC069-12 Standard des European Payments Council. Er enthält alle notwendigen Zahlungsdaten – IBAN, Betrag und Verwendungszweck – und ermöglicht es Banking-App-Nutzern, eine Überweisung durch einfaches Scannen auszulösen. Freelancer, Vereine und Unternehmen nutzen GiroCodes auf Rechnungen um schneller bezahlt zu werden und Tippfehler zu vermeiden."
     >
       {/* ─── SECTION 1: Was ist ein GiroCode ─── */}
       <section aria-labelledby="definition">

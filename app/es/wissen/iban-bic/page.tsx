@@ -23,7 +23,7 @@ export default function WissenIbanBicPageEs() {
       breadcrumbCurrent="IBAN & BIC"
       badge="Bases · IBAN & BIC"
       title="IBAN & BIC para GiroCode – Guía completa"
-      lead="El IBAN es el elemento central de cualquier GiroCode. En esta guía completa explicamos su estructura, cómo se valida, cuándo sigue siendo necesario el BIC, y todo lo que necesitas saber sobre estos identificadores bancarios en el contexto de los pagos SEPA."
+      lead="El IBAN (International Bank Account Number) es un número de cuenta internacional de hasta 34 caracteres según la norma ISO 13616. Los IBAN alemanes tienen exactamente 22 caracteres. El BIC es opcional para los GiroCodes desde la migración SEPA en 2016."
       relatedArticles={[
         { href: '/es/wissen/girocode', label: '¿Qué es un GiroCode? – Todo lo que necesitas saber' },
         { href: '/es/wissen/epc-standard', label: 'Norma EPC & SEPA-QR – Estructura técnica explicada' },
@@ -32,7 +32,7 @@ export default function WissenIbanBicPageEs() {
         { href: '/es/wissen/scannen', label: 'Cómo escanear un GiroCode' },
       ]}
       locale="es"
-      shortAnswer="El IBAN es un número de cuenta internacional de hasta 34 caracteres. En Alemania tiene 22 caracteres: 2 letras de país + 2 dígitos de control + 18 dígitos de cuenta. El BIC es opcional desde 2016."
+      shortAnswer="El IBAN (International Bank Account Number) es un número de cuenta internacional de hasta 34 caracteres según la norma ISO 13616. Los IBAN alemanes tienen exactamente 22 caracteres. El BIC es opcional para los GiroCodes desde la migración SEPA en 2016."
     >
       <section aria-labelledby="que-es-iban">
         <h2 id="que-es-iban">¿Qué es un IBAN?</h2>

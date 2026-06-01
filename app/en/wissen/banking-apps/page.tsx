@@ -23,7 +23,7 @@ export default function WissenBankingAppsPageEn() {
       breadcrumbCurrent="Banking Apps with GiroCode"
       badge="Practice · Banking Apps & GiroCode"
       title="Banking Apps Supporting GiroCode – Complete Overview 2025"
-      lead="GiroCode scanning is supported by virtually all major German banking apps in 2025. This guide covers which apps support the standard, how to use the QR scanner feature in the most popular apps, and what to do if your app does not support GiroCode scanning."
+      lead="Almost all German banking apps support GiroCodes (SEPA-QR): Sparkasse App, VR-Banking, ING Banking to go, DKB Banking, Commerzbank App, Deutsche Bank Mobile, N26, Postbank, Comdirect, and Targobank. The QR scanner is found in all apps under 'Transfer' or 'Send money'. The entire scan-to-confirmation process takes under 30 seconds."
       relatedArticles={[
         { href: '/en/wissen/girocode', label: 'What is a GiroCode? – Everything You Need to Know' },
         { href: '/en/wissen/scannen', label: 'How to Scan a GiroCode – Complete Guide' },
@@ -33,7 +33,7 @@ export default function WissenBankingAppsPageEn() {
         { href: '/en/wissen/betrag-und-zweck', label: 'Amount & Payment Reference in GiroCode' },
       ]}
       locale="en"
-      shortAnswer="Almost all German banking apps support GiroCodes: Sparkasse, Volksbank, ING, DKB, Commerzbank, Deutsche Bank, N26, Postbank and Comdirect. The QR scanner is usually found under 'Transfer'."
+      shortAnswer="Almost all German banking apps support GiroCodes (SEPA-QR): Sparkasse App, VR-Banking, ING Banking to go, DKB Banking, Commerzbank App, Deutsche Bank Mobile, N26, Postbank, Comdirect, and Targobank. The QR scanner is found in all apps under 'Transfer' or 'Send money'. The entire scan-to-confirmation process takes under 30 seconds."
     >
       <section aria-labelledby="which-apps-support">
         <h2 id="which-apps-support">Which Banking Apps Support GiroCodes?</h2>

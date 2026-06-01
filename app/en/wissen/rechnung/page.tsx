@@ -24,7 +24,7 @@ export default function WissenRechnungPageEn() {
       breadcrumbCurrent="GiroCode on invoices"
       badge="Practice · GiroCode on invoices"
       title="GiroCode on Invoices – The Complete Guide"
-      lead="Adding a GiroCode to your invoices is one of the simplest ways to speed up your cash flow, reduce payment errors and impress clients with a modern, professional touch. This guide covers everything from legal requirements to placement, invoicing software and step-by-step instructions."
+      lead="A GiroCode on an invoice allows the recipient to pay by simply scanning with their banking app – IBAN, amount, and payment reference are transferred automatically. According to EPC recommendations, the GiroCode should be at least 2×2 cm and placed in the bottom right corner of the invoice."
       relatedArticles={[
         { href: '/en/wissen/girocode', label: 'What is a GiroCode? – Everything You Need to Know' },
         { href: '/en/wissen/betrag-und-zweck', label: 'Amount & Payment Reference in GiroCode' },
@@ -34,7 +34,7 @@ export default function WissenRechnungPageEn() {
         { href: '/en/wissen/epc-standard', label: 'EPC Standard & SEPA-QR Explained' },
       ]}
       locale="en"
-      shortAnswer="A GiroCode on invoices enables customers to pay via banking app scan. Required fields under EU law include: name, address, tax number, date, invoice number, service description, net/tax/gross amounts."
+      shortAnswer="A GiroCode on an invoice allows the recipient to pay by simply scanning with their banking app – IBAN, amount, and payment reference are transferred automatically. According to EPC recommendations, the GiroCode should be at least 2×2 cm and placed in the bottom right corner of the invoice."
     >
       <section aria-labelledby="why-girocode-invoices">
         <h2 id="why-girocode-invoices">Why Use GiroCode on Invoices?</h2>

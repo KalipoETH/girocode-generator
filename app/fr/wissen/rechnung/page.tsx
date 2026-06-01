@@ -24,7 +24,7 @@ export default function WissenRechnungPageFr() {
       breadcrumbCurrent="GiroCode sur les factures"
       badge="Pratique · Facturation"
       title="GiroCode sur les factures – Le guide complet"
-      lead="Ajouter un GiroCode à vos factures est l'une des meilleures façons d'accélérer les paiements et de réduire les erreurs. Ce guide couvre tout : les mentions légales obligatoires, le placement optimal du code QR et les outils pour l'automatiser."
+      lead="Un GiroCode sur une facture permet au destinataire de payer en scannant simplement avec son app bancaire. Selon les recommandations EPC, le GiroCode doit mesurer au moins 2×2 cm et être placé en bas à droite."
       relatedArticles={[
         { href: '/fr/wissen/girocode', label: "Qu'est-ce qu'un GiroCode ?" },
         { href: '/fr/wissen/epc-standard', label: 'Norme EPC – Structure technique du payload' },
@@ -33,7 +33,7 @@ export default function WissenRechnungPageFr() {
         { href: '/fr/wissen/scannen', label: 'Comment scanner un GiroCode' },
       ]}
       locale="fr"
-      shortAnswer="Un GiroCode sur les factures permet aux clients de payer via scan d'app bancaire. Les mentions obligatoires selon la législation UE incluent : nom, adresse, numéro fiscal, date, numéro de facture, description de la prestation, montants HT/TVA/TTC."
+      shortAnswer="Un GiroCode sur une facture permet au destinataire de payer en scannant simplement avec son app bancaire. Selon les recommandations EPC, le GiroCode doit mesurer au moins 2×2 cm et être placé en bas à droite."
     >
 
       {/* ── Section 1 ── */}
