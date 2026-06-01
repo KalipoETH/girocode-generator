@@ -35,6 +35,12 @@ export default function WissenRechnungPageEn() {
       ]}
       locale="en"
       shortAnswer="A GiroCode on an invoice allows the recipient to pay by simply scanning with their banking app – IBAN, amount, and payment reference are transferred automatically. According to EPC recommendations, the GiroCode should be at least 2×2 cm and placed in the bottom right corner of the invoice."
+      statsData={[
+        { value: '§14', label: 'UStG mandatory invoice information basis' },
+        { value: '2×2 cm', label: 'EPC-recommended minimum QR code size' },
+        { value: '14 days', label: 'Common payment deadline on invoices' },
+        { value: '300 DPI', label: 'Recommended print resolution' },
+      ]}
     >
       <section aria-labelledby="why-girocode-invoices">
         <h2 id="why-girocode-invoices">Why Use GiroCode on Invoices?</h2>

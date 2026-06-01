@@ -35,6 +35,12 @@ export default function WissenBankingAppsPage() {
       ]}
       locale="de"
       shortAnswer="Fast alle deutschen Banking-Apps unterstützen GiroCodes (SEPA-QR): Sparkasse App, VR-Banking (Volksbank/Raiffeisenbank), ING Banking to go, DKB Banking, Commerzbank App, Deutsche Bank Mobile, N26, Postbank Finanzassistent, Comdirect und Targobank Mobile Banking. Der QR-Scanner findet sich in allen Apps unter dem Menüpunkt 'Überweisung' oder 'Überweisen'. Die gesamte Scan-bis-Bestätigung dauert unter 30 Sekunden."
+      statsData={[
+        { value: '12+', label: 'Unterstützte deutsche Banking-Apps' },
+        { value: '30 Sek.', label: 'Scan bis Bestätigung' },
+        { value: '2016', label: 'Flächendeckende App-Unterstützung' },
+        { value: '100%', label: 'Kostenlos für Nutzer' },
+      ]}
     >
       {/* ─── SECTION 1: Übersicht ─── */}
       <section aria-labelledby="apps">
@@ -43,6 +49,19 @@ export default function WissenBankingAppsPage() {
           Die Unterstützung von GiroCodes ist keine gesetzliche Pflicht, sondern eine
           Komfortfunktion jeder Bank. Stand 2025 haben die meisten großen deutschen
           Kreditinstitute einen QR-Scanner in ihre Apps integriert. Hier ist ein Überblick:
+        </p>
+        <p>
+          Die offizielle Liste SEPA-kompatibler Banking-Apps wird von den jeweiligen
+          Kreditinstituten gepflegt. Die{' '}
+          <a
+            href="https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/sepa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sky-400 underline hover:text-sky-300"
+          >
+            Deutsche Bundesbank informiert über SEPA-Standards
+          </a>
+          .
         </p>
 
         <div className="not-prose my-6 overflow-x-auto rounded-lg border border-slate-700">

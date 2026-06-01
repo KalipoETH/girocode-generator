@@ -34,6 +34,12 @@ export default function WissenScannenPageFr() {
       ]}
       locale="fr"
       shortAnswer="Pour scanner un GiroCode: Ouvrir l'app bancaire → 'Virement' → icône scanner QR → scanner le code → vérifier les données → TAN → confirmer. Durée totale: moins de 30 secondes."
+      statsData={[
+        { value: '15–30 cm', label: 'Distance de scan optimale' },
+        { value: '2×2 cm', label: 'Taille minimale pour scan fiable' },
+        { value: '300 DPI', label: "Qualité d'impression minimale" },
+        { value: '30 sec.', label: "Durée totale scan jusqu'au paiement" },
+      ]}
     >
 
       {/* ── Section 1 ── */}

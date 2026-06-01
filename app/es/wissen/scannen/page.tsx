@@ -34,6 +34,12 @@ export default function WissenScannenPageEs() {
       ]}
       locale="es"
       shortAnswer="Para escanear un GiroCode: Abrir app bancaria → 'Transferencia' → icono escáner QR → escanear → verificar datos → TAN → confirmar. Duración total: menos de 30 segundos."
+      statsData={[
+        { value: '15–30 cm', label: 'Distancia óptima de escaneo' },
+        { value: '2×2 cm', label: 'Tamaño mínimo para escaneo fiable' },
+        { value: '300 DPI', label: 'Calidad mínima de impresión' },
+        { value: '30 seg.', label: 'Duración total escaneo hasta pago' },
+      ]}
     >
       <section aria-labelledby="como-funciona-escaneo">
         <h2 id="como-funciona-escaneo">Escanear un GiroCode – Cómo funciona</h2>

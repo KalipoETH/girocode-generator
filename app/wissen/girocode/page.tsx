@@ -36,6 +36,12 @@ export default function WissenGirocodePage() {
       ]}
       locale="de"
       shortAnswer="Ein GiroCode ist ein standardisierter QR-Code für SEPA-Überweisungen nach dem EPC069-12 Standard des European Payments Council. Er enthält alle notwendigen Zahlungsdaten – IBAN, Betrag und Verwendungszweck – und ermöglicht es Banking-App-Nutzern, eine Überweisung durch einfaches Scannen auszulösen. Freelancer, Vereine und Unternehmen nutzen GiroCodes auf Rechnungen um schneller bezahlt zu werden und Tippfehler zu vermeiden."
+      statsData={[
+        { value: '2018', label: 'Einführung in Deutschland' },
+        { value: '36', label: 'SEPA-Länder unterstützen den Standard' },
+        { value: '10 Sek.', label: 'Durchschnittliche Scan-Zeit' },
+        { value: 'EPC069-12', label: 'Offizieller Standard-Dokumentname' },
+      ]}
     >
       {/* ─── SECTION 1: Was ist ein GiroCode ─── */}
       <section aria-labelledby="definition">
@@ -338,6 +344,31 @@ export default function WissenGirocodePage() {
           <strong className="text-slate-100">Fazit Vergleich:</strong> GiroCode ist kostenlos und DSGVO-konform,
           während PayPal 1,2–3,4&nbsp;% Gebühren nimmt und als US-amerikanisches Unternehmen andere Datenschutzregeln hat.
           GiroCode läuft direkt über die Hausbank – ohne Drittanbieter-Registrierung.
+        </div>
+      </section>
+
+      {/* ─── SECTION 5b: Vergleiche ─── */}
+      <section aria-labelledby="vergleiche" className="mt-10">
+        <h2 id="vergleiche">GiroCode im Vergleich</h2>
+        <p>
+          Wie schneidet der GiroCode gegenüber anderen Zahlungsmethoden ab?
+        </p>
+        <div className="not-prose my-4 grid gap-3 sm:grid-cols-3">
+          {[
+            { href: '/girocode-vs-paypal', title: 'GiroCode vs. PayPal', desc: 'Kosten, Datenschutz & Einsatzbereiche im Vergleich' },
+            { href: '/girocode-vs-bankueberweisung', title: 'GiroCode vs. manuelle Überweisung', desc: 'Zeit, Fehlerquote & Benutzerfreundlichkeit' },
+            { href: '/girocode-vs-lastschrift', title: 'GiroCode vs. Lastschrift', desc: 'Wann welche Methode die bessere Wahl ist' },
+          ].map((card) => (
+            <a
+              key={card.href}
+              href={card.href}
+              className="group flex flex-col rounded-xl border border-[#1f2431] bg-[#0f1117] p-4 transition-all duration-200 hover:border-emerald-500/30 hover:bg-[#1a1d25] hover:-translate-y-0.5"
+            >
+              <span className="text-sm font-bold text-[#e8eaf0] group-hover:text-[#22c55e] transition-colors">{card.title}</span>
+              <span className="mt-1 text-xs text-[#8b90a0]">{card.desc}</span>
+              <span className="mt-3 text-xs text-[#22c55e]">Zum Vergleich →</span>
+            </a>
+          ))}
         </div>
       </section>
 

@@ -116,6 +116,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry('/fr/wissen/scannen', 0.6, 'monthly', now),
     entry('/es/wissen/scannen', 0.6, 'monthly', now),
 
+    // ── Vergleichsseiten ───────────────────────────────────────────────────
+    entry('/girocode-vs-paypal', 0.8, 'monthly', now),
+    entry('/girocode-vs-bankueberweisung', 0.8, 'monthly', now),
+    entry('/girocode-vs-lastschrift', 0.8, 'monthly', now),
+
+    entry('/en/girocode-vs-paypal', 0.7, 'monthly', now),
+    entry('/en/girocode-vs-bankueberweisung', 0.7, 'monthly', now),
+    entry('/en/girocode-vs-lastschrift', 0.7, 'monthly', now),
+
+    entry('/fr/girocode-vs-paypal', 0.7, 'monthly', now),
+    entry('/fr/girocode-vs-bankueberweisung', 0.7, 'monthly', now),
+    entry('/fr/girocode-vs-lastschrift', 0.7, 'monthly', now),
+
+    entry('/es/girocode-vs-paypal', 0.7, 'monthly', now),
+    entry('/es/girocode-vs-bankueberweisung', 0.7, 'monthly', now),
+    entry('/es/girocode-vs-lastschrift', 0.7, 'monthly', now),
+
     // ── Blog ───────────────────────────────────────────────────────────────
     entry('/blog', 0.7, 'weekly', now),
     entry('/en/blog', 0.7, 'weekly', now),

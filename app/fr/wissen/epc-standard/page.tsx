@@ -32,6 +32,12 @@ export default function WissenEpcStandardPageFr() {
       ]}
       locale="fr"
       shortAnswer="La norme EPC (document EPC069-12) définit la structure technique des codes QR SEPA. Un payload EPC valide comprend 11 lignes: Service Tag (BCD), Version, encodage UTF-8, Identification (SCT), BIC optionnel, nom du bénéficiaire (max. 70 caractères), IBAN, montant au format EUR49.90, et référence de paiement (max. 140 caractères)."
+      statsData={[
+        { value: '11', label: 'Lignes dans le payload EPC' },
+        { value: '70', label: 'Nb max. de caractères nom bénéficiaire' },
+        { value: '140', label: 'Nb max. de caractères référence paiement' },
+        { value: '15%', label: 'Niveau de correction erreur M' },
+      ]}
     >
 
       {/* ── Section 1 ── */}

@@ -34,6 +34,12 @@ export default function WissenBetragUndZweckPageEn() {
       ]}
       locale="en"
       shortAnswer="In a GiroCode, the amount is optional and specified in EUR49.90 format (period as decimal separator, not comma). If no amount is specified, the payer can enter their own amount when scanning – ideal for donations or variable prices. The payment reference is also optional, limited to 140 characters, and should always include the invoice number for correct payment allocation."
+      statsData={[
+        { value: '140', label: 'Max. characters payment reference' },
+        { value: 'EUR', label: 'Required prefix for amount' },
+        { value: '0', label: 'Minimum amount (fully optional)' },
+        { value: '2', label: 'Decimal places for amount (e.g. 49.90)' },
+      ]}
     >
       <section aria-labelledby="amount-in-girocode">
         <h2 id="amount-in-girocode">The Amount in GiroCode</h2>

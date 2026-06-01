@@ -34,6 +34,12 @@ export default function WissenRechnungPageFr() {
       ]}
       locale="fr"
       shortAnswer="Un GiroCode sur une facture permet au destinataire de payer en scannant simplement avec son app bancaire. Selon les recommandations EPC, le GiroCode doit mesurer au moins 2×2 cm et être placé en bas à droite."
+      statsData={[
+        { value: '§14', label: 'Base légale mentions obligatoires UStG' },
+        { value: '2×2 cm', label: 'Taille QR code minimale recommandée EPC' },
+        { value: '14 jours', label: 'Délai de paiement habituel sur factures' },
+        { value: '300 DPI', label: "Résolution d'impression recommandée" },
+      ]}
     >
 
       {/* ── Section 1 ── */}

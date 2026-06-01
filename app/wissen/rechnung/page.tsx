@@ -36,6 +36,12 @@ export default function WissenRechnungPage() {
       ]}
       locale="de"
       shortAnswer="Ein GiroCode auf einer Rechnung ermöglicht dem Empfänger die Zahlung durch einfaches Scannen mit der Banking-App – IBAN, Betrag und Verwendungszweck werden automatisch übertragen. Der GiroCode sollte laut EPC-Empfehlung mindestens 2×2 cm groß und unten rechts auf der Rechnung platziert werden. Pflichtangaben auf deutschen Rechnungen nach §14 UStG sind: vollständiger Name und Anschrift, Steuernummer oder USt-ID, Ausstellungsdatum, Rechnungsnummer, Leistungsbeschreibung sowie Netto-, Steuer- und Bruttobetrag."
+      statsData={[
+        { value: '§14', label: 'UStG Pflichtangaben Grundlage' },
+        { value: '2×2 cm', label: 'EPC-empfohlene Mindestgröße QR-Code' },
+        { value: '14 Tage', label: 'Übliche Zahlungsfrist auf Rechnungen' },
+        { value: '300 DPI', label: 'Empfohlene Druckauflösung' },
+      ]}
     >
       {/* ─── SECTION 1: Warum GiroCode ─── */}
       <section aria-labelledby="warum-girocode">
@@ -90,7 +96,16 @@ export default function WissenRechnungPage() {
         <p>
           Unabhängig vom GiroCode müssen Rechnungen im deutschen Steuerrecht bestimmte
           Mindestangaben enthalten, damit sie zum Vorsteuerabzug berechtigen und steuerlich
-          anerkannt werden. Die vollständige Liste nach <strong>§ 14 Abs. 4 UStG</strong>:
+          anerkannt werden. Die Pflichtangaben für Rechnungen sind in{' '}
+          <a
+            href="https://www.gesetze-im-internet.de/ustg_1980/__14.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sky-400 underline hover:text-sky-300"
+          >
+            §14 UStG (Bundesministerium der Justiz)
+          </a>{' '}
+          geregelt. Die vollständige Liste nach <strong>§ 14 Abs. 4 UStG</strong>:
         </p>
         <ol>
           <li>

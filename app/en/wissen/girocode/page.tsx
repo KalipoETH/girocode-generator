@@ -34,6 +34,12 @@ export default function WissenGirocodePageEn() {
       ]}
       locale="en"
       shortAnswer="A GiroCode is a standardized QR code for SEPA bank transfers following the EPC069-12 standard by the European Payments Council. It contains all payment data – IBAN, amount, and payment reference – allowing banking app users to initiate a transfer by simply scanning the code. Freelancers, associations, and businesses use GiroCodes on invoices to get paid faster and eliminate manual entry errors."
+      statsData={[
+        { value: '2018', label: 'Year of introduction in Germany' },
+        { value: '36', label: 'SEPA countries support the standard' },
+        { value: '10 sec.', label: 'Average scan time' },
+        { value: 'EPC069-12', label: 'Official standard document name' },
+      ]}
     >
       <section aria-labelledby="what-is-girocode">
         <h2 id="what-is-girocode">What is a GiroCode?</h2>
@@ -349,6 +355,29 @@ export default function WissenGirocodePageEn() {
           ISO 20022 data standard but includes Swiss-specific fields (QRR reference number).
           Swiss QR-Bills are not directly compatible with German GiroCodes.
         </p>
+      </section>
+
+      {/* ─── Comparisons ─── */}
+      <section aria-labelledby="comparisons" className="mt-10">
+        <h2 id="comparisons">GiroCode in Comparison</h2>
+        <p>How does GiroCode compare to other payment methods?</p>
+        <div className="not-prose my-4 grid gap-3 sm:grid-cols-3">
+          {[
+            { href: '/en/girocode-vs-paypal', title: 'GiroCode vs. PayPal', desc: 'Costs, privacy & use cases compared' },
+            { href: '/en/girocode-vs-bankueberweisung', title: 'GiroCode vs. Manual Transfer', desc: 'Time, error rate & usability' },
+            { href: '/en/girocode-vs-lastschrift', title: 'GiroCode vs. Direct Debit', desc: 'When each method is the better choice' },
+          ].map((card) => (
+            <a
+              key={card.href}
+              href={card.href}
+              className="group flex flex-col rounded-xl border border-[#1f2431] bg-[#0f1117] p-4 transition-all duration-200 hover:border-emerald-500/30 hover:bg-[#1a1d25] hover:-translate-y-0.5"
+            >
+              <span className="text-sm font-bold text-[#e8eaf0] group-hover:text-[#22c55e] transition-colors">{card.title}</span>
+              <span className="mt-1 text-xs text-[#8b90a0]">{card.desc}</span>
+              <span className="mt-3 text-xs text-[#22c55e]">See comparison →</span>
+            </a>
+          ))}
+        </div>
       </section>
 
       <section aria-labelledby="faq-girocode" className="mt-10">

@@ -35,6 +35,12 @@ export default function WissenGirocodePageFr() {
       ]}
       locale="fr"
       shortAnswer="Un GiroCode est un code QR standardisé pour les virements SEPA selon la norme EPC069-12 du European Payments Council. Il contient toutes les données de paiement nécessaires – IBAN, montant et référence – permettant aux utilisateurs d'apps bancaires d'initier un virement par simple scan."
+      statsData={[
+        { value: '2018', label: "Année d'introduction en Allemagne" },
+        { value: '36', label: 'Pays SEPA supportent la norme' },
+        { value: '10 sec.', label: 'Temps de scan moyen' },
+        { value: 'EPC069-12', label: 'Nom du document standard officiel' },
+      ]}
     >
 
       {/* ── Section 1 ───────────────────────────────────── */}
@@ -450,6 +456,29 @@ export default function WissenGirocodePageFr() {
           populaire, qui propose également un format QR code. Cependant, le standard EPC/GiroCode
           est également supporté pour les virements SEPA classiques.
         </p>
+      </section>
+
+      {/* ── Comparaisons ─── */}
+      <section aria-labelledby="comparaisons" className="mt-10">
+        <h2 id="comparaisons">GiroCode en comparaison</h2>
+        <p>Comment le GiroCode se compare-t-il aux autres méthodes de paiement ?</p>
+        <div className="not-prose my-4 grid gap-3 sm:grid-cols-3">
+          {[
+            { href: '/fr/girocode-vs-paypal', title: 'GiroCode vs. PayPal', desc: 'Coûts, confidentialité et cas d\'utilisation comparés' },
+            { href: '/fr/girocode-vs-bankueberweisung', title: 'GiroCode vs. virement manuel', desc: 'Temps, taux d\'erreur et facilité d\'utilisation' },
+            { href: '/fr/girocode-vs-lastschrift', title: 'GiroCode vs. prélèvement SEPA', desc: 'Quelle méthode est la meilleure selon le cas' },
+          ].map((card) => (
+            <a
+              key={card.href}
+              href={card.href}
+              className="group flex flex-col rounded-xl border border-[#1f2431] bg-[#0f1117] p-4 transition-all duration-200 hover:border-emerald-500/30 hover:bg-[#1a1d25] hover:-translate-y-0.5"
+            >
+              <span className="text-sm font-bold text-[#e8eaf0] group-hover:text-[#22c55e] transition-colors">{card.title}</span>
+              <span className="mt-1 text-xs text-[#8b90a0]">{card.desc}</span>
+              <span className="mt-3 text-xs text-[#22c55e]">Voir la comparaison →</span>
+            </a>
+          ))}
+        </div>
       </section>
 
       {/* ── Section 7 – FAQ ───────────────────────────────── */}

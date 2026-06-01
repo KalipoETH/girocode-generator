@@ -33,6 +33,12 @@ export default function WissenBankingAppsPageFr() {
       ]}
       locale="fr"
       shortAnswer="Presque toutes les apps bancaires allemandes supportent les GiroCodes: Sparkasse, VR-Banking, ING, DKB, Commerzbank, Deutsche Bank, N26, Postbank, Comdirect et Targobank. Le scanner QR se trouve sous 'Virement'. Le processus complet prend moins de 30 secondes."
+      statsData={[
+        { value: '12+', label: 'Applications bancaires allemandes supportées' },
+        { value: '30 sec.', label: "Scan jusqu'à confirmation" },
+        { value: '2016', label: 'Support généralisé des applications' },
+        { value: '100%', label: 'Gratuit pour les utilisateurs' },
+      ]}
     >
 
       {/* ── Section 1 ── */}

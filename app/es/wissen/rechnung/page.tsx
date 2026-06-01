@@ -34,6 +34,12 @@ export default function WissenRechnungPageEs() {
       ]}
       locale="es"
       shortAnswer="Un GiroCode en una factura permite al destinatario pagar escaneando con su app bancaria. Según las recomendaciones EPC, el GiroCode debe medir al menos 2×2 cm y colocarse en la esquina inferior derecha."
+      statsData={[
+        { value: '§14', label: 'Base legal menciones obligatorias UStG' },
+        { value: '2×2 cm', label: 'Tamaño mínimo QR recomendado por EPC' },
+        { value: '14 días', label: 'Plazo de pago habitual en facturas' },
+        { value: '300 DPI', label: 'Resolución de impresión recomendada' },
+      ]}
     >
       <section aria-labelledby="por-que-girocode-factura">
         <h2 id="por-que-girocode-factura">¿Por qué usar GiroCode en facturas?</h2>

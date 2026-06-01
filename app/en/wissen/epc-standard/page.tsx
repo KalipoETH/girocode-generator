@@ -50,6 +50,12 @@ export default function WissenEpcStandardPageEn() {
       ]}
       locale="en"
       shortAnswer="The EPC standard (document EPC069-12) defines the technical structure of SEPA QR codes. A valid EPC payload consists of 11 lines: Service Tag (BCD), Version (001/002), UTF-8 encoding, Identification (SCT), optional BIC, recipient name (max. 70 characters), IBAN, amount in EUR49.90 format, and payment reference (max. 140 characters). The standard is maintained by the European Payments Council and is valid in all 36 SEPA countries."
+      statsData={[
+        { value: '11', label: 'Lines in EPC payload' },
+        { value: '70', label: 'Max. characters recipient name' },
+        { value: '140', label: 'Max. characters payment reference' },
+        { value: '15%', label: 'Error correction level M' },
+      ]}
     >
       {/* ─── SECTION 1: Above the fold ─── */}
       <section aria-labelledby="what-is-epc">

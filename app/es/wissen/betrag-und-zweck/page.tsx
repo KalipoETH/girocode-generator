@@ -33,6 +33,12 @@ export default function WissenBetragUndZweckPageEs() {
       ]}
       locale="es"
       shortAnswer="En un GiroCode, el importe es opcional y se especifica en formato EUR49.90. Sin importe, el pagador puede introducir su propio importe al escanear – ideal para donaciones. La referencia de pago está limitada a 140 caracteres."
+      statsData={[
+        { value: '140', label: 'Máx. caracteres referencia de pago' },
+        { value: 'EUR', label: 'Prefijo obligatorio para el importe' },
+        { value: '0', label: 'Importe mínimo (completamente opcional)' },
+        { value: '2', label: 'Decimales del importe (ej. 49.90)' },
+      ]}
     >
       <section aria-labelledby="importe-girocode">
         <h2 id="importe-girocode">El importe en GiroCode</h2>

@@ -36,6 +36,12 @@ export default function WissenScannenPage() {
       ]}
       locale="de"
       shortAnswer="Um einen GiroCode zu scannen: Banking-App öffnen → 'Überweisung' antippen → QR-Scanner Symbol tippen → Code scannen → Daten prüfen (IBAN, Betrag, Zweck) → TAN eingeben → bestätigen. Der gesamte Prozess dauert unter 30 Sekunden. Funktioniert nicht? Helligkeit erhöhen, Abstand auf 15-30 cm anpassen oder den Code größer ausdrucken (mindestens 2×2 cm)."
+      statsData={[
+        { value: '15–30 cm', label: 'Optimaler Scan-Abstand' },
+        { value: '2×2 cm', label: 'Mindestgröße für zuverlässiges Scannen' },
+        { value: '300 DPI', label: 'Mindest-Druckqualität' },
+        { value: '30 Sek.', label: 'Gesamtdauer Scan bis Zahlung' },
+      ]}
     >
       {/* ─── CTA: Scanner-Tool ─── */}
       <section className="not-prose mb-8">

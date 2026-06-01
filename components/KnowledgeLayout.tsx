@@ -6,6 +6,11 @@ export interface RelatedArticle {
   label: string;
 }
 
+export interface StatCard {
+  value: string;
+  label: string;
+}
+
 interface BreadcrumbItem {
   label: string;
   href?: string;
@@ -17,6 +22,7 @@ interface KnowledgeLayoutProps {
   title: string;
   lead: React.ReactNode;
   shortAnswer?: string;
+  statsData?: StatCard[];
   children: React.ReactNode;
   relatedArticles: RelatedArticle[];
   locale?: 'de' | 'en' | 'fr' | 'es';
@@ -153,6 +159,7 @@ export function KnowledgeLayout({
   title,
   lead,
   shortAnswer,
+  statsData,
   children,
   relatedArticles,
   locale = 'de',
@@ -238,6 +245,21 @@ export function KnowledgeLayout({
               {locale === 'de' ? '💡 Kurze Antwort' : locale === 'en' ? '💡 Quick Answer' : locale === 'fr' ? '💡 Réponse rapide' : '💡 Respuesta rápida'}
             </p>
             <p className="text-sm leading-relaxed text-slate-300">{shortAnswer}</p>
+          </div>
+        )}
+
+        {/* Facts & Stats Block (GEO/AEO) */}
+        {statsData && statsData.length > 0 && (
+          <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {statsData.map((stat, i) => (
+              <div
+                key={i}
+                className="rounded-lg border border-[#1f2431] bg-[#0f1117] p-4 text-center"
+              >
+                <p className="text-2xl font-bold text-[#22c55e]">{stat.value}</p>
+                <p className="mt-1 text-xs leading-snug text-[#8b90a0]">{stat.label}</p>
+              </div>
+            ))}
           </div>
         )}
 

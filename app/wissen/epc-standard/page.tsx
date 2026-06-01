@@ -36,6 +36,12 @@ export default function WissenEpcStandardPage() {
       ]}
       locale="de"
       shortAnswer="Der EPC-Standard (Dokument EPC069-12) definiert den technischen Aufbau von SEPA-QR-Codes. Ein gültiger EPC-Payload besteht aus 11 Zeilen: Service Tag (BCD), Version (001/002), UTF-8 Encoding, Identifikation (SCT), optionaler BIC, Empfängername (max. 70 Zeichen), IBAN, Betrag im Format EUR49.90, und Verwendungszweck (max. 140 Zeichen). Der Standard wird vom European Payments Council verwaltet und ist in allen 36 SEPA-Ländern gültig."
+      statsData={[
+        { value: '11', label: 'Zeilen im EPC-Payload' },
+        { value: '70', label: 'Max. Zeichen Empfängername' },
+        { value: '140', label: 'Max. Zeichen Verwendungszweck' },
+        { value: '15%', label: 'Fehlerkorrektur Level M' },
+      ]}
     >
       {/* ─── SECTION 1: Was ist der EPC-Standard ─── */}
       <section aria-labelledby="was-ist-epc">
@@ -87,6 +93,18 @@ export default function WissenEpcStandardPage() {
           Belgien ist die Unterstützung durch Banking-Apps besonders hoch. Die Schweiz hat
           einen eigenen Standard (QR-Rechnung) eingeführt, der auf dem EPC-Standard aufbaut,
           aber eigene Felder hinzufügt.
+        </p>
+        <p>
+          Weitere technische Details finden sich in der offiziellen EPC-Dokumentation:{' '}
+          <a
+            href="https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/epc-qr-code-quick-response-code-guidelines-enabling-initiation"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sky-400 underline hover:text-sky-300"
+          >
+            EPC QR Code Guidelines (EPC069-12)
+          </a>{' '}
+          des European Payments Council.
         </p>
       </section>
 

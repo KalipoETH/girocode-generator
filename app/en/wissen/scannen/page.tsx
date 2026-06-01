@@ -34,6 +34,12 @@ export default function WissenScannenPageEn() {
       ]}
       locale="en"
       shortAnswer="To scan a GiroCode: Open banking app → tap 'Transfer' → tap QR scanner icon → scan code → verify data (IBAN, amount, reference) → enter TAN → confirm. The entire process takes under 30 seconds. Not working? Increase screen brightness, adjust distance to 15-30 cm, or print the code larger (minimum 2×2 cm)."
+      statsData={[
+        { value: '15–30 cm', label: 'Optimal scanning distance' },
+        { value: '2×2 cm', label: 'Minimum size for reliable scanning' },
+        { value: '300 DPI', label: 'Minimum print quality' },
+        { value: '30 sec.', label: 'Total time scan to payment' },
+      ]}
     >
       <section aria-labelledby="scanning-how-it-works">
         <h2 id="scanning-how-it-works">Scanning a GiroCode – How It Works</h2>

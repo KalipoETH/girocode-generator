@@ -33,6 +33,12 @@ export default function WissenBetragUndZweckPageFr() {
       ]}
       locale="fr"
       shortAnswer="Dans un GiroCode, le montant est optionnel et spécifié au format EUR49.90. Sans montant, le payeur peut saisir son propre montant lors du scan – idéal pour les dons. La référence de paiement est limitée à 140 caractères."
+      statsData={[
+        { value: '140', label: 'Nb max. de caractères référence paiement' },
+        { value: 'EUR', label: 'Préfixe obligatoire pour le montant' },
+        { value: '0', label: 'Montant minimum (entièrement optionnel)' },
+        { value: '2', label: 'Décimales pour le montant (ex. 49.90)' },
+      ]}
     >
 
       {/* ── Section 1 ── */}

@@ -36,6 +36,12 @@ export default function WissenIbanBicPage() {
       ]}
       locale="de"
       shortAnswer="Die IBAN (International Bank Account Number) ist eine bis zu 34-stellige internationale Kontonummer nach ISO 13616 Standard. Deutsche IBANs haben genau 22 Zeichen: 2 Buchstaben Länderkürzel (DE), 2 Prüfziffern und 18 Stellen für Bankleitzahl und Kontonummer. Der BIC (Bank Identifier Code) ist für GiroCodes seit der SEPA-Migration 2016 optional und wird nur noch für Überweisungen außerhalb des SEPA-Raums benötigt."
+      statsData={[
+        { value: '22', label: 'Stellen einer deutschen IBAN' },
+        { value: '34', label: 'Max. Stellen einer IBAN weltweit' },
+        { value: '2016', label: 'BIC wurde optional (SEPA-Migration)' },
+        { value: '97', label: 'Modulo-Prüfzahl (Mod-97 Algorithmus)' },
+      ]}
     >
       {/* ─── SECTION 1: Was ist eine IBAN ─── */}
       <section aria-labelledby="was-ist-iban">
@@ -51,6 +57,27 @@ export default function WissenIbanBicPage() {
           automatisierte, fehlerresistente Verarbeitung von Überweisungen und Lastschriften
           im gesamten SEPA-Raum. Sie enthält alle notwendigen Informationen zur eindeutigen
           Identifikation eines Bankkontos.
+        </p>
+        <p>
+          Der IBAN-Standard ist in{' '}
+          <a
+            href="https://www.iso.org/standard/41031.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sky-400 underline hover:text-sky-300"
+          >
+            ISO 13616
+          </a>{' '}
+          definiert. Die Deutsche Bundesbank stellt einen{' '}
+          <a
+            href="https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/serviceangebot/iban-rechner"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sky-400 underline hover:text-sky-300"
+          >
+            kostenlosen IBAN-Rechner
+          </a>{' '}
+          bereit.
         </p>
 
         <h3>Aufbau der deutschen IBAN</h3>
