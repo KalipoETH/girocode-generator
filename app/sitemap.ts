@@ -79,10 +79,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry('/es', 0.9, 'monthly', now),
 
     // ── Rechnungs-Editor ───────────────────────────────────────────────────
-    entry('/rechnungs-editor', 0.8, 'monthly', now),
+    entry('/rechnungs-editor', 0.9, 'monthly', now),
     entry('/en/rechnungs-editor', 0.8, 'monthly', now),
     entry('/fr/rechnungs-editor', 0.8, 'monthly', now),
     entry('/es/rechnungs-editor', 0.8, 'monthly', now),
+
+    // ── Rechnungs-Landingpages ─────────────────────────────────────────────
+    entry('/rechnung-erstellen', 0.8, 'monthly', now),
+    entry('/en/rechnung-erstellen', 0.7, 'monthly', now),
+    entry('/fr/rechnung-erstellen', 0.7, 'monthly', now),
+    entry('/es/rechnung-erstellen', 0.7, 'monthly', now),
+
+    entry('/rechnungsgenerator', 0.8, 'monthly', now),
+    entry('/en/rechnungsgenerator', 0.7, 'monthly', now),
+    entry('/fr/rechnungsgenerator', 0.7, 'monthly', now),
+    entry('/es/rechnungsgenerator', 0.7, 'monthly', now),
+
+    entry('/kleinunternehmer-rechnung', 0.8, 'monthly', now),
+    entry('/en/kleinunternehmer-rechnung', 0.7, 'monthly', now),
+    entry('/fr/kleinunternehmer-rechnung', 0.7, 'monthly', now),
+    entry('/es/kleinunternehmer-rechnung', 0.7, 'monthly', now),
 
     // ── Scanner ────────────────────────────────────────────────────────────
     entry('/scanner', 0.8, 'monthly', now),

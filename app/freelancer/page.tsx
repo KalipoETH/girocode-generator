@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { UseCaseLanding } from '../../components/UseCaseLanding';
 
 const SLUG = 'freelancer';
@@ -115,6 +116,16 @@ export default function FreelancerDePage() {
         ctaText:
           'Erstelle in 2 Minuten deine erste GiroCode-Rechnung – kostenlos, ohne Registrierung, 100% lokal in deinem Browser.',
         ctaButton: 'Jetzt kostenlos GiroCode erstellen →',
+        closing: (
+          <div className="mt-4 flex justify-center">
+            <Link
+              href="/rechnungs-editor"
+              className="inline-flex items-center gap-2 rounded-xl border border-emerald-500/40 px-6 py-3 text-sm font-semibold text-emerald-300 transition hover:bg-emerald-500/10"
+            >
+              Rechnung mit GiroCode erstellen →
+            </Link>
+          </div>
+        ),
       }}
     />
   );

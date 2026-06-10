@@ -2,6 +2,31 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { KnowledgeLayout } from '../../../components/KnowledgeLayout';
 
+function RechnungsgeneratorCTA() {
+  return (
+    <div
+      className="mb-8 flex flex-col gap-4 rounded-2xl p-5 sm:flex-row sm:items-center sm:justify-between"
+      style={{ background: 'linear-gradient(135deg, #0f1a0f 0%, #121318 100%)', border: '1px solid rgba(34,197,94,0.3)' }}
+    >
+      <div>
+        <p className="font-bold text-slate-50">
+          Rechnung mit GiroCode direkt erstellen
+        </p>
+        <p className="mt-1 text-sm text-slate-400">
+          Kostenloser Rechnungsgenerator – §14 UStG konform, ohne Anmeldung, PDF sofort.
+        </p>
+      </div>
+      <Link
+        href="/rechnungs-editor"
+        className="flex-shrink-0 inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-slate-950 transition hover:-translate-y-0.5"
+        style={{ background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)' }}
+      >
+        Rechnung erstellen →
+      </Link>
+    </div>
+  );
+}
+
 export const metadata: Metadata = {
   title: 'GiroCode auf Rechnungen – Leitfaden & PDF-Generator',
   description:
@@ -43,6 +68,8 @@ export default function WissenRechnungPage() {
         { value: '300 DPI', label: 'Empfohlene Druckauflösung' },
       ]}
     >
+      <RechnungsgeneratorCTA />
+
       {/* ─── SECTION 1: Warum GiroCode ─── */}
       <section aria-labelledby="warum-girocode">
         <h2 id="warum-girocode">Warum GiroCode auf Rechnungen?</h2>

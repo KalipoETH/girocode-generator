@@ -313,6 +313,40 @@ export default function HomePage() {
           <TimeSavingsCalculator locale="de" />
         </section>
 
+        {/* SEO: Mehr als nur ein QR-Code Generator */}
+        <section className="animate-card-in mt-6" style={{ animationDelay: '0.22s' }}>
+          <div
+            className="rounded-2xl p-6 sm:p-8"
+            style={{ background: 'linear-gradient(135deg, #0a120a 0%, #0f1318 100%)', border: '1px solid rgba(34,197,94,0.2)' }}
+          >
+            <h2 className="text-lg font-bold text-slate-50 sm:text-xl">
+              Mehr als nur ein QR-Code Generator
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-slate-400 sm:text-base">
+              Erstelle auch komplette Rechnungen mit automatisch integriertem GiroCode –
+              §14 UStG konform, mit Logo, in 2 Minuten fertig.{' '}
+              <Link href="/rechnungs-editor" className="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">
+                Zum Rechnungsgenerator →
+              </Link>
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Link
+                href="/rechnungs-editor"
+                className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-slate-950"
+                style={{ background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)' }}
+              >
+                Zum Rechnungsgenerator →
+              </Link>
+              <Link
+                href="/rechnung-erstellen"
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-2.5 text-sm font-semibold text-slate-300 transition hover:border-slate-500"
+              >
+                Ratgeber: Rechnung erstellen
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Rechnungs-Editor Banner */}
         <section className="animate-card-in mt-6" style={{ animationDelay: '0.25s' }}>
           <a
