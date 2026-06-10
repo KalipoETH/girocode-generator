@@ -71,6 +71,7 @@ function entry(
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
+  // /admin/* ist absichtlich nicht enthalten (passwortgeschützt, noindex)
   return [
     // ── Hauptseiten ────────────────────────────────────────────────────────
     entry('', 1, 'monthly', now),

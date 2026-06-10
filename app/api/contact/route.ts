@@ -1,7 +1,11 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend() {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) return null;
+  return new Resend(apiKey);
+}
 
 // ── In-Memory Rate Limiting ────────────────────────────────────────────────
 const contactRateLimit = new Map<string, { count: number; resetTime: number }>();
@@ -52,6 +56,14 @@ export async function POST(req: Request) {
   }
 
   try {
+    const resend = getResend();
+    if (!resend) {
+      return NextResponse.json(
+        { error: 'E-Mail konnte nicht gesendet werden.' },
+        { status: 500 }
+      );
+    }
+
     await resend.emails.send({
       from: 'GiroCode Generator <kontakt@girocodegenerator.com>',
       to: 'jahnke.kaleb@gmail.com',

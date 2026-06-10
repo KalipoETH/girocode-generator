@@ -2,8 +2,23 @@ import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 export function proxy(request: NextRequest) {
-  const response = NextResponse.next();
   const pathname = request.nextUrl.pathname;
+
+  // Admin-Schutz
+  if (pathname.startsWith('/admin')) {
+    if (pathname !== '/admin/login') {
+      const adminToken = request.cookies.get('admin_token');
+      if (!adminToken || adminToken.value !== process.env.ADMIN_SECRET) {
+        return NextResponse.redirect(new URL('/admin/login', request.url));
+      }
+    }
+  }
+
+  const response = NextResponse.next();
+
+  if (pathname.startsWith('/admin')) {
+    response.headers.set('x-admin-route', 'true');
+  }
 
   let locale = 'de';
   if (pathname.startsWith('/en/') || pathname === '/en') locale = 'en';

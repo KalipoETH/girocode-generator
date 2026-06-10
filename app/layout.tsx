@@ -86,6 +86,7 @@ export default async function RootLayout({
 }) {
   const headersList = await headers();
   const locale = headersList.get('x-locale') ?? 'de';
+  const isAdminRoute = headersList.get('x-admin-route') === 'true';
 
   const organizationJsonLd = {
     '@context': 'https://schema.org',
@@ -126,10 +127,10 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
         <div className="flex min-h-screen flex-col">
-          <FloatingDots />
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          {!isAdminRoute && <FloatingDots />}
+          {!isAdminRoute && <Navbar />}
+          <main className={isAdminRoute ? 'flex-1' : 'flex-1'}>{children}</main>
+          {!isAdminRoute && <Footer />}
         </div>
         <SpeedInsights />
         <Analytics />
