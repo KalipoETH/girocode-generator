@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import ApiDocsBetaBanner from '@/components/ApiDocsBetaBanner';
+import LockedCodeOverlay from '@/components/LockedCodeOverlay';
 
 export const metadata: Metadata = {
   title: 'GiroCode API – URL-Parameter & Integration | Entwickler',
@@ -12,6 +14,8 @@ export default function ApiDocsPage() {
   return (
     <main className="min-h-screen bg-[#0b0c10] text-slate-100">
       <div className="mx-auto max-w-4xl px-4 py-10 md:py-12">
+        <ApiDocsBetaBanner locale="de" />
+
         <header className="mb-10 space-y-3">
           <p className="inline-flex items-center gap-2 rounded-full bg-sky-500/10 px-3 py-1 text-[11px] font-medium text-sky-300 ring-1 ring-sky-500/40">
             <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
@@ -265,19 +269,21 @@ echo '<a href="' . htmlspecialchars($url) . '">GiroCode erstellen</a>';
               </div>
             </div>
 
-            {/* Beispiel-Request – curl */}
-            <div className="mb-4">
-              <p className="mb-2 text-sm font-medium text-slate-300">Beispiel-Request – curl</p>
-              <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
-                <code>{`curl "https://www.girocodegenerator.com/api/generate?name=Max+Mustermann&iban=DE89370400440532013000&betrag=49.90&zweck=Rechnung+001"`}</code>
-              </pre>
-            </div>
+            <LockedCodeOverlay locale="de">
+              <div className="space-y-5">
+                {/* Beispiel-Request – curl */}
+                <div>
+                  <p className="mb-2 text-sm font-medium text-slate-300">Beispiel-Request – curl</p>
+                  <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
+                    <code>{`curl "https://www.girocodegenerator.com/api/generate?name=Max+Mustermann&iban=DE89370400440532013000&betrag=49.90&zweck=Rechnung+001"`}</code>
+                  </pre>
+                </div>
 
-            {/* Beispiel-Request – JS fetch */}
-            <div className="mb-4">
-              <p className="mb-2 text-sm font-medium text-slate-300">Beispiel-Request – JavaScript fetch</p>
-              <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
-                <code>{`const params = new URLSearchParams({
+                {/* Beispiel-Request – JS fetch */}
+                <div>
+                  <p className="mb-2 text-sm font-medium text-slate-300">Beispiel-Request – JavaScript fetch</p>
+                  <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
+                    <code>{`const params = new URLSearchParams({
   name: 'Max Mustermann',
   iban: 'DE89370400440532013000',
   betrag: '49.90',
@@ -289,14 +295,14 @@ const data = await res.json();
 
 // Base64 QR-Code als <img> anzeigen
 document.getElementById('qr').src = data.qr_base64;`}</code>
-              </pre>
-            </div>
+                  </pre>
+                </div>
 
-            {/* Beispiel-Response */}
-            <div>
-              <p className="mb-2 text-sm font-medium text-slate-300">Beispiel-Response</p>
-              <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
-                <code>{`{
+                {/* Beispiel-Response */}
+                <div>
+                  <p className="mb-2 text-sm font-medium text-slate-300">Beispiel-Response</p>
+                  <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
+                    <code>{`{
   "success": true,
   "qr_base64": "data:image/png;base64,iVBORw0KGgo...",
   "epc_payload": "BCD\\n001\\n1\\nSCT\\n\\nMax Mustermann\\nDE89370400440532013000\\nEUR49.90\\n\\n\\nRechnung 001",
@@ -308,8 +314,10 @@ document.getElementById('qr').src = data.qr_base64;`}</code>
     "zweck": "Rechnung 001"
   }
 }`}</code>
-              </pre>
-            </div>
+                  </pre>
+                </div>
+              </div>
+            </LockedCodeOverlay>
           </section>
 
           {/* CTA */}

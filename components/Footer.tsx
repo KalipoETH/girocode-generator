@@ -131,8 +131,11 @@ export function Footer() {
             <Link href={`${prefix}/fuer-entwickler`} className="hover:text-slate-200 hover:underline">
               Für Entwickler
             </Link>
-            <Link href="/api-docs" className="hover:text-slate-200 hover:underline">
+            <Link href={`${prefix}/api-docs`} className="hover:text-slate-200 hover:underline">
               API-Docs
+            </Link>
+            <Link href={`${prefix}/api-access`} className="hover:text-slate-200 hover:underline">
+              {locale === 'en' ? 'API Access' : locale === 'fr' ? 'Accès API' : locale === 'es' ? 'Acceso API' : 'API-Zugang'}
             </Link>
           </div>
         </div>

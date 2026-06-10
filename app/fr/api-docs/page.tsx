@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import ApiDocsBetaBanner from '@/components/ApiDocsBetaBanner';
+import LockedCodeOverlay from '@/components/LockedCodeOverlay';
 
 export const metadata: Metadata = {
   title: 'API GiroCode – Paramètres URL & Intégration | Développeurs',
@@ -21,6 +23,8 @@ export default function ApiDocsFrPage() {
   return (
     <main className="min-h-screen bg-[#0b0c10] text-slate-100">
       <div className="mx-auto max-w-4xl px-4 py-10 md:py-12">
+        <ApiDocsBetaBanner locale="fr" />
+
         <header className="mb-10 space-y-3">
           <p className="inline-flex items-center gap-2 rounded-full bg-sky-500/10 px-3 py-1 text-[11px] font-medium text-sky-300 ring-1 ring-sky-500/40">
             <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
@@ -228,17 +232,19 @@ echo '<a href="' . htmlspecialchars($url) . '">Créer GiroCode</a>';
               </pre>
             </div>
 
-            <div className="mb-4">
-              <p className="mb-2 text-sm font-medium text-slate-300">Exemple – curl</p>
-              <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
-                <code>{`curl "https://www.girocodegenerator.com/api/generate?name=Max+Mustermann&iban=DE89370400440532013000&betrag=49.90&zweck=Facture+001"`}</code>
-              </pre>
-            </div>
+            <LockedCodeOverlay locale="fr">
+              <div className="space-y-5">
+                <div>
+                  <p className="mb-2 text-sm font-medium text-slate-300">Exemple – curl</p>
+                  <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
+                    <code>{`curl "https://www.girocodegenerator.com/api/generate?name=Max+Mustermann&iban=DE89370400440532013000&betrag=49.90&zweck=Facture+001"`}</code>
+                  </pre>
+                </div>
 
-            <div>
-              <p className="mb-2 text-sm font-medium text-slate-300">Exemple de réponse</p>
-              <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
-                <code>{`{
+                <div>
+                  <p className="mb-2 text-sm font-medium text-slate-300">Exemple de réponse</p>
+                  <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
+                    <code>{`{
   "success": true,
   "qr_base64": "data:image/png;base64,iVBORw0KGgo...",
   "epc_payload": "BCD\\n001\\n1\\nSCT\\n\\nMax Mustermann\\nDE89370400440532013000\\nEUR49.90\\n\\n\\nFacture 001",
@@ -250,8 +256,10 @@ echo '<a href="' . htmlspecialchars($url) . '">Créer GiroCode</a>';
     "zweck": "Facture 001"
   }
 }`}</code>
-              </pre>
-            </div>
+                  </pre>
+                </div>
+              </div>
+            </LockedCodeOverlay>
           </section>
 
           {/* CTA */}

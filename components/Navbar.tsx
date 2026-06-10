@@ -30,6 +30,7 @@ const toolsItems = [
   { key: 'scanner', path: '/scanner', icon: '🔍' },
   { key: 'bulk', path: '/bulk', icon: '📦' },
   { key: 'apiDocs', path: '/api-docs', icon: '🔌' },
+  { key: 'apiAccess', path: '/api-access', icon: '🔒' },
   { key: 'developers', path: '/fuer-entwickler', icon: '👨‍💻' },
 ];
 
@@ -45,6 +46,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     scanner: 'Scanner',
     bulk: 'Bulk',
     apiDocs: 'API-Docs',
+    apiAccess: 'API-Zugang',
     developers: 'Für Entwickler',
   },
   en: {
@@ -58,6 +60,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     scanner: 'Scanner',
     bulk: 'Bulk',
     apiDocs: 'API Docs',
+    apiAccess: 'API Access',
     developers: 'For developers',
   },
   fr: {
@@ -71,6 +74,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     scanner: 'Scanner',
     bulk: 'Lot',
     apiDocs: 'API Docs',
+    apiAccess: 'Accès API',
     developers: 'Développeurs',
   },
   es: {
@@ -84,6 +88,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     scanner: 'Escáner',
     bulk: 'Masivo',
     apiDocs: 'API Docs',
+    apiAccess: 'Acceso API',
     developers: 'Desarrolladores',
   },
 };

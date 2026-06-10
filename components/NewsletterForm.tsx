@@ -114,12 +114,103 @@ const CONTENT: Record<
   },
 };
 
+const API_ACCESS_CONTENT: Record<
+  Locale,
+  {
+    badge: string;
+    headline: string;
+    description: string;
+    namePlaceholder: string;
+    emailPlaceholder: string;
+    buttonDefault: string;
+    buttonLoading: string;
+    successMsg: string;
+    existingMsg: string;
+    errorMsg: string;
+    consent: string;
+    privacyLabel: string;
+    privacyHref: string;
+    unsubscribe: string;
+  }
+> = {
+  de: {
+    badge: '🚀 Beta-Zugang',
+    headline: 'Jetzt für API-Zugang anmelden',
+    description:
+      'Trage deine E-Mail ein und erhalte:\n✅ Frühzeitigen API-Zugang (Beta)\n✅ API-Key sobald verfügbar\n✅ Monatliche Updates & neue Features',
+    namePlaceholder: 'Dein Name (optional)',
+    emailPlaceholder: 'deine@email.de',
+    buttonDefault: 'API-Zugang sichern →',
+    buttonLoading: 'Wird angemeldet...',
+    successMsg: '✅ Erfolgreich angemeldet! Schau in dein Postfach.',
+    existingMsg: 'Du bist bereits angemeldet! 😊',
+    errorMsg: '❌ Fehler. Bitte versuche es erneut.',
+    consent: 'Mit der Anmeldung stimmst du dem Erhalt von E-Mails zu.',
+    privacyLabel: 'Datenschutz beachten.',
+    privacyHref: '/datenschutz',
+    unsubscribe: 'Jederzeit abmeldbar.',
+  },
+  en: {
+    badge: '🚀 Beta Access',
+    headline: 'Sign up for API Access',
+    description:
+      'Enter your email and get:\n✅ Early API access (Beta)\n✅ API key when available\n✅ Monthly updates & new features',
+    namePlaceholder: 'Your name (optional)',
+    emailPlaceholder: 'your@email.com',
+    buttonDefault: 'Secure API Access →',
+    buttonLoading: 'Subscribing...',
+    successMsg: '✅ Successfully subscribed! Check your inbox.',
+    existingMsg: 'You are already subscribed! 😊',
+    errorMsg: '❌ Error. Please try again.',
+    consent: 'By subscribing you agree to receive emails.',
+    privacyLabel: 'Privacy policy.',
+    privacyHref: '/en/datenschutz',
+    unsubscribe: 'Unsubscribe anytime.',
+  },
+  fr: {
+    badge: '🚀 Accès Bêta',
+    headline: "S'inscrire pour l'accès API",
+    description:
+      "Entrez votre e-mail et recevez :\n✅ Accès anticipé à l'API (Bêta)\n✅ Clé API dès disponibilité\n✅ Mises à jour mensuelles & nouvelles fonctionnalités",
+    namePlaceholder: 'Votre nom (optionnel)',
+    emailPlaceholder: 'votre@email.fr',
+    buttonDefault: "Obtenir l'accès API →",
+    buttonLoading: 'Inscription en cours...',
+    successMsg: '✅ Inscription réussie ! Vérifiez votre boîte mail.',
+    existingMsg: 'Vous êtes déjà abonné ! 😊',
+    errorMsg: '❌ Erreur. Veuillez réessayer.',
+    consent: "En vous inscrivant, vous acceptez de recevoir des e-mails.",
+    privacyLabel: 'Politique de confidentialité.',
+    privacyHref: '/fr/datenschutz',
+    unsubscribe: 'Désinscription à tout moment.',
+  },
+  es: {
+    badge: '🚀 Acceso Beta',
+    headline: 'Registrarse para acceso API',
+    description:
+      'Introduce tu email y recibe:\n✅ Acceso anticipado a la API (Beta)\n✅ Clave API cuando esté disponible\n✅ Actualizaciones mensuales y nuevas funciones',
+    namePlaceholder: 'Tu nombre (opcional)',
+    emailPlaceholder: 'tu@email.es',
+    buttonDefault: 'Obtener acceso API →',
+    buttonLoading: 'Suscribiendo...',
+    successMsg: '✅ ¡Suscripción exitosa! Revisa tu bandeja de entrada.',
+    existingMsg: '¡Ya estás suscrito! 😊',
+    errorMsg: '❌ Error. Por favor, inténtalo de nuevo.',
+    consent: 'Al suscribirte, aceptas recibir correos electrónicos.',
+    privacyLabel: 'Política de privacidad.',
+    privacyHref: '/es/datenschutz',
+    unsubscribe: 'Cancela cuando quieras.',
+  },
+};
+
 interface Props {
   locale?: Locale;
+  variant?: 'default' | 'api-access';
 }
 
-export default function NewsletterForm({ locale = 'de' }: Props) {
-  const t = CONTENT[locale];
+export default function NewsletterForm({ locale = 'de', variant = 'default' }: Props) {
+  const t = variant === 'api-access' ? API_ACCESS_CONTENT[locale] : CONTENT[locale];
+  const isApiAccess = variant === 'api-access';
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -149,7 +240,7 @@ export default function NewsletterForm({ locale = 'de' }: Props) {
   };
 
   return (
-    <section className="mt-10">
+    <section className="mt-10" id={isApiAccess ? 'newsletter-form' : undefined}>
       <div
         className="rounded-2xl p-10"
         style={{
@@ -170,26 +261,30 @@ export default function NewsletterForm({ locale = 'de' }: Props) {
         </h2>
 
         {/* Description */}
-        <p className="mx-auto mb-8 max-w-xl text-center text-sm leading-relaxed text-slate-400 sm:text-base">
+        <p
+          className={`mx-auto mb-8 max-w-xl text-center text-sm leading-relaxed text-slate-400 sm:text-base${isApiAccess ? ' whitespace-pre-line' : ''}`}
+        >
           {t.description}
         </p>
 
         {/* Benefits */}
-        <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {t.benefits.map((b) => (
-            <div
-              key={b.title}
-              className="flex flex-col items-center gap-1 rounded-xl p-4 text-center"
-              style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
-            >
-              <span className="text-2xl" aria-hidden>
-                {b.icon}
-              </span>
-              <span className="text-sm font-semibold text-slate-200">{b.title}</span>
-              <span className="text-xs text-slate-500">{b.sub}</span>
-            </div>
-          ))}
-        </div>
+        {!isApiAccess && 'benefits' in t && (
+          <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {t.benefits.map((b) => (
+              <div
+                key={b.title}
+                className="flex flex-col items-center gap-1 rounded-xl p-4 text-center"
+                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
+              >
+                <span className="text-2xl" aria-hidden>
+                  {b.icon}
+                </span>
+                <span className="text-sm font-semibold text-slate-200">{b.title}</span>
+                <span className="text-xs text-slate-500">{b.sub}</span>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Form or success message */}
         {status === 'success' || status === 'existing' ? (

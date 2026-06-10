@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import ApiDocsBetaBanner from '@/components/ApiDocsBetaBanner';
+import LockedCodeOverlay from '@/components/LockedCodeOverlay';
 
 export const metadata: Metadata = {
   title: 'GiroCode API – URL Parameters & Integration | Developer',
@@ -21,6 +23,8 @@ export default function ApiDocsEnPage() {
   return (
     <main className="min-h-screen bg-[#0b0c10] text-slate-100">
       <div className="mx-auto max-w-4xl px-4 py-10 md:py-12">
+        <ApiDocsBetaBanner locale="en" />
+
         <header className="mb-10 space-y-3">
           <p className="inline-flex items-center gap-2 rounded-full bg-sky-500/10 px-3 py-1 text-[11px] font-medium text-sky-300 ring-1 ring-sky-500/40">
             <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
@@ -272,17 +276,19 @@ echo '<a href="' . htmlspecialchars($url) . '">Create GiroCode</a>';
               </div>
             </div>
 
-            <div className="mb-4">
-              <p className="mb-2 text-sm font-medium text-slate-300">Example Request – curl</p>
-              <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
-                <code>{`curl "https://www.girocodegenerator.com/api/generate?name=Max+Mustermann&iban=DE89370400440532013000&betrag=49.90&zweck=Invoice+001"`}</code>
-              </pre>
-            </div>
+            <LockedCodeOverlay locale="en">
+              <div className="space-y-5">
+                <div>
+                  <p className="mb-2 text-sm font-medium text-slate-300">Example Request – curl</p>
+                  <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
+                    <code>{`curl "https://www.girocodegenerator.com/api/generate?name=Max+Mustermann&iban=DE89370400440532013000&betrag=49.90&zweck=Invoice+001"`}</code>
+                  </pre>
+                </div>
 
-            <div className="mb-4">
-              <p className="mb-2 text-sm font-medium text-slate-300">Example Request – JavaScript fetch</p>
-              <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
-                <code>{`const params = new URLSearchParams({
+                <div>
+                  <p className="mb-2 text-sm font-medium text-slate-300">Example Request – JavaScript fetch</p>
+                  <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
+                    <code>{`const params = new URLSearchParams({
   name: 'Max Mustermann',
   iban: 'DE89370400440532013000',
   betrag: '49.90',
@@ -294,13 +300,13 @@ const data = await res.json();
 
 // Display Base64 QR code as <img>
 document.getElementById('qr').src = data.qr_base64;`}</code>
-              </pre>
-            </div>
+                  </pre>
+                </div>
 
-            <div>
-              <p className="mb-2 text-sm font-medium text-slate-300">Example Response</p>
-              <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
-                <code>{`{
+                <div>
+                  <p className="mb-2 text-sm font-medium text-slate-300">Example Response</p>
+                  <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200">
+                    <code>{`{
   "success": true,
   "qr_base64": "data:image/png;base64,iVBORw0KGgo...",
   "epc_payload": "BCD\\n001\\n1\\nSCT\\n\\nMax Mustermann\\nDE89370400440532013000\\nEUR49.90\\n\\n\\nInvoice 001",
@@ -312,8 +318,10 @@ document.getElementById('qr').src = data.qr_base64;`}</code>
     "zweck": "Invoice 001"
   }
 }`}</code>
-              </pre>
-            </div>
+                  </pre>
+                </div>
+              </div>
+            </LockedCodeOverlay>
           </section>
 
           {/* CTA */}

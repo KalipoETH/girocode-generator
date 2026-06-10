@@ -118,6 +118,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry('/fr/api-docs', 0.6, 'monthly', now),
     entry('/es/api-docs', 0.6, 'monthly', now),
 
+    // ── API-Zugang ─────────────────────────────────────────────────────────
+    entry('/api-access', 0.7, 'monthly', now),
+    entry('/en/api-access', 0.7, 'monthly', now),
+    entry('/fr/api-access', 0.7, 'monthly', now),
+    entry('/es/api-access', 0.7, 'monthly', now),
+
     // ── Wissen Übersicht ───────────────────────────────────────────────────
     entry('/wissen', 0.8, 'monthly', now),
     entry('/en/wissen', 0.7, 'monthly', now),
