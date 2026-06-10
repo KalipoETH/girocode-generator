@@ -5,8 +5,9 @@ import { PdfButton } from './PdfButton';
 import { en } from '../lib/translations/en';
 import { fr } from '../lib/translations/fr';
 import { es } from '../lib/translations/es';
+import { it } from '../lib/translations/it';
 
-type Locale = 'de' | 'en' | 'fr' | 'es';
+type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
 export interface InvoiceFormProps {
   locale: Locale;
@@ -104,6 +105,34 @@ function getTexts(locale: Locale) {
         'El PDF de la factura utiliza el código QR GiroCode generado y lo coloca en la esquina inferior derecha.',
       infoNoQr:
         'Nota: todavía no hay ningún código QR disponible. Primero genera un código en el generador GiroCode.',
+      currencySuffix: (v: number) => `${v.toFixed(2)} €`,
+    };
+  }
+
+  if (locale === 'it') {
+    return {
+      title: it.invoice.title,
+      description:
+        'Crea una fattura con codice QR GiroCode incorporato – completamente locale nel browser.',
+      invoiceNo: it.invoice.invoiceNo,
+      invoiceDate: it.invoice.invoiceDate,
+      seller: it.invoice.seller,
+      buyer: it.invoice.buyer,
+      logo: it.invoice.logo,
+      serviceDescription: it.invoice.description,
+      net: it.invoice.net,
+      vat: it.invoice.vat,
+      vatSummaryLabel: (rate: string) => `IVA (${rate || '0'} %)`,
+      vatAmount: it.invoice.vatAmount,
+      gross: it.invoice.gross,
+      summaryNet: 'Netto',
+      summaryGross: 'Lordo',
+      logoErrorType: 'Seleziona un file PNG o JPG.',
+      logoErrorRead: 'Impossibile leggere il logo.',
+      infoUsesQr:
+        'Il PDF della fattura utilizza il codice QR GiroCode generato e lo posiziona in basso a destra.',
+      infoNoQr:
+        'Nota: nessun codice QR disponibile. Genera prima un codice nel generatore GiroCode.',
       currencySuffix: (v: number) => `${v.toFixed(2)} €`,
     };
   }

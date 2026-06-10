@@ -3,7 +3,15 @@ import type { ReactNode } from 'react';
 
 const BASE_URL = 'https://www.girocodegenerator.com';
 
-type LandingLocale = 'en' | 'fr' | 'es';
+type LandingLocale = 'de' | 'en' | 'fr' | 'es' | 'it';
+
+function localeHomeHref(locale: LandingLocale): string {
+  return locale === 'de' ? '/' : `/${locale}`;
+}
+
+function localePageUrl(locale: LandingLocale, slug: string): string {
+  return locale === 'de' ? `${BASE_URL}/${slug}` : `${BASE_URL}/${locale}/${slug}`;
+}
 
 export interface SeoContentConfig {
   slug: string;
@@ -29,27 +37,35 @@ export interface SeoContentConfig {
 }
 
 const HOME_LABELS: Record<LandingLocale, string> = {
+  de: 'Startseite',
   en: 'Home',
   fr: 'Accueil',
   es: 'Inicio',
+  it: 'Home',
 };
 
 const SHORT_ANSWER_LABELS: Record<LandingLocale, string> = {
+  de: 'Kurzantwort',
   en: 'Short Answer',
   fr: 'Réponse courte',
   es: 'Respuesta breve',
+  it: 'Risposta breve',
 };
 
 const RELATED_LABELS: Record<LandingLocale, string> = {
+  de: 'Verwandte Artikel',
   en: 'Related Articles',
   fr: 'Articles connexes',
   es: 'Artículos relacionados',
+  it: 'Articoli correlati',
 };
 
 const DEFAULT_FAQ_HEADLINES: Record<LandingLocale, string> = {
+  de: 'Häufig gestellte Fragen',
   en: 'Frequently Asked Questions',
   fr: 'Questions fréquentes',
   es: 'Preguntas frecuentes',
+  it: 'Domande frequenti',
 };
 
 export function SeoContentLanding({ content }: { content: SeoContentConfig }) {
@@ -57,7 +73,8 @@ export function SeoContentLanding({ content }: { content: SeoContentConfig }) {
   const homeLabel = content.homeLabel ?? HOME_LABELS[locale];
   const shortAnswerLabel = content.shortAnswerLabel ?? SHORT_ANSWER_LABELS[locale];
   const relatedLabel = content.relatedArticlesLabel ?? RELATED_LABELS[locale];
-  const pageUrl = `${BASE_URL}/${locale}/${content.slug}`;
+  const homeHref = localeHomeHref(locale);
+  const pageUrl = localePageUrl(locale, content.slug);
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -77,7 +94,7 @@ export function SeoContentLanding({ content }: { content: SeoContentConfig }) {
         '@type': 'ListItem',
         position: 1,
         name: homeLabel,
-        item: `${BASE_URL}/${locale}`,
+        item: `${BASE_URL}${homeHref === '/' ? '' : homeHref}`,
       },
       {
         '@type': 'ListItem',
@@ -124,7 +141,7 @@ export function SeoContentLanding({ content }: { content: SeoContentConfig }) {
           <nav aria-label="Breadcrumb" className="mb-6 text-xs text-slate-500">
             <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
               <li>
-                <Link href={`/${locale}`} className="text-sky-400 hover:text-sky-300">
+                <Link href={homeHref} className="text-sky-400 hover:text-sky-300">
                   {homeLabel}
                 </Link>
               </li>
@@ -276,7 +293,7 @@ export function SeoContentLanding({ content }: { content: SeoContentConfig }) {
 }
 
 export function seoAlternates(slug: string, locale: LandingLocale = 'en') {
-  const canonical = `${BASE_URL}/${locale}/${slug}`;
+  const canonical = localePageUrl(locale, slug);
   return {
     canonical,
     languages: { [locale]: canonical },

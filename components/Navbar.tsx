@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
-type Locale = 'de' | 'en' | 'fr' | 'es';
+type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
 const localeMeta: Record<
   Locale,
@@ -15,6 +15,7 @@ const localeMeta: Record<
   en: { label: 'English', flag: '🇬🇧', code: 'EN', prefix: '/en' },
   fr: { label: 'Français', flag: '🇫🇷', code: 'FR', prefix: '/fr' },
   es: { label: 'Español', flag: '🇪🇸', code: 'ES', prefix: '/es' },
+  it: { label: 'Italiano', flag: '🇮🇹', code: 'IT', prefix: '/it' },
 };
 
 const mainNavConfig = [
@@ -91,14 +92,29 @@ const navLabels: Record<Locale, Record<string, string>> = {
     apiAccess: 'Acceso API',
     developers: 'Desarrolladores',
   },
+  it: {
+    home: 'Generatore',
+    knowledge: 'Informazioni',
+    blog: 'Blog',
+    about: 'Chi siamo',
+    contact: 'Contatto',
+    tools: 'Strumenti',
+    invoiceEditor: 'Editor fatture',
+    scanner: 'Scanner',
+    bulk: 'Bulk',
+    apiDocs: 'API Docs',
+    apiAccess: 'Accesso API',
+    developers: 'Per sviluppatori',
+  },
 };
 
-const localeOrder: Locale[] = ['de', 'en', 'fr', 'es'];
+const localeOrder: Locale[] = ['de', 'en', 'fr', 'es', 'it'];
 
 function getLocaleFromPathname(pathname: string): Locale {
   if (pathname === '/en' || pathname.startsWith('/en/')) return 'en';
   if (pathname === '/fr' || pathname.startsWith('/fr/')) return 'fr';
   if (pathname === '/es' || pathname.startsWith('/es/')) return 'es';
+  if (pathname === '/it' || pathname.startsWith('/it/')) return 'it';
   return 'de';
 }
 

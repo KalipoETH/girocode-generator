@@ -1,6 +1,6 @@
 import React from 'react';
 
-type Locale = 'de' | 'en' | 'fr' | 'es';
+type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
 const stats: Record<Locale, { value: string; label: string }[]> = {
   de: [
@@ -27,6 +27,12 @@ const stats: Record<Locale, { value: string; label: string }[]> = {
     { value: '140 caracteres', label: 'Longitud máxima de la referencia de pago' },
     { value: 'Nivel M', label: 'Nivel de corrección de errores QR' },
   ],
+  it: [
+    { value: 'EPC069-12', label: 'Standard EPC ufficiale dal 2018' },
+    { value: '27 car.', label: 'Lunghezza IBAN italiano' },
+    { value: '140 car.', label: 'Lunghezza massima causale' },
+    { value: 'Livello M', label: 'Correzione errori QR' },
+  ],
 };
 
 const titles: Record<Locale, string> = {
@@ -34,6 +40,7 @@ const titles: Record<Locale, string> = {
   en: 'Facts & Statistics',
   fr: 'Faits & Statistiques',
   es: 'Hechos & Estadísticas',
+  it: 'Fatti & Statistiche',
 };
 
 interface GeoStatsSectionProps {

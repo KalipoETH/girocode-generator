@@ -43,6 +43,7 @@ export const metadata: Metadata = {
       'en': 'https://www.girocodegenerator.com/en',
       'fr': 'https://www.girocodegenerator.com/fr',
       'es': 'https://www.girocodegenerator.com/es',
+      'it': 'https://www.girocodegenerator.com/it',
     },
   },
   icons: {
@@ -96,7 +97,7 @@ export default async function RootLayout({
       '@type': 'ContactPoint',
       email: 'jahnke.kaleb@gmail.com',
       contactType: 'customer support',
-      availableLanguage: ['German', 'English', 'French', 'Spanish'],
+      availableLanguage: ['German', 'English', 'French', 'Spanish', 'Italian'],
     },
     founder: {
       '@type': 'Person',

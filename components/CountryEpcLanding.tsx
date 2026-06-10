@@ -8,7 +8,15 @@ export interface CountryBank {
   app: string;
 }
 
-type LandingLocale = 'en' | 'fr' | 'es';
+type LandingLocale = 'de' | 'en' | 'fr' | 'es' | 'it';
+
+function localeHomeHref(locale: LandingLocale): string {
+  return locale === 'de' ? '/' : `/${locale}`;
+}
+
+function localePageUrl(locale: LandingLocale, slug: string): string {
+  return locale === 'de' ? `${BASE_URL}/${slug}` : `${BASE_URL}/${locale}/${slug}`;
+}
 
 export interface CountryEpcContent {
   slug: string;
@@ -38,21 +46,27 @@ export interface CountryEpcContent {
 }
 
 const HOME_LABELS: Record<LandingLocale, string> = {
+  de: 'Startseite',
   en: 'Home',
   fr: 'Accueil',
   es: 'Inicio',
+  it: 'Home',
 };
 
 const SHORT_ANSWER_LABELS: Record<LandingLocale, string> = {
+  de: 'Kurzantwort',
   en: 'Short Answer',
   fr: 'Réponse courte',
   es: 'Respuesta breve',
+  it: 'Risposta breve',
 };
 
 const RELATED_LABELS: Record<LandingLocale, string> = {
+  de: 'Verwandte Artikel',
   en: 'Related Articles',
   fr: 'Articles connexes',
   es: 'Artículos relacionados',
+  it: 'Articoli correlati',
 };
 
 export function CountryEpcLanding({ content }: { content: CountryEpcContent }) {
@@ -60,8 +74,9 @@ export function CountryEpcLanding({ content }: { content: CountryEpcContent }) {
   const homeLabel = content.homeLabel ?? HOME_LABELS[locale];
   const shortAnswerLabel = content.shortAnswerLabel ?? SHORT_ANSWER_LABELS[locale];
   const relatedLabel = content.relatedArticlesLabel ?? RELATED_LABELS[locale];
-  const ctaHref = content.ctaHref ?? `/${locale}`;
-  const pageUrl = `${BASE_URL}/${locale}/${content.slug}`;
+  const homeHref = localeHomeHref(locale);
+  const ctaHref = content.ctaHref ?? homeHref;
+  const pageUrl = localePageUrl(locale, content.slug);
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -94,7 +109,7 @@ export function CountryEpcLanding({ content }: { content: CountryEpcContent }) {
         '@type': 'ListItem',
         position: 1,
         name: homeLabel,
-        item: `${BASE_URL}/${locale}`,
+        item: `${BASE_URL}${homeHref}`,
       },
       {
         '@type': 'ListItem',
@@ -124,7 +139,7 @@ export function CountryEpcLanding({ content }: { content: CountryEpcContent }) {
           <nav aria-label="Breadcrumb" className="mb-6 text-xs text-slate-500">
             <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
               <li>
-                <Link href={`/${locale}`} className="text-sky-400 hover:text-sky-300">
+                <Link href={homeHref} className="text-sky-400 hover:text-sky-300">
                   {homeLabel}
                 </Link>
               </li>
@@ -259,7 +274,7 @@ export function CountryEpcLanding({ content }: { content: CountryEpcContent }) {
 }
 
 export function countryAlternates(slug: string, locale: LandingLocale = 'en') {
-  const canonical = `${BASE_URL}/${locale}/${slug}`;
+  const canonical = localePageUrl(locale, slug);
   return {
     canonical,
     languages: { [locale]: canonical },

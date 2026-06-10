@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 const BASE = 'https://www.girocodegenerator.com';
-const LOCALES = ['en', 'fr', 'es'] as const;
+const LOCALES = ['en', 'fr', 'es', 'it'] as const;
 const BANKS = [
   'sparkasse',
   'volksbank',
@@ -77,6 +77,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry('/en', 0.9, 'monthly', now),
     entry('/fr', 0.9, 'monthly', now),
     entry('/es', 0.9, 'monthly', now),
+    entry('/it', 0.9, 'monthly', now),
+
+    // ── Transaktionale Landingpages (EN) ───────────────────────────────────
+    entry('/en/create-epc-qr-code', 0.9, 'monthly', now),
+    entry('/en/generate-sepa-qr-code', 0.9, 'monthly', now),
+    entry('/en/free-sepa-qr-code', 0.9, 'monthly', now),
+    entry('/en/sepa-qr-code-generator-online', 0.9, 'monthly', now),
+    entry('/en/epc-qr-code-uk', 0.9, 'monthly', now),
+    entry('/en/epc-qr-code-ireland', 0.9, 'monthly', now),
+    entry('/en/mandatory-sepa-qr-invoice', 0.9, 'monthly', now),
+
+    // ── Transaktionale Landingpages (FR) ───────────────────────────────────
+    entry('/fr/creer-code-qr-epc', 0.9, 'monthly', now),
+    entry('/fr/generateur-qr-virement-sepa', 0.9, 'monthly', now),
+    entry('/fr/qr-code-sepa-gratuit', 0.9, 'monthly', now),
+    entry('/fr/facture-electronique-qr-obligatoire', 0.9, 'monthly', now),
+
+    // ── Transaktionale Landingpages (ES) ───────────────────────────────────
+    entry('/es/crear-codigo-qr-epc', 0.9, 'monthly', now),
+    entry('/es/generador-qr-transferencia-sepa', 0.9, 'monthly', now),
+    entry('/es/codigo-qr-sepa-gratis', 0.9, 'monthly', now),
+    entry('/es/factura-electronica-qr-obligatorio', 0.9, 'monthly', now),
+
+    // ── Italienische Landingpages ──────────────────────────────────────────
+    entry('/it/generatore-qr-epc', 0.8, 'monthly', now),
+    entry('/it/codice-qr-sepa-gratis', 0.8, 'monthly', now),
+    entry('/it/qr-code-fattura-sepa', 0.8, 'monthly', now),
+    entry('/it/banche-italiane-qr-epc', 0.8, 'monthly', now),
+
+    // ── ViDA Pflicht (DE) ──────────────────────────────────────────────────
+    entry('/sepa-qr-pflicht', 0.8, 'monthly', now),
 
     // ── Rechnungs-Editor ───────────────────────────────────────────────────
     entry('/rechnungs-editor', 0.9, 'monthly', now),

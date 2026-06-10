@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-type Locale = 'de' | 'en' | 'fr' | 'es';
+type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
 const i18n: Record<
   Locale,
@@ -61,6 +61,17 @@ const i18n: Record<
     hoursLabel: 'h.',
     daysLabel: 'día(s) laborable(s)',
     invoicesUnit: 'facturas',
+  },
+  it: {
+    title: 'Quanto tempo risparmi con GiroCode?',
+    question: 'Quante fatture emetti al mese?',
+    perMonth: 'Tempo risparmiato / mese',
+    perYear: 'Tempo risparmiato / anno',
+    workdays: 'Equivale a',
+    minutesLabel: 'min.',
+    hoursLabel: 'ore',
+    daysLabel: 'giorno/i lavorativo/i',
+    invoicesUnit: 'fatture',
   },
 };
 

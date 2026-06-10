@@ -5,12 +5,13 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ProductHuntBadge } from './ProductHuntBadge';
 
-type Locale = 'de' | 'en' | 'fr' | 'es';
+type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
 function getLocalePrefix(pathname: string): string {
   if (pathname === '/en' || pathname.startsWith('/en/')) return '/en';
   if (pathname === '/fr' || pathname.startsWith('/fr/')) return '/fr';
   if (pathname === '/es' || pathname.startsWith('/es/')) return '/es';
+  if (pathname === '/it' || pathname.startsWith('/it/')) return '/it';
   return '';
 }
 
@@ -18,6 +19,7 @@ function getLocale(pathname: string): Locale {
   if (pathname === '/en' || pathname.startsWith('/en/')) return 'en';
   if (pathname === '/fr' || pathname.startsWith('/fr/')) return 'fr';
   if (pathname === '/es' || pathname.startsWith('/es/')) return 'es';
+  if (pathname === '/it' || pathname.startsWith('/it/')) return 'it';
   return 'de';
 }
 
@@ -64,6 +66,17 @@ const useCaseLabels: Record<Locale, { heading: string; items: { slug: string; la
       { slug: '/spenden', label: 'Donaciones' },
       { slug: '/kleinunternehmen', label: 'Pequeñas Empresas' },
       { slug: '/privatverkauf', label: 'Ventas Privadas' },
+    ],
+  },
+  it: {
+    heading: 'Casi d\'uso',
+    items: [
+      { slug: '/freelancer', label: 'Freelancer' },
+      { slug: '/verein', label: 'Associazioni' },
+      { slug: '/handwerker', label: 'Artigiani' },
+      { slug: '/spenden', label: 'Donazioni' },
+      { slug: '/kleinunternehmen', label: 'Piccole Imprese' },
+      { slug: '/privatverkauf', label: 'Vendite Private' },
     ],
   },
 };
@@ -135,7 +148,7 @@ export function Footer() {
               API-Docs
             </Link>
             <Link href={`${prefix}/api-access`} className="hover:text-slate-200 hover:underline">
-              {locale === 'en' ? 'API Access' : locale === 'fr' ? 'Accès API' : locale === 'es' ? 'Acceso API' : 'API-Zugang'}
+              {locale === 'en' ? 'API Access' : locale === 'fr' ? 'Accès API' : locale === 'es' ? 'Acceso API' : locale === 'it' ? 'Accesso API' : 'API-Zugang'}
             </Link>
           </div>
         </div>

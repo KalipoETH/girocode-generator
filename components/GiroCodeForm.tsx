@@ -6,8 +6,9 @@ import { QRPreview, QRStatusType } from './QRPreview';
 import { en } from '../lib/translations/en';
 import { fr } from '../lib/translations/fr';
 import { es } from '../lib/translations/es';
+import { it } from '../lib/translations/it';
 
-type Locale = 'de' | 'en' | 'fr' | 'es';
+type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
 interface GiroCodeFormState {
   name: string;
@@ -88,6 +89,28 @@ function getTexts(locale: Locale) {
         'Error al generar el GiroCode. Por favor, comprueba los datos introducidos.',
       ibanPlaceholder: 'ES12 3456 7890 1234 5678 9012',
       bicPlaceholder: 'BANKESMMXXX',
+    };
+  }
+
+  if (locale === 'it') {
+    return {
+      badge: it.hero.badge,
+      title: it.hero.title,
+      description:
+        'Genera un GiroCode conforme SEPA (EPC-QR) direttamente nel browser. Ideale per fatture, donazioni o moduli di pagamento.',
+      nameLabel: 'Beneficiario (Nome)',
+      ibanLabel: 'IBAN',
+      bicLabel: 'BIC (opzionale)',
+      amountLabel: 'Importo (EUR)',
+      purposeLabel: 'Causale (max. 140 caratteri)',
+      purposeCounter: (len: number) => `${len}/140 caratteri`,
+      generateButton: 'Genera GiroCode',
+      requiredError: 'Inserisci nome, IBAN e importo.',
+      ibanInvalid: it.form.ibanInvalid,
+      generateSuccess: it.qr.success,
+      generateError: 'Errore durante la generazione del GiroCode. Controlla i dati inseriti.',
+      ibanPlaceholder: 'IT60 X054 2811 1010 0000 0123 456',
+      bicPlaceholder: 'BANKITMMXXX',
     };
   }
 

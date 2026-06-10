@@ -9,6 +9,7 @@ export function proxy(request: NextRequest) {
   if (pathname.startsWith('/en/') || pathname === '/en') locale = 'en';
   else if (pathname.startsWith('/fr/') || pathname === '/fr') locale = 'fr';
   else if (pathname.startsWith('/es/') || pathname === '/es') locale = 'es';
+  else if (pathname.startsWith('/it/') || pathname === '/it') locale = 'it';
 
   response.headers.set('x-locale', locale);
   return response;

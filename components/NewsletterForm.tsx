@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-type Locale = 'de' | 'en' | 'fr' | 'es';
+type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
 const CONTENT: Record<
   Locale,
@@ -112,6 +112,28 @@ const CONTENT: Record<
     privacyHref: '/es/datenschutz',
     unsubscribe: 'Cancela cuando quieras.',
   },
+  it: {
+    badge: '📧 Newsletter Gratuito',
+    headline: 'Consigli Freelance & Nuove Funzioni',
+    description:
+      'Ricevi mensilmente modelli di fatture gratuiti, consigli fiscali e aggiornamenti sulle nuove funzioni. Niente spam, cancellazione in qualsiasi momento.',
+    benefits: [
+      { icon: '📄', title: 'Modelli gratuiti', sub: 'Nuovi modelli di fatture ogni mese' },
+      { icon: '💡', title: 'Consigli Freelance', sub: 'Fiscalità e contabilità semplificate' },
+      { icon: '🚀', title: 'Nuove funzioni', sub: 'Scopri per primo gli aggiornamenti' },
+    ],
+    namePlaceholder: 'Il tuo nome (opzionale)',
+    emailPlaceholder: 'tua@email.it',
+    buttonDefault: 'Iscriviti gratis →',
+    buttonLoading: 'Iscrizione in corso...',
+    successMsg: '✅ Iscrizione riuscita! Controlla la tua casella email.',
+    existingMsg: 'Sei già iscritto! 😊',
+    errorMsg: '❌ Errore. Riprova.',
+    consent: 'Iscrivendoti accetti di ricevere email.',
+    privacyLabel: 'Informativa privacy.',
+    privacyHref: '/it/datenschutz',
+    unsubscribe: 'Cancellazione in qualsiasi momento.',
+  },
 };
 
 const API_ACCESS_CONTENT: Record<
@@ -200,6 +222,23 @@ const API_ACCESS_CONTENT: Record<
     privacyLabel: 'Política de privacidad.',
     privacyHref: '/es/datenschutz',
     unsubscribe: 'Cancela cuando quieras.',
+  },
+  it: {
+    badge: '🚀 Accesso Beta',
+    headline: 'Registrati per l\'accesso API',
+    description:
+      'Inserisci la tua email e ricevi:\n✅ Accesso anticipato all\'API (Beta)\n✅ Chiave API quando disponibile\n✅ Aggiornamenti mensili e nuove funzioni',
+    namePlaceholder: 'Il tuo nome (opzionale)',
+    emailPlaceholder: 'tua@email.it',
+    buttonDefault: 'Ottieni accesso API →',
+    buttonLoading: 'Iscrizione in corso...',
+    successMsg: '✅ Iscrizione riuscita! Controlla la tua casella email.',
+    existingMsg: 'Sei già iscritto! 😊',
+    errorMsg: '❌ Errore. Riprova.',
+    consent: 'Iscrivendoti accetti di ricevere email.',
+    privacyLabel: 'Informativa privacy.',
+    privacyHref: '/it/datenschutz',
+    unsubscribe: 'Cancellazione in qualsiasi momento.',
   },
 };
 

@@ -5,10 +5,11 @@ import QRCode from 'qrcode';
 import { en } from '../lib/translations/en';
 import { fr } from '../lib/translations/fr';
 import { es } from '../lib/translations/es';
+import { it } from '../lib/translations/it';
 
 export type QRStatusType = 'success' | 'error' | null;
 
-type Locale = 'de' | 'en' | 'fr' | 'es';
+type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
 export interface QRPreviewProps {
   locale: Locale;
@@ -107,6 +108,29 @@ function getTexts(locale: Locale): QRTexts {
       nlDisclaimer: 'Sin spam · Cancelar en cualquier momento',
       nlDone: '🎉 ¡Genial! Revisa tu bandeja de entrada.',
       nlError: 'Error. Por favor, inténtalo de nuevo.',
+    };
+  }
+
+  if (locale === 'it') {
+    return {
+      heading: it.qr.title,
+      helper: it.qr.tip,
+      fallbackLabel: it.qr.fallback,
+      fallbackWarning: 'Attenzione: i dati di pagamento vengono trasmessi al servizio esterno.',
+      emptyText: 'Nessun GiroCode generato. Inserisci i dati di pagamento e clicca su "Genera GiroCode".',
+      reset: 'Reimposta',
+      externalAlt: 'GiroCode tramite servizio QR esterno',
+      download: 'Scarica QR Code ↓',
+      downloadHint: 'Formato PNG · ottimizzato per stampa e digitale',
+      sealTitle: 'Safe-Pay verificato',
+      sealSubtitle: 'IBAN verificato · Conforme EPC · Generato localmente',
+      nlSuccess: '✅ PDF creato con successo!',
+      nlTeaser: '💡 Vuoi modelli di fattura gratuiti ogni mese?',
+      nlPlaceholder: 'tua@email.it',
+      nlButton: 'Ottienili ora →',
+      nlDisclaimer: 'Niente spam · Cancellazione in qualsiasi momento',
+      nlDone: '🎉 Ottimo! Controlla la tua casella email.',
+      nlError: 'Errore. Riprova.',
     };
   }
 

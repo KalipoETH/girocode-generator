@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       'en': 'https://www.girocodegenerator.com/en',
       'fr': 'https://www.girocodegenerator.com/fr',
       'es': 'https://www.girocodegenerator.com/es',
+      'it': 'https://www.girocodegenerator.com/it',
     },
   },
 };
