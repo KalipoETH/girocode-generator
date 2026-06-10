@@ -23,8 +23,8 @@ export default function WissenBankingAppsPage() {
     <KnowledgeLayout
       breadcrumbCurrent="Banking-Apps mit GiroCode"
       badge="Praxis · Banking-Apps mit GiroCode"
-      title="Banking-Apps mit GiroCode-Support – Vollständige Übersicht 2025"
-      lead="Fast alle deutschen Banking-Apps unterstützen GiroCodes (SEPA-QR): Sparkasse App, VR-Banking (Volksbank/Raiffeisenbank), ING Banking to go, DKB Banking, Commerzbank App, Deutsche Bank Mobile, N26, Postbank Finanzassistent, Comdirect und Targobank Mobile Banking. Der QR-Scanner findet sich in allen Apps unter dem Menüpunkt 'Überweisung' oder 'Überweisen'. Die gesamte Scan-bis-Bestätigung dauert unter 30 Sekunden."
+      title="Banking-Apps mit GiroCode-Support – Vollständige Übersicht 2026"
+      lead="Fast alle deutschen Banking-Apps unterstützen GiroCodes (SEPA-QR): Sparkasse App, VR-Banking (Volksbank/Raiffeisenbank), ING Banking to go, DKB Banking, Commerzbank App, Deutsche Bank Mobile, N26, Postbank Finanzassistent, Comdirect und Targobank Mobile Banking. Auch viele österreichische und Schweizer Banken unterstützen den EPC-Standard. Der QR-Scanner findet sich in allen Apps unter dem Menüpunkt 'Überweisung' oder 'Überweisen'. Die gesamte Scan-bis-Bestätigung dauert unter 30 Sekunden."
       relatedArticles={[
         { href: '/wissen/scannen', label: 'GiroCode scannen – Anleitung für iPhone & Android' },
         { href: '/wissen/girocode', label: 'Was ist ein GiroCode?' },
@@ -36,7 +36,7 @@ export default function WissenBankingAppsPage() {
       locale="de"
       shortAnswer="Fast alle deutschen Banking-Apps unterstützen GiroCodes (SEPA-QR): Sparkasse App, VR-Banking (Volksbank/Raiffeisenbank), ING Banking to go, DKB Banking, Commerzbank App, Deutsche Bank Mobile, N26, Postbank Finanzassistent, Comdirect und Targobank Mobile Banking. Der QR-Scanner findet sich in allen Apps unter dem Menüpunkt 'Überweisung' oder 'Überweisen'. Die gesamte Scan-bis-Bestätigung dauert unter 30 Sekunden."
       statsData={[
-        { value: '12+', label: 'Unterstützte deutsche Banking-Apps' },
+        { value: '30+', label: 'Unterstützte Banking-Apps (DE/AT/CH)' },
         { value: '30 Sek.', label: 'Scan bis Bestätigung' },
         { value: '2016', label: 'Flächendeckende App-Unterstützung' },
         { value: '100%', label: 'Kostenlos für Nutzer' },
@@ -47,7 +47,7 @@ export default function WissenBankingAppsPage() {
         <h2 id="apps">Welche Banking-Apps unterstützen GiroCodes?</h2>
         <p>
           Die Unterstützung von GiroCodes ist keine gesetzliche Pflicht, sondern eine
-          Komfortfunktion jeder Bank. Stand 2025 haben die meisten großen deutschen
+          Komfortfunktion jeder Bank. Stand 2026 haben die meisten großen deutschen
           Kreditinstitute einen QR-Scanner in ihre Apps integriert. Hier ist ein Überblick:
         </p>
         <p>
@@ -378,9 +378,9 @@ export default function WissenBankingAppsPage() {
         </p>
       </section>
 
-      {/* ─── SECTION 8b: Detaillierte Anleitungen ─── */}
+      {/* ─── SECTION 8b: Detaillierte Anleitungen (Deutschland) ─── */}
       <section aria-labelledby="anleitungen" className="mt-8">
-        <h2 id="anleitungen">Detaillierte Anleitungen – nach Banking-App</h2>
+        <h2 id="anleitungen">Detaillierte Anleitungen – Deutsche Banking-Apps</h2>
         <p>
           Du möchtest die genauen Schritte für deine Banking-App nachlesen? Wir haben für alle
           großen deutschen Banken eine eigene Schritt-für-Schritt-Anleitung erstellt:
@@ -398,6 +398,77 @@ export default function WissenBankingAppsPage() {
             { href: '/targobank', label: 'GiroCode mit Targobank scannen', app: 'TARGOBANK Mobile Banking' },
             { href: '/n26', label: 'GiroCode mit N26 scannen', app: 'N26 App' },
             { href: '/comdirect', label: 'GiroCode mit Comdirect scannen', app: 'comdirect App' },
+            { href: '/hypovereinsbank', label: 'GiroCode mit HypoVereinsbank scannen', app: 'HVB MobileBanking' },
+            { href: '/santander', label: 'GiroCode mit Santander scannen', app: 'Santander Banking App' },
+            { href: '/hamburger-sparkasse', label: 'GiroCode mit Hamburger Sparkasse scannen', app: 'Haspa App' },
+            { href: '/berliner-sparkasse', label: 'GiroCode mit Berliner Sparkasse scannen', app: 'Sparkassen-App' },
+            { href: '/sparkasse-koeln-bonn', label: 'GiroCode mit Sparkasse KölnBonn scannen', app: 'Sparkassen-App' },
+            { href: '/volksbank-raiffeisenbank', label: 'GiroCode mit Volksbank Raiffeisenbank scannen', app: 'VR-Banking App' },
+            { href: '/kreissparkasse', label: 'GiroCode mit Kreissparkasse scannen', app: 'Sparkassen-App' },
+            { href: '/stadtsparkasse', label: 'GiroCode mit Stadtsparkasse scannen', app: 'Sparkassen-App' },
+          ].map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="group flex flex-col rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-3 text-sm transition-all duration-200 hover:bg-[#1a1d25] hover:border-emerald-500/25 hover:-translate-y-0.5"
+            >
+              <span className="font-medium text-[#e8eaf0] group-hover:text-white">{item.label}</span>
+              <span className="mt-0.5 text-xs text-slate-500">{item.app}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* ─── SECTION 8c: Österreichische Banken ─── */}
+      <section aria-labelledby="oesterreich" className="mt-8">
+        <h2 id="oesterreich">Österreichische Banken – GiroCode-Support</h2>
+        <p>
+          Auch österreichische Banking-Apps unterstützen den EPC-konformen SEPA-QR-Code (GiroCode).
+          Der Standard ist in Deutschland und Österreich identisch – GiroCodes können problemlos
+          über Ländergrenzen hinweg verwendet werden.
+        </p>
+
+        <div className="not-prose my-6 grid gap-3 sm:grid-cols-2">
+          {[
+            { href: '/erste-bank', label: 'GiroCode mit Erste Bank / George scannen', app: 'George App (Erste Bank & s Sparkasse AT)' },
+            { href: '/raiffeisen-oesterreich', label: 'GiroCode mit Raiffeisen Österreich scannen', app: 'Raiffeisen ELBA-App' },
+            { href: '/bank-austria', label: 'GiroCode mit Bank Austria scannen', app: 'MobileBanking App (UniCredit)' },
+            { href: '/bawag', label: 'GiroCode mit BAWAG scannen', app: 'BAWAG Mobile Banking' },
+            { href: '/volksbank-oesterreich', label: 'GiroCode mit Volksbank Österreich scannen', app: 'VB-Banking App' },
+            { href: '/hypo-oesterreich', label: 'GiroCode mit Hypo Tirol/Vorarlberg/NÖ scannen', app: 'Hypo Banking App' },
+            { href: '/oberbank', label: 'GiroCode mit Oberbank scannen', app: 'Oberbank Mobile Banking' },
+            { href: '/bks-bank', label: 'GiroCode mit BKS Bank scannen', app: 'BKS Mobile Banking' },
+          ].map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="group flex flex-col rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-3 text-sm transition-all duration-200 hover:bg-[#1a1d25] hover:border-emerald-500/25 hover:-translate-y-0.5"
+            >
+              <span className="font-medium text-[#e8eaf0] group-hover:text-white">{item.label}</span>
+              <span className="mt-0.5 text-xs text-slate-500">{item.app}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* ─── SECTION 8d: Schweizer Banken ─── */}
+      <section aria-labelledby="schweiz" className="mt-8">
+        <h2 id="schweiz">Schweizer Banken – SEPA-QR / GiroCode</h2>
+        <p>
+          Die Schweiz nutzt für <strong>inländische Zahlungen</strong> die QR-Rechnung
+          (Swiss QR Bill), nicht den deutschen GiroCode. Für <strong>SEPA-Auslandsüberweisungen</strong>{' '}
+          in den europäischen Raum unterstützen jedoch alle großen Schweizer Banken den
+          EPC-konformen SEPA-QR-Code (GiroCode).
+        </p>
+
+        <div className="not-prose my-6 grid gap-3 sm:grid-cols-2">
+          {[
+            { href: '/ubs', label: 'GiroCode mit UBS scannen', app: 'UBS Mobile Banking' },
+            { href: '/zuercher-kantonalbank', label: 'GiroCode mit Zürcher Kantonalbank scannen', app: 'ZKB Mobile Banking' },
+            { href: '/raiffeisen-schweiz', label: 'GiroCode mit Raiffeisen Schweiz scannen', app: 'Raiffeisen E-Banking App (CH)' },
+            { href: '/postfinance', label: 'GiroCode mit PostFinance scannen', app: 'PostFinance App' },
+            { href: '/credit-suisse-ubs', label: 'GiroCode nach Credit Suisse Integration', app: 'UBS Mobile Banking (ehem. Credit Suisse)' },
+            { href: '/cantonal-banks', label: 'GiroCode mit Schweizer Kantonalbanken', app: 'Kantonalbank Mobile Apps – Übersicht' },
           ].map((item) => (
             <a
               key={item.href}

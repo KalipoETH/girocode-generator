@@ -108,7 +108,15 @@ const nextConfig: NextConfig = {
   },
 
   async redirects() {
-    return bankRedirects;
+    return [
+      // /ing-diba → /ing (308 Permanent Redirect)
+      {
+        source: '/ing-diba',
+        destination: '/ing',
+        permanent: true,
+      },
+      ...bankRedirects,
+    ];
   },
 };
 

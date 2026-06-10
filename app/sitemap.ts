@@ -14,6 +14,40 @@ const BANKS = [
   'n26',
   'comdirect',
 ] as const;
+
+const BANKS_AT = [
+  'erste-bank',
+  'raiffeisen-oesterreich',
+  'bank-austria',
+  'bawag',
+  'volksbank-oesterreich',
+  'hypo-oesterreich',
+  'oberbank',
+  'bks-bank',
+] as const;
+
+const BANKS_CH = [
+  'ubs',
+  'zuercher-kantonalbank',
+  'raiffeisen-schweiz',
+  'postfinance',
+  'credit-suisse-ubs',
+  'cantonal-banks',
+] as const;
+
+const BANKS_DE_REGIONAL = [
+  'hamburger-sparkasse',
+  'berliner-sparkasse',
+  'sparkasse-koeln-bonn',
+  'ostsaechsische-sparkasse',
+  'kreissparkasse',
+  'volksbank-raiffeisenbank',
+  'stadtsparkasse',
+  'ing-diba',
+  'hypovereinsbank',
+  'santander',
+] as const;
+
 const USE_CASES = [
   'freelancer',
   'verein',
@@ -192,6 +226,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...BANKS.flatMap((bank) =>
       LOCALES.map((locale) => entry(`/${locale}/${bank}`, 0.6, 'monthly', now))
     ),
+
+    // ── Bank-Landingpages (AT) ─────────────────────────────────────────────
+    ...BANKS_AT.map((bank) => entry(`/${bank}`, 0.7, 'monthly', now)),
+
+    // ── Bank-Landingpages (CH) ─────────────────────────────────────────────
+    ...BANKS_CH.map((bank) => entry(`/${bank}`, 0.7, 'monthly', now)),
+
+    // ── Bank-Landingpages (DE Regional) ───────────────────────────────────
+    ...BANKS_DE_REGIONAL.map((bank) => entry(`/${bank}`, 0.7, 'monthly', now)),
 
     // ── Use-Case Landingpages (DE) ─────────────────────────────────────────
     ...USE_CASES.map((useCase) => entry(`/${useCase}`, 0.8, 'monthly', now)),
