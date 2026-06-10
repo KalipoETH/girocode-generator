@@ -375,6 +375,38 @@ export default function HomePageFr() {
           </div>
         </section>
 
+        {/* Code QR EPC par pays */}
+        <section aria-labelledby="country-section-fr" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.15s' }}>
+          <div className="space-y-1">
+            <h2 id="country-section-fr" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+              Code QR EPC par pays
+            </h2>
+            <p className="text-sm text-[#8b90a0]">Guides par pays pour les codes QR EPC / virements SEPA</p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { flag: '🇫🇷', name: 'France', slug: '/fr/code-qr-epc-france' },
+              { flag: '🇧🇪', name: 'Belgique', slug: '/fr/code-qr-epc-belgique' },
+              { flag: '🇱🇺', name: 'Luxembourg', slug: '/fr/code-qr-epc-luxembourg' },
+              { flag: '🇨🇭', name: 'Suisse', slug: '/fr/code-qr-epc-suisse' },
+            ].map((country) => (
+              <Link
+                key={country.slug}
+                href={country.slug}
+                className="group flex items-center justify-between rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-3 transition-all duration-200 hover:border-emerald-500/40 hover:bg-[#1a1d25]"
+              >
+                <div>
+                  <p className="text-[14px] font-bold text-[#e8eaf0]">
+                    <span aria-hidden>{country.flag}</span> {country.name}
+                  </p>
+                  <p className="text-[11px] text-[#8b90a0]">Guide code QR EPC</p>
+                </div>
+                <span className="text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* Banques */}
         <section aria-labelledby="bank-section-fr" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.2s' }}>
           <div className="space-y-1">

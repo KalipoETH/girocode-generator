@@ -92,6 +92,14 @@ export const es = {
         a: 'Sí. Todos los datos se procesan exclusivamente de forma local en tu navegador. Tu IBAN, el importe y el concepto nunca abandonan tu ordenador. No se realiza ninguna transmisión a nuestros servidores.',
       },
       {
+        q: '¿Funciona el código QR EPC en España?',
+        a: 'Sí. España forma parte de la zona SEPA y las principales apps bancarias españolas (CaixaBank, BBVA, Santander) soportan el código QR EPC para transferencias SEPA.',
+      },
+      {
+        q: '¿Es lo mismo GiroCode que código QR EPC?',
+        a: 'Sí. GiroCode es el nombre comercial alemán del código QR EPC. En Austria se llama Stuzza QR, en España simplemente código QR EPC o QR SEPA. Todos siguen el mismo estándar EPC069-12.',
+      },
+      {
         q: '¿Qué datos se almacenan en un GiroCode?',
         a: 'Un GiroCode contiene: nombre del beneficiario, IBAN, BIC (opcional), importe (opcional, p. ej. EUR49.90) y un concepto de pago (opcional, máx. 140 caracteres). No se almacenan datos personales del pagador.',
       },

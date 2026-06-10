@@ -117,6 +117,22 @@ export const en = {
         q: 'Can someone use my GiroCode to debit money from my account?',
         a: 'No. A GiroCode is a payment request, not a direct debit mandate. Only the payer can actively initiate a transfer and must confirm it with a TAN or biometrics. Knowing your IBAN does not allow anyone to debit money.',
       },
+      {
+        q: 'Which countries use EPC QR codes?',
+        a: 'EPC QR codes are actively used in Germany (called GiroCode), Austria (called Stuzza QR), Belgium, the Netherlands, and Finland. The EPC069-12 standard is valid across all 36 SEPA countries, meaning any European bank account can receive payments via EPC QR code.',
+      },
+      {
+        q: 'Is EPC QR code the same as GiroCode?',
+        a: "Yes. GiroCode is the German brand name for the EPC QR code. In Austria it's called Stuzza QR, in Belgium and the Netherlands it's simply called EPC QR code or SEPA QR code. All refer to the same EPC069-12 standard by the European Payments Council.",
+      },
+      {
+        q: 'Can I use EPC QR codes outside Germany?',
+        a: 'Yes. EPC QR codes work across all 36 SEPA countries. They are particularly common in Austria, Belgium, Netherlands, and Finland. Any banking app that supports SEPA Credit Transfers can scan EPC QR codes.',
+      },
+      {
+        q: 'What is the difference between EPC QR code and iDEAL?',
+        a: 'iDEAL is a Dutch online payment system requiring an online checkout integration. EPC QR codes are offline-first: they work on printed invoices, posters, and PDFs without any online integration. For SEPA bank transfers, EPC QR codes are simpler and free.',
+      },
     ],
   },
   // Footer

@@ -375,6 +375,35 @@ export default function HomePageEs() {
           </div>
         </section>
 
+        {/* Código QR EPC por país */}
+        <section aria-labelledby="country-section-es" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.15s' }}>
+          <div className="space-y-1">
+            <h2 id="country-section-es" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+              Código QR EPC por país
+            </h2>
+            <p className="text-sm text-[#8b90a0]">Guías por país para códigos QR EPC / transferencias SEPA</p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { flag: '🇪🇸', name: 'España', slug: '/es/codigo-qr-epc-espana' },
+            ].map((country) => (
+              <Link
+                key={country.slug}
+                href={country.slug}
+                className="group flex items-center justify-between rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-3 transition-all duration-200 hover:border-emerald-500/40 hover:bg-[#1a1d25]"
+              >
+                <div>
+                  <p className="text-[14px] font-bold text-[#e8eaf0]">
+                    <span aria-hidden>{country.flag}</span> {country.name}
+                  </p>
+                  <p className="text-[11px] text-[#8b90a0]">Guía código QR EPC</p>
+                </div>
+                <span className="text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* Bancos */}
         <section aria-labelledby="bank-section-es" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.2s' }}>
           <div className="space-y-1">

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
@@ -376,6 +377,37 @@ export default function WissenGirocodePageEn() {
               <span className="mt-1 text-xs text-[#8b90a0]">{card.desc}</span>
               <span className="mt-3 text-xs text-[#22c55e]">See comparison →</span>
             </a>
+          ))}
+        </div>
+      </section>
+
+      <section aria-labelledby="country-girocode" className="not-prose mt-10">
+        <h2 id="country-girocode" className="mb-4 text-xl font-bold text-[#e8eaf0]">
+          EPC QR Codes by Country
+        </h2>
+        <p className="mb-4 text-sm text-slate-400">
+          The GiroCode / EPC QR standard is used across Europe. Explore country-specific guides:
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            { flag: '🇩🇪', name: 'Germany (GiroCode)', href: '/en/wissen/girocode' },
+            { flag: '🇦🇹', name: 'Austria (Stuzza QR)', href: '/en/epc-qr-code-austria' },
+            { flag: '🇧🇪', name: 'Belgium', href: '/en/epc-qr-code-belgium' },
+            { flag: '🇳🇱', name: 'Netherlands', href: '/en/epc-qr-code-netherlands' },
+            { flag: '🇫🇮', name: 'Finland', href: '/en/epc-qr-code-finland' },
+          ].map((c) => (
+            <Link
+              key={c.href}
+              href={c.href}
+              className="group flex items-center justify-between rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-3.5 text-sm font-medium text-[#9aa1b6] transition-all duration-200 hover:border-emerald-500/30 hover:bg-[#1a1d25] hover:text-[#e8eaf0]"
+            >
+              <span>
+                <span aria-hidden>{c.flag}</span> {c.name}
+              </span>
+              <span className="ml-3 shrink-0 text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">
+                →
+              </span>
+            </Link>
           ))}
         </div>
       </section>

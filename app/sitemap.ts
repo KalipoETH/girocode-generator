@@ -252,10 +252,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Internationale Keyword-Landingpages ────────────────────────────────
     entry('/en/epc-qr-code-generator', 0.8, 'monthly', now),
     entry('/en/sepa-payment-qr-code', 0.8, 'monthly', now),
+
+    // ── English Country EPC QR Pages ───────────────────────────────────────
+    entry('/en/epc-qr-code-belgium', 0.8, 'monthly', now),
+    entry('/en/epc-qr-code-netherlands', 0.8, 'monthly', now),
+    entry('/en/epc-qr-code-finland', 0.8, 'monthly', now),
+    entry('/en/epc-qr-code-austria', 0.8, 'monthly', now),
+
+    // ── English Use-Case EPC QR Pages ──────────────────────────────────────
+    entry('/en/epc-qr-code-for-invoices', 0.8, 'monthly', now),
+    entry('/en/epc-qr-code-for-donations', 0.8, 'monthly', now),
+    entry('/en/epc-qr-code-for-freelancers', 0.8, 'monthly', now),
+    entry('/en/sepa-credit-transfer-qr', 0.8, 'monthly', now),
     entry('/fr/generateur-qr-code-sepa', 0.8, 'monthly', now),
     entry('/fr/qr-code-virement-bancaire', 0.8, 'monthly', now),
     entry('/es/generador-qr-sepa', 0.8, 'monthly', now),
     entry('/es/qr-transferencia-bancaria', 0.8, 'monthly', now),
+
+    // ── French Country EPC QR Pages ────────────────────────────────────────
+    entry('/fr/code-qr-epc-france', 0.8, 'monthly', now),
+    entry('/fr/code-qr-epc-belgique', 0.8, 'monthly', now),
+    entry('/fr/code-qr-epc-luxembourg', 0.8, 'monthly', now),
+    entry('/fr/code-qr-epc-suisse', 0.8, 'monthly', now),
+
+    // ── French Use-Case EPC QR Pages ─────────────────────────────────────
+    entry('/fr/code-qr-epc-facture', 0.8, 'monthly', now),
+    entry('/fr/code-qr-epc-don', 0.8, 'monthly', now),
+    entry('/fr/code-qr-sepa-freelance', 0.8, 'monthly', now),
+
+    // ── Spanish Country EPC QR Pages ─────────────────────────────────────
+    entry('/es/codigo-qr-epc-espana', 0.8, 'monthly', now),
+
+    // ── Spanish Use-Case EPC QR Pages ────────────────────────────────────
+    entry('/es/codigo-qr-epc-facturas', 0.8, 'monthly', now),
+    entry('/es/codigo-qr-sepa-autonomos', 0.8, 'monthly', now),
+    entry('/es/codigo-qr-donaciones', 0.8, 'monthly', now),
     entry('/stuzza-qr-code', 0.8, 'monthly', now),
 
     // ── Problem-Seiten / Troubleshooting ──────────────────────────────────

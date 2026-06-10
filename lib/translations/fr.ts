@@ -92,6 +92,14 @@ export const fr = {
         a: 'Oui. Toutes les données sont traitées exclusivement en local dans votre navigateur. Votre IBAN, le montant et la référence de paiement ne quittent jamais votre ordinateur. Aucune transmission à nos serveurs n\'a lieu.',
       },
       {
+        q: 'Le code QR EPC fonctionne-t-il en France ?',
+        a: 'Oui. La France fait partie de la zone SEPA et les principales banques françaises (BNP Paribas, Crédit Agricole, Société Générale) supportent le code QR EPC pour les virements SEPA.',
+      },
+      {
+        q: 'Quelle est la différence entre GiroCode et code QR EPC ?',
+        a: 'GiroCode est le nom de marque allemand du code QR EPC. En Autriche il s\'appelle Stuzza QR, en Belgique et en France c\'est simplement code QR EPC ou QR SEPA. Tous suivent le même standard EPC069-12.',
+      },
+      {
         q: 'Quelles données sont stockées dans un GiroCode ?',
         a: 'Un GiroCode contient : le nom du bénéficiaire, l\'IBAN, le BIC (optionnel), le montant (optionnel, ex. EUR49.90) et une référence de paiement (optionnelle, max. 140 caractères). Aucune donnée personnelle du payeur n\'est stockée.',
       },
