@@ -230,11 +230,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Bank-Landingpages (AT) ─────────────────────────────────────────────
     ...BANKS_AT.map((bank) => entry(`/${bank}`, 0.7, 'monthly', now)),
 
+    // ── Bank-Landingpages (AT) EN/FR/ES ───────────────────────────────────
+    ...BANKS_AT.flatMap((bank) =>
+      LOCALES.map((locale) => entry(`/${locale}/${bank}`, 0.6, 'monthly', now))
+    ),
+
     // ── Bank-Landingpages (CH) ─────────────────────────────────────────────
     ...BANKS_CH.map((bank) => entry(`/${bank}`, 0.7, 'monthly', now)),
 
+    // ── Bank-Landingpages (CH) EN/FR/ES ───────────────────────────────────
+    ...BANKS_CH.flatMap((bank) =>
+      LOCALES.map((locale) => entry(`/${locale}/${bank}`, 0.6, 'monthly', now))
+    ),
+
     // ── Bank-Landingpages (DE Regional) ───────────────────────────────────
     ...BANKS_DE_REGIONAL.map((bank) => entry(`/${bank}`, 0.7, 'monthly', now)),
+
+    // ── Bank-Landingpages (DE Regional) EN/FR/ES ──────────────────────────
+    ...BANKS_DE_REGIONAL.flatMap((bank) =>
+      LOCALES.map((locale) => entry(`/${locale}/${bank}`, 0.6, 'monthly', now))
+    ),
 
     // ── Use-Case Landingpages (DE) ─────────────────────────────────────────
     ...USE_CASES.map((useCase) => entry(`/${useCase}`, 0.8, 'monthly', now)),
