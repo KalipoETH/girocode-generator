@@ -7,7 +7,7 @@ import { EpcTechnicalImplementationSection } from './_sections/EpcTechnicalImple
 import { EpcCommonMistakesSection } from './_sections/EpcCommonMistakesSection';
 
 export const metadata: Metadata = {
-  title: 'EPC Standard Explained – SEPA QR Code Structure 2026',
+  title: 'EPC QR Code Standard (EPC069-12) – Technical Guide 2026',
   description:
     'The EPC standard for GiroCodes: payload structure line by line, versions 001/002, error correction and JavaScript code example. Technically precise.',
   alternates: {

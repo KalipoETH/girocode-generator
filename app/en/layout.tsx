@@ -2,11 +2,18 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    default: 'GiroCode Generator 2026 – Free & No Registration',
+    default: 'EPC QR Code Generator – Free GiroCode Creator | SEPA Payment QR',
     template: '%s | GiroCode Generator',
   },
   description:
-    '✅ Create GiroCode in 10 seconds – free, no registration, 100% privacy. Your banking data never leaves your browser. Create SEPA-QR now →',
+    '✅ Create EPC QR codes (GiroCode) for SEPA payments free – no registration, 100% privacy, runs in your browser. Enter IBAN → Generate QR → Done. Includes invoice PDF.',
+  keywords: [
+    'EPC QR code generator',
+    'SEPA QR code generator',
+    'EPC QR code free',
+    'GiroCode generator',
+    'SEPA payment QR code',
+  ],
   alternates: {
     canonical: 'https://www.girocodegenerator.com/en',
     languages: {

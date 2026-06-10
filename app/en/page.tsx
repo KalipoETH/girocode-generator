@@ -83,7 +83,7 @@ export default function HomePageEn() {
               className="font-bold tracking-tight text-slate-50"
               style={{ fontSize: 'clamp(32px, 5vw, 56px)', lineHeight: 1.1 }}
             >
-              GiroCode Generator
+              EPC QR Code Generator – Free SEPA Payment QR
             </h1>
             <p className="text-xl font-semibold md:text-2xl" style={{ color: '#22c55e' }}>
               SEPA-QR &amp; Invoice PDF
@@ -92,7 +92,8 @@ export default function HomePageEn() {
 
           {/* Description – hidden on mobile */}
           <p className="hidden max-w-xl text-base leading-relaxed text-slate-400 sm:block md:text-lg">
-            {en.hero.subtitle}
+            Create EPC QR codes (GiroCodes) for SEPA bank transfers in seconds – free, no
+            registration, 100% local in your browser.
           </p>
 
           {/* Trust badges – hidden on mobile */}

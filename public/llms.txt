@@ -117,3 +117,13 @@ E-Mail: jahnke.kaleb@gmail.com
 Website: https://www.girocodegenerator.com
 Impressum: https://www.girocodegenerator.com/impressum
 Datenschutz: https://www.girocodegenerator.com/datenschutz
+
+## International Keywords
+
+EN: "EPC QR code generator", "SEPA QR code",
+    "SEPA payment QR", "EPC QR code free"
+FR: "générateur QR code SEPA", "QR virement SEPA",
+    "code QR EPC gratuit"
+ES: "generador QR SEPA", "código QR transferencia SEPA",
+    "crear QR SEPA gratis"
+AT: "Stuzza QR Code", "george App GiroCode"

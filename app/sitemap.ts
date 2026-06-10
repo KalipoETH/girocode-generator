@@ -249,6 +249,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry('/fr/qr-code-ueberweisung', 0.7, 'monthly', now),
     entry('/es/qr-code-ueberweisung', 0.7, 'monthly', now),
 
+    // ── Internationale Keyword-Landingpages ────────────────────────────────
+    entry('/en/epc-qr-code-generator', 0.8, 'monthly', now),
+    entry('/en/sepa-payment-qr-code', 0.8, 'monthly', now),
+    entry('/fr/generateur-qr-code-sepa', 0.8, 'monthly', now),
+    entry('/fr/qr-code-virement-bancaire', 0.8, 'monthly', now),
+    entry('/es/generador-qr-sepa', 0.8, 'monthly', now),
+    entry('/es/qr-transferencia-bancaria', 0.8, 'monthly', now),
+    entry('/stuzza-qr-code', 0.8, 'monthly', now),
+
     // ── Problem-Seiten / Troubleshooting ──────────────────────────────────
     entry('/girocode-funktioniert-nicht', 0.7, 'monthly', now),
     entry('/en/girocode-funktioniert-nicht', 0.7, 'monthly', now),

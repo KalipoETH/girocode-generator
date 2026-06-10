@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
 
 export const metadata: Metadata = {
-  title: 'What is a GiroCode? – Explained Simply + Create for Free',
+  title: 'What is a GiroCode (EPC QR Code)? – Complete Guide 2026',
   description:
-    'GiroCode = SEPA QR code for bank transfers. What it is, how it works and how to create one free in seconds. Includes invoice PDF. No account needed.',
+    'GiroCode / EPC QR Code explained: How SEPA payment QR codes work, what data they contain, and how to create one free in seconds.',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/en/wissen/girocode',
     languages: {

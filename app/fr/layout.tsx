@@ -2,11 +2,18 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Générateur GiroCode 2026 – Gratuit & Sans Inscription',
+    default: 'Générateur QR Code SEPA – Gratuit & Sans Inscription 2026',
     template: '%s | GiroCode Generator',
   },
   description:
-    '✅ GiroCode en 10 secondes – gratuit, sans inscription, 100% confidentialité. Vos données bancaires ne quittent jamais votre navigateur →',
+    '✅ Créez un QR code SEPA (GiroCode/EPC) en 10 secondes – gratuit, sans inscription, 100% local. Compatible avec toutes les apps bancaires européennes.',
+  keywords: [
+    'générateur QR code SEPA',
+    'QR code virement SEPA gratuit',
+    'créer QR code SEPA',
+    'GiroCode générateur',
+    'code QR EPC gratuit',
+  ],
   alternates: {
     canonical: 'https://www.girocodegenerator.com/fr',
     languages: {
