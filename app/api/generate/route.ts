@@ -139,7 +139,7 @@ export async function GET(req: Request) {
     margin: 2,
   });
 
-  return NextResponse.json({
+  const response = NextResponse.json({
     success: true,
     qr_base64: qrBase64,
     epc_payload: epcPayload,
@@ -149,6 +149,21 @@ export async function GET(req: Request) {
       bic: bic || null,
       betrag: betrag || null,
       zweck: safeZweck || null,
+    },
+  });
+
+  response.headers.set('Access-Control-Allow-Origin', '*');
+  response.headers.set('Access-Control-Allow-Methods', 'GET');
+
+  return response;
+}
+
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 204,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET',
     },
   });
 }

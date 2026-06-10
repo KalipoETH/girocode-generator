@@ -223,6 +223,54 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry('/fr/fuer-entwickler', 0.6, 'monthly', now),
     entry('/es/fuer-entwickler', 0.6, 'monthly', now),
 
+    // ── Alternative Namen (GiroCode Synonyme) ─────────────────────────────
+    entry('/bezahlcode', 0.8, 'monthly', now),
+    entry('/en/bezahlcode', 0.8, 'monthly', now),
+    entry('/fr/bezahlcode', 0.7, 'monthly', now),
+    entry('/es/bezahlcode', 0.7, 'monthly', now),
+
+    entry('/sepa-qr-code', 0.8, 'monthly', now),
+    entry('/en/sepa-qr-code', 0.8, 'monthly', now),
+    entry('/fr/sepa-qr-code', 0.7, 'monthly', now),
+    entry('/es/sepa-qr-code', 0.7, 'monthly', now),
+
+    entry('/epc-qr-code', 0.8, 'monthly', now),
+    entry('/en/epc-qr-code', 0.8, 'monthly', now),
+    entry('/fr/epc-qr-code', 0.7, 'monthly', now),
+    entry('/es/epc-qr-code', 0.7, 'monthly', now),
+
+    entry('/iban-qr-code', 0.8, 'monthly', now),
+    entry('/en/iban-qr-code', 0.8, 'monthly', now),
+    entry('/fr/iban-qr-code', 0.7, 'monthly', now),
+    entry('/es/iban-qr-code', 0.7, 'monthly', now),
+
+    entry('/qr-code-ueberweisung', 0.8, 'monthly', now),
+    entry('/en/qr-code-ueberweisung', 0.7, 'monthly', now),
+    entry('/fr/qr-code-ueberweisung', 0.7, 'monthly', now),
+    entry('/es/qr-code-ueberweisung', 0.7, 'monthly', now),
+
+    // ── Problem-Seiten / Troubleshooting ──────────────────────────────────
+    entry('/girocode-funktioniert-nicht', 0.7, 'monthly', now),
+    entry('/en/girocode-funktioniert-nicht', 0.7, 'monthly', now),
+    entry('/fr/girocode-funktioniert-nicht', 0.6, 'monthly', now),
+    entry('/es/girocode-funktioniert-nicht', 0.6, 'monthly', now),
+
+    entry('/girocode-scannen-anleitung', 0.7, 'monthly', now),
+    entry('/en/girocode-scannen-anleitung', 0.7, 'monthly', now),
+    entry('/fr/girocode-scannen-anleitung', 0.6, 'monthly', now),
+    entry('/es/girocode-scannen-anleitung', 0.6, 'monthly', now),
+
+    entry('/girocode-erstellen-anleitung', 0.7, 'monthly', now),
+    entry('/en/girocode-erstellen-anleitung', 0.7, 'monthly', now),
+    entry('/fr/girocode-erstellen-anleitung', 0.6, 'monthly', now),
+    entry('/es/girocode-erstellen-anleitung', 0.6, 'monthly', now),
+
+    // ── Google Workspace Add-on ────────────────────────────────────────────
+    entry('/google-workspace-addon', 0.6, 'monthly', now),
+    entry('/en/google-workspace-addon', 0.6, 'monthly', now),
+    entry('/fr/google-workspace-addon', 0.5, 'monthly', now),
+    entry('/es/google-workspace-addon', 0.5, 'monthly', now),
+
     // ── Impressum ──────────────────────────────────────────────────────────
     entry('/impressum', 0.3, 'yearly', now),
     entry('/en/impressum', 0.3, 'yearly', now),

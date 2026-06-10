@@ -27,6 +27,7 @@ export default function WissenScannenPage() {
       title="GiroCode scannen – Die komplette Anleitung für iPhone & Android"
       lead="Um einen GiroCode zu scannen: Banking-App öffnen → 'Überweisung' antippen → QR-Scanner Symbol tippen → Code scannen → Daten prüfen (IBAN, Betrag, Zweck) → TAN eingeben → bestätigen. Der gesamte Prozess dauert unter 30 Sekunden. Funktioniert nicht? Helligkeit erhöhen, Abstand auf 15-30 cm anpassen oder den Code größer ausdrucken (mindestens 2×2 cm)."
       relatedArticles={[
+        { href: '/girocode-funktioniert-nicht', label: 'GiroCode funktioniert nicht – 7 Lösungen' },
         { href: '/wissen/banking-apps', label: 'Banking-Apps Übersicht 2025' },
         { href: '/wissen/girocode', label: 'Was ist ein GiroCode?' },
         { href: '/wissen/rechnung', label: 'GiroCode auf Rechnungen' },
@@ -552,6 +553,20 @@ export default function WissenScannenPage() {
           </div>
         </div>
       </section>
+
+      {/* Tipp-Block: Probleme beim Scannen */}
+      <div className="not-prose my-6 rounded-xl border border-amber-500/30 bg-amber-500/5 p-5">
+        <p className="mb-2 text-sm font-bold text-amber-300">⚠️ Probleme beim Scannen?</p>
+        <p className="mb-3 text-sm text-slate-400">
+          Wenn dein GiroCode nicht gescannt werden kann, hilft unsere ausführliche Troubleshooting-Seite.
+        </p>
+        <Link
+          href="/girocode-funktioniert-nicht"
+          className="text-sm font-medium text-sky-400 underline decoration-sky-500/50 underline-offset-2 hover:text-sky-300"
+        >
+          Probleme beim Scannen? Hier sind die Lösungen →
+        </Link>
+      </div>
     </KnowledgeLayout>
   );
 }

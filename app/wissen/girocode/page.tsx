@@ -477,6 +477,33 @@ export default function WissenGirocodePage() {
           </div>
         </div>
       </section>
+
+      {/* GiroCode unter anderen Namen */}
+      <section aria-labelledby="alternative-namen">
+        <h2 id="alternative-namen">GiroCode unter anderen Namen</h2>
+        <p>
+          Der GiroCode ist unter verschiedenen Namen bekannt. Diese Begriffe bezeichnen alle denselben
+          EPC069-12 Standard des European Payments Council:
+        </p>
+        <div className="not-prose grid gap-3 sm:grid-cols-3">
+          {[
+            { href: '/bezahlcode', name: 'BezahlCode', desc: 'Älterer Begriff aus Deutschland (vor 2018)' },
+            { href: '/sepa-qr-code', name: 'SEPA QR Code', desc: 'Funktionaler Begriff für SEPA-Überweisungen' },
+            { href: '/epc-qr-code', name: 'EPC QR Code', desc: 'Technischer Begriff nach EPC069-12 Standard' },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="group flex flex-col gap-1 rounded-xl border border-[#1f2431] bg-[#0f1117] p-4 transition-all duration-200 hover:border-emerald-500/30 hover:bg-[#1a1d25]"
+            >
+              <span className="text-sm font-bold text-[#e8eaf0] transition-colors group-hover:text-[#22c55e]">
+                {item.name} →
+              </span>
+              <span className="text-xs text-slate-500">{item.desc}</span>
+            </Link>
+          ))}
+        </div>
+      </section>
     </KnowledgeLayout>
   );
 }
