@@ -2,6 +2,14 @@ import type { MetadataRoute } from 'next';
 
 const BASE = 'https://www.girocodegenerator.com';
 const LOCALES = ['en', 'fr', 'es', 'it'] as const;
+
+/** Bank-Seiten mit echtem Inhalt pro Sprache (keine Redirects auf DE) */
+const INTL_BANK_PAGES: Record<(typeof LOCALES)[number], readonly string[]> = {
+  en: ['ing', 'n26', 'erste-bank', 'ubs', 'raiffeisen-schweiz', 'postfinance'],
+  fr: ['ing', 'n26', 'erste-bank', 'ubs', 'raiffeisen-schweiz', 'postfinance'],
+  es: ['ing', 'n26'],
+  it: ['ing', 'n26', 'ubs', 'raiffeisen-schweiz', 'erste-bank', 'postfinance'],
+};
 const BANKS = [
   'sparkasse',
   'volksbank',
@@ -43,7 +51,6 @@ const BANKS_DE_REGIONAL = [
   'kreissparkasse',
   'volksbank-raiffeisenbank',
   'stadtsparkasse',
-  'ing-diba',
   'hypovereinsbank',
   'santander',
 ] as const;
@@ -147,12 +154,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry('/it/girocode-vs-paypal', 0.8, 'monthly', now),
     entry('/it/girocode-vs-bankueberweisung', 0.8, 'monthly', now),
     entry('/it/girocode-vs-lastschrift', 0.8, 'monthly', now),
-
-    // ── Italienische Bank-Seiten ───────────────────────────────────────────
-    entry('/it/ubs', 0.6, 'monthly', now),
-    entry('/it/raiffeisen-schweiz', 0.6, 'monthly', now),
-    entry('/it/erste-bank', 0.6, 'monthly', now),
-    entry('/it/postfinance', 0.6, 'monthly', now),
 
     // ── ViDA Pflicht (DE) ──────────────────────────────────────────────────
     entry('/sepa-qr-pflicht', 0.8, 'monthly', now),
@@ -411,34 +412,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Bank-Landingpages (DE) ─────────────────────────────────────────────
     ...BANKS.map((bank) => entry(`/${bank}`, 0.7, 'monthly', now)),
 
-    // ── Bank-Landingpages (EN/FR/ES) → Redirects auf DE, trotzdem in Sitemap
-    ...BANKS.flatMap((bank) =>
-      LOCALES.map((locale) => entry(`/${locale}/${bank}`, 0.6, 'monthly', now))
+    // ── Internationale Bank-Seiten (echte Seiten, keine Redirects) ─────────
+    ...LOCALES.flatMap((locale) =>
+      INTL_BANK_PAGES[locale].map((bank) =>
+        entry(`/${locale}/${bank}`, 0.6, 'monthly', now),
+      ),
     ),
 
     // ── Bank-Landingpages (AT) ─────────────────────────────────────────────
     ...BANKS_AT.map((bank) => entry(`/${bank}`, 0.7, 'monthly', now)),
 
-    // ── Bank-Landingpages (AT) EN/FR/ES ───────────────────────────────────
-    ...BANKS_AT.flatMap((bank) =>
-      LOCALES.map((locale) => entry(`/${locale}/${bank}`, 0.6, 'monthly', now))
-    ),
-
     // ── Bank-Landingpages (CH) ─────────────────────────────────────────────
     ...BANKS_CH.map((bank) => entry(`/${bank}`, 0.7, 'monthly', now)),
 
-    // ── Bank-Landingpages (CH) EN/FR/ES ───────────────────────────────────
-    ...BANKS_CH.flatMap((bank) =>
-      LOCALES.map((locale) => entry(`/${locale}/${bank}`, 0.6, 'monthly', now))
-    ),
-
     // ── Bank-Landingpages (DE Regional) ───────────────────────────────────
     ...BANKS_DE_REGIONAL.map((bank) => entry(`/${bank}`, 0.7, 'monthly', now)),
-
-    // ── Bank-Landingpages (DE Regional) EN/FR/ES ──────────────────────────
-    ...BANKS_DE_REGIONAL.flatMap((bank) =>
-      LOCALES.map((locale) => entry(`/${locale}/${bank}`, 0.6, 'monthly', now))
-    ),
 
     // ── Use-Case Landingpages (DE) ─────────────────────────────────────────
     ...USE_CASES.map((useCase) => entry(`/${useCase}`, 0.8, 'monthly', now)),
