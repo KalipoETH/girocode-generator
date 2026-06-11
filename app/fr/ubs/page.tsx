@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       en: 'https://www.girocodegenerator.com/en/ubs',
       fr: 'https://www.girocodegenerator.com/fr/ubs',
       es: 'https://www.girocodegenerator.com/es/ubs',
+      it: 'https://www.girocodegenerator.com/it/ubs',
     },
   },
 };

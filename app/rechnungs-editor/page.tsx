@@ -23,6 +23,7 @@ export const metadata: Metadata = {
       en: 'https://www.girocodegenerator.com/en/rechnungs-editor',
       fr: 'https://www.girocodegenerator.com/fr/rechnungs-editor',
       es: 'https://www.girocodegenerator.com/es/rechnungs-editor',
+      it: 'https://www.girocodegenerator.com/it/rechnungs-editor',
     },
   },
 };

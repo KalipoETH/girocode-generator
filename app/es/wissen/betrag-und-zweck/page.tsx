@@ -13,6 +13,7 @@ export const metadata: Metadata = {
       'en': 'https://www.girocodegenerator.com/en/wissen/betrag-und-zweck',
       'fr': 'https://www.girocodegenerator.com/fr/wissen/betrag-und-zweck',
       'es': 'https://www.girocodegenerator.com/es/wissen/betrag-und-zweck',
+      'it': 'https://www.girocodegenerator.com/it/wissen/betrag-und-zweck',
     },
   },
 };

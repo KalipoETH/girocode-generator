@@ -12,6 +12,7 @@ export const metadata: Metadata = {
       'en': 'https://www.girocodegenerator.com/en/girocode-vs-lastschrift',
       'fr': 'https://www.girocodegenerator.com/fr/girocode-vs-lastschrift',
       'es': 'https://www.girocodegenerator.com/es/girocode-vs-lastschrift',
+      'it': 'https://www.girocodegenerator.com/it/girocode-vs-lastschrift',
     },
   },
 };

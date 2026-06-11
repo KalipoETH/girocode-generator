@@ -21,6 +21,45 @@ const bankRedirects = banks.flatMap((bank) =>
   }))
 );
 
+const itIrrelevantBanks = [
+  'sparkasse',
+  'volksbank',
+  'deutsche-bank',
+  'commerzbank',
+  'ing',
+  'dkb',
+  'postbank',
+  'targobank',
+  'n26',
+  'comdirect',
+  'hamburger-sparkasse',
+  'berliner-sparkasse',
+  'sparkasse-koeln-bonn',
+  'ostsaechsische-sparkasse',
+  'kreissparkasse',
+  'volksbank-raiffeisenbank',
+  'stadtsparkasse',
+  'hypovereinsbank',
+  'santander',
+  'bawag',
+  'volksbank-oesterreich',
+  'hypo-oesterreich',
+  'oberbank',
+  'bks-bank',
+  'bank-austria',
+  'raiffeisen-oesterreich',
+  'zuercher-kantonalbank',
+  'credit-suisse-ubs',
+  'cantonal-banks',
+  'ing-diba',
+];
+
+const itBankRedirects = itIrrelevantBanks.map((bank) => ({
+  source: `/it/${bank}`,
+  destination: bank === 'ing-diba' ? '/ing' : `/${bank}`,
+  permanent: true,
+}));
+
 const securityHeaders = [
   { key: 'X-Frame-Options', value: 'DENY' },
   { key: 'X-Content-Type-Options', value: 'nosniff' },
@@ -116,6 +155,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       ...bankRedirects,
+      ...itBankRedirects,
     ];
   },
 };

@@ -8,6 +8,14 @@ export const metadata: Metadata = {
   keywords: 'girocode raiffeisen schweiz, raiffeisen schweiz sepa qr, raiffeisen ch e-banking girocode',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/raiffeisen-schweiz',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/raiffeisen-schweiz',
+      de: 'https://www.girocodegenerator.com/raiffeisen-schweiz',
+      en: 'https://www.girocodegenerator.com/en/raiffeisen-schweiz',
+      fr: 'https://www.girocodegenerator.com/fr/raiffeisen-schweiz',
+      es: 'https://www.girocodegenerator.com/es/raiffeisen-schweiz',
+      it: 'https://www.girocodegenerator.com/it/raiffeisen-schweiz',
+    },
   },
 };
 

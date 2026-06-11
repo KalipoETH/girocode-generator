@@ -13,6 +13,7 @@ export const metadata: Metadata = {
       en: 'https://www.girocodegenerator.com/en/scanner',
       fr: 'https://www.girocodegenerator.com/fr/scanner',
       es: 'https://www.girocodegenerator.com/es/scanner',
+      it: 'https://www.girocodegenerator.com/it/scanner',
     },
   },
 };

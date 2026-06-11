@@ -13,6 +13,7 @@ export const metadata: Metadata = {
       'en': 'https://www.girocodegenerator.com/en/wissen',
       'fr': 'https://www.girocodegenerator.com/fr/wissen',
       'es': 'https://www.girocodegenerator.com/es/wissen',
+      'it': 'https://www.girocodegenerator.com/it/wissen',
     },
   },
 };

@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       en: 'https://www.girocodegenerator.com/en/erste-bank',
       fr: 'https://www.girocodegenerator.com/fr/erste-bank',
       es: 'https://www.girocodegenerator.com/es/erste-bank',
+      it: 'https://www.girocodegenerator.com/it/erste-bank',
     },
   },
 };

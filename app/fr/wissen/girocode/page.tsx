@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       'en': 'https://www.girocodegenerator.com/en/wissen/girocode',
       'fr': 'https://www.girocodegenerator.com/fr/wissen/girocode',
       'es': 'https://www.girocodegenerator.com/es/wissen/girocode',
+      'it': 'https://www.girocodegenerator.com/it/wissen/girocode',
     },
   },
 };

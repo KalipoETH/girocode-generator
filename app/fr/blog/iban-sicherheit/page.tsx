@@ -13,6 +13,7 @@ export const metadata: Metadata = {
       en: 'https://www.girocodegenerator.com/en/blog/iban-sicherheit',
       fr: 'https://www.girocodegenerator.com/fr/blog/iban-sicherheit',
       es: 'https://www.girocodegenerator.com/es/blog/iban-sicherheit',
+      it: 'https://www.girocodegenerator.com/it/blog/iban-sicherheit',
     },
   },
 };

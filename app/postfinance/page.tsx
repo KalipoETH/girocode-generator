@@ -8,6 +8,14 @@ export const metadata: Metadata = {
   keywords: 'girocode postfinance, postfinance app qr code, postfinance sepa überweisung qr, postfinance girocode',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/postfinance',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/postfinance',
+      de: 'https://www.girocodegenerator.com/postfinance',
+      en: 'https://www.girocodegenerator.com/en/postfinance',
+      fr: 'https://www.girocodegenerator.com/fr/postfinance',
+      es: 'https://www.girocodegenerator.com/es/postfinance',
+      it: 'https://www.girocodegenerator.com/it/postfinance',
+    },
   },
 };
 

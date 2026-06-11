@@ -13,6 +13,7 @@ export const metadata: Metadata = {
       en: 'https://www.girocodegenerator.com/en/blog/freelancer-rechnungen-qr-code',
       fr: 'https://www.girocodegenerator.com/fr/blog/freelancer-rechnungen-qr-code',
       es: 'https://www.girocodegenerator.com/es/blog/freelancer-rechnungen-qr-code',
+      it: 'https://www.girocodegenerator.com/it/blog/freelancer-rechnungen-qr-code',
     },
   },
 };

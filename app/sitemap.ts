@@ -107,6 +107,53 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry('/it/qr-code-fattura-sepa', 0.8, 'monthly', now),
     entry('/it/banche-italiane-qr-epc', 0.8, 'monthly', now),
 
+    // ── Italienische Kern-Seiten ───────────────────────────────────────────
+    entry('/it/scanner', 0.8, 'monthly', now),
+    entry('/it/bulk', 0.7, 'monthly', now),
+    entry('/it/rechnungs-editor', 0.8, 'monthly', now),
+    entry('/it/api-docs', 0.6, 'monthly', now),
+    entry('/it/api-access', 0.7, 'monthly', now),
+    entry('/it/fuer-entwickler', 0.6, 'monthly', now),
+    entry('/it/ueber-uns', 0.5, 'monthly', now),
+    entry('/it/kontakt', 0.5, 'monthly', now),
+    entry('/it/impressum', 0.3, 'yearly', now),
+    entry('/it/datenschutz', 0.3, 'yearly', now),
+
+    // ── Italienische Wissensseiten ─────────────────────────────────────────
+    entry('/it/wissen', 0.8, 'monthly', now),
+    entry('/it/wissen/girocode', 0.8, 'monthly', now),
+    entry('/it/wissen/epc-standard', 0.8, 'monthly', now),
+    entry('/it/wissen/iban-bic', 0.8, 'monthly', now),
+    entry('/it/wissen/betrag-und-zweck', 0.8, 'monthly', now),
+    entry('/it/wissen/rechnung', 0.8, 'monthly', now),
+    entry('/it/wissen/banking-apps', 0.8, 'monthly', now),
+    entry('/it/wissen/scannen', 0.8, 'monthly', now),
+
+    // ── Italienischer Blog ─────────────────────────────────────────────────
+    entry('/it/blog', 0.7, 'weekly', now),
+    entry('/it/blog/freelancer-rechnungen-qr-code', 0.7, 'monthly', now),
+    entry('/it/blog/geschichte-des-girocodes', 0.7, 'monthly', now),
+    entry('/it/blog/iban-sicherheit', 0.7, 'monthly', now),
+
+    // ── Italienische Use-Case Seiten ───────────────────────────────────────
+    entry('/it/freelancer', 0.8, 'monthly', now),
+    entry('/it/verein', 0.8, 'monthly', now),
+    entry('/it/handwerker', 0.8, 'monthly', now),
+    entry('/it/spenden', 0.8, 'monthly', now),
+    entry('/it/kleinunternehmen', 0.8, 'monthly', now),
+    entry('/it/privatverkauf', 0.8, 'monthly', now),
+
+    // ── Italienische Vergleichsseiten ──────────────────────────────────────
+    entry('/it/girocode-vs-paypal', 0.8, 'monthly', now),
+    entry('/it/girocode-vs-bankueberweisung', 0.8, 'monthly', now),
+    entry('/it/girocode-vs-lastschrift', 0.8, 'monthly', now),
+
+    // ── Italienische Bank-Seiten ───────────────────────────────────────────
+    entry('/it/ubs', 0.6, 'monthly', now),
+    entry('/it/raiffeisen-schweiz', 0.6, 'monthly', now),
+    entry('/it/erste-bank', 0.6, 'monthly', now),
+    entry('/it/postfinance', 0.6, 'monthly', now),
+
     // ── ViDA Pflicht (DE) ──────────────────────────────────────────────────
     entry('/sepa-qr-pflicht', 0.8, 'monthly', now),
 

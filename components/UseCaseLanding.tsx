@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
-export type UseCaseLocale = 'de' | 'en' | 'fr' | 'es';
+export type UseCaseLocale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
 export interface UseCaseFAQ {
   question: string;

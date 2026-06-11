@@ -13,6 +13,7 @@ export const metadata: Metadata = {
       en: 'https://www.girocodegenerator.com/en/blog/geschichte-des-girocodes',
       fr: 'https://www.girocodegenerator.com/fr/blog/geschichte-des-girocodes',
       es: 'https://www.girocodegenerator.com/es/blog/geschichte-des-girocodes',
+      it: 'https://www.girocodegenerator.com/it/blog/geschichte-des-girocodes',
     },
   },
 };

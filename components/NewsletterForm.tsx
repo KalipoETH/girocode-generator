@@ -225,12 +225,12 @@ const API_ACCESS_CONTENT: Record<
   },
   it: {
     badge: '🚀 Accesso Beta',
-    headline: 'Registrati per l\'accesso API',
+    headline: 'Iscriviti per l\'accesso API',
     description:
-      'Inserisci la tua email e ricevi:\n✅ Accesso anticipato all\'API (Beta)\n✅ Chiave API quando disponibile\n✅ Aggiornamenti mensili e nuove funzioni',
+      'Inserisci la tua email e ricevi:\n✅ Accesso anticipato API (Beta)\n✅ API Key non appena disponibile\n✅ Aggiornamenti mensili & nuove funzionalità',
     namePlaceholder: 'Il tuo nome (opzionale)',
     emailPlaceholder: 'tua@email.it',
-    buttonDefault: 'Ottieni accesso API →',
+    buttonDefault: 'Assicura accesso API →',
     buttonLoading: 'Iscrizione in corso...',
     successMsg: '✅ Iscrizione riuscita! Controlla la tua casella email.',
     existingMsg: 'Sei già iscritto! 😊',

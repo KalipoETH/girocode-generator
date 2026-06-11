@@ -18,6 +18,7 @@ export const metadata: Metadata = {
       en: `https://www.girocodegenerator.com/en/${SLUG}`,
       fr: `https://www.girocodegenerator.com/fr/${SLUG}`,
       es: `https://www.girocodegenerator.com/es/${SLUG}`,
+      it: `https://www.girocodegenerator.com/it/freelancer`,
     },
   },
 };

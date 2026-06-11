@@ -17,6 +17,7 @@ export interface ScannerTexts {
   amountLabel: string;
   purposeLabel: string;
   notSpecified: string;
+  notSpecifiedFeminine?: string;
   takeoverButton: string;
   rescanButton: string;
   fileUploadLabel: string;
@@ -117,6 +118,31 @@ export const esTexts: ScannerTexts = {
   cameraError: 'No se pudo iniciar la cámara. Por favor, verifica los permisos de cámara.',
   scanning: 'Cámara activa – sostén el código QR en el marco',
   generatorPrefix: '/es/',
+};
+
+export const itTexts: ScannerTexts = {
+  badge: '100% locale · nessuna trasmissione dati',
+  h1: 'Scanner GiroCode',
+  subtitle:
+    'Scansiona un GiroCode con la tua fotocamera e leggi i dati di pagamento contenuti nel codice.',
+  startButton: 'Avvia fotocamera →',
+  stopButton: 'Ferma fotocamera',
+  successTitle: '✅ GiroCode scansionato con successo!',
+  recipientLabel: 'Beneficiario',
+  ibanLabel: 'IBAN',
+  bicLabel: 'BIC',
+  amountLabel: 'Importo',
+  purposeLabel: 'Causale',
+  notSpecified: 'non specificato',
+  notSpecifiedFeminine: 'non specificata',
+  takeoverButton: 'Usa nel generatore →',
+  rescanButton: 'Scansiona di nuovo',
+  fileUploadLabel: "O carica un'immagine QR Code",
+  fileUploadButton: 'Scegli immagine',
+  invalidCode: 'Nessun GiroCode valido rilevato.',
+  cameraError: 'Impossibile avviare la fotocamera. Controlla i permessi.',
+  scanning: 'Fotocamera attiva – inquadra il QR Code',
+  generatorPrefix: '/it/',
 };
 
 interface ScanResult {
@@ -420,7 +446,10 @@ export function ScannerClient({ texts: textsProp }: Props) {
                   },
                   {
                     label: texts.purposeLabel,
-                    value: result.purpose || texts.notSpecified,
+                    value:
+                      result.purpose ||
+                      texts.notSpecifiedFeminine ||
+                      texts.notSpecified,
                   },
                 ].map((row) => (
                   <div

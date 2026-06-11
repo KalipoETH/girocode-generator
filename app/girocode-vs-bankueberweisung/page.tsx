@@ -13,6 +13,7 @@ export const metadata: Metadata = {
       'en': 'https://www.girocodegenerator.com/en/girocode-vs-bankueberweisung',
       'fr': 'https://www.girocodegenerator.com/fr/girocode-vs-bankueberweisung',
       'es': 'https://www.girocodegenerator.com/es/girocode-vs-bankueberweisung',
+      'it': 'https://www.girocodegenerator.com/it/girocode-vs-bankueberweisung',
     },
   },
 };

@@ -8,6 +8,14 @@ export const metadata: Metadata = {
   keywords: 'girocode erste bank, george app girocode, erste bank qr code scannen, george app qr überweisung österreich',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/erste-bank',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/erste-bank',
+      de: 'https://www.girocodegenerator.com/erste-bank',
+      en: 'https://www.girocodegenerator.com/en/erste-bank',
+      fr: 'https://www.girocodegenerator.com/fr/erste-bank',
+      es: 'https://www.girocodegenerator.com/es/erste-bank',
+      it: 'https://www.girocodegenerator.com/it/erste-bank',
+    },
   },
 };
 

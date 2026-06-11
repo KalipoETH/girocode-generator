@@ -13,6 +13,7 @@ export const metadata: Metadata = {
       en: 'https://www.girocodegenerator.com/en/api-access',
       fr: 'https://www.girocodegenerator.com/fr/api-access',
       es: 'https://www.girocodegenerator.com/es/api-access',
+      it: 'https://www.girocodegenerator.com/it/api-access',
     },
   },
 };

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import NewsletterForm from './NewsletterForm';
 
-type Locale = 'de' | 'en' | 'fr' | 'es';
+type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
 const CONTENT: Record<
   Locale,
@@ -78,6 +78,22 @@ const CONTENT: Record<
       'La API estará disponible como función premium. Los beta testers reciben acceso con descuento.',
     codeCta: 'Registrarse para acceso',
     codeSignup: 'Registrarse para acceso',
+  },
+  it: {
+    heroBadge: '🔜 API Coming Soon',
+    h1: 'GiroCode API – Accesso Anticipato',
+    subtitle:
+      'L\'API GiroCode è attualmente in fase beta. Iscriviti e ricevi accesso anticipato non appena l\'API sarà ufficialmente disponibile.',
+    features: [
+      { icon: '⚡', title: 'REST API', desc: 'GET /api/generate con tutti i parametri' },
+      { icon: '🔒', title: 'Sicuro', desc: 'Autenticazione con API Key' },
+      { icon: '📦', title: 'Bulk', desc: 'Fino a 100 GiroCodes per richiesta' },
+      { icon: '🌍', title: 'Multilingue', desc: 'Supporto DE, EN, FR, ES, IT' },
+    ],
+    formNote:
+      'L\'API sarà disponibile come funzionalità premium. I beta tester riceveranno un accesso scontato.',
+    codeCta: 'Assicura accesso API',
+    codeSignup: 'Assicura accesso API',
   },
 };
 

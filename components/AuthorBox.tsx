@@ -1,6 +1,6 @@
 import React from 'react';
 
-type Locale = 'de' | 'en' | 'fr' | 'es';
+type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
 interface AuthorBoxProps {
   locale?: Locale;
@@ -49,6 +49,14 @@ const i18n: Record<
     aboutTitle: 'Sobre el autor',
     aboutText:
       'Este artículo fue escrito por Kaleb Jahnke, el desarrollador de girocodegenerator.com. Kaleb trabaja con estándares SEPA, protocolos EPC y sistemas de pago digitales desde 2023.',
+  },
+  it: {
+    role: 'Sviluppatore & Fondatore di girocodegenerator.com',
+    published: 'Pubblicato',
+    updated: 'Aggiornato',
+    aboutTitle: "Informazioni sull'autore",
+    aboutText:
+      'Questo articolo è stato scritto da Kaleb Jahnke, lo sviluppatore di girocodegenerator.com. Kaleb lavora con standard SEPA, protocolli EPC e sistemi di pagamento digitali dal 2023.',
   },
 };
 

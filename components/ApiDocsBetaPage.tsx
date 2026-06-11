@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-type Locale = 'de' | 'en' | 'fr' | 'es';
+type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
 const CONTENT: Record<
   Locale,
@@ -69,6 +69,20 @@ const CONTENT: Record<
     cta: 'Registrarse para acceso beta →',
     hint: '¿Eres desarrollador y quieres integrar? Regístrate y obtén acceso anticipado a la documentación completa.',
     apiAccessPath: '/es/api-access',
+  },
+  it: {
+    badge: '🔒 Beta',
+    h1: 'GiroCode API – Documentazione',
+    text: 'La documentazione completa dell\'API è disponibile solo per gli utenti beta registrati.',
+    features: [
+      { icon: '⚡', title: 'REST API', desc: 'Genera GiroCodes tramite HTTP' },
+      { icon: '🔒', title: 'Auth API Key', desc: 'Accesso sicuro' },
+      { icon: '📦', title: 'Supporto Bulk', desc: 'Fino a 100 QR per richiesta' },
+      { icon: '🌍', title: 'Multilingue', desc: 'DE, EN, FR, ES, IT' },
+    ],
+    cta: 'Registrati per accesso beta →',
+    hint: 'Sei uno sviluppatore e vuoi integrare? Iscriviti e ottieni accesso anticipato alla documentazione completa.',
+    apiAccessPath: '/it/api-access',
   },
 };
 

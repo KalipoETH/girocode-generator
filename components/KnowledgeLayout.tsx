@@ -25,7 +25,7 @@ interface KnowledgeLayoutProps {
   statsData?: StatCard[];
   children: React.ReactNode;
   relatedArticles: RelatedArticle[];
-  locale?: 'de' | 'en' | 'fr' | 'es';
+  locale?: 'de' | 'en' | 'fr' | 'es' | 'it';
 }
 
 const i18n = {
@@ -149,6 +149,36 @@ const i18n = {
     disclaimer:
       '* Divulgación: Los enlaces marcados con * son enlaces de afiliado. Si compras a través de estos enlaces, recibimos una pequeña comisión sin coste adicional para ti.',
   },
+  it: {
+    homeLabel: 'Home',
+    homeHref: '/it',
+    wissenLabel: 'Informazioni',
+    wissenHref: '/it/wissen',
+    breadcrumbAriaLabel: 'Breadcrumb',
+    affiliateTitle: 'Usare GiroCode professionalmente – Consigli software',
+    affiliateIntro:
+      'Chi vuole usare i GiroCodes in modo professionale sulle fatture avrà presto bisogno di un buon software di contabilità o fatturazione. Creare GiroCodes manualmente va bene per uso occasionale, ma per fatturazione regolare una soluzione automatizzata ripaga rapidamente.',
+    affiliateRecommend: 'Consigliamo due strumenti collaudati che supportano nativamente i GiroCodes:',
+    sevdeskName: 'sevDesk',
+    sevdeskDesc:
+      'sevDesk è una delle principali piattaforme contabili tedesche per freelance e PMI. Fatture con GiroCode generato automaticamente in pochi clic e invio diretto via email.',
+    sevdeskCta: 'Prova sevDesk gratis *',
+    fastbillName: 'FastBill',
+    fastbillDesc:
+      'FastBill offre una piattaforma di fatturazione semplice e veloce. Con FastBill crei una fattura professionale con GiroCode in meno di due minuti – direttamente nel browser, senza installazione.',
+    fastbillCta: 'Prova FastBill gratis *',
+    affiliateNote:
+      '* Link affiliato – Se acquisti tramite questo link, riceviamo una piccola commissione senza costi aggiuntivi per te.',
+    generatorNote: 'Per uso occasionale consigliamo il nostro',
+    generatorLink: 'generatore GiroCode gratuito',
+    generatorHref: '/it',
+    generatorSuffix: '– completamente locale, senza registrazione.',
+    ctaLabel: 'Crea un GiroCode ora',
+    ctaHref: '/it',
+    relatedTitle: 'Articoli correlati',
+    disclaimer:
+      '* Divulgazione: I link contrassegnati con * sono link affiliati. Se acquisti tramite questi link, riceviamo una piccola commissione – senza costi aggiuntivi per te.',
+  },
 } as const;
 
 const BASE_URL = 'https://www.girocodegenerator.com';
@@ -239,10 +269,28 @@ export function KnowledgeLayout({
           <div
             className="mb-8 rounded-lg border-l-4 border-[#22c55e] bg-[#133018]/50 px-4 py-3"
             role="note"
-            aria-label={locale === 'de' ? 'Kurze Antwort' : locale === 'en' ? 'Quick Answer' : locale === 'fr' ? 'Réponse rapide' : 'Respuesta rápida'}
+            aria-label={
+              locale === 'de'
+                ? 'Kurze Antwort'
+                : locale === 'en'
+                  ? 'Quick Answer'
+                  : locale === 'fr'
+                    ? 'Réponse rapide'
+                    : locale === 'it'
+                      ? 'Risposta breve'
+                      : 'Respuesta rápida'
+            }
           >
             <p className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-[#22c55e]">
-              {locale === 'de' ? '💡 Kurze Antwort' : locale === 'en' ? '💡 Quick Answer' : locale === 'fr' ? '💡 Réponse rapide' : '💡 Respuesta rápida'}
+              {locale === 'de'
+                ? '💡 Kurze Antwort'
+                : locale === 'en'
+                  ? '💡 Quick Answer'
+                  : locale === 'fr'
+                    ? '💡 Réponse rapide'
+                    : locale === 'it'
+                      ? '💡 Risposta breve'
+                      : '💡 Respuesta rápida'}
             </p>
             <p className="text-sm leading-relaxed text-slate-300">{shortAnswer}</p>
           </div>

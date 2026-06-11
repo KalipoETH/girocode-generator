@@ -8,6 +8,14 @@ export const metadata: Metadata = {
   keywords: 'girocode ubs, ubs mobile banking sepa qr, ubs qr code überweisung, sepa qr schweiz ubs',
   alternates: {
     canonical: 'https://www.girocodegenerator.com/ubs',
+    languages: {
+      'x-default': 'https://www.girocodegenerator.com/ubs',
+      de: 'https://www.girocodegenerator.com/ubs',
+      en: 'https://www.girocodegenerator.com/en/ubs',
+      fr: 'https://www.girocodegenerator.com/fr/ubs',
+      es: 'https://www.girocodegenerator.com/es/ubs',
+      it: 'https://www.girocodegenerator.com/it/ubs',
+    },
   },
 };
 

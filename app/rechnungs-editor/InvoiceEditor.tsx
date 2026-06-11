@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 
-type Locale = 'de' | 'en' | 'fr' | 'es';
+type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
 const labels: Record<Locale, { title: string; subtitle: string; badge: string; reset: string; download: string; generating: string }> = {
   de: {
@@ -36,6 +36,15 @@ const labels: Record<Locale, { title: string; subtitle: string; badge: string; r
     reset: 'Restablecer plantilla',
     download: 'Descargar PDF ↓',
     generating: 'Generando PDF…',
+  },
+  it: {
+    title: 'Editor Fatture con GiroCode',
+    subtitle:
+      'Progetta la tua fattura individualmente – Drag & Drop, logo personalizzato, GiroCode integrato.',
+    badge: '✨ Nuovo · Editor Visuale',
+    reset: 'Reimposta modello',
+    download: 'Scarica PDF ↓',
+    generating: 'Generazione PDF…',
   },
 };
 

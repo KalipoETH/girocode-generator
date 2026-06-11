@@ -6,7 +6,7 @@ import QRCode from 'qrcode';
 import JSZip from 'jszip';
 import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 
-type Locale = 'de' | 'en' | 'fr' | 'es';
+type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
 interface BulkTexts {
   badge: string;
@@ -31,6 +31,8 @@ interface BulkTexts {
   step4Title: string;
   downloadZipBtn: string;
   downloadPdfBtn: string;
+  downloadNote?: string;
+  csvTemplateExample?: string;
   limitWarning: string;
   noValidRows: string;
 }
@@ -140,6 +142,36 @@ const texts: Record<Locale, BulkTexts> = {
     limitWarning: 'Se detectaron más de 50 filas. Solo se procesarán las primeras 50.',
     noValidRows: 'No hay filas válidas para generar.',
   },
+  it: {
+    badge: 'Nuovo – Generatore Multiplo',
+    heading: 'Generatore GiroCode Multiplo',
+    subtitle: 'Crea più GiroCodes contemporaneamente tramite upload di un file CSV.',
+    step1Title: 'Modello CSV',
+    csvStructureLabel: 'Struttura CSV richiesta:',
+    downloadTemplateBtn: 'Scarica modello CSV',
+    step2Title: 'Carica il tuo file CSV',
+    dropzoneLabel: 'Trascina il file CSV qui o clicca',
+    dropzoneHint: 'Solo file .csv · max. 50 righe gratuitamente',
+    previewTitle: 'Anteprima dati',
+    colName: 'Nome',
+    colIban: 'IBAN',
+    colBic: 'BIC',
+    colBetrag: 'Importo',
+    colZweck: 'Causale',
+    colStatus: 'Stato',
+    step3Title: 'Generazione',
+    generateBtn: 'Genera tutti i GiroCodes',
+    generatingProgress: (c, t) => `Generando ${c}/${t} QR Codes...`,
+    step4Title: 'Download',
+    downloadZipBtn: 'Scarica come ZIP',
+    downloadPdfBtn: 'Scarica come PDF',
+    downloadNote: 'Max. 50 righe gratuitamente',
+    csvTemplateExample: `nome,iban,bic,importo,causale
+Mario Rossi,IT60X0542811101000000123456,,49.90,Fattura 001
+Azienda Srl,IT60X0542811101000000123456,UNCRITMM,99.00,Fattura 002`,
+    limitWarning: 'Rilevate più di 50 righe. Verranno elaborate solo le prime 50.',
+    noValidRows: 'Nessuna riga valida da generare.',
+  },
 };
 
 const CSV_TEMPLATE = `name,iban,bic,betrag,zweck
@@ -203,8 +235,10 @@ export default function BulkClient({ locale }: { locale: Locale }) {
   const [progress, setProgress] = useState<{ cur: number; total: number } | null>(null);
   const [isDragging, setIsDragging] = useState(false);
 
+  const csvExample = t.csvTemplateExample ?? CSV_TEMPLATE;
+
   const downloadTemplate = () => {
-    const blob = new Blob([CSV_TEMPLATE], { type: 'text/csv;charset=utf-8;' });
+    const blob = new Blob([csvExample], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -229,11 +263,11 @@ export default function BulkClient({ locale }: { locale: Locale }) {
         const parsed: CsvRow[] = data.map((r) => {
           const iban = (r.iban || r.IBAN || '').trim();
           return {
-            name: (r.name || r.Name || '').trim(),
+            name: (r.name || r.Name || r.nome || r.Nome || '').trim(),
             iban,
             bic: (r.bic || r.BIC || '').trim(),
-            betrag: (r.betrag || r.Betrag || '').trim(),
-            zweck: (r.zweck || r.Zweck || '').trim(),
+            betrag: (r.betrag || r.Betrag || r.importo || r.Importo || '').trim(),
+            zweck: (r.zweck || r.Zweck || r.causale || r.Causale || '').trim(),
             valid: validateIban(iban),
           };
         });
@@ -381,7 +415,7 @@ export default function BulkClient({ locale }: { locale: Locale }) {
             </h2>
             <p className="mb-3 text-xs text-slate-400">{t.csvStructureLabel}</p>
             <pre className="mb-4 overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-emerald-300">
-              <code>{CSV_TEMPLATE}</code>
+              <code>{csvExample}</code>
             </pre>
             <button
               type="button"
@@ -545,6 +579,9 @@ export default function BulkClient({ locale }: { locale: Locale }) {
                   📄 {t.downloadPdfBtn}
                 </button>
               </div>
+              {t.downloadNote && (
+                <p className="mt-4 text-center text-xs text-slate-500">{t.downloadNote}</p>
+              )}
             </section>
           )}
         </div>

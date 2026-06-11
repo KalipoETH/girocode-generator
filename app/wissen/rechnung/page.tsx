@@ -40,6 +40,7 @@ export const metadata: Metadata = {
       'en': 'https://www.girocodegenerator.com/en/wissen/rechnung',
       'fr': 'https://www.girocodegenerator.com/fr/wissen/rechnung',
       'es': 'https://www.girocodegenerator.com/es/wissen/rechnung',
+      'it': 'https://www.girocodegenerator.com/it/wissen/rechnung',
     },
   },
 };

@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       'en': 'https://www.girocodegenerator.com/en/wissen/iban-bic',
       'fr': 'https://www.girocodegenerator.com/fr/wissen/iban-bic',
       'es': 'https://www.girocodegenerator.com/es/wissen/iban-bic',
+      'it': 'https://www.girocodegenerator.com/it/wissen/iban-bic',
     },
   },
 };

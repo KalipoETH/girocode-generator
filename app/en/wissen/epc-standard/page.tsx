@@ -18,6 +18,7 @@ export const metadata: Metadata = {
       'en': 'https://www.girocodegenerator.com/en/wissen/epc-standard',
       'fr': 'https://www.girocodegenerator.com/fr/wissen/epc-standard',
       'es': 'https://www.girocodegenerator.com/es/wissen/epc-standard',
+      'it': 'https://www.girocodegenerator.com/it/wissen/epc-standard',
     },
   },
 };

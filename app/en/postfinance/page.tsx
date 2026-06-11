@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       en: 'https://www.girocodegenerator.com/en/postfinance',
       fr: 'https://www.girocodegenerator.com/fr/postfinance',
       es: 'https://www.girocodegenerator.com/es/postfinance',
+      it: 'https://www.girocodegenerator.com/it/postfinance',
     },
   },
 };

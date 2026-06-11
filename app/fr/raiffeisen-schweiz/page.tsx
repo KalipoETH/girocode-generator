@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       en: 'https://www.girocodegenerator.com/en/raiffeisen-schweiz',
       fr: 'https://www.girocodegenerator.com/fr/raiffeisen-schweiz',
       es: 'https://www.girocodegenerator.com/es/raiffeisen-schweiz',
+      it: 'https://www.girocodegenerator.com/it/raiffeisen-schweiz',
     },
   },
 };

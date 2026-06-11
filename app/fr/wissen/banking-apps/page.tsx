@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       'en': 'https://www.girocodegenerator.com/en/wissen/banking-apps',
       'fr': 'https://www.girocodegenerator.com/fr/wissen/banking-apps',
       'es': 'https://www.girocodegenerator.com/es/wissen/banking-apps',
+      'it': 'https://www.girocodegenerator.com/it/wissen/banking-apps',
     },
   },
 };
