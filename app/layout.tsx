@@ -53,8 +53,8 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   icons: {
     icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
       { url: '/icons/icon-192x192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/icons/icon-512x512.png', sizes: '512x512', type: 'image/png' },
     ],
     apple: '/icons/apple-touch-icon.png',
   },
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     description:
       'GiroCode (SEPA-QR / EPC) kostenlos online erstellen – 100% lokal im Browser, keine Datenweitergabe. Inkl. Rechnungs-PDF.',
     images: [
-      { url: '/logo-dark.jpg', width: 1200, height: 630, alt: 'GiroCode Generator' },
+      { url: '/icons/icon-512x512.png', width: 512, height: 512, alt: 'GiroCode Generator Logo' },
     ],
   },
   twitter: {
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     title: 'GiroCode Generator – SEPA-QR kostenlos erstellen',
     description:
       'GiroCode (SEPA-QR / EPC) kostenlos online erstellen – 100% lokal, keine Datenweitergabe.',
-    images: ['/logo-dark.jpg'],
+    images: ['/icons/icon-512x512.png'],
   },
   robots: {
     index: true,

@@ -164,10 +164,10 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
           <Image
-            src="/logo-dark.jpg"
+            src="/logo.svg"
             alt="GiroCode Generator"
-            width={32}
-            height={32}
+            width={36}
+            height={36}
             className="rounded-lg"
           />
           <div className="flex flex-col leading-tight">

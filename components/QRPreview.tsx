@@ -239,7 +239,7 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
         const logoY = Math.floor((qrHeight - logoSize) / 2);
 
         const logoImg = new window.Image();
-        logoImg.src = '/logo-qr.jpg';
+        logoImg.src = '/logo.svg';
 
         const drawBrandingAndExport = () => {
           ctx.fillStyle = '#8b90a0';
