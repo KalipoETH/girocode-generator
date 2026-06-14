@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { track } from '@vercel/analytics';
 
 type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
@@ -90,22 +91,30 @@ export default function InstallPwaPrompt() {
 
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
 
+    const handleAppInstalled = () => {
+      track('pwa_installed', { locale: detectLocale() });
+    };
+    window.addEventListener('appinstalled', handleAppInstalled);
+
     // iOS: kein beforeinstallprompt, manuell nach kurzer Verzögerung zeigen
     if (isIos() && !isInStandaloneMode()) {
       const timer = setTimeout(() => setShow(true), 3000);
       return () => {
         clearTimeout(timer);
         window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+        window.removeEventListener('appinstalled', handleAppInstalled);
       };
     }
 
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+      window.removeEventListener('appinstalled', handleAppInstalled);
     };
   }, []);
 
   const handleInstall = async () => {
     if (!deferredPrompt) return;
+    track('pwa_install_clicked', { locale });
     deferredPrompt.prompt();
     const { outcome } = await deferredPrompt.userChoice;
     if (outcome === 'accepted') {

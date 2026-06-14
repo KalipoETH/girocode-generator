@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
+import { track } from '@vercel/analytics';
 import type { InvoiceData, PdfLocale } from '../lib/pdf';
 import { makePDF } from '../lib/pdf';
 import { en } from '../lib/translations/en';
@@ -153,6 +154,7 @@ export const PdfButton: React.FC<PdfButtonProps> = ({
       a.remove();
       URL.revokeObjectURL(url);
 
+      track('invoice_pdf_downloaded', { locale });
       const alreadyShown = sessionStorage.getItem('newsletter_shown') === 'true';
       if (!alreadyShown) {
         setTimeout(() => setShowNewsletter(true), 1500);

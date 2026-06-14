@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import { track } from '@vercel/analytics';
 
 type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
@@ -256,6 +257,7 @@ export function InvoiceEditor({ locale }: Props) {
       link.download = 'Rechnung.pdf';
       link.click();
       URL.revokeObjectURL(url);
+      track('invoice_editor_pdf_generated', { locale });
     } catch (e) {
       console.error('PDF-Generierung fehlgeschlagen:', e);
       setError('PDF konnte nicht erstellt werden.');

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import QRCode from 'qrcode';
+import { track } from '@vercel/analytics';
 import { en } from '../lib/translations/en';
 import { fr } from '../lib/translations/fr';
 import { es } from '../lib/translations/es';
@@ -294,6 +295,7 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
     link.download = 'girocode.png';
     link.href = canvas.toDataURL('image/png');
     link.click();
+    track('qr_code_downloaded', { locale, has_logo: true });
 
     const alreadyShown = sessionStorage.getItem('newsletter_shown') === 'true';
     if (!alreadyShown) {
@@ -396,7 +398,12 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
                 type="checkbox"
                 className="mt-0.5 h-3.5 w-3.5 rounded border-slate-500 bg-slate-900 text-emerald-500 focus:ring-emerald-500"
                 checked={useExternal}
-                onChange={(e) => setUseExternal(e.target.checked)}
+                onChange={(e) => {
+                  setUseExternal(e.target.checked);
+                  if (e.target.checked) {
+                    track('external_qr_fallback_used', { locale });
+                  }
+                }}
               />
               <span>{t.fallbackLabel}</span>
             </label>

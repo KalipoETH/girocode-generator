@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useCallback, useRef, useState } from 'react';
+import { track } from '@vercel/analytics';
 import Papa from 'papaparse';
 import QRCode from 'qrcode';
 import JSZip from 'jszip';
@@ -273,6 +274,7 @@ export default function BulkClient({ locale }: { locale: Locale }) {
         });
         setRows(parsed);
         setGenerated([]);
+        track('bulk_csv_uploaded', { locale, row_count: parsed.length });
       },
     });
   };
@@ -326,6 +328,7 @@ export default function BulkClient({ locale }: { locale: Locale }) {
     a.download = 'girocodes.zip';
     a.click();
     URL.revokeObjectURL(url);
+    track('bulk_export_downloaded', { locale, format: 'zip', row_count: generated.length });
   };
 
   const downloadPdf = async () => {
@@ -388,6 +391,7 @@ export default function BulkClient({ locale }: { locale: Locale }) {
     a.download = 'girocodes.pdf';
     a.click();
     URL.revokeObjectURL(url);
+    track('bulk_export_downloaded', { locale, format: 'pdf', row_count: generated.length });
   };
 
   return (

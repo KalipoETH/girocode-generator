@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { track } from '@vercel/analytics';
 
 export interface ScannerTexts {
   badge: string;
@@ -244,6 +245,7 @@ export function ScannerClient({ texts: textsProp }: Props) {
           const parsed = parseEPCPayload(decodedText);
           if (parsed) {
             setResult(parsed);
+            track('qr_code_scanned', { locale: detectLocale(pathname ?? ''), source: 'camera' });
             stopCamera();
           } else {
             setError(texts.invalidCode);
@@ -279,6 +281,7 @@ export function ScannerClient({ texts: textsProp }: Props) {
       const parsed = parseEPCPayload(decodedText);
       if (parsed) {
         setResult(parsed);
+        track('qr_code_scanned', { locale: detectLocale(pathname ?? ''), source: 'upload' });
       } else {
         setFileError(texts.invalidCode);
       }
@@ -474,6 +477,7 @@ export function ScannerClient({ texts: textsProp }: Props) {
               <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href={buildGeneratorUrl(result)}
+                  onClick={() => track('scanned_code_reused', { locale: detectLocale(pathname ?? '') })}
                   className="inline-flex flex-1 items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-slate-950 transition duration-200 hover:-translate-y-0.5 hover:shadow-lg motion-reduce:hover:translate-y-0"
                   style={{
                     background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',

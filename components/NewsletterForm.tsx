@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { track } from '@vercel/analytics';
 
 type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
@@ -272,6 +273,9 @@ export default function NewsletterForm({ locale = 'de', variant = 'default' }: P
         return;
       }
 
+      if (!data.existing) {
+        track('newsletter_signup', { locale, variant });
+      }
       setStatus(data.existing ? 'existing' : 'success');
     } catch {
       setStatus('error');

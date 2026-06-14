@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { track } from '@vercel/analytics';
 import { buildEPC, ibanIsValid } from '../lib/girocode';
 import { QRPreview, QRStatusType } from './QRPreview';
 import { en } from '../lib/translations/en';
@@ -214,6 +215,12 @@ export const GiroCodeForm: React.FC<GiroCodeFormProps> = ({
       setEpcPayload(payload);
       setStatusType('success');
       setStatusMessage(t.generateSuccess);
+      track('girocode_generated', {
+        has_amount: !!trimmedAmount,
+        has_purpose: !!form.purpose.trim(),
+        has_bic: !!form.bic.trim(),
+        locale,
+      });
     } catch (err) {
       setStatusType('error');
       setStatusMessage(t.generateError);
