@@ -1,0 +1,176 @@
+---
+description: 
+alwaysApply: true
+---
+
+# GiroCode Generator — Design System Rules
+
+Du arbeitest am Redesign von girocodegenerator.com. 
+Halte dich bei JEDER Seite und Komponente exakt an dieses Design-System.
+
+---
+
+## SCHRIFT
+- Font: Manrope (Google Fonts, weights 400 500 600 700 800)
+- Immer antialiased: -webkit-font-smoothing: antialiased
+- Headlines: weight 800, letter-spacing -0.04em, line-height 1.05
+- Body: weight 500, line-height 1.65–1.7
+- Labels (uppercase): weight 700, letter-spacing 0.08em, font-size 10–11px
+- NIEMALS: Inter, Roboto, Arial oder andere Fonts
+
+## FARBEN
+```
+Primär:        #22c55e   (Buttons, Akzente, Links)
+Primär Hover:  #16a34a
+Primär Tint:   #f0fdf4   (Hero-BG, Hover-Flächen)
+Primär Light:  #dcfce7   (Badges, Chips)
+
+Blau Akzent:   #3b82f6   (Sekundäre Aktionen, SVG-Download)
+Blau Hover:    #2563eb
+Blau Tint:     #eff6ff
+
+Text:          #0f172a   (Headlines, wichtiger Text)
+Text-2:        #334155   (Normaler Text)
+Text-3:        #64748b   (Beschreibungen, Labels)
+Text-4:        #94a3b8   (Placeholder, Captions)
+
+Rahmen:        #e2e8f0
+Surface:       #f8fafc   (Input-BG, Karten-BG)
+Weiß:          #ffffff
+```
+
+## RADIEN
+- Karten / große Container: 22px
+- Inputs / kleinere Elemente: 11px  
+- Buttons: 11–13px
+- Badges / Pills: 100px
+- Logo SVG: rx="44"
+
+## SCHATTEN
+- Karte: 0 2px 4px rgba(0,0,0,.04), 0 20px 56px rgba(0,0,0,.09)
+- Button Hover (grün): 0 4px 14px rgba(34,197,94,.3)
+- Button Hover (blau): 0 4px 14px rgba(59,130,246,.3)
+
+---
+
+## NAVIGATION (alle Seiten gleich)
+- Sticky, top 0, z-index 100
+- Background: rgba(255,255,255,0.88) + backdrop-filter: blur(20px)
+- Border-bottom: 1px solid #e2e8f0
+- Höhe: 64px, max-width: 1200px, padding: 0 28px
+- Logo: Pixel-G SVG (36px) + Wortmarke "GiroCode" (Giro=weight 500, Code=weight 800)
+- Nav-Links: 14px weight 600, color #64748b
+  - Hover: background #f8fafc, color #0f172a, border-radius 9px
+- CTA: "QR-Code erstellen", background #22c55e, Hover #16a34a
+
+## HERO (Startseite)
+- Background: linear-gradient(180deg, #edfaf3 0%, #ffffff 58%)
+- 2-Spalten Grid (5fr 7fr), gap 72px, max-width 1200px
+- Links: Badge + H1 + Beschreibung + Trust-Checks
+- Rechts: Generator-Card
+
+## SONSTIGE SEITEN (Wissen, Blog, Über uns, etc.)
+- Weißer Hintergrund (#ffffff)
+- Hero-Bereich: dezenter grüner Gradient (wie Startseite aber schlanker: padding 48px)
+- Page-Title: H1, 800, max-width 680px
+- Content-Bereich: max-width 760px (Text) oder 1200px (Grid-Layouts)
+- Immer gleiche Navigation und Footer
+
+---
+
+## BUTTONS
+```css
+/* Primär (grün) */
+background: #22c55e; color: white; border: none;
+border-radius: 11px; padding: 9px 18px;
+font: 700 13px Manrope; cursor: pointer;
+transition: all .2s;
+/* Hover: */ background: #16a34a; transform: translateY(-1px); 
+box-shadow: 0 4px 14px rgba(34,197,94,.3);
+
+/* Sekundär (outline) */
+background: white; color: #334155;
+border: 1.5px solid #e2e8f0; border-radius: 11px;
+/* Hover: */ border-color: #22c55e; color: #16a34a; background: #f0fdf4;
+```
+
+## INPUTS
+```css
+background: #f8fafc; border: 1.5px solid transparent;
+border-radius: 11px; padding: 10px 13px;
+font: 500 14px Manrope; color: #0f172a;
+outline: none; transition: all .18s;
+/* Hover: */ background: #eef1f6;
+/* Focus: */ background: white; border-color: #22c55e; 
+             box-shadow: 0 0 0 3px rgba(34,197,94,.14);
+```
+
+## KARTEN
+```css
+background: white; border: 1px solid #e2e8f0;
+border-radius: 22px;
+box-shadow: 0 2px 4px rgba(0,0,0,.04), 0 20px 56px rgba(0,0,0,.09);
+```
+
+## BADGES / CHIPS
+```css
+display: inline-flex; align-items: center; gap: 7px;
+background: #dcfce7; color: #16a34a;
+font: 700 11.5px Manrope; letter-spacing: .04em;
+padding: 5px 13px 5px 8px; border-radius: 100px;
+```
+
+---
+
+## LOGO (Pixel-G SVG) — IMMER diesen exakten Code verwenden
+```html
+<svg width="36" height="36" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="44" fill="#22c55e"/>
+  <rect x="40"  y="20"  width="20" height="20" rx="3" fill="white"/>
+  <rect x="60"  y="20"  width="20" height="20" rx="3" fill="white"/>
+  <rect x="80"  y="20"  width="20" height="20" rx="3" fill="white"/>
+  <rect x="100" y="20"  width="20" height="20" rx="3" fill="white"/>
+  <rect x="120" y="20"  width="20" height="20" rx="3" fill="white"/>
+  <rect x="140" y="20"  width="20" height="20" rx="3" fill="white"/>
+  <rect x="20"  y="40"  width="20" height="20" rx="3" fill="white"/>
+  <rect x="160" y="40"  width="20" height="20" rx="3" fill="white"/>
+  <rect x="20"  y="60"  width="20" height="20" rx="3" fill="white"/>
+  <rect x="20"  y="80"  width="20" height="20" rx="3" fill="white"/>
+  <rect x="20"  y="100" width="20" height="20" rx="3" fill="white"/>
+  <rect x="100" y="100" width="20" height="20" rx="3" fill="white"/>
+  <rect x="120" y="100" width="20" height="20" rx="3" fill="white"/>
+  <rect x="140" y="100" width="20" height="20" rx="3" fill="white"/>
+  <rect x="160" y="100" width="20" height="20" rx="3" fill="white"/>
+  <rect x="20"  y="120" width="20" height="20" rx="3" fill="white"/>
+  <rect x="160" y="120" width="20" height="20" rx="3" fill="white"/>
+  <rect x="20"  y="140" width="20" height="20" rx="3" fill="white"/>
+  <rect x="160" y="140" width="20" height="20" rx="3" fill="white"/>
+  <rect x="40"  y="160" width="20" height="20" rx="3" fill="white"/>
+  <rect x="60"  y="160" width="20" height="20" rx="3" fill="white"/>
+  <rect x="80"  y="160" width="20" height="20" rx="3" fill="white"/>
+  <rect x="100" y="160" width="20" height="20" rx="3" fill="white"/>
+  <rect x="120" y="160" width="20" height="20" rx="3" fill="white"/>
+  <rect x="140" y="160" width="20" height="20" rx="3" fill="white"/>
+</svg>
+```
+
+## ICONS
+- Inline SVG, Feather-Icons-Stil
+- stroke-width: 2–2.5, stroke-linecap: round, stroke-linejoin: round
+- Kein externes Icon-Framework
+
+## FOOTER (alle Seiten gleich)
+- border-top: 1px solid #e2e8f0; padding: 22px 28px
+- Flex: Logo + Markenname | Copyright | Links (Impressum, Datenschutz, Kontakt)
+- Font: 12px, color #94a3b8
+
+---
+
+## QUALITÄTSREGELN
+1. NIEMALS opacity-basierte CSS-Animationen mit animation-fill-mode: both ohne prefers-reduced-motion Guard
+2. Flex/Grid mit gap statt margin für Abstände zwischen Elementen
+3. text-wrap: pretty für Fließtexte
+4. Keine Emojis im Interface
+5. Keine gerundeten Ecken mit Left-Border-Akzent (kein "Bootstrap-Look")
+6. Minimale Inhalte — kein Padding-Content
+7. Alle Transitions: 0.15–0.2s ease

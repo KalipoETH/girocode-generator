@@ -88,18 +88,20 @@ export function Footer() {
   const useCases = useCaseLabels[locale];
 
   return (
-    <footer className="border-t border-white/5 bg-[#0b0c10]/80">
-      <div className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-6 text-[11px] text-slate-400">
+    <footer className="font-ds border-t border-[#e2e8f0] bg-white">
+      <div className="mx-auto flex max-w-[1200px] flex-col gap-5 px-7 py-[22px] text-[11px] text-[#94a3b8]">
+
+        {/* Use Cases */}
         <div>
-          <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-slate-300">
+          <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.08em] text-[#64748b]">
             {useCases.heading}
           </p>
-          <div className="flex flex-wrap gap-x-3 gap-y-2">
+          <div className="flex flex-wrap gap-x-3 gap-y-1.5">
             {useCases.items.map((item) => (
               <Link
                 key={item.slug}
                 href={`${prefix}${item.slug}`}
-                className="hover:text-slate-200 hover:underline"
+                className="font-semibold text-[#94a3b8] transition-colors duration-150 hover:text-[#334155]"
               >
                 {item.label}
               </Link>
@@ -107,47 +109,65 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 pt-1">
+        {/* Badges */}
+        <div className="flex flex-wrap items-center gap-4">
           <ProductHuntBadge />
           <a
             href="https://backlinklog.com/listing/girocodegenerator.com?utm_source=backlinklog&utm_medium=badge"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-lg border border-[#1f2431] bg-[#121318] px-3 py-2 text-xs text-slate-400 opacity-80 transition-all hover:border-[#22c55e40] hover:opacity-100"
+            className="flex items-center gap-2 rounded-[11px] border border-[#e2e8f0] bg-[#f8fafc] px-3 py-2 text-xs font-semibold text-[#94a3b8] transition-all duration-150 hover:border-[#22c55e] hover:text-[#334155]"
           >
-            🔗 Listed on BacklinkLog
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
+            >
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+            </svg>
+            Listed on BacklinkLog
           </a>
         </div>
+
+        {/* Bottom row: Copyright + Links */}
         <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <p>
+          <p className="font-medium text-[#94a3b8]">
             © 2026 GiroCode Generator · lokal · keine Gewähr
           </p>
-          <div className="flex flex-wrap gap-3">
-            <Link href={`${prefix}/scanner`} className="hover:text-slate-200 hover:underline">
+          <div className="flex flex-wrap gap-4">
+            <Link href={`${prefix}/scanner`} className="font-semibold text-[#94a3b8] transition-colors duration-150 hover:text-[#334155]">
               GiroCode Scanner
             </Link>
-            <Link href={`${prefix}/blog`} className="hover:text-slate-200 hover:underline">
+            <Link href={`${prefix}/blog`} className="font-semibold text-[#94a3b8] transition-colors duration-150 hover:text-[#334155]">
               Blog
             </Link>
-            <Link href={`${prefix}/impressum`} className="hover:text-slate-200 hover:underline">
+            <Link href={`${prefix}/impressum`} className="font-semibold text-[#94a3b8] transition-colors duration-150 hover:text-[#334155]">
               Impressum
             </Link>
-            <Link href={`${prefix}/datenschutz`} className="hover:text-slate-200 hover:underline">
+            <Link href={`${prefix}/datenschutz`} className="font-semibold text-[#94a3b8] transition-colors duration-150 hover:text-[#334155]">
               Datenschutz
             </Link>
-            <Link href={`${prefix}/ueber-uns`} className="hover:text-slate-200 hover:underline">
+            <Link href={`${prefix}/ueber-uns`} className="font-semibold text-[#94a3b8] transition-colors duration-150 hover:text-[#334155]">
               Über uns
             </Link>
-            <Link href={`${prefix}/kontakt`} className="hover:text-slate-200 hover:underline">
+            <Link href={`${prefix}/kontakt`} className="font-semibold text-[#94a3b8] transition-colors duration-150 hover:text-[#334155]">
               Kontakt
             </Link>
-            <Link href={`${prefix}/fuer-entwickler`} className="hover:text-slate-200 hover:underline">
+            <Link href={`${prefix}/fuer-entwickler`} className="font-semibold text-[#94a3b8] transition-colors duration-150 hover:text-[#334155]">
               Für Entwickler
             </Link>
-            <Link href={`${prefix}/api-docs`} className="hover:text-slate-200 hover:underline">
+            <Link href={`${prefix}/api-docs`} className="font-semibold text-[#94a3b8] transition-colors duration-150 hover:text-[#334155]">
               API-Docs
             </Link>
-            <Link href={`${prefix}/api-access`} className="hover:text-slate-200 hover:underline">
+            <Link href={`${prefix}/api-access`} className="font-semibold text-[#94a3b8] transition-colors duration-150 hover:text-[#334155]">
               {locale === 'en' ? 'API Access' : locale === 'fr' ? 'Accès API' : locale === 'es' ? 'Acceso API' : locale === 'it' ? 'Accesso API' : 'API-Zugang'}
             </Link>
           </div>

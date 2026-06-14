@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog – GiroCode Generator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --g:#22c55e; --gd:#16a34a; --g-dim:#f0fdf4; --g-mid:#dcfce7;
+  --blue:#3b82f6; --blue-d:#2563eb; --blue-dim:#eff6ff;
+  --ink:#0f172a; --ink-2:#334155; --ink-3:#64748b; --ink-4:#94a3b8;
+  --border:#e2e8f0; --surf:#f8fafc; --white:#ffffff;
+}
+html { scroll-behavior: smooth; }
+body { font-family:'Manrope',system-ui,sans-serif; background:var(--white); color:var(--ink); -webkit-font-smoothing:antialiased; }
+
+/* NAV */
+nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,.88); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-bottom:1px solid var(--border); }
+.nav-i { max-width:1200px; margin:0 auto; padding:0 28px; height:64px; display:flex; align-items:center; gap:6px; }
+.logo-a { display:flex; align-items:center; gap:11px; text-decoration:none; flex-shrink:0; }
+.logo-wm { display:flex; flex-direction:column; line-height:1; }
+.logo-name { font-size:17px; font-weight:800; letter-spacing:-.03em; color:var(--ink); }
+.logo-name .t { font-weight:500; }
+.logo-tag { font-size:9px; font-weight:600; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-4); margin-top:3px; }
+.nav-links { display:flex; align-items:center; gap:2px; margin-left:20px; flex:1; }
+.nav-links a { font-size:14px; font-weight:600; color:var(--ink-3); text-decoration:none; padding:7px 12px; border-radius:9px; transition:background .15s,color .15s; }
+.nav-links a:hover { background:var(--surf); color:var(--ink); }
+.nav-links a.active { color:var(--ink); background:var(--surf); }
+.nav-act { margin-left:auto; display:flex; align-items:center; gap:10px; }
+.lang-btn { font-family:'Manrope',sans-serif; font-size:12px; font-weight:700; color:var(--ink-3); background:none; border:none; cursor:pointer; padding:6px 8px; border-radius:8px; display:flex; align-items:center; gap:5px; transition:background .15s,color .15s; }
+.lang-btn:hover { background:var(--surf); color:var(--ink); }
+.btn-primary { font-family:'Manrope',sans-serif; font-size:13px; font-weight:700; padding:9px 18px; border-radius:11px; border:none; cursor:pointer; background:var(--g); color:white; text-decoration:none; transition:background .2s,transform .2s,box-shadow .2s; display:inline-flex; align-items:center; }
+.btn-primary:hover { background:var(--gd); transform:translateY(-1px); box-shadow:0 4px 14px rgba(34,197,94,.3); }
+
+/* HERO */
+.page-hero { background:linear-gradient(180deg,#edfaf3 0%,var(--white) 70%); padding:56px 28px 40px; }
+.page-hero-i { max-width:1200px; margin:0 auto; }
+.badge { display:inline-flex; align-items:center; gap:7px; background:var(--g-mid); color:var(--gd); font-size:11.5px; font-weight:700; letter-spacing:.04em; padding:5px 13px; border-radius:100px; margin-bottom:18px; }
+.page-hero h1 { font-size:clamp(32px,3.6vw,46px); font-weight:800; letter-spacing:-.04em; line-height:1.06; margin-bottom:14px; max-width:680px; }
+.page-hero p { font-size:16px; font-weight:500; color:var(--ink-3); line-height:1.65; max-width:520px; text-wrap:pretty; }
+
+/* CONTENT */
+.wrap { max-width:1200px; margin:0 auto; padding:44px 28px 72px; }
+
+/* Featured */
+.featured { display:grid; grid-template-columns:1.15fr 1fr; gap:0; border:1px solid var(--border); border-radius:22px; overflow:hidden; margin-bottom:48px; background:white; box-shadow:0 2px 4px rgba(0,0,0,.04),0 20px 56px rgba(0,0,0,.07); transition:transform .25s, box-shadow .25s; cursor:pointer; }
+.featured:hover { transform:translateY(-3px); box-shadow:0 4px 8px rgba(0,0,0,.05),0 28px 64px rgba(0,0,0,.1); }
+.featured-img { background:linear-gradient(135deg,#dcfce7 0%,#bbf7d0 100%); position:relative; min-height:300px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.featured-img .qr-deco { width:140px; height:140px; opacity:.9; }
+.featured-img .float-card { position:absolute; background:white; border-radius:14px; padding:13px 16px; box-shadow:0 8px 24px rgba(0,0,0,.12); display:flex; align-items:center; gap:10px; }
+.fc1 { top:38px; left:34px; }
+.fc2 { bottom:42px; right:30px; }
+.fc-ico { width:30px; height:30px; border-radius:8px; background:var(--g-mid); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.fc-tx { font-size:11px; font-weight:700; color:var(--ink); line-height:1.3; }
+.fc-tx span { display:block; font-size:9px; font-weight:600; color:var(--ink-4); }
+.featured-body { padding:40px; display:flex; flex-direction:column; justify-content:center; }
+.cat-row { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+.cat { font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--gd); background:var(--g-mid); padding:4px 11px; border-radius:100px; }
+.meta { font-size:12.5px; font-weight:600; color:var(--ink-4); }
+.featured-body h2 { font-size:28px; font-weight:800; letter-spacing:-.03em; line-height:1.15; margin-bottom:14px; }
+.featured-body p { font-size:15px; font-weight:500; color:var(--ink-3); line-height:1.65; margin-bottom:22px; text-wrap:pretty; }
+.read-link { display:inline-flex; align-items:center; gap:7px; font-size:14px; font-weight:700; color:var(--gd); }
+.read-link svg { transition:transform .2s; }
+.featured:hover .read-link svg { transform:translateX(4px); }
+
+/* Grid */
+.section-head { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:24px; }
+.section-head h3 { font-size:20px; font-weight:800; letter-spacing:-.02em; }
+.filter-row { display:flex; gap:8px; }
+.filter { font-family:'Manrope',sans-serif; font-size:12.5px; font-weight:700; color:var(--ink-3); background:white; border:1.5px solid var(--border); padding:6px 14px; border-radius:100px; cursor:pointer; transition:all .15s; }
+.filter:hover { border-color:var(--g); color:var(--gd); }
+.filter.active { background:var(--ink); border-color:var(--ink); color:white; }
+
+.grid { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
+.card { border:1px solid var(--border); border-radius:18px; overflow:hidden; background:white; cursor:pointer; transition:transform .25s, box-shadow .25s, border-color .25s; display:flex; flex-direction:column; }
+.card:hover { transform:translateY(-4px); border-color:#cbd5e1; box-shadow:0 12px 32px rgba(0,0,0,.08); }
+.card-img { height:170px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.ci-1 { background:linear-gradient(135deg,#dbeafe,#bfdbfe); }
+.ci-2 { background:linear-gradient(135deg,#dcfce7,#bbf7d0); }
+.ci-3 { background:linear-gradient(135deg,#fef3c7,#fde68a); }
+.ci-4 { background:linear-gradient(135deg,#ede9fe,#ddd6fe); }
+.ci-5 { background:linear-gradient(135deg,#fce7f3,#fbcfe8); }
+.ci-6 { background:linear-gradient(135deg,#cffafe,#a5f3fc); }
+.card-img .ci-ico { width:52px; height:52px; opacity:.85; }
+.card-body { padding:22px; display:flex; flex-direction:column; flex:1; }
+.card .cat-row { margin-bottom:12px; }
+.card h4 { font-size:17px; font-weight:800; letter-spacing:-.02em; line-height:1.25; margin-bottom:9px; }
+.card p { font-size:13.5px; font-weight:500; color:var(--ink-3); line-height:1.6; margin-bottom:18px; flex:1; text-wrap:pretty; }
+.card-foot { display:flex; align-items:center; gap:9px; padding-top:15px; border-top:1px solid var(--surf); }
+.avatar { width:28px; height:28px; border-radius:50%; background:var(--g-mid); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:var(--gd); flex-shrink:0; }
+.author { font-size:12px; font-weight:700; color:var(--ink-2); line-height:1.3; }
+.author span { display:block; font-size:11px; font-weight:600; color:var(--ink-4); }
+
+/* Newsletter */
+.newsletter { margin-top:56px; background:var(--ink); border-radius:24px; padding:48px 44px; display:grid; grid-template-columns:1fr auto; gap:32px; align-items:center; }
+.newsletter h3 { font-size:25px; font-weight:800; letter-spacing:-.03em; color:white; margin-bottom:9px; }
+.newsletter p { font-size:14.5px; font-weight:500; color:#94a3b8; line-height:1.6; max-width:400px; }
+.nl-form { display:flex; gap:10px; }
+.nl-form input { font-family:'Manrope',sans-serif; font-size:14px; font-weight:500; color:white; background:rgba(255,255,255,.08); border:1.5px solid rgba(255,255,255,.16); border-radius:11px; padding:12px 16px; outline:none; width:240px; transition:border-color .18s,background .18s; }
+.nl-form input::placeholder { color:#64748b; }
+.nl-form input:focus { border-color:var(--g); background:rgba(255,255,255,.12); }
+.nl-form button { font-family:'Manrope',sans-serif; font-size:14px; font-weight:700; background:var(--g); color:white; border:none; border-radius:11px; padding:12px 22px; cursor:pointer; white-space:nowrap; transition:background .2s,transform .2s; }
+.nl-form button:hover { background:var(--gd); transform:translateY(-1px); }
+
+/* FOOTER */
+footer { border-top:1px solid var(--border); padding:22px 28px; }
+.footer-i { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.footer-logo { display:flex; align-items:center; gap:9px; }
+.footer-brand { font-size:13px; font-weight:700; color:var(--ink-2); }
+.footer-brand .t { font-weight:500; }
+.footer-copy { font-size:12px; color:var(--ink-4); font-weight:500; }
+.footer-links { display:flex; gap:20px; }
+.footer-links a { font-size:12px; font-weight:600; color:var(--ink-4); text-decoration:none; transition:color .15s; }
+.footer-links a:hover { color:var(--ink-2); }
+
+@media (max-width:920px) {
+  .featured { grid-template-columns:1fr; }
+  .featured-img { min-height:220px; }
+  .grid { grid-template-columns:repeat(2,1fr); }
+  .newsletter { grid-template-columns:1fr; }
+  .nl-form input { width:100%; }
+}
+@media (max-width:640px) {
+  .nav-links { display:none; }
+  .grid { grid-template-columns:1fr; }
+  .featured-body { padding:28px; }
+  .section-head { flex-direction:column; gap:16px; align-items:flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-i">
+    <a href="GiroCode Generator.html" class="logo-a">
+      <svg width="36" height="36" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+        <rect width="200" height="200" rx="44" fill="#22c55e"/>
+        <rect x="40" y="20" width="20" height="20" rx="3" fill="white"/><rect x="60" y="20" width="20" height="20" rx="3" fill="white"/><rect x="80" y="20" width="20" height="20" rx="3" fill="white"/><rect x="100" y="20" width="20" height="20" rx="3" fill="white"/><rect x="120" y="20" width="20" height="20" rx="3" fill="white"/><rect x="140" y="20" width="20" height="20" rx="3" fill="white"/>
+        <rect x="20" y="40" width="20" height="20" rx="3" fill="white"/><rect x="160" y="40" width="20" height="20" rx="3" fill="white"/>
+        <rect x="20" y="60" width="20" height="20" rx="3" fill="white"/><rect x="20" y="80" width="20" height="20" rx="3" fill="white"/>
+        <rect x="20" y="100" width="20" height="20" rx="3" fill="white"/><rect x="100" y="100" width="20" height="20" rx="3" fill="white"/><rect x="120" y="100" width="20" height="20" rx="3" fill="white"/><rect x="140" y="100" width="20" height="20" rx="3" fill="white"/><rect x="160" y="100" width="20" height="20" rx="3" fill="white"/>
+        <rect x="20" y="120" width="20" height="20" rx="3" fill="white"/><rect x="160" y="120" width="20" height="20" rx="3" fill="white"/>
+        <rect x="20" y="140" width="20" height="20" rx="3" fill="white"/><rect x="160" y="140" width="20" height="20" rx="3" fill="white"/>
+        <rect x="40" y="160" width="20" height="20" rx="3" fill="white"/><rect x="60" y="160" width="20" height="20" rx="3" fill="white"/><rect x="80" y="160" width="20" height="20" rx="3" fill="white"/><rect x="100" y="160" width="20" height="20" rx="3" fill="white"/><rect x="120" y="160" width="20" height="20" rx="3" fill="white"/><rect x="140" y="160" width="20" height="20" rx="3" fill="white"/>
+      </svg>
+      <div class="logo-wm">
+        <div class="logo-name"><span class="t">Giro</span>Code</div>
+        <div class="logo-tag">Generator</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="GiroCode Generator.html">Generator</a>
+      <a href="Wissen.html">Wissen</a>
+      <a href="#" class="active">Blog</a>
+      <a href="#">Über uns</a>
+    </div>
+    <div class="nav-act">
+      <button class="lang-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        DE
+      </button>
+      <a href="GiroCode Generator.html" class="btn-primary">QR-Code erstellen</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-i">
+    <div class="badge">Blog &amp; Neuigkeiten</div>
+    <h1>Wissenswertes rund um GiroCodes und SEPA-Zahlungen</h1>
+    <p>Praktische Anleitungen, Hintergründe zum EPC-Standard und Tipps, wie du Überweisungen für deine Kunden so einfach wie möglich machst.</p>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- FEATURED -->
+  <article class="featured">
+    <div class="featured-img">
+      <div class="float-card fc1">
+        <span class="fc-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <span class="fc-tx">SEPA-konform<span>EPC-Standard 2.1</span></span>
+      </div>
+      <svg class="qr-deco" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="10" width="55" height="55" rx="6" fill="none" stroke="#16a34a" stroke-width="9"/><rect x="26" y="26" width="23" height="23" rx="2" fill="#16a34a"/>
+        <rect x="135" y="10" width="55" height="55" rx="6" fill="none" stroke="#16a34a" stroke-width="9"/><rect x="151" y="26" width="23" height="23" rx="2" fill="#16a34a"/>
+        <rect x="10" y="135" width="55" height="55" rx="6" fill="none" stroke="#16a34a" stroke-width="9"/><rect x="26" y="151" width="23" height="23" rx="2" fill="#16a34a"/>
+        <rect x="90" y="10" width="11" height="11" rx="2" fill="#16a34a"/><rect x="110" y="30" width="11" height="11" rx="2" fill="#16a34a"/><rect x="90" y="50" width="11" height="11" rx="2" fill="#16a34a"/>
+        <rect x="90" y="90" width="11" height="11" rx="2" fill="#16a34a"/><rect x="110" y="90" width="11" height="11" rx="2" fill="#16a34a"/><rect x="130" y="110" width="11" height="11" rx="2" fill="#16a34a"/><rect x="150" y="90" width="11" height="11" rx="2" fill="#16a34a"/><rect x="170" y="110" width="11" height="11" rx="2" fill="#16a34a"/><rect x="90" y="130" width="11" height="11" rx="2" fill="#16a34a"/><rect x="110" y="150" width="11" height="11" rx="2" fill="#16a34a"/><rect x="130" y="170" width="11" height="11" rx="2" fill="#16a34a"/><rect x="150" y="150" width="11" height="11" rx="2" fill="#16a34a"/><rect x="170" y="170" width="11" height="11" rx="2" fill="#16a34a"/>
+      </svg>
+      <div class="float-card fc2">
+        <span class="fc-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>
+        <span class="fc-tx">Sofort scannbar<span>Alle Banking-Apps</span></span>
+      </div>
+    </div>
+    <div class="featured-body">
+      <div class="cat-row">
+        <span class="cat">Grundlagen</span>
+        <span class="meta">12. Juni 2026 · 6 Min.</span>
+      </div>
+      <h2>Was ist ein GiroCode und wie funktioniert er?</h2>
+      <p>Der GiroCode bringt IBAN, Betrag und Verwendungszweck in einen QR-Code – einmal scannen und die Überweisung ist vorausgefüllt. Wir erklären den EPC-Standard und warum er Zahlungen fehlerfrei macht.</p>
+      <span class="read-link">Artikel lesen
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </div>
+  </article>
+
+  <!-- GRID -->
+  <div class="section-head">
+    <h3>Alle Artikel</h3>
+    <div class="filter-row">
+      <button class="filter active">Alle</button>
+      <button class="filter">Grundlagen</button>
+      <button class="filter">Anleitungen</button>
+      <button class="filter">Rechnungen</button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <article class="card">
+      <div class="card-img ci-1">
+        <svg class="ci-ico" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="3" height="3" rx=".5"/><rect x="18" y="18" width="3" height="3" rx=".5"/></svg>
+      </div>
+      <div class="card-body">
+        <div class="cat-row"><span class="cat">Anleitungen</span><span class="meta">8 Min.</span></div>
+        <h4>GiroCode auf Rechnungen einbinden</h4>
+        <p>So platzierst du den QR-Code rechtssicher auf deiner Rechnung – inklusive Pflichtangaben und Druckgröße.</p>
+        <div class="card-foot"><span class="avatar">LK</span><span class="author">Lena Krause<span>Redaktion</span></span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-img ci-2">
+        <svg class="ci-ico" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="1.5"><path d="M12 2 4 5v6c0 5 3.5 8 8 11 4.5-3 8-6 8-11V5l-8-3z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <div class="card-body">
+        <div class="cat-row"><span class="cat">Sicherheit</span><span class="meta">5 Min.</span></div>
+        <h4>Sind GiroCodes wirklich sicher?</h4>
+        <p>Was im QR-Code steht, was nicht – und warum die Bank-App immer die letzte Kontrolle behält.</p>
+        <div class="card-foot"><span class="avatar">TM</span><span class="author">Tobias Mayer<span>Redaktion</span></span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-img ci-3">
+        <svg class="ci-ico" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg>
+      </div>
+      <div class="card-body">
+        <div class="cat-row"><span class="cat">Rechnungen</span><span class="meta">7 Min.</span></div>
+        <h4>EPC-QR-Code: Diese Felder zählen</h4>
+        <p>Empfänger, IBAN, Betrag, Verwendungszweck – welche Angaben Pflicht sind und welche optional bleiben.</p>
+        <div class="card-foot"><span class="avatar">LK</span><span class="author">Lena Krause<span>Redaktion</span></span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-img ci-4">
+        <svg class="ci-ico" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+      </div>
+      <div class="card-body">
+        <div class="cat-row"><span class="cat">Grundlagen</span><span class="meta">4 Min.</span></div>
+        <h4>SEPA, EPC &amp; GiroCode erklärt</h4>
+        <p>Drei Begriffe, ein System. Wir ordnen die Standards ein und zeigen, wie sie zusammenhängen.</p>
+        <div class="card-foot"><span class="avatar">TM</span><span class="author">Tobias Mayer<span>Redaktion</span></span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-img ci-5">
+        <svg class="ci-ico" viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <div class="card-body">
+        <div class="cat-row"><span class="cat">Praxis</span><span class="meta">6 Min.</span></div>
+        <h4>GiroCode für Vereine &amp; Spenden</h4>
+        <p>Mitgliedsbeiträge und Spenden per Scan: So erleichterst du deinen Unterstützern die Zahlung.</p>
+        <div class="card-foot"><span class="avatar">LK</span><span class="author">Lena Krause<span>Redaktion</span></span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-img ci-6">
+        <svg class="ci-ico" viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </div>
+      <div class="card-body">
+        <div class="cat-row"><span class="cat">Anleitungen</span><span class="meta">3 Min.</span></div>
+        <h4>QR-Code als PNG oder SVG?</h4>
+        <p>Welches Format wofür: scharfer Druck, kleine Dateigröße und der Unterschied in der Praxis.</p>
+        <div class="card-foot"><span class="avatar">TM</span><span class="author">Tobias Mayer<span>Redaktion</span></span></div>
+      </div>
+    </article>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter">
+    <div>
+      <h3>Keine Anleitung verpassen</h3>
+      <p>Neue Artikel und Updates zum EPC-Standard – etwa einmal im Monat, kein Spam.</p>
+    </div>
+    <form class="nl-form" onsubmit="return false">
+      <input type="email" placeholder="deine@email.de"/>
+      <button type="submit">Abonnieren</button>
+    </form>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-i">
+    <div class="footer-logo">
+      <svg width="24" height="24" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="200" rx="44" fill="#22c55e"/>
+        <rect x="40" y="20" width="20" height="20" rx="3" fill="white"/><rect x="60" y="20" width="20" height="20" rx="3" fill="white"/><rect x="80" y="20" width="20" height="20" rx="3" fill="white"/><rect x="100" y="20" width="20" height="20" rx="3" fill="white"/><rect x="120" y="20" width="20" height="20" rx="3" fill="white"/><rect x="140" y="20" width="20" height="20" rx="3" fill="white"/>
+        <rect x="20" y="40" width="20" height="20" rx="3" fill="white"/><rect x="160" y="40" width="20" height="20" rx="3" fill="white"/>
+        <rect x="20" y="60" width="20" height="20" rx="3" fill="white"/><rect x="20" y="80" width="20" height="20" rx="3" fill="white"/>
+        <rect x="20" y="100" width="20" height="20" rx="3" fill="white"/><rect x="100" y="100" width="20" height="20" rx="3" fill="white"/><rect x="120" y="100" width="20" height="20" rx="3" fill="white"/><rect x="140" y="100" width="20" height="20" rx="3" fill="white"/><rect x="160" y="100" width="20" height="20" rx="3" fill="white"/>
+        <rect x="20" y="120" width="20" height="20" rx="3" fill="white"/><rect x="160" y="120" width="20" height="20" rx="3" fill="white"/>
+        <rect x="20" y="140" width="20" height="20" rx="3" fill="white"/><rect x="160" y="140" width="20" height="20" rx="3" fill="white"/>
+        <rect x="40" y="160" width="20" height="20" rx="3" fill="white"/><rect x="60" y="160" width="20" height="20" rx="3" fill="white"/><rect x="80" y="160" width="20" height="20" rx="3" fill="white"/><rect x="100" y="160" width="20" height="20" rx="3" fill="white"/><rect x="120" y="160" width="20" height="20" rx="3" fill="white"/><rect x="140" y="160" width="20" height="20" rx="3" fill="white"/>
+      </svg>
+      <span class="footer-brand"><span class="t">Giro</span>Code Generator</span>
+    </div>
+    <span class="footer-copy">© 2026 GiroCode Generator</span>
+    <div class="footer-links">
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+      <a href="#">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

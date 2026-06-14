@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GiroCode Generator – QR-Code für Überweisungen erstellen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --g:       #22c55e;
+  --gd:      #16a34a;
+  --g-dim:   #f0fdf4;
+  --g-mid:   #dcfce7;
+  --blue:    #3b82f6;
+  --blue-d:  #2563eb;
+  --blue-dim:#eff6ff;
+  --ink:     #0f172a;
+  --ink-2:   #334155;
+  --ink-3:   #64748b;
+  --ink-4:   #94a3b8;
+  --border:  #e2e8f0;
+  --surf:    #f8fafc;
+  --white:   #ffffff;
+  --radius-card: 22px;
+  --radius-input: 11px;
+  --shadow-card: 0 2px 4px rgba(0,0,0,.04), 0 20px 56px rgba(0,0,0,.09);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Manrope', system-ui, sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; }
+input[type="number"] { -moz-appearance: textfield; }
+
+/* ── NAV ─────────────────────────────────────────── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-i {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 28px; height: 64px;
+  display: flex; align-items: center; gap: 6px;
+}
+.logo-a { display: flex; align-items: center; gap: 11px; text-decoration: none; flex-shrink: 0; }
+.logo-wm { display: flex; flex-direction: column; line-height: 1; }
+.logo-name { font-size: 17px; font-weight: 800; letter-spacing: -.03em; color: var(--ink); }
+.logo-name .t { font-weight: 500; }
+.logo-tag { font-size: 9px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: var(--ink-4); margin-top: 3px; }
+.nav-links { display: flex; align-items: center; gap: 2px; margin-left: 20px; flex: 1; }
+.nav-links a {
+  font-size: 14px; font-weight: 600; color: var(--ink-3);
+  text-decoration: none; padding: 7px 12px; border-radius: 9px;
+  transition: background .15s, color .15s;
+}
+.nav-links a:hover { background: var(--surf); color: var(--ink); }
+.nav-act { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.lang-btn {
+  font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 700;
+  color: var(--ink-3); background: none; border: none; cursor: pointer;
+  padding: 6px 8px; border-radius: 8px; display: flex; align-items: center; gap: 5px;
+  transition: background .15s, color .15s;
+}
+.lang-btn:hover { background: var(--surf); color: var(--ink); }
+.btn-primary {
+  font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 700;
+  padding: 9px 18px; border-radius: 11px; border: none; cursor: pointer;
+  background: var(--g); color: white; text-decoration: none;
+  transition: background .2s, transform .2s, box-shadow .2s;
+  display: inline-flex; align-items: center;
+}
+.btn-primary:hover { background: var(--gd); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(34,197,94,.3); }
+.btn-primary:active { transform: none; box-shadow: none; }
+
+/* ── HERO ────────────────────────────────────────── */
+.hero {
+  background: linear-gradient(180deg, #edfaf3 0%, var(--white) 58%);
+  padding: 72px 28px 64px;
+}
+.hero-i {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 5fr 7fr; gap: 72px; align-items: center;
+}
+
+/* Left */
+.badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--g-mid); color: var(--gd);
+  font-size: 11.5px; font-weight: 700; letter-spacing: .04em;
+  padding: 5px 13px 5px 8px; border-radius: 100px; margin-bottom: 24px;
+}
+.badge-dot { width: 7px; height: 7px; background: var(--g); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.55;transform:scale(.82)} }
+h1 {
+  font-size: clamp(36px, 4.2vw, 54px); font-weight: 800;
+  letter-spacing: -.042em; line-height: 1.05; margin-bottom: 18px;
+}
+h1 em { font-style: normal; color: var(--g); }
+.hero-desc {
+  font-size: 16px; font-weight: 500; color: var(--ink-3);
+  line-height: 1.7; max-width: 390px; margin-bottom: 36px;
+  text-wrap: pretty;
+}
+.hero-checks { display: flex; flex-direction: column; gap: 9px; }
+.hc { display: flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 600; color: var(--ink-2); }
+.hc-icon { width: 20px; height: 20px; background: var(--g-mid); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.hc-icon svg { display: block; }
+
+/* Right: Generator Card */
+.gen-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+.gc-head {
+  padding: 17px 22px;
+  border-bottom: 1px solid var(--surf);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.gc-title { font-size: 13px; font-weight: 700; color: var(--ink); display: flex; align-items: center; gap: 8px; }
+.gc-pill {
+  font-size: 10px; font-weight: 700; letter-spacing: .06em;
+  background: var(--g-mid); color: var(--gd);
+  padding: 3px 9px; border-radius: 100px; margin-left: auto;
+}
+.gc-body { display: grid; grid-template-columns: 1fr 196px; }
+
+/* Form */
+.gc-form { padding: 22px; border-right: 1px solid var(--surf); display: flex; flex-direction: column; gap: 13px; }
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field label { font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.opt { font-weight: 500; text-transform: none; letter-spacing: 0; opacity: .7; }
+.field input {
+  width: 100%; font-family: 'Manrope', sans-serif;
+  font-size: 14px; font-weight: 500; color: var(--ink);
+  background: var(--surf); border: 1.5px solid transparent;
+  border-radius: var(--radius-input); padding: 10px 13px;
+  outline: none; transition: background .18s, border-color .18s, box-shadow .18s;
+}
+.field input::placeholder { color: var(--ink-4); font-weight: 400; }
+.field input:hover { background: #eef1f6; }
+.field input:focus { background: var(--white); border-color: var(--g); box-shadow: 0 0 0 3px rgba(34,197,94,.14); }
+.field input.err { border-color: #f43f5e !important; box-shadow: 0 0 0 3px rgba(244,63,94,.12) !important; background: white !important; animation: shake .35s ease; }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-4px)} 75%{transform:translateX(4px)} }
+.field-row { display: flex; gap: 10px; }
+.field-row .field { flex: 1; }
+.amt-wrap { position: relative; }
+.amt-pre { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); font-size: 14px; font-weight: 700; color: var(--ink-4); pointer-events: none; }
+.amt-wrap input { padding-left: 28px; }
+.gen-btn {
+  margin-top: 4px; width: 100%; padding: 12px 16px;
+  background: var(--g); color: white; border: none;
+  border-radius: 13px; font-family: 'Manrope', sans-serif;
+  font-size: 14px; font-weight: 700; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: background .2s, transform .2s, box-shadow .2s;
+}
+.gen-btn:hover { background: var(--gd); transform: translateY(-1px); box-shadow: 0 6px 22px rgba(34,197,94,.28); }
+.gen-btn:active { transform: none; box-shadow: none; }
+
+/* QR side */
+.gc-qr {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 22px 16px; gap: 13px;
+  background: var(--white);
+}
+.qr-box {
+  width: 164px; height: 164px;
+  background: var(--surf); border-radius: 14px;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.qr-ph { display: flex; flex-direction: column; align-items: center; gap: 9px; transition: opacity .3s; }
+.qr-ph p { font-size: 10.5px; font-weight: 600; color: var(--ink-4); text-align: center; line-height: 1.4; }
+#qr-out {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: white; border-radius: 14px;
+  opacity: 0; transform: scale(.91);
+  transition: opacity .35s ease, transform .35s ease;
+  pointer-events: none;
+}
+#qr-out.show { opacity: 1; transform: scale(1); pointer-events: auto; }
+.qr-cap {
+  font-size: 10px; font-weight: 600; color: var(--ink-4); text-align: center; line-height: 1.4;
+}
+.qr-btns { display: flex; flex-direction: column; gap: 7px; width: 100%; }
+.dl-btn {
+  width: 100%; padding: 8px 10px; border-radius: 9px;
+  border: 1.5px solid var(--border); background: white;
+  font-family: 'Manrope', sans-serif; font-size: 11.5px; font-weight: 700; color: var(--ink-2);
+  cursor: pointer; transition: all .2s;
+  display: flex; align-items: center; justify-content: center; gap: 5px;
+}
+.dl-btn:not(:disabled):hover { border-color: var(--g); color: var(--gd); background: var(--g-dim); transform: translateY(-1px); }
+.dl-btn.blue:not(:disabled):hover { border-color: var(--blue); color: var(--blue-d); background: var(--blue-dim); }
+.dl-btn:disabled { opacity: .35; cursor: not-allowed; }
+
+/* ── TRUST BAR ───────────────────────────────────── */
+.trust { padding: 26px 28px; border-top: 1px solid var(--surf); }
+.trust-i {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: center; gap: 36px; flex-wrap: wrap;
+}
+.ti { display: flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: var(--ink-3); }
+.ti-mark { color: var(--g); display: flex; align-items: center; }
+
+/* ── FOOTER ──────────────────────────────────────── */
+footer { border-top: 1px solid var(--border); padding: 22px 28px; }
+.footer-i {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+.footer-logo { display: flex; align-items: center; gap: 9px; }
+.footer-brand { font-size: 13px; font-weight: 700; color: var(--ink-2); }
+.footer-brand .t { font-weight: 500; }
+.footer-copy { font-size: 12px; color: var(--ink-4); font-weight: 500; }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { font-size: 12px; font-weight: 600; color: var(--ink-4); text-decoration: none; transition: color .15s; }
+.footer-links a:hover { color: var(--ink-2); }
+
+/* ── TWEAKS PANEL ────────────────────────────────── */
+.tweaks-panel {
+  display: none;
+  position: fixed; bottom: 20px; right: 20px; z-index: 9999;
+  background: white; border: 1px solid var(--border);
+  border-radius: 16px; padding: 18px 20px; width: 220px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.12);
+  font-family: 'Manrope', sans-serif;
+}
+.tw-head { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; }
+.tw-close { background: none; border: none; cursor: pointer; color: var(--ink-4); font-size: 18px; line-height: 1; padding: 0; }
+.tw-section { margin-bottom: 14px; }
+.tw-label { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 7px; }
+.tw-opts { display: flex; gap: 6px; }
+.tw-opt {
+  flex: 1; padding: 6px 8px; border-radius: 8px;
+  border: 1.5px solid var(--border); background: white;
+  font-family: 'Manrope', sans-serif; font-size: 11px; font-weight: 700; color: var(--ink-3);
+  cursor: pointer; text-align: center; transition: all .15s;
+}
+.tw-opt.active { border-color: var(--g); background: var(--g-dim); color: var(--gd); }
+.tw-swatches { display: flex; gap: 7px; }
+.tw-swatch { width: 28px; height: 28px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; transition: border-color .15s, transform .15s; flex-shrink: 0; }
+.tw-swatch.active { border-color: var(--ink); transform: scale(1.15); }
+
+/* ── ANIMATIONS ──────────────────────────────────── */
+/* entrance animations removed — micro-interactions only */
+
+/* ── RESPONSIVE ──────────────────────────────────── */
+@media (max-width: 880px) {
+  .hero-i { grid-template-columns: 1fr; gap: 36px; }
+  .gc-body { grid-template-columns: 1fr; }
+  .gc-qr { flex-direction: row; border-top: 1px solid var(--surf); flex-wrap: wrap; padding: 18px; }
+  .qr-box { width: 120px; height: 120px; }
+  .qr-btns { flex-direction: row; }
+  .nav-links { display: none; }
+  h1 { font-size: 36px; }
+}
+@media (max-width: 520px) {
+  .hero { padding: 48px 18px 48px; }
+  .nav-i { padding: 0 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════ NAV ════════════════ -->
+<nav>
+  <div class="nav-i">
+    <a href="#" class="logo-a">
+      <svg width="36" height="36" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+        <rect width="200" height="200" rx="44" fill="#22c55e"/>
+        <rect x="40"  y="20"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="60"  y="20"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="80"  y="20"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="100" y="20"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="120" y="20"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="140" y="20"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="20"  y="40"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="160" y="40"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="20"  y="60"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="20"  y="80"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="20"  y="100" width="20" height="20" rx="3" fill="white"/>
+        <rect x="100" y="100" width="20" height="20" rx="3" fill="white"/>
+        <rect x="120" y="100" width="20" height="20" rx="3" fill="white"/>
+        <rect x="140" y="100" width="20" height="20" rx="3" fill="white"/>
+        <rect x="160" y="100" width="20" height="20" rx="3" fill="white"/>
+        <rect x="20"  y="120" width="20" height="20" rx="3" fill="white"/>
+        <rect x="160" y="120" width="20" height="20" rx="3" fill="white"/>
+        <rect x="20"  y="140" width="20" height="20" rx="3" fill="white"/>
+        <rect x="160" y="140" width="20" height="20" rx="3" fill="white"/>
+        <rect x="40"  y="160" width="20" height="20" rx="3" fill="white"/>
+        <rect x="60"  y="160" width="20" height="20" rx="3" fill="white"/>
+        <rect x="80"  y="160" width="20" height="20" rx="3" fill="white"/>
+        <rect x="100" y="160" width="20" height="20" rx="3" fill="white"/>
+        <rect x="120" y="160" width="20" height="20" rx="3" fill="white"/>
+        <rect x="140" y="160" width="20" height="20" rx="3" fill="white"/>
+      </svg>
+      <div class="logo-wm">
+        <div class="logo-name"><span class="t">Giro</span>Code</div>
+        <div class="logo-tag">Generator</div>
+      </div>
+    </a>
+
+    <div class="nav-links">
+      <a href="#">Generator</a>
+      <a href="#">Wissen</a>
+      <a href="#">Blog</a>
+      <a href="#">Über uns</a>
+    </div>
+
+    <div class="nav-act">
+      <button class="lang-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        DE
+      </button>
+      <a href="#generator" class="btn-primary">QR-Code erstellen</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════ HERO ════════════════ -->
+<section class="hero" id="generator">
+  <div class="hero-i">
+
+    <!-- Left: Text -->
+    <div class="hero-left">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Kostenlos &amp; DSGVO-konform
+      </div>
+
+      <h1>Über&shy;weisungen<br>per <em>QR&#8209;Code</em><br>verschicken</h1>
+
+      <p class="hero-desc">
+        Erstelle in Sekunden einen GiroCode nach EPC-Standard — direkt im Browser, ohne App, ohne Konto.
+      </p>
+
+      <div class="hero-checks">
+        <div class="hc">
+          <span class="hc-icon">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Alle Daten bleiben lokal im Browser
+        </div>
+        <div class="hc">
+          <span class="hc-icon">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Kompatibel mit allen deutschen Banking-Apps
+        </div>
+        <div class="hc">
+          <span class="hc-icon">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          SEPA-konform nach EPC-Standard
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Generator -->
+    <div class="hero-right">
+      <div class="gen-card">
+
+        <div class="gc-head">
+          <span class="gc-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+            GiroCode erstellen
+          </span>
+          <span class="gc-pill">EPC · SEPA</span>
+        </div>
+
+        <div class="gc-body">
+          <!-- Form -->
+          <div class="gc-form">
+            <div class="field">
+              <label>Empfänger</label>
+              <input type="text" id="f-name" placeholder="Max Mustermann GmbH" autocomplete="off"/>
+            </div>
+            <div class="field">
+              <label>IBAN</label>
+              <input type="text" id="f-iban" placeholder="DE89 3704 0044 0532 0130 00" autocomplete="off"/>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label>BIC <span class="opt">(optional)</span></label>
+                <input type="text" id="f-bic" placeholder="COBADEFFXXX" autocomplete="off"/>
+              </div>
+              <div class="field">
+                <label>Betrag (EUR)</label>
+                <div class="amt-wrap">
+                  <span class="amt-pre">€</span>
+                  <input type="number" id="f-amount" placeholder="0,00" min="0" step="0.01" autocomplete="off"/>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label>Verwendungszweck</label>
+              <input type="text" id="f-ref" placeholder="Rechnung Nr. 2024-001" maxlength="140" autocomplete="off"/>
+            </div>
+            <button class="gen-btn" onclick="generate()">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              GiroCode generieren
+            </button>
+          </div>
+
+          <!-- QR preview -->
+          <div class="gc-qr">
+            <div class="qr-box" id="qr-box">
+              <div class="qr-ph" id="qr-ph">
+                <svg width="44" height="44" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" opacity=".25">
+                  <rect x="10" y="10" width="80" height="80" rx="8" fill="none" stroke="#94a3b8" stroke-width="10"/>
+                  <rect x="30" y="30" width="40" height="40" rx="3" fill="#94a3b8"/>
+                  <rect x="110" y="10" width="80" height="80" rx="8" fill="none" stroke="#94a3b8" stroke-width="10"/>
+                  <rect x="130" y="30" width="40" height="40" rx="3" fill="#94a3b8"/>
+                  <rect x="10" y="110" width="80" height="80" rx="8" fill="none" stroke="#94a3b8" stroke-width="10"/>
+                  <rect x="30" y="130" width="40" height="40" rx="3" fill="#94a3b8"/>
+                  <rect x="110" y="110" width="10" height="10" rx="1" fill="#94a3b8"/>
+                  <rect x="130" y="110" width="10" height="10" rx="1" fill="#94a3b8"/>
+                  <rect x="150" y="120" width="10" height="10" rx="1" fill="#94a3b8"/>
+                  <rect x="170" y="110" width="10" height="10" rx="1" fill="#94a3b8"/>
+                  <rect x="110" y="130" width="10" height="10" rx="1" fill="#94a3b8"/>
+                  <rect x="150" y="140" width="10" height="10" rx="1" fill="#94a3b8"/>
+                  <rect x="170" y="130" width="10" height="10" rx="1" fill="#94a3b8"/>
+                  <rect x="120" y="150" width="10" height="10" rx="1" fill="#94a3b8"/>
+                  <rect x="140" y="160" width="10" height="10" rx="1" fill="#94a3b8"/>
+                  <rect x="160" y="155" width="10" height="10" rx="1" fill="#94a3b8"/>
+                  <rect x="180" y="150" width="10" height="10" rx="1" fill="#94a3b8"/>
+                </svg>
+                <p>Felder ausfüllen &amp;<br>generieren</p>
+              </div>
+              <div id="qr-out"></div>
+            </div>
+
+            <p class="qr-cap">EPC-konformer<br>GiroCode</p>
+
+            <div class="qr-btns">
+              <button class="dl-btn" id="dl-png" disabled onclick="downloadPNG()">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PNG herunterladen
+              </button>
+              <button class="dl-btn blue" id="dl-svg" disabled onclick="downloadSVG()">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                SVG herunterladen
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ TRUST BAR ════════════════ -->
+<section class="trust">
+  <div class="trust-i">
+    <div class="ti">
+      <span class="ti-mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+      100% clientseitig
+    </div>
+    <div class="ti">
+      <span class="ti-mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+      Alle Banking-Apps
+    </div>
+    <div class="ti">
+      <span class="ti-mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      Keine Registrierung
+    </div>
+    <div class="ti">
+      <span class="ti-mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+      PDF-Export inklusive
+    </div>
+    <div class="ti">
+      <span class="ti-mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+      EPC-Standard 2.1
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer>
+  <div class="footer-i">
+    <div class="footer-logo">
+      <svg width="24" height="24" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="200" rx="44" fill="#22c55e"/>
+        <rect x="40"  y="20"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="60"  y="20"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="80"  y="20"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="100" y="20"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="120" y="20"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="140" y="20"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="20"  y="40"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="160" y="40"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="20"  y="60"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="20"  y="80"  width="20" height="20" rx="3" fill="white"/>
+        <rect x="20"  y="100" width="20" height="20" rx="3" fill="white"/>
+        <rect x="100" y="100" width="20" height="20" rx="3" fill="white"/>
+        <rect x="120" y="100" width="20" height="20" rx="3" fill="white"/>
+        <rect x="140" y="100" width="20" height="20" rx="3" fill="white"/>
+        <rect x="160" y="100" width="20" height="20" rx="3" fill="white"/>
+        <rect x="20"  y="120" width="20" height="20" rx="3" fill="white"/>
+        <rect x="160" y="120" width="20" height="20" rx="3" fill="white"/>
+        <rect x="20"  y="140" width="20" height="20" rx="3" fill="white"/>
+        <rect x="160" y="140" width="20" height="20" rx="3" fill="white"/>
+        <rect x="40"  y="160" width="20" height="20" rx="3" fill="white"/>
+        <rect x="60"  y="160" width="20" height="20" rx="3" fill="white"/>
+        <rect x="80"  y="160" width="20" height="20" rx="3" fill="white"/>
+        <rect x="100" y="160" width="20" height="20" rx="3" fill="white"/>
+        <rect x="120" y="160" width="20" height="20" rx="3" fill="white"/>
+        <rect x="140" y="160" width="20" height="20" rx="3" fill="white"/>
+      </svg>
+      <span class="footer-brand"><span class="t">Giro</span>Code Generator</span>
+    </div>
+    <span class="footer-copy">© 2025 GiroCode Generator</span>
+    <div class="footer-links">
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+      <a href="#">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════ TWEAKS ════════════════ -->
+<div class="tweaks-panel" id="tweaks-panel">
+  <div class="tw-head">
+    Tweaks
+    <button class="tw-close" onclick="closeTweaks()">×</button>
+  </div>
+  <div class="tw-section">
+    <div class="tw-label">Ecken</div>
+    <div class="tw-opts">
+      <button class="tw-opt active" onclick="setRadius('weich',this)">Weich</button>
+      <button class="tw-opt" onclick="setRadius('mittel',this)">Mittel</button>
+      <button class="tw-opt" onclick="setRadius('scharf',this)">Scharf</button>
+    </div>
+  </div>
+  <div class="tw-section">
+    <div class="tw-label">Akzentfarbe</div>
+    <div class="tw-swatches">
+      <div class="tw-swatch active" style="background:#22c55e" title="Grün" onclick="setAccent('#22c55e','#16a34a','#f0fdf4','#dcfce7',this)"></div>
+      <div class="tw-swatch" style="background:#10b981" title="Smaragd" onclick="setAccent('#10b981','#059669','#ecfdf5','#d1fae5',this)"></div>
+      <div class="tw-swatch" style="background:#3b82f6" title="Blau" onclick="setAccent('#3b82f6','#2563eb','#eff6ff','#dbeafe',this)"></div>
+      <div class="tw-swatch" style="background:#8b5cf6" title="Violett" onclick="setAccent('#8b5cf6','#7c3aed','#f5f3ff','#ede9fe',this)"></div>
+    </div>
+  </div>
+  <div class="tw-section" style="margin-bottom:0">
+    <div class="tw-label">Schatten</div>
+    <div class="tw-opts">
+      <button class="tw-opt active" onclick="setShadow('stark',this)">Stark</button>
+      <button class="tw-opt" onclick="setShadow('dezent',this)">Dezent</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── QR Code ────────────────────────────────────────
+let qrInstance = null;
+
+function buildEPC() {
+  const name = document.getElementById('f-name').value.trim();
+  const iban = document.getElementById('f-iban').value.replace(/\s+/g, '').toUpperCase().trim();
+  const bic  = document.getElementById('f-bic').value.trim();
+  const amt  = parseFloat(document.getElementById('f-amount').value) || 0;
+  const ref  = document.getElementById('f-ref').value.trim().slice(0, 140);
+  const amtStr = amt > 0 ? 'EUR' + amt.toFixed(2) : '';
+  return ['BCD', '002', '1', 'SCT', bic, name, iban, amtStr, '', ref, ''].join('\n');
+}
+
+function markErr(id) {
+  const el = document.getElementById(id);
+  el.classList.add('err');
+  el.focus();
+  setTimeout(() => el.classList.remove('err'), 1600);
+}
+
+function generate() {
+  const name = document.getElementById('f-name').value.trim();
+  const iban = document.getElementById('f-iban').value.replace(/\s+/g, '').trim();
+  let ok = true;
+  if (!name) { markErr('f-name'); ok = false; }
+  if (!iban)  { markErr('f-iban');  ok = false; }
+  if (!ok) return;
+
+  const out = document.getElementById('qr-out');
+  const ph  = document.getElementById('qr-ph');
+
+  out.classList.remove('show');
+  out.innerHTML = '';
+  if (qrInstance) { qrInstance = null; }
+
+  setTimeout(() => {
+    qrInstance = new QRCode(out, {
+      text: buildEPC(),
+      width: 152, height: 152,
+      colorDark: '#0f172a',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.M,
+    });
+    ph.style.display = 'none';
+    out.classList.add('show');
+    document.getElementById('dl-png').disabled = false;
+    document.getElementById('dl-svg').disabled = false;
+  }, 60);
+}
+
+function downloadPNG() {
+  const canvas = document.querySelector('#qr-out canvas');
+  if (!canvas) return;
+  const a = document.createElement('a');
+  a.download = 'girocode.png';
+  a.href = canvas.toDataURL('image/png');
+  a.click();
+}
+
+function downloadSVG() {
+  const canvas = document.querySelector('#qr-out canvas');
+  if (!canvas) return;
+  const dataURL = canvas.toDataURL('image/png');
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><image href="${dataURL}" width="512" height="512" image-rendering="pixelated"/></svg>`;
+  const blob = new Blob([svg], { type: 'image/svg+xml' });
+  const a = document.createElement('a');
+  a.download = 'girocode.svg';
+  a.href = URL.createObjectURL(blob);
+  a.click();
+}
+
+// Enter key triggers generate
+document.querySelectorAll('input').forEach(el => {
+  el.addEventListener('keydown', e => { if (e.key === 'Enter') generate(); });
+});
+
+// ── Tweaks ─────────────────────────────────────────
+window.addEventListener('message', e => {
+  if (!e.data || typeof e.data !== 'object') return;
+  const p = document.getElementById('tweaks-panel');
+  if (e.data.type === 'tweaks:enable')  p.style.display = 'block';
+  if (e.data.type === 'tweaks:disable') p.style.display = 'none';
+});
+
+function closeTweaks() {
+  document.getElementById('tweaks-panel').style.display = 'none';
+}
+
+function setRadius(mode, btn) {
+  const map = { weich: { card: '22px', input: '11px' }, mittel: { card: '14px', input: '8px' }, scharf: { card: '6px', input: '4px' } };
+  const v = map[mode];
+  document.documentElement.style.setProperty('--radius-card', v.card);
+  document.documentElement.style.setProperty('--radius-input', v.input);
+  document.querySelectorAll('.tw-opts').forEach(g => g.querySelectorAll('.tw-opt').forEach(b => b.classList.remove('active')));
+  btn.closest('.tw-opts').querySelectorAll('.tw-opt').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function setAccent(g, gd, gdim, gmid, swatch) {
+  document.documentElement.style.setProperty('--g', g);
+  document.documentElement.style.setProperty('--gd', gd);
+  document.documentElement.style.setProperty('--g-dim', gdim);
+  document.documentElement.style.setProperty('--g-mid', gmid);
+  document.querySelectorAll('.tw-swatch').forEach(s => s.classList.remove('active'));
+  swatch.classList.add('active');
+}
+
+function setShadow(mode, btn) {
+  const v = mode === 'stark'
+    ? '0 2px 4px rgba(0,0,0,.04), 0 20px 56px rgba(0,0,0,.09)'
+    : '0 1px 3px rgba(0,0,0,.05), 0 4px 12px rgba(0,0,0,.06)';
+  document.documentElement.style.setProperty('--shadow-card', v);
+  btn.closest('.tw-opts').querySelectorAll('.tw-opt').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

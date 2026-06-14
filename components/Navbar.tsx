@@ -49,6 +49,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     apiDocs: 'API-Docs',
     apiAccess: 'API-Zugang',
     developers: 'Für Entwickler',
+    cta: 'QR-Code erstellen',
   },
   en: {
     home: 'Generator',
@@ -63,6 +64,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     apiDocs: 'API Docs',
     apiAccess: 'API Access',
     developers: 'For developers',
+    cta: 'Create QR code',
   },
   fr: {
     home: 'Générateur',
@@ -77,6 +79,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     apiDocs: 'API Docs',
     apiAccess: 'Accès API',
     developers: 'Développeurs',
+    cta: 'Créer QR code',
   },
   es: {
     home: 'Generador',
@@ -91,6 +94,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     apiDocs: 'API Docs',
     apiAccess: 'Acceso API',
     developers: 'Desarrolladores',
+    cta: 'Crear código QR',
   },
   it: {
     home: 'Generatore',
@@ -105,6 +109,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     apiDocs: 'API Docs',
     apiAccess: 'Accesso API',
     developers: 'Per sviluppatori',
+    cta: 'Crea codice QR',
   },
 };
 
@@ -141,12 +146,10 @@ export function Navbar() {
   const currentLocaleInfo = localeMeta[currentLocale];
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Schließe Mobile-Menü bei Routenwechsel
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
 
-  // Verhindere Body-Scroll bei geöffnetem Menü
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = 'hidden';
@@ -158,33 +161,40 @@ export function Navbar() {
     };
   }, [mobileOpen]);
 
+  const basePath = localeMeta[currentLocale].prefix || '';
+  const ctaHref = basePath || '/';
+
   return (
-    <header className="sticky top-0 z-[9999] border-b border-white/5 bg-[#0b0c10]/90 backdrop-blur">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
+    <header className="font-ds sticky top-0 z-[9999] border-b border-[#e2e8f0] bg-white/[.88] backdrop-blur-[20px]">
+      <div className="mx-auto flex h-16 max-w-[1200px] items-center gap-[6px] px-7">
+
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
+        <Link
+          href="/"
+          className="flex flex-shrink-0 items-center gap-[11px]"
+          onClick={() => setMobileOpen(false)}
+        >
           <Image
             src="/logo.svg"
             alt="GiroCode Generator"
             width={36}
             height={36}
-            className="rounded-lg"
+            className="flex-shrink-0 rounded-lg"
           />
-          <div className="flex flex-col leading-tight">
-            <span className="text-sm font-semibold text-slate-50">
-              GiroCode Generator
+          <div className="flex flex-col leading-none">
+            <span className="text-[17px] font-extrabold tracking-[-0.03em] text-[#0f172a]">
+              <span className="font-medium">Giro</span>Code
             </span>
-            <span className="text-[11px] text-slate-400">
-              SEPA-EPC &amp; Rechnungs-PDF
+            <span className="mt-0.5 text-[9px] font-semibold uppercase tracking-[0.13em] text-[#94a3b8]">
+              Generator
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-3 md:flex">
-          <nav className="flex flex-wrap items-center gap-1 text-[11px] text-slate-300 lg:gap-1.5 lg:text-xs">
+        <div className="ml-5 hidden flex-1 items-center gap-[10px] md:flex">
+          <nav className="flex flex-wrap items-center gap-[2px]">
             {mainNavConfig.map((item) => {
-              const basePath = localeMeta[currentLocale].prefix || '';
               const href = `${basePath}${item.path || ''}` || '/';
               const isRoot = item.key === 'home';
               const active = isRoot
@@ -196,10 +206,10 @@ export function Navbar() {
                   key={item.key}
                   href={href || '/'}
                   className={[
-                    'whitespace-nowrap rounded-full px-2 py-1 transition',
+                    'whitespace-nowrap rounded-[9px] px-3 py-[7px] text-[14px] font-semibold transition-[background,color] duration-150',
                     active
-                      ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/40'
-                      : 'text-slate-300 hover:bg-slate-800/70 hover:text-slate-50',
+                      ? 'bg-[#f8fafc] text-[#0f172a]'
+                      : 'text-[#64748b] hover:bg-[#f8fafc] hover:text-[#0f172a]',
                   ].join(' ')}
                 >
                   {navLabels[currentLocale][item.key]}
@@ -213,17 +223,25 @@ export function Navbar() {
             />
           </nav>
 
-          <LanguageSwitcher
-            pathname={pathname}
-            currentLocale={currentLocale}
-            currentLocaleInfo={currentLocaleInfo}
-          />
+          <div className="ml-auto flex items-center gap-[10px]">
+            <LanguageSwitcher
+              pathname={pathname}
+              currentLocale={currentLocale}
+              currentLocaleInfo={currentLocaleInfo}
+            />
+            <Link
+              href={ctaHref}
+              className="inline-flex items-center rounded-[11px] bg-[#22c55e] px-[18px] py-[9px] text-[13px] font-bold text-white transition-all duration-200 hover:-translate-y-px hover:bg-[#16a34a] hover:shadow-[0_4px_14px_rgba(34,197,94,.3)] active:translate-y-0 active:shadow-none"
+            >
+              {navLabels[currentLocale].cta}
+            </Link>
+          </div>
         </div>
 
         {/* Mobile: Hamburger Button */}
         <button
           type="button"
-          className="flex items-center justify-center rounded-lg p-2 text-slate-300 transition hover:bg-slate-800/70 hover:text-slate-50 md:hidden"
+          className="ml-auto flex items-center justify-center rounded-[9px] p-2 text-[#64748b] transition-[background,color] duration-150 hover:bg-[#f8fafc] hover:text-[#0f172a] md:hidden"
           onClick={() => setMobileOpen((prev) => !prev)}
           aria-label={mobileOpen ? 'Menü schließen' : 'Menü öffnen'}
           aria-expanded={mobileOpen}
@@ -245,10 +263,9 @@ export function Navbar() {
 
       {/* Mobile Dropdown Menü */}
       {mobileOpen && (
-        <div className="border-t border-white/5 bg-[#0b0c10] md:hidden">
+        <div className="border-t border-[#e2e8f0] bg-white md:hidden">
           <nav className="flex flex-col px-4 py-2">
             {mainNavConfig.map((item) => {
-              const basePath = localeMeta[currentLocale].prefix || '';
               const href = `${basePath}${item.path || ''}` || '/';
               const isRoot = item.key === 'home';
               const active = isRoot
@@ -260,10 +277,10 @@ export function Navbar() {
                   key={item.key}
                   href={href || '/'}
                   className={[
-                    'flex items-center rounded-lg px-3 py-4 text-sm font-medium transition',
+                    'flex items-center rounded-[9px] px-3 py-4 text-sm font-semibold transition-[background,color] duration-150',
                     active
-                      ? 'text-emerald-300'
-                      : 'text-slate-300 hover:bg-slate-800/50 hover:text-slate-50',
+                      ? 'bg-[#f8fafc] text-[#0f172a]'
+                      : 'text-[#64748b] hover:bg-[#f8fafc] hover:text-[#0f172a]',
                   ].join(' ')}
                   onClick={() => setMobileOpen(false)}
                 >
@@ -273,12 +290,11 @@ export function Navbar() {
             })}
 
             {/* Tools-Bereich */}
-            <div className="mt-1 border-t border-white/5 pt-1">
-              <p className="px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+            <div className="mt-1 border-t border-[#e2e8f0] pt-1">
+              <p className="px-3 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-[#94a3b8]">
                 {navLabels[currentLocale].tools}
               </p>
               {toolsItems.map((item) => {
-                const basePath = localeMeta[currentLocale].prefix || '';
                 const href = `${basePath}${item.path}`;
                 const isActive = pathname.startsWith(href) || pathname === item.path;
                 return (
@@ -286,10 +302,10 @@ export function Navbar() {
                     key={item.key}
                     href={href}
                     className={[
-                      'flex items-center gap-3 rounded-lg px-3 py-4 text-sm transition',
+                      'flex items-center gap-3 rounded-[9px] px-3 py-4 text-sm transition-[background,color] duration-150',
                       isActive
-                        ? 'text-emerald-300'
-                        : 'text-slate-300 hover:bg-slate-800/50 hover:text-slate-50',
+                        ? 'bg-[#f8fafc] text-[#0f172a]'
+                        : 'text-[#64748b] hover:bg-[#f8fafc] hover:text-[#0f172a]',
                     ].join(' ')}
                     onClick={() => setMobileOpen(false)}
                   >
@@ -301,8 +317,8 @@ export function Navbar() {
             </div>
 
             {/* Sprachumschalter */}
-            <div className="mt-1 border-t border-white/5 pt-2 pb-3">
-              <p className="px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+            <div className="mt-1 border-t border-[#e2e8f0] pb-3 pt-2">
+              <p className="px-3 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-[#94a3b8]">
                 Sprache
               </p>
               <div className="flex flex-wrap gap-2 px-3">
@@ -315,10 +331,10 @@ export function Navbar() {
                       key={locale}
                       href={href}
                       className={[
-                        'flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition',
+                        'flex items-center gap-1.5 rounded-[100px] border px-3 py-1.5 text-xs font-semibold transition-[background,border-color,color] duration-150',
                         isActive
-                          ? 'border-emerald-500/40 bg-emerald-500/15 text-emerald-300'
-                          : 'border-slate-600/70 bg-slate-900/60 text-slate-300 hover:border-slate-400',
+                          ? 'border-[#22c55e] bg-[#f0fdf4] text-[#16a34a]'
+                          : 'border-[#e2e8f0] bg-[#f8fafc] text-[#64748b] hover:border-[#22c55e] hover:text-[#16a34a]',
                       ].join(' ')}
                       onClick={() => setMobileOpen(false)}
                     >
@@ -328,6 +344,17 @@ export function Navbar() {
                   );
                 })}
               </div>
+            </div>
+
+            {/* Mobile CTA */}
+            <div className="border-t border-[#e2e8f0] py-3">
+              <Link
+                href={ctaHref}
+                className="flex w-full items-center justify-center rounded-[11px] bg-[#22c55e] px-[18px] py-[10px] text-[14px] font-bold text-white transition-all duration-200 hover:bg-[#16a34a]"
+                onClick={() => setMobileOpen(false)}
+              >
+                {navLabels[currentLocale].cta}
+              </Link>
             </div>
           </nav>
         </div>
@@ -372,47 +399,56 @@ function ToolsDropdown({ currentLocale, pathname }: ToolsDropdownProps) {
         type="button"
         onClick={() => setOpen((prev) => !prev)}
         className={[
-          'flex cursor-pointer items-center gap-1 whitespace-nowrap rounded-full px-2 py-1 transition',
+          'flex cursor-pointer items-center gap-1 whitespace-nowrap rounded-[9px] px-3 py-[7px] text-[14px] font-semibold transition-[background,color] duration-150',
           isToolsActive
-            ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/40'
-            : 'text-slate-300 hover:bg-slate-800/70 hover:text-slate-50',
+            ? 'bg-[#f8fafc] text-[#0f172a]'
+            : 'text-[#64748b] hover:bg-[#f8fafc] hover:text-[#0f172a]',
         ].join(' ')}
         aria-haspopup="true"
         aria-expanded={open}
       >
         {navLabels[currentLocale].tools}
-        <span
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           aria-hidden
-          className={`text-[9px] text-slate-400 transition-transform ${open ? 'rotate-180' : ''}`}
+          className={`transition-transform duration-150 ${open ? 'rotate-180' : ''}`}
         >
-          ▼
-        </span>
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
       </button>
 
       {open && (
         <div className="absolute left-0 top-full z-[10000] w-52 pt-2">
-        <div className="rounded-xl border border-[#1f2431] bg-[#121318] text-xs text-slate-100 shadow-lg shadow-black/60">
-          {toolsItems.map((item) => {
-            const href = `${basePath}${item.path}`;
-            const isActive = pathname.startsWith(href) || pathname === item.path;
-            return (
-              <Link
-                key={item.key}
-                href={href}
-                className={[
-                  'flex items-center gap-2.5 px-4 py-2.5 transition-colors first:rounded-t-xl last:rounded-b-xl',
-                  isActive
-                    ? 'bg-emerald-500/15 text-emerald-300'
-                    : 'hover:bg-[#1a1d25]',
-                ].join(' ')}
-                onClick={() => setOpen(false)}
-              >
-                <span aria-hidden>{item.icon}</span>
-                <span>{navLabels[currentLocale][item.key]}</span>
-              </Link>
-            );
-          })}
-        </div>
+          <div className="rounded-[16px] border border-[#e2e8f0] bg-white text-sm shadow-[0_8px_32px_rgba(0,0,0,.12)]">
+            {toolsItems.map((item) => {
+              const href = `${basePath}${item.path}`;
+              const isActive = pathname.startsWith(href) || pathname === item.path;
+              return (
+                <Link
+                  key={item.key}
+                  href={href}
+                  className={[
+                    'flex items-center gap-2.5 px-4 py-2.5 transition-colors duration-150 first:rounded-t-[16px] last:rounded-b-[16px]',
+                    isActive
+                      ? 'bg-[#f0fdf4] text-[#16a34a]'
+                      : 'text-[#64748b] hover:bg-[#f8fafc] hover:text-[#0f172a]',
+                  ].join(' ')}
+                  onClick={() => setOpen(false)}
+                >
+                  <span aria-hidden>{item.icon}</span>
+                  <span>{navLabels[currentLocale][item.key]}</span>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       )}
     </div>
@@ -431,29 +467,48 @@ function LanguageSwitcher({
   currentLocaleInfo,
 }: LanguageSwitcherProps) {
   const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
-    <div className="relative">
+    <div ref={ref} className="relative">
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className="flex cursor-pointer items-center gap-2 rounded-full border border-slate-600/70 bg-slate-900/60 px-3 py-1 text-[11px] font-medium text-slate-200 shadow-sm shadow-black/40 transition hover:border-slate-400 hover:bg-slate-800/70"
+        className="flex cursor-pointer items-center gap-[5px] rounded-[8px] border border-[#e2e8f0] bg-[#f8fafc] px-[8px] py-[6px] text-[12px] font-bold text-[#64748b] transition-[background,color,border-color] duration-150 hover:bg-[#eef1f6] hover:text-[#0f172a]"
         aria-haspopup="listbox"
         aria-expanded={open}
       >
         <span aria-hidden>{currentLocaleInfo.flag}</span>
         <span>{currentLocaleInfo.code}</span>
-        <span
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="10"
+          height="10"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           aria-hidden
-          className={`text-[10px] text-slate-400 transition-transform ${
-            open ? 'rotate-180' : ''
-          }`}
+          className={`transition-transform duration-150 ${open ? 'rotate-180' : ''}`}
         >
-          ▼
-        </span>
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
       </button>
+
       {open && (
-        <div className="absolute right-0 top-full z-[10000] mt-2 w-40 rounded-xl border border-slate-700/80 bg-[#05060a] text-xs text-slate-100 shadow-lg shadow-black/60">
+        <div className="absolute right-0 top-full z-[10000] mt-2 w-40 rounded-[16px] border border-[#e2e8f0] bg-white text-sm shadow-[0_8px_32px_rgba(0,0,0,.12)]">
           {localeOrder.map((locale) => {
             const info = localeMeta[locale];
             const href = buildPathForLocale(locale, pathname);
@@ -463,16 +518,16 @@ function LanguageSwitcher({
                 key={locale}
                 href={href}
                 className={[
-                  'flex items-center gap-2 px-3 py-2',
+                  'flex items-center gap-2 px-3 py-2 transition-colors duration-150 first:rounded-t-[16px] last:rounded-b-[16px]',
                   isActive
-                    ? 'bg-emerald-500/15 text-emerald-300'
-                    : 'hover:bg-slate-800/80',
+                    ? 'bg-[#f0fdf4] text-[#16a34a]'
+                    : 'text-[#64748b] hover:bg-[#f8fafc] hover:text-[#0f172a]',
                 ].join(' ')}
                 onClick={() => setOpen(false)}
               >
                 <span aria-hidden>{info.flag}</span>
                 <span className="flex-1">{info.label}</span>
-                <span className="text-[10px] text-slate-400">{info.code}</span>
+                <span className="text-[10px] text-[#94a3b8]">{info.code}</span>
               </Link>
             );
           })}
