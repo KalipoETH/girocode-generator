@@ -49,6 +49,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     apiDocs: 'API-Docs',
     apiAccess: 'API-Zugang',
     developers: 'Für Entwickler',
+    cta: 'GiroCode erstellen',
   },
   en: {
     home: 'Generator',
@@ -63,6 +64,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     apiDocs: 'API Docs',
     apiAccess: 'API Access',
     developers: 'For developers',
+    cta: 'Create GiroCode',
   },
   fr: {
     home: 'Générateur',
@@ -77,6 +79,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     apiDocs: 'API Docs',
     apiAccess: 'Accès API',
     developers: 'Développeurs',
+    cta: 'Créer un GiroCode',
   },
   es: {
     home: 'Generador',
@@ -91,6 +94,7 @@ const navLabels: Record<Locale, Record<string, string>> = {
     apiDocs: 'API Docs',
     apiAccess: 'Acceso API',
     developers: 'Desarrolladores',
+    cta: 'Crear GiroCode',
   },
   it: {
     home: 'Generatore',
@@ -105,6 +109,50 @@ const navLabels: Record<Locale, Record<string, string>> = {
     apiDocs: 'API Docs',
     apiAccess: 'Accesso API',
     developers: 'Per sviluppatori',
+    cta: 'Crea GiroCode',
+  },
+};
+
+const toolDescriptions: Record<Locale, Record<string, string>> = {
+  de: {
+    invoiceEditor: 'Drag & Drop gestalten',
+    scanner: 'Bestehenden Code auslesen',
+    bulk: 'Mehrere Codes per CSV',
+    apiDocs: 'API-Referenz für Entwickler',
+    apiAccess: 'Zugang verwalten',
+    developers: 'Tools für Entwickler',
+  },
+  en: {
+    invoiceEditor: 'Design via drag & drop',
+    scanner: 'Read an existing code',
+    bulk: 'Multiple codes via CSV',
+    apiDocs: 'API reference for developers',
+    apiAccess: 'Manage your access',
+    developers: 'Tools for developers',
+  },
+  fr: {
+    invoiceEditor: 'Créer par glisser-déposer',
+    scanner: 'Lire un code existant',
+    bulk: 'Plusieurs codes via CSV',
+    apiDocs: 'Référence API pour développeurs',
+    apiAccess: "Gérer l'accès",
+    developers: 'Outils pour développeurs',
+  },
+  es: {
+    invoiceEditor: 'Diseñar con arrastrar y soltar',
+    scanner: 'Leer un código existente',
+    bulk: 'Varios códigos vía CSV',
+    apiDocs: 'Referencia de API para desarrolladores',
+    apiAccess: 'Gestionar el acceso',
+    developers: 'Herramientas para desarrolladores',
+  },
+  it: {
+    invoiceEditor: 'Crea con drag & drop',
+    scanner: 'Leggi un codice esistente',
+    bulk: 'Più codici via CSV',
+    apiDocs: 'Riferimento API per sviluppatori',
+    apiAccess: "Gestisci l'accesso",
+    developers: 'Strumenti per sviluppatori',
   },
 };
 
@@ -139,6 +187,8 @@ export function Navbar() {
   const pathname = usePathname();
   const currentLocale = getLocaleFromPathname(pathname);
   const currentLocaleInfo = localeMeta[currentLocale];
+  const basePath = localeMeta[currentLocale].prefix || '';
+  const ctaHref = basePath || '/';
   const [mobileOpen, setMobileOpen] = useState(false);
 
   // Schließe Mobile-Menü bei Routenwechsel
@@ -159,71 +209,80 @@ export function Navbar() {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-[9999] border-b border-white/5 bg-[#0b0c10]/90 backdrop-blur">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
+    <header className="sticky top-0 z-[9999] bg-[#0b0c10]/90 px-4 py-3 backdrop-blur sm:px-7 sm:py-[22px]">
+      <nav className="mx-auto flex h-auto max-w-[1320px] items-center gap-3 rounded-full border border-white/8 bg-[#121826] px-2 py-2 shadow-[0_14px_38px_rgba(0,0,0,0.5)] sm:gap-[22px] sm:py-0 md:h-[68px] md:pl-[10px] md:pr-2">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
+        <Link
+          href="/"
+          className="flex flex-none items-center gap-3 pl-2"
+          onClick={() => setMobileOpen(false)}
+        >
           <Image
             src="/logo.svg"
             alt="GiroCode Generator"
-            width={36}
-            height={36}
-            className="rounded-lg"
+            width={42}
+            height={42}
+            className="rounded-xl"
           />
           <div className="flex flex-col leading-tight">
-            <span className="text-sm font-semibold text-slate-50">
+            <span className="text-base font-extrabold tracking-tight text-slate-50">
               GiroCode Generator
             </span>
-            <span className="text-[11px] text-slate-400">
+            <span className="text-[10.5px] font-semibold tracking-wide text-[#8b97a8]">
               SEPA-EPC &amp; Rechnungs-PDF
             </span>
           </div>
         </Link>
 
+        <span className="hidden h-[30px] w-px flex-none bg-white/10 md:block" />
+
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-3 md:flex">
-          <nav className="flex flex-wrap items-center gap-1 text-[11px] text-slate-300 lg:gap-1.5 lg:text-xs">
-            {mainNavConfig.map((item) => {
-              const basePath = localeMeta[currentLocale].prefix || '';
-              const href = `${basePath}${item.path || ''}` || '/';
-              const isRoot = item.key === 'home';
-              const active = isRoot
-                ? pathname === '/' || pathname === basePath || pathname === ''
-                : pathname.startsWith(href);
+        <div className="mx-auto hidden items-center gap-0.5 md:flex">
+          {mainNavConfig.map((item) => {
+            const href = `${basePath}${item.path || ''}` || '/';
+            const isRoot = item.key === 'home';
+            const active = isRoot
+              ? pathname === '/' || pathname === basePath || pathname === ''
+              : pathname.startsWith(href);
 
-              return (
-                <Link
-                  key={item.key}
-                  href={href || '/'}
-                  className={[
-                    'whitespace-nowrap rounded-full px-2 py-1 transition',
-                    active
-                      ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/40'
-                      : 'text-slate-300 hover:bg-slate-800/70 hover:text-slate-50',
-                  ].join(' ')}
-                >
-                  {navLabels[currentLocale][item.key]}
-                </Link>
-              );
-            })}
+            return (
+              <Link
+                key={item.key}
+                href={href || '/'}
+                className={[
+                  'whitespace-nowrap rounded-full px-[15px] py-[9px] text-[14.5px] transition',
+                  active
+                    ? 'bg-emerald-500/15 font-bold text-emerald-400'
+                    : 'font-semibold text-slate-300 hover:bg-white/6 hover:text-slate-50',
+                ].join(' ')}
+              >
+                {navLabels[currentLocale][item.key]}
+              </Link>
+            );
+          })}
 
-            <ToolsDropdown
-              currentLocale={currentLocale}
-              pathname={pathname}
-            />
-          </nav>
+          <ToolsDropdown currentLocale={currentLocale} pathname={pathname} />
+        </div>
 
+        {/* Desktop: Sprachchip + CTA */}
+        <div className="hidden flex-none items-center gap-2.5 md:flex">
           <LanguageSwitcher
             pathname={pathname}
             currentLocale={currentLocale}
             currentLocaleInfo={currentLocaleInfo}
           />
+          <Link
+            href={ctaHref}
+            className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-emerald-500 px-[22px] py-[13px] text-[14.5px] font-bold text-[#06210f] shadow-[0_8px_22px_rgba(34,197,94,0.3)] transition hover:bg-emerald-600"
+          >
+            {navLabels[currentLocale].cta} <span aria-hidden>↗</span>
+          </Link>
         </div>
 
         {/* Mobile: Hamburger Button */}
         <button
           type="button"
-          className="flex items-center justify-center rounded-lg p-2 text-slate-300 transition hover:bg-slate-800/70 hover:text-slate-50 md:hidden"
+          className="flex flex-none items-center justify-center rounded-full p-2 text-slate-300 transition hover:bg-white/6 hover:text-slate-50 md:hidden"
           onClick={() => setMobileOpen((prev) => !prev)}
           aria-label={mobileOpen ? 'Menü schließen' : 'Menü öffnen'}
           aria-expanded={mobileOpen}
@@ -241,14 +300,21 @@ export function Navbar() {
             </svg>
           )}
         </button>
-      </div>
+      </nav>
 
       {/* Mobile Dropdown Menü */}
       {mobileOpen && (
-        <div className="border-t border-white/5 bg-[#0b0c10] md:hidden">
+        <div className="mx-4 mt-2 rounded-2xl border border-white/8 bg-[#121826] shadow-[0_14px_38px_rgba(0,0,0,0.5)] md:hidden">
           <nav className="flex flex-col px-4 py-2">
+            <Link
+              href={ctaHref}
+              className="my-2 flex items-center justify-center gap-2 rounded-full bg-emerald-500 px-[22px] py-3 text-sm font-bold text-[#06210f] shadow-[0_8px_22px_rgba(34,197,94,0.3)] transition hover:bg-emerald-600"
+              onClick={() => setMobileOpen(false)}
+            >
+              {navLabels[currentLocale].cta} <span aria-hidden>↗</span>
+            </Link>
+
             {mainNavConfig.map((item) => {
-              const basePath = localeMeta[currentLocale].prefix || '';
               const href = `${basePath}${item.path || ''}` || '/';
               const isRoot = item.key === 'home';
               const active = isRoot
@@ -263,7 +329,7 @@ export function Navbar() {
                     'flex items-center rounded-lg px-3 py-4 text-sm font-medium transition',
                     active
                       ? 'text-emerald-300'
-                      : 'text-slate-300 hover:bg-slate-800/50 hover:text-slate-50',
+                      : 'text-slate-300 hover:bg-white/6 hover:text-slate-50',
                   ].join(' ')}
                   onClick={() => setMobileOpen(false)}
                 >
@@ -273,12 +339,11 @@ export function Navbar() {
             })}
 
             {/* Tools-Bereich */}
-            <div className="mt-1 border-t border-white/5 pt-1">
-              <p className="px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+            <div className="mt-1 border-t border-white/8 pt-1">
+              <p className="px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#8b97a8]">
                 {navLabels[currentLocale].tools}
               </p>
               {toolsItems.map((item) => {
-                const basePath = localeMeta[currentLocale].prefix || '';
                 const href = `${basePath}${item.path}`;
                 const isActive = pathname.startsWith(href) || pathname === item.path;
                 return (
@@ -286,23 +351,28 @@ export function Navbar() {
                     key={item.key}
                     href={href}
                     className={[
-                      'flex items-center gap-3 rounded-lg px-3 py-4 text-sm transition',
+                      'flex items-start gap-3 rounded-lg px-3 py-3 text-sm transition',
                       isActive
                         ? 'text-emerald-300'
-                        : 'text-slate-300 hover:bg-slate-800/50 hover:text-slate-50',
+                        : 'text-slate-300 hover:bg-white/6 hover:text-slate-50',
                     ].join(' ')}
                     onClick={() => setMobileOpen(false)}
                   >
-                    <span aria-hidden>{item.icon}</span>
-                    <span>{navLabels[currentLocale][item.key]}</span>
+                    <span aria-hidden className="mt-0.5 text-lg leading-none">{item.icon}</span>
+                    <span className="flex flex-col gap-0.5">
+                      <span className="font-bold">{navLabels[currentLocale][item.key]}</span>
+                      <span className="text-xs font-medium text-[#8b97a8]">
+                        {toolDescriptions[currentLocale][item.key]}
+                      </span>
+                    </span>
                   </Link>
                 );
               })}
             </div>
 
             {/* Sprachumschalter */}
-            <div className="mt-1 border-t border-white/5 pt-2 pb-3">
-              <p className="px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+            <div className="mt-1 border-t border-white/8 pt-2 pb-3">
+              <p className="px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#8b97a8]">
                 Sprache
               </p>
               <div className="flex flex-wrap gap-2 px-3">
@@ -318,7 +388,7 @@ export function Navbar() {
                         'flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition',
                         isActive
                           ? 'border-emerald-500/40 bg-emerald-500/15 text-emerald-300'
-                          : 'border-slate-600/70 bg-slate-900/60 text-slate-300 hover:border-slate-400',
+                          : 'border-white/10 bg-[#1e293b] text-slate-300 hover:bg-[#2a384d]',
                       ].join(' ')}
                       onClick={() => setMobileOpen(false)}
                     >
@@ -344,6 +414,7 @@ interface ToolsDropdownProps {
 function ToolsDropdown({ currentLocale, pathname }: ToolsDropdownProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const basePath = localeMeta[currentLocale].prefix || '';
 
   const isToolsActive = toolsItems.some((item) => {
@@ -361,21 +432,41 @@ function ToolsDropdown({ currentLocale, pathname }: ToolsDropdownProps) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    return () => {
+      if (closeTimeout.current) clearTimeout(closeTimeout.current);
+    };
+  }, []);
+
+  const handleMouseEnter = () => {
+    if (closeTimeout.current) {
+      clearTimeout(closeTimeout.current);
+      closeTimeout.current = null;
+    }
+    setOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimeout.current = setTimeout(() => {
+      setOpen(false);
+    }, 150);
+  };
+
   return (
     <div
       ref={ref}
       className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
         className={[
-          'flex cursor-pointer items-center gap-1 whitespace-nowrap rounded-full px-2 py-1 transition',
+          'flex cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-[15px] py-[9px] text-[14.5px] transition',
           isToolsActive
-            ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/40'
-            : 'text-slate-300 hover:bg-slate-800/70 hover:text-slate-50',
+            ? 'bg-emerald-500/15 font-bold text-emerald-400'
+            : 'font-semibold text-slate-300 hover:bg-white/6 hover:text-slate-50',
         ].join(' ')}
         aria-haspopup="true"
         aria-expanded={open}
@@ -383,36 +474,45 @@ function ToolsDropdown({ currentLocale, pathname }: ToolsDropdownProps) {
         {navLabels[currentLocale].tools}
         <span
           aria-hidden
-          className={`text-[9px] text-slate-400 transition-transform ${open ? 'rotate-180' : ''}`}
+          className={`text-[9px] text-[#8b97a8] transition-transform ${open ? 'rotate-180' : ''}`}
         >
           ▼
         </span>
       </button>
 
       {open && (
-        <div className="absolute left-0 top-full z-[10000] w-52 pt-2">
-        <div className="rounded-xl border border-[#1f2431] bg-[#121318] text-xs text-slate-100 shadow-lg shadow-black/60">
-          {toolsItems.map((item) => {
-            const href = `${basePath}${item.path}`;
-            const isActive = pathname.startsWith(href) || pathname === item.path;
-            return (
-              <Link
-                key={item.key}
-                href={href}
-                className={[
-                  'flex items-center gap-2.5 px-4 py-2.5 transition-colors first:rounded-t-xl last:rounded-b-xl',
-                  isActive
-                    ? 'bg-emerald-500/15 text-emerald-300'
-                    : 'hover:bg-[#1a1d25]',
-                ].join(' ')}
-                onClick={() => setOpen(false)}
-              >
-                <span aria-hidden>{item.icon}</span>
-                <span>{navLabels[currentLocale][item.key]}</span>
-              </Link>
-            );
-          })}
-        </div>
+        <div className="absolute left-1/2 top-full z-20 w-[272px] -translate-x-1/2 pt-[14px]">
+          <div
+            className="rounded-2xl border border-white/8 bg-[#1a2233] p-2 shadow-[0_18px_44px_rgba(0,0,0,0.55)]"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            {toolsItems.map((item) => {
+              const href = `${basePath}${item.path}`;
+              const isActive = pathname.startsWith(href) || pathname === item.path;
+              return (
+                <Link
+                  key={item.key}
+                  href={href}
+                  className={[
+                    'flex items-start gap-[11px] rounded-[10px] px-[11px] py-2.5 transition-colors',
+                    isActive ? 'bg-emerald-500/15' : 'hover:bg-emerald-500/15',
+                  ].join(' ')}
+                  onClick={() => setOpen(false)}
+                >
+                  <span aria-hidden className="mt-0.5 text-lg leading-none">{item.icon}</span>
+                  <span className="flex flex-col gap-0.5">
+                    <span className="text-sm font-bold text-slate-50">
+                      {navLabels[currentLocale][item.key]}
+                    </span>
+                    <span className="text-xs font-medium text-[#8b97a8]">
+                      {toolDescriptions[currentLocale][item.key]}
+                    </span>
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       )}
     </div>
@@ -437,15 +537,15 @@ function LanguageSwitcher({
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className="flex cursor-pointer items-center gap-2 rounded-full border border-slate-600/70 bg-slate-900/60 px-3 py-1 text-[11px] font-medium text-slate-200 shadow-sm shadow-black/40 transition hover:border-slate-400 hover:bg-slate-800/70"
+        className="flex cursor-pointer items-center gap-1.5 rounded-full bg-[#1e293b] px-[13px] py-2.5 text-[13.5px] font-bold text-slate-300 transition hover:bg-[#2a384d]"
         aria-haspopup="listbox"
         aria-expanded={open}
       >
-        <span aria-hidden>{currentLocaleInfo.flag}</span>
+        <span aria-hidden className="text-[15px]">{currentLocaleInfo.flag}</span>
         <span>{currentLocaleInfo.code}</span>
         <span
           aria-hidden
-          className={`text-[10px] text-slate-400 transition-transform ${
+          className={`text-[10px] text-[#8b97a8] transition-transform ${
             open ? 'rotate-180' : ''
           }`}
         >
@@ -453,7 +553,7 @@ function LanguageSwitcher({
         </span>
       </button>
       {open && (
-        <div className="absolute right-0 top-full z-[10000] mt-2 w-40 rounded-xl border border-slate-700/80 bg-[#05060a] text-xs text-slate-100 shadow-lg shadow-black/60">
+        <div className="absolute right-0 top-full z-20 mt-2 w-40 rounded-xl border border-white/8 bg-[#1a2233] text-xs text-slate-100 shadow-[0_18px_44px_rgba(0,0,0,0.55)]">
           {localeOrder.map((locale) => {
             const info = localeMeta[locale];
             const href = buildPathForLocale(locale, pathname);
@@ -466,13 +566,13 @@ function LanguageSwitcher({
                   'flex items-center gap-2 px-3 py-2',
                   isActive
                     ? 'bg-emerald-500/15 text-emerald-300'
-                    : 'hover:bg-slate-800/80',
+                    : 'hover:bg-white/6',
                 ].join(' ')}
                 onClick={() => setOpen(false)}
               >
                 <span aria-hidden>{info.flag}</span>
                 <span className="flex-1">{info.label}</span>
-                <span className="text-[10px] text-slate-400">{info.code}</span>
+                <span className="text-[10px] text-[#8b97a8]">{info.code}</span>
               </Link>
             );
           })}
