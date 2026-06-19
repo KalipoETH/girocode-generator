@@ -209,8 +209,8 @@ export function Navbar() {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-[9999] bg-[#0b0c10]/90 px-4 py-3 backdrop-blur sm:px-7 sm:py-[22px]">
-      <nav className="mx-auto flex h-auto max-w-[1320px] items-center gap-3 rounded-full border border-white/8 bg-[#121826] px-2 py-2 shadow-[0_14px_38px_rgba(0,0,0,0.5)] sm:gap-[22px] sm:py-0 md:h-[68px] md:pl-[10px] md:pr-2">
+    <header className="sticky top-0 z-[9999] overflow-visible bg-[#0b0c10]/90 px-4 py-3 backdrop-blur sm:px-7 sm:py-[22px]">
+      <nav className="mx-auto flex h-auto max-w-[1320px] items-center gap-3 rounded-full border border-white/8 bg-[#121826] px-2 py-2 shadow-[0_14px_38px_rgba(0,0,0,0.5)] sm:gap-[22px] sm:py-0 lg:h-[68px] lg:pl-[10px] lg:pr-2">
         {/* Logo */}
         <Link
           href="/"
@@ -228,16 +228,16 @@ export function Navbar() {
             <span className="text-base font-extrabold tracking-tight text-slate-50">
               GiroCode Generator
             </span>
-            <span className="text-[10.5px] font-semibold tracking-wide text-[#8b97a8]">
+            <span className="hidden text-[10.5px] font-semibold tracking-wide text-[#8b97a8] sm:block">
               SEPA-EPC &amp; Rechnungs-PDF
             </span>
           </div>
         </Link>
 
-        <span className="hidden h-[30px] w-px flex-none bg-white/10 md:block" />
+        <span className="hidden h-[30px] w-px flex-none bg-white/10 lg:block" />
 
         {/* Desktop Navigation */}
-        <div className="mx-auto hidden items-center gap-0.5 md:flex">
+        <div className="mx-auto hidden items-center gap-0.5 lg:flex">
           {mainNavConfig.map((item) => {
             const href = `${basePath}${item.path || ''}` || '/';
             const isRoot = item.key === 'home';
@@ -265,7 +265,7 @@ export function Navbar() {
         </div>
 
         {/* Desktop: Sprachchip + CTA */}
-        <div className="hidden flex-none items-center gap-2.5 md:flex">
+        <div className="hidden flex-none items-center gap-2.5 lg:flex">
           <LanguageSwitcher
             pathname={pathname}
             currentLocale={currentLocale}
@@ -282,7 +282,7 @@ export function Navbar() {
         {/* Mobile: Hamburger Button */}
         <button
           type="button"
-          className="flex flex-none items-center justify-center rounded-full p-2 text-slate-300 transition hover:bg-white/6 hover:text-slate-50 md:hidden"
+          className="flex flex-none items-center justify-center rounded-full p-2 text-slate-300 transition hover:bg-white/6 hover:text-slate-50 lg:hidden"
           onClick={() => setMobileOpen((prev) => !prev)}
           aria-label={mobileOpen ? 'Menü schließen' : 'Menü öffnen'}
           aria-expanded={mobileOpen}
@@ -304,7 +304,7 @@ export function Navbar() {
 
       {/* Mobile Dropdown Menü */}
       {mobileOpen && (
-        <div className="mx-4 mt-2 rounded-2xl border border-white/8 bg-[#121826] shadow-[0_14px_38px_rgba(0,0,0,0.5)] md:hidden">
+        <div className="mx-4 mt-2 max-h-[calc(100vh-100px)] overflow-y-auto rounded-2xl border border-white/8 bg-[#121826] shadow-[0_14px_38px_rgba(0,0,0,0.5)] lg:hidden">
           <nav className="flex flex-col px-4 py-2">
             <Link
               href={ctaHref}
@@ -481,7 +481,7 @@ function ToolsDropdown({ currentLocale, pathname }: ToolsDropdownProps) {
       </button>
 
       {open && (
-        <div className="absolute left-1/2 top-full z-20 w-[272px] -translate-x-1/2 pt-[14px]">
+        <div className="absolute left-1/2 top-full z-50 w-[272px] -translate-x-1/2 pt-[14px]">
           <div
             className="rounded-2xl border border-white/8 bg-[#1a2233] p-2 shadow-[0_18px_44px_rgba(0,0,0,0.55)]"
             onMouseEnter={handleMouseEnter}
