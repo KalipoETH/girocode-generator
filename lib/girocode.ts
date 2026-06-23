@@ -26,13 +26,13 @@ export function toAmountEUR(value: number | string): string {
   if (typeof value === 'string') {
     const trimmed = value.trim().replace(',', '.');
     const parsed = Number(trimmed);
-    if (!isFinite(parsed) || parsed < 0) {
+    if (!isFinite(parsed) || parsed <= 0) {
       throw new Error('Ungültiger Betrag');
     }
     return parsed.toFixed(2);
   }
 
-  if (!isFinite(value) || value < 0) {
+  if (!isFinite(value) || value <= 0) {
     throw new Error('Ungültiger Betrag');
   }
 
@@ -42,7 +42,7 @@ export function toAmountEUR(value: number | string): string {
 export interface GiroCodeParams {
   name: string;
   iban: string;
-  amount: number | string;
+  amount?: number | string;
   purpose?: string;
   bic?: string;
 }
@@ -58,7 +58,7 @@ export interface GiroCodeParams {
  * 5: BIC (optional, sonst leer)
  * 6: Name
  * 7: IBAN
- * 8: EUR{betrag}
+ * 8: EUR{betrag} – optional gemäß EPC069-12, bleibt leer wenn kein Betrag angegeben
  * 9: (leer)
  * 10: (leer)
  * 11: Verwendungszweck
@@ -70,7 +70,8 @@ export function buildEPC(params: GiroCodeParams): string {
     throw new Error('Ungültige IBAN');
   }
 
-  const amountStr = toAmountEUR(params.amount);
+  const hasAmount = params.amount !== undefined && String(params.amount).trim() !== '';
+  const amountLine = hasAmount ? `EUR${toAmountEUR(params.amount as number | string)}` : '';
   const bic = (params.bic ?? '').trim().toUpperCase();
   const name = params.name.trim();
   const purpose = (params.purpose ?? '').trim().slice(0, 140);
@@ -83,7 +84,7 @@ export function buildEPC(params: GiroCodeParams): string {
     bic,
     name,
     ibanSanitized,
-    `EUR${amountStr}`,
+    amountLine,
     '',
     '',
     purpose,

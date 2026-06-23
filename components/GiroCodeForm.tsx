@@ -35,10 +35,12 @@ function getTexts(locale: Locale) {
       ibanLabel: 'IBAN',
       bicLabel: 'BIC (optional)',
       amountLabel: 'Amount (EUR)',
+      amountPlaceholder: 'Optional',
+      amountHint: 'Optional – leave blank for a free amount (e.g. donations)',
       purposeLabel: 'Payment reference (max. 140 characters)',
       purposeCounter: (len: number) => `${len}/140 characters`,
       generateButton: 'Generate GiroCode',
-      requiredError: 'Please fill in name, IBAN and amount.',
+      requiredError: 'Please fill in name and IBAN.',
       ibanInvalid: en.form.ibanInvalid,
       generateSuccess: en.qr.success,
       generateError: 'Error while generating the GiroCode. Please check your entries.',
@@ -57,10 +59,12 @@ function getTexts(locale: Locale) {
       ibanLabel: 'IBAN',
       bicLabel: 'BIC (optionnel)',
       amountLabel: 'Montant (EUR)',
+      amountPlaceholder: 'Facultatif',
+      amountHint: 'Facultatif – laissez vide pour un montant libre (ex. dons)',
       purposeLabel: 'Référence de paiement (max. 140 caractères)',
       purposeCounter: (len: number) => `${len}/140 caractères`,
       generateButton: 'Générer GiroCode',
-      requiredError: 'Veuillez renseigner le nom, l’IBAN et le montant.',
+      requiredError: 'Veuillez renseigner le nom et l’IBAN.',
       ibanInvalid: fr.form.ibanInvalid,
       generateSuccess: fr.qr.success,
       generateError:
@@ -80,10 +84,12 @@ function getTexts(locale: Locale) {
       ibanLabel: 'IBAN',
       bicLabel: 'BIC (opcional)',
       amountLabel: 'Importe (EUR)',
+      amountPlaceholder: 'Opcional',
+      amountHint: 'Opcional – déjalo vacío para un importe libre (p. ej. donaciones)',
       purposeLabel: 'Concepto de pago (máx. 140 caracteres)',
       purposeCounter: (len: number) => `${len}/140 caracteres`,
       generateButton: 'Generar GiroCode',
-      requiredError: 'Introduce nombre, IBAN e importe.',
+      requiredError: 'Introduce nombre e IBAN.',
       ibanInvalid: es.form.ibanInvalid,
       generateSuccess: es.qr.success,
       generateError:
@@ -103,10 +109,12 @@ function getTexts(locale: Locale) {
       ibanLabel: 'IBAN',
       bicLabel: 'BIC (opzionale)',
       amountLabel: 'Importo (EUR)',
+      amountPlaceholder: 'Facoltativo',
+      amountHint: 'Facoltativo – lascia vuoto per un importo libero (es. donazioni)',
       purposeLabel: 'Causale (max. 140 caratteri)',
       purposeCounter: (len: number) => `${len}/140 caratteri`,
       generateButton: 'Genera GiroCode',
-      requiredError: 'Inserisci nome, IBAN e importo.',
+      requiredError: 'Inserisci nome e IBAN.',
       ibanInvalid: it.form.ibanInvalid,
       generateSuccess: it.qr.success,
       generateError: 'Errore durante la generazione del GiroCode. Controlla i dati inseriti.',
@@ -125,10 +133,12 @@ function getTexts(locale: Locale) {
     ibanLabel: 'IBAN',
     bicLabel: 'BIC (optional)',
     amountLabel: 'Betrag (EUR)',
+    amountPlaceholder: 'Optional',
+    amountHint: 'Optional – leer lassen für freie Betragswahl (z.B. Spenden)',
     purposeLabel: 'Verwendungszweck (max. 140 Zeichen)',
     purposeCounter: (len: number) => `${len}/140 Zeichen`,
     generateButton: 'GiroCode generieren',
-    requiredError: 'Bitte Name, IBAN und Betrag ausfüllen.',
+    requiredError: 'Bitte Name und IBAN ausfüllen.',
     ibanInvalid: 'IBAN ist ungültig (Mod-97-Prüfung fehlgeschlagen).',
     generateSuccess: 'GiroCode erfolgreich erzeugt.',
     generateError: 'Fehler beim Erzeugen des GiroCodes. Bitte Eingaben prüfen.',
@@ -189,7 +199,7 @@ export const GiroCodeForm: React.FC<GiroCodeFormProps> = ({
     const trimmedIban = form.iban.trim();
     const trimmedAmount = form.amount.trim();
 
-    if (!trimmedName || !trimmedIban || !trimmedAmount) {
+    if (!trimmedName || !trimmedIban) {
       setStatusType('error');
       setStatusMessage(t.requiredError);
       setEpcPayload(null);
@@ -208,7 +218,7 @@ export const GiroCodeForm: React.FC<GiroCodeFormProps> = ({
         name: trimmedName,
         iban: trimmedIban,
         bic: form.bic,
-        amount: trimmedAmount,
+        amount: trimmedAmount || undefined,
         purpose: form.purpose,
       });
 
@@ -313,8 +323,9 @@ export const GiroCodeForm: React.FC<GiroCodeFormProps> = ({
                   className="mt-1 w-full rounded-lg border border-[#3a4055] bg-[#141720] px-3 py-2 text-sm text-slate-100 shadow-sm shadow-black/40 outline-none ring-0 transition placeholder:text-[#8b90a0] focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 focus:shadow-[0_0_0_3px_rgba(34,197,94,0.12)]"
                   value={form.amount}
                   onChange={handleChange('amount')}
-                  required
+                  placeholder={t.amountPlaceholder}
                 />
+                <span className="mt-1 block text-[10px] text-slate-500">{t.amountHint}</span>
               </label>
             </div>
 
