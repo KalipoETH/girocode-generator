@@ -12,8 +12,6 @@ import InstallPwaPrompt from '../components/InstallPwaPrompt';
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
   themeColor: '#22c55e',
 };
 
@@ -38,16 +36,16 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Kaleb Jahnke' }],
   creator: 'Kaleb Jahnke',
-  metadataBase: new URL('https://www.girocodegenerator.com'),
+  metadataBase: new URL('https://girocodegenerator.com'),
   alternates: {
-    canonical: 'https://www.girocodegenerator.com',
+    canonical: 'https://girocodegenerator.com',
     languages: {
-      'x-default': 'https://www.girocodegenerator.com',
-      'de': 'https://www.girocodegenerator.com',
-      'en': 'https://www.girocodegenerator.com/en',
-      'fr': 'https://www.girocodegenerator.com/fr',
-      'es': 'https://www.girocodegenerator.com/es',
-      'it': 'https://www.girocodegenerator.com/it',
+      'x-default': 'https://girocodegenerator.com',
+      'de': 'https://girocodegenerator.com',
+      'en': 'https://girocodegenerator.com/en',
+      'fr': 'https://girocodegenerator.com/fr',
+      'es': 'https://girocodegenerator.com/es',
+      'it': 'https://girocodegenerator.com/it',
     },
   },
   manifest: '/manifest.json',
@@ -69,7 +67,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'de_DE',
-    url: 'https://www.girocodegenerator.com',
+    url: 'https://girocodegenerator.com',
     siteName: 'GiroCode Generator',
     title: 'GiroCode Generator – SEPA-QR kostenlos erstellen',
     description:
@@ -108,8 +106,8 @@ export default async function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'GiroCode Generator',
-    url: 'https://www.girocodegenerator.com',
-    logo: 'https://www.girocodegenerator.com/og-image.png',
+    url: 'https://girocodegenerator.com',
+    logo: 'https://girocodegenerator.com/logo.svg',
     contactPoint: {
       '@type': 'ContactPoint',
       email: 'jahnke.kaleb@gmail.com',
@@ -129,6 +127,7 @@ export default async function RootLayout({
     sameAs: [
       'https://github.com/KalipoETH/girocode-generator',
       'https://www.producthunt.com/products/girocode-generator',
+      'https://dev.to/kaleb_f43e9274b5779194b14',
     ],
   };
 

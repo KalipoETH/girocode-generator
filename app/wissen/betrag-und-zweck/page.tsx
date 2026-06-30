@@ -36,6 +36,7 @@ export default function WissenBetragUndZweckPage() {
         { href: '/wissen/scannen', label: 'GiroCode scannen' },
       ]}
       locale="de"
+      lastUpdated="2026-06-01"
       shortAnswer="Im GiroCode ist der Betrag optional und wird im Format EUR49.90 angegeben (Punkt als Dezimaltrennzeichen, kein Komma). Wird kein Betrag angegeben, kann der Zahler beim Scannen selbst einen Betrag eingeben – ideal für Spenden oder variable Preise. Der Verwendungszweck ist ebenfalls optional, darf maximal 140 Zeichen lang sein und sollte immer die Rechnungsnummer enthalten damit Zahlungen korrekt zugeordnet werden können."
       statsData={[
         { value: '140', label: 'Max. Zeichen Verwendungszweck' },

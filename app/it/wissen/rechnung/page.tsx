@@ -70,6 +70,7 @@ export default function WissenRechnungPageIt() {
           { href: '/it/wissen/scannen', label: 'Come scansionare un GiroCode' },
         ]}
         locale="it"
+        lastUpdated="2026-06-01"
         shortAnswer="Un GiroCode in fattura permette al destinatario di pagare scansionando con la propria app bancaria. Secondo le raccomandazioni EPC, il GiroCode deve misurare almeno 2×2 cm e posizionarsi in basso a destra."
         statsData={[
           { value: '2×2 cm', label: 'Dimensione minima QR consigliata EPC' },

@@ -35,6 +35,7 @@ export default function WissenGirocodePageEn() {
         { href: '/en/wissen/scannen', label: 'How to Scan a GiroCode' },
       ]}
       locale="en"
+      lastUpdated="2026-06-01"
       shortAnswer="A GiroCode is a standardized QR code for SEPA bank transfers following the EPC069-12 standard by the European Payments Council. It contains all payment data – IBAN, amount, and payment reference – allowing banking app users to initiate a transfer by simply scanning the code. Freelancers, associations, and businesses use GiroCodes on invoices to get paid faster and eliminate manual entry errors."
       statsData={[
         { value: '2018', label: 'Year of introduction in Germany' },

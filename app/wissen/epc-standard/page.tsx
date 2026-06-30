@@ -36,6 +36,7 @@ export default function WissenEpcStandardPage() {
         { href: '/wissen/scannen', label: 'GiroCode scannen' },
       ]}
       locale="de"
+      lastUpdated="2026-06-01"
       shortAnswer="Der EPC-Standard (Dokument EPC069-12) definiert den technischen Aufbau von SEPA-QR-Codes. Ein gültiger EPC-Payload besteht aus 11 Zeilen: Service Tag (BCD), Version (001/002), UTF-8 Encoding, Identifikation (SCT), optionaler BIC, Empfängername (max. 70 Zeichen), IBAN, Betrag im Format EUR49.90, und Verwendungszweck (max. 140 Zeichen). Der Standard wird vom European Payments Council verwaltet und ist in allen 36 SEPA-Ländern gültig."
       statsData={[
         { value: '11', label: 'Zeilen im EPC-Payload' },

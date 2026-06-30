@@ -567,6 +567,42 @@ export default function HomePageEn() {
           </div>
         </section>
 
+        {/* Comparison table */}
+        <section aria-labelledby="comparison-section-en" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.29s' }}>
+          <h2 id="comparison-section-en" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+            GiroCode vs. Other Payment Methods
+          </h2>
+          <div className="overflow-x-auto rounded-xl border border-[#1f2431]">
+            <table className="w-full text-sm text-left">
+              <thead>
+                <tr className="border-b border-[#1f2431] bg-[#0f1117]">
+                  <th className="px-4 py-3 font-semibold text-slate-300"></th>
+                  <th className="px-4 py-3 font-semibold text-[#22c55e]">GiroCode</th>
+                  <th className="px-4 py-3 font-semibold text-slate-300">PayPal</th>
+                  <th className="px-4 py-3 font-semibold text-slate-300">Bank Transfer</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[#1f2431] bg-[#121318]">
+                {[
+                  ['Cost', 'Free', '1.2–3.4% fees', 'Free'],
+                  ['Speed', 'Instant scan (10 sec.)', 'Instant', '1–2 business days'],
+                  ['Privacy', 'GDPR, local', 'US servers', 'GDPR'],
+                  ['Banking app required', 'Yes', 'No', 'Yes'],
+                  ['Entry errors possible', 'No (automated)', 'Rarely', 'Yes (typos)'],
+                  ['Works offline', 'Yes', 'No', 'No'],
+                ].map(([label, girocode, paypal, classic]) => (
+                  <tr key={label} className="hover:bg-[#1a1d25] transition-colors">
+                    <td className="px-4 py-3 font-medium text-slate-400">{label}</td>
+                    <td className="px-4 py-3 font-semibold text-[#22c55e]">{girocode}</td>
+                    <td className="px-4 py-3 text-slate-400">{paypal}</td>
+                    <td className="px-4 py-3 text-slate-400">{classic}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         {/* From the Blog */}
         <section aria-labelledby="blog-section-en" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.3s' }}>
           <h2 id="blog-section-en" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">

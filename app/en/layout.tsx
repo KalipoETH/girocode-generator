@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     'SEPA payment QR code',
   ],
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en',
+    canonical: 'https://girocodegenerator.com/en',
     languages: {
-      'x-default': 'https://www.girocodegenerator.com',
-      'de': 'https://www.girocodegenerator.com',
-      'en': 'https://www.girocodegenerator.com/en',
-      'fr': 'https://www.girocodegenerator.com/fr',
-      'es': 'https://www.girocodegenerator.com/es',
-      'it': 'https://www.girocodegenerator.com/it',
+      'x-default': 'https://girocodegenerator.com',
+      'de': 'https://girocodegenerator.com',
+      'en': 'https://girocodegenerator.com/en',
+      'fr': 'https://girocodegenerator.com/fr',
+      'es': 'https://girocodegenerator.com/es',
+      'it': 'https://girocodegenerator.com/it',
     },
   },
 };

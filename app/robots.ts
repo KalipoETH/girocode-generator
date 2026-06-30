@@ -4,9 +4,16 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        userAgent: '*',
+        userAgent: 'Googlebot',
         allow: '/',
-        disallow: '/admin',
+      },
+      {
+        userAgent: 'Bingbot',
+        allow: '/',
+      },
+      {
+        userAgent: 'BraveBot',
+        allow: '/',
       },
       {
         userAgent: 'GPTBot',
@@ -25,6 +32,14 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
       {
+        userAgent: 'Claude-SearchBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'Claude-User',
+        allow: '/',
+      },
+      {
         userAgent: 'anthropic-ai',
         allow: '/',
       },
@@ -36,7 +51,12 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: 'FacebookBot',
         allow: '/',
       },
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/admin', '/api/'],
+      },
     ],
-    sitemap: 'https://www.girocodegenerator.com/sitemap.xml',
+    sitemap: 'https://girocodegenerator.com/sitemap.xml',
   };
 }

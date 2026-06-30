@@ -166,6 +166,13 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      // www → non-www (canonical domain)
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.girocodegenerator.com' }],
+        destination: 'https://girocodegenerator.com/:path*',
+        permanent: true,
+      },
       // /ing-diba → /ing (308 Permanent Redirect)
       {
         source: '/ing-diba',

@@ -33,6 +33,7 @@ export default function WissenEpcStandardPageEs() {
         { href: '/es/wissen/banking-apps', label: 'Apps bancarias compatibles con GiroCode' },
       ]}
       locale="es"
+      lastUpdated="2026-06-01"
       shortAnswer="La norma EPC (documento EPC069-12) define la estructura técnica de los códigos QR SEPA. Un payload EPC válido consta de 11 líneas: Service Tag (BCD), Versión, codificación UTF-8, Identificación (SCT), BIC opcional, nombre del beneficiario (máx. 70 caracteres), IBAN, importe en formato EUR49.90, y referencia de pago (máx. 140 caracteres)."
       statsData={[
         { value: '11', label: 'Líneas en el payload EPC' },

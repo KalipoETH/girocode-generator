@@ -33,6 +33,7 @@ export default function WissenIbanBicPageEs() {
         { href: '/es/wissen/scannen', label: 'Cómo escanear un GiroCode' },
       ]}
       locale="es"
+      lastUpdated="2026-06-01"
       shortAnswer="El IBAN (International Bank Account Number) es un número de cuenta internacional de hasta 34 caracteres según la norma ISO 13616. Los IBAN alemanes tienen exactamente 22 caracteres. El BIC es opcional para los GiroCodes desde la migración SEPA en 2016."
       statsData={[
         { value: '22', label: 'Dígitos en un IBAN alemán' },

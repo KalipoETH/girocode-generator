@@ -33,6 +33,7 @@ export default function WissenBankingAppsPageFr() {
         { href: '/fr/wissen/epc-standard', label: 'Norme EPC & SEPA-QR' },
       ]}
       locale="fr"
+      lastUpdated="2026-06-01"
       shortAnswer="Presque toutes les apps bancaires allemandes supportent les GiroCodes: Sparkasse, VR-Banking, ING, DKB, Commerzbank, Deutsche Bank, N26, Postbank, Comdirect et Targobank. Le scanner QR se trouve sous 'Virement'. Le processus complet prend moins de 30 secondes."
       statsData={[
         { value: '12+', label: 'Applications bancaires allemandes supportées' },

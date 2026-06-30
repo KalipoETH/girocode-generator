@@ -33,6 +33,7 @@ export default function WissenBetragUndZweckPageEs() {
         { href: '/es/wissen/banking-apps', label: 'Apps bancarias compatibles con GiroCode' },
       ]}
       locale="es"
+      lastUpdated="2026-06-01"
       shortAnswer="En un GiroCode, el importe es opcional y se especifica en formato EUR49.90. Sin importe, el pagador puede introducir su propio importe al escanear – ideal para donaciones. La referencia de pago está limitada a 140 caracteres."
       statsData={[
         { value: '140', label: 'Máx. caracteres referencia de pago' },

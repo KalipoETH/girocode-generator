@@ -71,6 +71,7 @@ export default function WissenScannenPageIt() {
           { href: '/it/wissen/betrag-und-zweck', label: 'Importo e causale nel GiroCode' },
         ]}
         locale="it"
+        lastUpdated="2026-06-01"
         shortAnswer="Per scansionare un GiroCode: Apri app bancaria → 'Bonifico' → icona scanner QR → scansiona → verifica dati → TAN → conferma. Durata totale: meno di 30 secondi."
         statsData={[
           { value: '15–30 cm', label: 'Distanza ottimale di scansione' },

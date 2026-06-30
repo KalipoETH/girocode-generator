@@ -61,6 +61,7 @@ export default function WissenRechnungPage() {
         { href: '/wissen/epc-standard', label: 'EPC-Standard erklärt' },
       ]}
       locale="de"
+      lastUpdated="2026-06-01"
       shortAnswer="Ein GiroCode auf einer Rechnung ermöglicht dem Empfänger die Zahlung durch einfaches Scannen mit der Banking-App – IBAN, Betrag und Verwendungszweck werden automatisch übertragen. Der GiroCode sollte laut EPC-Empfehlung mindestens 2×2 cm groß und unten rechts auf der Rechnung platziert werden. Pflichtangaben auf deutschen Rechnungen nach §14 UStG sind: vollständiger Name und Anschrift, Steuernummer oder USt-ID, Ausstellungsdatum, Rechnungsnummer, Leistungsbeschreibung sowie Netto-, Steuer- und Bruttobetrag."
       statsData={[
         { value: '§14', label: 'UStG Pflichtangaben Grundlage' },

@@ -35,6 +35,7 @@ export default function WissenRechnungPageEn() {
         { href: '/en/wissen/epc-standard', label: 'EPC Standard & SEPA-QR Explained' },
       ]}
       locale="en"
+      lastUpdated="2026-06-01"
       shortAnswer="A GiroCode on an invoice allows the recipient to pay by simply scanning with their banking app – IBAN, amount, and payment reference are transferred automatically. According to EPC recommendations, the GiroCode should be at least 2×2 cm and placed in the bottom right corner of the invoice."
       statsData={[
         { value: '§14', label: 'UStG mandatory invoice information basis' },

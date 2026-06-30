@@ -34,6 +34,7 @@ export default function WissenBetragUndZweckPageEn() {
         { href: '/en/wissen/scannen', label: 'How to Scan a GiroCode' },
       ]}
       locale="en"
+      lastUpdated="2026-06-01"
       shortAnswer="In a GiroCode, the amount is optional and specified in EUR49.90 format (period as decimal separator, not comma). If no amount is specified, the payer can enter their own amount when scanning – ideal for donations or variable prices. The payment reference is also optional, limited to 140 characters, and should always include the invoice number for correct payment allocation."
       statsData={[
         { value: '140', label: 'Max. characters payment reference' },

@@ -530,6 +530,42 @@ export default function HomePageFr() {
           </div>
         </section>
 
+        {/* Tableau comparatif */}
+        <section aria-labelledby="comparison-section-fr" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.29s' }}>
+          <h2 id="comparison-section-fr" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+            GiroCode vs. autres méthodes de paiement
+          </h2>
+          <div className="overflow-x-auto rounded-xl border border-[#1f2431]">
+            <table className="w-full text-sm text-left">
+              <thead>
+                <tr className="border-b border-[#1f2431] bg-[#0f1117]">
+                  <th className="px-4 py-3 font-semibold text-slate-300"></th>
+                  <th className="px-4 py-3 font-semibold text-[#22c55e]">GiroCode</th>
+                  <th className="px-4 py-3 font-semibold text-slate-300">PayPal</th>
+                  <th className="px-4 py-3 font-semibold text-slate-300">Virement classique</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[#1f2431] bg-[#121318]">
+                {[
+                  ['Coût', 'Gratuit', '1,2–3,4 % de frais', 'Gratuit'],
+                  ['Rapidité', 'Scan immédiat (10 sec.)', 'Immédiat', '1–2 jours ouvrés'],
+                  ['Confidentialité', 'RGPD, local', 'Serveurs US', 'RGPD'],
+                  ['App bancaire requise', 'Oui', 'Non', 'Oui'],
+                  ['Erreurs possibles', 'Non (automatique)', 'Rarement', 'Oui (fautes de frappe)'],
+                  ['Utilisable hors ligne', 'Oui', 'Non', 'Non'],
+                ].map(([label, girocode, paypal, classic]) => (
+                  <tr key={label} className="hover:bg-[#1a1d25] transition-colors">
+                    <td className="px-4 py-3 font-medium text-slate-400">{label}</td>
+                    <td className="px-4 py-3 font-semibold text-[#22c55e]">{girocode}</td>
+                    <td className="px-4 py-3 text-slate-400">{paypal}</td>
+                    <td className="px-4 py-3 text-slate-400">{classic}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         {/* Du Blog */}
         <section aria-labelledby="blog-section-fr" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.3s' }}>
           <h2 id="blog-section-fr" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">

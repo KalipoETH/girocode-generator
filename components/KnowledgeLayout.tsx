@@ -26,6 +26,7 @@ interface KnowledgeLayoutProps {
   children: React.ReactNode;
   relatedArticles: RelatedArticle[];
   locale?: 'de' | 'en' | 'fr' | 'es' | 'it';
+  lastUpdated?: string;
 }
 
 const i18n = {
@@ -181,7 +182,7 @@ const i18n = {
   },
 } as const;
 
-const BASE_URL = 'https://www.girocodegenerator.com';
+const BASE_URL = 'https://girocodegenerator.com';
 
 export function KnowledgeLayout({
   breadcrumbCurrent,
@@ -193,6 +194,7 @@ export function KnowledgeLayout({
   children,
   relatedArticles,
   locale = 'de',
+  lastUpdated,
 }: KnowledgeLayoutProps) {
   const t = i18n[locale];
 
@@ -261,6 +263,19 @@ export function KnowledgeLayout({
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-400 md:text-base">
               {lead}
             </p>
+            {lastUpdated && (
+              <time
+                dateTime={lastUpdated}
+                className="mt-2 block text-xs text-slate-500"
+              >
+                Zuletzt aktualisiert:{' '}
+                {new Date(lastUpdated).toLocaleDateString('de-DE', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+            )}
           </div>
         </header>
 

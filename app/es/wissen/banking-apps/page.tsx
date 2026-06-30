@@ -33,6 +33,7 @@ export default function WissenBankingAppsPageEs() {
         { href: '/es/wissen/iban-bic', label: 'IBAN & BIC para GiroCode' },
       ]}
       locale="es"
+      lastUpdated="2026-06-01"
       shortAnswer="Casi todas las apps bancarias alemanas soportan GiroCodes: Sparkasse, VR-Banking, ING, DKB, Commerzbank, Deutsche Bank, N26, Postbank, Comdirect y Targobank. El escáner QR está bajo 'Transferencia'. El proceso completo toma menos de 30 segundos."
       statsData={[
         { value: '12+', label: 'Apps bancarias alemanas compatibles' },

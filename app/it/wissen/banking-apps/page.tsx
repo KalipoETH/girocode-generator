@@ -78,6 +78,7 @@ export default function WissenBankingAppsPageIt() {
           { href: '/it/wissen/iban-bic', label: 'IBAN & BIC per GiroCode' },
         ]}
         locale="it"
+        lastUpdated="2026-06-01"
         shortAnswer="Le principali app bancarie italiane supportano i GiroCode: Intesa Sanpaolo, UniCredit, Banco BPM, Fineco e ING Italia. Lo scanner QR si trova sotto 'Bonifico'. Il processo completo richiede meno di 30 secondi."
         statsData={[
           { value: '12+', label: 'App bancarie italiane compatibili' },

@@ -527,6 +527,42 @@ export default function HomePageEs() {
           </div>
         </section>
 
+        {/* Tabla comparativa */}
+        <section aria-labelledby="comparison-section-es" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.29s' }}>
+          <h2 id="comparison-section-es" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+            GiroCode vs. otros métodos de pago
+          </h2>
+          <div className="overflow-x-auto rounded-xl border border-[#1f2431]">
+            <table className="w-full text-sm text-left">
+              <thead>
+                <tr className="border-b border-[#1f2431] bg-[#0f1117]">
+                  <th className="px-4 py-3 font-semibold text-slate-300"></th>
+                  <th className="px-4 py-3 font-semibold text-[#22c55e]">GiroCode</th>
+                  <th className="px-4 py-3 font-semibold text-slate-300">PayPal</th>
+                  <th className="px-4 py-3 font-semibold text-slate-300">Transferencia clásica</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[#1f2431] bg-[#121318]">
+                {[
+                  ['Coste', 'Gratis', '1,2–3,4 % de comisión', 'Gratis'],
+                  ['Velocidad', 'Escaneo inmediato (10 seg.)', 'Inmediato', '1–2 días hábiles'],
+                  ['Privacidad', 'RGPD, local', 'Servidores EE.UU.', 'RGPD'],
+                  ['App bancaria necesaria', 'Sí', 'No', 'Sí'],
+                  ['Errores posibles', 'No (automático)', 'Raramente', 'Sí (errores tipográficos)'],
+                  ['Uso sin conexión', 'Sí', 'No', 'No'],
+                ].map(([label, girocode, paypal, classic]) => (
+                  <tr key={label} className="hover:bg-[#1a1d25] transition-colors">
+                    <td className="px-4 py-3 font-medium text-slate-400">{label}</td>
+                    <td className="px-4 py-3 font-semibold text-[#22c55e]">{girocode}</td>
+                    <td className="px-4 py-3 text-slate-400">{paypal}</td>
+                    <td className="px-4 py-3 text-slate-400">{classic}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         {/* Del Blog */}
         <section aria-labelledby="blog-section-es" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.3s' }}>
           <h2 id="blog-section-es" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">

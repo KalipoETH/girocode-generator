@@ -155,6 +155,42 @@ export default function HomePageIt() {
             ))}
           </div>
         </section>
+
+        {/* Tabella comparativa */}
+        <section aria-labelledby="comparison-section-it" className="animate-card-in mt-8 space-y-4" style={{ animationDelay: '1.29s' }}>
+          <h2 id="comparison-section-it" className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+            GiroCode vs. altri metodi di pagamento
+          </h2>
+          <div className="overflow-x-auto rounded-xl border border-[#1f2431]">
+            <table className="w-full text-sm text-left">
+              <thead>
+                <tr className="border-b border-[#1f2431] bg-[#0f1117]">
+                  <th className="px-4 py-3 font-semibold text-slate-300"></th>
+                  <th className="px-4 py-3 font-semibold text-[#22c55e]">GiroCode</th>
+                  <th className="px-4 py-3 font-semibold text-slate-300">PayPal</th>
+                  <th className="px-4 py-3 font-semibold text-slate-300">Bonifico classico</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[#1f2431] bg-[#121318]">
+                {[
+                  ['Costo', 'Gratuito', '1,2–3,4 % di commissione', 'Gratuito'],
+                  ['Velocità', 'Scansione immediata (10 sec.)', 'Immediato', '1–2 giorni lavorativi'],
+                  ['Privacy', 'GDPR, locale', 'Server USA', 'GDPR'],
+                  ['App bancaria necessaria', 'Sì', 'No', 'Sì'],
+                  ['Errori possibili', 'No (automatico)', 'Raramente', 'Sì (errori di digitazione)'],
+                  ['Utilizzabile offline', 'Sì', 'No', 'No'],
+                ].map(([label, girocode, paypal, classic]) => (
+                  <tr key={label} className="hover:bg-[#1a1d25] transition-colors">
+                    <td className="px-4 py-3 font-medium text-slate-400">{label}</td>
+                    <td className="px-4 py-3 font-semibold text-[#22c55e]">{girocode}</td>
+                    <td className="px-4 py-3 text-slate-400">{paypal}</td>
+                    <td className="px-4 py-3 text-slate-400">{classic}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
       </div>
       <NewsletterForm locale="it" />
     </main>

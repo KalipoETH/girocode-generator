@@ -69,6 +69,7 @@ export default function WissenIbanBicPageIt() {
           { href: '/it/wissen/scannen', label: 'Come scansionare un GiroCode' },
         ]}
         locale="it"
+        lastUpdated="2026-06-01"
         shortAnswer="L'IBAN (International Bank Account Number) è un numero di conto internazionale fino a 34 caratteri (ISO 13616). Gli IBAN italiani hanno esattamente 27 caratteri. Il BIC è opzionale nei GiroCode dalla migrazione SEPA del 2016."
         statsData={[
           { value: '27', label: 'Caratteri IBAN italiano (IT)' },

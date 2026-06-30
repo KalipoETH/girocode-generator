@@ -36,6 +36,7 @@ export default function WissenGirocodePage() {
         { href: '/wissen/scannen', label: 'GiroCode scannen – Anleitung' },
       ]}
       locale="de"
+      lastUpdated="2026-06-01"
       shortAnswer="Ein GiroCode ist ein standardisierter QR-Code für SEPA-Überweisungen nach dem EPC069-12 Standard des European Payments Council. Er enthält alle notwendigen Zahlungsdaten – IBAN, Betrag und Verwendungszweck – und ermöglicht es Banking-App-Nutzern, eine Überweisung durch einfaches Scannen auszulösen. Freelancer, Vereine und Unternehmen nutzen GiroCodes auf Rechnungen um schneller bezahlt zu werden und Tippfehler zu vermeiden."
       statsData={[
         { value: '2018', label: 'Einführung in Deutschland' },
@@ -93,7 +94,17 @@ export default function WissenGirocodePage() {
           als <strong>Die Deutsche Kreditwirtschaft (DK)</strong>, die Spezifikation für den
           deutschen Markt adaptiert und den Begriff „GiroCode" als einheitliche Bezeichnung
           eingeführt. Dies sorgt dafür, dass Kunden und Unternehmen in Deutschland eine
-          konsistente Terminologie verwenden.
+          konsistente Terminologie verwenden. Weitere Informationen zur GiroCode-Unterstützung
+          durch deutsche Kreditinstitute finden sich auf der Website der{' '}
+          <a
+            href="https://www.bundesbank.de"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald-400 underline"
+          >
+            Deutschen Bundesbank
+          </a>
+          .
         </p>
       </section>
 

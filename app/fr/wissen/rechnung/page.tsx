@@ -34,6 +34,7 @@ export default function WissenRechnungPageFr() {
         { href: '/fr/wissen/scannen', label: 'Comment scanner un GiroCode' },
       ]}
       locale="fr"
+      lastUpdated="2026-06-01"
       shortAnswer="Un GiroCode sur une facture permet au destinataire de payer en scannant simplement avec son app bancaire. Selon les recommandations EPC, le GiroCode doit mesurer au moins 2×2 cm et être placé en bas à droite."
       statsData={[
         { value: '§14', label: 'Base légale mentions obligatoires UStG' },

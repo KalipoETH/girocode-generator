@@ -34,6 +34,7 @@ export default function WissenScannenPageEs() {
         { href: '/es/wissen/betrag-und-zweck', label: 'Importe y concepto de pago en GiroCode' },
       ]}
       locale="es"
+      lastUpdated="2026-06-01"
       shortAnswer="Para escanear un GiroCode: Abrir app bancaria → 'Transferencia' → icono escáner QR → escanear → verificar datos → TAN → confirmar. Duración total: menos de 30 segundos."
       statsData={[
         { value: '15–30 cm', label: 'Distancia óptima de escaneo' },

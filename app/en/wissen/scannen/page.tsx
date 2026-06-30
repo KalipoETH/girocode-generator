@@ -34,6 +34,7 @@ export default function WissenScannenPageEn() {
         { href: '/en/wissen/betrag-und-zweck', label: 'Amount & Payment Reference in GiroCode' },
       ]}
       locale="en"
+      lastUpdated="2026-06-01"
       shortAnswer="To scan a GiroCode: Open banking app → tap 'Transfer' → tap QR scanner icon → scan code → verify data (IBAN, amount, reference) → enter TAN → confirm. The entire process takes under 30 seconds. Not working? Increase screen brightness, adjust distance to 15-30 cm, or print the code larger (minimum 2×2 cm)."
       statsData={[
         { value: '15–30 cm', label: 'Optimal scanning distance' },

@@ -36,6 +36,7 @@ export default function WissenIbanBicPage() {
         { href: '/wissen/scannen', label: 'GiroCode scannen' },
       ]}
       locale="de"
+      lastUpdated="2026-06-01"
       shortAnswer="Die IBAN (International Bank Account Number) ist eine bis zu 34-stellige internationale Kontonummer nach ISO 13616 Standard. Deutsche IBANs haben genau 22 Zeichen: 2 Buchstaben Länderkürzel (DE), 2 Prüfziffern und 18 Stellen für Bankleitzahl und Kontonummer. Der BIC (Bank Identifier Code) ist für GiroCodes seit der SEPA-Migration 2016 optional und wird nur noch für Überweisungen außerhalb des SEPA-Raums benötigt."
       statsData={[
         { value: '22', label: 'Stellen einer deutschen IBAN' },

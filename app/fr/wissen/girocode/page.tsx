@@ -35,6 +35,7 @@ export default function WissenGirocodePageFr() {
         { href: '/fr/wissen/scannen', label: 'Comment scanner un GiroCode – Guide complet iPhone & Android' },
       ]}
       locale="fr"
+      lastUpdated="2026-06-01"
       shortAnswer="Un GiroCode est un code QR standardisé pour les virements SEPA selon la norme EPC069-12 du European Payments Council. Il contient toutes les données de paiement nécessaires – IBAN, montant et référence – permettant aux utilisateurs d'apps bancaires d'initier un virement par simple scan."
       statsData={[
         { value: '2018', label: "Année d'introduction en Allemagne" },

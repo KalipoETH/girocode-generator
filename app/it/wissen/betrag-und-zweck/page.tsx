@@ -69,6 +69,7 @@ export default function WissenBetragUndZweckPageIt() {
           { href: '/it/wissen/banking-apps', label: 'App bancarie compatibili con GiroCode' },
         ]}
         locale="it"
+        lastUpdated="2026-06-01"
         shortAnswer="In un GiroCode, l'importo è opzionale e si specifica in formato EUR49.90. Senza importo, il pagatore può inserire la propria cifra alla scansione – ideale per donazioni. La causale è limitata a 140 caratteri."
         statsData={[
           { value: '140', label: 'Max. caratteri causale' },
