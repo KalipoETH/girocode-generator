@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode avec Postbank – Guide étape par étape 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scanner un GiroCode avec Postbank: Ouvrir le scanner QR dans l\'app Postbank Finanzassistent, scanner le code, confirmer le virement. ✅ Guide étape par étape 2026.',
   keywords: 'girocode postbank, postbank girocode scan, postbank qr code, sepa qr postbank',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/postbank',
+    canonical: `${SITE_URL}/fr/postbank`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/postbank',
-      de: 'https://www.girocodegenerator.com/postbank',
-      en: 'https://www.girocodegenerator.com/en/postbank',
-      fr: 'https://www.girocodegenerator.com/fr/postbank',
-      es: 'https://www.girocodegenerator.com/es/postbank',
+      'x-default': `${SITE_URL}/postbank`,
+      de: `${SITE_URL}/postbank`,
+      en: `${SITE_URL}/en/postbank`,
+      fr: `${SITE_URL}/fr/postbank`,
+      es: `${SITE_URL}/es/postbank`,
     },
   },
 };

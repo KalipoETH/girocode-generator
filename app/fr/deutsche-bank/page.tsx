@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode avec Deutsche Bank – Guide étape par étape 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scanner un GiroCode avec Deutsche Bank: Ouvrir le scanner QR dans l\'app Deutsche Bank App, scanner le code, confirmer le virement. ✅ Guide étape par étape 2026.',
   keywords: 'girocode deutsche-bank, deutsche-bank girocode scan, deutsche-bank qr code, sepa qr deutsche-bank',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/deutsche-bank',
+    canonical: `${SITE_URL}/fr/deutsche-bank`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/deutsche-bank',
-      de: 'https://www.girocodegenerator.com/deutsche-bank',
-      en: 'https://www.girocodegenerator.com/en/deutsche-bank',
-      fr: 'https://www.girocodegenerator.com/fr/deutsche-bank',
-      es: 'https://www.girocodegenerator.com/es/deutsche-bank',
+      'x-default': `${SITE_URL}/deutsche-bank`,
+      de: `${SITE_URL}/deutsche-bank`,
+      en: `${SITE_URL}/en/deutsche-bank`,
+      fr: `${SITE_URL}/fr/deutsche-bank`,
+      es: `${SITE_URL}/es/deutsche-bank`,
     },
   },
 };

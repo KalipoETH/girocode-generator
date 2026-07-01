@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode vs. PayPal – ¿Qué método de pago es mejor? (2026)',
   description: '¿GiroCode o PayPal? Comparación directa: costes, privacidad, alcance y casos de uso. Con tabla comparativa.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/es/girocode-vs-paypal',
+    canonical: `${SITE_URL}/es/girocode-vs-paypal`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/girocode-vs-paypal',
-      'de': 'https://www.girocodegenerator.com/girocode-vs-paypal',
-      'en': 'https://www.girocodegenerator.com/en/girocode-vs-paypal',
-      'fr': 'https://www.girocodegenerator.com/fr/girocode-vs-paypal',
-      'es': 'https://www.girocodegenerator.com/es/girocode-vs-paypal',
-      'it': 'https://www.girocodegenerator.com/it/girocode-vs-paypal',
+      'x-default': `${SITE_URL}/girocode-vs-paypal`,
+      'de': `${SITE_URL}/girocode-vs-paypal`,
+      'en': `${SITE_URL}/en/girocode-vs-paypal`,
+      'fr': `${SITE_URL}/fr/girocode-vs-paypal`,
+      'es': `${SITE_URL}/es/girocode-vs-paypal`,
+      'it': `${SITE_URL}/it/girocode-vs-paypal`,
     },
   },
 };
@@ -22,9 +23,9 @@ const jsonLd = {
   headline: 'GiroCode vs. PayPal – ¿Qué método de pago es mejor?',
   description: '¿GiroCode o PayPal? Comparación directa: costes, privacidad, alcance y casos de uso.',
   author: { '@type': 'Person', name: 'Kaleb Jahnke' },
-  publisher: { '@type': 'Organization', name: 'GiroCode Generator', url: 'https://www.girocodegenerator.com' },
+  publisher: { '@type': 'Organization', name: 'GiroCode Generator', url: SITE_URL },
   datePublished: '2026-05-01', dateModified: '2026-05-01',
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.girocodegenerator.com/es/girocode-vs-paypal' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/es/girocode-vs-paypal` },
 };
 
 const faqJsonLd = {

@@ -4,6 +4,7 @@ import { GeoStatsSection } from '@/components/GeoStatsSection';
 import { ExitIntent } from '@/components/ExitIntent';
 import NewsletterForm from '@/components/NewsletterForm';
 import { GeneratorSection } from '@/components/GeneratorSection';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export default function HomePage() {
   return (
@@ -18,7 +19,7 @@ export default function HomePage() {
             applicationCategory: 'FinanceApplication',
             applicationSubCategory: 'PaymentApplication',
             operatingSystem: 'Web Browser',
-            url: 'https://www.girocodegenerator.com',
+            url: SITE_URL,
             description:
               'Kostenloser GiroCode (SEPA-QR/EPC) Generator – 100% lokal im Browser, keine Datenweitergabe.',
             featureList: [

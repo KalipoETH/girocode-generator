@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Commerzbank scannen – Schritt-für-Schritt 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der Commerzbank App scannen: Überweisen aufrufen, QR-Code antippen, Code scannen, Daten prüfen & bestätigen. ✅ Einfach & kostenlos.',
   keywords: 'commerzbank girocode, commerzbank qr code scannen, sepa qr commerzbank, girocode commerzbank app',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/commerzbank',
+    canonical: `${SITE_URL}/commerzbank`,
   },
 };
 

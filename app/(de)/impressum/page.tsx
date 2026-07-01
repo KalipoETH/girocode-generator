@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
-  alternates: { canonical: 'https://www.girocodegenerator.com/impressum' },
+  alternates: { canonical: `${SITE_URL}/impressum` },
 };
 
 export default function ImpressumPage() {
@@ -41,10 +42,10 @@ export default function ImpressumPage() {
             <p className="mt-1">
               Kontaktformular:{" "}
               <a
-                href="https://www.girocodegenerator.com/kontakt"
+                href={`${SITE_URL}/kontakt`}
                 className="text-sky-400 hover:text-sky-300 underline decoration-sky-500/60"
               >
-                https://www.girocodegenerator.com/kontakt
+                https://girocodegenerator.com/kontakt
               </a>
             </p>
             <p className="mt-1">

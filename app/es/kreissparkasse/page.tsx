@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode con Kreissparkasse – Guía paso a paso 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Escanear un GiroCode con Kreissparkasse: Abrir escáner QR en la app Kreissparkasse App, escanear el código, confirmar la transferencia. ✅ Guía paso a paso 2026.',
   keywords: 'girocode kreissparkasse, kreissparkasse girocode scan, kreissparkasse qr code, sepa qr kreissparkasse',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/es/kreissparkasse',
+    canonical: `${SITE_URL}/es/kreissparkasse`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/kreissparkasse',
-      de: 'https://www.girocodegenerator.com/kreissparkasse',
-      en: 'https://www.girocodegenerator.com/en/kreissparkasse',
-      fr: 'https://www.girocodegenerator.com/fr/kreissparkasse',
-      es: 'https://www.girocodegenerator.com/es/kreissparkasse',
+      'x-default': `${SITE_URL}/kreissparkasse`,
+      de: `${SITE_URL}/kreissparkasse`,
+      en: `${SITE_URL}/en/kreissparkasse`,
+      fr: `${SITE_URL}/fr/kreissparkasse`,
+      es: `${SITE_URL}/es/kreissparkasse`,
     },
   },
 };

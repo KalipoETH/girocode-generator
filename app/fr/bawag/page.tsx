@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode avec BAWAG – Guide étape par étape 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scanner un GiroCode avec BAWAG: Ouvrir le scanner QR dans l\'app BAWAG Mobile Banking, scanner le code, confirmer le virement. ✅ Guide étape par étape 2026.',
   keywords: 'girocode bawag, bawag girocode scan, bawag qr code, sepa qr bawag',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/bawag',
+    canonical: `${SITE_URL}/fr/bawag`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/bawag',
-      de: 'https://www.girocodegenerator.com/bawag',
-      en: 'https://www.girocodegenerator.com/en/bawag',
-      fr: 'https://www.girocodegenerator.com/fr/bawag',
-      es: 'https://www.girocodegenerator.com/es/bawag',
+      'x-default': `${SITE_URL}/bawag`,
+      de: `${SITE_URL}/bawag`,
+      en: `${SITE_URL}/en/bawag`,
+      fr: `${SITE_URL}/fr/bawag`,
+      es: `${SITE_URL}/es/bawag`,
     },
   },
 };

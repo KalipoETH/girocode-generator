@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { InvoiceEditor } from '@/app/(de)/rechnungs-editor/InvoiceEditor';
+import { SITE_URL } from '@/lib/siteConfig';
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
   description:
     'Crea e personalizza fatture professionali con GiroCode integrato. Editor drag & drop, logo personalizzato, download PDF immediato. Gratis.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/it/rechnungs-editor',
+    canonical: `${SITE_URL}/it/rechnungs-editor`,
   },
 };
 

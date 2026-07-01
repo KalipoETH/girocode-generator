@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AuthorBox, AuthorBoxEnd } from '../../../../components/AuthorBox';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Facturas como autónomo: GiroCode para pagos más rápidos',
   description:
     'Cómo los autónomos cobran más rápido con GiroCodes en sus facturas. Guía práctica con consejos sobre requisitos legales y generador de PDF gratuito.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/es/blog/freelancer-rechnungen-qr-code',
+    canonical: `${SITE_URL}/es/blog/freelancer-rechnungen-qr-code`,
     languages: {
-      de: 'https://www.girocodegenerator.com/blog/freelancer-rechnungen-qr-code',
-      en: 'https://www.girocodegenerator.com/en/blog/freelancer-rechnungen-qr-code',
-      fr: 'https://www.girocodegenerator.com/fr/blog/freelancer-rechnungen-qr-code',
-      es: 'https://www.girocodegenerator.com/es/blog/freelancer-rechnungen-qr-code',
-      it: 'https://www.girocodegenerator.com/it/blog/freelancer-rechnungen-qr-code',
+      de: `${SITE_URL}/blog/freelancer-rechnungen-qr-code`,
+      en: `${SITE_URL}/en/blog/freelancer-rechnungen-qr-code`,
+      fr: `${SITE_URL}/fr/blog/freelancer-rechnungen-qr-code`,
+      es: `${SITE_URL}/es/blog/freelancer-rechnungen-qr-code`,
+      it: `${SITE_URL}/it/blog/freelancer-rechnungen-qr-code`,
     },
   },
 };

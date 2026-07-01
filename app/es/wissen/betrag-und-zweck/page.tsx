@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Importe & Concepto en GiroCode – Cómo hacerlo bien',
   description:
     '¿Importe opcional u obligatorio? Concepto máx. 140 caracteres: qué incluir y qué evitar. Mejores prácticas para autónomos y empresas.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/es/wissen/betrag-und-zweck',
+    canonical: `${SITE_URL}/es/wissen/betrag-und-zweck`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/wissen/betrag-und-zweck',
-      'de': 'https://www.girocodegenerator.com/wissen/betrag-und-zweck',
-      'en': 'https://www.girocodegenerator.com/en/wissen/betrag-und-zweck',
-      'fr': 'https://www.girocodegenerator.com/fr/wissen/betrag-und-zweck',
-      'es': 'https://www.girocodegenerator.com/es/wissen/betrag-und-zweck',
-      'it': 'https://www.girocodegenerator.com/it/wissen/betrag-und-zweck',
+      'x-default': `${SITE_URL}/wissen/betrag-und-zweck`,
+      'de': `${SITE_URL}/wissen/betrag-und-zweck`,
+      'en': `${SITE_URL}/en/wissen/betrag-und-zweck`,
+      'fr': `${SITE_URL}/fr/wissen/betrag-und-zweck`,
+      'es': `${SITE_URL}/es/wissen/betrag-und-zweck`,
+      'it': `${SITE_URL}/it/wissen/betrag-und-zweck`,
     },
   },
 };

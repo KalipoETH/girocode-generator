@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AuthorBox, AuthorBoxEnd } from '../../../../components/AuthorBox';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: "L'histoire du GiroCode – Du document papier au scan QR",
   description:
     "Comment le GiroCode a été créé : des débuts de la norme EPC en 2012 à son adoption généralisée en Allemagne. L'histoire de l'évolution du SEPA-QR.",
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/blog/geschichte-des-girocodes',
+    canonical: `${SITE_URL}/fr/blog/geschichte-des-girocodes`,
     languages: {
-      de: 'https://www.girocodegenerator.com/blog/geschichte-des-girocodes',
-      en: 'https://www.girocodegenerator.com/en/blog/geschichte-des-girocodes',
-      fr: 'https://www.girocodegenerator.com/fr/blog/geschichte-des-girocodes',
-      es: 'https://www.girocodegenerator.com/es/blog/geschichte-des-girocodes',
-      it: 'https://www.girocodegenerator.com/it/blog/geschichte-des-girocodes',
+      de: `${SITE_URL}/blog/geschichte-des-girocodes`,
+      en: `${SITE_URL}/en/blog/geschichte-des-girocodes`,
+      fr: `${SITE_URL}/fr/blog/geschichte-des-girocodes`,
+      es: `${SITE_URL}/es/blog/geschichte-des-girocodes`,
+      it: `${SITE_URL}/it/blog/geschichte-des-girocodes`,
     },
   },
 };

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { KnowledgeLayout } from '@/components/KnowledgeLayout';
+import { SITE_URL } from '@/lib/siteConfig';
 
 function RechnungsgeneratorCTA() {
   return (
@@ -33,14 +34,14 @@ export const metadata: Metadata = {
     'GiroCode auf Rechnungen einbinden: Pflichtangaben nach §14 UStG, optimale Platzierung und kostenloser PDF-Generator. ✅ Professionelle Rechnungen in 2 Minuten.',
   keywords: 'GiroCode Rechnung, §14 UStG Pflichtangaben, Kleinunternehmerregelung, QR Code Rechnung, GiroCode PDF Rechnung',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/wissen/rechnung',
+    canonical: `${SITE_URL}/wissen/rechnung`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/wissen/rechnung',
-      'de': 'https://www.girocodegenerator.com/wissen/rechnung',
-      'en': 'https://www.girocodegenerator.com/en/wissen/rechnung',
-      'fr': 'https://www.girocodegenerator.com/fr/wissen/rechnung',
-      'es': 'https://www.girocodegenerator.com/es/wissen/rechnung',
-      'it': 'https://www.girocodegenerator.com/it/wissen/rechnung',
+      'x-default': `${SITE_URL}/wissen/rechnung`,
+      'de': `${SITE_URL}/wissen/rechnung`,
+      'en': `${SITE_URL}/en/wissen/rechnung`,
+      'fr': `${SITE_URL}/fr/wissen/rechnung`,
+      'es': `${SITE_URL}/es/wissen/rechnung`,
+      'it': `${SITE_URL}/it/wissen/rechnung`,
     },
   },
 };

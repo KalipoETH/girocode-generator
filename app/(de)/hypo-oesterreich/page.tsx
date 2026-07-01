@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Hypo Tirol/Vorarlberg/NOE scannen – Anleitung',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der Hypo Banking App (Tirol, Vorarlberg, NÖ) scannen: QR-Scanner im Überweisungsbereich, Code erfassen, bestätigen. ✅ Schritt-für-Schritt Anleitung 2026.',
   keywords: 'girocode hypo tirol, hypo vorarlberg qr code, hypo banking app girocode, hypo noe sepa qr österreich',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/hypo-oesterreich',
+    canonical: `${SITE_URL}/hypo-oesterreich`,
   },
 };
 

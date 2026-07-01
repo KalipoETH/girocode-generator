@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Erste Bank / George scannen – Anleitung 2026',
@@ -7,14 +8,14 @@ export const metadata: Metadata = {
     'So scannst du einen GiroCode mit der George App (Erste Bank Österreich): QR-Scanner unter „Überweisen" → „QR-Code" öffnen, scannen, bestätigen. ✅ Gilt auch für s Sparkasse Österreich.',
   keywords: 'girocode erste bank, george app girocode, erste bank qr code scannen, george app qr überweisung österreich',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/erste-bank',
+    canonical: `${SITE_URL}/erste-bank`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/erste-bank',
-      de: 'https://www.girocodegenerator.com/erste-bank',
-      en: 'https://www.girocodegenerator.com/en/erste-bank',
-      fr: 'https://www.girocodegenerator.com/fr/erste-bank',
-      es: 'https://www.girocodegenerator.com/es/erste-bank',
-      it: 'https://www.girocodegenerator.com/it/erste-bank',
+      'x-default': `${SITE_URL}/erste-bank`,
+      de: `${SITE_URL}/erste-bank`,
+      en: `${SITE_URL}/en/erste-bank`,
+      fr: `${SITE_URL}/fr/erste-bank`,
+      es: `${SITE_URL}/es/erste-bank`,
+      it: `${SITE_URL}/it/erste-bank`,
     },
   },
 };

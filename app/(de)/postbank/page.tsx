@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Postbank App scannen – Anleitung 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit dem Postbank Finanzassistenten scannen: Überweisen öffnen, Kamera-Symbol antippen, Code scannen & TAN eingeben. ✅ Schritt-für-Schritt Anleitung.',
   keywords: 'postbank girocode, postbank finanzassistent qr code, postbank girocode scannen, sepa qr postbank',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/postbank',
+    canonical: `${SITE_URL}/postbank`,
   },
 };
 

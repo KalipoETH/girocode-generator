@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode avec Sparkasse – Guide étape par étape 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scanner un GiroCode avec Sparkasse: Ouvrir le scanner QR dans l\'app Sparkassen App, scanner le code, confirmer le virement. ✅ Guide étape par étape 2026.',
   keywords: 'girocode sparkasse, sparkasse girocode scan, sparkasse qr code, sepa qr sparkasse',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/sparkasse',
+    canonical: `${SITE_URL}/fr/sparkasse`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/sparkasse',
-      de: 'https://www.girocodegenerator.com/sparkasse',
-      en: 'https://www.girocodegenerator.com/en/sparkasse',
-      fr: 'https://www.girocodegenerator.com/fr/sparkasse',
-      es: 'https://www.girocodegenerator.com/es/sparkasse',
+      'x-default': `${SITE_URL}/sparkasse`,
+      de: `${SITE_URL}/sparkasse`,
+      en: `${SITE_URL}/en/sparkasse`,
+      fr: `${SITE_URL}/fr/sparkasse`,
+      es: `${SITE_URL}/es/sparkasse`,
     },
   },
 };

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit DKB App scannen – Schritt-für-Schritt 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der DKB Banking App scannen: Überweisung öffnen, QR-Scanner starten, Code scannen, Daten prüfen & bestätigen. ✅ Einfach & kostenlos.',
   keywords: 'dkb girocode, dkb banking girocode scannen, dkb app qr code, sepa qr dkb',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/dkb',
+    canonical: `${SITE_URL}/dkb`,
   },
 };
 

@@ -1,20 +1,21 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AuthorBox, AuthorBoxEnd } from '../../../../components/AuthorBox';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Fatture da freelance: GiroCode per pagamenti più veloci',
   description:
     'Come i freelance incassano più rapidamente con i GiroCode sulle fatture. Guida pratica con consigli su obblighi fiscali italiani, regime forfettario e generatore PDF gratuito.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/it/blog/freelancer-rechnungen-qr-code',
+    canonical: `${SITE_URL}/it/blog/freelancer-rechnungen-qr-code`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/blog/freelancer-rechnungen-qr-code',
-      de: 'https://www.girocodegenerator.com/blog/freelancer-rechnungen-qr-code',
-      en: 'https://www.girocodegenerator.com/en/blog/freelancer-rechnungen-qr-code',
-      fr: 'https://www.girocodegenerator.com/fr/blog/freelancer-rechnungen-qr-code',
-      es: 'https://www.girocodegenerator.com/es/blog/freelancer-rechnungen-qr-code',
-      it: 'https://www.girocodegenerator.com/it/blog/freelancer-rechnungen-qr-code',
+      'x-default': `${SITE_URL}/blog/freelancer-rechnungen-qr-code`,
+      de: `${SITE_URL}/blog/freelancer-rechnungen-qr-code`,
+      en: `${SITE_URL}/en/blog/freelancer-rechnungen-qr-code`,
+      fr: `${SITE_URL}/fr/blog/freelancer-rechnungen-qr-code`,
+      es: `${SITE_URL}/es/blog/freelancer-rechnungen-qr-code`,
+      it: `${SITE_URL}/it/blog/freelancer-rechnungen-qr-code`,
     },
   },
 };

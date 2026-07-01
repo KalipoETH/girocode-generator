@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
+import { SITE_URL } from '@/lib/siteConfig';
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
@@ -38,14 +39,14 @@ export const metadata: Metadata = {
   description:
     'Quali app bancarie italiane scansionano GiroCode? Intesa ✅ UniCredit ✅ Fineco ✅ Banco BPM ✅ ING ✅ e altre. Guida passo-passo per ogni app.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/it/wissen/banking-apps',
+    canonical: `${SITE_URL}/it/wissen/banking-apps`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/wissen/banking-apps',
-      de: 'https://www.girocodegenerator.com/wissen/banking-apps',
-      en: 'https://www.girocodegenerator.com/en/wissen/banking-apps',
-      fr: 'https://www.girocodegenerator.com/fr/wissen/banking-apps',
-      es: 'https://www.girocodegenerator.com/es/wissen/banking-apps',
-      it: 'https://www.girocodegenerator.com/it/wissen/banking-apps',
+      'x-default': `${SITE_URL}/wissen/banking-apps`,
+      de: `${SITE_URL}/wissen/banking-apps`,
+      en: `${SITE_URL}/en/wissen/banking-apps`,
+      fr: `${SITE_URL}/fr/wissen/banking-apps`,
+      es: `${SITE_URL}/es/wissen/banking-apps`,
+      it: `${SITE_URL}/it/wissen/banking-apps`,
     },
   },
 };

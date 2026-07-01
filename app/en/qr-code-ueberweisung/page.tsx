@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'QR Code for Bank Transfer – Create Free 2026',
   description:
     'Create QR Code for SEPA bank transfer for free: Customers scan and transfer instantly. GiroCode/EPC-QR standard. No registration, 100% local in browser.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/qr-code-ueberweisung',
+    canonical: `${SITE_URL}/en/qr-code-ueberweisung`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/qr-code-ueberweisung',
-      de: 'https://www.girocodegenerator.com/qr-code-ueberweisung',
-      en: 'https://www.girocodegenerator.com/en/qr-code-ueberweisung',
-      fr: 'https://www.girocodegenerator.com/fr/qr-code-ueberweisung',
-      es: 'https://www.girocodegenerator.com/es/qr-code-ueberweisung',
+      'x-default': `${SITE_URL}/qr-code-ueberweisung`,
+      de: `${SITE_URL}/qr-code-ueberweisung`,
+      en: `${SITE_URL}/en/qr-code-ueberweisung`,
+      fr: `${SITE_URL}/fr/qr-code-ueberweisung`,
+      es: `${SITE_URL}/es/qr-code-ueberweisung`,
     },
   },
 };

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit BKS Bank scannen – Anleitung 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit BKS Mobile Banking scannen: QR-Scanner im Überweisungsbereich öffnen, SEPA-QR-Code erfassen, Überweisung bestätigen. ✅ Schritt-für-Schritt Anleitung.',
   keywords: 'girocode bks bank, bks mobile banking qr code, bks bank girocode scannen, sepa qr bks bank österreich',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/bks-bank',
+    canonical: `${SITE_URL}/bks-bank`,
   },
 };
 

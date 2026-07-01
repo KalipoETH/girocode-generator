@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode avec Volksbank – Guide étape par étape 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scanner un GiroCode avec Volksbank: Ouvrir le scanner QR dans l\'app VR Banking App, scanner le code, confirmer le virement. ✅ Guide étape par étape 2026.',
   keywords: 'girocode volksbank, volksbank girocode scan, volksbank qr code, sepa qr volksbank',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/volksbank',
+    canonical: `${SITE_URL}/fr/volksbank`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/volksbank',
-      de: 'https://www.girocodegenerator.com/volksbank',
-      en: 'https://www.girocodegenerator.com/en/volksbank',
-      fr: 'https://www.girocodegenerator.com/fr/volksbank',
-      es: 'https://www.girocodegenerator.com/es/volksbank',
+      'x-default': `${SITE_URL}/volksbank`,
+      de: `${SITE_URL}/volksbank`,
+      en: `${SITE_URL}/en/volksbank`,
+      fr: `${SITE_URL}/fr/volksbank`,
+      es: `${SITE_URL}/es/volksbank`,
     },
   },
 };

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Bank Austria / UniCredit scannen – Anleitung',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der Bank Austria MobileBanking App scannen: QR-Scanner im Überweisungsbereich öffnen, Code scannen, bestätigen. ✅ Schritt-für-Schritt Anleitung 2026.',
   keywords: 'girocode bank austria, bank austria qr code, unicredit mobilebanking girocode, bank austria überweisung qr',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/bank-austria',
+    canonical: `${SITE_URL}/bank-austria`,
   },
 };
 

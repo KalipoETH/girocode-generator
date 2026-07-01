@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AuthorBox, AuthorBoxEnd } from '@/components/AuthorBox';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'IBAN-Sicherheit: Worauf man bei Überweisungen achten muss',
   description:
     'Ist es sicher, die IBAN weiterzugeben? Was kann jemand mit deiner IBAN machen? Alles über IBAN-Sicherheit, GiroCode-Datenschutz und sichere Überweisungen.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/blog/iban-sicherheit',
+    canonical: `${SITE_URL}/blog/iban-sicherheit`,
   },
 };
 

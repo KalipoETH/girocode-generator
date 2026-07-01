@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { UseCaseLanding } from '@/components/UseCaseLanding';
+import { SITE_URL } from '@/lib/siteConfig';
 
 const SLUG = 'freelancer';
 
@@ -11,14 +12,14 @@ export const metadata: Metadata = {
   keywords:
     'girocode freelancer, freelancer rechnung qr code, sepa qr freelancer, schneller bezahlt werden freelancer',
   alternates: {
-    canonical: `https://www.girocodegenerator.com/${SLUG}`,
+    canonical: `${SITE_URL}/${SLUG}`,
     languages: {
-      'x-default': `https://www.girocodegenerator.com/${SLUG}`,
-      de: `https://www.girocodegenerator.com/${SLUG}`,
-      en: `https://www.girocodegenerator.com/en/${SLUG}`,
-      fr: `https://www.girocodegenerator.com/fr/${SLUG}`,
-      es: `https://www.girocodegenerator.com/es/${SLUG}`,
-      it: `https://www.girocodegenerator.com/it/freelancer`,
+      'x-default': `${SITE_URL}/${SLUG}`,
+      de: `${SITE_URL}/${SLUG}`,
+      en: `${SITE_URL}/en/${SLUG}`,
+      fr: `${SITE_URL}/fr/${SLUG}`,
+      es: `${SITE_URL}/es/${SLUG}`,
+      it: `${SITE_URL}/it/freelancer`,
     },
   },
 };

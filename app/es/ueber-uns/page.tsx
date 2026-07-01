@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Sobre nosotros – GiroCode Generator',
   description:
     'Quién está detrás de GiroCode Generator: el proyecto de Kaleb Jahnke en Osterholz-Scharmbeck – gratuito, local y respetuoso con la privacidad.',
-  alternates: { canonical: 'https://www.girocodegenerator.com/es/ueber-uns' },
+  alternates: { canonical: `${SITE_URL}/es/ueber-uns` },
 };
 
 export default function SobreNosotrosPageEs() {

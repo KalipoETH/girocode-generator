@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Targobank scannen – Schritt-für-Schritt 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der TARGOBANK Mobile Banking App scannen: Überweisung öffnen, QR-Code-Symbol antippen, scannen & bestätigen. ✅ Anleitung für iOS & Android.',
   keywords: 'targobank girocode, targobank mobile banking qr code, targobank girocode scannen, sepa qr targobank',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/targobank',
+    canonical: `${SITE_URL}/targobank`,
   },
 };
 

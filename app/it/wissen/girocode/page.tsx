@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
+import { SITE_URL } from '@/lib/siteConfig';
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -53,14 +54,14 @@ export const metadata: Metadata = {
   description:
     'GiroCode = QR code SEPA per bonifici. Cos\'è, come funziona e come crearne uno gratis in pochi secondi. PDF fattura incluso.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/it/wissen/girocode',
+    canonical: `${SITE_URL}/it/wissen/girocode`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/wissen/girocode',
-      de: 'https://www.girocodegenerator.com/wissen/girocode',
-      en: 'https://www.girocodegenerator.com/en/wissen/girocode',
-      fr: 'https://www.girocodegenerator.com/fr/wissen/girocode',
-      es: 'https://www.girocodegenerator.com/es/wissen/girocode',
-      it: 'https://www.girocodegenerator.com/it/wissen/girocode',
+      'x-default': `${SITE_URL}/wissen/girocode`,
+      de: `${SITE_URL}/wissen/girocode`,
+      en: `${SITE_URL}/en/wissen/girocode`,
+      fr: `${SITE_URL}/fr/wissen/girocode`,
+      es: `${SITE_URL}/es/wissen/girocode`,
+      it: `${SITE_URL}/it/wissen/girocode`,
     },
   },
 };

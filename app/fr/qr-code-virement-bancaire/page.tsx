@@ -1,16 +1,17 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'QR Code Virement Bancaire – Créer Gratuitement 2026',
   description:
     'Créez un QR code pour virement bancaire SEPA en quelques secondes. Standard EPC069-12. Gratuit.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/qr-code-virement-bancaire',
+    canonical: `${SITE_URL}/fr/qr-code-virement-bancaire`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/qr-code-ueberweisung',
-      de: 'https://www.girocodegenerator.com/qr-code-ueberweisung',
-      fr: 'https://www.girocodegenerator.com/fr/qr-code-virement-bancaire',
+      'x-default': `${SITE_URL}/qr-code-ueberweisung`,
+      de: `${SITE_URL}/qr-code-ueberweisung`,
+      fr: `${SITE_URL}/fr/qr-code-virement-bancaire`,
     },
   },
 };

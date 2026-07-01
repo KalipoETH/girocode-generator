@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Chi Siamo – GiroCode Generator',
   description:
     'Il team dietro GiroCode Generator: strumento gratuito per la creazione di QR code SEPA. Sviluppato con passione per la privacy e la semplicità.',
-  alternates: { canonical: 'https://www.girocodegenerator.com/it/ueber-uns' },
+  alternates: { canonical: `${SITE_URL}/it/ueber-uns` },
 };
 
 export default function AboutPageIt() {

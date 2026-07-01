@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode with Cantonal Banks – Step-by-Step Guide 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scan a GiroCode with Cantonal Banks: Open QR scanner in the Cantonal Bank App, scan the code, confirm the transfer. ✅ Step-by-step guide 2026.',
   keywords: 'girocode cantonal-banks, cantonal-banks girocode scan, cantonal-banks qr code, sepa qr cantonal-banks',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/cantonal-banks',
+    canonical: `${SITE_URL}/en/cantonal-banks`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/cantonal-banks',
-      de: 'https://www.girocodegenerator.com/cantonal-banks',
-      en: 'https://www.girocodegenerator.com/en/cantonal-banks',
-      fr: 'https://www.girocodegenerator.com/fr/cantonal-banks',
-      es: 'https://www.girocodegenerator.com/es/cantonal-banks',
+      'x-default': `${SITE_URL}/cantonal-banks`,
+      de: `${SITE_URL}/cantonal-banks`,
+      en: `${SITE_URL}/en/cantonal-banks`,
+      fr: `${SITE_URL}/fr/cantonal-banks`,
+      es: `${SITE_URL}/es/cantonal-banks`,
     },
   },
 };

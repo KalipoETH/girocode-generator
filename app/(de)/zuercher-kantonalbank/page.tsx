@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Zürcher Kantonalbank scannen – Anleitung',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit ZKB Mobile Banking (Zürcher Kantonalbank) für SEPA-Überweisungen scannen. ✅ Schritt-für-Schritt Anleitung 2026. Hinweis: CH-Inland nutzt QR-Rechnung.',
   keywords: 'girocode zkb, zürcher kantonalbank qr code, zkb mobile banking sepa, zkb girocode',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/zuercher-kantonalbank',
+    canonical: `${SITE_URL}/zuercher-kantonalbank`,
   },
 };
 

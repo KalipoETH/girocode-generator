@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AuthorBox, AuthorBoxEnd } from '@/components/AuthorBox';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Die Geschichte des GiroCodes – Vom Beleg zum QR-Scan',
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
     'Wie der GiroCode entstand: Von den Anfängen des EPC-Standards 2012 bis zur flächendeckenden Einführung in Deutschland. Die Geschichte der SEPA-QR-Evolution.',
   alternates: {
     canonical:
-      'https://www.girocodegenerator.com/blog/geschichte-des-girocodes',
+      `${SITE_URL}/blog/geschichte-des-girocodes`,
   },
 };
 

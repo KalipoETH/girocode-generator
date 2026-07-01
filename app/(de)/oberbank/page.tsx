@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Oberbank scannen – Schritt-für-Schritt 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit Oberbank Mobile Banking scannen: QR-Scanner im Überweisungsbereich öffnen, SEPA-QR-Code erfassen, Überweisung bestätigen. ✅ Kostenlos & schnell.',
   keywords: 'girocode oberbank, oberbank mobile banking qr code, oberbank girocode scannen, sepa qr oberbank',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/oberbank',
+    canonical: `${SITE_URL}/oberbank`,
   },
 };
 

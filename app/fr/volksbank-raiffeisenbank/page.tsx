@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode avec Volksbank Raiffeisenbank – Guide étape par étape 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scanner un GiroCode avec Volksbank Raiffeisenbank: Ouvrir le scanner QR dans l\'app VR Banking App, scanner le code, confirmer le virement. ✅ Guide étape par étape 2026.',
   keywords: 'girocode volksbank-raiffeisenbank, volksbank-raiffeisenbank girocode scan, volksbank-raiffeisenbank qr code, sepa qr volksbank-raiffeisenbank',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/volksbank-raiffeisenbank',
+    canonical: `${SITE_URL}/fr/volksbank-raiffeisenbank`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/volksbank-raiffeisenbank',
-      de: 'https://www.girocodegenerator.com/volksbank-raiffeisenbank',
-      en: 'https://www.girocodegenerator.com/en/volksbank-raiffeisenbank',
-      fr: 'https://www.girocodegenerator.com/fr/volksbank-raiffeisenbank',
-      es: 'https://www.girocodegenerator.com/es/volksbank-raiffeisenbank',
+      'x-default': `${SITE_URL}/volksbank-raiffeisenbank`,
+      de: `${SITE_URL}/volksbank-raiffeisenbank`,
+      en: `${SITE_URL}/en/volksbank-raiffeisenbank`,
+      fr: `${SITE_URL}/fr/volksbank-raiffeisenbank`,
+      es: `${SITE_URL}/es/volksbank-raiffeisenbank`,
     },
   },
 };

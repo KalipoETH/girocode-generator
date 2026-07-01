@@ -5,20 +5,21 @@ import { EpcVersionsSection } from './_sections/EpcVersionsSection';
 import { EpcErrorCorrectionSection } from './_sections/EpcErrorCorrectionSection';
 import { EpcTechnicalImplementationSection } from './_sections/EpcTechnicalImplementationSection';
 import { EpcCommonMistakesSection } from './_sections/EpcCommonMistakesSection';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'EPC QR Code Standard (EPC069-12) – Technical Guide 2026',
   description:
     'The EPC standard for GiroCodes: payload structure line by line, versions 001/002, error correction and JavaScript code example. Technically precise.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/wissen/epc-standard',
+    canonical: `${SITE_URL}/en/wissen/epc-standard`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/wissen/epc-standard',
-      'de': 'https://www.girocodegenerator.com/wissen/epc-standard',
-      'en': 'https://www.girocodegenerator.com/en/wissen/epc-standard',
-      'fr': 'https://www.girocodegenerator.com/fr/wissen/epc-standard',
-      'es': 'https://www.girocodegenerator.com/es/wissen/epc-standard',
-      'it': 'https://www.girocodegenerator.com/it/wissen/epc-standard',
+      'x-default': `${SITE_URL}/wissen/epc-standard`,
+      'de': `${SITE_URL}/wissen/epc-standard`,
+      'en': `${SITE_URL}/en/wissen/epc-standard`,
+      'fr': `${SITE_URL}/fr/wissen/epc-standard`,
+      'es': `${SITE_URL}/es/wissen/epc-standard`,
+      'it': `${SITE_URL}/it/wissen/epc-standard`,
     },
   },
 };

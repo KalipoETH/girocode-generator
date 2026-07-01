@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode Blog – Ratgeber & News',
   description:
     'Ratgeber rund um GiroCodes, SEPA-Überweisungen, Rechnungsstellung und digitale Zahlungen für Selbstständige.',
-  alternates: { canonical: 'https://www.girocodegenerator.com/blog' },
+  alternates: { canonical: `${SITE_URL}/blog` },
 };
 
 const articles = [

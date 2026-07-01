@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode avec Berliner Sparkasse – Guide étape par étape 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scanner un GiroCode avec Berliner Sparkasse: Ouvrir le scanner QR dans l\'app Berliner Sparkasse App, scanner le code, confirmer le virement. ✅ Guide étape par étape 2026.',
   keywords: 'girocode berliner-sparkasse, berliner-sparkasse girocode scan, berliner-sparkasse qr code, sepa qr berliner-sparkasse',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/berliner-sparkasse',
+    canonical: `${SITE_URL}/fr/berliner-sparkasse`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/berliner-sparkasse',
-      de: 'https://www.girocodegenerator.com/berliner-sparkasse',
-      en: 'https://www.girocodegenerator.com/en/berliner-sparkasse',
-      fr: 'https://www.girocodegenerator.com/fr/berliner-sparkasse',
-      es: 'https://www.girocodegenerator.com/es/berliner-sparkasse',
+      'x-default': `${SITE_URL}/berliner-sparkasse`,
+      de: `${SITE_URL}/berliner-sparkasse`,
+      en: `${SITE_URL}/en/berliner-sparkasse`,
+      fr: `${SITE_URL}/fr/berliner-sparkasse`,
+      es: `${SITE_URL}/es/berliner-sparkasse`,
     },
   },
 };

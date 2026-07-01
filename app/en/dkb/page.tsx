@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode with DKB – Step-by-Step Guide 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scan a GiroCode with DKB: Open QR scanner in the DKB Banking App, scan the code, confirm the transfer. ✅ Step-by-step guide 2026.',
   keywords: 'girocode dkb, dkb girocode scan, dkb qr code, sepa qr dkb',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/dkb',
+    canonical: `${SITE_URL}/en/dkb`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/dkb',
-      de: 'https://www.girocodegenerator.com/dkb',
-      en: 'https://www.girocodegenerator.com/en/dkb',
-      fr: 'https://www.girocodegenerator.com/fr/dkb',
-      es: 'https://www.girocodegenerator.com/es/dkb',
+      'x-default': `${SITE_URL}/dkb`,
+      de: `${SITE_URL}/dkb`,
+      en: `${SITE_URL}/en/dkb`,
+      fr: `${SITE_URL}/fr/dkb`,
+      es: `${SITE_URL}/es/dkb`,
     },
   },
 };

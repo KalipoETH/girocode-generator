@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { KnowledgeLayout } from '@/components/KnowledgeLayout';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode scannen – Schritt-für-Schritt Anleitung 2026',
@@ -8,14 +9,14 @@ export const metadata: Metadata = {
     'So scannst du einen GiroCode mit deiner Banking-App: Sparkasse, ING, DKB, Volksbank & mehr. Einfache Anleitung für iPhone und Android. ✅ In 30 Sekunden bezahlt.',
   keywords: 'GiroCode scannen iPhone, GiroCode scannen Android, SEPA QR Code scannen, QR Code Überweisung scannen',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/wissen/scannen',
+    canonical: `${SITE_URL}/wissen/scannen`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/wissen/scannen',
-      'de': 'https://www.girocodegenerator.com/wissen/scannen',
-      'en': 'https://www.girocodegenerator.com/en/wissen/scannen',
-      'fr': 'https://www.girocodegenerator.com/fr/wissen/scannen',
-      'es': 'https://www.girocodegenerator.com/es/wissen/scannen',
-      'it': 'https://www.girocodegenerator.com/it/wissen/scannen',
+      'x-default': `${SITE_URL}/wissen/scannen`,
+      'de': `${SITE_URL}/wissen/scannen`,
+      'en': `${SITE_URL}/en/wissen/scannen`,
+      'fr': `${SITE_URL}/fr/wissen/scannen`,
+      'es': `${SITE_URL}/es/wissen/scannen`,
+      'it': `${SITE_URL}/it/wissen/scannen`,
     },
   },
 };

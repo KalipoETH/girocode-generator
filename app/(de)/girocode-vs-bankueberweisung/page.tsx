@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode vs. manuelle Überweisung – Zeit & Fehler sparen (2026)',
   description:
     'GiroCode oder manuelle IBAN-Eingabe? Vergleich von Zeitaufwand, Fehlerquote und Benutzerfreundlichkeit.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/girocode-vs-bankueberweisung',
+    canonical: `${SITE_URL}/girocode-vs-bankueberweisung`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/girocode-vs-bankueberweisung',
-      'de': 'https://www.girocodegenerator.com/girocode-vs-bankueberweisung',
-      'en': 'https://www.girocodegenerator.com/en/girocode-vs-bankueberweisung',
-      'fr': 'https://www.girocodegenerator.com/fr/girocode-vs-bankueberweisung',
-      'es': 'https://www.girocodegenerator.com/es/girocode-vs-bankueberweisung',
-      'it': 'https://www.girocodegenerator.com/it/girocode-vs-bankueberweisung',
+      'x-default': `${SITE_URL}/girocode-vs-bankueberweisung`,
+      'de': `${SITE_URL}/girocode-vs-bankueberweisung`,
+      'en': `${SITE_URL}/en/girocode-vs-bankueberweisung`,
+      'fr': `${SITE_URL}/fr/girocode-vs-bankueberweisung`,
+      'es': `${SITE_URL}/es/girocode-vs-bankueberweisung`,
+      'it': `${SITE_URL}/it/girocode-vs-bankueberweisung`,
     },
   },
 };
@@ -32,13 +33,13 @@ const jsonLd = {
   publisher: {
     '@type': 'Organization',
     name: 'GiroCode Generator',
-    url: 'https://www.girocodegenerator.com',
+    url: SITE_URL,
   },
   datePublished: '2026-05-01',
   dateModified: '2026-05-01',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://www.girocodegenerator.com/girocode-vs-bankueberweisung',
+    '@id': `${SITE_URL}/girocode-vs-bankueberweisung`,
   },
 };
 

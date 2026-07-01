@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode avec Bank Austria – Guide étape par étape 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scanner un GiroCode avec Bank Austria: Ouvrir le scanner QR dans l\'app Bank Austria App, scanner le code, confirmer le virement. ✅ Guide étape par étape 2026.',
   keywords: 'girocode bank-austria, bank-austria girocode scan, bank-austria qr code, sepa qr bank-austria',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/bank-austria',
+    canonical: `${SITE_URL}/fr/bank-austria`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/bank-austria',
-      de: 'https://www.girocodegenerator.com/bank-austria',
-      en: 'https://www.girocodegenerator.com/en/bank-austria',
-      fr: 'https://www.girocodegenerator.com/fr/bank-austria',
-      es: 'https://www.girocodegenerator.com/es/bank-austria',
+      'x-default': `${SITE_URL}/bank-austria`,
+      de: `${SITE_URL}/bank-austria`,
+      en: `${SITE_URL}/en/bank-austria`,
+      fr: `${SITE_URL}/fr/bank-austria`,
+      es: `${SITE_URL}/es/bank-austria`,
     },
   },
 };

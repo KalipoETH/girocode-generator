@@ -1,16 +1,17 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'EPC QR Code Generator – Free & Instant 2026',
   description:
     'Create EPC QR codes for SEPA payments free. Compatible with all European banking apps. No registration, 100% local.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/epc-qr-code-generator',
+    canonical: `${SITE_URL}/en/epc-qr-code-generator`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/epc-qr-code',
-      de: 'https://www.girocodegenerator.com/epc-qr-code',
-      en: 'https://www.girocodegenerator.com/en/epc-qr-code-generator',
+      'x-default': `${SITE_URL}/epc-qr-code`,
+      de: `${SITE_URL}/epc-qr-code`,
+      en: `${SITE_URL}/en/epc-qr-code-generator`,
     },
   },
 };

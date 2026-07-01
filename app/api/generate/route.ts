@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const runtime = 'edge';
 
@@ -7,7 +8,7 @@ export async function GET() {
     {
       error: 'API access is currently in beta.',
       message: 'Register for our newsletter to get early access to the API.',
-      signup: 'https://www.girocodegenerator.com/api-access',
+      signup: `${SITE_URL}/api-access`,
     },
     { status: 403 },
   );

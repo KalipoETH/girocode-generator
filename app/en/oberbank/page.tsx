@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode with Oberbank – Step-by-Step Guide 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scan a GiroCode with Oberbank: Open QR scanner in the Oberbank Mobile Banking, scan the code, confirm the transfer. ✅ Step-by-step guide 2026.',
   keywords: 'girocode oberbank, oberbank girocode scan, oberbank qr code, sepa qr oberbank',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/oberbank',
+    canonical: `${SITE_URL}/en/oberbank`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/oberbank',
-      de: 'https://www.girocodegenerator.com/oberbank',
-      en: 'https://www.girocodegenerator.com/en/oberbank',
-      fr: 'https://www.girocodegenerator.com/fr/oberbank',
-      es: 'https://www.girocodegenerator.com/es/oberbank',
+      'x-default': `${SITE_URL}/oberbank`,
+      de: `${SITE_URL}/oberbank`,
+      en: `${SITE_URL}/en/oberbank`,
+      fr: `${SITE_URL}/fr/oberbank`,
+      es: `${SITE_URL}/es/oberbank`,
     },
   },
 };

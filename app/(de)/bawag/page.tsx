@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit BAWAG scannen – Schritt-für-Schritt 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit BAWAG Mobile Banking scannen: QR-Scanner im Überweisungsbereich öffnen, SEPA-QR-Code erfassen, Überweisung bestätigen. ✅ Kostenlos & in 30 Sekunden erledigt.',
   keywords: 'girocode bawag, bawag mobile banking qr code, bawag girocode scannen, sepa qr bawag österreich',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/bawag',
+    canonical: `${SITE_URL}/bawag`,
   },
 };
 

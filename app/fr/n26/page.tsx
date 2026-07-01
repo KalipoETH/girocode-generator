@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode avec N26 – Guide étape par étape 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scanner un GiroCode avec N26: Ouvrir le scanner QR dans l\'app N26 Banking App, scanner le code, confirmer le virement. ✅ Guide étape par étape 2026.',
   keywords: 'girocode n26, n26 girocode scan, n26 qr code, sepa qr n26',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/n26',
+    canonical: `${SITE_URL}/fr/n26`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/n26',
-      de: 'https://www.girocodegenerator.com/n26',
-      en: 'https://www.girocodegenerator.com/en/n26',
-      fr: 'https://www.girocodegenerator.com/fr/n26',
-      es: 'https://www.girocodegenerator.com/es/n26',
+      'x-default': `${SITE_URL}/n26`,
+      de: `${SITE_URL}/n26`,
+      en: `${SITE_URL}/en/n26`,
+      fr: `${SITE_URL}/fr/n26`,
+      es: `${SITE_URL}/es/n26`,
     },
   },
 };

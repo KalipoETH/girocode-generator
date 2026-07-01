@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'BezahlCode Generator – Kostenlos erstellen (= GiroCode) 2026',
   description:
     'BezahlCode (jetzt GiroCode) kostenlos erstellen: Der alte Name für SEPA-QR-Codes. Jetzt BezahlCode/GiroCode in 10 Sekunden generieren – ohne Anmeldung.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/bezahlcode',
+    canonical: `${SITE_URL}/bezahlcode`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/bezahlcode',
-      de: 'https://www.girocodegenerator.com/bezahlcode',
-      en: 'https://www.girocodegenerator.com/en/bezahlcode',
-      fr: 'https://www.girocodegenerator.com/fr/bezahlcode',
-      es: 'https://www.girocodegenerator.com/es/bezahlcode',
+      'x-default': `${SITE_URL}/bezahlcode`,
+      de: `${SITE_URL}/bezahlcode`,
+      en: `${SITE_URL}/en/bezahlcode`,
+      fr: `${SITE_URL}/fr/bezahlcode`,
+      es: `${SITE_URL}/es/bezahlcode`,
     },
   },
 };

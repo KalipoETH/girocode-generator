@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Comment créer un GiroCode – Guide étape par étape 2026',
   description:
     'Créer un GiroCode en 3 étapes: Saisir l\'IBAN, ajouter le montant et la référence, télécharger le QR code. Gratuit, sans inscription.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/girocode-erstellen-anleitung',
+    canonical: `${SITE_URL}/fr/girocode-erstellen-anleitung`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/girocode-erstellen-anleitung',
-      'de': 'https://www.girocodegenerator.com/girocode-erstellen-anleitung',
-      'en': 'https://www.girocodegenerator.com/en/girocode-erstellen-anleitung',
-      'fr': 'https://www.girocodegenerator.com/fr/girocode-erstellen-anleitung',
-      'es': 'https://www.girocodegenerator.com/es/girocode-erstellen-anleitung',
+      'x-default': `${SITE_URL}/girocode-erstellen-anleitung`,
+      'de': `${SITE_URL}/girocode-erstellen-anleitung`,
+      'en': `${SITE_URL}/en/girocode-erstellen-anleitung`,
+      'fr': `${SITE_URL}/fr/girocode-erstellen-anleitung`,
+      'es': `${SITE_URL}/es/girocode-erstellen-anleitung`,
     },
   },
 };

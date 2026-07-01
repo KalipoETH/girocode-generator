@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Kreissparkasse scannen – Anleitung 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der Kreissparkasse App scannen: QR-Scanner unter „Überweisungen" öffnen, Code scannen, bestätigen. ✅ Gilt für alle regionalen Kreissparkassen in Deutschland.',
   keywords: 'girocode kreissparkasse, kreissparkasse qr code, kreissparkasse girocode scannen, sparkasse qr überweisung',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/kreissparkasse',
+    canonical: `${SITE_URL}/kreissparkasse`,
   },
 };
 

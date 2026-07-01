@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode con Comdirect – Guía paso a paso 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Escanear un GiroCode con Comdirect: Abrir escáner QR en la app Comdirect Banking App, escanear el código, confirmar la transferencia. ✅ Guía paso a paso 2026.',
   keywords: 'girocode comdirect, comdirect girocode scan, comdirect qr code, sepa qr comdirect',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/es/comdirect',
+    canonical: `${SITE_URL}/es/comdirect`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/comdirect',
-      de: 'https://www.girocodegenerator.com/comdirect',
-      en: 'https://www.girocodegenerator.com/en/comdirect',
-      fr: 'https://www.girocodegenerator.com/fr/comdirect',
-      es: 'https://www.girocodegenerator.com/es/comdirect',
+      'x-default': `${SITE_URL}/comdirect`,
+      de: `${SITE_URL}/comdirect`,
+      en: `${SITE_URL}/en/comdirect`,
+      fr: `${SITE_URL}/fr/comdirect`,
+      es: `${SITE_URL}/es/comdirect`,
     },
   },
 };

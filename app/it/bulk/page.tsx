@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import BulkClient from '@/app/(de)/bulk/BulkClient';
+import { SITE_URL } from '@/lib/siteConfig';
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
   title: 'Generatore GiroCode Multiplo – Upload CSV Gratis 2026',
   description:
     'Carica un file CSV e crea centinaia di GiroCodes contemporaneamente. Download ZIP o PDF. Gratis, senza registrazione.',
-  alternates: { canonical: 'https://www.girocodegenerator.com/it/bulk' },
+  alternates: { canonical: `${SITE_URL}/it/bulk` },
 };
 
 export default function BulkPageIt() {

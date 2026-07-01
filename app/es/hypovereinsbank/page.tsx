@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode con HypoVereinsbank – Guía paso a paso 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Escanear un GiroCode con HypoVereinsbank: Abrir escáner QR en la app HVB Mobile Banking App, escanear el código, confirmar la transferencia. ✅ Guía paso a paso 2026.',
   keywords: 'girocode hypovereinsbank, hypovereinsbank girocode scan, hypovereinsbank qr code, sepa qr hypovereinsbank',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/es/hypovereinsbank',
+    canonical: `${SITE_URL}/es/hypovereinsbank`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/hypovereinsbank',
-      de: 'https://www.girocodegenerator.com/hypovereinsbank',
-      en: 'https://www.girocodegenerator.com/en/hypovereinsbank',
-      fr: 'https://www.girocodegenerator.com/fr/hypovereinsbank',
-      es: 'https://www.girocodegenerator.com/es/hypovereinsbank',
+      'x-default': `${SITE_URL}/hypovereinsbank`,
+      de: `${SITE_URL}/hypovereinsbank`,
+      en: `${SITE_URL}/en/hypovereinsbank`,
+      fr: `${SITE_URL}/fr/hypovereinsbank`,
+      es: `${SITE_URL}/es/hypovereinsbank`,
     },
   },
 };

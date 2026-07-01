@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Ostsächsischer Sparkasse scannen – 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der Ostsächsischen Sparkasse App scannen: QR-Scanner unter „Überweisungen", Code scannen, bestätigen. ✅ Schritt-für-Schritt Anleitung 2026.',
   keywords: 'girocode ostsächsische sparkasse, sparkasse dresden qr code, ostsächsische sparkasse girocode',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/ostsaechsische-sparkasse',
+    canonical: `${SITE_URL}/ostsaechsische-sparkasse`,
   },
 };
 

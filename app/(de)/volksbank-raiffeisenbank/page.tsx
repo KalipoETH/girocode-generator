@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Volksbank Raiffeisenbank scannen – 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der VR-Banking App (Volksbank Raiffeisenbank) scannen: QR-Scanner unter „Überweisungen", Code scannen, bestätigen. ✅ Gilt für alle regionalen Volksbanken.',
   keywords: 'girocode volksbank raiffeisenbank, vr banking app qr code, volksbank raiffeisenbank girocode, vr banking überweisung qr',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/volksbank-raiffeisenbank',
+    canonical: `${SITE_URL}/volksbank-raiffeisenbank`,
   },
 };
 

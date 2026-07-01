@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Schweizer Kantonalbanken scannen – Übersicht',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'Übersicht: GiroCode mit Schweizer Kantonalbanken scannen. ZKB, Basellandschaftliche, St. Galler Kantonalbank und mehr. ✅ SEPA-QR Anleitung für alle Kantonalbank-Apps.',
   keywords: 'girocode kantonalbanken schweiz, kantonalbank qr code, sepa qr kantonalbank, zkb sgkb blkb girocode',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/cantonal-banks',
+    canonical: `${SITE_URL}/cantonal-banks`,
   },
 };
 

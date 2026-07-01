@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { InvoiceEditor } from './InvoiceEditor';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Rechnung kostenlos erstellen mit GiroCode – Online Rechnungsgenerator 2026',
@@ -17,13 +18,13 @@ export const metadata: Metadata = {
     'rechnungsgenerator mit qr code',
   ],
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/rechnungs-editor',
+    canonical: `${SITE_URL}/rechnungs-editor`,
     languages: {
-      de: 'https://www.girocodegenerator.com/rechnungs-editor',
-      en: 'https://www.girocodegenerator.com/en/rechnungs-editor',
-      fr: 'https://www.girocodegenerator.com/fr/rechnungs-editor',
-      es: 'https://www.girocodegenerator.com/es/rechnungs-editor',
-      it: 'https://www.girocodegenerator.com/it/rechnungs-editor',
+      de: `${SITE_URL}/rechnungs-editor`,
+      en: `${SITE_URL}/en/rechnungs-editor`,
+      fr: `${SITE_URL}/fr/rechnungs-editor`,
+      es: `${SITE_URL}/es/rechnungs-editor`,
+      it: `${SITE_URL}/it/rechnungs-editor`,
     },
   },
 };
@@ -34,7 +35,7 @@ const jsonLdSoftwareApplication = {
   name: 'Rechnungsgenerator mit GiroCode',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web Browser',
-  url: 'https://www.girocodegenerator.com/rechnungs-editor',
+  url: `${SITE_URL}/rechnungs-editor`,
   description:
     'Kostenloser Online-Rechnungsgenerator mit automatisch integriertem GiroCode. §14 UStG konform, ohne Anmeldung, 100% lokal.',
   offers: {

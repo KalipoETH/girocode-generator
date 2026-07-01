@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode with BKS Bank – Step-by-Step Guide 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scan a GiroCode with BKS Bank: Open QR scanner in the BKS Bank App, scan the code, confirm the transfer. ✅ Step-by-step guide 2026.',
   keywords: 'girocode bks-bank, bks-bank girocode scan, bks-bank qr code, sepa qr bks-bank',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/bks-bank',
+    canonical: `${SITE_URL}/en/bks-bank`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/bks-bank',
-      de: 'https://www.girocodegenerator.com/bks-bank',
-      en: 'https://www.girocodegenerator.com/en/bks-bank',
-      fr: 'https://www.girocodegenerator.com/fr/bks-bank',
-      es: 'https://www.girocodegenerator.com/es/bks-bank',
+      'x-default': `${SITE_URL}/bks-bank`,
+      de: `${SITE_URL}/bks-bank`,
+      en: `${SITE_URL}/en/bks-bank`,
+      fr: `${SITE_URL}/fr/bks-bank`,
+      es: `${SITE_URL}/es/bks-bank`,
     },
   },
 };

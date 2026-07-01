@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Small Business Invoice – §19 UStG Compliant 2026',
   description:
     'Create small business invoices compliant with §19 UStG (Kleinunternehmerregelung): free, no registration required. All mandatory fields included.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/kleinunternehmer-rechnung',
+    canonical: `${SITE_URL}/en/kleinunternehmer-rechnung`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/kleinunternehmer-rechnung',
-      de: 'https://www.girocodegenerator.com/kleinunternehmer-rechnung',
-      en: 'https://www.girocodegenerator.com/en/kleinunternehmer-rechnung',
-      fr: 'https://www.girocodegenerator.com/fr/kleinunternehmer-rechnung',
-      es: 'https://www.girocodegenerator.com/es/kleinunternehmer-rechnung',
+      'x-default': `${SITE_URL}/kleinunternehmer-rechnung`,
+      de: `${SITE_URL}/kleinunternehmer-rechnung`,
+      en: `${SITE_URL}/en/kleinunternehmer-rechnung`,
+      fr: `${SITE_URL}/fr/kleinunternehmer-rechnung`,
+      es: `${SITE_URL}/es/kleinunternehmer-rechnung`,
     },
   },
 };

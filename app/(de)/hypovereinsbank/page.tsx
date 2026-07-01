@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit HypoVereinsbank (UniCredit) scannen – 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der HVB MobileBanking App (HypoVereinsbank / UniCredit) scannen: QR-Scanner im Überweisungsbereich, Code scannen, bestätigen. ✅ Schritt-für-Schritt 2026.',
   keywords: 'girocode hypovereinsbank, hvb mobilebanking qr code, hypovereinsbank girocode scannen, unicredit hvb sepa qr',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/hypovereinsbank',
+    canonical: `${SITE_URL}/hypovereinsbank`,
   },
 };
 

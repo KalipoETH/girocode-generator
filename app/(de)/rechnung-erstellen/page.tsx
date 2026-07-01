@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Rechnung erstellen – Kostenlos & Online | GiroCode Generator',
@@ -15,13 +16,13 @@ export const metadata: Metadata = {
     '§14 ustg rechnung',
   ],
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/rechnung-erstellen',
+    canonical: `${SITE_URL}/rechnung-erstellen`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/rechnung-erstellen',
-      de: 'https://www.girocodegenerator.com/rechnung-erstellen',
-      en: 'https://www.girocodegenerator.com/en/rechnung-erstellen',
-      fr: 'https://www.girocodegenerator.com/fr/rechnung-erstellen',
-      es: 'https://www.girocodegenerator.com/es/rechnung-erstellen',
+      'x-default': `${SITE_URL}/rechnung-erstellen`,
+      de: `${SITE_URL}/rechnung-erstellen`,
+      en: `${SITE_URL}/en/rechnung-erstellen`,
+      fr: `${SITE_URL}/fr/rechnung-erstellen`,
+      es: `${SITE_URL}/es/rechnung-erstellen`,
     },
   },
 };

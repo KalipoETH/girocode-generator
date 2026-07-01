@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { UseCaseLanding } from '../../../components/UseCaseLanding';
+import { SITE_URL } from '@/lib/siteConfig';
 
 const SLUG = 'privatverkauf';
 
@@ -10,14 +11,14 @@ export const metadata: Metadata = {
   keywords:
     'girocode vendita privata, subito.it pagamento, sepa qr annuncio, vinted bonifico',
   alternates: {
-    canonical: `https://www.girocodegenerator.com/it/${SLUG}`,
+    canonical: `${SITE_URL}/it/${SLUG}`,
     languages: {
-      'x-default': `https://www.girocodegenerator.com/${SLUG}`,
-      de: `https://www.girocodegenerator.com/${SLUG}`,
-      en: `https://www.girocodegenerator.com/en/${SLUG}`,
-      fr: `https://www.girocodegenerator.com/fr/${SLUG}`,
-      es: `https://www.girocodegenerator.com/es/${SLUG}`,
-      it: `https://www.girocodegenerator.com/it/${SLUG}`,
+      'x-default': `${SITE_URL}/${SLUG}`,
+      de: `${SITE_URL}/${SLUG}`,
+      en: `${SITE_URL}/en/${SLUG}`,
+      fr: `${SITE_URL}/fr/${SLUG}`,
+      es: `${SITE_URL}/es/${SLUG}`,
+      it: `${SITE_URL}/it/${SLUG}`,
     },
   },
 };

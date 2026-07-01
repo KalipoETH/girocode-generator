@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export type UseCaseLocale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
@@ -44,7 +45,7 @@ export interface UseCaseContent {
   closing?: ReactNode;
 }
 
-const BASE_URL = 'https://www.girocodegenerator.com';
+const BASE_URL = SITE_URL;
 
 export function UseCaseLanding({ content }: { content: UseCaseContent }) {
   const faqJsonLd = {

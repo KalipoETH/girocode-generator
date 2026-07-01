@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Informativa sulla Privacy – GiroCode Generator',
   description:
     'Informativa sulla privacy del GiroCode Generator: come trattiamo i tuoi dati (spoiler: quasi nessuno).',
-  alternates: { canonical: 'https://www.girocodegenerator.com/it/datenschutz' },
+  alternates: { canonical: `${SITE_URL}/it/datenschutz` },
 };
 
 export default function PrivacyPageIt() {

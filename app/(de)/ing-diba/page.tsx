@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit ING-DiBa scannen – Anleitung 2026',
   description:
     'GiroCode mit ING-DiBa (jetzt ING) scannen. Die ING-DiBa heißt seit 2019 ING Deutschland. ✅ Zur aktuellen Anleitung für die ING Banking to go App.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/ing',
+    canonical: `${SITE_URL}/ing`,
   },
 };
 

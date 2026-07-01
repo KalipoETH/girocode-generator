@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode con Raiffeisen Svizzera – Guida 2026',
@@ -7,14 +8,14 @@ export const metadata: Metadata = {
     'Scansiona un GiroCode con Raiffeisen Svizzera: apri lo scanner QR nell\'app Raiffeisen E-Banking, scansiona e conferma il bonifico.',
   keywords: 'girocode raiffeisen svizzera, raiffeisen girocode scan, sepa qr raiffeisen',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/it/raiffeisen-schweiz',
+    canonical: `${SITE_URL}/it/raiffeisen-schweiz`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/raiffeisen-schweiz',
-      de: 'https://www.girocodegenerator.com/raiffeisen-schweiz',
-      en: 'https://www.girocodegenerator.com/en/raiffeisen-schweiz',
-      fr: 'https://www.girocodegenerator.com/fr/raiffeisen-schweiz',
-      es: 'https://www.girocodegenerator.com/es/raiffeisen-schweiz',
-      it: 'https://www.girocodegenerator.com/it/raiffeisen-schweiz',
+      'x-default': `${SITE_URL}/raiffeisen-schweiz`,
+      de: `${SITE_URL}/raiffeisen-schweiz`,
+      en: `${SITE_URL}/en/raiffeisen-schweiz`,
+      fr: `${SITE_URL}/fr/raiffeisen-schweiz`,
+      es: `${SITE_URL}/es/raiffeisen-schweiz`,
+      it: `${SITE_URL}/it/raiffeisen-schweiz`,
     },
   },
 };

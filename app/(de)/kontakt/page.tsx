@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { ContactForm } from '@/components/ContactForm';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Kontakt – GiroCode Generator',
   description:
     'Kontaktiere uns bei Fragen, Feedback oder Verbesserungsvorschlägen zum GiroCode Generator.',
-  alternates: { canonical: 'https://www.girocodegenerator.com/kontakt' },
+  alternates: { canonical: `${SITE_URL}/kontakt` },
 };
 
 export default function KontaktPage() {

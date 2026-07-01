@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Generador QR Code EPC – Estándar EPC069-12 Gratis 2026',
   description:
     'Crear QR Code EPC según la norma EPC069-12 gratis. Implementación técnicamente correcta para desarrolladores y empresas. Sin registro.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/es/epc-qr-code',
+    canonical: `${SITE_URL}/es/epc-qr-code`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/epc-qr-code',
-      de: 'https://www.girocodegenerator.com/epc-qr-code',
-      en: 'https://www.girocodegenerator.com/en/epc-qr-code',
-      fr: 'https://www.girocodegenerator.com/fr/epc-qr-code',
-      es: 'https://www.girocodegenerator.com/es/epc-qr-code',
+      'x-default': `${SITE_URL}/epc-qr-code`,
+      de: `${SITE_URL}/epc-qr-code`,
+      en: `${SITE_URL}/en/epc-qr-code`,
+      fr: `${SITE_URL}/fr/epc-qr-code`,
+      es: `${SITE_URL}/es/epc-qr-code`,
     },
   },
 };

@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Créer une facture – Gratuit & En ligne | GiroCode Generator',
   description:
     'Créez gratuitement une facture en ligne: conforme §14 UStG, avec GiroCode, sans inscription. Téléchargez le PDF instantanément.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/rechnung-erstellen',
+    canonical: `${SITE_URL}/fr/rechnung-erstellen`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/rechnung-erstellen',
-      de: 'https://www.girocodegenerator.com/rechnung-erstellen',
-      en: 'https://www.girocodegenerator.com/en/rechnung-erstellen',
-      fr: 'https://www.girocodegenerator.com/fr/rechnung-erstellen',
-      es: 'https://www.girocodegenerator.com/es/rechnung-erstellen',
+      'x-default': `${SITE_URL}/rechnung-erstellen`,
+      de: `${SITE_URL}/rechnung-erstellen`,
+      en: `${SITE_URL}/en/rechnung-erstellen`,
+      fr: `${SITE_URL}/fr/rechnung-erstellen`,
+      es: `${SITE_URL}/es/rechnung-erstellen`,
     },
   },
 };

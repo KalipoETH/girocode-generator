@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Stuzza QR Code Generator – Kostenlos erstellen 2026',
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   keywords:
     'Stuzza QR Code, Stuzza QR Code Generator, george App GiroCode, ELBA QR Code, SEPA QR Österreich',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/stuzza-qr-code',
+    canonical: `${SITE_URL}/stuzza-qr-code`,
   },
 };
 

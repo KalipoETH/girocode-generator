@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit ING Banking scannen – Anleitung 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der ING Banking to go App scannen: Überweisen öffnen, QR-Code-Symbol antippen, Code scannen & mit PIN bestätigen. ✅ In 30 Sekunden fertig.',
   keywords: 'ing girocode, ing banking girocode scannen, ing banking to go qr code, sepa qr ing',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/ing',
+    canonical: `${SITE_URL}/ing`,
   },
 };
 

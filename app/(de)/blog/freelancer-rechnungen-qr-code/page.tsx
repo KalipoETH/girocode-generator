@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AuthorBox, AuthorBoxEnd } from '@/components/AuthorBox';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Rechnungen als Freelancer: GiroCode für schnellere Zahlungen',
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
     'Wie Freelancer mit GiroCodes auf ihren Rechnungen schneller bezahlt werden. Praxis-Guide mit Tipps zu §14 UStG und kostenlosem PDF-Generator.',
   alternates: {
     canonical:
-      'https://www.girocodegenerator.com/blog/freelancer-rechnungen-qr-code',
+      `${SITE_URL}/blog/freelancer-rechnungen-qr-code`,
   },
 };
 

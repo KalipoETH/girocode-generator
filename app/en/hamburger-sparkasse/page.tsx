@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode with Hamburger Sparkasse – Step-by-Step Guide 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scan a GiroCode with Hamburger Sparkasse: Open QR scanner in the Haspa App, scan the code, confirm the transfer. ✅ Step-by-step guide 2026.',
   keywords: 'girocode hamburger-sparkasse, hamburger-sparkasse girocode scan, hamburger-sparkasse qr code, sepa qr hamburger-sparkasse',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/hamburger-sparkasse',
+    canonical: `${SITE_URL}/en/hamburger-sparkasse`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/hamburger-sparkasse',
-      de: 'https://www.girocodegenerator.com/hamburger-sparkasse',
-      en: 'https://www.girocodegenerator.com/en/hamburger-sparkasse',
-      fr: 'https://www.girocodegenerator.com/fr/hamburger-sparkasse',
-      es: 'https://www.girocodegenerator.com/es/hamburger-sparkasse',
+      'x-default': `${SITE_URL}/hamburger-sparkasse`,
+      de: `${SITE_URL}/hamburger-sparkasse`,
+      en: `${SITE_URL}/en/hamburger-sparkasse`,
+      fr: `${SITE_URL}/fr/hamburger-sparkasse`,
+      es: `${SITE_URL}/es/hamburger-sparkasse`,
     },
   },
 };

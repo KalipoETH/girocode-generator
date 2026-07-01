@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { KnowledgeLayout } from '@/components/KnowledgeLayout';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Was ist ein GiroCode? – Einfach erklärt + kostenlos erstellen',
@@ -8,14 +9,14 @@ export const metadata: Metadata = {
     'GiroCode = SEPA-QR-Code für Überweisungen. Was er ist, wie er funktioniert und wie du ihn kostenlos in Sekunden erstellst. Mit Rechnungs-PDF. Kein Account nötig.',
   keywords: 'GiroCode, SEPA QR Code, EPC QR Code, Bezahlcode, GiroCode erstellen, GiroCode Rechnung',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/wissen/girocode',
+    canonical: `${SITE_URL}/wissen/girocode`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/wissen/girocode',
-      'de': 'https://www.girocodegenerator.com/wissen/girocode',
-      'en': 'https://www.girocodegenerator.com/en/wissen/girocode',
-      'fr': 'https://www.girocodegenerator.com/fr/wissen/girocode',
-      'es': 'https://www.girocodegenerator.com/es/wissen/girocode',
-      'it': 'https://www.girocodegenerator.com/it/wissen/girocode',
+      'x-default': `${SITE_URL}/wissen/girocode`,
+      'de': `${SITE_URL}/wissen/girocode`,
+      'en': `${SITE_URL}/en/wissen/girocode`,
+      'fr': `${SITE_URL}/fr/wissen/girocode`,
+      'es': `${SITE_URL}/es/wissen/girocode`,
+      'it': `${SITE_URL}/it/wissen/girocode`,
     },
   },
 };

@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import { ScannerClient, deTexts } from './ScannerClient';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode Scanner – QR-Code scannen & auslesen',
   description:
     'GiroCode / SEPA-QR-Code direkt im Browser scannen und auslesen. Zeigt IBAN, Betrag und Verwendungszweck an. 100% lokal, keine Datenweitergabe.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/scanner',
+    canonical: `${SITE_URL}/scanner`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/scanner',
-      de: 'https://www.girocodegenerator.com/scanner',
-      en: 'https://www.girocodegenerator.com/en/scanner',
-      fr: 'https://www.girocodegenerator.com/fr/scanner',
-      es: 'https://www.girocodegenerator.com/es/scanner',
-      it: 'https://www.girocodegenerator.com/it/scanner',
+      'x-default': `${SITE_URL}/scanner`,
+      de: `${SITE_URL}/scanner`,
+      en: `${SITE_URL}/en/scanner`,
+      fr: `${SITE_URL}/fr/scanner`,
+      es: `${SITE_URL}/es/scanner`,
+      it: `${SITE_URL}/it/scanner`,
     },
   },
 };

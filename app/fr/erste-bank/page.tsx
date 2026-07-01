@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode avec Erste Bank – Guide étape par étape 2026',
@@ -7,14 +8,14 @@ export const metadata: Metadata = {
     'Scanner un GiroCode avec Erste Bank: Ouvrir le scanner QR dans l\'app George App, scanner le code, confirmer le virement. ✅ Guide étape par étape 2026.',
   keywords: 'girocode erste-bank, erste-bank girocode scan, erste-bank qr code, sepa qr erste-bank',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/erste-bank',
+    canonical: `${SITE_URL}/fr/erste-bank`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/erste-bank',
-      de: 'https://www.girocodegenerator.com/erste-bank',
-      en: 'https://www.girocodegenerator.com/en/erste-bank',
-      fr: 'https://www.girocodegenerator.com/fr/erste-bank',
-      es: 'https://www.girocodegenerator.com/es/erste-bank',
-      it: 'https://www.girocodegenerator.com/it/erste-bank',
+      'x-default': `${SITE_URL}/erste-bank`,
+      de: `${SITE_URL}/erste-bank`,
+      en: `${SITE_URL}/en/erste-bank`,
+      fr: `${SITE_URL}/fr/erste-bank`,
+      es: `${SITE_URL}/es/erste-bank`,
+      it: `${SITE_URL}/it/erste-bank`,
     },
   },
 };

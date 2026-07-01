@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { ScannerClient, itTexts } from '@/app/(de)/scanner/ScannerClient';
+import { SITE_URL } from '@/lib/siteConfig';
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -37,14 +38,14 @@ export const metadata: Metadata = {
   description:
     'Scansiona un GiroCode con la fotocamera del tuo browser e leggi i dati di pagamento SEPA. 100% locale, nessuna trasmissione dati.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/it/scanner',
+    canonical: `${SITE_URL}/it/scanner`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/scanner',
-      de: 'https://www.girocodegenerator.com/scanner',
-      en: 'https://www.girocodegenerator.com/en/scanner',
-      fr: 'https://www.girocodegenerator.com/fr/scanner',
-      es: 'https://www.girocodegenerator.com/es/scanner',
-      it: 'https://www.girocodegenerator.com/it/scanner',
+      'x-default': `${SITE_URL}/scanner`,
+      de: `${SITE_URL}/scanner`,
+      en: `${SITE_URL}/en/scanner`,
+      fr: `${SITE_URL}/fr/scanner`,
+      es: `${SITE_URL}/es/scanner`,
+      it: `${SITE_URL}/it/scanner`,
     },
   },
 };

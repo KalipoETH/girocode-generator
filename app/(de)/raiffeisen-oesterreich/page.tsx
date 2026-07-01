@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Raiffeisen Österreich scannen – Anleitung 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der Raiffeisen ELBA-App scannen: Unter „Zahlungen" → „QR-Code scannen" öffnen, Code erfassen, Überweisung bestätigen. ✅ Schritt-für-Schritt Anleitung.',
   keywords: 'girocode raiffeisen österreich, elba app qr code, raiffeisen elba girocode scannen, sepa qr österreich',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/raiffeisen-oesterreich',
+    canonical: `${SITE_URL}/raiffeisen-oesterreich`,
   },
 };
 

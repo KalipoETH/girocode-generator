@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode avec Sparkasse KölnBonn – Guide étape par étape 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scanner un GiroCode avec Sparkasse KölnBonn: Ouvrir le scanner QR dans l\'app Sparkasse KölnBonn App, scanner le code, confirmer le virement. ✅ Guide étape par étape 2026.',
   keywords: 'girocode sparkasse-koeln-bonn, sparkasse-koeln-bonn girocode scan, sparkasse-koeln-bonn qr code, sepa qr sparkasse-koeln-bonn',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/sparkasse-koeln-bonn',
+    canonical: `${SITE_URL}/fr/sparkasse-koeln-bonn`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/sparkasse-koeln-bonn',
-      de: 'https://www.girocodegenerator.com/sparkasse-koeln-bonn',
-      en: 'https://www.girocodegenerator.com/en/sparkasse-koeln-bonn',
-      fr: 'https://www.girocodegenerator.com/fr/sparkasse-koeln-bonn',
-      es: 'https://www.girocodegenerator.com/es/sparkasse-koeln-bonn',
+      'x-default': `${SITE_URL}/sparkasse-koeln-bonn`,
+      de: `${SITE_URL}/sparkasse-koeln-bonn`,
+      en: `${SITE_URL}/en/sparkasse-koeln-bonn`,
+      fr: `${SITE_URL}/fr/sparkasse-koeln-bonn`,
+      es: `${SITE_URL}/es/sparkasse-koeln-bonn`,
     },
   },
 };

@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode per Sviluppatori – Integrazione & API 2026',
   description:
     'Integra GiroCode nelle tue app: URL parameters, Google Apps Script, esempi JavaScript e PHP. API in arrivo. Documentazione completa.',
-  alternates: { canonical: 'https://www.girocodegenerator.com/it/fuer-entwickler' },
+  alternates: { canonical: `${SITE_URL}/it/fuer-entwickler` },
 };
 
 export default function DevelopersPageIt() {
@@ -38,7 +39,7 @@ export default function DevelopersPageIt() {
             </p>
             <pre className="mb-4 overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-4 text-xs text-slate-200 sm:text-sm">
               <code>{`// JavaScript – link al generatore con parametri
-const url = 'https://www.girocodegenerator.com/it'
+const url = 'https://girocodegenerator.com/it'
   + '?name=' + encodeURIComponent('Mario Rossi')
   + '&iban=' + encodeURIComponent('IT60X0542811101000000123456')
   + '&betrag=' + encodeURIComponent('99.99')
@@ -47,7 +48,7 @@ window.open(url, '_blank');`}</code>
             </pre>
             <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-4 text-xs text-slate-200 sm:text-sm">
               <code>{`// PHP – generazione QR via API
-$url = 'https://www.girocodegenerator.com/api/generate'
+$url = 'https://girocodegenerator.com/api/generate'
   . '?name=' . urlencode($name)
   . '&iban=' . urlencode($iban)
   . '&betrag=' . urlencode($betrag)
@@ -68,7 +69,7 @@ $qrBase64 = $data['qr_base64']; // PNG Base64 del QR Code`}</code>
             </p>
             <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-4 text-xs text-slate-200 sm:text-sm">
               <code>{`function createGiroCode(name, iban, betrag, zweck) {
-  const url = 'https://www.girocodegenerator.com/api/generate'
+  const url = 'https://girocodegenerator.com/api/generate'
     + '?name=' + encodeURIComponent(name)
     + '&iban=' + encodeURIComponent(iban)
     + '&betrag=' + encodeURIComponent(betrag)

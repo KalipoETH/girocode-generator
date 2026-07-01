@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Stadtsparkasse scannen – Anleitung 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der Stadtsparkasse App scannen: QR-Scanner unter „Überweisungen" öffnen, Code scannen, bestätigen. ✅ Gilt für alle Stadtsparkassen in Deutschland.',
   keywords: 'girocode stadtsparkasse, stadtsparkasse qr code, stadtsparkasse girocode scannen, sparkasse app qr überweisung',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/stadtsparkasse',
+    canonical: `${SITE_URL}/stadtsparkasse`,
   },
 };
 

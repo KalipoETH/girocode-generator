@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Sparkasse scannen – Anleitung 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'So scannst du einen GiroCode mit der Sparkassen-App: QR-Scanner öffnen, Code scannen, Überweisung bestätigen. ✅ Kostenlos & in 30 Sekunden erledigt.',
   keywords: 'girocode sparkasse, sparkasse girocode scannen, sparkassen-app qr code, sepa qr sparkasse',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/sparkasse',
+    canonical: `${SITE_URL}/sparkasse`,
   },
 };
 

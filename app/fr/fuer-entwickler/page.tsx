@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode pour développeurs & agences – Intégration',
   description:
     'Intégrer la génération de GiroCode dans vos projets : structure du payload EPC, exemples de code et conseils pour développeurs.',
-  alternates: { canonical: 'https://www.girocodegenerator.com/fr/fuer-entwickler' },
+  alternates: { canonical: `${SITE_URL}/fr/fuer-entwickler` },
 };
 
 export default function DevelopersPageFr() {

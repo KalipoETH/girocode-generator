@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: "GiroCode vs. prélèvement SEPA – Différences et cas d'utilisation (2026)",
   description: "GiroCode ou prélèvement SEPA ? Quand chaque méthode est le meilleur choix. Avec tableau comparatif et exemples concrets.",
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/girocode-vs-lastschrift',
+    canonical: `${SITE_URL}/fr/girocode-vs-lastschrift`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/girocode-vs-lastschrift',
-      'de': 'https://www.girocodegenerator.com/girocode-vs-lastschrift',
-      'en': 'https://www.girocodegenerator.com/en/girocode-vs-lastschrift',
-      'fr': 'https://www.girocodegenerator.com/fr/girocode-vs-lastschrift',
-      'es': 'https://www.girocodegenerator.com/es/girocode-vs-lastschrift',
-      'it': 'https://www.girocodegenerator.com/it/girocode-vs-lastschrift',
+      'x-default': `${SITE_URL}/girocode-vs-lastschrift`,
+      'de': `${SITE_URL}/girocode-vs-lastschrift`,
+      'en': `${SITE_URL}/en/girocode-vs-lastschrift`,
+      'fr': `${SITE_URL}/fr/girocode-vs-lastschrift`,
+      'es': `${SITE_URL}/es/girocode-vs-lastschrift`,
+      'it': `${SITE_URL}/it/girocode-vs-lastschrift`,
     },
   },
 };
@@ -22,9 +23,9 @@ const jsonLd = {
   headline: "GiroCode vs. prélèvement SEPA – Différences et cas d'utilisation",
   description: "GiroCode ou prélèvement SEPA ? Quand chaque méthode est le meilleur choix.",
   author: { '@type': 'Person', name: 'Kaleb Jahnke' },
-  publisher: { '@type': 'Organization', name: 'GiroCode Generator', url: 'https://www.girocodegenerator.com' },
+  publisher: { '@type': 'Organization', name: 'GiroCode Generator', url: SITE_URL },
   datePublished: '2026-05-01', dateModified: '2026-05-01',
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.girocodegenerator.com/fr/girocode-vs-lastschrift' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/fr/girocode-vs-lastschrift` },
 };
 
 const faqJsonLd = {

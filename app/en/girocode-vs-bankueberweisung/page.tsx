@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode vs. Manual Bank Transfer – Save Time & Errors (2026)',
   description: 'GiroCode or manual IBAN entry? Comparison of time, error rate and usability.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/girocode-vs-bankueberweisung',
+    canonical: `${SITE_URL}/en/girocode-vs-bankueberweisung`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/girocode-vs-bankueberweisung',
-      'de': 'https://www.girocodegenerator.com/girocode-vs-bankueberweisung',
-      'en': 'https://www.girocodegenerator.com/en/girocode-vs-bankueberweisung',
-      'fr': 'https://www.girocodegenerator.com/fr/girocode-vs-bankueberweisung',
-      'es': 'https://www.girocodegenerator.com/es/girocode-vs-bankueberweisung',
-      'it': 'https://www.girocodegenerator.com/it/girocode-vs-bankueberweisung',
+      'x-default': `${SITE_URL}/girocode-vs-bankueberweisung`,
+      'de': `${SITE_URL}/girocode-vs-bankueberweisung`,
+      'en': `${SITE_URL}/en/girocode-vs-bankueberweisung`,
+      'fr': `${SITE_URL}/fr/girocode-vs-bankueberweisung`,
+      'es': `${SITE_URL}/es/girocode-vs-bankueberweisung`,
+      'it': `${SITE_URL}/it/girocode-vs-bankueberweisung`,
     },
   },
 };
@@ -24,10 +25,10 @@ const jsonLd = {
   headline: 'GiroCode vs. Manual Bank Transfer – Save Time & Errors',
   description: 'GiroCode or manual IBAN entry? Comparison of time, error rate and usability.',
   author: { '@type': 'Person', name: 'Kaleb Jahnke' },
-  publisher: { '@type': 'Organization', name: 'GiroCode Generator', url: 'https://www.girocodegenerator.com' },
+  publisher: { '@type': 'Organization', name: 'GiroCode Generator', url: SITE_URL },
   datePublished: '2026-05-01',
   dateModified: '2026-05-01',
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.girocodegenerator.com/en/girocode-vs-bankueberweisung' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/en/girocode-vs-bankueberweisung` },
 };
 
 const faqJsonLd = {

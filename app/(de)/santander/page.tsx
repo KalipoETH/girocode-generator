@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Santander Bank scannen – Anleitung 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der Santander Banking App scannen: QR-Scanner im Überweisungsbereich öffnen, Code scannen, Überweisung bestätigen. ✅ Schritt-für-Schritt Anleitung 2026.',
   keywords: 'girocode santander, santander banking app qr code, santander girocode scannen, santander sepa qr überweisung',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/santander',
+    canonical: `${SITE_URL}/santander`,
   },
 };
 

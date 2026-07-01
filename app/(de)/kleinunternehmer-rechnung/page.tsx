@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Kleinunternehmer Rechnung erstellen – §19 UStG konform 2026',
@@ -15,13 +16,13 @@ export const metadata: Metadata = {
     'kleinunternehmer rechnungsvorlage',
   ],
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/kleinunternehmer-rechnung',
+    canonical: `${SITE_URL}/kleinunternehmer-rechnung`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/kleinunternehmer-rechnung',
-      de: 'https://www.girocodegenerator.com/kleinunternehmer-rechnung',
-      en: 'https://www.girocodegenerator.com/en/kleinunternehmer-rechnung',
-      fr: 'https://www.girocodegenerator.com/fr/kleinunternehmer-rechnung',
-      es: 'https://www.girocodegenerator.com/es/kleinunternehmer-rechnung',
+      'x-default': `${SITE_URL}/kleinunternehmer-rechnung`,
+      de: `${SITE_URL}/kleinunternehmer-rechnung`,
+      en: `${SITE_URL}/en/kleinunternehmer-rechnung`,
+      fr: `${SITE_URL}/fr/kleinunternehmer-rechnung`,
+      es: `${SITE_URL}/es/kleinunternehmer-rechnung`,
     },
   },
 };

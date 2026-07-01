@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Wissen rund um GiroCode & SEPA-QR',
   description:
     'Alles über GiroCodes, EPC-Standard, IBAN, Rechnungen und Banking-Apps – der Wissensbereich von girocodegenerator.com.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/wissen',
+    canonical: `${SITE_URL}/wissen`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/wissen',
-      'de': 'https://www.girocodegenerator.com/wissen',
-      'en': 'https://www.girocodegenerator.com/en/wissen',
-      'fr': 'https://www.girocodegenerator.com/fr/wissen',
-      'es': 'https://www.girocodegenerator.com/es/wissen',
-      'it': 'https://www.girocodegenerator.com/it/wissen',
+      'x-default': `${SITE_URL}/wissen`,
+      'de': `${SITE_URL}/wissen`,
+      'en': `${SITE_URL}/en/wissen`,
+      'fr': `${SITE_URL}/fr/wissen`,
+      'es': `${SITE_URL}/es/wissen`,
+      'it': `${SITE_URL}/it/wissen`,
     },
   },
 };

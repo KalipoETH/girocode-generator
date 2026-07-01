@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Rechnungsgenerator kostenlos – Mit GiroCode & PDF 2026',
@@ -15,13 +16,13 @@ export const metadata: Metadata = {
     'rechnung generator kostenlos',
   ],
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/rechnungsgenerator',
+    canonical: `${SITE_URL}/rechnungsgenerator`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/rechnungsgenerator',
-      de: 'https://www.girocodegenerator.com/rechnungsgenerator',
-      en: 'https://www.girocodegenerator.com/en/rechnungsgenerator',
-      fr: 'https://www.girocodegenerator.com/fr/rechnungsgenerator',
-      es: 'https://www.girocodegenerator.com/es/rechnungsgenerator',
+      'x-default': `${SITE_URL}/rechnungsgenerator`,
+      de: `${SITE_URL}/rechnungsgenerator`,
+      en: `${SITE_URL}/en/rechnungsgenerator`,
+      fr: `${SITE_URL}/fr/rechnungsgenerator`,
+      es: `${SITE_URL}/es/rechnungsgenerator`,
     },
   },
 };
@@ -32,7 +33,7 @@ const jsonLdSoftware = {
   name: 'Rechnungsgenerator mit GiroCode',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web Browser',
-  url: 'https://www.girocodegenerator.com/rechnungsgenerator',
+  url: `${SITE_URL}/rechnungsgenerator`,
   description:
     'Kostenloser Online-Rechnungsgenerator mit automatisch integriertem GiroCode für Freelancer, Kleinunternehmer und Selbstständige.',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },

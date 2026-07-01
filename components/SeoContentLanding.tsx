@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { SITE_URL } from '@/lib/siteConfig';
 
-const BASE_URL = 'https://www.girocodegenerator.com';
+const BASE_URL = SITE_URL;
 
 type LandingLocale = 'de' | 'en' | 'fr' | 'es' | 'it';
 

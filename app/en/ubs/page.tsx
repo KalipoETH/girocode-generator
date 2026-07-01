@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode with UBS – Step-by-Step Guide 2026',
@@ -7,14 +8,14 @@ export const metadata: Metadata = {
     'Scan a GiroCode with UBS: Open QR scanner in the UBS Mobile Banking App, scan the code, confirm the transfer. ✅ Step-by-step guide 2026.',
   keywords: 'girocode ubs, ubs girocode scan, ubs qr code, sepa qr ubs',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/ubs',
+    canonical: `${SITE_URL}/en/ubs`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/ubs',
-      de: 'https://www.girocodegenerator.com/ubs',
-      en: 'https://www.girocodegenerator.com/en/ubs',
-      fr: 'https://www.girocodegenerator.com/fr/ubs',
-      es: 'https://www.girocodegenerator.com/es/ubs',
-      it: 'https://www.girocodegenerator.com/it/ubs',
+      'x-default': `${SITE_URL}/ubs`,
+      de: `${SITE_URL}/ubs`,
+      en: `${SITE_URL}/en/ubs`,
+      fr: `${SITE_URL}/fr/ubs`,
+      es: `${SITE_URL}/es/ubs`,
+      it: `${SITE_URL}/it/ubs`,
     },
   },
 };

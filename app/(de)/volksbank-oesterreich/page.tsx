@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Volksbank Österreich scannen – Anleitung',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der VB-Banking App (Volksbank Österreich) scannen: QR-Scanner im Überweisungsbereich öffnen, Code scannen, bestätigen. ✅ Schritt-für-Schritt Anleitung 2026.',
   keywords: 'girocode volksbank österreich, vb-banking app qr code, volksbank österreich girocode, sepa qr volksbank',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/volksbank-oesterreich',
+    canonical: `${SITE_URL}/volksbank-oesterreich`,
   },
 };
 

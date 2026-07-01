@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode con Credit Suisse (now UBS) – Guía paso a paso 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Escanear un GiroCode con Credit Suisse (now UBS): Abrir escáner QR en la app UBS Mobile Banking App, escanear el código, confirmar la transferencia. ✅ Guía paso a paso 2026.',
   keywords: 'girocode credit-suisse-ubs, credit-suisse-ubs girocode scan, credit-suisse-ubs qr code, sepa qr credit-suisse-ubs',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/es/credit-suisse-ubs',
+    canonical: `${SITE_URL}/es/credit-suisse-ubs`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/credit-suisse-ubs',
-      de: 'https://www.girocodegenerator.com/credit-suisse-ubs',
-      en: 'https://www.girocodegenerator.com/en/credit-suisse-ubs',
-      fr: 'https://www.girocodegenerator.com/fr/credit-suisse-ubs',
-      es: 'https://www.girocodegenerator.com/es/credit-suisse-ubs',
+      'x-default': `${SITE_URL}/credit-suisse-ubs`,
+      de: `${SITE_URL}/credit-suisse-ubs`,
+      en: `${SITE_URL}/en/credit-suisse-ubs`,
+      fr: `${SITE_URL}/fr/credit-suisse-ubs`,
+      es: `${SITE_URL}/es/credit-suisse-ubs`,
     },
   },
 };

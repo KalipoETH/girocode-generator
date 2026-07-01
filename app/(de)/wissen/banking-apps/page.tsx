@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { KnowledgeLayout } from '@/components/KnowledgeLayout';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Banking-Apps mit GiroCode-Support 2026 – Vollständige Liste',
@@ -7,14 +8,14 @@ export const metadata: Metadata = {
     'Welche Banking-Apps können GiroCodes scannen? Sparkasse ✅ ING ✅ DKB ✅ Volksbank ✅ N26 ✅ und 8 weitere. Schritt-für-Schritt Anleitung für jede App.',
   keywords: 'GiroCode Banking App, Sparkasse GiroCode scannen, ING GiroCode, DKB QR Code, SEPA QR App',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/wissen/banking-apps',
+    canonical: `${SITE_URL}/wissen/banking-apps`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/wissen/banking-apps',
-      'de': 'https://www.girocodegenerator.com/wissen/banking-apps',
-      'en': 'https://www.girocodegenerator.com/en/wissen/banking-apps',
-      'fr': 'https://www.girocodegenerator.com/fr/wissen/banking-apps',
-      'es': 'https://www.girocodegenerator.com/es/wissen/banking-apps',
-      'it': 'https://www.girocodegenerator.com/it/wissen/banking-apps',
+      'x-default': `${SITE_URL}/wissen/banking-apps`,
+      'de': `${SITE_URL}/wissen/banking-apps`,
+      'en': `${SITE_URL}/en/wissen/banking-apps`,
+      'fr': `${SITE_URL}/fr/wissen/banking-apps`,
+      'es': `${SITE_URL}/es/wissen/banking-apps`,
+      'it': `${SITE_URL}/it/wissen/banking-apps`,
     },
   },
 };

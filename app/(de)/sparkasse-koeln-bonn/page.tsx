@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Sparkasse KölnBonn scannen – Anleitung',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der Sparkasse KölnBonn App scannen: QR-Scanner unter „Überweisungen" öffnen, Code scannen, bestätigen. ✅ Schritt-für-Schritt Anleitung 2026.',
   keywords: 'girocode sparkasse köln, sparkasse kölnbonn qr code, sparkasse köln bonn girocode scannen',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/sparkasse-koeln-bonn',
+    canonical: `${SITE_URL}/sparkasse-koeln-bonn`,
   },
 };
 

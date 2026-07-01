@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Credit Suisse/UBS scannen – Anleitung',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode nach der Credit Suisse/UBS-Integration scannen: Ehemalige Credit Suisse-Kunden nutzen jetzt UBS Mobile Banking. ✅ Schritt-für-Schritt Anleitung 2026.',
   keywords: 'girocode credit suisse ubs, credit suisse qr code, ubs credit suisse girocode, sepa qr credit suisse',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/credit-suisse-ubs',
+    canonical: `${SITE_URL}/credit-suisse-ubs`,
   },
 };
 

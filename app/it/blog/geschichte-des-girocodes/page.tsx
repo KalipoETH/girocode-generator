@@ -1,20 +1,21 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AuthorBox, AuthorBoxEnd } from '../../../../components/AuthorBox';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'La storia del GiroCode – Dal foglio allo scanner QR',
   description:
     'Come è nato il GiroCode: dagli inizi dello standard EPC nel 2012 alla diffusione in Germania. La storia dell\'evoluzione del SEPA-QR.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/it/blog/geschichte-des-girocodes',
+    canonical: `${SITE_URL}/it/blog/geschichte-des-girocodes`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/blog/geschichte-des-girocodes',
-      de: 'https://www.girocodegenerator.com/blog/geschichte-des-girocodes',
-      en: 'https://www.girocodegenerator.com/en/blog/geschichte-des-girocodes',
-      fr: 'https://www.girocodegenerator.com/fr/blog/geschichte-des-girocodes',
-      es: 'https://www.girocodegenerator.com/es/blog/geschichte-des-girocodes',
-      it: 'https://www.girocodegenerator.com/it/blog/geschichte-des-girocodes',
+      'x-default': `${SITE_URL}/blog/geschichte-des-girocodes`,
+      de: `${SITE_URL}/blog/geschichte-des-girocodes`,
+      en: `${SITE_URL}/en/blog/geschichte-des-girocodes`,
+      fr: `${SITE_URL}/fr/blog/geschichte-des-girocodes`,
+      es: `${SITE_URL}/es/blog/geschichte-des-girocodes`,
+      it: `${SITE_URL}/it/blog/geschichte-des-girocodes`,
     },
   },
 };

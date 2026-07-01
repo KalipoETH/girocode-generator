@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode für Entwickler & Agenturen – Integration & API',
   description:
     'GiroCode-Generierung in eigene Projekte integrieren: Code-Beispiele, EPC-Payload Aufbau und Tipps für Entwickler.',
-  alternates: { canonical: 'https://www.girocodegenerator.com/fuer-entwickler' },
+  alternates: { canonical: `${SITE_URL}/fuer-entwickler` },
 };
 
 export default function FuerEntwicklerPage() {
@@ -121,7 +122,7 @@ QRCode.toCanvas(canvas, payload, {
             </p>
             <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-4 text-xs text-slate-200 sm:text-sm">
               <code>{`function createGiroCode(name, iban, betrag, zweck) {
-  const url = 'https://www.girocodegenerator.com/api/generate'
+  const url = 'https://girocodegenerator.com/api/generate'
     + '?name=' + encodeURIComponent(name)
     + '&iban=' + encodeURIComponent(iban)
     + '&betrag=' + encodeURIComponent(betrag)

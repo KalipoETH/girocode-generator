@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { KnowledgeLayout } from '@/components/KnowledgeLayout';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'IBAN & BIC im GiroCode – Format, Pflicht & Validierung',
@@ -8,14 +9,14 @@ export const metadata: Metadata = {
     'IBAN und BIC für den GiroCode: Ist der BIC Pflicht? Wie funktioniert die IBAN-Validierung (Mod-97)? Alle Formate erklärt mit Länder-Tabelle.',
   keywords: 'IBAN Aufbau, BIC Erklärung, IBAN Prüfziffer, Mod-97, IBAN GiroCode, SEPA IBAN',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/wissen/iban-bic',
+    canonical: `${SITE_URL}/wissen/iban-bic`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/wissen/iban-bic',
-      'de': 'https://www.girocodegenerator.com/wissen/iban-bic',
-      'en': 'https://www.girocodegenerator.com/en/wissen/iban-bic',
-      'fr': 'https://www.girocodegenerator.com/fr/wissen/iban-bic',
-      'es': 'https://www.girocodegenerator.com/es/wissen/iban-bic',
-      'it': 'https://www.girocodegenerator.com/it/wissen/iban-bic',
+      'x-default': `${SITE_URL}/wissen/iban-bic`,
+      'de': `${SITE_URL}/wissen/iban-bic`,
+      'en': `${SITE_URL}/en/wissen/iban-bic`,
+      'fr': `${SITE_URL}/fr/wissen/iban-bic`,
+      'es': `${SITE_URL}/es/wissen/iban-bic`,
+      'it': `${SITE_URL}/it/wissen/iban-bic`,
     },
   },
 };

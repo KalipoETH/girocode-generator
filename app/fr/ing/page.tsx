@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode avec ING – Guide étape par étape 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scanner un GiroCode avec ING: Ouvrir le scanner QR dans l\'app ING Banking App, scanner le code, confirmer le virement. ✅ Guide étape par étape 2026.',
   keywords: 'girocode ing, ing girocode scan, ing qr code, sepa qr ing',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/ing',
+    canonical: `${SITE_URL}/fr/ing`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/ing',
-      de: 'https://www.girocodegenerator.com/ing',
-      en: 'https://www.girocodegenerator.com/en/ing',
-      fr: 'https://www.girocodegenerator.com/fr/ing',
-      es: 'https://www.girocodegenerator.com/es/ing',
+      'x-default': `${SITE_URL}/ing`,
+      de: `${SITE_URL}/ing`,
+      en: `${SITE_URL}/en/ing`,
+      fr: `${SITE_URL}/fr/ing`,
+      es: `${SITE_URL}/es/ing`,
     },
   },
 };

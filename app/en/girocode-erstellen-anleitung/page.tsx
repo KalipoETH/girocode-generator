@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'How to Create a GiroCode – Step-by-Step Guide 2026',
   description:
     'Create GiroCode in 3 steps: Enter IBAN, add amount and reference, download QR code. Free, no registration required.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/girocode-erstellen-anleitung',
+    canonical: `${SITE_URL}/en/girocode-erstellen-anleitung`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/girocode-erstellen-anleitung',
-      'de': 'https://www.girocodegenerator.com/girocode-erstellen-anleitung',
-      'en': 'https://www.girocodegenerator.com/en/girocode-erstellen-anleitung',
-      'fr': 'https://www.girocodegenerator.com/fr/girocode-erstellen-anleitung',
-      'es': 'https://www.girocodegenerator.com/es/girocode-erstellen-anleitung',
+      'x-default': `${SITE_URL}/girocode-erstellen-anleitung`,
+      'de': `${SITE_URL}/girocode-erstellen-anleitung`,
+      'en': `${SITE_URL}/en/girocode-erstellen-anleitung`,
+      'fr': `${SITE_URL}/fr/girocode-erstellen-anleitung`,
+      'es': `${SITE_URL}/es/girocode-erstellen-anleitung`,
     },
   },
 };

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
-  alternates: { canonical: 'https://www.girocodegenerator.com/es/impressum' },
+  alternates: { canonical: `${SITE_URL}/es/impressum` },
 };
 
 export default function ImpressumPageEs() {

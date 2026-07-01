@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { KnowledgeLayout } from '@/components/KnowledgeLayout';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'EPC-Standard erklärt – Aufbau des SEPA-QR-Codes 2026',
@@ -8,14 +9,14 @@ export const metadata: Metadata = {
     'Der EPC-Standard für GiroCodes: Payload-Aufbau Zeile für Zeile, Versionen 001/002, Fehlerkorrektur und JavaScript-Codebeispiel. Technisch präzise erklärt.',
   keywords: 'EPC Standard, SEPA QR Code Aufbau, GiroCode Payload, EPC069, BCD Service Tag, SEPA Credit Transfer',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/wissen/epc-standard',
+    canonical: `${SITE_URL}/wissen/epc-standard`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/wissen/epc-standard',
-      'de': 'https://www.girocodegenerator.com/wissen/epc-standard',
-      'en': 'https://www.girocodegenerator.com/en/wissen/epc-standard',
-      'fr': 'https://www.girocodegenerator.com/fr/wissen/epc-standard',
-      'es': 'https://www.girocodegenerator.com/es/wissen/epc-standard',
-      'it': 'https://www.girocodegenerator.com/it/wissen/epc-standard',
+      'x-default': `${SITE_URL}/wissen/epc-standard`,
+      'de': `${SITE_URL}/wissen/epc-standard`,
+      'en': `${SITE_URL}/en/wissen/epc-standard`,
+      'fr': `${SITE_URL}/fr/wissen/epc-standard`,
+      'es': `${SITE_URL}/es/wissen/epc-standard`,
+      'it': `${SITE_URL}/it/wissen/epc-standard`,
     },
   },
 };

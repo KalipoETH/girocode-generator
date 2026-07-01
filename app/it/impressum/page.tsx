@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Impressum – GiroCode Generator',
   description: 'Informazioni legali sul GiroCode Generator.',
-  alternates: { canonical: 'https://www.girocodegenerator.com/it/impressum' },
+  alternates: { canonical: `${SITE_URL}/it/impressum` },
 };
 
 export default function ImpressumPageIt() {
@@ -40,10 +41,10 @@ export default function ImpressumPageIt() {
             <p className="mt-1">
               Kontaktformular:{' '}
               <a
-                href="https://www.girocodegenerator.com/it/kontakt"
+                href={`${SITE_URL}/it/kontakt`}
                 className="text-sky-400 underline decoration-sky-500/60 hover:text-sky-300"
               >
-                https://www.girocodegenerator.com/it/kontakt
+                https://girocodegenerator.com/it/kontakt
               </a>
             </p>
             <p className="mt-1">

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode with Commerzbank – Step-by-Step Guide 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scan a GiroCode with Commerzbank: Open QR scanner in the Commerzbank Banking App, scan the code, confirm the transfer. ✅ Step-by-step guide 2026.',
   keywords: 'girocode commerzbank, commerzbank girocode scan, commerzbank qr code, sepa qr commerzbank',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/commerzbank',
+    canonical: `${SITE_URL}/en/commerzbank`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/commerzbank',
-      de: 'https://www.girocodegenerator.com/commerzbank',
-      en: 'https://www.girocodegenerator.com/en/commerzbank',
-      fr: 'https://www.girocodegenerator.com/fr/commerzbank',
-      es: 'https://www.girocodegenerator.com/es/commerzbank',
+      'x-default': `${SITE_URL}/commerzbank`,
+      de: `${SITE_URL}/commerzbank`,
+      en: `${SITE_URL}/en/commerzbank`,
+      fr: `${SITE_URL}/fr/commerzbank`,
+      es: `${SITE_URL}/es/commerzbank`,
     },
   },
 };

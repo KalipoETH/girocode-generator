@@ -1,16 +1,17 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Generador QR Code SEPA – Gratis & Al Instante 2026',
   description:
     'Crea códigos QR SEPA (EPC/GiroCode) gratis. Compatible con todas las apps bancarias europeas. Sin registro.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/es/generador-qr-sepa',
+    canonical: `${SITE_URL}/es/generador-qr-sepa`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/sepa-qr-code',
-      de: 'https://www.girocodegenerator.com/sepa-qr-code',
-      es: 'https://www.girocodegenerator.com/es/generador-qr-sepa',
+      'x-default': `${SITE_URL}/sepa-qr-code`,
+      de: `${SITE_URL}/sepa-qr-code`,
+      es: `${SITE_URL}/es/generador-qr-sepa`,
     },
   },
 };

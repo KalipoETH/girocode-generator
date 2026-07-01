@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/siteConfig';
 
-const BASE = 'https://www.girocodegenerator.com';
+const BASE = SITE_URL;
 const LOCALES = ['en', 'fr', 'es', 'it'] as const;
 
 /** Bank-Seiten mit echtem Inhalt pro Sprache (keine Redirects auf DE) */

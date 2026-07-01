@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode avec Raiffeisen Österreich – Guide étape par étape 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scanner un GiroCode avec Raiffeisen Österreich: Ouvrir le scanner QR dans l\'app Mein ELBA App, scanner le code, confirmer le virement. ✅ Guide étape par étape 2026.',
   keywords: 'girocode raiffeisen-oesterreich, raiffeisen-oesterreich girocode scan, raiffeisen-oesterreich qr code, sepa qr raiffeisen-oesterreich',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/raiffeisen-oesterreich',
+    canonical: `${SITE_URL}/fr/raiffeisen-oesterreich`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/raiffeisen-oesterreich',
-      de: 'https://www.girocodegenerator.com/raiffeisen-oesterreich',
-      en: 'https://www.girocodegenerator.com/en/raiffeisen-oesterreich',
-      fr: 'https://www.girocodegenerator.com/fr/raiffeisen-oesterreich',
-      es: 'https://www.girocodegenerator.com/es/raiffeisen-oesterreich',
+      'x-default': `${SITE_URL}/raiffeisen-oesterreich`,
+      de: `${SITE_URL}/raiffeisen-oesterreich`,
+      en: `${SITE_URL}/en/raiffeisen-oesterreich`,
+      fr: `${SITE_URL}/fr/raiffeisen-oesterreich`,
+      es: `${SITE_URL}/es/raiffeisen-oesterreich`,
     },
   },
 };

@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Cómo Escanear un GiroCode – Guía Completa para Todas las Apps 2026',
   description:
     'Escanear GiroCode con Sparkasse, ING, DKB, Volksbank y más: Guía paso a paso para todas las apps bancarias. Con cámara o importación de archivo.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/es/girocode-scannen-anleitung',
+    canonical: `${SITE_URL}/es/girocode-scannen-anleitung`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/girocode-scannen-anleitung',
-      'de': 'https://www.girocodegenerator.com/girocode-scannen-anleitung',
-      'en': 'https://www.girocodegenerator.com/en/girocode-scannen-anleitung',
-      'fr': 'https://www.girocodegenerator.com/fr/girocode-scannen-anleitung',
-      'es': 'https://www.girocodegenerator.com/es/girocode-scannen-anleitung',
+      'x-default': `${SITE_URL}/girocode-scannen-anleitung`,
+      'de': `${SITE_URL}/girocode-scannen-anleitung`,
+      'en': `${SITE_URL}/en/girocode-scannen-anleitung`,
+      'fr': `${SITE_URL}/fr/girocode-scannen-anleitung`,
+      'es': `${SITE_URL}/es/girocode-scannen-anleitung`,
     },
   },
 };

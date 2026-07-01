@@ -1,20 +1,21 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'What is a GiroCode (EPC QR Code)? – Complete Guide 2026',
   description:
     'GiroCode / EPC QR Code explained: How SEPA payment QR codes work, what data they contain, and how to create one free in seconds.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/wissen/girocode',
+    canonical: `${SITE_URL}/en/wissen/girocode`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/wissen/girocode',
-      'de': 'https://www.girocodegenerator.com/wissen/girocode',
-      'en': 'https://www.girocodegenerator.com/en/wissen/girocode',
-      'fr': 'https://www.girocodegenerator.com/fr/wissen/girocode',
-      'es': 'https://www.girocodegenerator.com/es/wissen/girocode',
-      'it': 'https://www.girocodegenerator.com/it/wissen/girocode',
+      'x-default': `${SITE_URL}/wissen/girocode`,
+      'de': `${SITE_URL}/wissen/girocode`,
+      'en': `${SITE_URL}/en/wissen/girocode`,
+      'fr': `${SITE_URL}/fr/wissen/girocode`,
+      'es': `${SITE_URL}/es/wissen/girocode`,
+      'it': `${SITE_URL}/it/wissen/girocode`,
     },
   },
 };

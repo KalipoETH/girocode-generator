@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode con Hypo Österreich – Guía paso a paso 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Escanear un GiroCode con Hypo Österreich: Abrir escáner QR en la app Hypo Banking App, escanear el código, confirmar la transferencia. ✅ Guía paso a paso 2026.',
   keywords: 'girocode hypo-oesterreich, hypo-oesterreich girocode scan, hypo-oesterreich qr code, sepa qr hypo-oesterreich',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/es/hypo-oesterreich',
+    canonical: `${SITE_URL}/es/hypo-oesterreich`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/hypo-oesterreich',
-      de: 'https://www.girocodegenerator.com/hypo-oesterreich',
-      en: 'https://www.girocodegenerator.com/en/hypo-oesterreich',
-      fr: 'https://www.girocodegenerator.com/fr/hypo-oesterreich',
-      es: 'https://www.girocodegenerator.com/es/hypo-oesterreich',
+      'x-default': `${SITE_URL}/hypo-oesterreich`,
+      de: `${SITE_URL}/hypo-oesterreich`,
+      en: `${SITE_URL}/en/hypo-oesterreich`,
+      fr: `${SITE_URL}/fr/hypo-oesterreich`,
+      es: `${SITE_URL}/es/hypo-oesterreich`,
     },
   },
 };

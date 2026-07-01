@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit PostFinance scannen – Anleitung 2026',
@@ -7,14 +8,14 @@ export const metadata: Metadata = {
     'GiroCode mit der PostFinance App für SEPA-Überweisungen aus der Schweiz scannen. ✅ Schritt-für-Schritt Anleitung 2026. Hinweis: CH-Inland nutzt QR-Rechnung.',
   keywords: 'girocode postfinance, postfinance app qr code, postfinance sepa überweisung qr, postfinance girocode',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/postfinance',
+    canonical: `${SITE_URL}/postfinance`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/postfinance',
-      de: 'https://www.girocodegenerator.com/postfinance',
-      en: 'https://www.girocodegenerator.com/en/postfinance',
-      fr: 'https://www.girocodegenerator.com/fr/postfinance',
-      es: 'https://www.girocodegenerator.com/es/postfinance',
-      it: 'https://www.girocodegenerator.com/it/postfinance',
+      'x-default': `${SITE_URL}/postfinance`,
+      de: `${SITE_URL}/postfinance`,
+      en: `${SITE_URL}/en/postfinance`,
+      fr: `${SITE_URL}/fr/postfinance`,
+      es: `${SITE_URL}/es/postfinance`,
+      it: `${SITE_URL}/it/postfinance`,
     },
   },
 };

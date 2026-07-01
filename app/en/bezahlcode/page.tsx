@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'BezahlCode Generator – Free SEPA QR Code (= GiroCode)',
   description:
     'Generate BezahlCode (now called GiroCode) for free: The old German name for SEPA QR codes. Create BezahlCode/GiroCode in 10 seconds – no registration.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/bezahlcode',
+    canonical: `${SITE_URL}/en/bezahlcode`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/bezahlcode',
-      de: 'https://www.girocodegenerator.com/bezahlcode',
-      en: 'https://www.girocodegenerator.com/en/bezahlcode',
-      fr: 'https://www.girocodegenerator.com/fr/bezahlcode',
-      es: 'https://www.girocodegenerator.com/es/bezahlcode',
+      'x-default': `${SITE_URL}/bezahlcode`,
+      de: `${SITE_URL}/bezahlcode`,
+      en: `${SITE_URL}/en/bezahlcode`,
+      fr: `${SITE_URL}/fr/bezahlcode`,
+      es: `${SITE_URL}/es/bezahlcode`,
     },
   },
 };

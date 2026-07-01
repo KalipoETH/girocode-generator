@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode con ING (formerly ING-DiBa) – Guía paso a paso 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Escanear un GiroCode con ING (formerly ING-DiBa): Abrir escáner QR en la app ING Banking App, escanear el código, confirmar la transferencia. ✅ Guía paso a paso 2026.',
   keywords: 'girocode ing-diba, ing-diba girocode scan, ing-diba qr code, sepa qr ing-diba',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/es/ing-diba',
+    canonical: `${SITE_URL}/es/ing-diba`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/ing-diba',
-      de: 'https://www.girocodegenerator.com/ing-diba',
-      en: 'https://www.girocodegenerator.com/en/ing-diba',
-      fr: 'https://www.girocodegenerator.com/fr/ing-diba',
-      es: 'https://www.girocodegenerator.com/es/ing-diba',
+      'x-default': `${SITE_URL}/ing-diba`,
+      de: `${SITE_URL}/ing-diba`,
+      en: `${SITE_URL}/en/ing-diba`,
+      fr: `${SITE_URL}/fr/ing-diba`,
+      es: `${SITE_URL}/es/ing-diba`,
     },
   },
 };

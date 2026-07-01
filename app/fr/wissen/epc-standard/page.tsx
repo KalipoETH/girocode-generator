@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Norme EPC expliquée – Structure du code QR SEPA 2026',
   description:
     'La norme EPC pour GiroCodes: structure du payload ligne par ligne, versions 001/002, correction d\'erreurs et exemple JavaScript.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/wissen/epc-standard',
+    canonical: `${SITE_URL}/fr/wissen/epc-standard`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/wissen/epc-standard',
-      'de': 'https://www.girocodegenerator.com/wissen/epc-standard',
-      'en': 'https://www.girocodegenerator.com/en/wissen/epc-standard',
-      'fr': 'https://www.girocodegenerator.com/fr/wissen/epc-standard',
-      'es': 'https://www.girocodegenerator.com/es/wissen/epc-standard',
-      'it': 'https://www.girocodegenerator.com/it/wissen/epc-standard',
+      'x-default': `${SITE_URL}/wissen/epc-standard`,
+      'de': `${SITE_URL}/wissen/epc-standard`,
+      'en': `${SITE_URL}/en/wissen/epc-standard`,
+      'fr': `${SITE_URL}/fr/wissen/epc-standard`,
+      'es': `${SITE_URL}/es/wissen/epc-standard`,
+      'it': `${SITE_URL}/it/wissen/epc-standard`,
     },
   },
 };

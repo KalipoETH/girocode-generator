@@ -4,6 +4,7 @@ import { GeoStatsSection } from '../../components/GeoStatsSection';
 import { fr } from '../../lib/translations/fr';
 import NewsletterForm from '../../components/NewsletterForm';
 import { GeneratorSection } from '@/components/GeneratorSection';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export default function HomePageFr() {
   return (
@@ -29,7 +30,7 @@ export default function HomePageFr() {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'GiroCode Generator',
-            url: 'https://www.girocodegenerator.com/fr',
+            url: `${SITE_URL}/fr`,
             description:
               'Générateur de GiroCode (SEPA-QR / EPC) gratuit – 100% local dans votre navigateur, sans transmission de données. Inclut une facture PDF avec QR intégré.',
             applicationCategory: 'FinanceApplication',

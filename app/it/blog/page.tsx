@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Blog GiroCode – Guide, Notizie & Aggiornamenti',
   description:
     'Guide sui GiroCodes, pagamenti SEPA, fatturazione e pagamenti digitali per freelance e piccole imprese.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/it/blog',
+    canonical: `${SITE_URL}/it/blog`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/blog',
-      de: 'https://www.girocodegenerator.com/blog',
-      en: 'https://www.girocodegenerator.com/en/blog',
-      fr: 'https://www.girocodegenerator.com/fr/blog',
-      es: 'https://www.girocodegenerator.com/es/blog',
-      it: 'https://www.girocodegenerator.com/it/blog',
+      'x-default': `${SITE_URL}/blog`,
+      de: `${SITE_URL}/blog`,
+      en: `${SITE_URL}/en/blog`,
+      fr: `${SITE_URL}/fr/blog`,
+      es: `${SITE_URL}/es/blog`,
+      it: `${SITE_URL}/it/blog`,
     },
   },
 };

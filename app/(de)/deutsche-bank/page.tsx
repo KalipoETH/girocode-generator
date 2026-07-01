@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Deutsche Bank App scannen – Anleitung 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der Deutsche Bank Mobile App scannen: Überweisen öffnen, QR-Code-Symbol tippen, Code scannen & bestätigen. ✅ Kostenlos & schnell.',
   keywords: 'deutsche bank girocode, deutsche bank qr code scannen, girocode db banking, sepa qr deutsche bank',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/deutsche-bank',
+    canonical: `${SITE_URL}/deutsche-bank`,
   },
 };
 

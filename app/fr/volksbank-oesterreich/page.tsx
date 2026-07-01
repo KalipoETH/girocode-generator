@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode avec Volksbank Österreich – Guide étape par étape 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scanner un GiroCode avec Volksbank Österreich: Ouvrir le scanner QR dans l\'app VB Mobile App, scanner le code, confirmer le virement. ✅ Guide étape par étape 2026.',
   keywords: 'girocode volksbank-oesterreich, volksbank-oesterreich girocode scan, volksbank-oesterreich qr code, sepa qr volksbank-oesterreich',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/volksbank-oesterreich',
+    canonical: `${SITE_URL}/fr/volksbank-oesterreich`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/volksbank-oesterreich',
-      de: 'https://www.girocodegenerator.com/volksbank-oesterreich',
-      en: 'https://www.girocodegenerator.com/en/volksbank-oesterreich',
-      fr: 'https://www.girocodegenerator.com/fr/volksbank-oesterreich',
-      es: 'https://www.girocodegenerator.com/es/volksbank-oesterreich',
+      'x-default': `${SITE_URL}/volksbank-oesterreich`,
+      de: `${SITE_URL}/volksbank-oesterreich`,
+      en: `${SITE_URL}/en/volksbank-oesterreich`,
+      fr: `${SITE_URL}/fr/volksbank-oesterreich`,
+      es: `${SITE_URL}/es/volksbank-oesterreich`,
     },
   },
 };

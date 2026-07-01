@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode con PostFinance – Guida 2026',
@@ -7,14 +8,14 @@ export const metadata: Metadata = {
     'Scansiona un GiroCode con l\'app PostFinance. Guida passo-passo per bonifici SEPA dalla Svizzera.',
   keywords: 'girocode postfinance, postfinance girocode scan, sepa qr postfinance',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/it/postfinance',
+    canonical: `${SITE_URL}/it/postfinance`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/postfinance',
-      de: 'https://www.girocodegenerator.com/postfinance',
-      en: 'https://www.girocodegenerator.com/en/postfinance',
-      fr: 'https://www.girocodegenerator.com/fr/postfinance',
-      es: 'https://www.girocodegenerator.com/es/postfinance',
-      it: 'https://www.girocodegenerator.com/it/postfinance',
+      'x-default': `${SITE_URL}/postfinance`,
+      de: `${SITE_URL}/postfinance`,
+      en: `${SITE_URL}/en/postfinance`,
+      fr: `${SITE_URL}/fr/postfinance`,
+      es: `${SITE_URL}/es/postfinance`,
+      it: `${SITE_URL}/it/postfinance`,
     },
   },
 };

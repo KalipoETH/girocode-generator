@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import NewsletterForm from '../../../components/NewsletterForm';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode para Google Docs & Sheets – Add-on 2026',
   description:
     'Inserta GiroCode directamente en Google Docs y Google Sheets. El add-on gratuito de Google Workspace de GiroCode Generator.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/es/google-workspace-addon',
+    canonical: `${SITE_URL}/es/google-workspace-addon`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/google-workspace-addon',
-      de: 'https://www.girocodegenerator.com/google-workspace-addon',
-      en: 'https://www.girocodegenerator.com/en/google-workspace-addon',
-      fr: 'https://www.girocodegenerator.com/fr/google-workspace-addon',
-      es: 'https://www.girocodegenerator.com/es/google-workspace-addon',
+      'x-default': `${SITE_URL}/google-workspace-addon`,
+      de: `${SITE_URL}/google-workspace-addon`,
+      en: `${SITE_URL}/en/google-workspace-addon`,
+      fr: `${SITE_URL}/fr/google-workspace-addon`,
+      es: `${SITE_URL}/es/google-workspace-addon`,
     },
   },
 };

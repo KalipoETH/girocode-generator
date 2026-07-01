@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Berliner Sparkasse scannen – Anleitung 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der Berliner Sparkasse App scannen: QR-Scanner unter „Überweisungen" öffnen, Code scannen, Überweisung bestätigen. ✅ Schritt-für-Schritt Anleitung.',
   keywords: 'girocode berliner sparkasse, berliner sparkasse app qr code, berliner sparkasse girocode scannen',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/berliner-sparkasse',
+    canonical: `${SITE_URL}/berliner-sparkasse`,
   },
 };
 

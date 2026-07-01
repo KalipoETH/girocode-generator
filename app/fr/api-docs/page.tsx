@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import ApiDocsBetaPage from '@/components/ApiDocsBetaPage';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'API GiroCode – Documentation | Accès Bêta',
   description:
     "La documentation API GiroCode est actuellement en bêta. Inscrivez-vous pour un accès anticipé à l'API REST.",
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/api-docs',
+    canonical: `${SITE_URL}/fr/api-docs`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/api-docs',
-      de: 'https://www.girocodegenerator.com/api-docs',
-      en: 'https://www.girocodegenerator.com/en/api-docs',
-      fr: 'https://www.girocodegenerator.com/fr/api-docs',
-      es: 'https://www.girocodegenerator.com/es/api-docs',
-      it: 'https://www.girocodegenerator.com/it/api-docs',
+      'x-default': `${SITE_URL}/api-docs`,
+      de: `${SITE_URL}/api-docs`,
+      en: `${SITE_URL}/en/api-docs`,
+      fr: `${SITE_URL}/fr/api-docs`,
+      es: `${SITE_URL}/es/api-docs`,
+      it: `${SITE_URL}/it/api-docs`,
     },
   },
 };

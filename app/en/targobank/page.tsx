@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode with TARGOBANK – Step-by-Step Guide 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scan a GiroCode with TARGOBANK: Open QR scanner in the TARGOBANK Mobile, scan the code, confirm the transfer. ✅ Step-by-step guide 2026.',
   keywords: 'girocode targobank, targobank girocode scan, targobank qr code, sepa qr targobank',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/targobank',
+    canonical: `${SITE_URL}/en/targobank`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/targobank',
-      de: 'https://www.girocodegenerator.com/targobank',
-      en: 'https://www.girocodegenerator.com/en/targobank',
-      fr: 'https://www.girocodegenerator.com/fr/targobank',
-      es: 'https://www.girocodegenerator.com/es/targobank',
+      'x-default': `${SITE_URL}/targobank`,
+      de: `${SITE_URL}/targobank`,
+      en: `${SITE_URL}/en/targobank`,
+      fr: `${SITE_URL}/fr/targobank`,
+      es: `${SITE_URL}/es/targobank`,
     },
   },
 };

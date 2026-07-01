@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Comdirect scannen – Schritt-für-Schritt 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der comdirect App scannen: Überweisung öffnen, QR-Code-Symbol antippen, Code scannen & Überweisung freigeben. ✅ Einfach & kostenlos.',
   keywords: 'comdirect girocode, comdirect app qr code scannen, girocode comdirect überweisung, sepa qr comdirect',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/comdirect',
+    canonical: `${SITE_URL}/comdirect`,
   },
 };
 

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode with Stadtsparkasse – Step-by-Step Guide 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scan a GiroCode with Stadtsparkasse: Open QR scanner in the Stadtsparkasse App, scan the code, confirm the transfer. ✅ Step-by-step guide 2026.',
   keywords: 'girocode stadtsparkasse, stadtsparkasse girocode scan, stadtsparkasse qr code, sepa qr stadtsparkasse',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/stadtsparkasse',
+    canonical: `${SITE_URL}/en/stadtsparkasse`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/stadtsparkasse',
-      de: 'https://www.girocodegenerator.com/stadtsparkasse',
-      en: 'https://www.girocodegenerator.com/en/stadtsparkasse',
-      fr: 'https://www.girocodegenerator.com/fr/stadtsparkasse',
-      es: 'https://www.girocodegenerator.com/es/stadtsparkasse',
+      'x-default': `${SITE_URL}/stadtsparkasse`,
+      de: `${SITE_URL}/stadtsparkasse`,
+      en: `${SITE_URL}/en/stadtsparkasse`,
+      fr: `${SITE_URL}/fr/stadtsparkasse`,
+      es: `${SITE_URL}/es/stadtsparkasse`,
     },
   },
 };

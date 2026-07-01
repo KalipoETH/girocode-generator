@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode avec Zürcher Kantonalbank – Guide étape par étape 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scanner un GiroCode avec Zürcher Kantonalbank: Ouvrir le scanner QR dans l\'app ZKB Mobile Banking App, scanner le code, confirmer le virement. ✅ Guide étape par étape 2026.',
   keywords: 'girocode zuercher-kantonalbank, zuercher-kantonalbank girocode scan, zuercher-kantonalbank qr code, sepa qr zuercher-kantonalbank',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/zuercher-kantonalbank',
+    canonical: `${SITE_URL}/fr/zuercher-kantonalbank`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/zuercher-kantonalbank',
-      de: 'https://www.girocodegenerator.com/zuercher-kantonalbank',
-      en: 'https://www.girocodegenerator.com/en/zuercher-kantonalbank',
-      fr: 'https://www.girocodegenerator.com/fr/zuercher-kantonalbank',
-      es: 'https://www.girocodegenerator.com/es/zuercher-kantonalbank',
+      'x-default': `${SITE_URL}/zuercher-kantonalbank`,
+      de: `${SITE_URL}/zuercher-kantonalbank`,
+      en: `${SITE_URL}/en/zuercher-kantonalbank`,
+      fr: `${SITE_URL}/fr/zuercher-kantonalbank`,
+      es: `${SITE_URL}/es/zuercher-kantonalbank`,
     },
   },
 };

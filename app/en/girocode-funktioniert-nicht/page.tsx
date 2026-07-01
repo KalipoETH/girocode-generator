@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode Not Working – Causes & Solutions 2026',
   description:
     'GiroCode not recognized or not scanning? The 7 most common causes and immediate solutions. Explained for all banking apps.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/girocode-funktioniert-nicht',
+    canonical: `${SITE_URL}/en/girocode-funktioniert-nicht`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/girocode-funktioniert-nicht',
-      'de': 'https://www.girocodegenerator.com/girocode-funktioniert-nicht',
-      'en': 'https://www.girocodegenerator.com/en/girocode-funktioniert-nicht',
-      'fr': 'https://www.girocodegenerator.com/fr/girocode-funktioniert-nicht',
-      'es': 'https://www.girocodegenerator.com/es/girocode-funktioniert-nicht',
+      'x-default': `${SITE_URL}/girocode-funktioniert-nicht`,
+      'de': `${SITE_URL}/girocode-funktioniert-nicht`,
+      'en': `${SITE_URL}/en/girocode-funktioniert-nicht`,
+      'fr': `${SITE_URL}/fr/girocode-funktioniert-nicht`,
+      'es': `${SITE_URL}/es/girocode-funktioniert-nicht`,
     },
   },
 };

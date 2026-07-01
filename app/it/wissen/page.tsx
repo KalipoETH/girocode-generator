@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Informazioni sul GiroCode – Guide Complete 2026',
   description:
     'Tutto sul GiroCode: standard EPC, IBAN, app bancarie, scansione e fatture. Guide complete e gratuite.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/it/wissen',
+    canonical: `${SITE_URL}/it/wissen`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/wissen',
-      de: 'https://www.girocodegenerator.com/wissen',
-      en: 'https://www.girocodegenerator.com/en/wissen',
-      fr: 'https://www.girocodegenerator.com/fr/wissen',
-      es: 'https://www.girocodegenerator.com/es/wissen',
-      it: 'https://www.girocodegenerator.com/it/wissen',
+      'x-default': `${SITE_URL}/wissen`,
+      de: `${SITE_URL}/wissen`,
+      en: `${SITE_URL}/en/wissen`,
+      fr: `${SITE_URL}/fr/wissen`,
+      es: `${SITE_URL}/es/wissen`,
+      it: `${SITE_URL}/it/wissen`,
     },
   },
 };

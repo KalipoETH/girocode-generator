@@ -1,16 +1,17 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'QR Code Transferencia Bancaria SEPA – Crear Gratis 2026',
   description:
     'Crea un código QR para transferencia bancaria SEPA en segundos. Estándar EPC069-12. Gratis y sin registro.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/es/qr-transferencia-bancaria',
+    canonical: `${SITE_URL}/es/qr-transferencia-bancaria`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/qr-code-ueberweisung',
-      de: 'https://www.girocodegenerator.com/qr-code-ueberweisung',
-      es: 'https://www.girocodegenerator.com/es/qr-transferencia-bancaria',
+      'x-default': `${SITE_URL}/qr-code-ueberweisung`,
+      de: `${SITE_URL}/qr-code-ueberweisung`,
+      es: `${SITE_URL}/es/qr-transferencia-bancaria`,
     },
   },
 };

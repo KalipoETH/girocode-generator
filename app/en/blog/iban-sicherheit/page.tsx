@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AuthorBox, AuthorBoxEnd } from '../../../../components/AuthorBox';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'IBAN Security: What You Need to Know About Transfers',
   description:
     'Is it safe to share your IBAN? What can someone do with your IBAN? Everything about IBAN security, GiroCode privacy, and safe transfers.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/blog/iban-sicherheit',
+    canonical: `${SITE_URL}/en/blog/iban-sicherheit`,
     languages: {
-      de: 'https://www.girocodegenerator.com/blog/iban-sicherheit',
-      en: 'https://www.girocodegenerator.com/en/blog/iban-sicherheit',
-      fr: 'https://www.girocodegenerator.com/fr/blog/iban-sicherheit',
-      es: 'https://www.girocodegenerator.com/es/blog/iban-sicherheit',
-      it: 'https://www.girocodegenerator.com/it/blog/iban-sicherheit',
+      de: `${SITE_URL}/blog/iban-sicherheit`,
+      en: `${SITE_URL}/en/blog/iban-sicherheit`,
+      fr: `${SITE_URL}/fr/blog/iban-sicherheit`,
+      es: `${SITE_URL}/es/blog/iban-sicherheit`,
+      it: `${SITE_URL}/it/blog/iban-sicherheit`,
     },
   },
 };

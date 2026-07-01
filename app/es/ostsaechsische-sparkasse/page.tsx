@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode con Ostsächsische Sparkasse – Guía paso a paso 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Escanear un GiroCode con Ostsächsische Sparkasse: Abrir escáner QR en la app Ostsächsische Sparkasse App, escanear el código, confirmar la transferencia. ✅ Guía paso a paso 2026.',
   keywords: 'girocode ostsaechsische-sparkasse, ostsaechsische-sparkasse girocode scan, ostsaechsische-sparkasse qr code, sepa qr ostsaechsische-sparkasse',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/es/ostsaechsische-sparkasse',
+    canonical: `${SITE_URL}/es/ostsaechsische-sparkasse`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/ostsaechsische-sparkasse',
-      de: 'https://www.girocodegenerator.com/ostsaechsische-sparkasse',
-      en: 'https://www.girocodegenerator.com/en/ostsaechsische-sparkasse',
-      fr: 'https://www.girocodegenerator.com/fr/ostsaechsische-sparkasse',
-      es: 'https://www.girocodegenerator.com/es/ostsaechsische-sparkasse',
+      'x-default': `${SITE_URL}/ostsaechsische-sparkasse`,
+      de: `${SITE_URL}/ostsaechsische-sparkasse`,
+      en: `${SITE_URL}/en/ostsaechsische-sparkasse`,
+      fr: `${SITE_URL}/fr/ostsaechsische-sparkasse`,
+      es: `${SITE_URL}/es/ostsaechsische-sparkasse`,
     },
   },
 };

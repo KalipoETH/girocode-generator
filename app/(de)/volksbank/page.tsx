@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit Volksbank / VR-Banking scannen – Anleitung 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der VR-Banking App scannen – so geht\'s: Überweisung öffnen, QR-Code scannen, Daten prüfen & bestätigen. ✅ Auch mit Raiffeisenbank App.',
   keywords: 'volksbank girocode, vr-banking girocode scannen, raiffeisenbank qr code, sepa qr volksbank',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/volksbank',
+    canonical: `${SITE_URL}/volksbank`,
   },
 };
 

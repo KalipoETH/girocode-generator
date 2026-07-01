@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'IBAN QR Code Generator – Create Free 2026',
   description:
     'Encode IBAN as QR Code: Generate GiroCode/SEPA-QR for free. IBAN, amount and payment reference in the QR code – compatible with all banking apps.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/en/iban-qr-code',
+    canonical: `${SITE_URL}/en/iban-qr-code`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/iban-qr-code',
-      de: 'https://www.girocodegenerator.com/iban-qr-code',
-      en: 'https://www.girocodegenerator.com/en/iban-qr-code',
-      fr: 'https://www.girocodegenerator.com/fr/iban-qr-code',
-      es: 'https://www.girocodegenerator.com/es/iban-qr-code',
+      'x-default': `${SITE_URL}/iban-qr-code`,
+      de: `${SITE_URL}/iban-qr-code`,
+      en: `${SITE_URL}/en/iban-qr-code`,
+      fr: `${SITE_URL}/fr/iban-qr-code`,
+      es: `${SITE_URL}/es/iban-qr-code`,
     },
   },
 };

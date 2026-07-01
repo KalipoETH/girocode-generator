@@ -1,20 +1,21 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { KnowledgeLayout } from '../../../../components/KnowledgeLayout';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Apps bancaires compatibles GiroCode 2026 – Liste complète',
   description:
     'Quelles apps bancaires scannent les GiroCodes? Sparkasse ✅ ING ✅ DKB ✅ Volksbank ✅ N26 ✅ et 8 autres. Guide étape par étape pour chaque app.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/wissen/banking-apps',
+    canonical: `${SITE_URL}/fr/wissen/banking-apps`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/wissen/banking-apps',
-      'de': 'https://www.girocodegenerator.com/wissen/banking-apps',
-      'en': 'https://www.girocodegenerator.com/en/wissen/banking-apps',
-      'fr': 'https://www.girocodegenerator.com/fr/wissen/banking-apps',
-      'es': 'https://www.girocodegenerator.com/es/wissen/banking-apps',
-      'it': 'https://www.girocodegenerator.com/it/wissen/banking-apps',
+      'x-default': `${SITE_URL}/wissen/banking-apps`,
+      'de': `${SITE_URL}/wissen/banking-apps`,
+      'en': `${SITE_URL}/en/wissen/banking-apps`,
+      'fr': `${SITE_URL}/fr/wissen/banking-apps`,
+      'es': `${SITE_URL}/es/wissen/banking-apps`,
+      'it': `${SITE_URL}/it/wissen/banking-apps`,
     },
   },
 };

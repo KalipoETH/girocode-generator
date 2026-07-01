@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode avec Santander – Guide étape par étape 2026',
@@ -7,13 +8,13 @@ export const metadata: Metadata = {
     'Scanner un GiroCode avec Santander: Ouvrir le scanner QR dans l\'app Santander Banking App, scanner le code, confirmer le virement. ✅ Guide étape par étape 2026.',
   keywords: 'girocode santander, santander girocode scan, santander qr code, sepa qr santander',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/santander',
+    canonical: `${SITE_URL}/fr/santander`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/santander',
-      de: 'https://www.girocodegenerator.com/santander',
-      en: 'https://www.girocodegenerator.com/en/santander',
-      fr: 'https://www.girocodegenerator.com/fr/santander',
-      es: 'https://www.girocodegenerator.com/es/santander',
+      'x-default': `${SITE_URL}/santander`,
+      de: `${SITE_URL}/santander`,
+      en: `${SITE_URL}/en/santander`,
+      fr: `${SITE_URL}/fr/santander`,
+      es: `${SITE_URL}/es/santander`,
     },
   },
 };

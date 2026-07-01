@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Générateur de factures gratuit – Avec GiroCode & PDF 2026',
   description:
     'Le générateur de factures gratuit avec GiroCode automatique. Pour freelances, petites entreprises et indépendants. Sans inscription.',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/fr/rechnungsgenerator',
+    canonical: `${SITE_URL}/fr/rechnungsgenerator`,
     languages: {
-      'x-default': 'https://www.girocodegenerator.com/rechnungsgenerator',
-      de: 'https://www.girocodegenerator.com/rechnungsgenerator',
-      en: 'https://www.girocodegenerator.com/en/rechnungsgenerator',
-      fr: 'https://www.girocodegenerator.com/fr/rechnungsgenerator',
-      es: 'https://www.girocodegenerator.com/es/rechnungsgenerator',
+      'x-default': `${SITE_URL}/rechnungsgenerator`,
+      de: `${SITE_URL}/rechnungsgenerator`,
+      en: `${SITE_URL}/en/rechnungsgenerator`,
+      fr: `${SITE_URL}/fr/rechnungsgenerator`,
+      es: `${SITE_URL}/es/rechnungsgenerator`,
     },
   },
 };

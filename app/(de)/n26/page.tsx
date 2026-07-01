@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'GiroCode mit N26 scannen – Anleitung 2026',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     'GiroCode mit der N26 App scannen: Senden öffnen, QR-Code-Scanner starten, Code scannen & Überweisung bestätigen. ✅ Für N26 Standard, Smart & Metal.',
   keywords: 'n26 girocode, n26 app girocode scannen, n26 qr code überweisung, sepa qr n26',
   alternates: {
-    canonical: 'https://www.girocodegenerator.com/n26',
+    canonical: `${SITE_URL}/n26`,
   },
 };
 
