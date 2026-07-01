@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ScannerClient, esTexts } from '../../scanner/ScannerClient';
+import { ScannerClient, esTexts } from '@/app/(de)/scanner/ScannerClient';
 
 export const metadata: Metadata = {
   title: 'Escáner GiroCode – Escanear y leer códigos QR',

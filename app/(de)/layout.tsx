@@ -12,23 +12,28 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'EPC QR Code Generator – Free GiroCode Creator | SEPA Payment QR',
+    default: 'GiroCode Generator 2026 – Kostenlos & Ohne Anmeldung',
     template: '%s | GiroCode Generator',
   },
   description:
-    '✅ Create EPC QR codes (GiroCode) for SEPA payments free – no registration, 100% privacy, runs in your browser. Enter IBAN → Generate QR → Done. Includes invoice PDF.',
+    '✅ GiroCode in 10 Sekunden erstellen – kostenlos, ohne Anmeldung, 100% Datenschutz. Deine Bankdaten verlassen nie deinen Browser. Jetzt SEPA-QR erstellen →',
   keywords: [
-    'EPC QR code generator',
-    'SEPA QR code generator',
-    'EPC QR code free',
-    'GiroCode generator',
-    'SEPA payment QR code',
+    'GiroCode Generator',
+    'GiroCode erstellen',
+    'SEPA QR Code Generator',
+    'EPC QR Code erstellen',
+    'QR Code Überweisung',
+    'GiroCode Rechnung',
+    'SEPA QR Code kostenlos',
+    'EPC Standard QR',
+    'Überweisung QR Code Generator',
+    'GiroCode online',
   ],
   authors: [{ name: 'Kaleb Jahnke' }],
   creator: 'Kaleb Jahnke',
   metadataBase: new URL('https://girocodegenerator.com'),
   alternates: {
-    canonical: 'https://girocodegenerator.com/en',
+    canonical: 'https://girocodegenerator.com',
     languages: {
       'x-default': 'https://girocodegenerator.com',
       'de': 'https://girocodegenerator.com',
@@ -56,21 +61,21 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'en_GB',
-    url: 'https://girocodegenerator.com/en',
+    locale: 'de_DE',
+    url: 'https://girocodegenerator.com',
     siteName: 'GiroCode Generator',
-    title: 'EPC QR Code Generator – Free SEPA Payment QR',
+    title: 'GiroCode Generator – SEPA-QR kostenlos erstellen',
     description:
-      'Create EPC QR codes (GiroCode) for SEPA payments free – no registration, 100% privacy, runs in your browser.',
+      'GiroCode (SEPA-QR / EPC) kostenlos online erstellen – 100% lokal im Browser, keine Datenweitergabe. Inkl. Rechnungs-PDF.',
     images: [
       { url: '/icons/icon-512x512.png', width: 512, height: 512, alt: 'GiroCode Generator Logo' },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'EPC QR Code Generator – Free SEPA Payment QR',
+    title: 'GiroCode Generator – SEPA-QR kostenlos erstellen',
     description:
-      'Create EPC QR codes (GiroCode) for SEPA payments free – 100% local, no data sharing.',
+      'GiroCode (SEPA-QR / EPC) kostenlos online erstellen – 100% lokal, keine Datenweitergabe.',
     images: ['/icons/icon-512x512.png'],
   },
   robots: {
@@ -95,15 +100,30 @@ const organizationJsonLd = {
     contactType: 'customer support',
     availableLanguage: ['German', 'English', 'French', 'Spanish', 'Italian'],
   },
+  founder: {
+    '@type': 'Person',
+    name: 'Kaleb Jahnke',
+    jobTitle: 'Developer',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Osterholz-Scharmbeck',
+      addressCountry: 'DE',
+    },
+  },
+  sameAs: [
+    'https://github.com/KalipoETH/girocode-generator',
+    'https://www.producthunt.com/products/girocode-generator',
+    'https://dev.to/kaleb_f43e9274b5779194b14',
+  ],
 };
 
-export default function EnRootLayout({
+export default function DeRootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="de" className="h-full">
       <head>
         <link rel="alternate" type="application/json+ld" href="/api/structured-data" />
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />

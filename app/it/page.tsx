@@ -1,17 +1,11 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { GiroCodeForm } from '../../components/GiroCodeForm';
-import { InvoiceForm } from '../../components/InvoiceForm';
 import { GeoStatsSection } from '../../components/GeoStatsSection';
-import { TimeSavingsCalculator } from '../../components/TimeSavingsCalculator';
 import { it } from '../../lib/translations/it';
 import NewsletterForm from '../../components/NewsletterForm';
+import { GeneratorSection } from '@/components/GeneratorSection';
 
 export default function HomePageIt() {
-  const [qrPngDataUrl, setQrPngDataUrl] = useState<string | null>(null);
-
   return (
     <main className="min-h-screen bg-[#0b0c10] text-slate-100">
       <script
@@ -97,16 +91,7 @@ export default function HomePageIt() {
       </div>
 
       <div className="mx-auto flex max-w-5xl flex-col gap-10 px-4 pb-12 pt-8">
-        <section id="generator" className="flex flex-col gap-6">
-          <GiroCodeForm locale="it" onQrDataUrlChange={setQrPngDataUrl} />
-          <div className="my-8 flex items-center gap-4">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
-            <span className="px-4 text-sm text-slate-500">Fattura PDF</span>
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
-          </div>
-          <InvoiceForm locale="it" qrPngDataUrl={qrPngDataUrl} />
-          <TimeSavingsCalculator locale="it" />
-        </section>
+        <GeneratorSection locale="it" dividerLabel="Fattura PDF" />
 
         <GeoStatsSection locale="it" />
 

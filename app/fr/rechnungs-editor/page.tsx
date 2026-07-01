@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { InvoiceEditor } from '../../rechnungs-editor/InvoiceEditor';
+import { InvoiceEditor } from '@/app/(de)/rechnungs-editor/InvoiceEditor';
 
 export const metadata: Metadata = {
   title: 'Éditeur de facture – Concevez votre facture | GiroCode Generator',

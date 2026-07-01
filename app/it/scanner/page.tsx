@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ScannerClient, itTexts } from '../../scanner/ScannerClient';
+import { ScannerClient, itTexts } from '@/app/(de)/scanner/ScannerClient';
 
 const faqSchema = {
   '@context': 'https://schema.org',

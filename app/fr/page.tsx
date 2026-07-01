@@ -1,17 +1,11 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { GiroCodeForm } from '../../components/GiroCodeForm';
-import { InvoiceForm } from '../../components/InvoiceForm';
 import { GeoStatsSection } from '../../components/GeoStatsSection';
-import { TimeSavingsCalculator } from '../../components/TimeSavingsCalculator';
 import { fr } from '../../lib/translations/fr';
 import NewsletterForm from '../../components/NewsletterForm';
+import { GeneratorSection } from '@/components/GeneratorSection';
 
 export default function HomePageFr() {
-  const [qrPngDataUrl, setQrPngDataUrl] = useState<string | null>(null);
-
   return (
     <main className="min-h-screen bg-[#0b0c10] text-slate-100">
       <script
@@ -152,38 +146,14 @@ export default function HomePageFr() {
       <div className="mx-auto flex max-w-5xl flex-col gap-10 px-4 pb-12">
 
         {/* Generator */}
-        <section id="generator" className="flex flex-col gap-6">
-          <div className="animate-card-in" style={{ animationDelay: '0.1s' }}>
-            <GiroCodeForm locale="fr" onQrDataUrlChange={setQrPngDataUrl} />
-          </div>
-          {/* FIX 5: Séparateur */}
-          <div className="flex items-center gap-4 my-8">
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
-            <span className="text-slate-500 text-sm px-4">Facture PDF</span>
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
-          </div>
-          <div className="animate-card-in" style={{ animationDelay: '0.2s' }}>
-            <InvoiceForm locale="fr" qrPngDataUrl={qrPngDataUrl} />
-          </div>
-          <TimeSavingsCalculator locale="fr" />
-        </section>
+        <GeneratorSection locale="fr" dividerLabel="Facture PDF" />
 
         {/* Bannière Éditeur de facture */}
         <section className="animate-card-in mt-6" style={{ animationDelay: '0.25s' }}>
           <a
             href="/fr/rechnungs-editor"
-            className="group flex flex-col gap-6 rounded-2xl p-8 transition-all duration-300 hover:shadow-[0_0_32px_rgba(34,197,94,0.15)] sm:flex-row sm:items-center sm:gap-8"
-            style={{
-              background: 'linear-gradient(135deg, #0f1a0f 0%, #121318 100%)',
-              border: '1px solid rgba(34,197,94,0.25)',
-              borderRadius: '16px',
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(34,197,94,0.6)';
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(34,197,94,0.25)';
-            }}
+            className="group flex flex-col gap-6 rounded-2xl border border-emerald-500/25 p-8 transition-all duration-300 hover:border-emerald-500/60 hover:shadow-[0_0_32px_rgba(34,197,94,0.15)] sm:flex-row sm:items-center sm:gap-8"
+            style={{ background: 'linear-gradient(135deg, #0f1a0f 0%, #121318 100%)' }}
           >
             {/* Côté gauche */}
             <div className="flex flex-1 flex-col gap-4">

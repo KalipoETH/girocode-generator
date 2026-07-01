@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ScannerClient, enTexts } from '../../scanner/ScannerClient';
+import { ScannerClient, enTexts } from '@/app/(de)/scanner/ScannerClient';
 
 export const metadata: Metadata = {
   title: 'GiroCode Scanner – Scan & Read QR Codes',

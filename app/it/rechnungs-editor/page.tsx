@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { InvoiceEditor } from '../../rechnungs-editor/InvoiceEditor';
+import { InvoiceEditor } from '@/app/(de)/rechnungs-editor/InvoiceEditor';
 
 const faqSchema = {
   '@context': 'https://schema.org',

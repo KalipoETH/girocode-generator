@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import BulkClient from '../../bulk/BulkClient';
+import BulkClient from '@/app/(de)/bulk/BulkClient';
 
 export const metadata: Metadata = {
   title: 'Générateur GiroCode en lot – Créez plusieurs QR codes à la fois',

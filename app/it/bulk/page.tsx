@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import BulkClient from '../../bulk/BulkClient';
+import BulkClient from '@/app/(de)/bulk/BulkClient';
 
 const faqSchema = {
   '@context': 'https://schema.org',
