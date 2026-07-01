@@ -31,8 +31,8 @@ function RechnungsgeneratorCTA() {
 export const metadata: Metadata = {
   title: 'GiroCode auf Rechnungen – Leitfaden & PDF-Generator',
   description:
-    'GiroCode auf Rechnungen einbinden: Pflichtangaben nach §14 UStG, optimale Platzierung und kostenloser PDF-Generator. ✅ Professionelle Rechnungen in 2 Minuten.',
-  keywords: 'GiroCode Rechnung, §14 UStG Pflichtangaben, Kleinunternehmerregelung, QR Code Rechnung, GiroCode PDF Rechnung',
+    'GiroCode auf Rechnungen einbinden: Pflichtangaben nach §14 UStG, E-Rechnungspflicht 2025-2028 (XRechnung/ZUGFeRD) und optimale Platzierung. ✅ In 2 Minuten fertig.',
+  keywords: 'GiroCode Rechnung, §14 UStG Pflichtangaben, Kleinunternehmerregelung, QR Code Rechnung, GiroCode PDF Rechnung, E-Rechnungspflicht, XRechnung, ZUGFeRD, E-Rechnung Kleinunternehmer',
   alternates: {
     canonical: `${SITE_URL}/wissen/rechnung`,
     languages: {
@@ -44,6 +44,19 @@ export const metadata: Metadata = {
       'it': `${SITE_URL}/it/wissen/rechnung`,
     },
   },
+};
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'GiroCode auf Rechnungen – Der komplette Leitfaden',
+  description:
+    'GiroCode auf Rechnungen einbinden: Pflichtangaben nach §14 UStG, E-Rechnungspflicht 2025-2028 (XRechnung/ZUGFeRD) und optimale Platzierung.',
+  datePublished: '2026-06-01',
+  dateModified: '2026-07-01',
+  author: { '@type': 'Person', name: 'Kaleb Jahnke' },
+  publisher: { '@type': 'Organization', name: 'GiroCode Generator', url: SITE_URL },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/wissen/rechnung` },
 };
 
 export default function WissenRechnungPage() {
@@ -62,7 +75,7 @@ export default function WissenRechnungPage() {
         { href: '/wissen/epc-standard', label: 'EPC-Standard erklärt' },
       ]}
       locale="de"
-      lastUpdated="2026-06-01"
+      lastUpdated="2026-07-01"
       shortAnswer="Ein GiroCode auf einer Rechnung ermöglicht dem Empfänger die Zahlung durch einfaches Scannen mit der Banking-App – IBAN, Betrag und Verwendungszweck werden automatisch übertragen. Der GiroCode sollte laut EPC-Empfehlung mindestens 2×2 cm groß und unten rechts auf der Rechnung platziert werden. Pflichtangaben auf deutschen Rechnungen nach §14 UStG sind: vollständiger Name und Anschrift, Steuernummer oder USt-ID, Ausstellungsdatum, Rechnungsnummer, Leistungsbeschreibung sowie Netto-, Steuer- und Bruttobetrag."
       statsData={[
         { value: '§14', label: 'UStG Pflichtangaben Grundlage' },
@@ -71,6 +84,10 @@ export default function WissenRechnungPage() {
         { value: '300 DPI', label: 'Empfohlene Druckauflösung' },
       ]}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <RechnungsgeneratorCTA />
 
       {/* ─── SECTION 1: Warum GiroCode ─── */}
@@ -211,6 +228,189 @@ export default function WissenRechnungPage() {
           Dieser Hinweis kann in der Fußzeile der Rechnung oder als eigener Absatz unterhalb
           des Rechnungsbetrags stehen. Der GiroCode wird daneben oder darunter platziert.
         </p>
+      </section>
+
+      {/* ─── SECTION: E-Rechnungspflicht 2025–2028 ─── */}
+      <section aria-labelledby="e-rechnungspflicht" className="mt-8">
+        <h2 id="e-rechnungspflicht">E-Rechnungspflicht 2025–2028: Was gilt für dich?</h2>
+
+        <div
+          className="not-prose mb-6 rounded-lg border-l-4 border-amber-500 bg-amber-950/20 px-4 py-3"
+          role="note"
+          aria-label="Hinweis: Keine Steuerberatung"
+        >
+          <p className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-amber-400">
+            ⚠️ Kein Ersatz für Steuerberatung
+          </p>
+          <p className="text-sm leading-relaxed text-slate-300">
+            Dieser Abschnitt fasst die gesetzlichen Grundlagen zur E-Rechnungspflicht
+            allgemeinverständlich zusammen und ersetzt keine individuelle Steuerberatung.
+            Prüfe deine persönliche Situation im Zweifel mit deinem Steuerberater oder
+            deinem Finanzamt.
+          </p>
+        </div>
+
+        <div
+          className="not-prose mb-6 rounded-lg border-l-4 border-[#22c55e] bg-[#133018]/50 px-4 py-3"
+          role="note"
+          aria-label="Kurze Antwort"
+        >
+          <p className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-[#22c55e]">
+            💡 Kurze Antwort
+          </p>
+          <p className="text-sm leading-relaxed text-slate-300">
+            Nein. Kleinunternehmer nach § 19 UStG sind dauerhaft von der Pflicht befreit,
+            E-Rechnungen auszustellen – das gilt auch nach 2028 weiter. Seit dem 1. Januar
+            2025 musst du E-Rechnungen aber empfangen können; ein normales E-Mail-Postfach
+            reicht dafür bereits aus.
+          </p>
+        </div>
+
+        <h3>Was ist eine E-Rechnung – und was nicht?</h3>
+        <p>
+          Eine E-Rechnung im gesetzlichen Sinn ist ein strukturiertes, maschinenlesbares
+          XML-Format. Zulässig sind insbesondere zwei Formate:
+        </p>
+        <ul>
+          <li>
+            <strong>XRechnung</strong> – ein reines XML-Format, das für Menschen nicht
+            direkt lesbar ist. Zum Prüfen und Anzeigen eignet sich z.&nbsp;B. der
+            kostenlose Viewer unter{' '}
+            <a
+              href="https://www.e-rechnung.elster.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sky-400 underline hover:text-sky-300"
+            >
+              e-rechnung.elster.de
+            </a>.
+          </li>
+          <li>
+            <strong>ZUGFeRD ab Version 2.0.1</strong> – ein Hybrid-Format aus normalem PDF
+            und eingebettetem XML-Datensatz. Die Profile <strong>MINIMUM</strong> und{' '}
+            <strong>BASIC-WL</strong> erfüllen die Anforderungen an eine E-Rechnung dagegen{' '}
+            <strong>nicht</strong>. Weichen PDF-Ansicht und XML-Datensatz voneinander ab,
+            ist seit 2025 der <strong>XML-Teil rechtlich maßgebend</strong>.
+          </li>
+        </ul>
+        <p>
+          Wichtig für die Praxis: Eine <strong>reine PDF-Rechnung per E-Mail gilt seit 2025
+          nicht mehr als E-Rechnung</strong>, sondern rechtlich als „sonstige Rechnung".
+          Andere elektronische Formate wie ein einfaches PDF dürfen bis Ende 2026 weiterhin
+          verschickt werden – aber nur mit Zustimmung des Empfängers. Auch die klassische
+          Papierrechnung bleibt bis Ende 2026 für alle erlaubt.
+        </p>
+
+        <h3>Zeitplan im Überblick</h3>
+        <div className="not-prose overflow-x-auto">
+          <table className="w-full min-w-[480px] border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-[#1f2431] text-left text-slate-300">
+                <th className="py-3 pr-4 font-semibold">Datum</th>
+                <th className="py-3 font-semibold">Was gilt</th>
+              </tr>
+            </thead>
+            <tbody className="text-slate-400">
+              <tr className="border-b border-[#1f2431]">
+                <td className="py-3 pr-4 font-medium text-slate-300">seit 1.1.2025</td>
+                <td className="py-3">
+                  Alle Unternehmen – auch Kleinunternehmer – müssen E-Rechnungen{' '}
+                  <strong>empfangen</strong> können. Ein E-Mail-Postfach genügt, keine
+                  Ausnahme, keine Übergangsfrist. Ausstellen ist freiwillig möglich.
+                </td>
+              </tr>
+              <tr className="border-b border-[#1f2431]">
+                <td className="py-3 pr-4 font-medium text-slate-300">bis 31.12.2026</td>
+                <td className="py-3">
+                  Papierrechnungen bleiben für alle erlaubt. Andere E-Formate (z.&nbsp;B.
+                  einfaches PDF) nur mit Zustimmung des Empfängers.
+                </td>
+              </tr>
+              <tr className="border-b border-[#1f2431]">
+                <td className="py-3 pr-4 font-medium text-slate-300">ab 1.1.2027</td>
+                <td className="py-3">
+                  Pflicht zur <strong>Ausstellung</strong> von E-Rechnungen für
+                  Unternehmen mit einem Vorjahresumsatz über <strong>800.000 €</strong>.
+                </td>
+              </tr>
+              <tr>
+                <td className="py-3 pr-4 font-medium text-slate-300">ab 1.1.2028</td>
+                <td className="py-3">
+                  Pflicht zur Ausstellung für <strong>alle Unternehmen</strong> im
+                  inländischen B2B-Geschäft.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Kleinunternehmer: dauerhafte Ausnahme bei der Ausstellung</h3>
+        <p>
+          Kleinunternehmer nach <strong>§ 19 UStG</strong> (in Verbindung mit{' '}
+          <strong>§ 34a UStDV</strong>) sind von der Pflicht zur <strong>Ausstellung</strong>{' '}
+          von E-Rechnungen dauerhaft befreit – daran ändert sich auch über 2028 hinaus
+          nichts. Die Pflicht, E-Rechnungen <strong>empfangen</strong> zu können, gilt für
+          Kleinunternehmer jedoch genauso wie für alle anderen Unternehmen bereits seit
+          dem 1. Januar 2025.
+        </p>
+
+        <h3>Weitere Ausnahmen von der Ausstellungspflicht</h3>
+        <ul>
+          <li>Kleinbetragsrechnungen bis 250 €</li>
+          <li>Bestimmte steuerfreie Leistungen</li>
+          <li>Rechnungen an Privatpersonen (B2C)</li>
+        </ul>
+
+        <h3>Aufbewahrung</h3>
+        <p>
+          E-Rechnungen unterliegen wie andere Rechnungen der gesetzlichen
+          Aufbewahrungsfrist von in der Regel <strong>8 Jahren</strong>. Der strukturierte
+          Teil muss dabei im <strong>Originalformat</strong> aufbewahrt werden – ein reiner
+          PDF-Ausdruck genügt nicht.
+        </p>
+
+        <h3>Rechtsgrundlage &amp; Quelle</h3>
+        <p>
+          Grundlage ist das <strong>Wachstumschancengesetz</strong> vom 27.03.2024, das{' '}
+          <strong>§ 14 UStG</strong> entsprechend geändert hat, konkretisiert durch das{' '}
+          <strong>BMF-Schreiben vom 15.10.2024</strong>. Eine ausführliche
+          Frage-Antwort-Übersicht stellt das Bundesministerium der Finanzen bereit:{' '}
+          <a
+            href="https://www.bundesfinanzministerium.de/Content/DE/FAQ/e-rechnung.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sky-400 underline hover:text-sky-300"
+          >
+            BMF – FAQ zur E-Rechnung
+          </a>.
+        </p>
+
+        <h3>Der GiroCode-Winkel: Zahlungs-QR-Code trifft E-Rechnung</h3>
+        <p>
+          Wichtig zu verstehen: Der <strong>GiroCode ist ein Zahlungs-QR-Code, kein
+          Rechnungsformat</strong>. Er ersetzt die E-Rechnung nicht – er ergänzt sie:
+        </p>
+        <ul>
+          <li>
+            Bei <strong>ZUGFeRD</strong> ist die Rechnung ein Hybrid aus sichtbarem PDF und
+            eingebettetem XML-Datensatz. Der sichtbare PDF-Teil kann weiterhin einen
+            GiroCode enthalten – so bleibt die bequeme Zahlung per Banking-App-Scan auch
+            bei einer vollwertigen E-Rechnung möglich.
+          </li>
+          <li>
+            <strong>Kleinunternehmer</strong>, die von der Ausstellungspflicht befreit
+            sind, können weiterhin ganz normale PDF-Rechnungen mit GiroCode verschicken –
+            für sie ändert sich an ihrem gewohnten Workflow nichts.
+          </li>
+          <li>
+            Unser{' '}
+            <Link href="/rechnungs-editor" className="text-sky-400 underline hover:text-sky-300">
+              Rechnungs-Editor
+            </Link>{' '}
+            bettet den GiroCode automatisch in die PDF-Rechnung ein – ideal für
+            Kleinunternehmer und alle, die (noch) keine XRechnung ausstellen müssen.
+          </li>
+        </ul>
       </section>
 
       {/* ─── SECTION 4: Platzierung ─── */}
