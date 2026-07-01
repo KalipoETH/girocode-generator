@@ -39,12 +39,6 @@ export default function HomePage() {
               '@type': 'Person',
               name: 'Kaleb Jahnke',
             },
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '4.8',
-              ratingCount: '127',
-              bestRating: '5',
-            },
           }),
         }}
       />
