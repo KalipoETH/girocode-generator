@@ -107,7 +107,16 @@ export default function StuzzaQrCodePage() {
             </p>
             <p className="text-sm leading-relaxed text-slate-300">
               Der Stuzza QR Code ist die österreichische Bezeichnung für den GiroCode
-              (EPC-QR-Code). Er basiert auf demselben EPC069-12 Standard und ist mit allen
+              (EPC-QR-Code). Er basiert auf demselben{' '}
+              <a
+                href="https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/quick-response-code-guidelines-enable-data-capture-initiation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-400 underline hover:text-emerald-300"
+              >
+                EPC069-12 Standard
+              </a>{' '}
+              und ist mit allen
               österreichischen Banking-Apps (George, ELBA, BAWAG etc.) kompatibel.
             </p>
           </div>

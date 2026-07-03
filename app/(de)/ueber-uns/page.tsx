@@ -93,7 +93,16 @@ export default function UeberUnsPage() {
           </h2>
           <p className="text-sm text-slate-300 md:text-base">
             girocodegenerator.com ist auf SEPA-QR-Codes nach EPC-Standard spezialisiert. Wir haben
-            den EPC069-12 Standard vollständig implementiert und werden von Freelancern, Vereinen
+            den{' '}
+            <a
+              href="https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/quick-response-code-guidelines-enable-data-capture-initiation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-400 underline hover:text-emerald-300"
+            >
+              EPC069-12 Standard
+            </a>{' '}
+            vollständig implementiert und werden von Freelancern, Vereinen
             und Unternehmen in Deutschland und Europa genutzt.
           </p>
           <div className="grid gap-4 md:grid-cols-2">

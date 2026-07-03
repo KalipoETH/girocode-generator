@@ -14,7 +14,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'SoftwareApplication',
+            '@type': 'WebApplication',
             name: 'GiroCode Generator',
             applicationCategory: 'FinanceApplication',
             applicationSubCategory: 'PaymentApplication',
@@ -383,7 +383,16 @@ export default function HomePage() {
           </h2>
           <p className="leading-relaxed">
             Ein <strong>GiroCode</strong> ist ein standardisierter QR-Code für SEPA-Überweisungen,
-            der vom European Payments Council (EPC) im Dokument EPC069-12 spezifiziert wurde. In
+            der vom European Payments Council (EPC) im Dokument{' '}
+            <a
+              href="https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/quick-response-code-guidelines-enable-data-capture-initiation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-400 underline hover:text-emerald-300"
+            >
+              EPC069-12
+            </a>{' '}
+            spezifiziert wurde. In
             Deutschland wird er seit 2018 flächendeckend von Kreditinstituten unterstützt. Der
             GiroCode enthält alle notwendigen Informationen für eine SEPA-Überweisung:
             Empfängername, IBAN, optionaler BIC, optionaler Betrag und optionaler

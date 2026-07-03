@@ -113,7 +113,16 @@ export default function BezahlcodePage() {
             <p className="text-sm leading-relaxed text-slate-300">
               Ein BezahlCode ist der frühere Name für den GiroCode (SEPA-QR-Code). Seit 2018 wurde
               der Begriff BezahlCode durch den offiziellen EPC-Begriff GiroCode ersetzt. Beide
-              Begriffe bezeichnen denselben Standard: EPC069-12 des European Payments Council.
+              Begriffe bezeichnen denselben Standard:{' '}
+              <a
+                href="https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/quick-response-code-guidelines-enable-data-capture-initiation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-400 underline hover:text-emerald-300"
+              >
+                EPC069-12
+              </a>{' '}
+              des European Payments Council.
             </p>
           </div>
 

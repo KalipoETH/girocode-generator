@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 const jsonLdSoftwareApplication = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'WebApplication',
   name: 'Rechnungsgenerator mit GiroCode',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web Browser',

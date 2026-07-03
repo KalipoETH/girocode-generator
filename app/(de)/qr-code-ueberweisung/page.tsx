@@ -118,8 +118,16 @@ export default function QrCodeUeberweisungPage() {
               💡 Kurze Antwort
             </p>
             <p className="text-sm leading-relaxed text-slate-300">
-              Ein QR Code für Überweisungen ist ein GiroCode (SEPA-QR-Code) nach EPC069-12 Standard.
-              Er enthält IBAN, Betrag und Verwendungszweck und ermöglicht es, durch einfaches
+              Ein QR Code für Überweisungen ist ein GiroCode (SEPA-QR-Code) nach{' '}
+              <a
+                href="https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/quick-response-code-guidelines-enable-data-capture-initiation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-400 underline hover:text-emerald-300"
+              >
+                EPC069-12
+              </a>{' '}
+              Standard. Er enthält IBAN, Betrag und Verwendungszweck und ermöglicht es, durch einfaches
               Scannen mit der Banking-App eine Überweisung auszulösen – in unter 30 Sekunden.
             </p>
           </div>

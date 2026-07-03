@@ -21,6 +21,19 @@ export const metadata: Metadata = {
   },
 };
 
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'EPC-Standard – Der technische Aufbau des GiroCodes',
+  description:
+    'Der EPC-Standard für GiroCodes: Payload-Aufbau Zeile für Zeile, Versionen 001/002, Fehlerkorrektur und JavaScript-Codebeispiel. Technisch präzise erklärt.',
+  datePublished: '2026-06-01',
+  dateModified: '2026-06-01',
+  author: { '@type': 'Person', name: 'Kaleb Jahnke' },
+  publisher: { '@type': 'Organization', name: 'GiroCode Generator', url: SITE_URL },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/wissen/epc-standard` },
+};
+
 export default function WissenEpcStandardPage() {
   return (
     <KnowledgeLayout
@@ -46,6 +59,10 @@ export default function WissenEpcStandardPage() {
         { value: '15%', label: 'Fehlerkorrektur Level M' },
       ]}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       {/* ─── SECTION 1: Was ist der EPC-Standard ─── */}
       <section aria-labelledby="was-ist-epc">
         <h2 id="was-ist-epc">Was ist der EPC-Standard?</h2>
@@ -100,7 +117,7 @@ export default function WissenEpcStandardPage() {
         <p>
           Weitere technische Details finden sich in der offiziellen EPC-Dokumentation:{' '}
           <a
-            href="https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/epc-qr-code-quick-response-code-guidelines-enabling-initiation"
+            href="https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/quick-response-code-guidelines-enable-data-capture-initiation"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sky-400 underline hover:text-sky-300"

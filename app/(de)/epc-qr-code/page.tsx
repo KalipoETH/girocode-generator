@@ -133,7 +133,16 @@ export default function EpcQrCodePage() {
             </p>
             <p className="text-sm leading-relaxed text-slate-300">
               Ein EPC QR Code (European Payments Council QR Code) ist die technische Bezeichnung für
-              den GiroCode. Der Standard EPC069-12 definiert den genauen Aufbau des Payloads: 11
+              den GiroCode. Der Standard{' '}
+              <a
+                href="https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/quick-response-code-guidelines-enable-data-capture-initiation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-400 underline hover:text-emerald-300"
+              >
+                EPC069-12
+              </a>{' '}
+              definiert den genauen Aufbau des Payloads: 11
               Zeilen mit Service Tag, Version, Encoding, SCT-Identifikation, BIC, Empfängername,
               IBAN, Betrag und Verwendungszweck.
             </p>

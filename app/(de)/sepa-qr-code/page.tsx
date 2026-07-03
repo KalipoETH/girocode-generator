@@ -125,7 +125,16 @@ export default function SepaQrCodePage() {
             </p>
             <p className="text-sm leading-relaxed text-slate-300">
               Ein SEPA QR Code (auch GiroCode oder EPC-QR-Code) ist ein standardisierter QR-Code
-              für SEPA-Überweisungen. Er folgt dem EPC069-12 Standard des European Payments Council
+              für SEPA-Überweisungen. Er folgt dem{' '}
+              <a
+                href="https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/quick-response-code-guidelines-enable-data-capture-initiation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-400 underline hover:text-emerald-300"
+              >
+                EPC069-12 Standard
+              </a>{' '}
+              des European Payments Council
               und ist mit allen deutschen und europäischen Banking-Apps kompatibel.
             </p>
           </div>

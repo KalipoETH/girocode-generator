@@ -36,7 +36,18 @@ export default function HomePageIt() {
             applicationCategory: 'FinanceApplication',
             operatingSystem: 'Web Browser',
             offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+            featureList: [
+              'Genera codici GiroCode / SEPA-QR / EPC',
+              'Validazione IBAN',
+              'Fattura PDF con codice QR incorporato',
+              '100% locale nel browser',
+              'Nessun salvataggio dei dati',
+            ],
             inLanguage: 'it',
+            author: {
+              '@type': 'Person',
+              name: 'Kaleb Jahnke',
+            },
           }),
         }}
       />

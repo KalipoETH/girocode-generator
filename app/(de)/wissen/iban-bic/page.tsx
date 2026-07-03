@@ -21,6 +21,19 @@ export const metadata: Metadata = {
   },
 };
 
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'IBAN & BIC – Alles für den GiroCode erklärt',
+  description:
+    'IBAN und BIC für den GiroCode: Ist der BIC Pflicht? Wie funktioniert die IBAN-Validierung (Mod-97)? Alle Formate erklärt mit Länder-Tabelle.',
+  datePublished: '2026-06-01',
+  dateModified: '2026-06-01',
+  author: { '@type': 'Person', name: 'Kaleb Jahnke' },
+  publisher: { '@type': 'Organization', name: 'GiroCode Generator', url: SITE_URL },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/wissen/iban-bic` },
+};
+
 export default function WissenIbanBicPage() {
   return (
     <KnowledgeLayout
@@ -46,6 +59,10 @@ export default function WissenIbanBicPage() {
         { value: '97', label: 'Modulo-Prüfzahl (Mod-97 Algorithmus)' },
       ]}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       {/* ─── SECTION 1: Was ist eine IBAN ─── */}
       <section aria-labelledby="was-ist-iban">
         <h2 id="was-ist-iban">Was ist eine IBAN?</h2>

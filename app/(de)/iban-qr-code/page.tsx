@@ -141,8 +141,16 @@ export default function IbanQrCodePage() {
             <h2>IBAN QR Code vs. einfacher QR Code</h2>
             <p>
               Viele erstellen einen QR Code, der nur die IBAN als Text enthält. Das funktioniert
-              nicht mit Banking-Apps – nur ein strukturierter GiroCode nach EPC069-12 wird als
-              Überweisungsauftrag erkannt.
+              nicht mit Banking-Apps – nur ein strukturierter GiroCode nach{' '}
+              <a
+                href="https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/quick-response-code-guidelines-enable-data-capture-initiation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-400 underline hover:text-sky-300"
+              >
+                EPC069-12
+              </a>{' '}
+              wird als Überweisungsauftrag erkannt.
             </p>
 
             <div className="not-prose my-6 overflow-x-auto rounded-lg border border-slate-700">

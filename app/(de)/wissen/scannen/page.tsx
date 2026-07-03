@@ -21,6 +21,19 @@ export const metadata: Metadata = {
   },
 };
 
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'GiroCode scannen – Die komplette Anleitung für iPhone & Android',
+  description:
+    'So scannst du einen GiroCode mit deiner Banking-App: Sparkasse, ING, DKB, Volksbank & mehr. Einfache Anleitung für iPhone und Android. ✅ In 30 Sekunden bezahlt.',
+  datePublished: '2026-06-01',
+  dateModified: '2026-06-10',
+  author: { '@type': 'Person', name: 'Kaleb Jahnke' },
+  publisher: { '@type': 'Organization', name: 'GiroCode Generator', url: SITE_URL },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/wissen/scannen` },
+};
+
 export default function WissenScannenPage() {
   return (
     <KnowledgeLayout
@@ -38,7 +51,7 @@ export default function WissenScannenPage() {
         { href: '/wissen/epc-standard', label: 'EPC-Standard erklärt' },
       ]}
       locale="de"
-      lastUpdated="2026-06-01"
+      lastUpdated="2026-06-10"
       shortAnswer="Um einen GiroCode zu scannen: Banking-App öffnen → 'Überweisung' antippen → QR-Scanner Symbol tippen → Code scannen → Daten prüfen (IBAN, Betrag, Zweck) → TAN eingeben → bestätigen. Der gesamte Prozess dauert unter 30 Sekunden. Funktioniert nicht? Helligkeit erhöhen, Abstand auf 15-30 cm anpassen oder den Code größer ausdrucken (mindestens 2×2 cm)."
       statsData={[
         { value: '15–30 cm', label: 'Optimaler Scan-Abstand' },
@@ -47,6 +60,10 @@ export default function WissenScannenPage() {
         { value: '30 Sek.', label: 'Gesamtdauer Scan bis Zahlung' },
       ]}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       {/* ─── CTA: Scanner-Tool ─── */}
       <section className="not-prose mb-8">
         <Link

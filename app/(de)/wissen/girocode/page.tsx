@@ -21,6 +21,19 @@ export const metadata: Metadata = {
   },
 };
 
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Was ist ein GiroCode? – Alles was du wissen musst',
+  description:
+    'GiroCode = SEPA-QR-Code für Überweisungen. Was er ist, wie er funktioniert und wie du ihn kostenlos in Sekunden erstellst. Mit Rechnungs-PDF. Kein Account nötig.',
+  datePublished: '2026-06-01',
+  dateModified: '2026-06-30',
+  author: { '@type': 'Person', name: 'Kaleb Jahnke' },
+  publisher: { '@type': 'Organization', name: 'GiroCode Generator', url: SITE_URL },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/wissen/girocode` },
+};
+
 export default function WissenGirocodePage() {
   return (
     <KnowledgeLayout
@@ -37,7 +50,7 @@ export default function WissenGirocodePage() {
         { href: '/wissen/scannen', label: 'GiroCode scannen – Anleitung' },
       ]}
       locale="de"
-      lastUpdated="2026-06-01"
+      lastUpdated="2026-06-30"
       shortAnswer="Ein GiroCode ist ein standardisierter QR-Code für SEPA-Überweisungen nach dem EPC069-12 Standard des European Payments Council. Er enthält alle notwendigen Zahlungsdaten – IBAN, Betrag und Verwendungszweck – und ermöglicht es Banking-App-Nutzern, eine Überweisung durch einfaches Scannen auszulösen. Freelancer, Vereine und Unternehmen nutzen GiroCodes auf Rechnungen um schneller bezahlt zu werden und Tippfehler zu vermeiden."
       statsData={[
         { value: '2018', label: 'Einführung in Deutschland' },
@@ -46,6 +59,10 @@ export default function WissenGirocodePage() {
         { value: 'EPC069-12', label: 'Offizieller Standard-Dokumentname' },
       ]}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       {/* ─── SECTION 1: Was ist ein GiroCode ─── */}
       <section aria-labelledby="definition">
         <h2 id="definition">Was ist ein GiroCode?</h2>
@@ -87,8 +104,15 @@ export default function WissenGirocodePage() {
           dem zentralen Entscheidungsgremium des europäischen Bankensektors für Zahlungsstandards.
           Das EPC definiert im Rahmen des SEPA-Regelwerks, wie Überweisungen, Lastschriften und
           Zahlungsinformationen technisch formatiert werden müssen. Das spezifische Dokument für
-          den GiroCode-Standard ist das „EPC Quick Response Code – Guidelines to Enable the
-          Data Capture for the Initiation of a SCT" (kurz: EPC069).
+          den GiroCode-Standard ist das{' '}
+          <a
+            href="https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/quick-response-code-guidelines-enable-data-capture-initiation"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald-400 underline hover:text-emerald-300"
+          >
+            „EPC Quick Response Code – Guidelines to Enable the Data Capture for the Initiation of a SCT" (EPC069-12)
+          </a>.
         </p>
         <p>
           In Deutschland hat der <strong>Zentraler Kreditausschuss (ZKA)</strong>, heute bekannt

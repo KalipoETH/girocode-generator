@@ -57,6 +57,7 @@ const i18n = {
     ctaLabel: 'Jetzt GiroCode erstellen',
     ctaHref: '/',
     relatedTitle: 'Weitere Artikel',
+    bylinePrefix: 'Von Kaleb Jahnke, zuletzt aktualisiert am',
     disclaimer:
       '* Affiliate-Hinweis: Mit einem * gekennzeichnete Links sind Affiliate-Links. Wenn du über diese Links kaufst, erhalten wir eine kleine Provision – für dich entstehen keine Mehrkosten.',
   },
@@ -87,6 +88,7 @@ const i18n = {
     ctaLabel: 'Create GiroCode now',
     ctaHref: '/en',
     relatedTitle: 'More articles',
+    bylinePrefix: 'By Kaleb Jahnke, last updated on',
     disclaimer:
       '* Affiliate disclosure: Links marked with * are affiliate links. If you purchase through these links, we receive a small commission – at no extra cost to you.',
   },
@@ -117,6 +119,7 @@ const i18n = {
     ctaLabel: 'Créer un GiroCode maintenant',
     ctaHref: '/fr',
     relatedTitle: 'Voir aussi',
+    bylinePrefix: 'Par Kaleb Jahnke, dernière mise à jour le',
     disclaimer:
       "* Divulgation affilié : Les liens marqués d'un * sont des liens affiliés. Si vous achetez via ces liens, nous percevons une petite commission – sans frais supplémentaires pour vous.",
   },
@@ -147,6 +150,7 @@ const i18n = {
     ctaLabel: 'Crear un GiroCode ahora',
     ctaHref: '/es',
     relatedTitle: 'Artículos relacionados',
+    bylinePrefix: 'Por Kaleb Jahnke, última actualización el',
     disclaimer:
       '* Divulgación: Los enlaces marcados con * son enlaces de afiliado. Si compras a través de estos enlaces, recibimos una pequeña comisión sin coste adicional para ti.',
   },
@@ -177,6 +181,7 @@ const i18n = {
     ctaLabel: 'Crea un GiroCode ora',
     ctaHref: '/it',
     relatedTitle: 'Articoli correlati',
+    bylinePrefix: 'Di Kaleb Jahnke, ultimo aggiornamento il',
     disclaimer:
       '* Divulgazione: I link contrassegnati con * sono link affiliati. Se acquisti tramite questi link, riceviamo una piccola commissione – senza costi aggiuntivi per te.',
   },
@@ -264,17 +269,16 @@ export function KnowledgeLayout({
               {lead}
             </p>
             {lastUpdated && (
-              <time
-                dateTime={lastUpdated}
-                className="mt-2 block text-xs text-slate-500"
-              >
-                Zuletzt aktualisiert:{' '}
-                {new Date(lastUpdated).toLocaleDateString('de-DE', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </time>
+              <p className="mt-2 text-xs text-slate-500">
+                {t.bylinePrefix}{' '}
+                <time dateTime={lastUpdated}>
+                  {new Date(lastUpdated).toLocaleDateString('de-DE', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </time>
+              </p>
             )}
           </div>
         </header>

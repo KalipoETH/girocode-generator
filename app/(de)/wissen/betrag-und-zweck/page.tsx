@@ -21,6 +21,19 @@ export const metadata: Metadata = {
   },
 };
 
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Betrag & Verwendungszweck im GiroCode richtig eingeben',
+  description:
+    'Betrag optional oder Pflicht? Verwendungszweck max. 140 Zeichen: Was rein soll und was nicht. Best Practices für Freelancer, Vereine und Unternehmen.',
+  datePublished: '2026-06-01',
+  dateModified: '2026-06-01',
+  author: { '@type': 'Person', name: 'Kaleb Jahnke' },
+  publisher: { '@type': 'Organization', name: 'GiroCode Generator', url: SITE_URL },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/wissen/betrag-und-zweck` },
+};
+
 export default function WissenBetragUndZweckPage() {
   return (
     <KnowledgeLayout
@@ -46,6 +59,10 @@ export default function WissenBetragUndZweckPage() {
         { value: '2', label: 'Dezimalstellen beim Betrag (z.B. 49.90)' },
       ]}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       {/* ─── SECTION 1: Betrag ─── */}
       <section aria-labelledby="betrag-format">
         <h2 id="betrag-format">Der Betrag im GiroCode</h2>

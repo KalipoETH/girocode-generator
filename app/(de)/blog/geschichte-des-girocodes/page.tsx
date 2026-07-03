@@ -85,7 +85,16 @@ export default function GeschichteDesGirocodesPage() {
               Betrag und Verwendungszweck.
             </p>
             <p className="mt-3">
-              Dieser Standard – heute als EPC069-12 bekannt – ist seit Version 2.1 (2019) in seiner
+              Dieser Standard – heute als{' '}
+              <a
+                href="https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/quick-response-code-guidelines-enable-data-capture-initiation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-400 underline hover:text-sky-300"
+              >
+                EPC069-12
+              </a>{' '}
+              bekannt – ist seit Version 2.1 (2019) in seiner
               aktuellen Form gültig und seitdem stabil. Das war ein bewusster Entscheid: Ein
               dauerhaft gültiger Standard gibt Banken und Softwareherstellern Planungssicherheit.
             </p>
