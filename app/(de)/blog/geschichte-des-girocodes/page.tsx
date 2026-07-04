@@ -33,8 +33,12 @@ export default function GeschichteDesGirocodesPage() {
 
           </h1>
           <p className="text-base leading-relaxed text-slate-400 md:text-lg">
-            Der GiroCode erscheint heute selbstverständlich auf Rechnungen und Zahlscheinen.
-            Doch sein Weg von der Idee zur flächendeckenden Nutzung dauerte über ein Jahrzehnt.
+            Der GiroCode entstand aus dem 2012 vom European Payments Council veröffentlichten
+            EPC-QR-Standard und wurde in Deutschland zwischen 2016 und 2018 von der Deutschen
+            Kreditwirtschaft als „GiroCode" eingeführt. Damit lässt sich eine SEPA-Überweisung
+            per QR-Scan auslösen, ohne IBAN und Betrag abzutippen. Von der ersten Idee bis zur
+            flächendeckenden Nutzung vergingen jedoch über zehn Jahre – diese Entwicklung
+            zeichnet der folgende Artikel nach.
           </p>
         </header>
 

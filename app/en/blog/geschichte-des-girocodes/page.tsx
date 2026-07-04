@@ -37,8 +37,12 @@ export default function GeschichteEnPage() {
             The History of GiroCode – From Paper to QR Scan
           </h1>
           <p className="text-base leading-relaxed text-slate-400 md:text-lg">
-            The GiroCode appears on invoices and payment slips as a matter of course today.
-            But its journey from idea to widespread use took over a decade.
+            The GiroCode grew out of the EPC QR standard published by the European Payments
+            Council in 2012 and was rolled out in Germany as the GiroCode by the German Banking
+            Industry Committee between 2016 and 2018. It lets you trigger a SEPA transfer by
+            scanning a QR code, with no need to type in the IBAN or amount. From the first idea
+            to widespread use, however, more than a decade passed – and this article traces that
+            journey.
           </p>
         </header>
 

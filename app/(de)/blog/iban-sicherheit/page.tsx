@@ -31,8 +31,12 @@ export default function IbanSicherheitPage() {
             IBAN-Sicherheit: Worauf man bei Überweisungen achten muss
           </h1>
           <p className="text-base leading-relaxed text-slate-400 md:text-lg">
-            Viele Menschen sind unsicher, ob sie ihre IBAN an andere weitergeben sollten. Was ist
-            tatsächlich möglich, wenn jemand deine IBAN kennt – und was nicht?
+            Die IBAN allein ist unkritisch: Wer sie kennt, kann dir Geld überweisen, aber nicht
+            ohne Weiteres Geld von deinem Konto abbuchen – dafür braucht es zusätzlich ein von
+            dir erteiltes SEPA-Lastschriftmandat. Du kannst deine IBAN also bedenkenlos auf
+            Rechnungen, Websites oder in einem GiroCode angeben. Worauf du dennoch achten
+            solltest – etwa bei unberechtigten Lastschriften und Phishing – erklärt dieser
+            Artikel.
           </p>
         </header>
 

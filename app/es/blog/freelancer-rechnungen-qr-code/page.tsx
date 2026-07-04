@@ -37,8 +37,12 @@ export default function FreelancerFacturasEsPage() {
             Facturas como autónomo: GiroCode para pagos más rápidos
           </h1>
           <p className="text-base leading-relaxed text-slate-400 md:text-lg">
-            Plazos de pago demasiado largos, transferencias olvidadas, IBAN mal introducido –
-            los autónomos conocen bien el problema. Un GiroCode en la factura puede cambiarlo todo.
+            Un GiroCode en la factura reúne todos los datos de pago – beneficiario, IBAN, importe
+            y concepto – en un único código QR. El cliente lo escanea con su app bancaria y
+            confirma la transferencia con un clic, sin teclear nada. Para los autónomos esto
+            significa menos errores de tecleo, menos aplazamientos y cobros notablemente más
+            rápidos. Cómo crear el código e integrarlo en tus facturas se explica en este
+            artículo.
           </p>
         </header>
 
@@ -51,8 +55,8 @@ export default function FreelancerFacturasEsPage() {
               ¿Por qué los autónomos esperan demasiado sus pagos?
             </h2>
             <p>
-              Los trabajadores autónomos esperan de media más de 30 días para el cobro de una
-              factura, a menudo superando los plazos acordados. La razón rara vez es mala fe:
+              Los freelances y autónomos en Alemania conocen bien el problema: las facturas a menudo
+              se pagan bastante después de los plazos acordados. La razón rara vez es mala fe:
               los clientes abren la factura, tienen dificultades para introducir correctamente
               el IBAN, o aplazan la transferencia porque cambiar a su aplicación bancaria les
               parece demasiado engorroso.

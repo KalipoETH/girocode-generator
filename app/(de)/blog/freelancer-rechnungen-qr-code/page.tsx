@@ -32,8 +32,12 @@ export default function FreelancerRechnungenPage() {
             Rechnungen als Freelancer: GiroCode für schnellere Zahlungen
           </h1>
           <p className="text-base leading-relaxed text-slate-400 md:text-lg">
-            Zu lange Zahlungsziele, vergessene Überweisungen, falsch eingetippte IBANs – Freelancer
-            kennen das Problem. Der GiroCode auf der Rechnung kann das ändern.
+            Ein GiroCode auf der Rechnung enthält alle Zahlungsdaten – Empfänger, IBAN, Betrag
+            und Verwendungszweck – in einem QR-Code. Der Kunde scannt ihn mit seiner Banking-App
+            und bestätigt die Überweisung mit einem Klick, ohne etwas abzutippen. Für Freelancer
+            bedeutet das weniger Tippfehler, weniger Aufschub und spürbar schnellere
+            Zahlungseingänge. Wie du den Code erstellst und in deine Rechnungen einbindest, zeigt
+            dieser Artikel.
           </p>
         </header>
 
@@ -46,9 +50,8 @@ export default function FreelancerRechnungenPage() {
               Warum Freelancer zu lange auf Zahlungen warten
             </h2>
             <p>
-              Laut einer Studie des Deutschen Instituts für Wirtschaftsforschung warten Selbstständige
-              in Deutschland durchschnittlich 32 Tage auf die Begleichung einer Rechnung – bei einem
-              gesetzlichen Zahlungsziel von in der Regel 30 Tagen. Das ist kein Zufall: Viele Kunden
+              Freelancer und Selbstständige in Deutschland kennen das Problem: Rechnungen werden oft
+              erst deutlich nach dem vereinbarten Zahlungsziel beglichen. Das ist kein Zufall: Viele Kunden
               öffnen die Rechnung, tippen die IBAN falsch ab oder schieben die Überweisung auf, weil
               das Banking-App-Wechseln zu umständlich erscheint.
             </p>

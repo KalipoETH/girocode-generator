@@ -38,8 +38,11 @@ export default function IbanSicurezzaItPage() {
             Sicurezza IBAN: cosa sapere sui bonifici
           </h1>
           <p className="text-base leading-relaxed text-slate-400 md:text-lg">
-            Molte persone esitano prima di condividere il proprio IBAN. Cosa può fare
-            realmente qualcuno con il tuo IBAN – e cosa non può fare?
+            L&apos;IBAN da solo non è sensibile: chi lo conosce può inviarti denaro, ma non può
+            addebitare denaro dal tuo conto senza altro – serve in più un mandato di addebito
+            SEPA che tu abbia autorizzato. Puoi quindi indicare il tuo IBAN senza problemi su
+            fatture, siti web o in un GiroCode. A cosa dovresti comunque fare attenzione – come
+            addebiti non autorizzati e phishing – lo spiega questo articolo.
           </p>
         </header>
 

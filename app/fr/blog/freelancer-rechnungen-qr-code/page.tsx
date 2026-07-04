@@ -37,8 +37,12 @@ export default function FreelancerFacturesFrPage() {
             Factures en freelance : GiroCode pour des paiements plus rapides
           </h1>
           <p className="text-base leading-relaxed text-slate-400 md:text-lg">
-            Délais de paiement trop longs, virements oubliés, IBAN mal saisi – les freelances
-            connaissent bien le problème. Un GiroCode sur la facture peut tout changer.
+            Un GiroCode sur la facture regroupe toutes les données de paiement – bénéficiaire,
+            IBAN, montant et référence – dans un seul code QR. Le client le scanne avec son
+            application bancaire et confirme le virement en un clic, sans rien saisir. Pour les
+            freelances, cela signifie moins de fautes de frappe, moins de reports et des
+            paiements nettement plus rapides. Comment créer ce code et l&apos;intégrer à vos
+            factures est expliqué dans cet article.
           </p>
         </header>
 
@@ -51,8 +55,8 @@ export default function FreelancerFacturesFrPage() {
               Pourquoi les freelances attendent-ils trop longtemps leurs paiements ?
             </h2>
             <p>
-              Les travailleurs indépendants attendent en moyenne plus de 30 jours le règlement
-              d&apos;une facture – souvent au-delà des délais convenus. La raison est rarement
+              Les freelances et les indépendants en Allemagne connaissent bien le problème : les
+              factures sont souvent réglées bien après les délais de paiement convenus. La raison est rarement
               la mauvaise volonté : les clients ouvrent la facture, ont du mal à saisir
               correctement l&apos;IBAN, ou reportent le virement parce que passer sur leur
               application bancaire leur semble trop fastidieux.

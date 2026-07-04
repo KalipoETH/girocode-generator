@@ -37,8 +37,12 @@ export default function IbanSeguridadEsPage() {
             Seguridad IBAN: lo que necesitas saber sobre las transferencias
           </h1>
           <p className="text-base leading-relaxed text-slate-400 md:text-lg">
-            Muchas personas dudan antes de compartir su IBAN. ¿Qué puede hacer realmente
-            alguien con tu IBAN – y qué no puede hacer?
+            El IBAN por sí solo no es sensible: quien lo conozca puede enviarte dinero, pero no
+            puede sin más cargar dinero de tu cuenta – para ello se necesita además una orden de
+            domiciliación SEPA que hayas autorizado. Por tanto, puedes indicar tu IBAN sin
+            preocupación en facturas, sitios web o en un GiroCode. A qué debes prestar atención
+            de todos modos – como domiciliaciones no autorizadas y phishing – lo explica este
+            artículo.
           </p>
         </header>
 

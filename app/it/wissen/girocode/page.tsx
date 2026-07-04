@@ -77,7 +77,7 @@ export default function WissenGirocodePageIt() {
         breadcrumbCurrent="Cos'è un GiroCode?"
         badge="Basi · GiroCode / SEPA-QR"
         title="Cos'è un GiroCode? – Tutto quello che devi sapere"
-        lead="Un GiroCode è un QR code standardizzato per i bonifici SEPA secondo lo standard EPC069-12 del European Payments Council. Contiene tutti i dati necessari per un bonifico – IBAN, importo e causale."
+        lead="Farsi pagare le fatture senza errori di battitura, raccogliere donazioni con una scansione e non dover più dettare un IBAN – ecco a cosa serve il GiroCode. Questa guida spiega cosa c'è dietro, chi lo usa e come crearne uno in pochi secondi."
         locale="it"
         lastUpdated="2026-06-01"
         shortAnswer="Un GiroCode è un QR code standardizzato per i bonifici SEPA secondo lo standard EPC069-12 del European Payments Council. Contiene tutti i dati necessari per un bonifico – IBAN, importo e causale – e permette agli utenti di app bancarie di avviare un pagamento scansionando semplicemente il codice. Freelance, associazioni e aziende usano i GiroCodes sulle fatture per essere pagati più velocemente ed eliminare gli errori di digitazione."

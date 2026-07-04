@@ -38,8 +38,12 @@ export default function FreelancerFattureItPage() {
             Fatture da freelance: GiroCode per pagamenti più veloci
           </h1>
           <p className="text-base leading-relaxed text-slate-400 md:text-lg">
-            Termini di pagamento troppo lunghi, bonifici dimenticati, IBAN digitato male –
-            i freelance conoscono bene il problema. Un GiroCode sulla fattura può cambiare tutto.
+            Un GiroCode sulla fattura racchiude tutti i dati di pagamento – beneficiario, IBAN,
+            importo e causale – in un unico codice QR. Il cliente lo scansiona con la sua app
+            bancaria e conferma il bonifico con un clic, senza digitare nulla. Per i freelance
+            questo significa meno errori di battitura, meno rinvii e incassi decisamente più
+            rapidi. Come creare il codice e integrarlo nelle tue fatture è spiegato in questo
+            articolo.
           </p>
         </header>
 
@@ -52,8 +56,8 @@ export default function FreelancerFattureItPage() {
               Perché i freelance aspettano troppo i pagamenti
             </h2>
             <p>
-              In Italia, i lavoratori autonomi e i freelance attendono in media più di 30 giorni
-              per l&apos;incasso di una fattura – spesso superando i termini concordati. La ragione
+              I freelance e i lavoratori autonomi in Italia conoscono bene il problema: le fatture
+              vengono spesso saldate ben oltre i termini di pagamento concordati. La ragione
               raramente è la cattiva volontà: i clienti aprono la fattura, faticano a inserire
               correttamente l&apos;IBAN nell&apos;app bancaria, o rimandano il bonifico perché passare
               all&apos;applicazione della banca gli sembra troppo scomodo.

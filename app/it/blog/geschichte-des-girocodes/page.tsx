@@ -38,9 +38,12 @@ export default function StoriaGiroCodeItPage() {
             La storia del GiroCode – Dal foglio allo scanner QR
           </h1>
           <p className="text-base leading-relaxed text-slate-400 md:text-lg">
-            Il GiroCode appare oggi come qualcosa di naturale su fatture e documenti di pagamento.
-            Tuttavia, il suo percorso dall&apos;idea alla diffusione di massa ha richiesto più di
-            un decennio.
+            Il GiroCode è nato dallo standard QR dell&apos;EPC pubblicato dal European Payments
+            Council nel 2012 ed è stato introdotto in Germania come «GiroCode» dalla Deutsche
+            Kreditwirtschaft tra il 2016 e il 2018. Permette di avviare un bonifico SEPA
+            scansionando un codice QR, senza digitare IBAN e importo. Dalla prima idea alla
+            diffusione di massa è però passato più di un decennio: un percorso che questo
+            articolo ripercorre.
           </p>
         </header>
 

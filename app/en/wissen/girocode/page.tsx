@@ -26,7 +26,7 @@ export default function WissenGirocodePageEn() {
       breadcrumbCurrent="What is a GiroCode?"
       badge="Basics · GiroCode / SEPA-QR"
       title="What is a GiroCode? – Everything You Need to Know"
-      lead="A GiroCode is a standardized QR code for SEPA bank transfers following the EPC069-12 standard by the European Payments Council. It contains all payment data – IBAN, amount, and payment reference – allowing banking app users to initiate a transfer by simply scanning the code. Freelancers, associations, and businesses use GiroCodes on invoices to get paid faster and eliminate manual entry errors."
+      lead="Get invoices paid without typos, collect donations with a scan, and never dictate an IBAN again – that's what the GiroCode is for. This guide explains what's behind it, who uses it, and how to create your own in seconds."
       relatedArticles={[
         { href: '/en/wissen/epc-standard', label: 'EPC Standard & SEPA-QR – Technical Structure Explained' },
         { href: '/en/wissen/iban-bic', label: 'IBAN & BIC for GiroCode – Complete Guide' },

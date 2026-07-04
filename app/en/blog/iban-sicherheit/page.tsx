@@ -37,8 +37,11 @@ export default function IbanSecurityEnPage() {
             IBAN Security: What You Need to Know About Transfers
           </h1>
           <p className="text-base leading-relaxed text-slate-400 md:text-lg">
-            Many people are uncertain about sharing their IBAN. What is actually possible
-            if someone knows your IBAN – and what is not?
+            Your IBAN alone is not sensitive: anyone who has it can send you money, but they
+            cannot simply withdraw money from your account – that additionally requires a SEPA
+            direct debit mandate you have granted. So you can share your IBAN on invoices,
+            websites or in a GiroCode without worry. What you should still watch out for – such
+            as unauthorized direct debits and phishing – is explained in this article.
           </p>
         </header>
 

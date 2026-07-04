@@ -37,8 +37,12 @@ export default function IbanSecuriteFrPage() {
             Sécurité IBAN : ce que vous devez savoir sur les virements
           </h1>
           <p className="text-base leading-relaxed text-slate-400 md:text-lg">
-            De nombreuses personnes hésitent à communiquer leur IBAN. Que peut-on réellement
-            faire avec votre IBAN – et que ne peut-on pas faire ?
+            L&apos;IBAN seul n&apos;est pas sensible : celui qui le connaît peut vous envoyer de
+            l&apos;argent, mais il ne peut pas prélever de l&apos;argent sur votre compte sans
+            plus – cela nécessite en plus un mandat de prélèvement SEPA que vous avez signé. Vous
+            pouvez donc communiquer votre IBAN sans crainte sur des factures, des sites web ou
+            dans un GiroCode. Ce à quoi vous devez néanmoins faire attention – prélèvements non
+            autorisés, hameçonnage – est expliqué dans cet article.
           </p>
         </header>
 

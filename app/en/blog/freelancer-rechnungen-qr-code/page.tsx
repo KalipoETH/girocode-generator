@@ -37,8 +37,11 @@ export default function FreelancerInvoicesEnPage() {
             Invoices as a Freelancer: GiroCode for Faster Payments
           </h1>
           <p className="text-base leading-relaxed text-slate-400 md:text-lg">
-            Late payments, forgotten transfers, mistyped IBANs – freelancers know the problem
-            all too well. A GiroCode on your invoice can change all that.
+            A GiroCode on your invoice packs all the payment details – payee, IBAN, amount and
+            reference – into a single QR code. Your client scans it with their banking app and
+            confirms the transfer in one tap, without typing anything. For freelancers this means
+            fewer typos, less procrastination and noticeably faster incoming payments. How to
+            create the code and add it to your invoices is shown in this article.
           </p>
         </header>
 
@@ -51,8 +54,8 @@ export default function FreelancerInvoicesEnPage() {
               Why Freelancers Wait Too Long for Payments
             </h2>
             <p>
-              According to various business studies, self-employed professionals wait an average
-              of 30+ days for invoice settlement – often exceeding the agreed payment terms.
+              Freelancers and the self-employed in Germany know the problem: invoices are often
+              settled well after the agreed payment terms.
               The reason is rarely bad faith: clients open the invoice, struggle to type the
               IBAN correctly, or simply defer the transfer because switching to their banking
               app feels like too much effort.
