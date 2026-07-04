@@ -86,10 +86,12 @@ export default function GeschichteEnPage() {
               IBAN, amount, and payment reference.
             </p>
             <p className="mt-3">
-              This standard – today known as EPC069-12 – has been valid in its current form
-              since version 2.1 (2019) and has remained stable since then. This was a deliberate
-              decision: a permanently valid standard gives banks and software developers
-              planning certainty.
+              This standard – today known as EPC069-12 – is maintained by the European Payments
+              Council in a revision table: the initial release V1.0 (2012) was followed by V2.0
+              (2015) and V2.1 (2016), later V3.0 (2022) and finally the currently valid version
+              V3.1 (2024). The payload's core structure remained stable throughout those years – a
+              deliberate decision: a reliable standard gives banks and software developers planning
+              certainty.
             </p>
           </section>
 

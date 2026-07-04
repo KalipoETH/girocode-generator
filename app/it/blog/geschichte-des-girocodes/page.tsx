@@ -91,10 +91,12 @@ export default function StoriaGiroCodeItPage() {
               nome del beneficiario, dall&apos;IBAN, dall&apos;importo e dalla causale del pagamento.
             </p>
             <p className="mt-3">
-              Questo standard – oggi noto come EPC069-12 – è valido nella sua forma attuale dalla
-              versione 2.1 (2019) e da allora è rimasto stabile. La sua longevità è un segno di
-              maturità: a differenza di molte innovazioni fintech, il SEPA-QR non è stato
-              sostituito ogni due anni, ma ha trovato un equilibrio tra semplicità e funzionalità.
+              Questo standard – oggi noto come EPC069-12 – è mantenuto dall&apos;European Payments
+              Council in una tabella di revisioni: alla prima pubblicazione V1.0 (2012) sono seguite
+              V2.0 (2015) e V2.1 (2016), poi V3.0 (2022) e infine la versione attualmente in vigore
+              V3.1 (2024). La struttura di base del payload è rimasta stabile nel corso degli anni: a
+              differenza di molte innovazioni fintech, il SEPA-QR non è stato sostituito ogni due
+              anni, ma ha trovato un equilibrio tra semplicità e funzionalità.
             </p>
           </section>
 

@@ -254,6 +254,14 @@ Rechnung RE-2024-0042`}
           Der EPC-Standard liegt aktuell in zwei aktiven Versionen vor. Beide werden von
           modernen Banking-Apps unterstützt, weisen aber kleine Unterschiede auf:
         </p>
+        <p>
+          <strong>Wichtig zur Abgrenzung:</strong> Die Nummern <code>001</code> und{' '}
+          <code>002</code> bezeichnen das <strong>Versions-Datenfeld innerhalb des
+          QR-Code-Payloads</strong> (Zeile 2 des Payloads selbst) – nicht die Revisionsnummer
+          des EPC069-12-Dokuments. Das sind zwei verschiedene Konzepte: Das EPC069-12-Dokument
+          liegt inzwischen in Revision V3.1 (2024) vor, während das Payload-Versionsfeld
+          unverändert die Werte 001 oder 002 annimmt. Beide werden leicht verwechselt.
+        </p>
         <div className="not-prose my-4 overflow-x-auto rounded-lg border border-slate-700">
           <table className="w-full text-sm">
             <thead>

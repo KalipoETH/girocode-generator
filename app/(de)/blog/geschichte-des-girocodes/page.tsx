@@ -94,9 +94,11 @@ export default function GeschichteDesGirocodesPage() {
               >
                 EPC069-12
               </a>{' '}
-              bekannt – ist seit Version 2.1 (2019) in seiner
-              aktuellen Form gültig und seitdem stabil. Das war ein bewusster Entscheid: Ein
-              dauerhaft gültiger Standard gibt Banken und Softwareherstellern Planungssicherheit.
+              bekannt – wird vom European Payments Council in einer Revisions-Tabelle gepflegt:
+              Auf die Erstveröffentlichung V1.0 (2012) folgten V2.0 (2015) und V2.1 (2016), später
+              V3.0 (2022) und schließlich die aktuell gültige Version V3.1 (2024). Die Grundstruktur
+              des Payloads blieb dabei über all die Jahre stabil – ein bewusster Entscheid: Ein
+              verlässlicher Standard gibt Banken und Softwareherstellern Planungssicherheit.
             </p>
           </section>
 

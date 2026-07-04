@@ -85,8 +85,11 @@ export default function HistoriaGiroCodeEsPage() {
               el BIC, el nombre del beneficiario, el IBAN, el importe y el concepto de pago.
             </p>
             <p className="mt-3">
-              Esta norma – hoy conocida como EPC069-12 – es válida en su forma actual desde
-              la versión 2.1 (2019) y ha permanecido estable desde entonces.
+              Esta norma – hoy conocida como EPC069-12 – es mantenida por el Consejo Europeo de
+              Pagos en una tabla de revisiones: a la primera publicación V1.0 (2012) le siguieron
+              V2.0 (2015) y V2.1 (2016), después V3.0 (2022) y finalmente la versión actualmente
+              vigente V3.1 (2024). La estructura básica del payload ha permanecido estable a lo
+              largo de los años.
             </p>
           </section>
 

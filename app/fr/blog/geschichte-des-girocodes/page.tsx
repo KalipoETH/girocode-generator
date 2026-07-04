@@ -86,8 +86,11 @@ export default function HistoireGiroCodeFrPage() {
               référence de paiement.
             </p>
             <p className="mt-3">
-              Cette norme – aujourd&apos;hui connue sous le nom EPC069-12 – est valide dans
-              sa forme actuelle depuis la version 2.1 (2019) et est restée stable depuis lors.
+              Cette norme – aujourd&apos;hui connue sous le nom EPC069-12 – est maintenue par le
+              Conseil européen des paiements dans un tableau de révisions : à la première
+              publication V1.0 (2012) ont succédé V2.0 (2015) et V2.1 (2016), puis V3.0 (2022) et
+              enfin la version actuellement en vigueur V3.1 (2024). La structure de base du payload
+              est restée stable au fil des années.
             </p>
           </section>
 
