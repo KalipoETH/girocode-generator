@@ -77,6 +77,8 @@ const relatedLinks = [
   { href: '/sepa-qr-code', label: 'SEPA QR Code Generator' },
   { href: '/freelancer', label: 'GiroCode für Freelancer' },
   { href: '/verein', label: 'GiroCode für Vereine' },
+  { href: '/iban-qr-code', label: 'IBAN QR Code erstellen' },
+  { href: '/blog/iban-sicherheit', label: 'IBAN-Sicherheit: Worauf achten?' },
 ];
 
 export default function QrCodeUeberweisungPage() {

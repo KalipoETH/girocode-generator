@@ -283,6 +283,7 @@ export default function GirocodeVsBankueberweisungPage() {
                   { href: '/girocode-vs-lastschrift', label: 'GiroCode vs. SEPA-Lastschrift' },
                   { href: '/wissen/girocode', label: 'Was ist ein GiroCode?' },
                   { href: '/wissen/iban-bic', label: 'IBAN & BIC erklärt' },
+                  { href: '/qr-code-ueberweisung', label: 'QR-Code-Überweisung erklärt' },
                 ].map((article) => (
                   <Link
                     key={article.href}

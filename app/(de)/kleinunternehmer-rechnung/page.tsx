@@ -237,6 +237,14 @@ export default function KleinunternehmerRechnungPage() {
             Verwendungszweck. Kunden scannen den Code mit ihrer Banking-App und überweisen
             in Sekunden – ohne IBAN abtippen, ohne Tippfehler.
           </p>
+          <p className="mt-3 leading-relaxed text-slate-400">
+            Übrigens: Ob und ab wann für dich eine{' '}
+            <Link href="/sepa-qr-pflicht" className="text-emerald-300 underline underline-offset-2 hover:text-emerald-200">
+              SEPA-QR- bzw. E-Rechnungspflicht
+            </Link>{' '}
+            greift, hängt von deiner Kunden- und Umsatzstruktur ab – ein QR-Code auf der Rechnung
+            ist in jedem Fall ein einfacher erster Schritt.
+          </p>
         </section>
 
         {/* FAQ */}

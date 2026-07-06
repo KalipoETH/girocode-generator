@@ -119,13 +119,32 @@ export default function FreelancerDePage() {
           'Erstelle in 2 Minuten deine erste GiroCode-Rechnung – kostenlos, ohne Registrierung, 100% lokal in deinem Browser.',
         ctaButton: 'Jetzt kostenlos GiroCode erstellen →',
         closing: (
-          <div className="mt-4 flex justify-center">
-            <Link
-              href="/rechnungs-editor"
-              className="inline-flex items-center gap-2 rounded-xl border border-emerald-500/40 px-6 py-3 text-sm font-semibold text-emerald-300 transition hover:bg-emerald-500/10"
-            >
-              Rechnung mit GiroCode erstellen →
-            </Link>
+          <div className="space-y-6">
+            <div className="mt-4 flex justify-center">
+              <Link
+                href="/rechnungs-editor"
+                className="inline-flex items-center gap-2 rounded-xl border border-emerald-500/40 px-6 py-3 text-sm font-semibold text-emerald-300 transition hover:bg-emerald-500/10"
+              >
+                Rechnung mit GiroCode erstellen →
+              </Link>
+            </div>
+            <div className="border-t border-slate-800 pt-6">
+              <p className="mb-3 text-sm font-semibold text-slate-300">Das könnte dich auch interessieren</p>
+              <div className="flex flex-wrap gap-3">
+              <Link
+                href="/blog/freelancer-rechnungen-qr-code"
+                className="inline-flex items-center gap-2 rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:border-emerald-500/40 hover:text-emerald-300"
+              >
+                Freelancer-Rechnungen mit QR-Code →
+              </Link>
+              <Link
+                href="/sepa-qr-pflicht"
+                className="inline-flex items-center gap-2 rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:border-emerald-500/40 hover:text-emerald-300"
+              >
+                SEPA-QR-Pflicht: Was gilt? →
+              </Link>
+              </div>
+            </div>
           </div>
         ),
       }}

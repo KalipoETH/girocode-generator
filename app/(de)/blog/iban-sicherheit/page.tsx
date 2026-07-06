@@ -339,6 +339,13 @@ export default function IbanSicherheitPage() {
                 cta: 'Zum Bulk Generator →',
                 href: '/bulk',
               },
+              {
+                icon: '🔗',
+                title: 'IBAN-QR-Code',
+                desc: 'IBAN als QR-Code erstellen – sicher und fehlerfrei überweisen.',
+                cta: 'Mehr erfahren →',
+                href: '/iban-qr-code',
+              },
             ].map((item) => (
               <Link
                 key={item.href}

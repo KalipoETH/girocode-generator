@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { UseCaseLanding } from '@/components/UseCaseLanding';
 import { SITE_URL } from '@/lib/siteConfig';
 
@@ -117,6 +118,19 @@ export default function PrivatverkaufDePage() {
         ctaText:
           'Erstelle in 60 Sekunden einen GiroCode für deinen nächsten Verkauf – kostenlos, ohne Registrierung, ohne Gebühren.',
         ctaButton: 'Jetzt kostenlos GiroCode erstellen →',
+        closing: (
+          <div className="border-t border-slate-800 pt-6">
+            <p className="mb-3 text-sm font-semibold text-slate-300">Das könnte dich auch interessieren</p>
+            <div className="flex flex-wrap gap-3">
+            <Link
+              href="/girocode-vs-paypal"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:border-emerald-500/40 hover:text-emerald-300"
+            >
+              GiroCode vs. PayPal beim Verkauf →
+            </Link>
+            </div>
+          </div>
+        ),
       }}
     />
   );

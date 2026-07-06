@@ -48,6 +48,8 @@ export default function WissenBankingAppsPage() {
         { href: '/wissen/iban-bic', label: 'IBAN & BIC im GiroCode' },
         { href: '/wissen/betrag-und-zweck', label: 'Betrag & Verwendungszweck' },
         { href: '/wissen/epc-standard', label: 'EPC-Standard erklärt' },
+        { href: '/girocode-funktioniert-nicht', label: 'GiroCode funktioniert nicht? Fehlerbehebung' },
+        { href: '/banken', label: 'GiroCode mit deiner Bank – alle Anleitungen' },
       ]}
       locale="de"
       lastUpdated="2026-06-10"

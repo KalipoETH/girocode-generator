@@ -89,6 +89,7 @@ export default function EpcQrCodePage() {
     { href: '/fuer-entwickler', label: 'GiroCode für Entwickler' },
     { href: '/wissen/epc-standard', label: 'EPC-Standard Erklärung' },
     { href: '/sepa-qr-code', label: 'SEPA QR Code Generator' },
+    { href: '/stuzza-qr-code', label: 'Stuzza-QR (Österreich)' },
   ];
 
   return (

@@ -52,6 +52,17 @@ export default function IngDibaPage() {
           </Link>
         </div>
 
+        <div className="mt-8 flex flex-col items-start gap-3 border-t border-slate-800 pt-6">
+          <Link href="/banken" className="group inline-flex items-center gap-2 text-sm font-semibold text-[#22c55e] hover:text-emerald-300">
+            Alle Banken im Überblick
+            <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+          </Link>
+          <Link href="/girocode-funktioniert-nicht" className="group inline-flex items-center gap-2 text-sm font-medium text-[#9aa1b6] hover:text-[#e8eaf0]">
+            GiroCode wird nicht erkannt? Zur Fehlerbehebung
+            <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+          </Link>
+        </div>
+
       </div>
     </main>
   );

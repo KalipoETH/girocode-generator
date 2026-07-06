@@ -48,6 +48,8 @@ export default function WissenEpcStandardPage() {
         { href: '/wissen/rechnung', label: 'GiroCode auf Rechnungen' },
         { href: '/wissen/banking-apps', label: 'Banking-Apps mit GiroCode' },
         { href: '/wissen/scannen', label: 'GiroCode scannen' },
+        { href: '/stuzza-qr-code', label: 'Stuzza-QR – EPC-Standard in Österreich' },
+        { href: '/blog/geschichte-des-girocodes', label: 'Die Geschichte des GiroCodes' },
       ]}
       locale="de"
       lastUpdated="2026-06-01"

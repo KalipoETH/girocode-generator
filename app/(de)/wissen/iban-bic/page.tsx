@@ -48,6 +48,8 @@ export default function WissenIbanBicPage() {
         { href: '/wissen/rechnung', label: 'GiroCode auf Rechnungen' },
         { href: '/wissen/banking-apps', label: 'Banking-Apps mit GiroCode' },
         { href: '/wissen/scannen', label: 'GiroCode scannen' },
+        { href: '/iban-qr-code', label: 'IBAN-QR-Code erstellen' },
+        { href: '/blog/iban-sicherheit', label: 'IBAN-Sicherheit: Worauf du achten solltest' },
       ]}
       locale="de"
       lastUpdated="2026-06-01"

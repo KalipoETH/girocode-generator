@@ -77,6 +77,7 @@ const relatedLinks = [
   { href: '/epc-qr-code', label: 'EPC QR Code Generator' },
   { href: '/wissen/iban-bic', label: 'IBAN & BIC erklärt' },
   { href: '/', label: 'Kostenlos GiroCode erstellen' },
+  { href: '/blog/iban-sicherheit', label: 'IBAN-Sicherheit: Worauf achten?' },
 ];
 
 export default function IbanQrCodePage() {

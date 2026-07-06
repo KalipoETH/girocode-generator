@@ -231,6 +231,7 @@ export default function RechnungErstellenPage() {
               { href: '/wissen/rechnung', label: 'GiroCode auf Rechnungen', desc: 'Kompletter Leitfaden' },
               { href: '/rechnungs-editor', label: 'Rechnungs-Editor', desc: 'Visuell gestalten' },
               { href: '/', label: 'GiroCode Generator', desc: 'Einfacher QR-Code' },
+              { href: '/sepa-qr-pflicht', label: 'SEPA-QR-Pflicht', desc: 'Gilt die Pflicht für dich?' },
             ].map((link) => (
               <Link
                 key={link.href}

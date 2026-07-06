@@ -767,6 +767,20 @@ export default function HomePage() {
                 cta: 'Zum Editor →',
                 href: '/rechnungs-editor',
               },
+              {
+                icon: '📲',
+                title: 'QR-Code-Überweisung',
+                desc: 'Wie die Überweisung per QR-Code Schritt für Schritt funktioniert.',
+                cta: 'Mehr erfahren →',
+                href: '/qr-code-ueberweisung',
+              },
+              {
+                icon: '📝',
+                title: 'GiroCode erstellen',
+                desc: 'Anleitung: In wenigen Schritten zum eigenen GiroCode.',
+                cta: 'Zur Anleitung →',
+                href: '/girocode-erstellen-anleitung',
+              },
             ].map((item) => (
               <Link
                 key={item.href}

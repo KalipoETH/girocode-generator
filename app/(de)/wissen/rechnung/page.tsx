@@ -73,6 +73,8 @@ export default function WissenRechnungPage() {
         { href: '/wissen/banking-apps', label: 'Banking-Apps mit GiroCode' },
         { href: '/wissen/scannen', label: 'GiroCode scannen' },
         { href: '/wissen/epc-standard', label: 'EPC-Standard erklärt' },
+        { href: '/sepa-qr-pflicht', label: 'SEPA-QR-Pflicht auf Rechnungen' },
+        { href: '/blog/freelancer-rechnungen-qr-code', label: 'Freelancer-Rechnungen mit QR-Code' },
       ]}
       locale="de"
       lastUpdated="2026-07-01"

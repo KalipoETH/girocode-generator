@@ -20,11 +20,18 @@ const localeMeta: Record<
 
 const mainNavConfig = [
   { key: 'home', path: '' },
+  { key: 'banks', path: '/banken' },
   { key: 'knowledge', path: '/wissen' },
   { key: 'blog', path: '/blog' },
   { key: 'about', path: '/ueber-uns' },
   { key: 'contact', path: '/kontakt' },
 ];
+
+// Die /banken-Übersicht existiert vorerst nur auf Deutsch. Damit auf
+// /en, /fr, /es, /it kein Link auf eine nicht vorhandene Seite entsteht,
+// wird der "Banken"-Eintrag ausschließlich für die DE-Navbar gerendert.
+const isNavItemVisible = (key: string, locale: Locale): boolean =>
+  key !== 'banks' || locale === 'de';
 
 const toolsItems = [
   { key: 'invoiceEditor', path: '/rechnungs-editor', icon: '✏️' },
@@ -38,6 +45,7 @@ const toolsItems = [
 const navLabels: Record<Locale, Record<string, string>> = {
   de: {
     home: 'Generator',
+    banks: 'Banken',
     knowledge: 'Wissen',
     blog: 'Blog',
     about: 'Über uns',
@@ -238,7 +246,9 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="mx-auto hidden items-center gap-0.5 lg:flex">
-          {mainNavConfig.map((item) => {
+          {mainNavConfig
+            .filter((item) => isNavItemVisible(item.key, currentLocale))
+            .map((item) => {
             const href = `${basePath}${item.path || ''}` || '/';
             const isRoot = item.key === 'home';
             const active = isRoot
@@ -314,7 +324,9 @@ export function Navbar() {
               {navLabels[currentLocale].cta} <span aria-hidden>↗</span>
             </Link>
 
-            {mainNavConfig.map((item) => {
+            {mainNavConfig
+            .filter((item) => isNavItemVisible(item.key, currentLocale))
+            .map((item) => {
               const href = `${basePath}${item.path || ''}` || '/';
               const isRoot = item.key === 'home';
               const active = isRoot

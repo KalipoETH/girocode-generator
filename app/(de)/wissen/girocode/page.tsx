@@ -48,6 +48,9 @@ export default function WissenGirocodePage() {
         { href: '/wissen/betrag-und-zweck', label: 'Betrag & Verwendungszweck richtig eingeben' },
         { href: '/wissen/banking-apps', label: 'Banking-Apps mit GiroCode-Support' },
         { href: '/wissen/scannen', label: 'GiroCode scannen – Anleitung' },
+        { href: '/qr-code-ueberweisung', label: 'QR-Code-Überweisung erklärt' },
+        { href: '/girocode-erstellen-anleitung', label: 'GiroCode erstellen – Schritt für Schritt' },
+        { href: '/blog/geschichte-des-girocodes', label: 'Die Geschichte des GiroCodes' },
       ]}
       locale="de"
       lastUpdated="2026-06-30"
