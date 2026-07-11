@@ -241,6 +241,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry('/fr/wissen/rechnung', 0.7, 'monthly', now),
     entry('/es/wissen/rechnung', 0.7, 'monthly', now),
 
+    // ── Wissen – gobd (nur DE) ─────────────────────────────────────────────
+    entry('/wissen/gobd', 0.7, 'monthly', now),
+
     // ── Wissen – banking-apps ──────────────────────────────────────────────
     entry('/wissen/banking-apps', 0.7, 'monthly', now),
     entry('/en/wissen/banking-apps', 0.7, 'monthly', now),

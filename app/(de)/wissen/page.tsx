@@ -47,6 +47,12 @@ const knowledgePages = [
     description: 'So integrierst du den GiroCode rechtssicher in deine Rechnungen.',
   },
   {
+    href: '/wissen/gobd',
+    title: 'GoBD einfach erklärt',
+    description:
+      'Aufbewahrungsfristen, die 6 Grundsätze und Verfahrensdokumentation – was für Kleinunternehmer wirklich gilt.',
+  },
+  {
     href: '/wissen/banking-apps',
     title: 'Banking-Apps mit GiroCode',
     description:

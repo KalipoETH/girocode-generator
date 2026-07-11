@@ -111,7 +111,7 @@ export default function KleinunternehmenDePage() {
           {
             question: 'Ist die Rechnung GoBD-konform?',
             answer:
-              'Die erzeugte PDF ist unveränderbar und damit für die Aufbewahrung geeignet. Für vollständige GoBD-Konformität (Aufbewahrungssystem, Verfahrensdokumentation) musst du allerdings selbst sorgen – wie bei jeder anderen Rechnungssoftware auch.',
+              'Die erzeugte PDF ist unveränderbar und damit für die Aufbewahrung geeignet. Für vollständige GoBD-Konformität (Aufbewahrungssystem, Aufbewahrungsfristen, Verfahrensdokumentation) musst du selbst sorgen. Was das konkret bedeutet, erklärt unser GoBD-Leitfaden unter /wissen/gobd.',
           },
         ],
         ctaHeadline: 'Bereit für stressfreie Rechnungen?',
@@ -133,6 +133,12 @@ export default function KleinunternehmenDePage() {
               className="inline-flex items-center gap-2 rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:border-emerald-500/40 hover:text-emerald-300"
             >
               GiroCode im Google Workspace →
+            </Link>
+            <Link
+              href="/wissen/gobd"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:border-emerald-500/40 hover:text-emerald-300"
+            >
+              GoBD einfach erklärt →
             </Link>
             </div>
           </div>

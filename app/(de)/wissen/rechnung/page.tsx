@@ -368,7 +368,12 @@ export default function WissenRechnungPage() {
           E-Rechnungen unterliegen wie andere Rechnungen der gesetzlichen
           Aufbewahrungsfrist von in der Regel <strong>8 Jahren</strong>. Der strukturierte
           Teil muss dabei im <strong>Originalformat</strong> aufbewahrt werden – ein reiner
-          PDF-Ausdruck genügt nicht.
+          PDF-Ausdruck genügt nicht. Wie du Rechnungen darüber hinaus revisionssicher
+          archivierst, welche Fristen (8/10/6 Jahre) gelten und was die Verfahrensdokumentation
+          verlangt, erklärt unser{' '}
+          <Link href="/wissen/gobd" className="text-sky-400 underline hover:text-sky-300">
+            GoBD-Leitfaden
+          </Link>.
         </p>
 
         <h3>Rechtsgrundlage &amp; Quelle</h3>
