@@ -72,6 +72,7 @@ export default function WissenRechnungPage() {
         { href: '/wissen/iban-bic', label: 'IBAN & BIC im GiroCode' },
         { href: '/wissen/banking-apps', label: 'Banking-Apps mit GiroCode' },
         { href: '/wissen/scannen', label: 'GiroCode scannen' },
+        { href: '/wissen/girocode-buchhaltungssoftware', label: 'GiroCode & Buchhaltungssoftware' },
         { href: '/wissen/epc-standard', label: 'EPC-Standard erklärt' },
         { href: '/sepa-qr-pflicht', label: 'SEPA-QR-Pflicht auf Rechnungen' },
         { href: '/blog/freelancer-rechnungen-qr-code', label: 'Freelancer-Rechnungen mit QR-Code' },
@@ -471,74 +472,25 @@ export default function WissenRechnungPage() {
 
       {/* ─── SECTION 5: Software Vergleich ─── */}
       <section aria-labelledby="software" className="mt-8">
-        <h2 id="software">GiroCode in verschiedenen Rechnungsprogrammen</h2>
+        <h2 id="software">GiroCode in Rechnungsprogrammen</h2>
         <p>
-          Es gibt verschiedene Wege, Rechnungen mit GiroCode zu erstellen. Hier vergleichen
-          wir die wichtigsten Optionen:
+          Wer regelmäßig Rechnungen schreibt, muss den GiroCode oft gar nicht selbst erzeugen:
+          Programme wie sevDesk, FastBill und Lexware Office (vormals Lexoffice) haben die
+          GiroCode-Erstellung nativ eingebaut und setzen ihn automatisch auf jede Rechnung.
+          Unser kostenloser Generator bleibt die passende Wahl für gelegentliche Nutzung oder
+          einen schnellen Einstieg ohne Abo.
         </p>
-
-        <h3>
-          <a
-            href="https://www.awin1.com/cread.php?awinmid=15944&awinaffid=2793610"
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-            className="text-sky-400 hover:text-sky-300"
+        <p>
+          Einen ausführlichen, ehrlichen Vergleich der Buchhaltungsprogramme mit
+          GiroCode-Unterstützung – inklusive Preisen, GoBD und der Rolle von DATEV – findest du
+          in unserem Überblick{' '}
+          <Link
+            href="/wissen/girocode-buchhaltungssoftware"
+            className="text-sky-400 underline hover:text-sky-300"
           >
-            sevDesk *
-          </a>
-        </h3>
-        <p>
-          sevDesk ist eine der meistgenutzten deutschen Buchhaltungssoftwares und unterstützt
-          GiroCodes nativ. Beim Erstellen einer Rechnung wird der GiroCode automatisch anhand
-          der eingetragenen Bankverbindung und des Rechnungsbetrags generiert und in die
-          Rechnung eingebettet.
+            GiroCode &amp; Buchhaltungssoftware
+          </Link>.
         </p>
-        <ul>
-          <li><strong>Preis:</strong> ab 7,90 EUR/Monat (Starter), 14-tägige Testphase kostenlos</li>
-          <li><strong>Besonderheiten:</strong> DATEV-Export, automatischer Zahlungsabgleich, Steuerberater-Zugang</li>
-          <li><strong>GiroCode:</strong> Automatisch auf jeder Rechnung, keine manuelle Konfiguration nötig</li>
-        </ul>
-        <p className="text-xs text-slate-500">
-          * Affiliate-Link – Wenn du über diesen Link kaufst, erhalten wir eine kleine
-          Provision ohne Mehrkosten für dich.
-        </p>
-
-        <h3>
-          <a
-            href="https://www.awin1.com/cread.php?awinmid=20766&awinaffid=2793610"
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-            className="text-sky-400 hover:text-sky-300"
-          >
-            FastBill *
-          </a>
-        </h3>
-        <p>
-          FastBill ist auf schnelle, unkomplizierte Rechnungsstellung ausgelegt und eignet sich
-          besonders für Freelancer und kleine Agenturen. Der GiroCode wird automatisch generiert
-          und kann auf Wunsch auf dem Rechnungslayout platziert werden.
-        </p>
-        <ul>
-          <li><strong>Preis:</strong> ab 9,90 EUR/Monat, kostenlose Testphase verfügbar</li>
-          <li><strong>Besonderheiten:</strong> Schnelle Rechnungserstellung, Angebotsverwaltung, Abo-Rechnungen</li>
-          <li><strong>GiroCode:</strong> Integriert, automatische Generierung</li>
-        </ul>
-        <p className="text-xs text-slate-500">
-          * Affiliate-Link – Wenn du über diesen Link kaufst, erhalten wir eine kleine
-          Provision ohne Mehrkosten für dich.
-        </p>
-
-        <h3>GiroCode Generator (unser Tool)</h3>
-        <p>
-          Unser kostenloser GiroCode Generator ist die ideale Lösung für Einsteiger,
-          Gelegenheitsnutzer und alle, die einfach einen schnellen GiroCode erstellen
-          möchten – ohne Abo, ohne Registrierung, komplett datenschutzfreundlich im Browser.
-        </p>
-        <ul>
-          <li><strong>Preis:</strong> Komplett kostenlos</li>
-          <li><strong>Besonderheiten:</strong> Lokale Verarbeitung, kein Server, kein Konto nötig</li>
-          <li><strong>GiroCode:</strong> Sofort generiert, als PNG oder PDF exportierbar</li>
-        </ul>
       </section>
 
       {/* ─── SECTION 6: Schritt für Schritt ─── */}

@@ -244,6 +244,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Wissen – gobd (nur DE) ─────────────────────────────────────────────
     entry('/wissen/gobd', 0.7, 'monthly', now),
 
+    // ── Wissen – girocode-buchhaltungssoftware (nur DE) ────────────────────
+    entry('/wissen/girocode-buchhaltungssoftware', 0.7, 'monthly', now),
+
     // ── Wissen – banking-apps ──────────────────────────────────────────────
     entry('/wissen/banking-apps', 0.7, 'monthly', now),
     entry('/en/wissen/banking-apps', 0.7, 'monthly', now),

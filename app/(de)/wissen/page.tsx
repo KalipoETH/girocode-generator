@@ -53,6 +53,12 @@ const knowledgePages = [
       'Aufbewahrungsfristen, die 6 Grundsätze und Verfahrensdokumentation – was für Kleinunternehmer wirklich gilt.',
   },
   {
+    href: '/wissen/girocode-buchhaltungssoftware',
+    title: 'GiroCode & Buchhaltungssoftware',
+    description:
+      'sevDesk, FastBill & Lexware Office im ehrlichen Vergleich – welche Software den GiroCode automatisch erzeugt und welche Rolle DATEV spielt.',
+  },
+  {
     href: '/wissen/banking-apps',
     title: 'Banking-Apps mit GiroCode',
     description:

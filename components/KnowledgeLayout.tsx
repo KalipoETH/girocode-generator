@@ -27,6 +27,12 @@ interface KnowledgeLayoutProps {
   relatedArticles: RelatedArticle[];
   locale?: 'de' | 'en' | 'fr' | 'es' | 'it';
   lastUpdated?: string;
+  /**
+   * Blendet den automatisch angehängten sevDesk/FastBill-Affiliate-Block aus.
+   * Für Seiten, die ihren eigenen, ausführlicheren Software-Vergleich mitbringen
+   * (z. B. der Buchhaltungssoftware-Hub), um Dopplungen zu vermeiden.
+   */
+  hideAffiliateSection?: boolean;
 }
 
 const i18n = {
@@ -200,6 +206,7 @@ export function KnowledgeLayout({
   relatedArticles,
   locale = 'de',
   lastUpdated,
+  hideAffiliateSection = false,
 }: KnowledgeLayoutProps) {
   const t = i18n[locale];
 
@@ -335,6 +342,7 @@ export function KnowledgeLayout({
           {children}
 
           {/* Affiliate Cards Section */}
+          {!hideAffiliateSection && (
           <section aria-labelledby="kl-affiliate" className="mt-10">
             <h2 id="kl-affiliate">{t.affiliateTitle}</h2>
             <p>{t.affiliateIntro}</p>
@@ -379,6 +387,7 @@ export function KnowledgeLayout({
               {t.generatorSuffix}
             </p>
           </section>
+          )}
 
           {/* Footer: CTA + Related Articles + Disclaimer */}
           <div className="not-prose mt-10 flex flex-col gap-8 border-t border-slate-800 pt-8">
