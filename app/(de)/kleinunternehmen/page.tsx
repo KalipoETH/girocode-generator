@@ -119,6 +119,50 @@ export default function KleinunternehmenDePage() {
           'Erstelle deine erste GiroCode-Rechnung in 2 Minuten – kostenlos, ohne Abo, ohne Registrierung. Lokal in deinem Browser.',
         ctaButton: 'Jetzt kostenlos GiroCode erstellen →',
         closing: (
+          <div className="space-y-8">
+          <section aria-labelledby="sumup-section" className="border-t border-slate-800 pt-6">
+            <h2 id="sumup-section" className="mb-3 text-base font-bold text-[#e8eaf0] md:text-lg">
+              Vor Ort kassieren und per Rechnung: SumUp und GiroCode ergänzen sich
+            </h2>
+            <p className="mb-3 leading-relaxed">
+              Viele Kleinunternehmen, Handwerker und Marktstandbetreiber kassieren einen Teil
+              ihrer Umsätze direkt vor Ort. Für die Kartenzahlung am Point of Sale ist SumUp eine
+              der verbreitetsten Lösungen: Das Fintech-Unternehmen (SumUp Limited, reguliert von
+              der Central Bank of Ireland) ist seit 2012 auf dem deutschen Markt aktiv. Die
+              Kartenterminals gibt es ohne Vertragsbindung und ohne Mindestumsatz zum einmaligen
+              Kauf – den SumUp Air ab 39 €, den SumUp Solo ab 79 €. Im Standard-Tarif fällt keine
+              monatliche Grundgebühr an, pro Kartenzahlung werden 1,39 % berechnet (mit dem Abo
+              „Zahlungen Plus" für 19 €/Monat sinkt die Gebühr auf 0,79 %). Dazu gehört ein
+              kostenloses SumUp-Business-Konto mit Mastercard-Debitkarte.
+            </p>
+            <p className="mb-3 leading-relaxed">
+              SumUp und der GiroCode schließen sich dabei nicht aus – sie decken unterschiedliche
+              Situationen ab. SumUp ist für die{' '}
+              <strong className="text-slate-200">Kartenzahlung vor Ort</strong> gedacht: Der Kunde
+              zahlt sofort, dafür wird die Transaktionsgebühr fällig. Der{' '}
+              <strong className="text-slate-200">GiroCode</strong> auf der Rechnung steht für den
+              anderen Weg – die <strong className="text-slate-200">SEPA-Überweisung</strong>: Der
+              Kunde scannt den Code später mit seiner Banking-App und überweist, ganz ohne
+              Transaktionsgebühr.
+            </p>
+            <p className="leading-relaxed">
+              Praktisch heißt das: Für Rechnungen, die nicht spontan vor Ort per Karte beglichen
+              werden – etwa die Handwerker-Rechnung nach Auftragsabschluss oder größere Beträge –,
+              spart ein GiroCode auf der Rechnung die SumUp-Transaktionsgebühr komplett. Gerade
+              bei höheren Summen macht sich das bemerkbar. Beide Zahlwege lassen sich problemlos
+              parallel anbieten: das SumUp-Terminal für die spontane Zahlung vor Ort, den GiroCode
+              auf der Rechnung für alle, die lieber überweisen. Mehr zu SumUp findest du auf der{' '}
+              <a
+                href="https://www.sumup.com/de-de/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-400 underline hover:text-sky-300"
+              >
+                offiziellen SumUp-Website
+              </a>.
+            </p>
+          </section>
+
           <div className="border-t border-slate-800 pt-6">
             <p className="mb-3 text-sm font-semibold text-slate-300">Das könnte dich auch interessieren</p>
             <div className="flex flex-wrap gap-3">
@@ -141,6 +185,7 @@ export default function KleinunternehmenDePage() {
               GoBD einfach erklärt →
             </Link>
             </div>
+          </div>
           </div>
         ),
       }}
