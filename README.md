@@ -74,6 +74,14 @@ vercel deploy
 
 ---
 
+## ⚠️ Service Worker – Do Not Delete `public/sw.js`
+
+`public/sw.js` is a **kill switch**: it unregisters the former PWA service worker and clears its caches. It must stay reachable under `/sw.js` permanently.
+
+If the file 404s, the update check fails with a `NetworkError` and the old service worker stays registered — leaving those users stuck on its cache-first behaviour instead of unregistering them.
+
+---
+
 ## 📋 How It Works
 
 ### GiroCode (EPC Payload)
