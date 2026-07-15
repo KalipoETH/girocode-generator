@@ -1,86 +1,28 @@
-const CACHE_NAME = 'girocode-v1';
-const PRECACHE_URLS = [
-  '/',
-  '/scanner',
-  '/bulk',
-  '/rechnungs-editor',
-  '/manifest.json',
-  '/offline',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png',
-];
+// Kill-Switch: meldet die PWA ab und räumt alle Caches der v1-Version.
+//
+// Diese Datei muss dauerhaft unter /sw.js erreichbar bleiben. Ein 404 beim
+// Update-Check schlägt mit NetworkError fehl und lässt die alte Registrierung
+// samt Cache-First-Verhalten am Leben, statt sie zu entfernen.
+//
+// Bestandsnutzer erhalten diese Version über den Update-Check, den jede
+// Navigation in den Scope auslöst — unabhängig davon, dass register() im
+// Client-Code entfernt wurde.
 
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) =>
-      cache.addAll(PRECACHE_URLS).catch((err) => {
-        // Einzelne Fehler beim Precaching ignorieren (z.B. nicht erreichbare Seiten)
-        console.warn('[SW] Precache partial failure:', err);
-      })
-    )
-  );
+const KILL_SWITCH = 'girocode-v2-killswitch';
+
+self.addEventListener('install', () => {
   self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(
-        keys
-          .filter((key) => key !== CACHE_NAME)
-          .map((key) => caches.delete(key))
-      )
-    )
-  );
-  self.clients.claim();
-});
+    (async () => {
+      const keys = await caches.keys();
+      await Promise.all(keys.map((key) => caches.delete(key)));
 
-self.addEventListener('fetch', (event) => {
-  const { request } = event;
-
-  // Nur GET-Requests cachen, API-Calls überspringen
-  if (request.method !== 'GET' || request.url.includes('/api/')) {
-    return;
-  }
-
-  // Externe Ressourcen (z.B. Analytics, Vercel Speed Insights) nicht cachen
-  const url = new URL(request.url);
-  if (url.origin !== self.location.origin) {
-    return;
-  }
-
-  // Network-First für HTML-Seiten
-  if (request.headers.get('accept')?.includes('text/html')) {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          if (response.ok) {
-            const clone = response.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-          }
-          return response;
-        })
-        .catch(() =>
-          caches.match(request).then(
-            (cached) => cached || caches.match('/offline')
-          )
-        )
-    );
-    return;
-  }
-
-  // Cache-First für statische Assets (JS, CSS, Bilder, Fonts)
-  event.respondWith(
-    caches.match(request).then(
-      (cached) =>
-        cached ||
-        fetch(request).then((response) => {
-          if (response.ok) {
-            const clone = response.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-          }
-          return response;
-        })
-    )
+      await self.registration.unregister();
+    })()
   );
 });
+
+// Kein fetch-Handler: der Worker bleibt inert, bis die Registrierung greift.
