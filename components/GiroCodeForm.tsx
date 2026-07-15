@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { track } from '@vercel/analytics';
 import { buildEPC, ibanIsValid } from '../lib/girocode';
+import { takeScanHandoff } from '../lib/scanHandoff';
 import { QRPreview, QRStatusType } from './QRPreview';
 import { en } from '../lib/translations/en';
 import { fr } from '../lib/translations/fr';
@@ -160,25 +161,21 @@ export const GiroCodeForm: React.FC<GiroCodeFormProps> = ({
     purpose: '',
   });
 
-  // URL-Parameter automatisch einlesen (vom Scanner)
+  // Vom Scanner übergebene Daten einmalig übernehmen. Die Übergabe läuft über
+  // sessionStorage statt über Query-Parameter, damit Zahldaten nicht in
+  // History, Referer oder Zugriffslogs auftauchen.
   React.useEffect(() => {
     if (typeof window === 'undefined') return;
-    const params = new URLSearchParams(window.location.search);
-    const name = params.get('name');
-    const iban = params.get('iban');
-    const bic = params.get('bic');
-    const betrag = params.get('betrag');
-    const zweck = params.get('zweck');
-    if (name || iban || bic || betrag || zweck) {
-      setForm((prev) => ({
-        ...prev,
-        ...(name ? { name } : {}),
-        ...(iban ? { iban } : {}),
-        ...(bic ? { bic } : {}),
-        ...(betrag ? { amount: betrag } : {}),
-        ...(zweck ? { purpose: zweck.slice(0, 140) } : {}),
-      }));
-    }
+    const scanned = takeScanHandoff();
+    if (!scanned) return;
+    setForm((prev) => ({
+      ...prev,
+      ...(scanned.name ? { name: scanned.name } : {}),
+      ...(scanned.iban ? { iban: scanned.iban } : {}),
+      ...(scanned.bic ? { bic: scanned.bic } : {}),
+      ...(scanned.amount ? { amount: scanned.amount } : {}),
+      ...(scanned.purpose ? { purpose: scanned.purpose } : {}),
+    }));
   }, []);
 
   const [epcPayload, setEpcPayload] = useState<string | null>(null);

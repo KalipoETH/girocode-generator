@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import '../globals.css';
 import { LayoutShell } from '@/components/LayoutShell';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/next';
+import { AnalyticsRedacted } from '@/components/AnalyticsRedacted';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -119,7 +119,7 @@ export default function ItRootLayout({
         />
         <LayoutShell>{children}</LayoutShell>
         <SpeedInsights />
-        <Analytics />
+        <AnalyticsRedacted />
       </body>
     </html>
   );
