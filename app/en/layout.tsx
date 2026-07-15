@@ -105,7 +105,6 @@ export default function EnRootLayout({
   return (
     <html lang="en" className="h-full">
       <head>
-        <link rel="alternate" type="application/json+ld" href="/api/structured-data" />
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />

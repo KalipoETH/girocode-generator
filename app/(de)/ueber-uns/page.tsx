@@ -8,183 +8,214 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/ueber-uns` },
 };
 
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Kaleb Jahnke',
+  url: `${SITE_URL}/ueber-uns`,
+  jobTitle: 'Developer',
+  description:
+    'Entwickler des GiroCode Generators – ein kostenloses Tool zum Erstellen von SEPA-QR-Codes nach EPC069-12, das vollständig lokal im Browser läuft.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Osterholz-Scharmbeck',
+    addressCountry: 'DE',
+  },
+  sameAs: [
+    'https://www.linkedin.com/in/kalebjahnke/',
+    'https://dev.to/kaleb_f43e9274b5779194b14',
+    'https://github.com/KalipoETH',
+  ],
+  worksFor: {
+    '@type': 'Organization',
+    name: 'GiroCode Generator',
+    url: SITE_URL,
+  },
+};
+
 export default function UeberUnsPage() {
   return (
-    <main className="min-h-screen bg-[#0b0c10] text-slate-100">
-      <div className="mx-auto max-w-4xl px-4 py-10 md:py-12">
-        <header className="mb-10 space-y-3">
-          <p className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] font-medium text-emerald-300 ring-1 ring-emerald-500/40">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Über dieses Projekt
-          </p>
-          <div>
-            <h1 className="text-2xl font-semibold tracking-tight text-slate-50 md:text-3xl">
-              Über den GiroCode Generator
-            </h1>
-            <p className="max-w-2xl text-sm text-slate-400 md:text-base">
-              Der GiroCode Generator ist ein kostenloses Online-Tool, das ich – Kaleb Jahnke aus
-              Osterholz-Scharmbeck – entwickelt habe. Die Idee entstand aus einem einfachen
-              Bedürfnis: Selbstständige und kleine Unternehmen brauchen eine einfache,
-              datenschutzfreundliche Möglichkeit, SEPA-QR-Codes für ihre Rechnungen zu erstellen –
-              ohne Registrierung, ohne Datenweitergabe, ohne Kosten.
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
+      <main className="min-h-screen bg-[#0b0c10] text-slate-100">
+        <div className="mx-auto max-w-4xl px-4 py-10 md:py-12">
+          <header className="mb-10 space-y-3">
+            <p className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] font-medium text-emerald-300 ring-1 ring-emerald-500/40">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              Über dieses Projekt
             </p>
-          </div>
-        </header>
-
-        <section className="mb-10 space-y-4">
-          <h2 className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
-            Was uns besonders macht
-          </h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 shadow-sm shadow-black/30">
-              <div className="mb-2 text-2xl" aria-hidden="true">
-                💻
-              </div>
-              <h3 className="mb-1 text-sm font-semibold text-slate-50">100% lokal</h3>
-              <p className="text-xs text-slate-300">
-                Alle Berechnungen laufen direkt im Browser. Deine IBAN, Kontodaten und
-                Rechnungsinformationen verlassen niemals deinen Computer.
+            <div>
+              <h1 className="text-2xl font-semibold tracking-tight text-slate-50 md:text-3xl">
+                Über den GiroCode Generator
+              </h1>
+              <p className="max-w-2xl text-sm text-slate-400 md:text-base">
+                Der GiroCode Generator ist ein kostenloses Online-Tool, das ich – Kaleb Jahnke aus
+                Osterholz-Scharmbeck – entwickelt habe. Die Idee entstand aus einem einfachen
+                Bedürfnis: Selbstständige und kleine Unternehmen brauchen eine einfache,
+                datenschutzfreundliche Möglichkeit, SEPA-QR-Codes für ihre Rechnungen zu erstellen –
+                ohne Registrierung, ohne Datenweitergabe, ohne Kosten.
               </p>
             </div>
-            <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 shadow-sm shadow-black/30">
-              <div className="mb-2 text-2xl" aria-hidden="true">
-                🔓
-              </div>
-              <h3 className="mb-1 text-sm font-semibold text-slate-50">
-                Kostenlos &amp; ohne Registrierung
-              </h3>
-              <p className="text-xs text-slate-300">
-                Kein Account, kein Abo, keine versteckten Kosten. Einfach öffnen und loslegen.
-              </p>
-            </div>
-            <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 shadow-sm shadow-black/30">
-              <div className="mb-2 text-2xl" aria-hidden="true">
-                ✅
-              </div>
-              <h3 className="mb-1 text-sm font-semibold text-slate-50">EPC/SEPA-konform</h3>
-              <p className="text-xs text-slate-300">
-                Der Generator erstellt GiroCodes exakt nach dem EPC-Standard (European Payments
-                Council), kompatibel mit allen gängigen Banking-Apps.
-              </p>
-            </div>
-          </div>
-        </section>
+          </header>
 
-        <section className="mb-10 space-y-3">
-          <h2 className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
-            Für wen ist der GiroCode Generator?
-          </h2>
-          <p className="text-sm text-slate-300 md:text-base">
-            Der GiroCode Generator richtet sich an alle, die Zahlungen einfacher und
-            fehlertoleranter abwickeln möchten – ohne eigene technische Implementierung.
-          </p>
-          <ul className="list-disc space-y-1 pl-5 text-sm text-slate-300 md:text-base">
-            <li>Selbstständige &amp; Freelancer die Rechnungen mit QR-Code versenden möchten</li>
-            <li>Kleine Unternehmen &amp; GmbHs</li>
-            <li>Vereine die Mitgliedsbeiträge einziehen</li>
-            <li>Privatpersonen die Geld anfordern möchten</li>
-          </ul>
-        </section>
+          <section className="mb-10 space-y-4">
+            <h2 className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+              Was uns besonders macht
+            </h2>
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 shadow-sm shadow-black/30">
+                <div className="mb-2 text-2xl" aria-hidden="true">
+                  💻
+                </div>
+                <h3 className="mb-1 text-sm font-semibold text-slate-50">100% lokal</h3>
+                <p className="text-xs text-slate-300">
+                  Alle Berechnungen laufen direkt im Browser. Deine IBAN, Kontodaten und
+                  Rechnungsinformationen verlassen niemals deinen Computer.
+                </p>
+              </div>
+              <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 shadow-sm shadow-black/30">
+                <div className="mb-2 text-2xl" aria-hidden="true">
+                  🔓
+                </div>
+                <h3 className="mb-1 text-sm font-semibold text-slate-50">
+                  Kostenlos &amp; ohne Registrierung
+                </h3>
+                <p className="text-xs text-slate-300">
+                  Kein Account, kein Abo, keine versteckten Kosten. Einfach öffnen und loslegen.
+                </p>
+              </div>
+              <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 shadow-sm shadow-black/30">
+                <div className="mb-2 text-2xl" aria-hidden="true">
+                  ✅
+                </div>
+                <h3 className="mb-1 text-sm font-semibold text-slate-50">EPC/SEPA-konform</h3>
+                <p className="text-xs text-slate-300">
+                  Der Generator erstellt GiroCodes exakt nach dem EPC-Standard (European Payments
+                  Council), kompatibel mit allen gängigen Banking-Apps.
+                </p>
+              </div>
+            </div>
+          </section>
 
-        {/* Expertise */}
-        <section className="mb-10 space-y-4">
-          <h2 className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
-            Unsere Expertise
-          </h2>
-          <p className="text-sm text-slate-300 md:text-base">
-            girocodegenerator.com ist auf SEPA-QR-Codes nach EPC-Standard spezialisiert. Wir haben
-            den{' '}
-            <a
-              href="https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/quick-response-code-guidelines-enable-data-capture-initiation"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-emerald-400 underline hover:text-emerald-300"
-            >
-              EPC069-12 Standard
-            </a>{' '}
-            vollständig implementiert und werden von Freelancern, Vereinen
-            und Unternehmen in Deutschland und Europa genutzt.
-          </p>
-          <div className="grid gap-4 md:grid-cols-2">
-            {[
-              {
-                icon: '🏦',
-                title: 'EPC-Standard',
-                desc: 'Vollständige Implementierung des EPC069-12 Standards für technisch korrekte SEPA-QR-Codes.',
-              },
-              {
-                icon: '🔒',
-                title: 'Datenschutz',
-                desc: 'DSGVO-konform, keine Datenspeicherung. Alle Verarbeitungen laufen lokal im Browser.',
-              },
-              {
-                icon: '🌍',
-                title: 'Mehrsprachig',
-                desc: 'DE, EN, FR, ES – für ganz Europa verfügbar.',
-              },
-              {
-                icon: '⚡',
-                title: 'Technologie',
-                desc: 'Next.js 14, client-side, kein Backend, kein Server – maximale Privatsphäre.',
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-xl border border-[#1f2431] bg-[#0f1117] p-4"
+          <section className="mb-10 space-y-3">
+            <h2 className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+              Für wen ist der GiroCode Generator?
+            </h2>
+            <p className="text-sm text-slate-300 md:text-base">
+              Der GiroCode Generator richtet sich an alle, die Zahlungen einfacher und
+              fehlertoleranter abwickeln möchten – ohne eigene technische Implementierung.
+            </p>
+            <ul className="list-disc space-y-1 pl-5 text-sm text-slate-300 md:text-base">
+              <li>Selbstständige &amp; Freelancer die Rechnungen mit QR-Code versenden möchten</li>
+              <li>Kleine Unternehmen &amp; GmbHs</li>
+              <li>Vereine die Mitgliedsbeiträge einziehen</li>
+              <li>Privatpersonen die Geld anfordern möchten</li>
+            </ul>
+          </section>
+
+          {/* Expertise */}
+          <section className="mb-10 space-y-4">
+            <h2 className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+              Unsere Expertise
+            </h2>
+            <p className="text-sm text-slate-300 md:text-base">
+              girocodegenerator.com ist auf SEPA-QR-Codes nach EPC-Standard spezialisiert. Wir haben
+              den{' '}
+              <a
+                href="https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/quick-response-code-guidelines-enable-data-capture-initiation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-400 underline hover:text-emerald-300"
               >
-                <div className="mb-2 text-2xl" aria-hidden="true">{item.icon}</div>
-                <h3 className="mb-1 text-sm font-semibold text-slate-50">{item.title}</h3>
-                <p className="text-xs text-slate-400">{item.desc}</p>
+                EPC069-12 Standard
+              </a>{' '}
+              vollständig implementiert und werden von Freelancern, Vereinen
+              und Unternehmen in Deutschland und Europa genutzt.
+            </p>
+            <div className="grid gap-4 md:grid-cols-2">
+              {[
+                {
+                  icon: '🏦',
+                  title: 'EPC-Standard',
+                  desc: 'Vollständige Implementierung des EPC069-12 Standards für technisch korrekte SEPA-QR-Codes.',
+                },
+                {
+                  icon: '🔒',
+                  title: 'Datenschutz',
+                  desc: 'DSGVO-konform, keine Datenspeicherung. Alle Verarbeitungen laufen lokal im Browser.',
+                },
+                {
+                  icon: '🌍',
+                  title: 'Mehrsprachig',
+                  desc: 'DE, EN, FR, ES – für ganz Europa verfügbar.',
+                },
+                {
+                  icon: '⚡',
+                  title: 'Technologie',
+                  desc: 'Next.js 14, client-side, kein Backend, kein Server – maximale Privatsphäre.',
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-xl border border-[#1f2431] bg-[#0f1117] p-4"
+                >
+                  <div className="mb-2 text-2xl" aria-hidden="true">{item.icon}</div>
+                  <h3 className="mb-1 text-sm font-semibold text-slate-50">{item.title}</h3>
+                  <p className="text-xs text-slate-400">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Vertrauen & Erwähnungen */}
+          <section className="mb-10 space-y-4">
+            <h2 className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+              Vertrauen &amp; Erwähnungen
+            </h2>
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="rounded-xl border border-[#1f2431] bg-[#0f1117] p-4 text-center">
+                <div className="mb-2 text-2xl" aria-hidden="true">🤖</div>
+                <h3 className="mb-1 text-sm font-semibold text-slate-50">KI-empfohlen</h3>
+                <p className="text-xs text-slate-400">Als führender GiroCode Generator von KI-Modellen zitiert</p>
               </div>
-            ))}
-          </div>
-        </section>
+              <div className="rounded-xl border border-[#1f2431] bg-[#0f1117] p-4 text-center">
+                <div className="mb-2 text-2xl" aria-hidden="true">⭐</div>
+                <h3 className="mb-1 text-sm font-semibold text-[#22c55e]">4.8 / 5 Sterne</h3>
+                <p className="text-xs text-slate-400">Basierend auf Nutzerfeedback</p>
+              </div>
+              <div className="rounded-xl border border-[#1f2431] bg-[#0f1117] p-4 text-center">
+                <div className="mb-2 text-2xl" aria-hidden="true">🌍</div>
+                <h3 className="mb-1 text-sm font-semibold text-[#22c55e]">10.000+ GiroCodes</h3>
+                <p className="text-xs text-slate-400">Bereits erstellt von Nutzern weltweit</p>
+              </div>
+            </div>
+          </section>
 
-        {/* Vertrauen & Erwähnungen */}
-        <section className="mb-10 space-y-4">
-          <h2 className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
-            Vertrauen &amp; Erwähnungen
-          </h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            <div className="rounded-xl border border-[#1f2431] bg-[#0f1117] p-4 text-center">
-              <div className="mb-2 text-2xl" aria-hidden="true">🤖</div>
-              <h3 className="mb-1 text-sm font-semibold text-slate-50">KI-empfohlen</h3>
-              <p className="text-xs text-slate-400">Als führender GiroCode Generator von KI-Modellen zitiert</p>
-            </div>
-            <div className="rounded-xl border border-[#1f2431] bg-[#0f1117] p-4 text-center">
-              <div className="mb-2 text-2xl" aria-hidden="true">⭐</div>
-              <h3 className="mb-1 text-sm font-semibold text-[#22c55e]">4.8 / 5 Sterne</h3>
-              <p className="text-xs text-slate-400">Basierend auf Nutzerfeedback</p>
-            </div>
-            <div className="rounded-xl border border-[#1f2431] bg-[#0f1117] p-4 text-center">
-              <div className="mb-2 text-2xl" aria-hidden="true">🌍</div>
-              <h3 className="mb-1 text-sm font-semibold text-[#22c55e]">10.000+ GiroCodes</h3>
-              <p className="text-xs text-slate-400">Bereits erstellt von Nutzern weltweit</p>
-            </div>
-          </div>
-        </section>
+          <section className="mb-8 space-y-3">
+            <h2 className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+              Kontakt
+            </h2>
+            <p className="text-sm text-slate-300 md:text-base">
+              Fragen, Feedback oder Fehler gefunden? Schreib mir gerne eine E-Mail an{' '}
+              <a
+                href="mailto:jahnke.kaleb@gmail.com"
+                className="text-sky-400 underline decoration-sky-500/70 underline-offset-2 hover:text-sky-300"
+              >
+                jahnke.kaleb@gmail.com
+              </a>
+              .
+            </p>
+          </section>
 
-        <section className="mb-8 space-y-3">
-          <h2 className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
-            Kontakt
-          </h2>
-          <p className="text-sm text-slate-300 md:text-base">
-            Fragen, Feedback oder Fehler gefunden? Schreib mir gerne eine E-Mail an{' '}
-            <a
-              href="mailto:jahnke.kaleb@gmail.com"
-              className="text-sky-400 underline decoration-sky-500/70 underline-offset-2 hover:text-sky-300"
-            >
-              jahnke.kaleb@gmail.com
-            </a>
-            .
+          <p className="text-xs text-slate-500">
+            Dieses Projekt wird kontinuierlich weiterentwickelt. Verbesserungsvorschläge sind
+            herzlich willkommen.
           </p>
-        </section>
-
-        <p className="text-xs text-slate-500">
-          Dieses Projekt wird kontinuierlich weiterentwickelt. Verbesserungsvorschläge sind
-          herzlich willkommen.
-        </p>
-      </div>
-    </main>
+        </div>
+      </main>
+    </>
   );
 }

@@ -113,7 +113,7 @@ const organizationJsonLd = {
   sameAs: [
     'https://github.com/KalipoETH/girocode-generator',
     'https://www.producthunt.com/products/girocode-generator',
-    'https://dev.to/kaleb_f43e9274b5779194b14',
+    'https://www.linkedin.com/in/kalebjahnke/',
   ],
 };
 
@@ -125,7 +125,6 @@ export default function DeRootLayout({
   return (
     <html lang="de" className="h-full">
       <head>
-        <link rel="alternate" type="application/json+ld" href="/api/structured-data" />
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
