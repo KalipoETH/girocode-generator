@@ -36,7 +36,8 @@ export default function DatenschutzPage() {
             </h2>
             <p>
               Die Web-App generiert GiroCodes (SEPA-QR) und Rechnungs-PDFs lokal im Browser. Die
-              Eingaben werden nicht an unseren Server übertragen oder gespeichert.
+              Eingaben werden nicht an unseren Server übertragen oder gespeichert. Anonymisierte
+              Nutzungsdaten (Seitenaufrufe, Performance) werden davon unabhängig gemäß §9 verarbeitet.
             </p>
           </div>
 
@@ -121,6 +122,18 @@ export default function DatenschutzPage() {
               9. Cookies / Tracking
             </h2>
             <p>Die App setzt keine Cookies zu Analyse- oder Marketingzwecken.</p>
+            <p className="mt-2">
+              Zur Reichweitenmessung und Performance-Analyse nutzen wir Vercel Web Analytics und
+              Vercel Speed Insights (Vercel Inc., USA, siehe auch §3 und §8). Beide Dienste arbeiten
+              cookielos: Es werden keine Cookies gesetzt und keine Nutzer geräte- oder
+              sitzungsübergreifend identifiziert. Erfasst werden aggregierte, anonymisierte Daten wie
+              aufgerufene Seiten, Ladezeiten und technische Performance-Kennzahlen (Core Web Vitals).
+              Sensible Daten aus URL-Parametern (z. B. aus gescannten Zahlungsdaten) werden vor der
+              Übermittlung an Vercel automatisch entfernt. Rechtsgrundlage ist unser berechtigtes
+              Interesse an der Analyse und Verbesserung der Website (Art. 6 Abs. 1 lit. f DSGVO).
+              Weitere Informationen zur Datenverarbeitung durch Vercel finden Sie unter
+              vercel.com/legal.
+            </p>
           </div>
 
           <div>

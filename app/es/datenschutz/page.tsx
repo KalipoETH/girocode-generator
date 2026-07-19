@@ -35,6 +35,8 @@ export default function PrivacyPageEs() {
             <p>
               La aplicación web genera códigos GiroCode (SEPA-QR) y facturas PDF de forma local en tu
               navegador. Los datos introducidos no se transmiten a nuestro servidor ni se almacenan.
+              Los datos de uso anonimizados (páginas vistas, rendimiento) se tratan de forma
+              independiente conforme al §9.
             </p>
           </div>
 
@@ -109,6 +111,18 @@ export default function PrivacyPageEs() {
             </h2>
             <p>
               La aplicación no utiliza cookies con fines de análisis o marketing.
+            </p>
+            <p className="mt-2">
+              Para la medición de tráfico y el análisis de rendimiento utilizamos Vercel Web
+              Analytics y Vercel Speed Insights (Vercel Inc., EE. UU. — véanse también los §3 y §8).
+              Ambos servicios funcionan sin cookies: no se instala ninguna cookie ni se identifica a
+              los usuarios entre dispositivos o sesiones. Se recopilan datos agregados y anonimizados,
+              como las páginas visitadas, los tiempos de carga y las métricas técnicas de rendimiento
+              (Core Web Vitals). Los datos sensibles contenidos en parámetros de URL (por ejemplo,
+              procedentes de datos de pago escaneados) se eliminan automáticamente antes de enviarse a
+              Vercel. Base jurídica: art. 6 (1) f) RGPD (interés legítimo en analizar y mejorar el
+              sitio web). Más información sobre el tratamiento de datos por parte de Vercel en
+              vercel.com/legal.
             </p>
           </div>
 
