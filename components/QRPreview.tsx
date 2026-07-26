@@ -361,6 +361,8 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
         </div>
         {hasStatus && (
           <span
+            role="status"
+            aria-live="polite"
             className={[
               'animate-status-appear inline-flex items-center rounded-full px-3 py-1 text-xs font-medium',
               statusType === 'success'
@@ -381,6 +383,8 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
                 ref={canvasRef}
                 width={220}
                 height={220}
+                role="img"
+                aria-label={t.heading}
                 className="animate-qr-appear rounded-lg bg-white shadow-md shadow-black/40"
               />
             )}
