@@ -87,13 +87,13 @@ QRCode.toCanvas(canvas, payload, {
               Du kannst auf diesen Generator verlinken oder ihn als Referenzimplementierung nutzen.
               Der gesamte Quellcode ist öffentlich auf GitHub einsehbar.
             </p>
-            <p className="mt-3">
-              Du möchtest den Generator per URL-Parameter in deine eigene App oder Website integrieren?
-              Schau dir unsere{' '}
+            <p className="mt-3 text-sm text-slate-300 md:text-base">
+              Du willst GiroCodes serverseitig aus deiner eigenen App erzeugen? Unsere
+              REST-API befindet sich derzeit in der Beta-Phase. In der{' '}
               <Link href="/api-docs" className="text-sky-400 underline decoration-sky-500/70 underline-offset-2 hover:text-sky-300">
-                URL-Parameter API-Dokumentation
+                API-Dokumentation
               </Link>{' '}
-              an – kein API-Key, keine Registrierung.
+              kannst du dich für den Beta-Zugang anmelden.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
@@ -118,21 +118,14 @@ QRCode.toCanvas(canvas, payload, {
               Google Workspace Integration
             </h2>
             <p className="mb-4 text-sm text-slate-300 md:text-base">
-              Du kannst den GiroCode Generator direkt aus Google Apps Script aufrufen:
+              Für die serverseitige Generierung aus Google Apps Script, Sheets oder Docs
+              brauchst du unsere REST-API. Sie befindet sich derzeit in der Beta-Phase –
+              den Zugang kannst du über die{' '}
+              <Link href="/api-docs" className="text-sky-400 underline decoration-sky-500/70 underline-offset-2 hover:text-sky-300">
+                API-Dokumentation
+              </Link>{' '}
+              anfordern. Für die clientseitige Erzeugung nutzt du den EPC-Payload wie oben gezeigt.
             </p>
-            <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-4 text-xs text-slate-200 sm:text-sm">
-              <code>{`function createGiroCode(name, iban, betrag, zweck) {
-  const url = 'https://girocodegenerator.com/api/generate'
-    + '?name=' + encodeURIComponent(name)
-    + '&iban=' + encodeURIComponent(iban)
-    + '&betrag=' + encodeURIComponent(betrag)
-    + '&zweck=' + encodeURIComponent(zweck);
-  
-  const response = UrlFetchApp.fetch(url);
-  const data = JSON.parse(response.getContentText());
-  return data.qr_base64; // Base64 PNG des QR-Codes
-}`}</code>
-            </pre>
             <p className="mt-3 text-sm text-slate-300 md:text-base">
               Das Google Workspace Add-on für GiroCodes ist in Entwicklung.{' '}
               <Link href="/google-workspace-addon" className="text-sky-400 underline decoration-sky-500/70 underline-offset-2 hover:text-sky-300">

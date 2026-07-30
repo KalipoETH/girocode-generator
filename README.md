@@ -23,13 +23,17 @@ A free, privacy-first GiroCode (SEPA-QR / EPC) generator for freelancers and sma
 
 ## 🔒 Privacy First
 
-Most SEPA QR code generators send your banking data to their servers. GiroCode Generator processes everything **client-side** in your browser:
+The core of GiroCode Generator — turning your payment details into a SEPA QR code — runs **entirely client-side in your browser**. Your IBAN, name and amount are used to build the EPC payload and render the QR code locally; the core generator never sends this payment data to a server.
 
-- ✅ No backend server
-- ✅ No database
-- ✅ No analytics or tracking
-- ✅ No cookies
-- ✅ IBAN and payment data never transmitted
+Here's what that means, stated precisely:
+
+- ✅ **QR generation is local** — the EPC payload and QR code are built in the browser, so your payment data isn't transmitted to run the core feature.
+- ✅ **Cookieless, anonymized analytics** — we use Vercel Web Analytics and Speed Insights (plus a few custom events). No tracking cookies, no cross-site profiling. The only cookie the site sets at all is a session token when an administrator logs into the backend.
+- ✅ **Sensitive parameters are scrubbed** — since the PII-leak fix, IBAN, name and amount are never carried in URL query params, and any sensitive URL parameters are stripped before anything is sent to analytics.
+- ⚠️ **There is a backend** — a few server routes exist (contact form, newsletter, the beta `/api/generate`, admin). They aren't involved in generating a QR code, but they're real, so we don't claim "no server".
+- ⚠️ **Optional QR fallback** — if the local renderer is unavailable, an optional fallback can fetch the QR image from `api.qrserver.com`. When that path is used, the payload leaves your browser.
+
+For the full picture — analytics, the QR fallback, cookies and data processing — see the [privacy policy](https://girocodegenerator.com/datenschutz) (§5).
 
 ---
 

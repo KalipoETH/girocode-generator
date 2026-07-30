@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/siteConfig';
 export const metadata: Metadata = {
   title: 'GiroCode per Sviluppatori – Integrazione & API 2026',
   description:
-    'Integra GiroCode nelle tue app: URL parameters, Google Apps Script, esempi JavaScript e PHP. API in arrivo. Documentazione completa.',
+    'Integra la generazione di GiroCodes nei tuoi progetti: struttura del payload EPC, esempi di codice JavaScript e consigli per sviluppatori. API REST in fase beta.',
   alternates: { canonical: `${SITE_URL}/it/fuer-entwickler` },
 };
 
@@ -32,53 +32,51 @@ export default function DevelopersPageIt() {
         <article className="space-y-10">
           <section>
             <h2 className="mb-3 text-base font-semibold tracking-tight text-slate-50 md:text-lg">
-              Integrazione tramite URL Parameters
+              Generare il payload EPC
             </h2>
             <p className="mb-4 text-sm text-slate-300 md:text-base">
-              Puoi aprire il generatore con dati di pagamento precompilati tramite parametri URL:
+              Il payload EPC è un testo strutturato per righe. La seguente funzione mostra come
+              generarlo in JavaScript/TypeScript:
             </p>
-            <pre className="mb-4 overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-4 text-xs text-slate-200 sm:text-sm">
-              <code>{`// JavaScript – link al generatore con parametri
-const url = 'https://girocodegenerator.com/it'
-  + '?name=' + encodeURIComponent('Mario Rossi')
-  + '&iban=' + encodeURIComponent('IT60X0542811101000000123456')
-  + '&betrag=' + encodeURIComponent('99.99')
-  + '&zweck=' + encodeURIComponent('Fattura 2025-001');
-window.open(url, '_blank');`}</code>
-            </pre>
             <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-4 text-xs text-slate-200 sm:text-sm">
-              <code>{`// PHP – generazione QR via API
-$url = 'https://girocodegenerator.com/api/generate'
-  . '?name=' . urlencode($name)
-  . '&iban=' . urlencode($iban)
-  . '&betrag=' . urlencode($betrag)
-  . '&zweck=' . urlencode($zweck);
-
-$response = file_get_contents($url);
-$data = json_decode($response, true);
-$qrBase64 = $data['qr_base64']; // PNG Base64 del QR Code`}</code>
+              <code>{`function buildEPC({ name, iban, bic = '', amount, purpose = '' }) {
+  const amountStr = amount ? 'EUR' + Number(amount).toFixed(2) : '';
+  return [
+    'BCD', '001', '1', 'SCT',
+    bic.trim(),
+    name.trim().slice(0, 70),
+    iban.replace(/\\s+/g, '').toUpperCase(),
+    amountStr,
+    '', '',
+    purpose.trim().slice(0, 140)
+  ].join('\\n');
+}`}</code>
             </pre>
           </section>
 
           <section>
             <h2 className="mb-3 text-base font-semibold tracking-tight text-slate-50 md:text-lg">
-              Google Apps Script
+              Creare un codice QR dal payload
             </h2>
             <p className="mb-4 text-sm text-slate-300 md:text-base">
-              Puoi chiamare il GiroCode Generator direttamente da Google Apps Script:
+              Con il pacchetto{' '}
+              <code className="rounded bg-slate-800 px-1.5 py-0.5 text-slate-200">qrcode</code> di
+              npm puoi disegnare il QR a partire dal payload:
             </p>
             <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 px-4 py-4 text-xs text-slate-200 sm:text-sm">
-              <code>{`function createGiroCode(name, iban, betrag, zweck) {
-  const url = 'https://girocodegenerator.com/api/generate'
-    + '?name=' + encodeURIComponent(name)
-    + '&iban=' + encodeURIComponent(iban)
-    + '&betrag=' + encodeURIComponent(betrag)
-    + '&zweck=' + encodeURIComponent(zweck);
-  
-  const response = UrlFetchApp.fetch(url);
-  const data = JSON.parse(response.getContentText());
-  return data.qr_base64; // PNG Base64 del QR Code
-}`}</code>
+              <code>{`import QRCode from 'qrcode';
+
+const payload = buildEPC({
+  name: 'Mario Rossi',
+  iban: 'IT60X0542811101000000123456',
+  amount: 99.99,
+  purpose: 'Fattura 2025-001'
+});
+
+QRCode.toCanvas(canvas, payload, {
+  errorCorrectionLevel: 'M',
+  width: 220
+});`}</code>
             </pre>
           </section>
 
