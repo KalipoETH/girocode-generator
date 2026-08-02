@@ -199,6 +199,13 @@ export default function HypoOesterreichPage() {
                 <span>GiroCode wird nicht erkannt? Zur Fehlerbehebung</span>
                 <span className="ml-2 text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">→</span>
               </Link>
+              <Link
+                href="/qr-code-ueberweisung"
+                className="group flex items-center justify-between rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-3 text-sm font-medium text-[#9aa1b6] transition-all duration-200 hover:bg-[#1a1d25] hover:border-emerald-500/25 hover:text-[#e8eaf0] sm:col-span-2"
+              >
+                <span>QR-Code für Überweisung erstellen</span>
+                <span className="ml-2 text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </Link>
             </div>
           </div>
 

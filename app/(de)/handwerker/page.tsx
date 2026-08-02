@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { UseCaseLanding } from '@/components/UseCaseLanding';
 import { SITE_URL } from '@/lib/siteConfig';
 
@@ -117,6 +118,37 @@ export default function HandwerkerDePage() {
         ctaText:
           'Erstelle deine erste GiroCode-Handwerker-Rechnung in 2 Minuten – kostenlos, ohne Registrierung, lokal in deinem Browser.',
         ctaButton: 'Jetzt kostenlos GiroCode erstellen →',
+        closing: (
+          <div className="border-t border-slate-800 pt-6">
+            <p className="mb-3 text-sm font-semibold text-slate-300">Das könnte dich auch interessieren</p>
+            <div className="flex flex-wrap gap-3">
+            <Link
+              href="/qr-code-ueberweisung"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:border-emerald-500/40 hover:text-emerald-300"
+            >
+              QR-Code für Überweisung erstellen →
+            </Link>
+            <Link
+              href="/kleinunternehmer-rechnung"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:border-emerald-500/40 hover:text-emerald-300"
+            >
+              Rechnung als Kleinunternehmer →
+            </Link>
+            <Link
+              href="/wissen/rechnung"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:border-emerald-500/40 hover:text-emerald-300"
+            >
+              GiroCode auf Rechnungen →
+            </Link>
+            <Link
+              href="/freelancer"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:border-emerald-500/40 hover:text-emerald-300"
+            >
+              GiroCode für Freelancer →
+            </Link>
+            </div>
+          </div>
+        ),
       }}
     />
   );

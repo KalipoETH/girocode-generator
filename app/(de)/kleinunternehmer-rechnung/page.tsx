@@ -298,6 +298,7 @@ export default function KleinunternehmerRechnungPage() {
               { href: '/wissen/rechnung', label: '§14 UStG Leitfaden', desc: 'Alle Pflichtangaben' },
               { href: '/freelancer', label: 'Freelancer', desc: 'Schneller bezahlt werden' },
               { href: '/kleinunternehmen', label: 'Kleinunternehmen', desc: 'GiroCode für kleine Betriebe' },
+              { href: '/qr-code-ueberweisung', label: 'QR-Code für Überweisung', desc: 'Kostenlos erstellen' },
             ].map((link) => (
               <Link
                 key={link.href}

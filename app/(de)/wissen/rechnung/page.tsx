@@ -75,6 +75,7 @@ export default function WissenRechnungPage() {
         { href: '/wissen/girocode-buchhaltungssoftware', label: 'GiroCode & Buchhaltungssoftware' },
         { href: '/wissen/epc-standard', label: 'EPC-Standard erklärt' },
         { href: '/sepa-qr-pflicht', label: 'SEPA-QR-Pflicht auf Rechnungen' },
+        { href: '/qr-code-ueberweisung', label: 'QR-Code für Überweisung erstellen' },
         { href: '/blog/freelancer-rechnungen-qr-code', label: 'Freelancer-Rechnungen mit QR-Code' },
       ]}
       locale="de"

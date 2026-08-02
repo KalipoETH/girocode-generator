@@ -128,6 +128,30 @@ export default function VereinDePage() {
             >
               GiroCode vs. Lastschrift für Beiträge →
             </Link>
+            <Link
+              href="/qr-code-ueberweisung"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:border-emerald-500/40 hover:text-emerald-300"
+            >
+              QR-Code für Überweisung erstellen →
+            </Link>
+            <Link
+              href="/spenden"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:border-emerald-500/40 hover:text-emerald-300"
+            >
+              GiroCode für Spenden →
+            </Link>
+            <Link
+              href="/wissen/rechnung"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:border-emerald-500/40 hover:text-emerald-300"
+            >
+              GiroCode auf Rechnungen →
+            </Link>
+            <Link
+              href="/kleinunternehmer-rechnung"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:border-emerald-500/40 hover:text-emerald-300"
+            >
+              Rechnung als Kleinunternehmer →
+            </Link>
             </div>
           </div>
         ),
