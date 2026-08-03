@@ -63,7 +63,7 @@ const bankGroups: BankGroup[] = [
   },
   {
     title: '🇦🇹 Österreich',
-    intro: 'Österreichische Banken nutzen den Stuzza-QR auf Basis des EPC-Standards.',
+    intro: 'Österreichische Banken nutzen den Stuzza-QR auf Basis des EPC-Standards – du kannst damit QR-Codes für Überweisungen zu allen österreichischen Banken erstellen und scannen.',
     banks: [
       { name: 'Erste Bank & Sparkasse', slug: '/erste-bank', hint: 'George' },
       { name: 'Bank Austria', slug: '/bank-austria', hint: 'BankAustria MobileBanking' },
@@ -87,6 +87,13 @@ const bankGroups: BankGroup[] = [
       { name: 'Kantonalbanken', slug: '/cantonal-banks', hint: 'Kantonalbank-Apps' },
     ],
   },
+];
+
+const weiterfuehrendeLinks = [
+  { href: '/qr-code-ueberweisung', label: 'QR-Code für Überweisung erstellen' },
+  { href: '/girocode-erstellen-anleitung', label: 'GiroCode erstellen – Schritt für Schritt' },
+  { href: '/wissen/girocode', label: 'Was ist ein GiroCode?' },
+  { href: '/wissen/rechnung', label: 'GiroCode auf Rechnungen' },
 ];
 
 const faqItems = [
@@ -239,6 +246,24 @@ export default function BankenPage() {
                   Welche Banking-Apps können GiroCodes scannen?
                   <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                 </Link>
+              </div>
+            </div>
+
+            <div className="mt-8 space-y-4">
+              <h2 className="text-base font-semibold tracking-tight text-slate-50 md:text-lg">
+                Weiterführende Anleitungen
+              </h2>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {weiterfuehrendeLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="group flex items-center justify-between rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-3 transition-all duration-200 hover:border-emerald-500/40 hover:bg-[#1a1d25]"
+                  >
+                    <span className="text-[14px] font-bold leading-snug text-[#e8eaf0]">{link.label}</span>
+                    <span className="ml-2 flex-shrink-0 text-[#22c55e] transition-transform duration-200 group-hover:translate-x-1">→</span>
+                  </Link>
+                ))}
               </div>
             </div>
           </section>
