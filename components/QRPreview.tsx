@@ -33,6 +33,10 @@ interface QRTexts {
   downloadHint: string;
   sealTitle: string;
   sealSubtitle: string;
+  usageTitle: string;
+  usagePoint1: string;
+  usagePoint2: string;
+  usagePoint3: string;
   nlSuccess: string;
   nlTeaser: string;
   nlPlaceholder: string;
@@ -56,6 +60,13 @@ function getTexts(locale: Locale): QRTexts {
       downloadHint: 'PNG format \u00b7 optimized for print & digital',
       sealTitle: 'Safe-Pay verified',
       sealSubtitle: 'IBAN checked \u00b7 EPC-compliant \u00b7 Locally generated',
+      usageTitle: 'How to use the GiroCode correctly',
+      usagePoint1:
+        'Scan it with your banking app \u2013 not the regular camera app. The GiroCode is a payment data record, not a web link.',
+      usagePoint2:
+        'In your banking app it\u2019s usually under \u201cTransfer\u201d \u2192 \u201cscan via photo/QR\u201d.',
+      usagePoint3:
+        'Tip: also write the IBAN in plain text next to it \u2013 for anyone whose app has no scan function.',
       nlSuccess: '✅ PDF successfully created!',
       nlTeaser: '💡 Want free invoice templates every month?',
       nlPlaceholder: 'your@email.com',
@@ -79,6 +90,13 @@ function getTexts(locale: Locale): QRTexts {
       downloadHint: 'Format PNG \u00b7 optimis\u00e9 pour impression & num\u00e9rique',
       sealTitle: 'Safe-Pay v\u00e9rifi\u00e9',
       sealSubtitle: 'IBAN v\u00e9rifi\u00e9 \u00b7 Conforme EPC \u00b7 G\u00e9n\u00e9r\u00e9 localement',
+      usageTitle: 'Comment utiliser correctement le GiroCode',
+      usagePoint1:
+        'Scannez-le avec votre application bancaire \u2013 pas avec l\u2019appareil photo classique. Le GiroCode est un jeu de donn\u00e9es de paiement, pas un lien web.',
+      usagePoint2:
+        'Dans votre application bancaire, g\u00e9n\u00e9ralement sous \u00ab\u00a0Virement\u00a0\u00bb \u2192 \u00ab\u00a0scanner par photo/QR\u00a0\u00bb.',
+      usagePoint3:
+        'Astuce\u00a0: indiquez aussi l\u2019IBAN en texte \u00e0 c\u00f4t\u00e9 \u2013 pour ceux dont l\u2019application n\u2019a pas de fonction de scan.',
       nlSuccess: '✅ PDF créé avec succès!',
       nlTeaser: '💡 Voulez-vous des modèles de factures gratuits chaque mois?',
       nlPlaceholder: 'votre@email.fr',
@@ -102,6 +120,13 @@ function getTexts(locale: Locale): QRTexts {
       downloadHint: 'Formato PNG \u00b7 optimizado para impresi\u00f3n & digital',
       sealTitle: 'Safe-Pay verificado',
       sealSubtitle: 'IBAN verificado \u00b7 Conforme EPC \u00b7 Generado localmente',
+      usageTitle: 'C\u00f3mo usar correctamente el GiroCode',
+      usagePoint1:
+        'Escan\u00e9alo con tu app bancaria \u2013 no con la app de c\u00e1mara normal. El GiroCode es un registro de datos de pago, no un enlace web.',
+      usagePoint2:
+        'En tu app bancaria suele estar en \u00abTransferencia\u00bb \u2192 \u00abescanear por foto/QR\u00bb.',
+      usagePoint3:
+        'Consejo: escribe tambi\u00e9n el IBAN como texto al lado \u2013 para quienes no tengan funci\u00f3n de escaneo.',
       nlSuccess: '✅ ¡PDF creado con éxito!',
       nlTeaser: '💡 ¿Quieres plantillas de factura gratuitas cada mes?',
       nlPlaceholder: 'tu@email.es',
@@ -125,6 +150,13 @@ function getTexts(locale: Locale): QRTexts {
       downloadHint: 'Formato PNG · ottimizzato per stampa e digitale',
       sealTitle: 'Safe-Pay verificato',
       sealSubtitle: 'IBAN verificato · Conforme EPC · Generato localmente',
+      usageTitle: 'Come usare correttamente il GiroCode',
+      usagePoint1:
+        'Scansionalo con la tua app bancaria – non con la normale app fotocamera. Il GiroCode è un record di dati di pagamento, non un link web.',
+      usagePoint2:
+        'Nella tua app bancaria di solito si trova sotto «Bonifico» → «scansiona tramite foto/QR».',
+      usagePoint3:
+        'Suggerimento: scrivi anche l’IBAN come testo accanto – per chi non ha la funzione di scansione.',
       nlSuccess: '✅ PDF creato con successo!',
       nlTeaser: '💡 Vuoi modelli di fattura gratuiti ogni mese?',
       nlPlaceholder: 'tua@email.it',
@@ -147,6 +179,13 @@ function getTexts(locale: Locale): QRTexts {
     downloadHint: 'PNG-Format \u00b7 optimiert f\u00fcr Druck & Digital',
     sealTitle: 'Safe-Pay verifiziert',
     sealSubtitle: 'IBAN gepr\u00fcft \u00b7 EPC-konform \u00b7 Lokal generiert',
+    usageTitle: 'So nutzt du den GiroCode richtig',
+    usagePoint1:
+      'Mit der Banking-App scannen \u2013 nicht mit der normalen Kamera-App. Der GiroCode ist ein Zahlungs-Datensatz, kein Web-Link.',
+    usagePoint2:
+      'In der Banking-App meist unter \u201e\u00dcberweisung\u201c \u2192 \u201eper Foto/QR scannen\u201c.',
+    usagePoint3:
+      'Tipp: IBAN zus\u00e4tzlich als Text danebenschreiben \u2013 f\u00fcr alle, deren App keine Scan-Funktion hat.',
     nlSuccess: '✅ QR-Code erfolgreich erstellt!',
     nlTeaser: '💡 Möchtest du monatlich kostenlose Rechnungsvorlagen?',
     nlPlaceholder: 'deine@email.de',
@@ -352,6 +391,9 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
   // Safe-Pay Siegel anzeigen wenn: IBAN valide (success status), EPC-Payload vorhanden, QR gezeichnet
   const showSeal = statusType === 'success' && !!epcPayload && qrRenderedSuccess && !useExternal;
 
+  // Nutzungshinweis sobald ein QR erzeugt wurde – auch beim externen Fallback relevant
+  const showUsageHint = !!epcPayload;
+
   return (
     <div className="flex flex-col gap-4 rounded-2xl border border-white/5 bg-[#121318]/80 p-4 shadow-lg shadow-black/40 backdrop-blur">
       <div className="flex items-center justify-between gap-3">
@@ -468,6 +510,45 @@ export const QRPreview: React.FC<QRPreviewProps> = ({
           <div>
             <p className="text-xs font-semibold text-emerald-300">{t.sealTitle}</p>
             <p className="text-[11px] text-emerald-500/80">{t.sealSubtitle}</p>
+          </div>
+        </div>
+      )}
+
+      {/* Nutzungshinweis: Banking-App statt Kamera-App */}
+      {showUsageHint && (
+        <div
+          className="flex items-start gap-3 rounded-lg px-3 py-2.5"
+          style={{
+            background: '#16171d',
+            border: '1px solid rgba(255,255,255,0.08)',
+            borderRadius: '8px',
+          }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            className="mt-0.5 h-4 w-4 flex-shrink-0 text-slate-400"
+            aria-hidden
+          >
+            <path
+              fillRule="evenodd"
+              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+              clipRule="evenodd"
+            />
+          </svg>
+          <div>
+            <p className="text-xs font-semibold text-slate-200">{t.usageTitle}</p>
+            <ul className="mt-1.5 flex flex-col gap-1">
+              {[t.usagePoint1, t.usagePoint2, t.usagePoint3].map((point) => (
+                <li key={point} className="flex gap-1.5 text-[11px] leading-relaxed text-slate-400">
+                  <span className="text-slate-600" aria-hidden>
+                    &bull;
+                  </span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       )}
