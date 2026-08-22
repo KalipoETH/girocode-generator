@@ -299,6 +299,7 @@ export default function KleinunternehmerRechnungPage() {
               { href: '/freelancer', label: 'Freelancer', desc: 'Schneller bezahlt werden' },
               { href: '/kleinunternehmen', label: 'Kleinunternehmen', desc: 'GiroCode für kleine Betriebe' },
               { href: '/qr-code-ueberweisung', label: 'QR-Code für Überweisung', desc: 'Kostenlos erstellen' },
+              { href: '/wissen/girocode-buchhaltungssoftware', label: 'GiroCode & Buchhaltungssoftware', desc: 'Ehrlicher Vergleich' },
             ].map((link) => (
               <Link
                 key={link.href}

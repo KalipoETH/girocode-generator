@@ -149,6 +149,12 @@ export default function FreelancerDePage() {
               >
                 QR-Code für Überweisung erstellen →
               </Link>
+              <Link
+                href="/wissen/girocode-buchhaltungssoftware"
+                className="inline-flex items-center gap-2 rounded-xl border border-[#1f2431] bg-[#121318] px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:border-emerald-500/40 hover:text-emerald-300"
+              >
+                GiroCode & Buchhaltungssoftware →
+              </Link>
               </div>
             </div>
           </div>

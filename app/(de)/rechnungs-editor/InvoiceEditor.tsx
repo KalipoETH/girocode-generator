@@ -1,11 +1,25 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import { track } from '@vercel/analytics';
 
 type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
-const labels: Record<Locale, { title: string; subtitle: string; badge: string; reset: string; download: string; generating: string }> = {
+const labels: Record<
+  Locale,
+  {
+    title: string;
+    subtitle: string;
+    badge: string;
+    reset: string;
+    download: string;
+    generating: string;
+    accountingHintTitle: string;
+    accountingHintText: string;
+    accountingHintCta: string;
+  }
+> = {
   de: {
     title: 'Rechnungs-Editor',
     subtitle: 'Gestalte deine Rechnung individuell – Drag & Drop, eigenes Logo, freie Gestaltung.',
@@ -13,6 +27,10 @@ const labels: Record<Locale, { title: string; subtitle: string; badge: string; r
     reset: 'Vorlage zurücksetzen',
     download: 'PDF herunterladen ↓',
     generating: 'PDF wird erstellt …',
+    accountingHintTitle: 'Erstellst du öfter Rechnungen?',
+    accountingHintText:
+      'Programme wie sevDesk und FastBill erzeugen den GiroCode automatisch auf jeder Rechnung – inklusive Buchhaltung und DATEV-Export.',
+    accountingHintCta: 'Ehrlicher Softwarevergleich →',
   },
   en: {
     title: 'Invoice Editor',
@@ -21,6 +39,10 @@ const labels: Record<Locale, { title: string; subtitle: string; badge: string; r
     reset: 'Reset template',
     download: 'Download PDF ↓',
     generating: 'Generating PDF …',
+    accountingHintTitle: 'Creating invoices regularly?',
+    accountingHintText:
+      'Tools like sevDesk and FastBill generate the GiroCode automatically on every invoice – including bookkeeping and DATEV export.',
+    accountingHintCta: 'See the honest comparison →',
   },
   fr: {
     title: 'Éditeur de facture',
@@ -29,6 +51,10 @@ const labels: Record<Locale, { title: string; subtitle: string; badge: string; r
     reset: 'Réinitialiser le modèle',
     download: 'Télécharger PDF ↓',
     generating: 'Génération du PDF…',
+    accountingHintTitle: 'Vous créez souvent des factures ?',
+    accountingHintText:
+      'Des logiciels comme sevDesk et FastBill génèrent le GiroCode automatiquement sur chaque facture – comptabilité et export DATEV inclus.',
+    accountingHintCta: 'Comparatif honnête →',
   },
   es: {
     title: 'Editor de facturas',
@@ -37,6 +63,10 @@ const labels: Record<Locale, { title: string; subtitle: string; badge: string; r
     reset: 'Restablecer plantilla',
     download: 'Descargar PDF ↓',
     generating: 'Generando PDF…',
+    accountingHintTitle: '¿Creas facturas con frecuencia?',
+    accountingHintText:
+      'Programas como sevDesk y FastBill generan el GiroCode automáticamente en cada factura – incluyendo contabilidad y exportación DATEV.',
+    accountingHintCta: 'Comparación honesta →',
   },
   it: {
     title: 'Editor Fatture con GiroCode',
@@ -46,6 +76,10 @@ const labels: Record<Locale, { title: string; subtitle: string; badge: string; r
     reset: 'Reimposta modello',
     download: 'Scarica PDF ↓',
     generating: 'Generazione PDF…',
+    accountingHintTitle: 'Crei fatture di frequente?',
+    accountingHintText:
+      'Programmi come sevDesk e FastBill generano il GiroCode automaticamente su ogni fattura – inclusa la contabilità e l\'esportazione DATEV.',
+    accountingHintCta: 'Confronto onesto →',
   },
 };
 
@@ -190,6 +224,7 @@ export function InvoiceEditor({ locale }: Props) {
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
+  const [hasDownloaded, setHasDownloaded] = useState(false);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -258,6 +293,7 @@ export function InvoiceEditor({ locale }: Props) {
       link.click();
       URL.revokeObjectURL(url);
       track('invoice_editor_pdf_generated', { locale });
+      setHasDownloaded(true);
     } catch (e) {
       console.error('PDF-Generierung fehlgeschlagen:', e);
       setError('PDF konnte nicht erstellt werden.');
@@ -304,6 +340,35 @@ export function InvoiceEditor({ locale }: Props) {
 
         {error && (
           <p className="mt-2 text-xs text-red-400">{error}</p>
+        )}
+
+        {hasDownloaded && (
+          <div className="mt-4 flex items-start gap-3 rounded-lg border border-[#1f2431] bg-[#16171d] px-3 py-2.5">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="mt-0.5 h-4 w-4 flex-shrink-0 text-slate-400"
+              aria-hidden
+            >
+              <path
+                fillRule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <div>
+              <p className="text-xs font-semibold text-slate-200">{t.accountingHintTitle}</p>
+              <p className="mt-1 text-[11px] leading-relaxed text-slate-400">{t.accountingHintText}</p>
+              <Link
+                href="/wissen/girocode-buchhaltungssoftware"
+                onClick={() => track('accounting_hint_clicked', { locale })}
+                className="mt-2 inline-flex items-center text-[11px] font-medium text-slate-300 underline underline-offset-2 transition hover:text-emerald-300"
+              >
+                {t.accountingHintCta}
+              </Link>
+            </div>
+          </div>
         )}
       </div>
 
