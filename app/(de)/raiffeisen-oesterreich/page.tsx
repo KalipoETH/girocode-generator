@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode raiffeisen österreich, elba app qr code, raiffeisen elba girocode scannen, sepa qr österreich',
   alternates: {
     canonical: `${SITE_URL}/raiffeisen-oesterreich`,
+    languages: {
+      'x-default': `${SITE_URL}/raiffeisen-oesterreich`,
+      de: `${SITE_URL}/raiffeisen-oesterreich`,
+      en: `${SITE_URL}/en/raiffeisen-oesterreich`,
+      fr: `${SITE_URL}/fr/raiffeisen-oesterreich`,
+      es: `${SITE_URL}/es/raiffeisen-oesterreich`,
+    },
   },
 };
 

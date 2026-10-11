@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode hypo tirol, hypo vorarlberg qr code, hypo banking app girocode, hypo noe sepa qr österreich',
   alternates: {
     canonical: `${SITE_URL}/hypo-oesterreich`,
+    languages: {
+      'x-default': `${SITE_URL}/hypo-oesterreich`,
+      de: `${SITE_URL}/hypo-oesterreich`,
+      en: `${SITE_URL}/en/hypo-oesterreich`,
+      fr: `${SITE_URL}/fr/hypo-oesterreich`,
+      es: `${SITE_URL}/es/hypo-oesterreich`,
+    },
   },
 };
 

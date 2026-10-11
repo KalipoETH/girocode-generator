@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode bawag, bawag mobile banking qr code, bawag girocode scannen, sepa qr bawag österreich',
   alternates: {
     canonical: `${SITE_URL}/bawag`,
+    languages: {
+      'x-default': `${SITE_URL}/bawag`,
+      de: `${SITE_URL}/bawag`,
+      en: `${SITE_URL}/en/bawag`,
+      fr: `${SITE_URL}/fr/bawag`,
+      es: `${SITE_URL}/es/bawag`,
+    },
   },
 };
 

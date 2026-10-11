@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode volksbank österreich, vb-banking app qr code, volksbank österreich girocode, sepa qr volksbank',
   alternates: {
     canonical: `${SITE_URL}/volksbank-oesterreich`,
+    languages: {
+      'x-default': `${SITE_URL}/volksbank-oesterreich`,
+      de: `${SITE_URL}/volksbank-oesterreich`,
+      en: `${SITE_URL}/en/volksbank-oesterreich`,
+      fr: `${SITE_URL}/fr/volksbank-oesterreich`,
+      es: `${SITE_URL}/es/volksbank-oesterreich`,
+    },
   },
 };
 

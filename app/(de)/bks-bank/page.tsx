@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode bks bank, bks mobile banking qr code, bks bank girocode scannen, sepa qr bks bank österreich',
   alternates: {
     canonical: `${SITE_URL}/bks-bank`,
+    languages: {
+      'x-default': `${SITE_URL}/bks-bank`,
+      de: `${SITE_URL}/bks-bank`,
+      en: `${SITE_URL}/en/bks-bank`,
+      fr: `${SITE_URL}/fr/bks-bank`,
+      es: `${SITE_URL}/es/bks-bank`,
+    },
   },
 };
 

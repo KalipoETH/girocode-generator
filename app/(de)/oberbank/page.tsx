@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode oberbank, oberbank mobile banking qr code, oberbank girocode scannen, sepa qr oberbank',
   alternates: {
     canonical: `${SITE_URL}/oberbank`,
+    languages: {
+      'x-default': `${SITE_URL}/oberbank`,
+      de: `${SITE_URL}/oberbank`,
+      en: `${SITE_URL}/en/oberbank`,
+      fr: `${SITE_URL}/fr/oberbank`,
+      es: `${SITE_URL}/es/oberbank`,
+    },
   },
 };
 

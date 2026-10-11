@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode bank austria, bank austria qr code, unicredit mobilebanking girocode, bank austria überweisung qr',
   alternates: {
     canonical: `${SITE_URL}/bank-austria`,
+    languages: {
+      'x-default': `${SITE_URL}/bank-austria`,
+      de: `${SITE_URL}/bank-austria`,
+      en: `${SITE_URL}/en/bank-austria`,
+      fr: `${SITE_URL}/fr/bank-austria`,
+      es: `${SITE_URL}/es/bank-austria`,
+    },
   },
 };
 
