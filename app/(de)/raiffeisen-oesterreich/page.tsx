@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'GiroCode mit Raiffeisen Österreich scannen – Anleitung 2026',
+  title: 'GiroCode für ELBA erstellen & scannen – Raiffeisen Österreich',
   description:
-    'GiroCode mit der Raiffeisen ELBA-App scannen: Unter „Zahlungen" → „QR-Code scannen" öffnen, Code erfassen, Überweisung bestätigen. ✅ Schritt-für-Schritt Anleitung.',
+    'ELBA QR-Code (GiroCode) kostenlos erstellen – oder mit der Raiffeisen ELBA-App scannen. Schritt für Schritt, ohne Registrierung.',
   keywords: 'girocode raiffeisen österreich, elba app qr code, raiffeisen elba girocode scannen, sepa qr österreich',
   alternates: {
     canonical: `${SITE_URL}/raiffeisen-oesterreich`,
@@ -24,6 +24,11 @@ const otherBanks = [
 ];
 
 const faqItems = [
+  {
+    question: 'Wie erstelle ich einen QR-Code für ELBA?',
+    answer:
+      'Mit unserem kostenlosen GiroCode-Generator: Empfänger, IBAN, Betrag und Verwendungszweck eingeben – fertig ist ein EPC-konformer SEPA-QR-Code, den die Raiffeisen ELBA-App und jede andere österreichische Banking-App einlesen kann.',
+  },
   {
     question: 'Wo finde ich den QR-Scanner in der ELBA-App?',
     answer:
@@ -84,11 +89,11 @@ export default function RaiffeisenOesterreichPage() {
               Kompatibel mit ELBA-App
             </p>
             <h1 className="text-2xl font-bold tracking-tight text-[#e8eaf0] md:text-3xl">
-              GiroCode mit der Raiffeisen ELBA-App scannen
+              GiroCode für ELBA erstellen und scannen
             </h1>
             <p className="max-w-2xl text-sm leading-relaxed text-slate-400 md:text-base">
-              So nutzt du GiroCodes (SEPA-QR-Codes) mit der Raiffeisen ELBA-App in Österreich –
-              Schritt für Schritt erklärt. In weniger als 30 Sekunden ist die Überweisung abgeschlossen.
+              Erstelle einen GiroCode für Zahlungen – oder scanne einen vorhandenen Code mit der
+              Raiffeisen ELBA-App in Österreich. Beides erklärt, Schritt für Schritt.
             </p>
           </header>
 

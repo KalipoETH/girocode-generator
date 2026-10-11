@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'GiroCode mit Bank Austria / UniCredit scannen – Anleitung',
+  title: 'GiroCode für Bank Austria erstellen & scannen – App-Anleitung',
   description:
-    'GiroCode mit der Bank Austria MobileBanking App scannen: QR-Scanner im Überweisungsbereich öffnen, Code scannen, bestätigen. ✅ Schritt-für-Schritt Anleitung 2026.',
+    'Bank Austria QR-Code (GiroCode) kostenlos erstellen – oder mit der Bank Austria MobileBanking App scannen. Schritt für Schritt, ohne Registrierung.',
   keywords: 'girocode bank austria, bank austria qr code, unicredit mobilebanking girocode, bank austria überweisung qr',
   alternates: {
     canonical: `${SITE_URL}/bank-austria`,
@@ -24,6 +24,11 @@ const otherBanks = [
 ];
 
 const faqItems = [
+  {
+    question: 'Wie erstelle ich einen QR-Code für Bank Austria?',
+    answer:
+      'Mit unserem kostenlosen GiroCode-Generator: Empfänger, IBAN, Betrag und Verwendungszweck eingeben – fertig ist ein EPC-konformer SEPA-QR-Code, den die Bank Austria MobileBanking App und jede andere Banking-App einlesen kann.',
+  },
   {
     question: 'Wo finde ich den QR-Scanner in der Bank Austria App?',
     answer:
@@ -84,11 +89,11 @@ export default function BankAustriaPage() {
               Kompatibel mit Bank Austria App
             </p>
             <h1 className="text-2xl font-bold tracking-tight text-[#e8eaf0] md:text-3xl">
-              GiroCode mit der Bank Austria App scannen
+              GiroCode für die Bank Austria App erstellen und scannen
             </h1>
             <p className="max-w-2xl text-sm leading-relaxed text-slate-400 md:text-base">
-              So nutzt du GiroCodes (SEPA-QR-Codes) mit der Bank Austria MobileBanking App (UniCredit) –
-              Schritt für Schritt erklärt.
+              Erstelle einen GiroCode für Zahlungen – oder scanne einen vorhandenen Code mit der
+              Bank Austria MobileBanking App (UniCredit). Beides erklärt, Schritt für Schritt.
             </p>
           </header>
 
