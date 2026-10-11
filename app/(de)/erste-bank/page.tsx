@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'GiroCode mit Erste Bank / George scannen – Anleitung 2026',
+  title: 'GiroCode für George erstellen & scannen – Erste Bank Österreich',
   description:
-    'So scannst du einen GiroCode mit der George App (Erste Bank Österreich): QR-Scanner unter „Überweisen" → „QR-Code" öffnen, scannen, bestätigen. ✅ Gilt auch für s Sparkasse Österreich.',
+    'George QR-Code (GiroCode) kostenlos erstellen – oder mit der George App scannen. Für Erste Bank & s Sparkasse Österreich, Schritt für Schritt, ohne Registrierung.',
   keywords: 'girocode erste bank, george app girocode, erste bank qr code scannen, george app qr überweisung österreich',
   alternates: {
     canonical: `${SITE_URL}/erste-bank`,
@@ -32,6 +32,11 @@ const otherBanks = [
 ];
 
 const faqItems = [
+  {
+    question: 'Wie erstelle ich einen QR-Code für George?',
+    answer:
+      'Mit unserem kostenlosen GiroCode-Generator: Empfänger, IBAN, Betrag und Verwendungszweck eingeben – fertig ist ein EPC-konformer SEPA-QR-Code, den die George App und jede andere österreichische Banking-App einlesen kann.',
+  },
   {
     question: 'Wo finde ich den QR-Scanner in der George App?',
     answer:
@@ -92,11 +97,12 @@ export default function ErsteBankPage() {
               Kompatibel mit George App (Erste Bank)
             </p>
             <h1 className="text-2xl font-bold tracking-tight text-[#e8eaf0] md:text-3xl">
-              GiroCode mit der George App scannen
+              GiroCode für George erstellen und scannen
             </h1>
             <p className="max-w-2xl text-sm leading-relaxed text-slate-400 md:text-base">
-              So nutzt du GiroCodes (SEPA-QR-Codes) mit der George App der Erste Bank Österreich –
-              Schritt für Schritt erklärt. Gilt auch für alle österreichischen Sparkassen, die George verwenden.
+              Erstelle einen GiroCode für Zahlungen mit George – oder scanne einen vorhandenen
+              Code mit der George App der Erste Bank & s Sparkasse Österreich. Beides erklärt,
+              Schritt für Schritt.
             </p>
           </header>
 
