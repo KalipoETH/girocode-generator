@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'volksbank girocode, vr-banking girocode scannen, raiffeisenbank qr code, sepa qr volksbank',
   alternates: {
     canonical: `${SITE_URL}/volksbank`,
+    languages: {
+      'x-default': `${SITE_URL}/volksbank`,
+      de: `${SITE_URL}/volksbank`,
+      en: `${SITE_URL}/en/volksbank`,
+      fr: `${SITE_URL}/fr/volksbank`,
+      es: `${SITE_URL}/es/volksbank`,
+    },
   },
 };
 

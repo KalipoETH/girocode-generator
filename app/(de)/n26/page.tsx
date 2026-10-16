@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'n26 girocode, n26 app girocode scannen, n26 qr code überweisung, sepa qr n26',
   alternates: {
     canonical: `${SITE_URL}/n26`,
+    languages: {
+      'x-default': `${SITE_URL}/n26`,
+      de: `${SITE_URL}/n26`,
+      en: `${SITE_URL}/en/n26`,
+      fr: `${SITE_URL}/fr/n26`,
+      es: `${SITE_URL}/es/n26`,
+    },
   },
 };
 

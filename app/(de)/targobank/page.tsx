@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'targobank girocode, targobank mobile banking qr code, targobank girocode scannen, sepa qr targobank',
   alternates: {
     canonical: `${SITE_URL}/targobank`,
+    languages: {
+      'x-default': `${SITE_URL}/targobank`,
+      de: `${SITE_URL}/targobank`,
+      en: `${SITE_URL}/en/targobank`,
+      fr: `${SITE_URL}/fr/targobank`,
+      es: `${SITE_URL}/es/targobank`,
+    },
   },
 };
 

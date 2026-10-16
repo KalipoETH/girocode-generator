@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode santander, santander banking app qr code, santander girocode scannen, santander sepa qr überweisung',
   alternates: {
     canonical: `${SITE_URL}/santander`,
+    languages: {
+      'x-default': `${SITE_URL}/santander`,
+      de: `${SITE_URL}/santander`,
+      en: `${SITE_URL}/en/santander`,
+      fr: `${SITE_URL}/fr/santander`,
+      es: `${SITE_URL}/es/santander`,
+    },
   },
 };
 

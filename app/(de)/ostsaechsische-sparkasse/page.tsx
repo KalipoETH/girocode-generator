@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode ostsächsische sparkasse, sparkasse dresden qr code, ostsächsische sparkasse girocode',
   alternates: {
     canonical: `${SITE_URL}/ostsaechsische-sparkasse`,
+    languages: {
+      'x-default': `${SITE_URL}/ostsaechsische-sparkasse`,
+      de: `${SITE_URL}/ostsaechsische-sparkasse`,
+      en: `${SITE_URL}/en/ostsaechsische-sparkasse`,
+      fr: `${SITE_URL}/fr/ostsaechsische-sparkasse`,
+      es: `${SITE_URL}/es/ostsaechsische-sparkasse`,
+    },
   },
 };
 

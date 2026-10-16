@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode volksbank raiffeisenbank, vr banking app qr code, volksbank raiffeisenbank girocode, vr banking überweisung qr',
   alternates: {
     canonical: `${SITE_URL}/volksbank-raiffeisenbank`,
+    languages: {
+      'x-default': `${SITE_URL}/volksbank-raiffeisenbank`,
+      de: `${SITE_URL}/volksbank-raiffeisenbank`,
+      en: `${SITE_URL}/en/volksbank-raiffeisenbank`,
+      fr: `${SITE_URL}/fr/volksbank-raiffeisenbank`,
+      es: `${SITE_URL}/es/volksbank-raiffeisenbank`,
+    },
   },
 };
 

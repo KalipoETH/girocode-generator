@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode hypovereinsbank, hvb mobilebanking qr code, hypovereinsbank girocode scannen, unicredit hvb sepa qr',
   alternates: {
     canonical: `${SITE_URL}/hypovereinsbank`,
+    languages: {
+      'x-default': `${SITE_URL}/hypovereinsbank`,
+      de: `${SITE_URL}/hypovereinsbank`,
+      en: `${SITE_URL}/en/hypovereinsbank`,
+      fr: `${SITE_URL}/fr/hypovereinsbank`,
+      es: `${SITE_URL}/es/hypovereinsbank`,
+    },
   },
 };
 

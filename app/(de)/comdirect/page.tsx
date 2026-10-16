@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'comdirect girocode, comdirect app qr code scannen, girocode comdirect überweisung, sepa qr comdirect',
   alternates: {
     canonical: `${SITE_URL}/comdirect`,
+    languages: {
+      'x-default': `${SITE_URL}/comdirect`,
+      de: `${SITE_URL}/comdirect`,
+      en: `${SITE_URL}/en/comdirect`,
+      fr: `${SITE_URL}/fr/comdirect`,
+      es: `${SITE_URL}/es/comdirect`,
+    },
   },
 };
 

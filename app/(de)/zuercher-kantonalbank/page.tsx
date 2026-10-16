@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode zkb, zürcher kantonalbank qr code, zkb mobile banking sepa, zkb girocode',
   alternates: {
     canonical: `${SITE_URL}/zuercher-kantonalbank`,
+    languages: {
+      'x-default': `${SITE_URL}/zuercher-kantonalbank`,
+      de: `${SITE_URL}/zuercher-kantonalbank`,
+      en: `${SITE_URL}/en/zuercher-kantonalbank`,
+      fr: `${SITE_URL}/fr/zuercher-kantonalbank`,
+      es: `${SITE_URL}/es/zuercher-kantonalbank`,
+    },
   },
 };
 

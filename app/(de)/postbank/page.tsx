@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'postbank girocode, postbank finanzassistent qr code, postbank girocode scannen, sepa qr postbank',
   alternates: {
     canonical: `${SITE_URL}/postbank`,
+    languages: {
+      'x-default': `${SITE_URL}/postbank`,
+      de: `${SITE_URL}/postbank`,
+      en: `${SITE_URL}/en/postbank`,
+      fr: `${SITE_URL}/fr/postbank`,
+      es: `${SITE_URL}/es/postbank`,
+    },
   },
 };
 

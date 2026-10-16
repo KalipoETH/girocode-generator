@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode haspa, hamburger sparkasse qr code, haspa app girocode, hamburger sparkasse überweisung qr',
   alternates: {
     canonical: `${SITE_URL}/hamburger-sparkasse`,
+    languages: {
+      'x-default': `${SITE_URL}/hamburger-sparkasse`,
+      de: `${SITE_URL}/hamburger-sparkasse`,
+      en: `${SITE_URL}/en/hamburger-sparkasse`,
+      fr: `${SITE_URL}/fr/hamburger-sparkasse`,
+      es: `${SITE_URL}/es/hamburger-sparkasse`,
+    },
   },
 };
 

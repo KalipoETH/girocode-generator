@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'deutsche bank girocode, deutsche bank qr code scannen, girocode db banking, sepa qr deutsche bank',
   alternates: {
     canonical: `${SITE_URL}/deutsche-bank`,
+    languages: {
+      'x-default': `${SITE_URL}/deutsche-bank`,
+      de: `${SITE_URL}/deutsche-bank`,
+      en: `${SITE_URL}/en/deutsche-bank`,
+      fr: `${SITE_URL}/fr/deutsche-bank`,
+      es: `${SITE_URL}/es/deutsche-bank`,
+    },
   },
 };
 

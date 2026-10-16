@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode credit suisse ubs, credit suisse qr code, ubs credit suisse girocode, sepa qr credit suisse',
   alternates: {
     canonical: `${SITE_URL}/credit-suisse-ubs`,
+    languages: {
+      'x-default': `${SITE_URL}/credit-suisse-ubs`,
+      de: `${SITE_URL}/credit-suisse-ubs`,
+      en: `${SITE_URL}/en/credit-suisse-ubs`,
+      fr: `${SITE_URL}/fr/credit-suisse-ubs`,
+      es: `${SITE_URL}/es/credit-suisse-ubs`,
+    },
   },
 };
 

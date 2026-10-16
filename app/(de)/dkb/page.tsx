@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'dkb girocode, dkb banking girocode scannen, dkb app qr code, sepa qr dkb',
   alternates: {
     canonical: `${SITE_URL}/dkb`,
+    languages: {
+      'x-default': `${SITE_URL}/dkb`,
+      de: `${SITE_URL}/dkb`,
+      en: `${SITE_URL}/en/dkb`,
+      fr: `${SITE_URL}/fr/dkb`,
+      es: `${SITE_URL}/es/dkb`,
+    },
   },
 };
 

@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode kreissparkasse, kreissparkasse qr code, kreissparkasse girocode scannen, sparkasse qr überweisung',
   alternates: {
     canonical: `${SITE_URL}/kreissparkasse`,
+    languages: {
+      'x-default': `${SITE_URL}/kreissparkasse`,
+      de: `${SITE_URL}/kreissparkasse`,
+      en: `${SITE_URL}/en/kreissparkasse`,
+      fr: `${SITE_URL}/fr/kreissparkasse`,
+      es: `${SITE_URL}/es/kreissparkasse`,
+    },
   },
 };
 

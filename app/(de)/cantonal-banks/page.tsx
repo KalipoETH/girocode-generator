@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode kantonalbanken schweiz, kantonalbank qr code, sepa qr kantonalbank, zkb sgkb blkb girocode',
   alternates: {
     canonical: `${SITE_URL}/cantonal-banks`,
+    languages: {
+      'x-default': `${SITE_URL}/cantonal-banks`,
+      de: `${SITE_URL}/cantonal-banks`,
+      en: `${SITE_URL}/en/cantonal-banks`,
+      fr: `${SITE_URL}/fr/cantonal-banks`,
+      es: `${SITE_URL}/es/cantonal-banks`,
+    },
   },
 };
 

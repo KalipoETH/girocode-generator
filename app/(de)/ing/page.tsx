@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'ing girocode, ing banking girocode scannen, ing banking to go qr code, sepa qr ing',
   alternates: {
     canonical: `${SITE_URL}/ing`,
+    languages: {
+      'x-default': `${SITE_URL}/ing`,
+      de: `${SITE_URL}/ing`,
+      en: `${SITE_URL}/en/ing`,
+      fr: `${SITE_URL}/fr/ing`,
+      es: `${SITE_URL}/es/ing`,
+    },
   },
 };
 

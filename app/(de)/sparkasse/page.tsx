@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode sparkasse, sparkasse girocode scannen, sparkassen-app qr code, sepa qr sparkasse',
   alternates: {
     canonical: `${SITE_URL}/sparkasse`,
+    languages: {
+      'x-default': `${SITE_URL}/sparkasse`,
+      de: `${SITE_URL}/sparkasse`,
+      en: `${SITE_URL}/en/sparkasse`,
+      fr: `${SITE_URL}/fr/sparkasse`,
+      es: `${SITE_URL}/es/sparkasse`,
+    },
   },
 };
 

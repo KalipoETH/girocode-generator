@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode sparkasse köln, sparkasse kölnbonn qr code, sparkasse köln bonn girocode scannen',
   alternates: {
     canonical: `${SITE_URL}/sparkasse-koeln-bonn`,
+    languages: {
+      'x-default': `${SITE_URL}/sparkasse-koeln-bonn`,
+      de: `${SITE_URL}/sparkasse-koeln-bonn`,
+      en: `${SITE_URL}/en/sparkasse-koeln-bonn`,
+      fr: `${SITE_URL}/fr/sparkasse-koeln-bonn`,
+      es: `${SITE_URL}/es/sparkasse-koeln-bonn`,
+    },
   },
 };
 

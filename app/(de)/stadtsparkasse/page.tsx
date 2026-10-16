@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode stadtsparkasse, stadtsparkasse qr code, stadtsparkasse girocode scannen, sparkasse app qr überweisung',
   alternates: {
     canonical: `${SITE_URL}/stadtsparkasse`,
+    languages: {
+      'x-default': `${SITE_URL}/stadtsparkasse`,
+      de: `${SITE_URL}/stadtsparkasse`,
+      en: `${SITE_URL}/en/stadtsparkasse`,
+      fr: `${SITE_URL}/fr/stadtsparkasse`,
+      es: `${SITE_URL}/es/stadtsparkasse`,
+    },
   },
 };
 

@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'girocode berliner sparkasse, berliner sparkasse app qr code, berliner sparkasse girocode scannen',
   alternates: {
     canonical: `${SITE_URL}/berliner-sparkasse`,
+    languages: {
+      'x-default': `${SITE_URL}/berliner-sparkasse`,
+      de: `${SITE_URL}/berliner-sparkasse`,
+      en: `${SITE_URL}/en/berliner-sparkasse`,
+      fr: `${SITE_URL}/fr/berliner-sparkasse`,
+      es: `${SITE_URL}/es/berliner-sparkasse`,
+    },
   },
 };
 

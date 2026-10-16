@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   keywords: 'commerzbank girocode, commerzbank qr code scannen, sepa qr commerzbank, girocode commerzbank app',
   alternates: {
     canonical: `${SITE_URL}/commerzbank`,
+    languages: {
+      'x-default': `${SITE_URL}/commerzbank`,
+      de: `${SITE_URL}/commerzbank`,
+      en: `${SITE_URL}/en/commerzbank`,
+      fr: `${SITE_URL}/fr/commerzbank`,
+      es: `${SITE_URL}/es/commerzbank`,
+    },
   },
 };
 
