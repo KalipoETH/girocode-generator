@@ -5,9 +5,9 @@ const SLUG = 'code-qr-epc-belgique';
 const LOCALE = 'fr' as const;
 
 export const metadata: Metadata = {
-  title: 'Générateur Code QR EPC Belgique – Virement SEPA Gratuit 2026',
+  title: 'Créer un Code QR de Paiement – Belgique (SEPA/EPC) Gratuit 2026',
   description:
-    'Créez un code QR EPC pour virements SEPA en Belgique gratuitement. Compatible avec BNP Paribas Fortis, KBC, ING Belgique, Belfius. Sans inscription.',
+    'Créez gratuitement un code QR de paiement (EPC/SEPA) pour la Belgique — avec ou sans montant. Compatible BNP Paribas Fortis, KBC, ING Belgique, Belfius. Sans inscription.',
   alternates: countryAlternates(SLUG, LOCALE),
 };
 
@@ -19,7 +19,7 @@ export default function CodeQrEpcBelgiquePage() {
         locale: LOCALE,
         breadcrumbLabel: 'Code QR EPC Belgique',
         badge: 'Belgique · EPC069-12 · SEPA',
-        h1: 'Générateur de Code QR EPC pour la Belgique',
+        h1: 'Créer un code QR de paiement pour la Belgique',
         shortAnswer:
           "La Belgique est l'un des pays européens les plus avancés dans l'adoption des codes QR EPC. Les apps bancaires belges BNP Paribas Fortis Easy Banking, KBC Mobile, ING Banking et Belfius Mobile supportent tous le standard EPC069-12. Les IBAN belges commencent par BE et comportent 16 chiffres.",
         stats: [
@@ -49,6 +49,13 @@ export default function CodeQrEpcBelgiquePage() {
                 Les IBAN belges commencent par <strong>BE</strong>, suivis de 14 chiffres (2
                 chiffres de contrôle + 12 chiffres du compte). Longueur totale:{' '}
                 <strong>16 caractères</strong> (ex. <code>BE68539007547034</code>).
+              </p>
+              <h3>Quelles apps bancaires belges supportent le code QR&nbsp;?</h3>
+              <p>
+                Les quatre grandes banques belges supportent toutes le scan de codes QR EPC&nbsp;:
+                BNP Paribas Fortis (Easy Banking App), KBC (KBC Mobile), ING Belgique (ING Banking)
+                et Belfius (Belfius Mobile). Les banques et néobanques plus petites prenant en charge
+                les virements SEPA supportent généralement le même standard EPC069-12.
               </p>
             </>
           ),
@@ -92,6 +99,14 @@ export default function CodeQrEpcBelgiquePage() {
           {
             q: 'Le code QR EPC fonctionne-t-il en Belgique francophone?',
             a: 'Oui. Le code QR EPC fonctionne dans toute la Belgique, y compris en Wallonie et à Bruxelles. Les apps bancaires belges francophones supportent le même standard EPC069-12.',
+          },
+          {
+            q: 'Peut-on créer un code QR de paiement sans montant ?',
+            a: 'Oui. Laissez le champ montant vide pour générer un code QR sans montant : le payeur saisit lui-même la somme dans son app bancaire. Idéal pour les dons, les associations ou les paiements à montant libre.',
+          },
+          {
+            q: 'Le code QR EPC est-il la même chose que le GiroCode ?',
+            a: 'Oui. GiroCode est le nom de marque allemand du même standard EPC069-12. En Belgique, on parle simplement de code QR EPC ou de code QR SEPA. Les codes générés sont identiques.',
           },
         ],
         ctaText: 'Créer un code QR EPC →',
