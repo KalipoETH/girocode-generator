@@ -183,6 +183,30 @@ export default function HomePage() {
                   text: 'Nein. Ein GiroCode ist eine Zahlungsaufforderung, kein Lastschriftmandat. Nur der Zahler kann aktiv eine Überweisung auslösen und muss diese mit TAN oder Biometrie bestätigen. Deine IBAN zu kennen ermöglicht es niemandem, Geld abzubuchen.',
                 },
               },
+              {
+                '@type': 'Question',
+                name: 'Wo kann ich einen QR-Code für eine Überweisung erstellen?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Direkt hier mit dem kostenlosen GiroCode-Generator: Empfängername und IBAN eingeben, optional Betrag und Verwendungszweck ergänzen und den QR-Code herunterladen. Alles läuft lokal im Browser – ohne Anmeldung, ohne dass deine Bankdaten den Rechner verlassen.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Wie mache ich eine Überweisung per QR-Code?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Öffne den QR-Scanner deiner Banking-App (meist unter „Überweisung" → „QR-Code"), scanne den GiroCode und prüfe die automatisch ausgefüllten Daten – IBAN, Betrag und Verwendungszweck. Anschließend bestätigst du die Überweisung wie gewohnt mit TAN oder Biometrie – in unter 30 Sekunden.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Kann ich selbst einen QR-Code erstellen?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Ja. Jede Person mit einem SEPA-Konto kann kostenlos einen Zahlungs-QR-Code (GiroCode) erstellen – für Rechnungen, Spenden oder private Zahlungen. Nötig sind nur Empfängername und IBAN; Betrag und Verwendungszweck sind optional.',
+                },
+              },
             ],
           }),
         }}
@@ -557,6 +581,30 @@ export default function HomePage() {
                 </dt>
                 <dd className="mt-1 text-xs leading-[1.7] text-[#9aa1b6]">
                   Nein. Ein GiroCode ist eine Zahlungsaufforderung, kein Lastschriftmandat. Nur der Zahler kann aktiv eine Überweisung auslösen und muss diese mit TAN oder Biometrie bestätigen. Deine IBAN zu kennen ermöglicht es niemandem, Geld abzubuchen.
+                </dd>
+              </div>
+              <div className="rounded-[12px] border-l-[3px] border-l-[#22c55e] bg-[#1a1d25] p-5 transition-colors duration-200 hover:bg-[#1e2130]">
+                <dt className="font-semibold text-slate-100" style={{ fontSize: '15px' }}>
+                  Wo kann ich einen QR-Code für eine Überweisung erstellen?
+                </dt>
+                <dd className="mt-1 text-xs leading-[1.7] text-[#9aa1b6]">
+                  Direkt hier mit dem kostenlosen GiroCode-Generator: Empfängername und IBAN eingeben, optional Betrag und Verwendungszweck ergänzen und den QR-Code herunterladen. Alles läuft lokal im Browser – ohne Anmeldung, ohne dass deine Bankdaten den Rechner verlassen.
+                </dd>
+              </div>
+              <div className="rounded-[12px] border-l-[3px] border-l-[#22c55e] bg-[#1a1d25] p-5 transition-colors duration-200 hover:bg-[#1e2130]">
+                <dt className="font-semibold text-slate-100" style={{ fontSize: '15px' }}>
+                  Wie mache ich eine Überweisung per QR-Code?
+                </dt>
+                <dd className="mt-1 text-xs leading-[1.7] text-[#9aa1b6]">
+                  Öffne den QR-Scanner deiner Banking-App (meist unter „Überweisung" → „QR-Code"), scanne den GiroCode und prüfe die automatisch ausgefüllten Daten – IBAN, Betrag und Verwendungszweck. Anschließend bestätigst du die Überweisung wie gewohnt mit TAN oder Biometrie – in unter 30 Sekunden.
+                </dd>
+              </div>
+              <div className="rounded-[12px] border-l-[3px] border-l-[#22c55e] bg-[#1a1d25] p-5 transition-colors duration-200 hover:bg-[#1e2130]">
+                <dt className="font-semibold text-slate-100" style={{ fontSize: '15px' }}>
+                  Kann ich selbst einen QR-Code erstellen?
+                </dt>
+                <dd className="mt-1 text-xs leading-[1.7] text-[#9aa1b6]">
+                  Ja. Jede Person mit einem SEPA-Konto kann kostenlos einen Zahlungs-QR-Code (GiroCode) erstellen – für Rechnungen, Spenden oder private Zahlungen. Nötig sind nur Empfängername und IBAN; Betrag und Verwendungszweck sind optional.
                 </dd>
               </div>
             </dl>
