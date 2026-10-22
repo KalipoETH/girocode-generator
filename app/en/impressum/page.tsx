@@ -54,7 +54,7 @@ export default function ImpressumPageEn() {
             <h2 className="mb-1 text-base font-semibold text-slate-50">Liability for content</h2>
             <p>
               As a service provider we are responsible for our own content on these pages in
-              accordance with § 7 Abs. 1 TMG under general law. According to §§ 8 to 10 TMG, we are
+              accordance with § 7 Abs. 1 DDG under general law. According to §§ 8 to 10 DDG, we are
               however not obliged to monitor transmitted or stored third-party information or to
               investigate circumstances indicating unlawful activity.
             </p>

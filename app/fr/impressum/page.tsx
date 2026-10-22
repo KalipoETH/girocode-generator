@@ -56,7 +56,7 @@ export default function ImpressumPageFr() {
             <h2 className="mb-1 text-base font-semibold text-slate-50">Responsabilité pour le contenu</h2>
             <p>
               En tant que prestataire de services, nous sommes responsables de nos propres contenus
-              sur ces pages conformément au § 7 Abs. 1 TMG. Selon §§ 8 à 10 TMG, nous ne sommes pas
+              sur ces pages conformément au § 7 Abs. 1 DDG. Selon §§ 8 à 10 DDG, nous ne sommes pas
               tenus de surveiller les informations de tiers transmises ou stockées ni de rechercher
               des circonstances indiquant une activité illégale.
             </p>
