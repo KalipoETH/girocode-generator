@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { track } from '@vercel/analytics';
+import { useSegmentPrompt } from '@/components/SegmentPrompt';
 
 type Locale = 'de' | 'en' | 'fr' | 'es' | 'it';
 
@@ -220,6 +221,7 @@ interface Props {
 
 export function InvoiceEditor({ locale }: Props) {
   const t = labels[locale];
+  const segmentPrompt = useSegmentPrompt(locale);
   const containerRef = useRef<HTMLDivElement & { _designer?: unknown }>(null);
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -293,6 +295,7 @@ export function InvoiceEditor({ locale }: Props) {
       link.click();
       URL.revokeObjectURL(url);
       track('invoice_editor_pdf_generated', { locale });
+      segmentPrompt.trigger();
       setHasDownloaded(true);
     } catch (e) {
       console.error('PDF-Generierung fehlgeschlagen:', e);
@@ -385,6 +388,7 @@ export function InvoiceEditor({ locale }: Props) {
           style={{ height: 'calc(100vh - 200px)', display: ready ? 'block' : 'none' }}
         />
       </div>
+      {segmentPrompt.prompt}
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { track } from '@vercel/analytics';
 import { buildEPC, ibanIsValid } from '../lib/girocode';
 import { takeScanHandoff } from '../lib/scanHandoff';
 import { QRPreview, QRStatusType } from './QRPreview';
+import { useSegmentPrompt } from './SegmentPrompt';
 import { en } from '../lib/translations/en';
 import { fr } from '../lib/translations/fr';
 import { es } from '../lib/translations/es';
@@ -183,6 +184,7 @@ export const GiroCodeForm: React.FC<GiroCodeFormProps> = ({
   onQrDataUrlChange,
 }) => {
   const t = getTexts(locale);
+  const segmentPrompt = useSegmentPrompt(locale);
   const [form, setForm] = useState<GiroCodeFormState>({
     name: '',
     iban: '',
@@ -275,6 +277,7 @@ export const GiroCodeForm: React.FC<GiroCodeFormProps> = ({
         has_bic: !!form.bic.trim(),
         locale,
       });
+      segmentPrompt.trigger();
     } catch (err) {
       setStatusType('error');
       setStatusMessage(t.generateError);
@@ -488,6 +491,7 @@ export const GiroCodeForm: React.FC<GiroCodeFormProps> = ({
           onQrRendered={onQrDataUrlChange}
         />
       </form>
+      {segmentPrompt.prompt}
     </section>
   );
 };
